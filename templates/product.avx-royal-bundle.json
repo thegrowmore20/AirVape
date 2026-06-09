@@ -1,0 +1,910 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h4",
+            "mobile_heading_size": "h5",
+            "content": "{{ product.title }}",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "loox_reviews_loox_rating_AmVCaV": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "[rating] ([count])",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": true,
+            "emptyRatingWidget": true
+          }
+        },
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false,
+            "use_bold_font": true
+          }
+        },
+        "rich_text_block_FAxABQ": {
+          "type": "rich_text_block",
+          "settings": {
+            "icon": "",
+            "icon_width": 24,
+            "heading": "",
+            "content": "{{ product.metafields.custom.hook_text | metafield_tag }}",
+            "heading_size": "heading text-h6 md:text-h5",
+            "text_alignment": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "",
+            "background_color": "",
+            "text_color": "",
+            "heading_color": "",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "4923f5c8-62d3-42db-a835-6e0613c4a182": {
+          "type": "payment_installments",
+          "settings": {}
+        },
+        "custom_liquid_Jg8Hjm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .promo-text-block {\n    background-color: #ececec;\n    border-radius: 12px;\n    border: 1px solid #E1E1E1;\n  }\n</style>\n\n<p class=\"my-4 py-2 px-4 text-sm promo-text-block\">\n  <strong>NY Times Wirecutter</strong> nominated AirVape for best portable vaporizers\n</p>",
+            "collapse_content": false,
+            "collapse_open": false,
+            "heading": ""
+          }
+        },
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "type": "radio",
+            "color_picker_type": "radio-image",
+            "block_style_rounded": true,
+            "block_style": "outlined",
+            "size_chart_page": "",
+            "size_chart_option_name": "Size"
+          }
+        },
+        "qty_btn_selector_6ELeeK": {
+          "type": "qty_btn_selector",
+          "settings": {
+            "show_dynamic_checkout_buttons": false,
+            "show_gift_card_recipient": false,
+            "add_to_cart_background_color": "",
+            "add_to_cart_text_color": "",
+            "buy_it_now_background_color": "",
+            "buy_it_now_text_color": ""
+          }
+        },
+        "delivery_Dn9pww": {
+          "type": "delivery",
+          "settings": {
+            "delivery_from": 3,
+            "delivery_to": 5
+          }
+        },
+        "icon_text_block_7Gzddk": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon_text_class": "icon-text-pdp",
+            "layout": "inline",
+            "icon_1": "shopify://shop_images/icon-02.svg",
+            "text_1": "<p>30 Days<br/>Return</p>",
+            "icon_2": "shopify://shop_images/icon-01.svg",
+            "text_2": "<p>Lifetime<br/>Warranty Ltd.</p>",
+            "icon_3": "shopify://shop_images/icon_Delivery-1.svg",
+            "text_3": "<p>Free Delivery<br/>100+ USD</p>",
+            "icon_4": "shopify://shop_images/icon_Delivery-1.svg",
+            "text_4": "<p>Hassle-Free<br/>Shipping</p>",
+            "icon_5": "shopify://shop_images/icon_Secure.svg",
+            "text_5": "<p>Secure<br/>Transaction</p>",
+            "icon_size": 80,
+            "text_size": 14,
+            "text_color": "#000000"
+          }
+        },
+        "description_FETxLT": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": true,
+            "collapse_open": false,
+            "heading": "Description"
+          }
+        },
+        "collapsible_content_7eB3pL": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Description",
+            "content": "{{ product.metafields.custom.description | metafield_tag }}"
+          }
+        },
+        "collapsible_content_MnR4gr": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Key Features",
+            "content": "{{ product.metafields.custom.specifications | metafield_tag }}"
+          }
+        },
+        "collapsible_content_WTtAE3": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "What's in the box?",
+            "content": "{{ product.metafields.custom.what_s_in_the_box | metafield_tag }}"
+          }
+        },
+        "collapsible_content_mCKTzV": {
+          "type": "collapsible_content",
+          "disabled": true,
+          "settings": {
+            "collapse_open": false,
+            "heading": "How to use?",
+            "content": "{{ product.metafields.custom.how_to_use | metafield_tag }}"
+          }
+        },
+        "collapsible_content_W9iBNG": {
+          "type": "collapsible_content",
+          "disabled": true,
+          "settings": {
+            "collapse_open": false,
+            "heading": "Accessories",
+            "content": "{{ product.metafields.custom.parts_accessories | metafield_tag }}"
+          }
+        },
+        "collapsible_content_VDy8jY": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Warranty and Support",
+            "content": "{{ product.metafields.custom.lifetime_waranty | metafield_tag }}"
+          }
+        },
+        "collapsible_content_87nC68": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Why Choose AirVape?",
+            "content": "<p><strong>Sleek, Portable, and Travel-Friendly Design –</strong> AirVape combines a modern, sleek, and discreet design with a compact and lightweight build, making it the perfect portable vaporizer for on-the-go use, whether you're traveling or out for the day.<br/><br/><strong>Quiet Operation – </strong>Vape discreetly with minimal noise, making it suitable for use in public or shared spaces.<br/><br/><strong>High-Quality Materials –</strong> Made with durable, high-quality materials, AirVape is built to last and withstand regular use.<br/><br/><strong>Easy to Clean – </strong>The vaporizer is designed for easy maintenance, with a simple cleaning process that keeps it functioning optimally.<br/><br/><strong>Non-Toxic Materials –</strong> Made with non-toxic, food-grade materials for a clean, healthy, and safe vaping experience.<br/><br/><strong>Advanced Safety Features –</strong> Built-in safety features like automatic shut-off and temperature control to ensure a safe vaping experience.<br/><br/><strong>Easy Charging – </strong>AirVape uses USB-C charging for fast, efficient, and convenient recharging.<br/><br/><strong>Long Warranty –</strong> Comes with a reliable warranty, ensuring long-term performance and peace of mind.<br/><br/><strong>Affordable Price – </strong>Get premium quality without breaking the bank, as AirVape offers competitive pricing compared to other vaporizers on the market.<br/><br/><strong>Customer-Focused Brand – </strong>AirVape is committed to providing excellent customer service and offers product support to ensure complete satisfaction.</p>"
+          }
+        },
+        "icon_text_block_qDBK8R": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon_text_class": "homepage-usps-info",
+            "layout": "vertical",
+            "icon_1": "shopify://shop_images/FAST_HEAT-UP.webp",
+            "text_1": "<p><strong>FAST HEAT-UP</strong><br/>Ready to go in seconds</p>",
+            "icon_2": "shopify://shop_images/PURE_FLAVOUR.webp",
+            "text_2": "<p><strong>PURE FLAVOUR</strong><br/>Crisp vapor with precision</p>",
+            "icon_3": "shopify://shop_images/EASY_TO_USE.webp",
+            "text_3": "<p><strong>EASY TO USE</strong><br/>Effortless enjoyment</p>",
+            "icon_4": "shopify://shop_images/EASY_TO_USE.webp",
+            "text_4": "<p><strong>EASY TO USE</strong><br/>Effortless enjoyment</p>",
+            "icon_5": "shopify://shop_images/LONG_BATTERY_LIFE.webp",
+            "text_5": "<p><strong>LASTS LONGER</strong><br/>Enjoy more sessions</p>",
+            "icon_size": 30,
+            "text_size": 14,
+            "text_color": "#000000"
+          }
+        },
+        "share_button_KkRM8f": {
+          "type": "share_button",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
+        "loox_reviews_loox_rating_AmVCaV",
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e",
+        "rich_text_block_FAxABQ",
+        "4923f5c8-62d3-42db-a835-6e0613c4a182",
+        "custom_liquid_Jg8Hjm",
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
+        "qty_btn_selector_6ELeeK",
+        "delivery_Dn9pww",
+        "icon_text_block_7Gzddk",
+        "description_FETxLT",
+        "collapsible_content_7eB3pL",
+        "collapsible_content_MnR4gr",
+        "collapsible_content_WTtAE3",
+        "collapsible_content_mCKTzV",
+        "collapsible_content_W9iBNG",
+        "collapsible_content_VDy8jY",
+        "collapsible_content_87nC68",
+        "icon_text_block_qDBK8R",
+        "share_button_KkRM8f"
+      ],
+      "settings": {
+        "show_breadcrumbs": false,
+        "desktop_media_width": 50,
+        "media_size": "",
+        "media_layout_desktop": "carousel_vertical",
+        "media_mobile_indicator": "thumbnails",
+        "media_zoom": "lightbox",
+        "media_enable_video_autoplay": false,
+        "media_enable_video_looping": true,
+        "media_fit_height": true,
+        "show_sticky_add_to_cart": true,
+        "sticky_add_to_cart_position": "center",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_section_9j6HhG": {
+      "type": "custom-section",
+      "blocks": {
+        "product_meta_shorts_Rec6dB": {
+          "type": "product-meta-shorts",
+          "name": "Product Shorts",
+          "settings": {
+            "metafield_namespace": "custom",
+            "metafield_key": "product_short_videos",
+            "autoplay": true,
+            "muted": true,
+            "video_border_radius": 12,
+            "slides_desktop": 4,
+            "slides_medium": 3,
+            "slides_mobile": 2,
+            "slide_gap": 20,
+            "desktop_width_percent": 100,
+            "section_padding": 0,
+            "show_arrows": true,
+            "show_dots": true,
+            "controls_spacing": 25,
+            "arrow_size": 40,
+            "arrow_background": "#000000",
+            "arrow_color": "#ffffff",
+            "arrow_hover_background": "#333333",
+            "arrow_hover_color": "#ffffff",
+            "dot_size": 8,
+            "dot_color": "#cccccc",
+            "dot_active_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_meta_shorts_Rec6dB"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FOLLOW US ON YOUTUBE",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "<svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" width=\"25\" height=\"25\" viewbox=\"0 0 48 48\"><path fill=\"#FF3D00\" d=\"M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z\"></path><path fill=\"#FFF\" d=\"M20 31L20 17 32 24z\"></path></svg>@AirvapeusaOfficial",
+        "link_url": "https://www.youtube.com/@AirvapeusaOfficial",
+        "new_tab": true,
+        "heading_html_tag": "h2",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "17750262364d3b075b": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_kie3aP": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 10,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_kie3aP"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "WHY DO PEOPLE LOVE AIRVAPE?",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "video_with_text_overlay_DTHfhk": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "subheading_WHiEEy": {
+          "type": "subheading",
+          "settings": {
+            "text": "X marks the spot"
+          }
+        },
+        "heading_74fQ4A": {
+          "type": "heading",
+          "settings": {
+            "heading": "One of the World’s leading vape models",
+            "heading_size": "h3",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_46VhEg": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>The AirVape X uses a combination of conduction and convection technology to achieve the best heating in just 20 seconds to an optimal level. The X is the ultimate personal dry herb vaporizer featuring outstanding performance and the highest level of discreteness.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WHiEEy",
+        "heading_74fQ4A",
+        "text_46VhEg"
+      ],
+      "settings": {
+        "custom_class": "video-text-overlay-section",
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "video": "shopify://files/videos/X_final_2_short1.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "text_with_icons_a6nMCN": {
+      "type": "text-with-icons",
+      "blocks": {
+        "column_xamD3b": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Icons_all-08_515e1bfc-faeb-4f64-bdc2-8d95c6461349.png",
+            "icon": "package-check",
+            "heading": "FUll Temp Control",
+            "content": ""
+          }
+        },
+        "column_Ez7GhD": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Icons_all-09.png",
+            "icon": "message-chat-circle",
+            "heading": "Thinnest Design",
+            "content": ""
+          }
+        },
+        "column_4ky4bQ": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Icons_all-10.png",
+            "icon": "return",
+            "heading": "1.3 inch Display",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_xamD3b",
+        "column_Ez7GhD",
+        "column_4ky4bQ"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "item_heading_size": "h5",
+        "item_text_alignment": "text-center",
+        "item_text_alignment_mobile": "",
+        "icon_background": "circle",
+        "icon_width": 48,
+        "heading": "",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "image_with_text_76bibF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_akb8kp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Never settle for less.",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_qTyhcp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The AirVape X uses a combination of conduction and convection technology to achieve the best heating in just 20 seconds to an optimal level. The X is the ultimate personal dry herb vaporizer featuring outstanding performance and the highest level of discreteness.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_akb8kp",
+        "text_qTyhcp"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Heating1.gif",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "slideshow_ygAcAw": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_HdVfL3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/finger_blue.jpg",
+            "content_width_maximum": 600,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Thin. Thinner. X.",
+            "heading_size": "h3",
+            "text": "AirVape X is the most portable option to vaporize substance with its perfectly designed pocket fit and the vibrating function discretely warns you when X reached the temperature and when automatic shutoff timer goes off.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "button-outline",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "#242424",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_7CBKm4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/oval_blue.png",
+            "content_width_maximum": 640,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "X = ultimate features² Here’s the math.",
+            "heading_size": "h3",
+            "text": "The perfectly sized, oval-shaped ceramic chamber, plus the compartment underneath that accumulates hot air, serves for extra smooth, original vapor and even heating.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "button-outline",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_LiNqh4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AirVape_TrippyTreez-0349.jpg",
+            "content_width_maximum": 640,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Quality above all else",
+            "heading_size": "h3",
+            "text": "Made from the highest grade materials, and equipped with state-of-the-art super-fast heating technology, AirVape X’s quality is backed up by a lifetime warranty.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "button-outline",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "slide_HdVfL3",
+        "slide_7CBKm4",
+        "slide_LiNqh4"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "autoplay": true,
+        "speed": 4,
+        "height": 600,
+        "controls": "arrows",
+        "background_animation": "ZoomOut",
+        "content_animation": "AppearLineByLine",
+        "background_color": "#262626"
+      }
+    },
+    "image_with_text_9Vxk9p": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_dcbfaV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Now with X Shell included",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_xcEkpH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The X Shell is a one-of-a-kind accessory that makes the X smell-proof and water-resistant, and it only adds to its discreteness, without taking away the thinness of the best pocket-fit device.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dcbfaV",
+        "text_xcEkpH"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/WaterShell.gif",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_hotspots_jR9J4X": {
+      "type": "image-hotspots",
+      "blocks": {
+        "hotspot_acmgr3": {
+          "type": "hotspot",
+          "settings": {
+            "x": 51,
+            "y": 34,
+            "x_mobile": 50,
+            "y_mobile": 50,
+            "heading": "Airpath disk",
+            "content": "<p>Describe the product feature in more detail.</p>"
+          }
+        },
+        "hotspot_cHFgrK": {
+          "type": "hotspot",
+          "settings": {
+            "x": 40,
+            "y": 40,
+            "x_mobile": 50,
+            "y_mobile": 50,
+            "heading": "Screen",
+            "content": "<p>Describe the product feature in more detail.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_acmgr3",
+        "hotspot_cHFgrK"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/Pro_features-01.png",
+        "image_max_width": 1920,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "dot_background_color": "",
+        "dot_icon_color": "",
+        "popover_background_color": "",
+        "popover_text_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "main-details": {
+      "type": "main-product-details",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_rRUGe3": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "airvape-x-accessories",
+        "subheading": "",
+        "heading": "AIRVAPE X ACCESSORIES",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "shopify://collections/airvape-x-accessories",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "custom_section_TyKjxE": {
+      "type": "custom-section",
+      "blocks": {
+        "ai_gen_block_657f32b_aXi7Xy": {
+          "type": "ai_gen_block_657f32b",
+          "name": "Image slider",
+          "settings": {
+            "data_source": "metafield",
+            "metafield_namespace": "custom",
+            "metafield_key": "user_guide",
+            "image_text_1": "",
+            "image_link_1": "",
+            "new_image_link_1": false,
+            "image_text_2": "",
+            "image_link_2": "",
+            "new_image_link_2": false,
+            "image_text_3": "",
+            "image_link_3": "",
+            "new_image_link_3": false,
+            "image_text_4": "",
+            "image_link_4": "",
+            "new_image_link_4": false,
+            "image_text_5": "",
+            "image_link_5": "",
+            "new_image_link_5": false,
+            "image_text_6": "",
+            "image_link_6": "",
+            "new_image_link_6": false,
+            "image_text_7": "",
+            "image_link_7": "",
+            "new_image_link_7": false,
+            "image_text_8": "",
+            "image_link_8": "",
+            "new_image_link_8": false,
+            "aspect_ratio": "auto",
+            "slides_desktop": 3,
+            "slides_tablet": 3,
+            "slides_mobile": 2,
+            "slide_gap": 16,
+            "slide_border_radius": 6,
+            "show_arrows": true,
+            "show_dots": true,
+            "arrow_color": "#ffffff",
+            "arrow_background": "#000000",
+            "dot_color": "#000000",
+            "autoplay": false,
+            "autoplay_speed": 3000,
+            "infinite_loop": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_657f32b_aXi7Xy"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "USER GUIDE",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "h2",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "pdp_aplus_comparison_JEHfEq": {
+      "type": "pdp-aplus-comparison",
+      "disabled": true,
+      "name": "Aplus comparison",
+      "settings": {
+        "subheading": "",
+        "heading": "CHOOSE WHAT SUITS YOU BEST",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center"
+      }
+    },
+    "featured_collection_kWtgdc": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "xperience-kit",
+          "airvape-x-waterflow-kit",
+          "enso-adventure-kit",
+          "legacy-essentials-kit",
+          "legacy-core-stealth-carry-kit",
+          "legacy-core-waterflow-kit",
+          "legacy-pro-2-stealth-carry-kit"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "COMPLETE YOUR MEMORIAL DAY COLLECTION",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "subheading": "",
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "product_faqs_zyVeeH": {
+      "type": "product-faqs",
+      "name": "Product Faqs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_9j6HhG",
+    "17750262364d3b075b",
+    "video_with_text_overlay_DTHfhk",
+    "text_with_icons_a6nMCN",
+    "image_with_text_76bibF",
+    "slideshow_ygAcAw",
+    "image_with_text_9Vxk9p",
+    "image_hotspots_jR9J4X",
+    "main-details",
+    "featured_collection_rRUGe3",
+    "custom_section_TyKjxE",
+    "pdp_aplus_comparison_JEHfEq",
+    "featured_collection_kWtgdc",
+    "related-products",
+    "product_faqs_zyVeeH"
+  ]
+}

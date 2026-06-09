@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_liquid_jEWxcF": {
+      "type": "custom-liquid",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": true,
+        "remove_vertical_space": true,
+        "custom_liquid": "<style>\n.manual-page{margin-bottom:50px;background:#000;padding:50px 0}.manual-page .manual-page-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:100%;position:relative}.manual-page .manual-page-container .carousel .item{position:relative}.manual-page .manual-page-container .carousel .item img{max-width:100%}.manual-page .manual-page-container .carousel .item a{background:#000;color:#fff;text-align:center;padding:5px 10px;position:absolute;bottom:30px;right:30px}.manual-page .manual-page-container .prev{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/leftarw.svg) no-repeat center center;width:50px;height:50px;position:absolute;left:30px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:100;cursor:pointer}.manual-page .manual-page-container .prev.hide{display:none !important}.manual-page .manual-page-container .next{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/rightarw.svg) no-repeat center center;width:50px;height:50px;position:absolute;right:30px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:100;cursor:pointer}.manual-page .manual-page-container .next.hide{display:none !important}.manual-page .dots{padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:-10px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.manual-page .dots span{margin:0 10px;height:5px;width:5px;cursor:pointer;border-radius:100%;background:#6a6a6a}.manual-page .dots span.active{background:#fff}.manual-page .dots span::before{content:none}\n/*# sourceMappingURL=pdf-style.min.css.map */\n</style>\n\n<div class=\"manual-page\">\n    <div class=\"manual-page-container\">\n        <div class=\"carousel\">\n            <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpage1v2.png\" alt=\"\">\n            </div>\n          <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/avxmanual_animpage2.gif\" alt=\"\">\n            </div>\n          <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpage3v3.png\" alt=\"\">\n            </div>\n            <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpage4v2.png\" alt=\"\">\n            </div>\n          <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpupgrade.png\" alt=\"\">\n                <a href=\"https://airvapeusa.com/pages/upgrade-form/\">APPLY FOR UPGRADE</a>            \n            </div>\n            <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpage3.png\" alt=\"\">\n            </div>\n            <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpage4.png\" alt=\"\">\n            </div>\n            <div class=\"item\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVXmanualpage5.png\" alt=\"\">\n            </div>            \n        </div>\n        <div class=\"dots\"></div>\n        <span class=\"prev d-none d-md-block\"></span>\n        <span class=\"next d-none d-md-block\"></span>\n    </div>\n</div>\n\n<script src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/siema.min.js\"></script>\n\n<script>\n    const state = {\n        nrDots: 0,\n        items: document.querySelectorAll('.carousel .item'),\n    };\n\n    if (window.innerWidth > 778) {\n        state.nrDots = state.items.length - 2;\n    } else {\n        state.nrDots = state.items.length;\n    }\n\n    const carousel = new Siema({\n        selector: '.carousel',\n        duration: 200,\n        easing: 'ease-out',\n        perPage: {\n            0: 1,\n            778: 3\n        },\n        startIndex: 0,\n        draggable: true,\n        multipleDrag: true,\n        threshold: 20,\n        loop: false,\n        rtl: false,\n        onInit: function () {\n            const dotsContainer = document.querySelector('.dots');\n            const items = state.items;\n\n            for (let i = 0; i < state.nrDots; i++) {\n                const span = document.createElement('span');\n                dotsContainer.appendChild(span);\n            }\n\n            dotsContainer.querySelector('span').classList.add('active');\n            document.querySelector('.prev').classList.add('hide');\n        },\n        onChange: function () {\n            const dots = document.querySelectorAll('.dots span');\n\n            dots.forEach((dot) => dot.classList.remove('active'));\n\n            dots[this.currentSlide].classList.add('active');\n\n            if (this.currentSlide == 0) {\n                document.querySelector('.prev').classList.add('hide');\n            } else {\n                document.querySelector('.prev').classList.remove('hide');\n            }\n\n            if (this.currentSlide + 1 == state.nrDots) {\n                document.querySelector('.next').classList.add('hide');\n            } else {\n                document.querySelector('.next').classList.remove('hide');\n            }\n        },\n    });\n\n    document.querySelector('.prev').addEventListener('click', () => carousel.prev());\n    document.querySelector('.next').addEventListener('click', () => carousel.next());\n</script>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "featured_collection_TRAUeR": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_jEWxcF",
+    "featured_collection_TRAUeR"
+  ]
+}

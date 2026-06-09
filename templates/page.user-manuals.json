@@ -1,0 +1,355 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "text_with_icons_GtmRTE": {
+      "type": "text-with-icons",
+      "blocks": {
+        "column_aYwwpH": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/AV_enso_pr_main.png",
+            "icon": "package-check",
+            "heading": "",
+            "content": "<p><a href=\"/pages/enso-manual\" title=\"Enso manual\">ENSŌ manual</a></p>"
+          }
+        },
+        "column_TL9VVn": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/LPRO4andSE.png",
+            "icon": "package-check",
+            "heading": "",
+            "content": "<p><a href=\"/pages/legacy-pro-user-manual\" title=\"Legacy PRO User manual\">Legacy PRO manual</a></p>"
+          }
+        },
+        "column_47T4mY": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Legacy2.png",
+            "icon": "message-chat-circle",
+            "heading": "",
+            "content": "<p><a href=\"/pages/legacy-manual\" title=\"Legacy Manual\">Legacy manual</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_aYwwpH",
+        "column_TL9VVn",
+        "column_47T4mY"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "item_heading_size": "h5",
+        "item_text_alignment": "text-center",
+        "item_text_alignment_mobile": "",
+        "icon_background": "",
+        "icon_width": 96,
+        "heading": "",
+        "heading_size": "h6",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "text_with_icons_3HW7tn": {
+      "type": "text-with-icons",
+      "blocks": {
+        "column_M4Dkt3": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/AVXRoyal1.png",
+            "icon": "return",
+            "heading": "",
+            "content": "<p><a href=\"/pages/x-royal-blue-manual\" title=\"X Royal Blue Manual\">AirVape X Royal Blue manual</a></p>"
+          }
+        },
+        "column_8Mj6Wq": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/AVXB3_fb9e5572-d3e4-47f1-ac96-ffd47e89fcc9.png",
+            "icon": "return",
+            "heading": "",
+            "content": "<p><a href=\"/pages/x-manual\" title=\"X Manual\">AirVape X manual</a></p>"
+          }
+        },
+        "column_gXG4Vf": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/XSgo.png",
+            "icon": "credit-card-shield",
+            "heading": "",
+            "content": "<p><a href=\"/pages/xs-go-manual\" title=\"XS GO Manual\">AirVape XS GO manual</a></p>"
+          }
+        },
+        "column_x7kK7d": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/OmMOD222.png",
+            "icon": "credit-card-shield",
+            "heading": "",
+            "content": "<p><a href=\"/pages/om-manual\" title=\"OM Manual\">AirVape OM manual</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_M4Dkt3",
+        "column_8Mj6Wq",
+        "column_gXG4Vf",
+        "column_x7kK7d"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "item_heading_size": "h5",
+        "item_text_alignment": "text-center",
+        "item_text_alignment_mobile": "",
+        "icon_background": "",
+        "icon_width": 96,
+        "heading": "",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "multicolumn_33XQyw": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_3DLM3Q": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_enso_pr_main.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/enso-manual",
+            "link_text": "ENSŌ User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_3TtYeX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Newscreen_PRO2.52.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://cdn.shopify.com/s/files/1/0777/8339/files/Pro2_manual_1_9104fdd1-926d-47d0-9781-32515896f31a.pdf?v=1760428625",
+            "link_text": "Legacy PRO2 User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_9VwTDq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CORE_3.258_79bd49d8-c7aa-4ca5-a00f-925962b12cb3.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/legacy-core-user-guide",
+            "link_text": "Legacy CORE User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_Taer6k": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LPRO4andSE_d3f31970-a4f9-402c-ab51-53427c76ec90.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/legacy-pro-user-manual",
+            "link_text": "Legacy PRO User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_khB6YD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Legacy2.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/legacy-manual",
+            "link_text": "Legacy User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_AkEYpd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AVXRoyal1.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/x-royal-blue-manual",
+            "link_text": "X Royal User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_FLktet": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AVXB3_fb9e5572-d3e4-47f1-ac96-ffd47e89fcc9.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/x-manual",
+            "link_text": "AirVape X User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_JR3QCM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/XSgo.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/xs-go-manual",
+            "link_text": "XS GO User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_CTibEE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/OmMOD222.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/om-manual",
+            "link_text": "AirVape OM User Manual",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_3DLM3Q",
+        "column_3TtYeX",
+        "column_9VwTDq",
+        "column_Taer6k",
+        "column_khB6YD",
+        "column_AkEYpd",
+        "column_FLktet",
+        "column_JR3QCM",
+        "column_CTibEE"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 3,
+        "space_between_columns": 48,
+        "image_width": 50,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_Bhkf6w": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "text_with_icons_GtmRTE",
+    "text_with_icons_3HW7tn",
+    "multicolumn_33XQyw",
+    "featured_collection_Bhkf6w"
+  ]
+}

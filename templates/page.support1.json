@@ -1,0 +1,336 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "logo_list_ppPgYn": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_TaeRQz": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/faq.svg",
+            "link": "https://airvapeusa.com/apps/help-center",
+            "width": 250
+          }
+        },
+        "logo_pQk6Qt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/contact_anim_40d899de-f572-4fa6-bc81-c4dd64276a63.gif",
+            "link": "https://airvapeusa.com/pages/contact-us",
+            "width": 250
+          }
+        },
+        "logo_PrJVwj": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/warranty_anim_6560ca0e-089e-4a7f-afcb-a99918a23c9f.gif",
+            "link": "https://airvapeusa.com/pages/warranty-registration",
+            "width": 250
+          }
+        },
+        "logo_VpQhWU": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/upgrade_anim_a1a5d7f5-b292-4ea6-8bfb-e44330bd410b.gif",
+            "link": "https://airvapeusa.com/pages/upgrade-experience",
+            "width": 250
+          }
+        },
+        "logo_6cBFji": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/AVexperience_anim.gif",
+            "link": "https://airvapeusa.com/pages/the-airvape-experience",
+            "width": 250
+          }
+        },
+        "logo_38eHAU": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/recycling_anim_d0d541fa-4768-4929-9181-2280ed2bc320.gif",
+            "link": "https://airvapeusa.com/pages/save-the-planet",
+            "width": 250
+          }
+        },
+        "logo_xGiQRV": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/affiliate_anim_5167ab53-1a48-443c-9ce5-bf8b7a2e7de5.gif",
+            "link": "https://airvapeusa.com/pages/support-1",
+            "width": 250
+          }
+        },
+        "logo_jFpPbf": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/wholesale_anim_82844121-d17a-4edb-af89-a01d00fd64b0.gif",
+            "link": "https://airvapeusa.com/pages/wholesale-dropshipping",
+            "width": 250
+          }
+        }
+      },
+      "block_order": [
+        "logo_TaeRQz",
+        "logo_pQk6Qt",
+        "logo_PrJVwj",
+        "logo_VpQhWU",
+        "logo_6cBFji",
+        "logo_38eHAU",
+        "logo_xGiQRV",
+        "logo_jFpPbf"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "logo_opacity": 80,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#666666",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_Nefhbm": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_am63Cz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/manual.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://pages/user-manuals",
+            "link_text": "USER MANUALS",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_WNyiXz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/faq.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/apps/help-center",
+            "link_text": "FAQ",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_J3Lpgz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Contact.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/contact-us",
+            "link_text": "CONTACT US",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_ir7fLL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/warranty_19e8e67a-694c-4d22-94e2-4309b6201a24.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/warranty-registration",
+            "link_text": "LIFETIME WARRANTY",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_F3deVe": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/upgrade_f3ebd0b5-63fc-456e-9fad-293606beabaa.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/upgrade-experience",
+            "link_text": "UPGRADE PROGRAM",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_UFhk9G": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_dMQpEH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/airvape_exp.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/the-airvape-experience",
+            "link_text": "AIRVAPE EXPERIENCE",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_jqA4Ee": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/recycle.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/save-the-planet",
+            "link_text": "RECYCLING PROGRAM",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_XEBGrP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/affiliate.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/support-1",
+            "link_text": "AFFILIATE PROGRAM",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_T9p3Ba": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/wholesale.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "https://airvapeusa.com/pages/wholesale-dropshipping",
+            "link_text": "WHOLESALE & DISTRIBUTION",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_am63Cz",
+        "column_WNyiXz",
+        "column_J3Lpgz",
+        "column_ir7fLL",
+        "column_F3deVe",
+        "column_UFhk9G",
+        "column_dMQpEH",
+        "column_jqA4Ee",
+        "column_XEBGrP",
+        "column_T9p3Ba"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 4,
+        "space_between_columns": 80,
+        "image_width": 35,
+        "image_size": "media--ratio-1-1",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#043f54",
+        "text_color": "#ffffff",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_AxUURU": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "logo_list_ppPgYn",
+    "main",
+    "multicolumn_Nefhbm",
+    "featured_collection_AxUURU"
+  ]
+}

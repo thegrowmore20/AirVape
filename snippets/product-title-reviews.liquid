@@ -1,0 +1,48 @@
+{% assign product_title_block = section.blocks | where: "type", "title" | first %}
+{% if product.metafields.custom.enable_award_winning %}
+  <div class="hidden-desktop">
+    <div class="product-badges-container flex gap-1 items-center pointer-events-none award-winning-badge-wrapper">
+      <img src="https://cdn.shopify.com/s/files/1/0777/8339/files/award.webp?v=1776679196" alt="Award Trophy" width="13" height="auto" loading="lazy">    
+      <p class="text-sm winning-text-color"> Award Winner </p>
+    </div>
+  </div>
+{% elsif product.metafields.custom.enable_new_launch_badge %}
+  <div class="product-badges-container flex gap-1 items-center pointer-events-none award-winning-badge-wrapper">
+    <p class="text-sm winning-text-color"> New Launch </p>
+  </div>
+{% elsif product.metafields.custom.best_selling %}
+  <div class="product-badges-container flex gap-1 items-center product-card-badges pointer-events-none z-10 award-winning-badge-wrapper best-selling-badge-wrapper not-without-background">  
+    <p class="text-sm winning-text-color"> Best Selling </p>
+  </div>
+{%  endif %}
+
+{% if product_title_block %}
+  <div
+    class="product-name-wrapper mb-1 md:mb-2"
+    {{ product_title_block.shopify_attributes }}
+    style="{%- render 'apply-color-var', var: '--color-headings', color: product_title_block.settings.text_color -%}"
+  >
+    {% if request.page_type != 'product' %}
+      <a data-instant href="{{ product.url }}">
+        <h2 class="{{ product_title_block.settings.mobile_heading_size }} mb-2">
+          {{ product.title | default: 'Product' }}
+        </h2>
+      </a>
+      
+      <a
+        data-instant
+        href="{{ product.url }}"
+        class="styled-link inline-block text-foreground/75 max-md:text-sm"
+      >
+        {{ 'products.product.view_full_details' | t }}
+      </a>
+    {% else %}
+      <h1 class="{{ product_title_block.settings.mobile_heading_size }}">
+        {{ product_title_block.settings.content | default: product.title }}
+      </h1>
+    {% endif %}
+  </div>
+{% endif %}
+
+<div class="loox-rating mb-4" data-show-empty-stars="true"  data-pattern="[rating] ([count])" data-id="{{ product.id }}" data-floating-product-reviews-enabled="true"
+  data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>

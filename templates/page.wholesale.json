@@ -1,0 +1,417 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_FFdmrV": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_xh3Htd": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_AyUrQx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wholesale made simple, profitable, and built for growth.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xh3Htd",
+        "text_AyUrQx"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Whole_Sale.webp",
+        "image_mobile": "shopify://shop_images/Whole_Sale_Mob.webp",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_R7kq9E": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6xGX4N": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stock Premium AirVape Vaporizers at Competitive Wholesale Pricing",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_WdDyKH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Partner with AirVape to access premium vaporizers and accessories through a wholesale program designed for retailers, resellers, distributors, and serious trade partners.</p><p>We offer flexible wholesale solutions based on product type, order quantity, and business requirements, helping partners source premium products with competitive pricing and scalable opportunities.</p><p>Whether you are looking for standard products or exploring larger-volume orders, AirVape is built to support long-term wholesale growth.</p>"
+          }
+        },
+        "button_7xGdXF": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Wholesale",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6xGX4N",
+        "text_WdDyKH",
+        "button_7xGdXF"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_4PKHxx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CGidjm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Partner With AirVape?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_jy6qeQ": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Premium Product Range</strong></h3><p>AirVape offers premium vaporizers and accessories designed for customers who value performance, portability, and quality. Our wholesale range includes popular products such as AirVape X, Legacy PRO, and selected accessories.</p><h3><strong>Competitive Wholesale Pricing</strong></h3><p>Our wholesale pricing is based on product type, order quantity, and order value, helping partners access more competitive rates as order volume increases.</p><h3><strong>Volume-Based Pricing Opportunities</strong></h3><p>Wholesale pricing is generally structured in tiers. The higher the quantity, the more competitive the pricing can become, depending on the product and order scope.</p><h3><strong>International Shipping Support</strong></h3><p>We can ship to many countries worldwide, depending on courier coverage, customs regulations, product availability, and shipping method.</p><h3><strong>Marketing Support for Approved Partners</strong></h3><p>Approved wholesale partners may receive selected marketing materials such as available product images, product descriptions, specifications, and key product information to support sales and promotion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CGidjm",
+        "text_jy6qeQ"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_iKXHJF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UUNnhE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who Can Apply?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_DtFBKT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wholesale applications are open to qualified:</p><ul><li>Businesses</li><li>Distributors</li><li>Resellers</li><li>Retailers</li><li>Smoke shops</li><li>Other serious trade partners</li></ul><p>Individuals may also apply, but approval depends on order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UUNnhE",
+        "text_DtFBKT"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_6BPfjB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_keTGCd": {
+          "type": "heading",
+          "settings": {
+            "heading": "Wholesale Requirements",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_qGj8yz": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Minimum Order Quantity</strong></h3><p>Minimum order quantity depends on the product type, packaging requirements, and shipping destination.</p><p>MOQ may vary by product category. Standard products may have a lower MOQ, while customized, private label, branded, or bulk production orders may require a higher minimum quantity.</p><p>Please contact us with your product details so we can confirm the exact MOQ for your request.</p><h3><strong>Pricing Structure</strong></h3><p>Wholesale pricing depends on:</p><ul><li>Product type</li><li>Order quantity</li><li>Order value</li><li>Customization requirements</li></ul><p>Larger orders typically qualify for better pricing and volume-based discounts.</p><h3><strong>Shipping and Delivery</strong></h3><p>We ship to multiple international regions, subject to shipping coverage, customs regulations, and product availability.</p><p>Estimated delivery times vary by destination and may also depend on customs clearance, order preparation time, and the shipping method selected. Exact timelines can be shared once we review your order requirements and delivery location.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_keTGCd",
+        "text_qGj8yz"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_bpJjyX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_j6Mjki": {
+          "type": "heading",
+          "settings": {
+            "heading": "Documents Required for Wholesale Setup",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_KNcmRd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To review and process wholesale inquiries, businesses may be asked to provide basic company and trade information, including:</p><ul><li>Business name and contact details</li><li>Company registration or trade license</li><li>Tax or VAT certificate, where applicable</li><li>Shipping and billing address</li><li>Sales channel details, such as website, marketplace, or store information</li><li>Product interest and estimated order quantity</li></ul><p>Providing complete and accurate information helps us review your request more efficiently.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_j6Mjki",
+        "text_KNcmRd"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_j8jgyc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_34r9FY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Become an AirVape Wholesale Partner",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_FEDtjC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you are looking to stock premium vaporizers and accessories through a reliable wholesale partnership, we would love to hear from you.</p><p>Submit your wholesale inquiry with your business details, product interest, and estimated order quantity, and our team will review your request.</p>"
+          }
+        },
+        "button_HzPhzC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Wholesale",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_34r9FY",
+        "text_FEDtjC",
+        "button_HzPhzC"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "faq_accordion_XwdGcQ": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faqs_MLQNid": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What is the MOQ for wholesale orders? Does it vary by product?",
+            "answer": "<p>Yes. The MOQ can vary by product. Standard products may have a lower MOQ, while customized or branded orders may require a higher minimum quantity. Our wholesale MOQ depends on the product type, packaging requirements, and shipping destination. Please contact us with your product details so we can confirm the exact MOQ.</p>"
+          }
+        },
+        "faqs_9RkAqF": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Are there bulk pricing or discount tiers for larger orders?",
+            "answer": "<p>Yes. Our pricing is typically structured in tiers, so the higher the quantity, the more competitive the unit price becomes. Final pricing depends on the specific products, quantities, and any customization requirements.</p>"
+          }
+        },
+        "faqs_QNYwxD": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What regions do you ship to, and what are the delivery times?",
+            "answer": "<p>We can ship to many countries worldwide. Estimated delivery times vary by region and may also depend on customs clearance, order preparation time, and the shipping method selected. Exact timelines can be shared once we review your order requirements and delivery location.</p>"
+          }
+        },
+        "faqs_g7HhEp": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Do you provide marketing support or materials?",
+            "answer": "<p>Yes. Approved wholesale partners can receive selected marketing materials such as available product images, basic descriptions, specifications, and key product information to support sales and promotion.</p>"
+          }
+        },
+        "faqs_QtFjPQ": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Can both businesses and individuals apply for wholesale?",
+            "answer": "<p>Yes. Businesses can apply for wholesale directly. Individuals may also apply, but approval depends on the order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>"
+          }
+        },
+        "faqs_67MHKQ": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What documents may be required for wholesale setup?",
+            "answer": "<p>Businesses may be asked to provide basic company and trade information, including business name and contact details, company registration or trade license, tax or VAT certificate where applicable, shipping and billing address, sales channel details, product interest, and estimated order quantity.</p>"
+          }
+        },
+        "faqs_wdFgKV": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Ready to Partner With AirVape?",
+            "answer": "<p>Apply today to explore wholesale pricing, product availability, and partnership opportunities with AirVape.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_MLQNid",
+        "faqs_9RkAqF",
+        "faqs_QNYwxD",
+        "faqs_g7HhEp",
+        "faqs_QtFjPQ",
+        "faqs_67MHKQ",
+        "faqs_wdFgKV"
+      ],
+      "name": "Page FAQs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_alignment": "mx-auto",
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQs",
+        "heading_size": "h3",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "h2",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_bkpmrh": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_FFdmrV",
+    "main",
+    "rich_text_R7kq9E",
+    "rich_text_4PKHxx",
+    "rich_text_iKXHJF",
+    "rich_text_6BPfjB",
+    "rich_text_bpJjyX",
+    "rich_text_j8jgyc",
+    "faq_accordion_XwdGcQ",
+    "featured_collection_bkpmrh"
+  ]
+}

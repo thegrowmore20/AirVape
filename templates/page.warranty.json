@@ -1,0 +1,98 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_T79JJf": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_gUMgAi": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gUMgAi"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Warranty_-2.webp",
+        "image_mobile": "shopify://shop_images/Warranty_Mob_-2.webp",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "full_width": true,
+        "show_page_title": false,
+        "custom_page_title": true,
+        "custom_heading": "FREE Liftetime Warranty<sup class=\"text-xs\">Ltd.</sup> Registration",
+        "content_width": "large",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_FFU8xM": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_T79JJf",
+    "main",
+    "featured_collection_FFU8xM"
+  ]
+}

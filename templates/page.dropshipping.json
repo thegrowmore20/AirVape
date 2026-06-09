@@ -1,0 +1,565 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_gWcwiD": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_VXJJqR": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_cz6DdF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dropshipping made effortless, scalable, and profitable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VXJJqR",
+        "text_cz6DdF"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Whole_Sale.webp",
+        "image_mobile": "shopify://shop_images/Whole_Sale_Mob.webp",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_aW93VX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7y66qQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sell AirVape Products Without Holding Inventory",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_H6cXwY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape officially supports dropshipping for <strong>approved business partners only</strong>. Our dropshipping program is designed for qualified resellers who want to market and sell AirVape products through their own sales channels while we handle fulfillment directly to the end customer.</p><p>Dropshipping access is subject to <strong>account approval, product availability, and compliance with our reseller terms</strong>.</p>"
+          }
+        },
+        "button_M8BAyR": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"2hYTel6_YFW8geyn4J9Yxg\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Dropshipping",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7y66qQ",
+        "text_H6cXwY",
+        "button_M8BAyR"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_DBkXF7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GtgCfx": {
+          "type": "heading",
+          "settings": {
+            "heading": "How AirVape Dropshipping Works",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_UBHr7r": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape dropshipping allows approved partners to promote and sell selected products without stocking inventory themselves.</p><p>Once you receive an order from your customer, you submit the order details to our team for fulfillment. We then process, pack, and ship the order directly to the end customer on your behalf.</p><p>This model helps approved partners expand product offerings while reducing inventory risk and operational overhead.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GtgCfx",
+        "text_UBHr7r"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_GQRktq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nW8erU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dropshipping Process",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_jtraKy": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>1. Partner Approval</strong></h3><p>Your business is reviewed and approved for the AirVape dropshipping program.</p><h3><strong>2. Product Listing</strong></h3><p>Approved products are listed on your website, store, marketplace, or other approved sales channels.</p><h3><strong>3. Customer Order Received</strong></h3><p>You collect the customer order and payment through your own platform.</p><h3><strong>4. Order Submission</strong></h3><p>You submit the complete paid order details, including accurate shipping information, to our team for fulfillment.</p><h3><strong>5. Order Processing and Dispatch</strong></h3><p>After order confirmation and acceptance by our team, we process, pack, and dispatch the order.</p><h3><strong>6. Tracking Shared</strong></h3><p>Tracking information is shared after shipment so you can update your customer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nW8erU",
+        "text_jtraKy"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_4T4naT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3GAQgG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order Flow From Placement to Fulfillment",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_RGxFxm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The partner is responsible for collecting the end-customer order and payment through their own sales channel.</p><p>After receiving the order, the partner submits the complete order details to us. Fulfillment begins only after:</p><ul><li>Order confirmation</li><li>Order acceptance by our team</li><li>Product availability verification</li></ul><p>Once approved, we process, pack, and dispatch the order directly to the customer on the partner’s behalf.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3GAQgG",
+        "text_RGxFxm"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_TWzcNm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HVYaU4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Partner With AirVape for Dropshipping?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_nxG8Xh": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>No Need to Hold Inventory</strong></h3><p>Approved partners can sell AirVape products without purchasing and storing stock in advance.</p><h3><strong>Direct Fulfillment</strong></h3><p>We handle order processing, packing, and shipping directly to the end customer after order approval.</p><h3><strong>Product Expansion</strong></h3><p>Dropshipping makes it easier for partners to expand their product range without increasing warehousing complexity.</p><h3><strong>Flexible Selling Channels</strong></h3><p>Approved partners may market and sell AirVape products through their own approved sales channels, subject to reseller terms and policy compliance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HVYaU4",
+        "text_nxG8Xh"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_XXknih": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Uz4VzV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shipping Information",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_B8XpxF": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Shipping Times</strong></h3><p>Shipping timelines vary based on:</p><ul><li>Stock availability</li><li>Order volume</li><li>Destination country</li><li>Courier service</li><li>Customs procedures</li></ul><p>Processing and transit times are <strong>estimates only</strong> and are <strong>not guaranteed unless agreed in writing</strong>.</p><h3><strong>Shipping Regions</strong></h3><p>We ship to selected domestic and international regions where courier service is available.</p><p>Some destinations may be restricted due to:</p><ul><li>Shipping limitations</li><li>Customs regulations</li><li>Commercial policy</li><li>Product restrictions in certain markets</li></ul><p>Exact shipping availability can be confirmed based on the destination and order details.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Uz4VzV",
+        "text_B8XpxF"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_YJt99F": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XaicCk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Returns and Refunds",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_ccdBni": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Returns and refunds for dropshipping orders are handled according to our approved return policy.</p><p>Claims for <strong>damaged, defective, or incorrect items</strong> must be reported within the approved claim period and must include <strong>photo or video evidence</strong> for review.</p><p>No return, refund, or replacement will be processed without prior approval.</p><h3><strong>Return Restrictions</strong></h3><p>Not all returns are accepted.</p><p>The following may be rejected:</p><ul><li>Unauthorized returns</li><li>Used items</li><li>Customer-damaged items</li><li>Claims submitted outside the approved reporting period</li></ul><p>Refund or replacement approval remains subject to inspection and policy compliance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XaicCk",
+        "text_ccdBni"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_m6htjw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MCAkLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who Can Apply?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_zR7Bpy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape dropshipping is available for <strong>approved business partners only</strong>.</p><p>Applications may be considered from qualified:</p><ul><li>Online stores</li><li>Resellers</li><li>Marketplace sellers</li><li>Distributors</li><li>Other business partners with relevant sales channels</li></ul><p>Approval depends on business review, product fit, sales channel suitability, and compliance with reseller terms.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MCAkLH",
+        "text_zR7Bpy"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_y8CwFN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PAVzYY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Important Program Conditions",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_idqAmN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To maintain a reliable and compliant dropshipping partnership, approved partners must:</p><ul><li>Market products professionally and Accurately</li><li>Follow reseller terms and brand Requirements</li><li>Submit complete and correct order details</li><li>Avoid misleading claims or unauthorized product representation</li><li>Comply with destination market rules and platform policies</li></ul><p>Dropshipping services remain subject to account status, product availability, and operational approval.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PAVzYY",
+        "text_idqAmN"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_KqX8Ez": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3gafGj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Become an AirVape Dropshipping Partner",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_TaRLT6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you are looking to sell AirVape products without holding inventory, our dropshipping program offers a practical way to grow through a fulfillment-supported partnership.</p><p>Submit your application to be reviewed as an approved business partner and explore whether AirVape dropshipping is the right fit for your sales model.</p>"
+          }
+        },
+        "button_j8pHmr": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"2hYTel6_YFW8geyn4J9Yxg\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Dropshipping",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3gafGj",
+        "text_TaRLT6",
+        "button_j8pHmr"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "faq_accordion_i7RJpN": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faqs_n8TCkT": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Do you officially support dropshipping?",
+            "answer": "<p>Yes. We officially support dropshipping for <strong>approved business partners only</strong>. Dropshipping services are available subject to account approval, product availability, and compliance with our reseller terms.</p>"
+          }
+        },
+        "faqs_8HWjiT": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "How does the dropshipping service work?",
+            "answer": "<p>Approved partners may market and sell our products through their own sales channels. Once an end-customer order is received, the partner submits the order details to us for fulfillment. We ship directly to the end customer on the partner’s behalf.</p>"
+          }
+        },
+        "faqs_HNbAtn": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What is the dropshipping process?",
+            "answer": "<p>The process works as follows:</p><ul><li>Partner approval is completed</li><li>Approved products are listed by the partner</li><li>The partner submits paid customer orders to us</li><li>We process and dispatch the order</li><li>Tracking information is shared after shipment</li></ul>"
+          }
+        },
+        "faqs_X7dcTz": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "How does the order process flow, from placement to fulfillment?",
+            "answer": "<p>The partner is responsible for collecting the customer order and payment through their own platform. After receiving the order, the partner submits complete shipping details to us. We then process, pack, and dispatch the order. Fulfillment begins only after order confirmation and acceptance by our team.</p>"
+          }
+        },
+        "faqs_ieJMMH": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What are the shipping times for dropshipping orders?",
+            "answer": "<p>Shipping timelines vary based on stock availability, order volume, destination country, courier service, and customs procedures. Processing and transit times are estimates only and are not guaranteed unless agreed in writing.</p>"
+          }
+        },
+        "faqs_EzqiUU": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Which regions do you ship to?",
+            "answer": "<p>We ship to selected domestic and international regions where courier service is available. Some destinations may be restricted due to shipping limitations, customs regulations, or commercial policy.</p>"
+          }
+        },
+        "faqs_iWzmgj": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "How are returns and refunds handled for dropshipping orders?",
+            "answer": "<p>Returns and refunds are handled according to our approved return policy. Claims for damaged, defective, or incorrect items must be reported within the stated claim period with photo or video evidence. No return, refund, or replacement will be processed without prior approval.</p>"
+          }
+        },
+        "faqs_4PeryU": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Are all returns accepted?",
+            "answer": "<p>No. Unauthorized returns, used items, customer-damaged items, and claims made outside the approved reporting period may be rejected. Refund approval remains subject to inspection and policy compliance.</p>"
+          }
+        },
+        "faqs_47Dwfc": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Ready to Start Dropshipping With AirVape?",
+            "answer": "<p>Apply to become an approved dropshipping partner and explore a fulfillment-supported way to sell AirVape products through your own sales channels.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_n8TCkT",
+        "faqs_8HWjiT",
+        "faqs_HNbAtn",
+        "faqs_X7dcTz",
+        "faqs_ieJMMH",
+        "faqs_EzqiUU",
+        "faqs_iWzmgj",
+        "faqs_4PeryU",
+        "faqs_47Dwfc"
+      ],
+      "name": "Page FAQs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_alignment": "mx-auto",
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQs",
+        "heading_size": "h3",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "h2",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_qET34h": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_gWcwiD",
+    "main",
+    "rich_text_aW93VX",
+    "rich_text_DBkXF7",
+    "rich_text_GQRktq",
+    "rich_text_4T4naT",
+    "rich_text_TWzcNm",
+    "rich_text_XXknih",
+    "rich_text_YJt99F",
+    "rich_text_m6htjw",
+    "rich_text_y8CwFN",
+    "rich_text_KqX8Ez",
+    "faq_accordion_i7RJpN",
+    "featured_collection_qET34h"
+  ]
+}

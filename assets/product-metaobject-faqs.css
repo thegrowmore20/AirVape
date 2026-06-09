@@ -1,0 +1,138 @@
+.product-faqs-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.metaobject-accordion {
+  cursor: pointer;
+  font-size: calc(var(--size-text-base) + 2px);
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  font-weight: 600;
+  background-color: transparent;
+  border-bottom: 1px solid #8080803d;
+  color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.meta-main-heading {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.metaobject-accordion:after {
+  font-weight: 700;
+  float: right;
+  margin-left: 5px;
+  transform: rotate(90deg);
+  transition: transform .3s ease;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3px;
+}
+
+.metaobject-accordion svg {
+    min-height: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    max-width: 30px;
+    border-radius: 50%;
+    transform: rotate(90deg);
+    transition: transform .2s;
+    background-color: #e0e2e3;
+    padding: 8px;
+}
+
+.metaobject-active svg {
+  transform: rotate(270deg);
+}
+
+.metaobject-panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  line-height: 22px;
+  transition: max-height 0.2s ease-out;
+  text-align: left;
+}
+
+.metaobject-panel .metaobject-paneel-inner {
+    margin: 16px 0;
+}
+
+@media (max-width: 769px) {
+  .product-faqs-wrapper {
+    margin-bottom: 0;
+  }
+  .product-faqs-items button.metaobject-accordion:first-child {
+    padding-top: 0;
+    }
+    .faq-section-container {
+        padding-top: 24px;
+    }
+}
+
+@media screen and (max-width: 480px){
+  .metaobject-accordion {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+  }
+
+  .metaobject-accordion:after {
+    margin-left: 0;
+    margin-top: -17px;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    height: 24px;
+    width: 24px;
+    transform: rotate(90deg);
+    }
+  
+  .metaobject-active::after {
+    transform: rotate(270deg);
+  }
+  
+  
+  .meta-main-heading{
+    margin-top: unset;
+  }
+  .metaobject-panel{
+    padding: 0;
+  }
+  
+  .meta-main-heading{
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+  
+  .metaobject-panel .metafield-rich_text_field p,
+  .metaobject-panel {
+    font-size: 14px;
+  }
+  
+  .metaobject-panel .metafield-rich_text_field p{
+    margin-bottom: 0px;
+  }
+  
+
+  .metaobject-accordion svg {
+    min-height: 25px;
+    min-width: 25px;
+    max-height: 25px;
+    max-width: 25px;
+    padding: 6px;
+}
+
+}

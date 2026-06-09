@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "video_with_text_overlay_bwPaLe": {
+      "type": "video-with-text-overlay",
+      "name": "t:sections.video-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": true,
+        "video": "shopify://files/videos/Finalk_no_smoke0.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_alignment": "md:content-bottom-center",
+        "content_alignment_mobile": "content-bottom-center",
+        "link": "",
+        "min_height": 500,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "rich_text_xDLHUR": {
+      "type": "rich-text",
+      "blocks": {
+        "button_RnmY8n": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Back to Home",
+            "button_link": "https://airvapeusa.com",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "button_YhBxPC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Explore Pro2",
+            "button_link": "shopify://products/legacy-pro-2",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_RnmY8n",
+        "button_YhBxPC"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_QDBdG7": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_with_text_overlay_bwPaLe",
+    "rich_text_xDLHUR",
+    "featured_collection_QDBdG7"
+  ]
+}

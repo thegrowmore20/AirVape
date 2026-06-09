@@ -1,0 +1,529 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "media_grid_6UkQpc": {
+      "type": "media-grid",
+      "blocks": {
+        "card_gQD6CU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-01.png",
+            "overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h3",
+            "content": "",
+            "button_text": "GRAB DEAL",
+            "button_url": "",
+            "button_style": "button-outline",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#ffffff",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_LJJngB": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-04.png",
+            "overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h3",
+            "content": "",
+            "button_text": "GRAB DEAL",
+            "button_url": "",
+            "button_style": "button-outline",
+            "content_alignment": "md:content-bottom-right",
+            "content_alignment_mobile": "content-bottom-right",
+            "background_color": "#444444",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_yFFjGX": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-03.png",
+            "overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h3",
+            "content": "",
+            "button_text": "GRAB DEAL",
+            "button_url": "",
+            "button_style": "button-outline",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#444444",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_PM96JY": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-02.png",
+            "overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h3",
+            "content": "",
+            "button_text": "GRAB DEAL",
+            "button_url": "",
+            "button_style": "button-outline",
+            "content_alignment": "md:content-bottom-right",
+            "content_alignment_mobile": "content-bottom-right",
+            "background_color": "#444444",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "card_gQD6CU",
+        "card_LJJngB",
+        "card_yFFjGX",
+        "card_PM96JY"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "layout": "1",
+        "row_height": 540,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#d68631",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "image_with_text_YRVQ8G": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_KcJrKA": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "GRAB DEAL",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-base md:text-lg",
+            "button_background_color": "#262626",
+            "button_text_color": "#d68631"
+          }
+        }
+      },
+      "block_order": [
+        "button_KcJrKA"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": true,
+        "image": "shopify://shop_images/Black_friday_offers-01.png",
+        "image_size": "media--ratio-1-1",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "#d68631",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_QHNcVR": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_CgpjXz": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "GRAB DEAL",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-base md:text-lg",
+            "button_background_color": "#262626",
+            "button_text_color": "#d68631"
+          }
+        }
+      },
+      "block_order": [
+        "button_CgpjXz"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": true,
+        "image": "shopify://shop_images/Black_friday_offers-04.png",
+        "image_size": "media--ratio-1-1",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "#d68631",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_erU4Az": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_dJfXxw": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "GRAB DEAL",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-base md:text-lg",
+            "button_background_color": "#262626",
+            "button_text_color": "#d68631"
+          }
+        }
+      },
+      "block_order": [
+        "button_dJfXxw"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": true,
+        "image": "shopify://shop_images/Black_friday_offers-03.png",
+        "image_size": "media--ratio-1-1",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "#d68631",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_6jMw89": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_Xhtc9b": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "GRAB DEAL",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-base md:text-lg",
+            "button_background_color": "#262626",
+            "button_text_color": "#d68631"
+          }
+        }
+      },
+      "block_order": [
+        "button_Xhtc9b"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": true,
+        "image": "shopify://shop_images/Black_friday_offers-02.png",
+        "image_size": "media--ratio-1-1",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "#d68631",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_arcR3R": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_UT9MAA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-01.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Discount code: <strong>BF2024PRO</strong> will be added automatically at checkout</h5>",
+            "link_url": "https://airvapeusa.com/discount/BF2024PRO?redirect=%2Fproducts%2Fairvape-legacy-pro",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_JidBkW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-04.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h6>Discount code: <strong>BF2024ENSO</strong> will be added automatically at checkout</h6>",
+            "link_url": "https://airvapeusa.com/discount/BF2024ENSO?redirect=%2Fproducts%2Fenso",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_dA9Lq9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-03.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h6>Discount code: <strong>BF2024AVX</strong> will be added automatically at checkout</h6>",
+            "link_url": "https://airvapeusa.com/discount/BF2024AVX?redirect=%2Fproducts%2Fairvape-x",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_86Cmij": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Black_friday_offers-02.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h6>Discount code: <strong>BF2024OM</strong> will be added automatically at checkout</h6>",
+            "link_url": "https://airvapeusa.com/discount/BF2024OM?redirect=%2Fproducts%2Fa",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_UT9MAA",
+        "column_JidBkW",
+        "column_dA9Lq9",
+        "column_86Cmij"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 3,
+        "space_between_columns": 16,
+        "image_width": 100,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "multicolumn_LGxKBc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4XtJWp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_BF25-01.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Get  <strong>$50 OFF</strong> the <strong>Legacy PRO 2 </strong>with the Code: <br/><strong>LP2FRIDAY25</strong></h5>",
+            "link_url": "https://airvapeusa.com/discount/LP2FRIDAY25?redirect=%2Fproducts%2Flegacy-pro-2",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_cfRbA9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_BF25-02.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Get  <strong>$90 OFF</strong> the<strong> Legacy PRO 2 Bundle</strong> with the Code: <strong>LP2BUNDLE25</strong></h5>",
+            "link_url": "https://airvapeusa.com/discount/LP2BUNDLE25?redirect=%2Fproducts%2Flegacy-pro2-bundle",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_tFabNL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_BF25-03.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Get  <strong>50% OFF the Legacy PRO 2 Accessory Bundle</strong> with the Code: <strong>ACCBUNDLE25</strong></h5>",
+            "link_url": "https://airvapeusa.com/discount/ACCBUNDLE25?redirect=%2Fproducts%2Flegacy-pro-2-accessory-bundle",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_nbfFV3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_BF25-04.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Get  <strong>20% OFF AirVape X Royal, XS GO, and OM </strong>with the Code: <strong>VAPEFRIDAY25</strong></h5>",
+            "link_url": "https://airvapeusa.com/discount/VAPEFRIDAY25?redirect=%2Fcollections%2Fblack-friday-25",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_XKFHCK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_BF25-05.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>NEW Price Drop: Grab the<strong> AirVape X Black and Blue<br/> NOW for ONLY $85</strong></h5>",
+            "link_url": "shopify://products/airvape-x",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_ERJfHD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AV_BF25-06.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Get  <strong>$70 OFF the ENSŌ</strong> with the Code: <br/><strong>ENSOBF25</strong></h5>",
+            "link_url": "https://airvapeusa.com/discount/ENSOBF25?redirect=%2Fproducts%2Fenso",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_4XtJWp",
+        "column_cfRbA9",
+        "column_tFabNL",
+        "column_nbfFV3",
+        "column_XKFHCK",
+        "column_ERJfHD"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 3,
+        "space_between_columns": 16,
+        "image_width": 100,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_xNiqjh": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "media_grid_6UkQpc",
+    "image_with_text_YRVQ8G",
+    "image_with_text_QHNcVR",
+    "image_with_text_erU4Az",
+    "image_with_text_6jMw89",
+    "multicolumn_arcR3R",
+    "multicolumn_LGxKBc",
+    "featured_collection_xNiqjh"
+  ]
+}

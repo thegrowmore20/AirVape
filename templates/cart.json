@@ -1,0 +1,106 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-cart": {
+      "type": "main-cart",
+      "blocks": {
+        "4b0e6fb0-d2b1-4aaf-b9a4-874fe9b01a56": {
+          "type": "heading",
+          "settings": {
+            "heading": "Summary",
+            "heading_size": "h4"
+          }
+        },
+        "76f0998a-7fb2-4f09-82b1-e872d2b6a878": {
+          "type": "free_shipping_bar",
+          "settings": {}
+        },
+        "f9be1730-8650-49f1-9b01-f29726e91d5e": {
+          "type": "totals",
+          "settings": {
+            "show_shipping_taxes_message": true,
+            "show_order_weight": false
+          }
+        },
+        "1aefc2c3-1341-4830-b785-f60c4e04ac07": {
+          "type": "shipping_estimator",
+          "settings": {}
+        },
+        "43802bd7-5fb9-4cc4-9984-1b388883bf3f": {
+          "type": "cart_note",
+          "settings": {}
+        },
+        "e0dc43fd-ae20-4b7d-a8bb-39017f8ffccd": {
+          "type": "checkout_button",
+          "settings": {
+            "show_dynamic_checkout_buttons": true,
+            "button_style": "",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "4b0e6fb0-d2b1-4aaf-b9a4-874fe9b01a56",
+        "76f0998a-7fb2-4f09-82b1-e872d2b6a878",
+        "f9be1730-8650-49f1-9b01-f29726e91d5e",
+        "1aefc2c3-1341-4830-b785-f60c4e04ac07",
+        "43802bd7-5fb9-4cc4-9984-1b388883bf3f",
+        "e0dc43fd-ae20-4b7d-a8bb-39017f8ffccd"
+      ],
+      "settings": {
+        "show_vendor": true,
+        "text_alignment": "text-center",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "",
+        "heading_color": "",
+        "summary_background_color": "rgba(0,0,0,0)",
+        "summary_text_color": "",
+        "summary_heading_color": ""
+      }
+    },
+    "featured_collection_Rb3dRa": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main-cart",
+    "featured_collection_Rb3dRa"
+  ]
+}

@@ -1,0 +1,440 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_liquid_KEJpp8": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": true,
+        "remove_vertical_space": true,
+        "custom_liquid": "<style>\n@import url(\"https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800;900&display=swap\");.upgrade-page{background:#151f23 url(\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-circle-bg.svg\") center center;background-attachment:fixed;min-height:100vh;position:relative;overflow:hidden;padding:30px 0 100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.upgrade-page h4{text-align:center;font-size:20px;color:#fff;margin-top:30px}.upgrade-page #close{position:absolute;top:20px;right:20px;cursor:pointer;color:#000;font-size:25px;background:#fff;border-radius:100%;padding:10px;font-weight:bold}.upgrade-page .product-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100vh;-webkit-transition:all 0.7s ease-in;transition:all 0.7s ease-in;position:relative}@media screen and (min-width: 778px){.upgrade-page .product-container{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}}.upgrade-page .product-container.is-open{margin-right:50%}@media screen and (min-width: 778px){.upgrade-page .product-container.is-open{-webkit-transform:rotate(-10deg);transform:rotate(-10deg);margin-top:-100px;margin-right:0;margin-bottom:50px}}.upgrade-page .product-container.is-open .item .dot{opacity:1}.upgrade-page .product-container.is-open .item .dot::after{height:190px}@media screen and (min-width: 778px){.upgrade-page .product-container.is-open .item .dot::after{height:2px;width:250px}}.upgrade-page .product-container.is-open .item .content-container{opacity:1}.upgrade-page .product-container.is-open .item.first .dot,.upgrade-page .product-container.is-open .item.first .content-container{-webkit-transition:all 0.7s ease-in;transition:all 0.7s ease-in}.upgrade-page .product-container.is-open .item.first .dot::after,.upgrade-page .product-container.is-open .item.first .content-container::after{-webkit-transition:all 0.7s ease-in 0.7s;transition:all 0.7s ease-in 0.7s}.upgrade-page .product-container.is-open .item.second .dot,.upgrade-page .product-container.is-open .item.second .content-container{-webkit-transition:all 0.7s ease-in 0.7s;transition:all 0.7s ease-in 0.7s}.upgrade-page .product-container.is-open .item.second .dot::after,.upgrade-page .product-container.is-open .item.second .content-container::after{-webkit-transition:all 0.7s ease-in 1.4s;transition:all 0.7s ease-in 1.4s}.upgrade-page .product-container.is-open .item.third .dot,.upgrade-page .product-container.is-open .item.third .content-container{-webkit-transition:all 0.7s ease-in 1.4s;transition:all 0.7s ease-in 1.4s}.upgrade-page .product-container.is-open .item.third .dot::after,.upgrade-page .product-container.is-open .item.third .content-container::after{-webkit-transition:all 0.7s ease-in 2.1s;transition:all 0.7s ease-in 2.1s}.upgrade-page .product-container.is-open .item.forth .dot,.upgrade-page .product-container.is-open .item.forth .content-container{-webkit-transition:all 0.7s ease-in 2.1s;transition:all 0.7s ease-in 2.1s}.upgrade-page .product-container.is-open .item.forth .dot::after,.upgrade-page .product-container.is-open .item.forth .content-container::after{-webkit-transition:all 0.7s ease-in 2.8s;transition:all 0.7s ease-in 2.8s}.upgrade-page .product-container .item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:20px 0;cursor:pointer}@media screen and (min-width: 778px){.upgrade-page .product-container .item{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}.upgrade-page .product-container .item .dot,.upgrade-page .product-container .item .content-container{-webkit-transition:none;transition:none}.upgrade-page .product-container .item .dot::after,.upgrade-page .product-container .item .content-container::after{-webkit-transition:none;transition:none}.upgrade-page .product-container .item:first-child{margin-top:0}.upgrade-page .product-container .item .dot{width:25px;height:25px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border:2px solid #fff;border-radius:100%;position:absolute;right:-15vw;background:#151f23;opacity:0;z-index:2}@media screen and (min-width: 778px){.upgrade-page .product-container .item .dot{right:auto;bottom:20%}}.upgrade-page .product-container .item .dot::before{content:\"\";background:#fff;display:block;width:15px;height:15px;border-radius:100%}.upgrade-page .product-container .item .dot::after{content:\"\";background:#fff;width:2px;height:0;position:absolute;bottom:0;z-index:1}@media screen and (min-width: 778px){.upgrade-page .product-container .item .dot::after{bottom:40%;-webkit-transform:translateY(-50%);transform:translateY(-50%);left:0}}.upgrade-page .product-container .item .dot.no-line::after{content:none}.upgrade-page .product-container .item .content-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:absolute;right:-50vw;opacity:0}@media screen and (min-width: 778px){.upgrade-page .product-container .item .content-container{position:relative;right:auto}}.upgrade-page .product-container .item .content-container .name{background:#0f1619;color:#fff;font-size:20px;display:block;padding:5px 10px;min-width:100px;text-align:center;margin-bottom:15px}.upgrade-page .product-container .item .content-container .off{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#2a3e46;opacity:0.8;font-size:35px;text-align:right;font-weight:900;line-height:0.8}@media screen and (min-width: 778px){.upgrade-page .product-container .item .content-container .off{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;text-align:left}}.upgrade-page .product-container .item .content-container .off .detail{font-size:25px}@media screen and (min-width: 778px){.upgrade-page .product-container .item .content-container .off .detail{margin-left:5px}}.upgrade-page .product-container .item img{width:150px}@media screen and (min-width: 778px){.upgrade-page .product-container .item img{width:250px}}.upgrade-page .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:fixed;bottom:10px;right:15px}@media (min-width: 778px){.upgrade-page .buttons{bottom:30px;right:30px}}.upgrade-page .buttons a{background:#0f1619;color:#fff;font-size:25px;padding:10px;text-align:center;width:80px;height:80px;text-decoration:none;margin:5px 0;border-radius:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@media (max-width: 778px){.upgrade-page .buttons a{height:60px;width:60px}}.upgrade-page .buttons a span{font-size:20px}@media (max-width: 778px){.upgrade-page .buttons a span{font-size:15px}}.upgrade-page .buttons a img{width:100%}\n/*# sourceMappingURL=style.min.css.map */\n</style>\n\n<div class=\"upgrade-page\">\n    <h4>Choose the AirVape you own</h4>\n    <span id=\"close\" style=\"display: none;\">X</span>\n    <div class=\"product-container\">\n        <div class=\"item forth\" data-id=\"pro\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/LPROboth.png\" alt=\"\">\n            <span class=\"dot no-line\"></span>\n            <div class=\"content-container\">\n                <span class=\"name\">Legacy PRO or SP Edition</span>\n                <span class=\"off\">30%<br> OFF</span>\n            </div>\n        </div>\n        <div class=\"item third\" data-id=\"legacy\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/Legacy-manual-pic.png\" alt=\"\">\n            <span class=\"dot\"></span>\n            <div class=\"content-container\">\n                <span class=\"name\">Legacy</span>\n                <span class=\"off\">30%<br> OFF</span>\n            </div>\n        </div>\n        <div class=\"item second\" data-id=\"x\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/AVX2.png\" alt=\"\">\n            <span class=\"dot\"></span>\n            <div class=\"content-container\">\n                <span class=\"name\">AirVape X</span>\n                <span class=\"off\">50%<br> OFF</span>\n            </div>\n        </div>\n        <div class=\"item first\" data-id=\"go\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/XSgo.png\" alt=\"\">\n            <span class=\"dot\"></span>\n            <div class=\"content-container\">\n                <span class=\"name\">XS Go</span>\n                <span class=\"off\"></span>\n            </div>\n        </div>\n    </div>\n    <div class=\"buttons\">\n        <a href=\"https://airvapeusa.com/pages/upgrade-form/\">\n            <!--<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-upgrade.svg\" alt=\"\" />-->\n            <span>Apply</span>\n        </a>\n        <a href=\"https://airvapeusa.com/pages/upgrade-info\">\n            <span>More info</span>\n        </a>\n    </div>\n</div>\n<script>\n    const state = {\n        selectedItem: null,\n        pro: {\n            off: '50%<br>OFF<span class=\"detail\"></span>'\n        },\n        legacy: {\n            off: '30%<br>OFF',\n        },\n        x: {\n            off: '50%<br>OFF',\n        },\n        go: {\n            off: '',\n        },\n    };\n\n    document.querySelectorAll('.item').forEach((item) => {\n        item.addEventListener('click', function () {\n            state.selectedItem = item.getAttribute('data-id');\n\n            if (state.selectedItem === 'pro') {\n                return;\n            }\n\n            document.querySelector('.product-container').classList.add('is-open');\n\n            switch (state.selectedItem) {\n                case 'go':\n                    state.x.off = '50%<br>OFF';\n                    state.legacy.off = '30%<br>OFF';\n                    state.pro.off = '30%<br>OFF';\n                    state.go.off = '';\n                    break;\n                case 'x':\n                    state.legacy.off = '50%<br>OFF';\n                    state.pro.off = '50%<br>OFF';\n                    state.x.off = '';\n                    state.go.off = 'no';\n                    break;\n                case 'legacy':\n                    state.pro.off = '50%<br>OFF<span class=\"detail\"></span>';\n                    state.legacy.off = '';\n                    state.x.off = 'no';\n                    state.go.off = 'no';\n                    break;\n            }\n\n            render();\n        });\n    });\n\n    document.getElementById('close').addEventListener('click', () => {\n        document.querySelector('.product-container').classList.remove('is-open');\n\n        state.selectedItem = null;\n\n        render();\n    });\n\n    function render() {\n        const items = document.querySelectorAll('.item');\n\n        items.forEach(item => item.style.display = 'flex');\n\n        items.forEach((item) => {\n            const id = item.getAttribute('data-id');\n            item.querySelector('.off').innerHTML = state[id].off;\n        });\n\n        if (state.selectedItem == null) {\n            items.forEach(item => item.style.display = 'flex');\n            document.getElementById('close').style.display = 'none';\n            return;\n        }\n\n        document.getElementById('close').style.display = 'block';\n\n        for (item in state) {\n            if (item == 'selectedItem') {\n                continue;\n            }\n\n            if (state[item].off === 'no') {\n                document.querySelector('.item[data-id=' + item + ']').style.display = 'none';\n            } else {\n                document.querySelector('.item[data-id=' + item + ']').style.display = 'flex';\n            }\n        }\n    }\n</script>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "image_with_text_overlay_BUiHBn": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_8x6kFm": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_yD4Apb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Boost every session, Upgrade your flow — better hits, better vibes</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8x6kFm",
+        "text_yD4Apb"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Upgrade_Program_1.webp",
+        "image_mobile": "shopify://shop_images/Upgrade_Program_Mob_1.webp",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "rich_text_4ihiVB": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_xCKnni": {
+          "type": "subheading",
+          "settings": {
+            "text": "Airvape"
+          }
+        },
+        "heading_RiQnVC": {
+          "type": "heading",
+          "settings": {
+            "heading": "UpGrade Program",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_9KktFE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Own an AirVape already? Your next upgrade comes with an exclusive discount.</p><p>The <strong>AirVape Upgrade Program</strong> lets current AirVape owners move into a newer device at a reduced price, with savings ranging from <strong>10% to 30% OFF</strong> depending on the models involved.</p><p>As we continue to push vaporizer design forward, this program makes it easier to upgrade into the latest AirVape experience without paying full price.</p><p>Please note: this offer is available only for <strong>eligible dry herb vaporizers</strong> and does not apply to <strong>oil or concentrate devices</strong>, <strong>accessories</strong>, or other excluded products.</p>"
+          }
+        },
+        "button_MxJMwd": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"aZnhGjcI6jVLLhlj-HA3_Q\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Upgrade",
+            "button_link": "shopify://pages/upgrade-form",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xCKnni",
+        "heading_RiQnVC",
+        "text_9KktFE",
+        "button_MxJMwd"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_nHXRKb": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_hYjxGV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/up3-01.png",
+            "video_autoplay": true,
+            "heading": "UpGrade from",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "",
+            "link_text": "XS GO",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_hry9QC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/up3-02.png",
+            "video_autoplay": true,
+            "heading": "Column title",
+            "heading_size": "h5",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_9ryyaM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/up3-03.png",
+            "video_autoplay": true,
+            "heading": "Column title",
+            "heading_size": "h5",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_hpwPFE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/up3-04.png",
+            "video_autoplay": true,
+            "heading": "Column title",
+            "heading_size": "h5",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_hYjxGV",
+        "column_hry9QC",
+        "column_9ryyaM",
+        "column_hpwPFE"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": true,
+        "number_of_columns_on_desktop": 2,
+        "space_between_columns": 16,
+        "image_width": 60,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "Upgrade Program",
+        "heading_size": "h2",
+        "content": "<p>The UpGrade Program was created in order to allow users who already own an AirVape device to buy their next one at a fraction of the retail price. Since we are continuously improving upon our products and releasing new models we want to make it far easier for customers to get a more advanced vaporizer, this means that every time you want to buy a higher-grade vape. You receive a 30% to 50% discount depending on the device you already own and the device you wish to have. The UpGrade program is available only for dry herb vaporizers and cannot be used for Oil/Concentrate vapes or accessories.<br/><br/>Choose the device you want to UpGrade from:</p>",
+        "text_alignment": "text-left",
+        "background_color": "#151f23",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "heading_html_tag": "p"
+      }
+    },
+    "collapsible_content_4WWmL6": {
+      "type": "collapsible-content",
+      "blocks": {
+        "block_U6nRFd": {
+          "type": "block",
+          "settings": {
+            "title": "UpGrade from XS GO",
+            "content": "<ul><li>UpGrade to AirVape X at 30% OFF</li><li>UpGrade to Legacy PRO2 or CORE at 30% OFF</li><li>UpGrade to ENSŌ at 30% OFF</li></ul>",
+            "content_from_page": "",
+            "open": true,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_cKNqKJ": {
+          "type": "block",
+          "settings": {
+            "title": "UpGrade from AirVape X",
+            "content": "<ul><li>UpGrade to Legacy PRO2 at 30% OFF</li><li>UpGrade to ENSŌ or Legacy CORE at 30% OFF</li></ul>",
+            "content_from_page": "",
+            "open": true,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_Mc3WRt": {
+          "type": "block",
+          "settings": {
+            "title": "UpGrade from Legacy CORE",
+            "content": "<ul><li>UpGrade to Legacy PRO2 at 30% OFF</li><li>UpGrade to ENSŌ at 30% OFF</li></ul>",
+            "content_from_page": "",
+            "open": true,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_MBtemP": {
+          "type": "block",
+          "settings": {
+            "title": "UpGrade from Legacy PRO or PRO2",
+            "content": "<p>UpGrade to ENSŌ at 30% OFF</p>",
+            "content_from_page": "",
+            "open": true,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_XY8fLV": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "title": "UpGrade from Legacy PRO",
+            "content": "<p>UpGrade to AirVape ENSŌ at 50% OFF</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "block_U6nRFd",
+        "block_cKNqKJ",
+        "block_Mc3WRt",
+        "block_MBtemP",
+        "block_XY8fLV"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "heading": "How it Works",
+        "content": "<p>Choose the device you currently own and see which upgrade path is available to you.</p>",
+        "heading_size": "h3",
+        "text_position": "center",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "heading_color": "#000000",
+        "accordion_background_color": "#ffffff",
+        "accordion_title_color": "#000000",
+        "accordion_text_color": "#000000",
+        "heading_html_tag": "h2"
+      }
+    },
+    "image_with_text_X7eAwf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Yacpdb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay up to date",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_pUPRcq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Stay connected to the AirVape ecosystem and enjoy access to newer technology, upgraded performance, and better sessions, All while keeping your budget intact.</p>"
+          }
+        },
+        "button_BcahKm": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"aZnhGjcI6jVLLhlj-HA3_Q\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for UpGrade",
+            "button_link": "shopify://pages/upgrade-form",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Yacpdb",
+        "text_pUPRcq",
+        "button_BcahKm"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Upgrade_image_tech-01.png",
+        "image_size": "media--ratio-4-3",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "heading_color": "#000000"
+      }
+    },
+    "video_with_text_overlay_ETerFf": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "subheading_mxYrAi": {
+          "type": "subheading",
+          "settings": {
+            "text": "airvape"
+          }
+        },
+        "heading_U97cAB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Keeps you UP to Date",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_KNipdg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With the latest technology and the most stylish vaporizers of the times.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_mxYrAi",
+        "heading_U97cAB",
+        "text_KNipdg"
+      ],
+      "settings": {
+        "custom_class": "video-text-overlay-section",
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "video": "shopify://files/videos/AV_allprod_sc.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "featured_collection_6tJefk": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_KEJpp8",
+    "image_with_text_overlay_BUiHBn",
+    "rich_text_4ihiVB",
+    "multicolumn_nHXRKb",
+    "collapsible_content_4WWmL6",
+    "image_with_text_X7eAwf",
+    "video_with_text_overlay_ETerFf",
+    "featured_collection_6tJefk"
+  ]
+}

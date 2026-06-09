@@ -1,0 +1,39 @@
+{% liquid
+  assign target = target | default: section
+
+  unless defaults == false
+    assign link = link | default: target.settings.button_link
+    assign style = style | default: target.settings.button_style
+    assign size = size | default: target.settings.button_size
+    assign text = text | default: target.settings.button_text
+    assign hulk_form_popup_class = hulk_form_popup_class | default: target.settings.hulk_form_popup_class
+    assign hulk_form_id_block = hulk_form_id_block | default: target.settings.hulk_form_id_block
+    assign background_color = background_color | default: target.settings.button_background_color
+    assign text_color = text_color | default: target.settings.button_text_color
+  endunless
+
+  assign tag = 'button'
+
+  
+  unless hulk_form_id_block != blank
+    if link != blank and section.settings.link == blank
+      assign tag = 'a'
+    endif
+  endunless
+%}
+
+<{{ tag }}
+  {% if link != blank %}
+    href="{{ link }}"
+    data-instant
+  {% endif %}
+  class="button {{ style }} {{ size }} {{ hulk_form_popup_class }}"
+  style="{% render 'button-vars', background: background_color, text: text_color %}"
+  {{ attrs }}
+>
+  {{ text }}
+</{{ tag }}>
+
+{% if hulk_form_id_block != blank %}
+{%  render 'hulk-form-custom-modal', hulk_form_id_block: hulk_form_id_block %}
+{% endif %}

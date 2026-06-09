@@ -1,0 +1,66 @@
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (!localStorage.getItem("over-21")) {
+    setTimeout(showAgePopup, 3000);
+  }
+
+  const europeUrl = "https://airvape.eu/";
+  const southAmericaUrl = "https://lojahigh420.com";
+  const islandsUrl = "https://vaporizerhut.co.uk/collections/airvape";
+  const israelUrl = "https://tevanature.com/product-category/%D7%90%D7%99%D7%99%D7%A8-%D7%95%D7%99%D7%99%D7%A4-airvape/";
+  const agePopupYes = document.getElementById("age-popup-yes");
+
+  agePopupYes?.addEventListener("click", function () {
+    if (document.querySelector('input[name="region"][value="europe"]').checked) {
+      window.location.href = europeUrl;
+      return;
+    }
+
+    if (document.querySelector('input[name="region"][value="south-america"]').checked) {
+      window.location.href = southAmericaUrl;
+      return;
+    }
+
+    if (document.querySelector('input[name="region"][value="channel-islands"]').checked) {
+      window.location.href = islandsUrl;
+      return;
+    }
+
+    if (document.querySelector('input[name="region"][value="israel"]').checked) {
+      window.location.href = israelUrl;
+      return;
+    }
+
+    // Default (USA) - stay on current site
+    removeAgePopup();
+  });
+
+  if(document.getElementById("age-popup-no")){
+    document.getElementById("age-popup-no").addEventListener("click", function () {
+      closeWindow();
+    });
+  }
+  
+
+  function showAgePopup() {
+    document.body.classList.add("age-popup-is-active");
+    if(document.querySelector(".age-popup")){
+    document.querySelector(".age-popup").classList.add("is-active");
+    }
+  }
+
+  function removeAgePopup() {
+    localStorage.setItem("over-21", "true");
+    document.body.classList.remove("age-popup-is-active");
+    if(document.querySelector(".age-popup")){
+      document.querySelector(".age-popup").classList.remove("is-active");
+    }
+  }
+
+  function closeWindow() {
+    // Most browsers won't allow "closing" a window you didn't open via script.
+    // Redirecting is the reliable option:
+    window.location.href = "https://google.com";
+  }
+});
+</script>

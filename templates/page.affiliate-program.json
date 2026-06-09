@@ -1,0 +1,769 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_47a9ak": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QenXTe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Becoming an affiliate partner with AirVape is a great way to make money by doing something you love",
+            "heading_size": "h3",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_rdx7f4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All you have to do is promote our products, get customers to purchase them,<br/>and earn a commission for each sale.</p>"
+          }
+        },
+        "button_Jab8Pp": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for US audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
+            "button_style": "button-outline",
+            "button_size": "text-base md:text-lg",
+            "button_background_color": "#000000",
+            "button_text_color": "#000000"
+          }
+        },
+        "button_ceiWh7": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "button-outline",
+            "button_size": "text-base md:text-lg",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "text_qANj9b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Earn up to 25% commission (based on performance) on all orders placed by customers coming from your link or banner ads.</p><p><strong>Our affiliate program is open to everyone -<br/>whether you're a blogger, a Youtuber, or an influencer, we'll provide all the tools and support you need to get started today.</strong></p>"
+          }
+        },
+        "text_KaWVVm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>No minimum requirement for how much you have to sell before you get paid</p><p>Automatic payout every month</p><p>30-day referral period</p>"
+          }
+        },
+        "heading_MAywhM": {
+          "type": "heading",
+          "settings": {
+            "heading": "GET STARTED TODAY",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QenXTe",
+        "text_rdx7f4",
+        "button_Jab8Pp",
+        "button_ceiWh7",
+        "text_qANj9b",
+        "text_KaWVVm",
+        "heading_MAywhM"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "#eaeaea",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_xBpPi8": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_3JimAL": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "01. Apply online",
+            "heading_size": "h5",
+            "content": "<p>Fill out our affiliate application<br/>it's free and<br/>only takes two minutes.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_wXDUqx": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "02. Place ads",
+            "heading_size": "h5",
+            "content": "<p>We provide you with beautifully designed<br/>marketing materials.<br/>OR<br/>make your own content! (review, blog article, social media post)</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_XPmMBi": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "03. Get paid",
+            "heading_size": "h5",
+            "content": "<p>Receive up to 25%<br/>commission on<br/>every sale you bring in!</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_3JimAL",
+        "column_wXDUqx",
+        "column_XPmMBi"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 3,
+        "space_between_columns": 48,
+        "image_width": 100,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "rich_text_LFVHht": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GCNpNB": {
+          "type": "heading",
+          "settings": {
+            "heading": "FAQ",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_Q7k3zW": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>How much can I make?</strong></p><p>Let's see an example*: If someone buys a Legacy PRO after using your link, you can make up to 67,25<br/>USD (269*0,25=67,25 USD)*-based on the best performers %</p><p><strong>How do I promote products?</strong></p><p>Blog about it, make a review (sample product available based on followers), post on Social Media,<br/>make a youtube video, any digital content can earn you money! The more you do, the more you earn!</p><p><strong>What do I need to do to start?</strong></p><p>Based on your audience demographic (location), sign up for one of our affiliate programs, get<br/>approved, and use your link to track sales.</p>"
+          }
+        },
+        "button_b4DWzy": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for US audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "button_e8XQrW": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_GCNpNB",
+        "text_Q7k3zW",
+        "button_b4DWzy",
+        "button_e8XQrW"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "large",
+        "background_color": "#eaeaea",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_TkNy8V": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_m9wJF6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Earn 10% Commission Promoting Premium Vaporizers",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_DCC7RM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Are you a creator, influencer, blogger, or affiliate marketer in the vape space? Join the AirVape Affiliate Program and earn <strong>10% commission on every qualifying sale</strong> you refer.</p><p>Your audience also gets <strong>10% off</strong>, making it easier to promote premium products while creating value for your community.</p><p>Our affiliate program runs through <strong>Shopify Collabs</strong>, giving approved partners a simple and transparent way to share AirVape and earn through performance-based referrals.</p>"
+          }
+        },
+        "button_jwBPkA": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Register on Collabs",
+            "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": ""
+          }
+        },
+        "spacer_GJTaeX": {
+          "type": "spacer",
+          "settings": {
+            "space": "p-0"
+          }
+        },
+        "button_HxEVkJ": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for US audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "button_kiWXaQ": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_m9wJF6",
+        "text_DCC7RM",
+        "button_jwBPkA",
+        "spacer_GJTaeX",
+        "button_HxEVkJ",
+        "button_kiWXaQ"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_XYX4XX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YqLJBM": {
+          "type": "heading",
+          "settings": {
+            "heading": "What We Offer",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_rm4HUW": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>10% Commission + 10% Off for Your Audience</strong></h3><p>Approved affiliates earn <strong>10% commission</strong> on qualifying referred sales, while their audience receives <strong>10% off</strong> through a unique referral link or discount code.</p><h3><strong>Easy Tracking Through Shopify Collabs</strong></h3><p>Every approved affiliate receives a <strong>unique referral link or discount code</strong>. Sales are tracked automatically through Shopify Collabs, and affiliates get access to a dashboard to monitor <strong>clicks, sales, and commissions</strong>.</p><h3><strong>No Minimum Sales Requirement</strong></h3><p>There is <strong>no minimum sales threshold</strong> to start earning. Every eligible sale made through your referral link or code can generate commission based on the agreed terms.</p><h3><strong>Premium Products That Fit the Right Audience</strong></h3><p>AirVape offers sleek, high-quality vaporizers designed for modern consumers who value performance, portability, and design. That makes AirVape easier to promote to audiences that already align with the category.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YqLJBM",
+        "text_rm4HUW"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_Xwynif": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_B3YtYk": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "01. Apply",
+            "heading_size": "h4",
+            "content": "<p>Sign up and submit your affiliate application for review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "h3"
+          }
+        },
+        "column_E6pD63": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "02. Get Approved",
+            "heading_size": "h4",
+            "content": "<p>Once approved, you will receive your unique referral link or discount code through Shopify Collabs.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "h3"
+          }
+        },
+        "column_teLmmY": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "03. Promote",
+            "heading_size": "h4",
+            "content": "<p>Share AirVape through your Instagram, TikTok, YouTube, website, blog, email marketing, or personal network using ethical and compliant promotion methods.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "h3"
+          }
+        },
+        "column_Q9rmhD": {
+          "type": "column",
+          "settings": {
+            "video_autoplay": true,
+            "heading": "04. Earn",
+            "heading_size": "h4",
+            "content": "<p>When customers purchase through your referral link or code, the sale is tracked automatically and your commission is credited to your account.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "column_B3YtYk",
+        "column_E6pD63",
+        "column_teLmmY",
+        "column_Q9rmhD"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 2,
+        "space_between_columns": 48,
+        "image_width": 100,
+        "image_size": "",
+        "column_text_alignment": "text-left items-start",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "How the AirVape Affiliate Program Works",
+        "heading_size": "h3",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#eaeaea",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "rich_text_8XcqhQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Vg9pU9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Promote AirVape?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_ATeakN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape is built for creators and affiliates who want to recommend products with confidence. Our program is designed to be simple, transparent, and performance-driven.</p><h3><strong>Why affiliates like working with AirVape:</strong></h3><ul><li><strong>10% commission on qualifying sales</strong></li><li><strong>10% discount for your audience</strong></li><li><strong>Automatic tracking through Shopify Collabs</strong></li><li><strong>Real-time dashboard access</strong></li><li><strong>No minimum sales requirement</strong></li><li><strong>Premium products with strong creator appeal</strong></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Vg9pU9",
+        "text_ATeakN"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_NM8ce9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xWDhGG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who Can Join?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_ib9Qmx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The AirVape Affiliate Program is a strong fit for:</p><ul><li>Influencers</li><li>Content creators</li><li>Bloggers</li><li>Reviewers</li><li>Affiliate marketers</li><li>Vape-focused media and niche communities</li></ul><p>All affiliate applications are <strong>subject to review and approval</strong>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xWDhGG",
+        "text_ib9Qmx"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "video_with_text_overlay_a7LjKR": {
+      "type": "video-with-text-overlay",
+      "name": "t:sections.video-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "affiliate-page",
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "video_url": "https://www.youtube.com/watch?v=7TtaluTdxgg",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-bottom-left",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "faq_accordion_FfwEcy": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faqs_6xAcnt": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What commission do you offer?",
+            "answer": "<p>We offer <strong>10% commission</strong> for affiliates, plus <strong>10% off</strong> for their audience.</p>"
+          }
+        },
+        "faqs_XnnLfx": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "What is the commission structure?",
+            "answer": "<p>Our affiliate program uses a <strong>percentage-based commission structure</strong>, not a flat-rate model.</p>"
+          }
+        },
+        "faqs_izXMEL": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "How does the affiliate program work?",
+            "answer": "<p>Our affiliate program operates through <strong>Shopify Collabs</strong> on a performance-based referral model. Approved creators and affiliates receive a unique referral link or discount code to share with their audience. When a customer makes a purchase through that link or code, the customer receives a discount and the affiliate earns a commission based on the agreed terms.</p>"
+          }
+        },
+        "faqs_LgLXKL": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "How are sales tracked and commissions credited?",
+            "answer": "<p>Sales are tracked automatically through <strong>Shopify Collabs</strong> using each affiliate’s unique referral link or discount code. When a qualifying sale is made, the commission is credited to the affiliate’s account.</p>"
+          }
+        },
+        "faqs_HqeAie": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Do affiliates get access to a dashboard?",
+            "answer": "<p>Yes. Affiliates get access to a dashboard where they can track <strong>clicks, sales, and commissions</strong>.</p>"
+          }
+        },
+        "faqs_3cqrXd": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Do you use a third-party affiliate network?",
+            "answer": "<p>We run our affiliate program through <strong>Shopify Collabs</strong> to onboard creators, track referrals, and manage commissions in one transparent system. We do <strong>not</strong> run the program through third-party affiliate networks like ShareASale.</p>"
+          }
+        },
+        "faqs_8eVtmy": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "How do affiliates get paid?",
+            "answer": "<p>Affiliates are paid through <strong>Shopify Collabs</strong>, typically via <strong>PayPal or bank transfer</strong>, depending on their payout setup and the platform’s payment schedule.</p>"
+          }
+        },
+        "faqs_gAH6z9": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Are there any rules or restrictions?",
+            "answer": "<p>Yes. Affiliates must promote AirVape products in a <strong>professional, honest, and brand-safe</strong> way. Misleading claims, false advertising, spam, hate or offensive content, trademark misuse, or any activity that may harm the brand is not allowed. We reserve the right to suspend or remove any affiliate account that violates program terms.</p>"
+          }
+        },
+        "faqs_U4FCKj": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Are there restrictions on how affiliates can promote products?",
+            "answer": "<p>Yes. Affiliates may promote through approved channels such as <strong>social media, websites, blogs, email marketing, and personal networks</strong>, as long as the promotion is ethical and compliant with platform rules. Affiliates must not use fake promises, unauthorized discount claims, spam messaging, misleading paid ads, or present themselves as official representatives of the brand unless authorized.</p>"
+          }
+        },
+        "faqs_igVGWb": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "Are there any geographical restrictions?",
+            "answer": "<p>Yes. Geographic restrictions may apply depending on <strong>product availability, shipping coverage, local laws, and platform policies</strong>. Affiliates may promote in approved regions where our products can legally and operationally be sold. Some countries or regions may be restricted due to legal, compliance, or delivery limitations.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_6xAcnt",
+        "faqs_XnnLfx",
+        "faqs_izXMEL",
+        "faqs_LgLXKL",
+        "faqs_HqeAie",
+        "faqs_3cqrXd",
+        "faqs_8eVtmy",
+        "faqs_gAH6z9",
+        "faqs_U4FCKj",
+        "faqs_igVGWb"
+      ],
+      "name": "Page FAQs",
+      "settings": {
+        "full_width": false,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": true,
+        "content_alignment": "mx-auto",
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQs",
+        "heading_size": "h3",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "h2",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_f9ja4x": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jNadme": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the AirVape Affiliate Program",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Fkqe8d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Start earning by promoting premium vaporizers through a simple, transparent, performance-based system.</p>"
+          }
+        },
+        "button_pzKzQw": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Register on Collabs",
+            "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": ""
+          }
+        },
+        "spacer_nh8LHV": {
+          "type": "spacer",
+          "settings": {
+            "space": "p-0"
+          }
+        },
+        "button_GLETnC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for US audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "button_tnaYwK": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_jNadme",
+        "text_Fkqe8d",
+        "button_pzKzQw",
+        "spacer_nh8LHV",
+        "button_GLETnC",
+        "button_tnaYwK"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "#eaeaea",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_PjkJpU": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_47a9ak",
+    "multicolumn_xBpPi8",
+    "rich_text_LFVHht",
+    "rich_text_TkNy8V",
+    "rich_text_XYX4XX",
+    "multicolumn_Xwynif",
+    "rich_text_8XcqhQ",
+    "rich_text_NM8ce9",
+    "video_with_text_overlay_a7LjKR",
+    "faq_accordion_FfwEcy",
+    "rich_text_f9ja4x",
+    "featured_collection_PjkJpU"
+  ]
+}

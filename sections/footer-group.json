@@ -1,0 +1,97 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "689184a1-06d4-4242-ab02-4034a441ffa6": {
+          "type": "text",
+          "settings": {
+            "heading": "Where innovation meets elegance",
+            "add_url": true,
+            "image_url": "/",
+            "content": "<p>AirVape creates sleek, high-performance vaporizers and accessories for smooth sessions, premium style, and everyday portability</p>",
+            "image": "shopify://shop_images/Header_LogoText.png",
+            "image_width": 240
+          }
+        },
+        "26d3e25a-ebab-4ae2-9e89-6630440b8500": {
+          "type": "links",
+          "settings": {
+            "show_heading": true,
+            "heading": "Shop",
+            "menu": "shop",
+            "heading_1": "",
+            "menu_1": "partnership"
+          }
+        },
+        "links_KYGzJX": {
+          "type": "links",
+          "settings": {
+            "show_heading": true,
+            "heading": "Support",
+            "menu": "support",
+            "heading_1": "",
+            "menu_1": ""
+          }
+        },
+        "contact_MUEErb": {
+          "type": "contact",
+          "settings": {
+            "heading": "Contact",
+            "contact_link_text": "Get In Touch",
+            "contact_url": "shopify://pages/contact",
+            "open_new_contact": false,
+            "whatsapp_number": "",
+            "whatsapp_url": "tel:+1 424 789 6016",
+            "open_new_whatsapp": false,
+            "phone_number": "",
+            "call_url": "tel:+1 424 789 6016",
+            "open_new_call": false,
+            "email_address": "cs@airvapeusa.com",
+            "email_url": "mailto:cs@airvapeusa.com",
+            "open_new_email": false,
+            "location": "Apollo Design & Tech Inc. 16133 Ventura Blvd., Floor 7, Encino CA 91436",
+            "address_url": "https://maps.app.goo.gl/t6hB2zv2AivNDs9i9",
+            "open_new_address": true
+          }
+        }
+      },
+      "block_order": [
+        "689184a1-06d4-4242-ab02-4034a441ffa6",
+        "26d3e25a-ebab-4ae2-9e89-6630440b8500",
+        "links_KYGzJX",
+        "contact_MUEErb"
+      ],
+      "settings": {
+        "background_image": "shopify://shop_images/Footer_Background_Image.webp",
+        "full_width": true,
+        "heading": "Where innovation meets elegance",
+        "content": "<p>AirVape creates sleek, high-performance vaporizers and accessories for smooth sessions, premium style, and everyday portability</p>",
+        "image": "shopify://shop_images/airvape_logo.png",
+        "image_width": 240,
+        "show_social": true,
+        "show_payment": true,
+        "enable_country_selector": false,
+        "country_selector_show_country_flag": true,
+        "country_selector_show_country_name": false,
+        "country_selector_show_currency": true,
+        "enable_language_selector": false,
+        "enable_follow_on_shop": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

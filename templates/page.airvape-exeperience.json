@@ -1,0 +1,265 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_liquid_em83zC": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": true,
+        "remove_vertical_space": true,
+        "custom_liquid": "<style>\n@import url(\"https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap\");.experience-page{background:#151f23 url(\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-circle-bg.svg\") center center;background-attachment:fixed;max-height:100vh;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;position:relative}.experience-page #trigger{position:absolute;top:50%;-webkit-transform:translate(-50% -50%);transform:translate(-50% -50%);height:50px;width:100vw}@media screen and (min-width: 778px){.experience-page #trigger{top:0;left:50%;height:100vh;width:50px}}.experience-page .open-image{z-index:200;background:#1b1b1b;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:fixed;top:0;left:0;height:100%;width:100%;opacity:1;-webkit-transition:opacity 0.6s ease-in;transition:opacity 0.6s ease-in}.experience-page .open-image.is-active{opacity:0}.experience-page ul,.experience-page .desktop-view{padding:40vh 0;overflow-x:hidden;overflow-y:scroll;position:relative}.experience-page ul::-webkit-scrollbar,.experience-page .desktop-view::-webkit-scrollbar{display:none}.experience-page ul.is-open,.experience-page .desktop-view.is-open{z-index:100}.experience-page ul li,.experience-page ul .item,.experience-page .desktop-view li,.experience-page .desktop-view .item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:30px;padding:0;-webkit-transform:scale(0.7);transform:scale(0.7);-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;opacity:0.4}.experience-page ul li.is-active,.experience-page ul .item.is-active,.experience-page .desktop-view li.is-active,.experience-page .desktop-view .item.is-active{-webkit-transform:scale(1);transform:scale(1);opacity:1}.experience-page ul li::before,.experience-page ul .item::before,.experience-page .desktop-view li::before,.experience-page .desktop-view .item::before{content:none}.experience-page ul li img,.experience-page ul .item img,.experience-page .desktop-view li img,.experience-page .desktop-view .item img{height:66px;width:66px}.experience-page ul li a,.experience-page ul .item a,.experience-page .desktop-view li a,.experience-page .desktop-view .item a{text-decoration:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff}.experience-page ul li a .title,.experience-page ul .item a .title,.experience-page .desktop-view li a .title,.experience-page .desktop-view .item a .title{font-size:20px;text-transform:uppercase;font-weight:bold;font-family:\"Raleway\", sans-serif;text-align:center}.experience-page ul li a .description,.experience-page ul .item a .description,.experience-page .desktop-view li a .description,.experience-page .desktop-view .item a .description{font-size:15px;font-weight:400;opacity:0.5;text-align:center}.experience-page .desktop-view{padding:0;min-height:70vh;width:100vw;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative}.experience-page .desktop-view .carousel{width:100vw}.experience-page .desktop-view .carousel .item{margin:0}.experience-page .desktop-view .prev{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/leftarw.svg) no-repeat center center;width:50px;height:50px;position:absolute;left:30px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:100;cursor:pointer}.experience-page .desktop-view .next{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/rightarw.svg) no-repeat center center;width:50px;height:50px;position:absolute;right:30px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:100;cursor:pointer}\n/*# sourceMappingURL=style.min.css.map */\n</style>\n<div class=\"experience-page\">\n    <div class=\"open-image\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-open-gif.gif\" alt=\"\">\n    </div>\n    <ul class=\"mobile-view d-block d-md-none\">\n        <li>\n            <a href=\"https://open.spotify.com/playlist/6xXymSR8jXT7QdRn33KCrY?si=TclMzUBMRra_rx6v2EqVgg\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-spotify.svg\" alt=\"\">\n                <span class=\"title\">Vape and chill</span>\n                <span class=\"description\">Listen to relaxing tunes</span>\n            </a>\n        </li>\n        <li>\n            <a href=\"https://www.youtube.com/c/AirVapeUSA_buy_best_portable_vaporizers\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-youtube.svg\" alt=\"\">\n                <span class=\"title\">Watch & learn</span>\n                <span class=\"description\">How-to videos and more</span>\n                <!--<span class=\"timer\"></span>-->\n            </a>\n        </li>\n        <li>\n            <a href=\"https://airvapeusa.com/pages/user-manuals\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-manual.svg\" alt=\"\">\n                <span class=\"title\">USER MANUALS</span>\n                <span class=\"description\"></span>\n            </a>\n        </li>\n        <li>\n            <a href=\"https://airvapeusa.com/pages/warranty-registration\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-warranty.svg\" alt=\"\">\n                <span class=\"title\">EXTEND YOUR<br>WARRANTY</span>\n                <span class=\"description\">From 2 Years<br> to Lifetime Warranty</span>\n            </a>\n        </li>\n        <li>\n            <a href=\"https://airvapeusa.com/pages/upgrade-experience\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-upgrade.svg\" alt=\"\">\n                <span class=\"title\">UPGRADE</span>\n                <span class=\"description\">Find out how you can<br>upgrade to a more<br>advanced AirVape</span>\n            </a>\n        </li>\n        <li>\n            <a href=\"https://airvapeusa.com/collections/replacement-parts\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-customize.svg\" alt=\"\">\n                <span class=\"title\">ACCESSORIZE</span>\n                <span class=\"description\">Find the best accessory<br>to enhance your<br>vaping experience</span>\n            </a>\n        </li>\n        <li>\n            <a href=\"https://airvapeusa.com/blogs/airvape-insiders\">\n                <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/blog-icon.svg\" alt=\"\">\n                <span class=\"title\">BLOG</span>\n                <span class=\"description\">Fun reads</span>\n            </a>\n        </li>\n    </ul>\n    <div class=\"desktop-view d-none d-md-flex\">\n        <div class=\"carousel\">\n            <div class=\"item\">\n                <a href=\"https://open.spotify.com/playlist/6xXymSR8jXT7QdRn33KCrY?si=TclMzUBMRra_rx6v2EqVgg\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-spotify.svg\" alt=\"\">\n                    <span class=\"title\">Vape and chill</span>\n                    <span class=\"description\">Listen to relaxing tunes</span>\n                </a>\n            </div>\n            <div class=\"item\">\n                <a href=\"https://www.youtube.com/c/AirVapeUSA_buy_best_portable_vaporizers\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-youtube.svg\" alt=\"\">\n                    <span class=\"title\">Watch & learn</span>\n                    <span class=\"description\">How to videos and more</span>\n                    <!--<span class=\"timer\"></span>-->\n                </a>\n            </div>\n            <div class=\"item\">\n                <a href=\"https://airvapeusa.com/pages/user-manuals\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-manual.svg\" alt=\"\">\n                    <span class=\"title\">USER MANUALS</span>\n                    <span class=\"description\"></span>\n                </a>\n            </div>\n            <div class=\"item\">\n                <a href=\"https://airvapeusa.com/pages/warranty-registration\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-warranty.svg\" alt=\"\">\n                    <span class=\"title\">EXTEND YOUR<br>WARRANTY</span>\n                    <span class=\"description\">From 2 Years<br> to Lifetime Warranty</span>\n                </a>\n            </div>\n            <div class=\"item\">\n                <a href=\"https://airvapeusa.com/pages/upgrade-experience\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-upgrade.svg\" alt=\"\">\n                    <span class=\"title\">UPGRADE</span>\n                    <span class=\"description\">Find out how you can<br>upgrade to a more<br>advanced AirVape</span>\n                </a>\n            </div>\n            <div class=\"item\">\n                <a href=\"https://airvapeusa.com/collections/replacement-parts\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-customize.svg\" alt=\"\">\n                    <span class=\"title\">ACCESSORIZE</span>\n                    <span class=\"description\">Find the best accessory<br>to enhance your<br>vaping experience</span>\n                </a>\n            </div>\n            <div class=\"item\">\n                <a href=\"https://airvapeusa.com/blogs/airvape-insiders\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/blog-icon.svg\" alt=\"\">\n                    <span class=\"title\">BLOG</span>\n                    <span class=\"description\">Fun reads</span>\n                </a>\n            </div>\n        </div>\n        <span class=\"prev d-none d-md-block\"></span>\n        <span class=\"next d-none d-md-block\"></span>\n    </div>\n    <div id=\"trigger\" class=\"d-block d-md-none\"></div>\n</div>\n<script src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/siema.min.js\"></script>\n<script>\n    const animationTime = 4000;\n\n    if (sessionStorage.getItem('already-visited-experience-page')) {\n        document.querySelector('.open-image').style.display = 'none';\n    } else {\n        setTimeout(() => {\n            document.querySelector('.open-image').classList.add('is-active');\n        }, animationTime);\n\n        setTimeout(() => {\n            document.querySelectorAll('.experience-page ul').forEach((item) => item.classList.add('is-open'));\n            document.querySelector('.open-image').style.display = 'none';\n            sessionStorage.setItem('already-visited-experience-page', true);\n        }, animationTime + 500);\n    }\n</script>\n\n<script>\n    const ul = document.querySelector('.experience-page .mobile-view');\n    const trigger = document.getElementById('trigger');\n    const triggerTop = trigger.offsetTop;\n    const triggerBottom = trigger.offsetTop + trigger.offsetHeight;\n\n    ul.addEventListener('scroll', function (e) {\n        document.querySelectorAll('.experience-page .mobile-view li').forEach((item) => {\n            render(item);\n        });\n    });\n\n    document.addEventListener('DOMContentLoaded', () => {\n        ul.querySelectorAll('li').forEach((item) => render(item));\n    });\n\n    function position(elem) {\n        var left = 0,\n            top = 0;\n\n        do {\n            left += elem.offsetLeft - elem.scrollLeft;\n            top += elem.offsetTop - elem.scrollTop;\n        } while (elem = elem.offsetParent);\n\n        return {\n            top: top,\n            left: left\n        };\n    }\n\n    function render(item) {\n        const itemPosition = position(item);\n        const top = itemPosition.top;\n        const bottom = itemPosition.top + item.offsetHeight;\n\n        if (top <= triggerBottom && bottom >= triggerTop) {\n            item.classList.add('is-active');\n        } else {\n            item.classList.remove('is-active');\n        }\n    }\n\n    function scrollToCenter(callback) {\n        const center = ul.offsetHeight / 2 - 80;\n\n        ul.scrollTo(0, center);\n\n        callback();\n    }\n\n</script>\n\n<script>\n    const perPage = 3;\n    const state = {\n        '-2': 2,\n        '-1': 3,\n        '0': 4,\n        '1': 5,\n        '2': 6,\n        '3': 7,\n        '4': 8,\n        '5': 9,\n        '6': 10\n    }\n\n    const carousel = new Siema({\n        selector: '.carousel',\n        duration: 200,\n        easing: 'ease-out',\n        perPage: perPage,\n        startIndex: -1,\n        draggable: true,\n        multipleDrag: true,\n        threshold: 20,\n        loop: true,\n        rtl: false,\n        onInit: () => {\n            desktopRender(-1);\n        },\n        onChange: function () {\n            desktopRender(this.currentSlide);\n        },\n    });\n\n    document.querySelector('.desktop-view .prev').addEventListener('click', () => carousel.prev());\n    document.querySelector('.desktop-view .next').addEventListener('click', () => carousel.next());\n\n    function desktopRender(currentIndex) {\n        const items = document.querySelectorAll('.desktop-view .item');\n\n        items.forEach((item) => item.classList.remove('is-active'));\n\n        items[state[currentIndex]].classList.add('is-active');\n    }\n</script>\n\n<script>\n    /*const countDownDate = new Date(\"Apr 20, 2022 14:00 GMT-7:00\").getTime();\n\n    function timerRender(value) {\n        document.querySelectorAll('.timer').forEach(item => item.innerHTML = `time until next live: ${value}`);\n    }\n\n    var x = setInterval(function () {\n\n        // Get today's date and time\n        const now = new Date().getTime();\n\n        // Find the distance between now and the count down date\n        const distance = countDownDate - now;\n\n        // Time calculations for days, hours, minutes and seconds\n        const days = Math.floor(distance / (1000 * 60 * 60 * 24));\n        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\n        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));\n\n        // Display the result in the element with id=\"demo\"\n        timerRender(days + \"d \" + hours + \"h \" + minutes + \"m \");\n\n        // If the count down is finished, write some text\n        if (distance < 0) {\n            clearInterval(x);\n            timerRender('EXPIRED');\n        }\n    }, 1000);*/\n</script>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "multicolumn_bgECMm": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pAPKjz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/spotify.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>Listen to relaxing tunes.</p>",
+            "link_url": "https://open.spotify.com/playlist/6xXymSR8jXT7QdRn33KCrY?si=TclMzUBMRra_rx6v2EqVgg",
+            "link_text": "VAPE AND CHILL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_YJUzJB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/youtube.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>How to videos and more..</p>",
+            "link_url": "https://www.youtube.com/c/AirVapeUSA_buy_best_portable_vaporizers",
+            "link_text": "WATCH & LEARN",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_gw7HcW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/manual.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>Get the know-how</p>",
+            "link_url": "https://airvapeusa.com/pages/user-manuals",
+            "link_text": "USER MANUALS",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_Eg6YLU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/warranty.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>From 2 Years to Lifetime</p>",
+            "link_url": "https://airvapeusa.com/pages/warranty-registration",
+            "link_text": "EXTEND YOUR WARRANTY",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_KC8yKf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/upgrade.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>Find out how you can upgrade to a more advanced AirVape</p>",
+            "link_url": "https://airvapeusa.com/pages/upgrade-experience",
+            "link_text": "UPGRADE",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_HipLGf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/customize.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>Find the best Accessory to enhance your vaping experince</p>",
+            "link_url": "https://airvapeusa.com/collections/replacement-parts",
+            "link_text": "ACCESORIZE",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_jj6brh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/blog.svg",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<p>Fun Reads</p>",
+            "link_url": "https://airvapeusa.com/blogs/airvape-insiders",
+            "link_text": "BLOG",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_pAPKjz",
+        "column_YJUzJB",
+        "column_gw7HcW",
+        "column_Eg6YLU",
+        "column_KC8yKf",
+        "column_HipLGf",
+        "column_jj6brh"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 3,
+        "space_between_columns": 32,
+        "image_width": 35,
+        "image_size": "media--ratio-1-1",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#206657",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "heading_html_tag": "p"
+      }
+    },
+    "logo_list_HYc8gy": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_YFmRCR": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/spotify_94803e84-b486-453a-8fbc-dee8ae641941.svg",
+            "link": "",
+            "width": 100
+          }
+        },
+        "logo_BtNDHd": {
+          "type": "logo",
+          "settings": {
+            "link": "",
+            "width": 160
+          }
+        },
+        "logo_V6KKCk": {
+          "type": "logo",
+          "settings": {
+            "link": "",
+            "width": 160
+          }
+        },
+        "logo_3ViHwk": {
+          "type": "logo",
+          "settings": {
+            "link": "",
+            "width": 160
+          }
+        }
+      },
+      "block_order": [
+        "logo_YFmRCR",
+        "logo_BtNDHd",
+        "logo_V6KKCk",
+        "logo_3ViHwk"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "logo_opacity": 100,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#206657",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_9jmxxH": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_em83zC",
+    "multicolumn_bgECMm",
+    "logo_list_HYc8gy",
+    "featured_collection_9jmxxH"
+  ]
+}

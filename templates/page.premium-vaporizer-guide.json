@@ -1,0 +1,611 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_wa7Law": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gVyRxJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to Choose a Premium Vaporizer",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_Eb4VbC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>(2026 Guide)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gVyRxJ",
+        "text_Eb4VbC"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "#017984",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff"
+      }
+    },
+    "rich_text_n9Fcrz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NnYnn6": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_KHmP9L": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Choosing the right vaporizer is not just about specs. It is about finding the experience that fits your lifestyle, your preferences, and the way you like to session.</p><p>This guide covers what really matters before investing in a premium device, from heating technology and build materials to portability, battery life, and long-term maintenance. Whether you are a daily user or upgrading for a better experience, this is the right place to start.</p><p>Among today’s premium options, the <strong>AirVape Legacy PRO 2</strong> and <strong>Legacy CORE </strong>stand out for a reason. Here is what makes them worth your attention.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NnYnn6",
+        "text_KHmP9L"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_FzzEdh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pjTL8n": {
+          "type": "heading",
+          "settings": {
+            "heading": "Best Dry Herb Vaporizer Comparison table",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pjTL8n"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "#017984",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff"
+      }
+    },
+    "custom_liquid_pLedMR": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": true,
+        "remove_vertical_space": true,
+        "custom_liquid": "<div class=\"cmp-wrap\">\n  <div class=\"cmp-scroll\">\n    <table class=\"cmp-table\" role=\"table\" aria-label=\"Product comparison\">\n      <thead>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-sticky-top cmp-th-feature\">Features</th>\n          <th class=\"cmp-sticky-top\">Legacy PRO 2</h3>\n          <th class=\"cmp-sticky-top\">XS GO</th>\n          <th class=\"cmp-sticky-top\">OM Keychain Waxpen</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Heating Type</th>\n          <td>Hybrid (Convection + Conduction)</td>\n          <td>Conduction</td>\n          <td>Conduction</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Chamber Material</th>\n          <td>Gold-plated Stainless Steel</td>\n          <td>Ceramic</td>\n          <td>Stainless Steel</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Airpath</th>\n          <td>Isolated Glass Airpath</td>\n          <td>Non-isolated</td>\n          <td>Non-isolated</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Battery Life</th>\n          <td>3200 mAh (~60–80 mins)</td>\n          <td>~20 mins</td>\n          <td>~15 mins</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Charging</th>\n          <td>USB-C + Wireless</td>\n          <td>USB</td>\n          <td>USB</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Heat-up Time</th>\n          <td>15 seconds</td>\n          <td>30 seconds</td>\n          <td>10 seconds</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Portability</th>\n          <td>Medium</td>\n          <td>High</td>\n          <td>Ultra-portable</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Use Type</th>\n          <td>Dry herb + concentrate</td>\n          <td>Dry herb</td>\n          <td>Concentrate</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n\n<style>\n/* wrapper: ensure scrolling works on mobile */\n.cmp-wrap { width:100%; }\n.cmp-scroll {\n  overflow-x:auto !important;\n  -webkit-overflow-scrolling:touch;\n  border:1px solid #e3e3e3;\n  border-radius:8px;\n  background:#fff;\n}\n\n/* table base */\n.cmp-table {\n  width:100%;\n  border-collapse:separate;     /* needed for sticky in some themes */\n  border-spacing:0;\n  table-layout:fixed;\n  min-width:720px;              /* allow horizontal swipe if screen is narrower */\n  font-size:16px;\n}\n\n.cmp-table th,\n.cmp-table td {\n  padding:12px 14px;\n  border-bottom:1px solid #eee;\n  border-right:1px solid #eee;\n  text-align:center;\n  color:#222;\n  background:#fff;\n  white-space:normal;\n  word-break:break-word;\n}\n\n/* header row */\n.cmp-table thead th {\n  font-weight:700;\n  background:#f8f8f8 !important;\n}\n\n/* sticky top (column headers) */\n.cmp-sticky-top {\n  position:sticky !important;\n  top:0;\n  z-index:5;\n}\n\n/* sticky left (features column) */\n.cmp-sticky-left {\n  position:sticky !important;\n  left:0;\n  z-index:6;                  /* above cells */\n  text-align:left;\n  background:#fff !important;\n}\n\n/* style for left feature cells */\n.cmp-th-feature {\n  font-weight:600;\n  width:190px;                /* fixed feature column width */\n}\n\n/* make product columns readable on phones */\n@media (max-width: 768px) {\n  .cmp-table { min-width: 720px; }     /* keeps three product cols visible via swipe */\n  .cmp-th-feature { width:160px; }\n}\n\n/* polish */\n.cmp-table tr:last-child th,\n.cmp-table tr:last-child td { border-bottom:0; }\n.cmp-table th:last-child,\n.cmp-table td:last-child { border-right:0; }\n</style>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "custom_liquid_X8aUww": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": true,
+        "remove_vertical_space": true,
+        "custom_liquid": "<div class=\"cmp-wrap\">\n  <div class=\"cmp-scroll\">\n    <table class=\"cmp-table\" role=\"table\" aria-label=\"Product comparison\">\n      <thead>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-sticky-top cmp-th-feature\">Features</th>\n          <th class=\"cmp-sticky-top\">Legacy PRO 2</th>\n          <th class=\"cmp-sticky-top\">Legacy CORE</th>\n          <th class=\"cmp-sticky-top\">XS GO</th>\n          <th class=\"cmp-sticky-top\">OM Keychain Waxpen</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Heating Type</th>\n          <td>Hybrid (Convection + Conduction)</td>\n          <td>Hybrid (Convection + Conduction)</td>\n          <td>Conduction</td>\n          <td>Conduction</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Chamber Material</th>\n          <td>Gold-plated Stainless Steel</td>\n          <td>Gold-plated Stainless Steel</td>\n          <td>Ceramic</td>\n          <td>Stainless Steel</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Airpath</th>\n          <td>Isolated Glass Airpath</td>\n          <td>Isolated Glass Airpath</td>\n          <td>Non-isolated</td>\n          <td>Non-isolated</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Battery Life</th>\n          <td>3200 mAh (~60–80 mins)</td>\n          <td>3200 mAh (~60–80 mins)</td>\n          <td>~20 mins</td>\n          <td>~15 mins</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Charging</th>\n          <td>USB-C + Wireless</td>\n          <td>USB-C</td>\n          <td>USB</td>\n          <td>USB</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Heat-up Time</th>\n          <td>15 seconds</td>\n          <td>30 seconds</td>\n          <td>30 seconds</td>\n          <td>10 seconds</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Portability</th>\n          <td>Medium</td>\n          <td>Medium</td>\n          <td>High</td>\n          <td>Ultra-portable</td>\n        </tr>\n        <tr>\n          <th class=\"cmp-sticky-left cmp-th-feature\">Use Type</th>\n          <td>Dry herb + concentrate</td>\n          <td>Dry herb + concentrate</td>\n          <td>Dry herb</td>\n          <td>Concentrate</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n\n<style>\n/* wrapper: ensure scrolling works on mobile */\n.cmp-wrap { width:100%; }\n.cmp-scroll {\n  overflow-x:auto !important;\n  -webkit-overflow-scrolling:touch;\n  border:1px solid #e3e3e3;\n  border-radius:8px;\n  background:#fff;\n}\n\n/* table base */\n.cmp-table {\n  width:100%;\n  border-collapse:separate;     /* needed for sticky in some themes */\n  border-spacing:0;\n  table-layout:fixed;\n  min-width:900px;              /* increased for 4 product columns */\n  font-size:16px;\n}\n\n.cmp-table th,\n.cmp-table td {\n  padding:12px 14px;\n  border-bottom:1px solid #eee;\n  border-right:1px solid #eee;\n  text-align:center;\n  color:#222;\n  background:#fff;\n  white-space:normal;\n  word-break:break-word;\n}\n\n/* header row */\n.cmp-table thead th {\n  font-weight:700;\n  background:#f8f8f8 !important;\n}\n\n/* sticky top (column headers) */\n.cmp-sticky-top {\n  position:sticky !important;\n  top:0;\n  z-index:5;\n}\n\n/* sticky left (features column) */\n.cmp-sticky-left {\n  position:sticky !important;\n  left:0;\n  z-index:6;                  /* above cells */\n  text-align:left;\n  background:#fff !important;\n}\n\n/* style for left feature cells */\n.cmp-th-feature {\n  font-weight:600;\n  width:190px;                /* fixed feature column width */\n}\n\n/* make product columns readable on phones */\n@media (max-width: 768px) {\n  .cmp-table { min-width: 900px; }     /* keeps 4 product cols swipeable */\n  .cmp-th-feature { width:160px; }\n}\n\n/* polish */\n.cmp-table tr:last-child th,\n.cmp-table tr:last-child td { border-bottom:0; }\n.cmp-table th:last-child,\n.cmp-table td:last-child { border-right:0; }\n</style>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_xVUL3e": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_peJmcY": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_Gfp8ae": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_QF4FqW": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Explore All Vaporizers",
+            "button_link": "shopify://collections/airvape-2025",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_peJmcY",
+        "text_Gfp8ae",
+        "button_QF4FqW"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "collapsible_content_ak87T3": {
+      "type": "collapsible-content",
+      "blocks": {
+        "block_6MgrKi": {
+          "type": "block",
+          "settings": {
+            "title": "Heating Technology",
+            "content": "<p>The<strong> Legacy PRO 2</strong> and <strong>Legacy CORE</strong> both use <strong>hybrid heating</strong>, combining convection and conduction for more even vaporization and smoother flavor.</p><p>This gives you faster sessions, more efficient material use, and better overall temperature performance. It is one of the biggest reasons these devices feel more premium than entry-level options.</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_cpYRLP": {
+          "type": "block",
+          "settings": {
+            "title": "Advanced Control vs Essential Experience",
+            "content": "<p>The <strong>Legacy PRO 2</strong> is built for users who want maximum control and more premium features. It offers precise temperature adjustment, a full display for key settings, <strong>On-Demand Mode</strong>, and <strong>wireless charging</strong>.</p><p>The <strong>Legacy CORE</strong> is for users who want a more straightforward premium experience. It focuses on the essentials with <strong>7 preset temperature settings</strong> and <strong>USB-C charging</strong>, while also standing out through <strong>vibrant color options</strong> and <strong>interchangeable face skins</strong> for a more personal look.</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_Jn3LCz": {
+          "type": "block",
+          "settings": {
+            "title": "Battery + Charging",
+            "content": "<p>Battery life plays a huge role in everyday use. The <strong>Legacy PRO 2</strong> and <strong>Legacy CORE</strong> both offer strong battery performance for dependable, longer sessions.<br/><br/>The <strong>PRO 2</strong> goes further with <strong>wireless charging</strong> for added convenience, while the <strong>CORE</strong> keeps things simple and efficient with <strong>USB-C charging</strong>. Both are designed to support regular use without feeling limited.</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_BGFX8K": {
+          "type": "block",
+          "settings": {
+            "title": "Airpath + Materials",
+            "content": "<p>Premium materials make a real difference in how a vaporizer performs.<br/><br/>The <strong>Legacy PRO 2</strong> and <strong>Legacy CORE</strong> feature an <strong>isolated airpath</strong> with stainless steel and glass to help keep vapor cleaner and cooler. Their <strong>gold-plated heating chambers</strong> support more consistent heat transfer and better flavor integrity without exposed electronics in the vapor path.</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_MGEx6R": {
+          "type": "block",
+          "settings": {
+            "title": "Portability + Use",
+            "content": "<p>The <strong>PRO 2</strong> and <strong>CORE</strong> strike a strong balance between performance and portability. They are compact enough to travel comfortably, but powerful enough to deliver full sessions at home.<br/><br/>If your top priority is minimal size above everything else, the <strong>XS GO</strong> or <strong>OM Keychain Waxpen</strong> may be a better fit. If you want a more complete premium experience, the <strong>Legacy line</strong> makes more sense.</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        },
+        "block_DHa4ec": {
+          "type": "block",
+          "settings": {
+            "title": "Cleaning + Maintenance",
+            "content": "<p>A device should not feel annoying to own after the first week. That is where design really matters.</p><p>The <strong>Legacy PRO 2</strong> and <strong>Legacy CORE</strong> are built for easier long-term upkeep, with features like a <strong>magnetic chamber lid</strong>, <strong>removable mouthpiece</strong>, and accessible isolated parts that make cleaning simpler and more straightforward.</p>",
+            "content_from_page": "",
+            "open": false,
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "block_6MgrKi",
+        "block_cpYRLP",
+        "block_Jn3LCz",
+        "block_BGFX8K",
+        "block_MGEx6R",
+        "block_DHa4ec"
+      ],
+      "name": "t:sections.collapsible-content.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "heading": "Key Buying Considerations",
+        "content": "<p>A premium vaporizer should do more than simply heat your material. It should deliver smoother flavor, better consistency, easier maintenance, and a more refined experience every time you use it.</p><p>These are the key things to look at before choosing the right device.</p>",
+        "heading_size": "h3",
+        "text_position": "left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "accordion_background_color": "#9cecd9",
+        "accordion_title_color": "#333333",
+        "accordion_text_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "custom_liquid_Qbigrh": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<div class=\"custom-glossary\">\n  <h2 class=\"glossary-title\">Glossary</h2>\n\n  <details class=\"glossary-item\">\n    <summary>Conduction Heating</summary>\n    <p>Heats material through direct contact with the chamber.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Convection Heating</summary>\n    <p>Uses heated air to vaporize material more evenly and smoothly.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Hybrid Heating</summary>\n    <p>Combines conduction and convection for a better balance of flavor, efficiency, and performance.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Isolated Airpath</summary>\n    <p>Keeps the vapor path separate from internal electronics and other components.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>USB-C Charging</summary>\n    <p>A faster and more reliable charging standard used in modern devices.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Microdosing</summary>\n    <p>Using a smaller amount of material for lighter, more controlled sessions.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>On-Demand Mode</summary>\n    <p>Activates heat only when needed, rather than maintaining it continuously.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Session Mode</summary>\n    <p>Maintains a set temperature throughout the session.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Dual-Use</summary>\n    <p>Designed to support both dry herb and concentrates.</p>\n  </details>\n\n  <details class=\"glossary-item\">\n    <summary>Gold-Plated Chamber</summary>\n    <p>Helps improve heat transfer while supporting clean, consistent flavor.</p>\n  </details>\n</div>\n\n<style>\n.custom-glossary {\n  max-width: 800px;\n  margin: 2rem auto;\n  font-family: inherit;\n}\n.glossary-title {\n  font-size: 1.8rem;\n  font-weight: 700;\n  margin-bottom: 1rem;\n  text-align: center;\n}\n.glossary-item {\n  border: 1px solid #e5e5e5;\n  border-radius: 6px;\n  margin-bottom: 8px;\n  overflow: hidden;\n}\n.glossary-item summary {\n  cursor: pointer;\n  font-weight: 600;\n  padding: 12px 16px;\n  background: #f9f9f9;\n  position: relative;\n}\n.glossary-item summary::-webkit-details-marker {\n  display: none;\n}\n.glossary-item summary:after {\n  content: \"+\";\n  position: absolute;\n  right: 16px;\n  top: 50%;\n  transform: translateY(-50%);\n  font-weight: bold;\n}\n.glossary-item[open] summary:after {\n  content: \"–\";\n}\n.glossary-item p {\n  margin: 0;\n  padding: 12px 16px;\n  background: #fff;\n  font-size: 0.95rem;\n  color: #333;\n}\n</style>",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "#333333"
+      }
+    },
+    "image_with_text_LGMjeC": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HVMbKD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why the Legacy PRO 2 Was Built This Way",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_3dBtq6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The <strong>Legacy PRO 2</strong> was designed for users who want more control, cleaner flavor, and premium materials without giving up portability.</p><p>Every detail serves a purpose, from the <strong>gold-plated chamber</strong> for heat precision to the <strong>isolated airpath</strong> for cleaner vapor and <strong>wireless charging</strong> for everyday convenience. It is not just a device upgrade. It is a better session from start to finish.</p>"
+          }
+        },
+        "button_wJpqJy": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy PRO 2",
+            "button_link": "shopify://products/legacy-pro-2",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_HVMbKD",
+        "text_3dBtq6",
+        "button_wJpqJy"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/latest_PRO2.165.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 40,
+        "text_alignment": "text-center",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "heading_color": "#000000"
+      }
+    },
+    "image_with_text_NALFrD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_j34rN9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Same Trusted Legacy Power, Styled Your Way",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_RxxArJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The <strong>Legacy CORE</strong> was designed for users who value simplicity, reliability, and personal style without sacrificing performance.</p><p>It delivers the essential features that matter most, with carefully tuned preset temperatures for consistent sessions and durable materials built for everyday use. <strong>USB-C charging</strong> keeps it simple and efficient, while bold colors and interchangeable face skins let you make it your own.</p><p>It is not about adding more just to look fancy. It is about refining what matters and letting your device reflect your style.</p>"
+          }
+        },
+        "button_kryGD3": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy CORE",
+            "button_link": "shopify://products/legacy-core",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_j34rN9",
+        "text_RxxArJ",
+        "button_kryGD3"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/CORE_signature_skins_3.449.png",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "heading_color": "#000000"
+      }
+    },
+    "custom_liquid_nJxgQz": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<div class=\"use-chooser\">\n  <h2 class=\"use-chooser__title\">Choose Based on <br> Your Usage</h2>\n\n  <div class=\"use-chooser__row\">\n    <div class=\"use-chooser__need\">Premium daily use and flavor</div>\n    <div class=\"use-chooser__choice\">Legacy PRO 2</div>\n  </div>\n\n  <div class=\"use-chooser__row\">\n    <div class=\"use-chooser__need\">Simple daily use with personal style</div>\n    <div class=\"use-chooser__choice\">Legacy CORE</div>\n  </div>\n\n  <div class=\"use-chooser__row\">\n    <div class=\"use-chooser__need\">Light, pocket-sized travel use</div>\n    <div class=\"use-chooser__choice\">XS GO</div>\n  </div>\n\n  <div class=\"use-chooser__row\">\n    <div class=\"use-chooser__need\">Quick hits and microdosing</div>\n    <div class=\"use-chooser__choice\">OM Keychain WaxPen</div>\n  </div>\n</div>\n\n<style>\n.use-chooser {\n  max-width: 900px;\n  margin: 2rem auto;\n  font-family: inherit;\n}\n.use-chooser__title {\n  text-align: center;\n  font-weight: 700;\n  font-size: 1.6rem;\n  margin-bottom: 1.5rem;\n}\n\n/* rows */\n.use-chooser__row {\n  display: grid;\n  grid-template-columns: 1fr 1fr; /* 2 columns on desktop */\n  border: 1px solid #e6e6e6;\n  border-radius: 8px;\n  margin-bottom: 10px;\n  overflow: hidden;\n}\n.use-chooser__need,\n.use-chooser__choice {\n  padding: 14px 16px;\n  font-size: 1rem;\n  line-height: 1.4;\n}\n.use-chooser__need {\n  background: #f9f9f9;\n  font-weight: 500;\n}\n.use-chooser__choice {\n  font-weight: 700;\n  background: #fff;\n  color: #111;\n}\n\n/* mobile: stack columns */\n@media (max-width: 768px) {\n  .use-chooser__row {\n    grid-template-columns: 1fr; /* stack into single column */\n  }\n  .use-chooser__choice {\n    border-top: 1px dashed #ddd;\n  }\n}\n</style>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_3aigqW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KQDWET": {
+          "type": "heading",
+          "settings": {
+            "heading": "Trusted by Experts and Buyers",
+            "heading_size": "h3",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_JNTEgi": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>The </em><em><strong>AirVape XS GO</strong></em><em> was described by Forbes as “ultra efficient” and praised for its sturdy yet lightweight construction.</em></p><p><em><strong>NY Times Wirecutter</strong></em><em> has reviewed the best portable vaporizers (June 2025), aligning with AirVape’s positioning in that premium segment.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KQDWET",
+        "text_JNTEgi"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "large",
+        "background_color": "#9cecd9",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "17558708901c5ba160": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_testimonial_carousel_section_c7AYTM": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-testimonial-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "maxWidth": 1100,
+            "desktopFontSize": 32,
+            "mobileFontSize": 20,
+            "maxNumberOfCharacters": 100,
+            "quoteMarkIcon": "style-4",
+            "reviewerNameColor": "#000000",
+            "textColor": "#000000",
+            "starsColor": "",
+            "quotesIconColor": "#eaeaea",
+            "arrows_iconColor": "#000000",
+            "arrows_hideOnMobile": true,
+            "pagination_active": true,
+            "pagination_selectedDotColor": "#000000",
+            "pagination_dotColor": "#000000",
+            "autoplay_active": true,
+            "autoplay_duration": 4,
+            "productIds": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_testimonial_carousel_section_c7AYTM"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_TnANFP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P9aWnU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Have more questions or need help deciding?",
+            "heading_size": "h4",
+            "heading_html_tag": "p"
+          }
+        },
+        "heading_7ypPrC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact us directly or browse our collection to find your fit.",
+            "heading_size": "h5",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_wjHhb9": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_CBXfNx": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Explore Devices",
+            "button_link": "shopify://collections/airvape-2025",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "button_HKE7eQ": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Contact Support",
+            "button_link": "shopify://pages/contact",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_P9aWnU",
+        "heading_7ypPrC",
+        "text_wjHhb9",
+        "button_CBXfNx",
+        "button_HKE7eQ"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "#9cecd9",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_fknMAV": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_wa7Law",
+    "rich_text_n9Fcrz",
+    "rich_text_FzzEdh",
+    "custom_liquid_pLedMR",
+    "custom_liquid_X8aUww",
+    "rich_text_xVUL3e",
+    "collapsible_content_ak87T3",
+    "custom_liquid_Qbigrh",
+    "image_with_text_LGMjeC",
+    "image_with_text_NALFrD",
+    "custom_liquid_nJxgQz",
+    "rich_text_3aigqW",
+    "17558708901c5ba160",
+    "rich_text_TnANFP",
+    "featured_collection_fknMAV"
+  ]
+}

@@ -1,0 +1,1001 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_liquid_4F4686": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"412J8y-6QuI3v4OZ3ex_cw\"></div>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "image_with_text_overlay_CLPci4": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_BaRkQR": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BaRkQR"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/About_Us_2.webp",
+        "image_mobile": "shopify://shop_images/About_Us_Mob_2.webp",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 10,
+        "overlay_type": "solid"
+      }
+    },
+    "rich_text_EUgihr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f8MghD": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_XfUr34": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Apollo embodies the quintessential American Dream, with its founders hailing from Europe as first-generation immigrants. The journey of Apollo began in 2013 when a group of co-founders, who were previously involved with the wholesale brand Vaporize101, embarked on their own venture in the realm of portable dry herb vaporizers. Apollo was born out of the passion of a team of vape enthusiasts driven by the vision to provide affordable luxury within the dry herb vape market. They aimed to fill the gap left by overpriced high-end vaporizers that lacked the bold design elements found in other consumer electronics.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_f8MghD",
+        "text_XfUr34"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_z8jWzj": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Dz9AyW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our objective",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_XeG4Uz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"Our initial objective was to incorporate exceptional performance into a truly compact, portable device. This gave birth to AirVape, the slimmest true vaporizer designed to perfectly fit in your pocket.\" </p><p></p><p>- Roland Sz. CEO</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Dz9AyW",
+        "text_XeG4Uz"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/IMG_4404_copy.jpg",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_BfjkJh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_htAmjQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Evolution of AirVape",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_pdLAtg": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_htAmjQ",
+        "text_pdLAtg"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_b8W4xT": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mNAbJq": {
+          "type": "heading",
+          "settings": {
+            "heading": "2013. ",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_cDrXP3": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Vaporize101 early brand/logo:</h3>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mNAbJq",
+        "text_cDrXP3"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/IMG_4777.PNG",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_97Dd9q": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_EekrJq": {
+          "type": "heading",
+          "settings": {
+            "heading": "2014.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_WRbA6R": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>The old versions of V101products </h3>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EekrJq",
+        "text_WRbA6R"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/IMG_5359.jpg",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_pn4BtH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gzH3yU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Spring, 2015   First AirVape",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_fRbLWh": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><em>The original AirVape featured an ultra-slim design,</em></h2><p><em>innovative funnel technology for easy filling,</em></p><p><em>rapid heating, and included a stylish leather carrying case.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gzH3yU",
+        "text_fRbLWh"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/1stairvape-01.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_aEd6nD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Rnyx77": {
+          "type": "heading",
+          "settings": {
+            "heading": "Summer, 2015. ",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_EtgPpE": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>First Model to pose for AirVape:)</h3>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Rnyx77",
+        "text_EtgPpE"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/IMG_7385.JPG",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_BqEJt6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_TgQxQC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Winter, 2015.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_3jym79": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Commencement of the XS Design</strong></p><p></p><p><em>The XS model was meticulously crafted based on feedback collected from previous iterations and earned its name for being truly one of the smallest vapes available at that time.</em><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TgQxQC",
+        "text_3jym79"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/next-01.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_mwYR9w": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hXdxHJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Summer, 2016.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Yfjjrb": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>The first generation of AirVape Xs is released.</h2>"
+          }
+        },
+        "button_HNnR4M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy XS GO",
+            "button_link": "shopify://products/airvape-xs-go",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_hXdxHJ",
+        "text_Yfjjrb",
+        "button_HNnR4M"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/IMG_3094.jpg",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_JXmkp3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hKKfhc": {
+          "type": "heading",
+          "settings": {
+            "heading": "January, 2017.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_C3E93b": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Launch of the Revolutionary Shell</strong></h3><p><em>Introducing the industry's first smell-proof, water-resistant case, aptly named \"Shell.\"</em></p>"
+          }
+        },
+        "button_U9i83L": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy X Shell",
+            "button_link": "shopify://products/x-shell-for-airvape-x",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_hKKfhc",
+        "text_C3E93b",
+        "button_U9i83L"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/airxs_shell12.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_HGMBh6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_JFVyfi": {
+          "type": "heading",
+          "settings": {
+            "heading": "November, 2017.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_aynfDK": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>AirVape X is released.</strong></h3><p><em>After two years of invaluable feedback from AirVape users, an upgraded unit, the AirVape X, was introduced.</em></p>"
+          }
+        },
+        "button_B9G7cK": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy AirVape X",
+            "button_link": "shopify://products/airvape-x",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_JFVyfi",
+        "text_aynfDK",
+        "button_B9G7cK"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/AVX_both_1.png",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_ydNUcY": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tpbXwg": {
+          "type": "heading",
+          "settings": {
+            "heading": "March, 2018.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_fJPhhe": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>All AirVape X units now come with X Shell protective case included.</em></p>"
+          }
+        },
+        "button_PgVAU6": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy X Shell",
+            "button_link": "shopify://products/x-shell-for-airvape-x",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_tpbXwg",
+        "text_fJPhhe",
+        "button_PgVAU6"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/X_Shell.jpg",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_da9gX6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_yMAcne": {
+          "type": "heading",
+          "settings": {
+            "heading": "April, 2019.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_VeTCPr": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Wirecutter's Top-Rated Portable Vape - </strong></em><em>AirVape X claimed the number one spot on Wirecutter's Best Portable Vape list after extensive testing of 52 different vaporizers over two years.</em></p>"
+          }
+        },
+        "button_94TfwU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy AirVape X",
+            "button_link": "shopify://products/airvape-x",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_yMAcne",
+        "text_VeTCPr",
+        "button_94TfwU"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Untitled-1-01_2cea2cb0-692d-404e-87b1-36a9d8a32c9a.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_F63T7r": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_rMFJzL": {
+          "type": "heading",
+          "settings": {
+            "heading": "April, 2019.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_CwhmB8": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Introduction of the AirVape Xs GO</strong></h3><p><em>Our most budget-friendly model, designed for those curious about vaping but not looking to invest in a high-end device.</em></p>"
+          }
+        },
+        "button_bfFPGy": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy XS GO",
+            "button_link": "shopify://products/airvape-xs-go",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_rMFJzL",
+        "text_CwhmB8",
+        "button_bfFPGy"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Screen_Shot_2023-12-29_at_3.02.57_PM.png",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_4CFjrq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_CCWywg": {
+          "type": "heading",
+          "settings": {
+            "heading": "2020.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_mVEqjM": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>The Evolution of Herbal Molasses Begins. </strong></h2><p><em>Built through a partnership between the creators of AirVape and the ENSŌ Team, ENSŌ was engineered using over a decade of advanced heating expertise to create a cleaner, smarter experience for nicotine-free herbal molasses.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CCWywg",
+        "text_mVEqjM"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/AV_enso_pr_main_f3bd962a-7436-46c0-9029-ee3e0c6c236a.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_t4YEyc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_VY6Rcm": {
+          "type": "heading",
+          "settings": {
+            "heading": "January, 2020.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Dn47JR": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Debut of the First Legacy. </strong></h2><p><em>Listening closely to customer feedback, we realized the need for a powerhouse vaporizer with a removable, long-lasting battery, a unique heating system, and the outstanding design that AirVape is known for.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VY6Rcm",
+        "text_Dn47JR"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/h2.png",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_6qmPne": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hEUndt": {
+          "type": "heading",
+          "settings": {
+            "heading": "2021. Embracing Sustainability",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_BBVFAp": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em> All of our packaging transitioned to officially being made from recycled materials. To commemorate this, we launched a special edition Legacy, with proceeds from each sale contributing to the planting of 10 trees in the rainforest through onetreeplanted.org.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hEUndt",
+        "text_BBVFAp"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/sustain1-01.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_AjBf9N": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MPAYJp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Early 2022.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_w4wEjU": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>The Legacy Pro hits the market</strong></h2><p><em>  Nominated as the best flavor vape by numerous reviewers, the Legacy PRO continues to be one of the top choices in the portable vaporizer market.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MPAYJp",
+        "text_w4wEjU"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/PRO2cc_15125c55-f6d6-42b1-b8f6-75890256d7cf.png",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_b7Mmba": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aRbipN": {
+          "type": "heading",
+          "settings": {
+            "heading": "2025.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_PjyxHF": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>The Legacy PRO 2 is released</strong></h2><p><em>The Legacy PRO 2 builds on everything users loved about the Legacy PRO, but with years of feedback and refinement, we’ve taken it even further—delivering the most powerful, reliable, and user-friendly version of the Legacy yet.</em></p>"
+          }
+        },
+        "button_x8PyK8": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Buy Legacy Pro 2",
+            "button_link": "shopify://products/legacy-pro-2",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_aRbipN",
+        "text_PjyxHF",
+        "button_x8PyK8"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Newscreen_PRO2.52.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-right",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_piUVEg": {
+      "type": "rich-text",
+      "blocks": {
+        "text_3cjgQi": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>We extend our heartfelt gratitude for accompanying us on this journey from the very beginning.</em></p><p><em> Please remember, as an AirVape owner, Apollo is the unique brand committed to keeping you up-to-date by offering you the latest model at a fraction of the retail price.</em></p><p><em>Our promise is unwavering: </em><em><strong>we will never cease to innovate!</strong></em></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_3cjgQi"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "large",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_mGDBeC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pyCNWP": {
+          "type": "heading",
+          "settings": {
+            "heading": "To contact us by Mail: ",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_p9Mz6n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Apollo Design & Tech Inc.<br/>16133 Ventura Blvd., Floor 7,<br/>Encino CA 91436</p>"
+          }
+        },
+        "text_eehmfp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>**This is an office location, we do <strong>not</strong> hold products or process transactions at this location.</p><p><strong>**Please contact our customer support team via email at cs@airvapeusa.com before shipping any returns or faulty items as the result in this could cause significant delays in receiving a refund or a replacement unit.</strong><br/><br/>Our Hours of Operation are Monday-Friday, 9am-5pm PST.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pyCNWP",
+        "text_p9Mz6n",
+        "text_eehmfp"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_ajLEPd": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_4F4686",
+    "image_with_text_overlay_CLPci4",
+    "rich_text_EUgihr",
+    "image_with_text_z8jWzj",
+    "rich_text_BfjkJh",
+    "image_with_text_b8W4xT",
+    "image_with_text_97Dd9q",
+    "image_with_text_pn4BtH",
+    "image_with_text_aEd6nD",
+    "image_with_text_BqEJt6",
+    "image_with_text_mwYR9w",
+    "image_with_text_JXmkp3",
+    "image_with_text_HGMBh6",
+    "image_with_text_ydNUcY",
+    "image_with_text_da9gX6",
+    "image_with_text_F63T7r",
+    "image_with_text_4CFjrq",
+    "image_with_text_t4YEyc",
+    "image_with_text_6qmPne",
+    "image_with_text_AjBf9N",
+    "image_with_text_b7Mmba",
+    "rich_text_piUVEg",
+    "rich_text_mGDBeC",
+    "featured_collection_ajLEPd"
+  ]
+}

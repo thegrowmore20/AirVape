@@ -1,0 +1,133 @@
+{% liquid
+  assign gift_card_recipient_feature_active = false
+  if block.settings.show_gift_card_recipient and product.gift_card?
+    assign gift_card_recipient_feature_active = true
+  endif
+
+  assign show_dynamic_checkout = false
+  if block.settings.show_dynamic_checkout_buttons and gift_card_recipient_feature_active == false
+    assign show_dynamic_checkout = true
+  endif
+%}
+
+<style>
+  #shopify-section-{{ section.id }} :where(.button-add-to-cart, sticky-add-to-cart .button) {
+    {% render 'button-vars',
+      background: block.settings.add_to_cart_background_color,
+      text: block.settings.add_to_cart_text_color
+    %}
+  }
+
+  #shopify-section-{{ section.id }} .shopify-payment-button__button--unbranded {
+    {% render 'button-vars',
+      background: block.settings.buy_it_now_background_color,
+      text: block.settings.buy_it_now_text_color
+    %}
+  }
+
+  @media screen and (min-width: 600px){
+    .add-to-cart-text-btn{
+      margin-bottom: -3px;
+    }
+  }
+
+</style>
+
+{% if product == null %}
+  <div class="buy-buttons">
+    <button
+      type="button"
+      class="button button-add-to-cart w-full button primary min-w-fit"
+    >
+      {{ 'products.product.add_to_cart' | t }}
+    </button>
+  </div>
+
+  {% continue %}
+{% endif %}
+
+<product-form>
+  {% form 'product',
+    product,
+    id: product_form_id,
+    class: 'product-form',
+    novalidate: 'novalidate',
+    data-type: 'add-to-cart-form'
+  %}
+    <input
+      data-variant-info="variant_id"
+      type="hidden"
+      name="id"
+      value="{{ product.selected_or_first_available_variant.id }}"
+      disabled
+    >
+
+    {% if gift_card_recipient_feature_active %}
+      <div class="mb-8">
+        {% render 'gift-card-recipient-form', product: product, form: form, section: section %}
+      </div>
+    {% endif %}
+
+    <div class="trim-margins buy-buttons">      
+     
+
+      <div class="flex justify-start item-start">
+        <div class="qty-with-add">
+            <div class="qty-selector-wrapper">
+                {% capture qty_selector_id %}{{ section.id }}-qty-input{% endcapture %}
+  
+                <label class="label label-product-info mb-3 hidden" for="{{ qty_selector_id }}">
+                  {{ 'products.product.quantity.label' | t }}
+                </label>
+  
+                <div>
+                  {% render 'qty-selector', product: product, product_form_id: product_form_id, id: qty_selector_id %}
+                </div>
+              </div>
+              <button
+                data-variant-info="add_to_cart"
+                type="submit"
+                name="add"
+                class="
+                button button-add-to-cart w-full min-w-fit
+                {%- if show_dynamic_checkout %}
+                    button-primary 
+                {% else %}
+                    button-secondary dynamic-btton grow
+                {% endif -%}
+                "
+                {% if product.selected_or_first_available_variant == null
+                or product.selected_or_first_available_variant.available == false
+                %}
+                disabled
+                {% endif %}
+            >
+                <span class="flex justify-center items-center gap-1.5">
+                {%- if product.selected_or_first_available_variant == null -%}
+                    {{ 'products.product.unavailable' | t }}
+                {%- elsif product.selected_or_first_available_variant.available -%}
+                    {% if show_dynamic_checkout %}
+                    {% render 'icon-product-cart' %}
+                    {% else %}
+                    {% render 'icon-product-cart-black' %}
+                    {% endif %}
+                    <span class="add-to-cart-text-btn"> {{ 'products.product.add_to_cart' | t }} </span>
+                {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+                </span>
+            </button>
+        </div>
+
+            {% if show_dynamic_checkout %}
+            <div class="buy-dynamic">
+                {{ form | payment_button }}
+            </div>
+            {% endif %}
+      </div>
+
+    </div>
+  {% endform %}
+
+  <div class="message message-danger text-danger mt-6" role="alert"></div>
+</product-form>

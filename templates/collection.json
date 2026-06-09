@@ -1,0 +1,268 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_9AKAKX": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_NyFYqL": {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_FTcgdH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_TKzjmh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_FRYjPg": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NyFYqL",
+        "heading_FTcgdH",
+        "text_TKzjmh",
+        "button_FRYjPg"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 500,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "main-banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "enable_transparent_header": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "use_original_media_size": false,
+        "banner_spacing": 400,
+        "heading_size": "h0",
+        "text_alignment": "md:content-bottom-left",
+        "text_alignment_mobile": "content-bottom-left",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "overlay_color": "#000000",
+        "overlay_opacity": 45,
+        "overlay_type": "gradient",
+        "heading_html_tag": "h1"
+      }
+    },
+    "image_with_text_overlay_XJWPRP": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_fa7UM3": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.title.value }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_HAendn": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.metafields.custom.short_description | metafield_tag }}"
+          }
+        },
+        "custom_liquid_7h8tQF": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% if collection.handle contains 'memorial-day' %}\n<p data-animation=\"block\"\ndata-animation-group=\"{{ section.id }}-collection-blocks\" class=\"text-sm mb-2 sales-end-pe\"> The Sale Ended on May 31.</p>\n{% endif %}"
+          }
+        },
+        "custom_liquid_EpVRGW": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% if collection.handle contains '420-bundles' %}\n<p data-animation=\"block\"\ndata-animation-group=\"{{ section.id }}-collection-blocks\" class=\"mt-1 bundle-collection-badge\"> Get them before they're gone  </p>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fa7UM3",
+        "text_HAendn",
+        "custom_liquid_7h8tQF",
+        "custom_liquid_EpVRGW"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "{{ collection.image }}",
+        "image_mobile": "{{ collection.metafields.custom.mobile_banner.value }}",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_iybzTj": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_NkiMxz": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_KcBCmD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ collection.metafields.custom.short_description | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NkiMxz",
+        "text_KcBCmD"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Charging_2.png",
+        "image_mobile": "shopify://shop_images/Charging_Mob_2.png",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-top-center",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "gradient"
+      }
+    },
+    "image_with_text_overlay_wxCXtb": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_hXd3Kb": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_dBEf8N": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ collection.metafields.custom.short_description | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hXd3Kb",
+        "text_dBEf8N"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Charging-2.png",
+        "image_mobile": "shopify://shop_images/Charging_Mob_-2.png",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-top-center",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "main-product-grid": {
+      "type": "main-collection-grid",
+      "settings": {
+        "products_per_row": 4,
+        "products_per_row_mobile": "products-collection-grid--mobile-two-col",
+        "space_between_products": "block-spacing-normal",
+        "include_collection_url": false,
+        "products_per_page": 24,
+        "pagination_type": "load-more",
+        "filter_type": "vertical",
+        "show_filters": true,
+        "show_filter_match_count": true,
+        "show_filter_values_with_no_matches": true,
+        "enable_color_swatches": true,
+        "show_selected_filter_type": true,
+        "show_sort_by": false,
+        "show_results_count": false,
+        "default_open_filters": 4,
+        "category_filters": "Parts &amp; Accessories,Vaporizers",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_9AKAKX",
+    "main-banner",
+    "image_with_text_overlay_XJWPRP",
+    "image_with_text_overlay_iybzTj",
+    "image_with_text_overlay_wxCXtb",
+    "main-product-grid"
+  ]
+}

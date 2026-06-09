@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_liquid_LtGMw8": {
+      "type": "custom-liquid",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": true,
+        "remove_vertical_space": true,
+        "custom_liquid": "<style>\n    h4 {\n        margin-bottom: 0;\n    }\n\n    .is_a_title {\n        font-size: 20px;\n        padding: 20px;\n        color: #ffffff;\n    }\n\n    .table {\nmargin-bottom: 50px;\n        background: #151f23 url(\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/experience-circle-bg.svg\") center center;\n        background-attachment: fixed;\n        min-height: 100vh;\n        position: relative;\n        padding: 30px 0;\n        color: #ffffff;\n    }\n\n    .has_space_left {\n        padding-left: 30px;\n        display: block;\n        padding-top: 10px;\n    }\n\n    .table-container {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n\n    .GeneratedTable {\n        text-transform: uppercase;\n        font-weight: 300;\n        font-size: 12px;\n        width: 85%;\n        background-color: rgba(0, 0, 0, 0.3);\n        border-width: 0.5px;\n        border-color: #ffffff;\n        border-style: solid;\n        color: #ffffff;\n        margin: 30px 0 0 0;\n        overflow-x: auto;\n        border-collapse: separate;\n    }\n\n    @media screen and (min-width: 778px) {\n        .GeneratedTable {\n            margin: 60px;\n        }\n    }\n\n    .GeneratedTable td {\n        border: .5px solid #ffffff;\n        color: #ffffff;\n        padding: 15px;\n        font-weight: 300;\n        background-color: rgba(0, 0, 0, 0.2);\n    }\n</style>\n\n<div class=\"table\">\n    <div class=\"tablecontent\">\n        <div class=\"text\">\n            <h4 class=\"is_a_title\">The AirVape UpGrade Program</h4>\n            <span class=\"has_space_left\">The UpGrade Program was created in order to allow users who already own an\n                AirVape device to buy their next one at a fraction of the retail price.\n                Since we are continuously improving upon our products and releasing new\n                models we want to make it far easier for cutomers to get a more a\n                advanced vaporizer.\n                This means that every time you want to buy a higher grade vape. you\n                receive a 30% to 50% discount depending on the device you already own\n                and the device you wish to have.\n            </span>\n            <span class=\"has_space_left\"> The UpGrade program is available only for dry herb vaporizers and cannot\n                be used for Oil/Concentrate vapes or accessores.</span>\n        </div>\n        <div class=\"text\">\n            <h4 class=\"is_a_title\">How it works:</h4>\n            <span class=\"has_space_left\">For example. if you own an AirVape XS GO you can buy an AirVape X at\n                half the retail price. but if you choose to upgrade to a higher level vape, like the\n                AirVape Legacy or Legacy PRO or SP edition you have the option to UpGrade at 30% off.\n                Upgrading from an AirVape X to the Legacy or Legacy PRO is available\n                at 50% off, and for a promotional period UpGrading from the AirVape Legacy to the\n                Legacy PRO is available at 50% off.\n                The UpGrades are applicable to all variants of the above mentioned products.\n            </span>\n            <span class=\"has_space_left\">The requirements are: a proof of purchase (in the form of an order number or\n                a receipt from an authorized reseller) and a valid warranty registration of the product.</span>\n        </div>\n        <div class=\"table-container\">\n            <table class=\"GeneratedTable\">\n                <tbody>\n                    <tr>\n                        <td>You own</td>\n                        <td>You get</td>\n                        <td>You get</td>\n                        <td>You get</td>\n                    </tr>\n                    <tr>\n                        <td>XS GO</td>\n                        <td>50% off </br> airvape x</td>\n                        <td>30% off </br> legacy</td>\n                        <td>30% off </br> legacy pro or sp edition</td>\n                    </tr>\n                    <tr>\n                        <td>Airvape x</td>\n                        <td></td>\n                        <td>50% off </br> legacy</td>\n                        <td>50% off </br> legacy pro or sp edition</td>\n                    </tr>\n                    <tr>\n                        <td>LEGACY</td>\n                        <td></td>\n                        <td></td>\n                        <td>50% off </br> legacy pro or sp edition</td>\n                    </tr>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    </div>\n</div>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "featured_collection_pYTFCT": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_LtGMw8",
+    "featured_collection_pYTFCT"
+  ]
+}

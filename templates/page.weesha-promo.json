@@ -1,0 +1,244 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_meLCVT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YVLHCg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enjoy Weesha with ENSŌ",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_LxcEMD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your discount Code will be automatically added at checkout</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YVLHCg",
+        "text_LxcEMD"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_LGxKBc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4XtJWp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1-06_917fdc9a-5f10-4ff8-87c3-38d2070081c2.png",
+            "video_autoplay": true,
+            "heading": "Grab an Open Box ENSŌ",
+            "heading_size": "h4",
+            "content": "<h1><strong>$50 OFF<br/></strong></h1>",
+            "link_url": "https://airvapeusa.com/discount/WEESHA?redirect=%2Fproducts%2Fenso-open-box",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_LQCD8P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1-07_4d3b023f-9e85-494f-8d85-f0a8807d19a2.png",
+            "video_autoplay": true,
+            "heading": "Grab an ENSŌ",
+            "heading_size": "h4",
+            "content": "<h1><strong>$30 OFF<br/></strong></h1>",
+            "link_url": "https://airvapeusa.com/discount/ENSO30?redirect=%2Fproducts%2Fenso",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_8LpwwC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1-08.png",
+            "video_autoplay": true,
+            "heading": "Buy Nicotine Free Herbal Molasses",
+            "heading_size": "h5",
+            "content": "",
+            "link_url": "shopify://products/tombacco-pineapple-herbal-molasses-copy",
+            "link_text": "BUY",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_4XtJWp",
+        "column_LQCD8P",
+        "column_8LpwwC"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": true,
+        "number_of_columns_on_desktop": 3,
+        "space_between_columns": 16,
+        "image_width": 100,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "max-md:text-left max-md:items-start",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "rich_text_387NXf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dpnwKJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_G9FLiE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your discount Code will be automatically added at checkout</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dpnwKJ",
+        "text_G9FLiE"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_before_after_7df4wy": {
+      "type": "image-before-after",
+      "name": "t:sections.image-before-after.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "before_image": "shopify://shop_images/before_357us_web.jpg",
+        "after_image": "shopify://shop_images/after_420us_web.jpg",
+        "subheading": "",
+        "heading": "420 gets even BETTER with ENSŌ",
+        "heading_size": "h2",
+        "content": "<p>Use the slider to change the time to 420</p>",
+        "text_position": "center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "handle_color": "#ffffff",
+        "heading_html_tag": "p"
+      }
+    },
+    "video_VMEKRL": {
+      "type": "video",
+      "name": "t:sections.video.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "video": "shopify://files/videos/web_enso1100720.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "media--ratio-16-9",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_K6WYxe": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "rich_text_meLCVT",
+    "main",
+    "multicolumn_LGxKBc",
+    "rich_text_387NXf",
+    "image_before_after_7df4wy",
+    "video_VMEKRL",
+    "featured_collection_K6WYxe"
+  ]
+}

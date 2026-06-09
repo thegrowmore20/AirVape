@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://cdn.shopify.com/s/files/1/0777/8339/files/Montserrat.woff2?v=1773836217') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0777/8339/files/Montserrat.woff?v=1773836218') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}

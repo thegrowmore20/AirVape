@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_BrBckq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PzYWmn": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to use the CORE",
+            "heading_size": "h3",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_kXxp6k": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Click the button below to read the detailed user manual or scroll further down to watch the how to videos</p>"
+          }
+        },
+        "button_UHYcKi": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "USER MANUAL",
+            "button_link": "https://cdn.shopify.com/s/files/1/0777/8339/files/CORE_manual_web.pdf?v=1770982190",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_PzYWmn",
+        "text_kXxp6k",
+        "button_UHYcKi"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/CORE_open_rose.415.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "video_jpDNYR": {
+      "type": "video",
+      "name": "t:sections.video.presets__0.name",
+      "settings": {
+        "full_width": false,
+        "video_url": "https://www.youtube.com/watch?v=ppm0EL8MpBQ",
+        "video_poster": "shopify://shop_images/How_to_use_CORE.png",
+        "image_size": "",
+        "subheading": "",
+        "heading": "How to use the Legacy CORE",
+        "heading_size": "h3",
+        "content": "",
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "video_TUgz3U": {
+      "type": "video",
+      "name": "t:sections.video.presets__0.name",
+      "settings": {
+        "full_width": false,
+        "video_url": "https://www.youtube.com/watch?v=ZvqKcrICLyk",
+        "video_poster": "shopify://shop_images/How_to_Clean_CORE.png",
+        "image_size": "",
+        "subheading": "",
+        "heading": "How to clean the Legacy CORE",
+        "heading_size": "h3",
+        "content": "",
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "video_VmKRhh": {
+      "type": "video",
+      "name": "t:sections.video.presets__0.name",
+      "settings": {
+        "full_width": false,
+        "video_url": "https://www.youtube.com/watch?v=v0SGcE3EVgA",
+        "video_poster": "shopify://shop_images/How_to_change_skin_CORE.png",
+        "image_size": "",
+        "subheading": "",
+        "heading": "How to change the CORE skins",
+        "heading_size": "h3",
+        "content": "",
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_zydWgt": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_BrBckq",
+    "video_jpDNYR",
+    "video_TUgz3U",
+    "video_VmKRhh",
+    "featured_collection_zydWgt"
+  ]
+}

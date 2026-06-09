@@ -1,0 +1,239 @@
+{% doc %}
+  @prompt
+    Create a product badge that displays overlaid on top of product images for products that have the tag "new". The badge should be positioned at the corner of the product image and be customizable for text, colors, size, and position. The badge should only appear when a product has the "new" tag.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-badge-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .ai-product-badge-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    z-index: 10;
+    {% if block.settings.position == 'top-left' %}
+      top: {{ block.settings.offset }}px;
+      left: {{ block.settings.offset }}px;
+    {% elsif block.settings.position == 'top-right' %}
+      top: {{ block.settings.offset }}px;
+      right: {{ block.settings.offset }}px;
+    {% elsif block.settings.position == 'bottom-left' %}
+      bottom: {{ block.settings.offset }}px;
+      left: {{ block.settings.offset }}px;
+    {% elsif block.settings.position == 'bottom-right' %}
+      bottom: {{ block.settings.offset }}px;
+      right: {{ block.settings.offset }}px;
+    {% endif %}
+  }
+
+  .ai-product-badge-tag-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    background-color: {{ block.settings.badge_background_color }};
+    color: {{ block.settings.badge_text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    text-transform: {{ block.settings.text_transform }};
+    border-radius: {{ block.settings.border_radius }}px;
+    line-height: 1.2;
+    {% if block.settings.show_shadow %}
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    {% endif %}
+  }
+{% endstyle %}
+
+{% if product.tags contains block.settings.tag_name %}
+  <div class="ai-product-badge-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-product-badge-wrapper-{{ ai_gen_id }}">
+      <span class="ai-product-badge-tag-{{ ai_gen_id }}">
+        {{ block.settings.badge_text }}
+      </span>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product badge",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Badge content"
+    },
+    {
+      "type": "text",
+      "id": "tag_name",
+      "label": "Product tag",
+      "default": "new",
+      "info": "Badge will only display if product has this tag"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "New"
+    },
+    {
+      "type": "header",
+      "content": "Badge position"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top left"
+        },
+        {
+          "value": "top-right",
+          "label": "Top right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "top-left"
+    },
+    {
+      "type": "range",
+      "id": "offset",
+      "label": "Offset from edge",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Badge style"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text style",
+      "options": [
+        {
+          "value": "none",
+          "label": "Normal"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 4,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shadow",
+      "label": "Show shadow",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "badge_background_color",
+      "label": "Background",
+      "default": "#d12b23"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product badge"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

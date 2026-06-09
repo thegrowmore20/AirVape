@@ -1,0 +1,385 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h4",
+            "mobile_heading_size": "h5",
+            "content": "{{ product.title }}",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "loox_reviews_loox_rating_Hdc673": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "[rating] ([count])",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": true,
+            "emptyRatingWidget": true
+          }
+        },
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false,
+            "use_bold_font": true
+          }
+        },
+        "rich_text_block_FXUMhq": {
+          "type": "rich_text_block",
+          "settings": {
+            "icon": "",
+            "icon_width": 24,
+            "heading": "",
+            "content": "{{ product.metafields.custom.hook_text | metafield_tag }}",
+            "heading_size": "heading text-h6 md:text-h5",
+            "text_alignment": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "",
+            "background_color": "",
+            "text_color": "",
+            "heading_color": "",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "4923f5c8-62d3-42db-a835-6e0613c4a182": {
+          "type": "payment_installments",
+          "settings": {}
+        },
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "type": "radio",
+            "color_picker_type": "radio-image",
+            "block_style_rounded": true,
+            "block_style": "outlined",
+            "size_chart_page": "",
+            "size_chart_option_name": "Size"
+          }
+        },
+        "qty_btn_selector_4wpHV7": {
+          "type": "qty_btn_selector",
+          "settings": {
+            "show_dynamic_checkout_buttons": false,
+            "show_gift_card_recipient": false,
+            "add_to_cart_background_color": "",
+            "add_to_cart_text_color": "",
+            "buy_it_now_background_color": "",
+            "buy_it_now_text_color": ""
+          }
+        },
+        "delivery_t3D3HP": {
+          "type": "delivery",
+          "settings": {
+            "delivery_from": 3,
+            "delivery_to": 5
+          }
+        },
+        "icon_text_block_EfmKHQ": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon_text_class": "icon-text-pdp",
+            "layout": "inline",
+            "icon_1": "shopify://shop_images/icon-02.svg",
+            "text_1": "<p>30 Days<br/>Return</p>",
+            "icon_2": "shopify://shop_images/icon-01.svg",
+            "text_2": "<p>Lifetime<br/>Warranty Ltd.</p>",
+            "icon_3": "shopify://shop_images/icon_Delivery-1.svg",
+            "text_3": "<p>Free Delivery<br/>100+ USD</p>",
+            "icon_4": "shopify://shop_images/icon_Delivery-1.svg",
+            "text_4": "<p>Hassle-Free<br/>Shipping</p>",
+            "icon_5": "shopify://shop_images/icon_Secure.svg",
+            "text_5": "<p>Secure<br/>Transaction</p>",
+            "icon_size": 80,
+            "text_size": 14,
+            "text_color": "#000000"
+          }
+        },
+        "description_Fqi8Qw": {
+          "type": "description",
+          "settings": {
+            "collapse_content": true,
+            "collapse_open": true,
+            "heading": "Description"
+          }
+        },
+        "collapsible_content_AyPDL8": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Why Choose AirVape?",
+            "content": "<p><strong>Sleek, Portable, and Travel-Friendly Design –</strong> AirVape combines a modern, sleek, and discreet design with a compact and lightweight build, making it the perfect portable vaporizer for on-the-go use, whether you're traveling or out for the day.<br/><br/><strong>Quiet Operation – </strong>Vape discreetly with minimal noise, making it suitable for use in public or shared spaces.<br/><br/><strong>High-Quality Materials –</strong> Made with durable, high-quality materials, AirVape is built to last and withstand regular use.<br/><br/><strong>Easy to Clean – </strong>The vaporizer is designed for easy maintenance, with a simple cleaning process that keeps it functioning optimally.<br/><br/><strong>Non-Toxic Materials –</strong> Made with non-toxic, food-grade materials for a clean, healthy, and safe vaping experience.<br/><br/><strong>Advanced Safety Features –</strong> Built-in safety features like automatic shut-off and temperature control to ensure a safe vaping experience.<br/><br/><strong>Easy Charging – </strong>AirVape uses USB-C charging for fast, efficient, and convenient recharging.<br/><br/><strong>Long Warranty –</strong> Comes with a reliable warranty, ensuring long-term performance and peace of mind.<br/><br/><strong>Affordable Price – </strong>Get premium quality without breaking the bank, as AirVape offers competitive pricing compared to other vaporizers on the market.<br/><br/><strong>Customer-Focused Brand – </strong>AirVape is committed to providing excellent customer service and offers product support to ensure complete satisfaction.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
+        "loox_reviews_loox_rating_Hdc673",
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e",
+        "rich_text_block_FXUMhq",
+        "4923f5c8-62d3-42db-a835-6e0613c4a182",
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
+        "qty_btn_selector_4wpHV7",
+        "delivery_t3D3HP",
+        "icon_text_block_EfmKHQ",
+        "description_Fqi8Qw",
+        "collapsible_content_AyPDL8"
+      ],
+      "settings": {
+        "show_breadcrumbs": false,
+        "desktop_media_width": 50,
+        "media_size": "",
+        "media_layout_desktop": "carousel_horizontal",
+        "media_mobile_indicator": "thumbnails",
+        "media_zoom": "lightbox",
+        "media_enable_video_autoplay": true,
+        "media_enable_video_looping": true,
+        "media_fit_height": true,
+        "show_sticky_add_to_cart": true,
+        "sticky_add_to_cart_position": "center",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "main-details": {
+      "type": "main-product-details",
+      "blocks": {
+        "5bbfd876-e943-47d3-b984-06f967dfd314": {
+          "type": "description",
+          "settings": {
+            "collapse_content": true,
+            "collapse_open": true,
+            "heading": "Description"
+          }
+        },
+        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
+          "type": "collapsible_content",
+          "disabled": true,
+          "settings": {
+            "collapse_open": false,
+            "heading": "Collapsible content",
+            "content": "<p>Provide your customers with additional information about the product.</p>"
+          }
+        },
+        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
+          "type": "collapsible_content",
+          "disabled": true,
+          "settings": {
+            "collapse_open": false,
+            "heading": "Collapsible content",
+            "content": "<p>Provide your customers with additional information about the product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "5bbfd876-e943-47d3-b984-06f967dfd314",
+        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
+        "5487aba2-e638-4f54-a71a-f08a7c4ab55b"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "177511064336521a37": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_6L7K7d": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 10,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_6L7K7d"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "WHY DO PEOPLE LOVE AIRVAPE?",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "17652927324f1226fc": {
+      "type": "apps",
+      "blocks": {
+        "mighty_image_uploader_app_block_HEiEHk": {
+          "type": "shopify://apps/mighty-image-uploader/blocks/app-block/1fd42d45-f36c-4cd4-a281-183fed7894d3",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "mighty_image_uploader_app_block_HEiEHk"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "image_with_text_njxmwc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ERaQTE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Curated by Creators. Chosen by the Community.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_jeET9a": {
+          "type": "text",
+          "settings": {
+            "text": "<h5><strong>Wear Art. Not Just a Skin.</strong><br/>Discover limited designs made by  artists and voted into the shop by users like you. Every skin is professionally printed in high detail, built to fit perfectly, and made to turn your device into a piece of art.<br/><br/><br/></h5>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ERaQTE",
+        "text_jeET9a"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/CORE_signature_skins_3.449.png",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "related_products_mbNMhG": {
+      "type": "related-products",
+      "name": "t:sections.related-products.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "subheading": "",
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_7qGdVH": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "product_faqs_kKpgGG": {
+      "type": "product-faqs",
+      "name": "Product Faqs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main-details",
+    "177511064336521a37",
+    "17652927324f1226fc",
+    "image_with_text_njxmwc",
+    "related_products_mbNMhG",
+    "featured_collection_7qGdVH",
+    "product_faqs_kKpgGG"
+  ]
+}

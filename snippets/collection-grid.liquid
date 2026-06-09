@@ -1,0 +1,275 @@
+{% liquid
+  assign products_per_page = products_per_page | default: section.settings.products_per_page
+  assign filter_type = filter_type | default: section.settings.filter_type
+
+  assign enable_sticky_sidebar = true
+
+  case filter_type
+    when 'horizontal'
+      assign filter_type_class = 'horizontal-filters'
+    when 'vertical'
+      assign filter_type_class = 'vertical-filters'
+    when 'drawer'
+      assign filter_type_class = 'desktop-drawer'
+  endcase
+%}
+
+  {% if section.settings.category_filters != blank %}
+    <style>
+      .category-fitlers-mobile:has(.current-category) [data-tab="accessories"]{
+        color: rgb(var(--color-background));
+        background: rgb(var(--color-foreground));
+        border-radius: 8px;
+      }
+      .category-fitlers-mobile {
+        display: flex;
+        align-items: center;
+        padding-bottom: 14px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      {% comment %} .category-fitlers-mobile:has(.active), {% endcomment %}
+      .category-fitlers-mobile:has(.open) {
+        padding-bottom: 3rem;
+        transition: all 0.3s ease;
+        margin-bottom: 1rem;
+      }
+      @media (min-width: 992px) {
+        .category-fitlers-mobile {
+          display: none
+        }
+      }
+      .category-filter-tab {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        cursor: pointer;
+      }
+      .category-filter-tab:first-of-type {
+        border-left: 1px solid;
+        order: 1;
+      }
+      .category-filter-tab.active{
+        color: rgb(var(--color-background));
+        background: rgb(var(--color-foreground));
+        border-radius: 8px;
+      }
+      .category-fitlers-mobile:has(.active) .category-filter-tab:first-of-type {
+        border: 0;
+      }
+      .mobile-category-facets {
+        display: flex;
+        white-space: nowrap;
+        width: 100%;
+        overflow-x: auto;
+        margin: 1.2rem 0rem 0;
+        gap: 8px;
+        position: absolute;
+        bottom: 0rem;
+        background: #fff;
+        scrollbar-width: 0;
+      }
+      .mobile-category-facets::-webkit-scrollbar {
+        display: none;
+      }
+      ul.facets-layout.mobile-category-facets label.facets__label {
+        border: 1.5px solid gray;
+        border-radius: 40px;
+        padding: 4px 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        min-width: max-content;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      ul.facets-layout.mobile-category-facets label.facets__label.current-category {
+          font-weight: 600;
+          border-color: #fbbc05;
+          border-width: 2px
+      }
+      ul.facets-layout.mobile-category-facets label.facets__label img {
+        width: 100%;
+        max-width: 24px;
+        border-radius: 4px;
+        object-fit: contain;
+        max-height: 24px;
+      }
+      .mobile-category-facets.hidden {
+        display: none
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterMobileSubCategories = document.querySelectorAll('.mobile-category-facets');
+        const filterMobileTabs = document.querySelectorAll('.category-filter-tab');
+        const filterMblFacets = document.querySelectorAll('label.facets__label.facet-checkbox');
+        const vaporizersTab = document.querySelector('[data-tab="vaporizers"]');
+        const accessoriesTab = document.querySelector('[data-tab="accessories"]');
+
+        vaporizersTab?.addEventListener('click',() => {
+          accessoriesTab.style.color = '#000';
+          accessoriesTab.style.background = '#fff';
+          accessoriesTab.style.borderRadius = '0';
+        })
+
+        filterMblFacets?.forEach(filterMblFacet => {
+          if(filterMblFacet.classList.contains('current-category')){
+            document.querySelector('[data-tab="accessories"]').classList.add('active');
+            filterMblFacet.closest('.mobile-category-facets').classList.remove('hidden');
+            filterMblFacet.closest('.mobile-category-facets').classList.add('open');
+          }
+        })
+        filterMobileTabs?.forEach(filterMobileTab => {
+          filterMobileTab.addEventListener('click', () => {
+            filterMobileTab.classList.add('active');
+            filterMobileTabs?.forEach(filterMobileTabOther => {
+              if (filterMobileTabOther !== filterMobileTab) {
+                filterMobileTabOther.classList.remove('active')
+              }
+            })
+            const filterDataTab = filterMobileTab.dataset.tab;
+            filterMobileSubCategories?.forEach(filterMobileSubCategorie => {
+              filterMobileSubCategorie.classList.add('hidden');
+              filterMobileSubCategorie.classList.remove('open');
+              document.querySelector('.mobile-category-facets.'+filterDataTab).classList.remove('hidden');
+              document.querySelector('.mobile-category-facets.'+filterDataTab).classList.add('open');
+            })
+          })
+        })
+      })
+    </script>
+  <div class="category-fitlers-mobile lg:hidden">
+    {% assign collection_navigations = section.settings.category_filters | split: ',' %}
+      {% for collection_filter in collection_navigations %}
+        {% assign collection_filter_nav = collection_filter | handle | replace: '-amp', '' %}
+        {% assign col_title_handle = collection.title | handle %}
+
+        {% assign get_match_col = collections[collection_filter_nav] %}
+        {% for get_match_col in collections %}
+          {% assign get_match_col_handle = get_match_col.title | handle %}
+          {% if get_match_col_handle == collection_filter_nav %}
+            {% assign matched_col_count = get_match_col.products_count %}
+          {% endif %}
+        {% endfor %}
+
+        {% liquid
+          assign total_collection_products = 0
+
+          if linklists['parts-accessories'].links.size > 0
+            for link in linklists['parts-accessories'].links
+              if link.type == 'collection_link'
+                unless link.object.handle == 'replacement-parts'
+                  assign collection_count = link.object.all_products_count | default: 0
+                  assign total_collection_products = total_collection_products | plus: collection_count
+                endunless
+              endif
+            endfor
+          endif
+        %}
+        
+
+        <div {% if linklists[collection_filter_nav].links.size == 0 %}onclick="window.location.href='{{ routes.collections_url }}/airvape-2025'"{%endif%} class="category-filter-tab {% if col_title_handle contains collection_filter_nav  %}active{% endif %}" data-tab="{{ linklists[collection_filter_nav].title | handle }}">
+          {{ linklists[collection_filter_nav].title | replace: 'Vaporizers', 'Devices' }} 
+           {% if collection_filter_nav contains 'parts-accessories'  %}
+                      ({{ total_collection_products }})
+            {% else %}
+            ({{ matched_col_count }})
+          {% endif %}
+        </div>
+        {% if linklists[collection_filter_nav].links.size > 0 %}
+          {% assign has_active_collection = false %}
+          {% for link in linklists[collection_filter_nav].links %}
+            {% if link.handle == col_title_handle or collection.handle == 'replacement-parts' %}
+              {% assign has_active_collection = true %}
+            {% endif %}
+          {% endfor %}
+        <ul class="facets-layout mobile-category-facets {% if has_active_collection %}open has_active_collection{% endif %} list-unstyled {{ linklists[collection_filter_nav].title | handle }} hidden" role="list">
+          
+          {% for link in linklists[collection_filter_nav].links %}
+            {%- if link.type == 'collection_link' -%}
+              {% assign col_image = link.object.products.first.featured_image %}
+              {% assign col_products_count = link.object.products_count %}
+            {%- endif -%}  
+            <li class="list-menu__item facets__item">
+              <label for="collection-filter-{{ forloop.index }}" class="facets__label {% if link.handle == 'all-accessories' and collection.handle == 'replacement-parts' %} current-category {% elsif link.handle == col_title_handle %}current-category{% endif %} facet-checkbox">
+                <input
+                  type="checkbox"
+                  id="collection-filter-{{ forloop.index }}"
+                  name="collection-filter"
+                  value="{{ col.handle }}"
+                  onclick="window.location.href='{{ link.url }}';"
+                  {% if link.url contains collection.handle  %}
+                    checked
+                  {% endif %}
+                  style="display:none;"
+                >
+                <img src="{{ col_image | image_url: width: 24 }}" loading="lazy"
+                width="" height="" alt="{{ col.title }} image"/>  
+                <span class="facet-checkbox__text" aria-hidden="true">
+                  <span class="facet-checkbox__text-label">{{ link.title }} ({{- col_products_count -}})</span> 
+                </span>
+              </label>
+            </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endif %}
+
+<div class="collection-grid {{ filter_type_class }}">
+  {% if section.settings.show_filters %}
+    <div class="collection-grid__facets">
+      {% if filter_type != 'drawer' %}
+        {% if filter_type == 'vertical' and enable_sticky_sidebar %}
+          {% echo '<sticky-sidebar id="CollectionGrid-StickySidebar" class="max-lg:hidden" disable-below="992" bottom-offset="0" data-preserve-state>' %}
+        {% endif %}
+
+        <div class="max-lg:hidden self-start w-full">
+          {% render 'facets', results: results, filter_type: filter_type %}
+        </div>
+
+        {% if filter_type == 'vertical' and enable_sticky_sidebar %}
+          {% echo '</sticky-sidebar> ' %}
+        {% endif %}
+      {% endif %}
+
+      <div class="{% if filter_type != "drawer" %}lg:hidden{% endif %}">
+        {% render 'facets-drawer', results: results %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if section.settings.show_sort_by %}
+    <div class="collection-grid__sort">
+      {% render 'collection-sort', results: results %}
+    </div>
+  {% endif %}
+
+  <div class="collection-grid__facets-active">
+    {% render 'collection-facets-active', results: results, results_url: results_url %}
+  </div>
+
+  {% if section.settings.show_results_count %}
+    <div class="collection-grid__results-count">
+      <div class="text-sm">
+        {{ 'products.facets.results_count' | t: count: results_count }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="collection-grid__products">
+    {% liquid
+      if search.results
+        paginate search.results by products_per_page
+          render 'collection-grid-page', current_results: search.results, paginate: paginate, results_url: results_url
+        endpaginate
+      elsif results.products
+        paginate results.products by products_per_page
+          render 'collection-grid-page', current_results: results.products, paginate: paginate, results_url: results_url
+        endpaginate
+      endif
+    %}
+  </div>
+</div>

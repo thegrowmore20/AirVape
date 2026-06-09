@@ -1,0 +1,434 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_overlay_7UdczX": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_n9qqHL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Save the planet",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_dUCKFV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Because we only have one home planet and we are all responsible for it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_n9qqHL",
+        "text_dUCKFV"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/attachment_3B_20filename_3Dbd2f6f6e-1196-480d-9af8-040f08521b0e.png",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 500,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 55,
+        "overlay_type": "gradient"
+      }
+    },
+    "multicolumn_C9w9Ph": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Tx4yjf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Recycle_icons-01.png",
+            "video_autoplay": true,
+            "heading": "2016",
+            "heading_size": "h5",
+            "content": "<p>Our journey started with the ‘Recycle your old vape’ program, where we did proper battery disposal and unit recycling on old vapes.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_cJGU3Y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Recycle_icons-02.png",
+            "video_autoplay": true,
+            "heading": "2017",
+            "heading_size": "h5",
+            "content": "<p>We started changing our packaging to recycled paper. Currently most of our products have recycled packaging, and by the end of this year ALL of them will have it.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_y3eccC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Recycle_icons-03.png",
+            "video_autoplay": true,
+            "heading": "2019",
+            "heading_size": "h5",
+            "content": "<p>When we did the finishing touches of our newest model, the Legacy, we chose the most eco-conscious vegan leather and also covered the front and back of the unit with hemp textile, which we think is a statement for all the legality issues that were in place for centuries around hemp. ;)</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_JkBmQt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Recycle_icons-04.png",
+            "video_autoplay": true,
+            "heading": "2020",
+            "heading_size": "h5",
+            "content": "<p>We started shipping most of our orders under 16 oz, in plant-based bubble wrap envelopes (yes, full fledged food for microorganisms when thrown away), and we are damn proud about that! :)</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_BYeBzm": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Recycle_icons-05.png",
+            "video_autoplay": true,
+            "heading": "2021",
+            "heading_size": "h5",
+            "content": "<p>On top of this, this year we have some major announcements to make, one is coming up soon.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_Tx4yjf",
+        "column_cJGU3Y",
+        "column_y3eccC",
+        "column_JkBmQt",
+        "column_BYeBzm"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 2,
+        "space_between_columns": 48,
+        "image_width": 35,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "#eaeaea",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "video_Wz67e4": {
+      "type": "video",
+      "settings": {
+        "full_width": true,
+        "video_url": "https://youtu.be/qoJomv4pyGo",
+        "video_poster": "shopify://shop_images/thumbnail.png",
+        "image_size": "media--ratio-16-9",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "slideshow_jxQdEz": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_Dt6LXN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CertificateAV1.png",
+            "mobile_image": "shopify://shop_images/CertificateAV1Mbl-01.png",
+            "content_width_maximum": 360,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h0",
+            "text": "",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "",
+            "button_background_color": "",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_APhyeU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CertificateAV2.png",
+            "mobile_image": "shopify://shop_images/CertificateAV1Mbl-03.png",
+            "content_width_maximum": 500,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h0",
+            "text": "",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "",
+            "button_background_color": "",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_jXpkzL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CertificateAV3.png",
+            "mobile_image": "shopify://shop_images/CertificateAV1Mbl-05.png",
+            "content_width_maximum": 500,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h0",
+            "text": "",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "",
+            "button_background_color": "",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_WqHYee": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CertificateAV4.png",
+            "mobile_image": "shopify://shop_images/CertificateAV1Mbl-04.png",
+            "content_width_maximum": 500,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h0",
+            "text": "",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "",
+            "button_background_color": "",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_FMMV9g": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CertificateAV5.png",
+            "mobile_image": "shopify://shop_images/CertificateAV1Mbl-01.png",
+            "content_width_maximum": 500,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h0",
+            "text": "",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "",
+            "button_background_color": "",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "slide_Dt6LXN",
+        "slide_APhyeU",
+        "slide_jXpkzL",
+        "slide_WqHYee",
+        "slide_FMMV9g"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "autoplay": true,
+        "speed": 4,
+        "height": 760,
+        "controls": "dots",
+        "background_animation": "ZoomOut",
+        "content_animation": "AppearLineByLine",
+        "background_color": "#262626"
+      }
+    },
+    "custom_liquid_MGAYyF": {
+      "type": "custom-liquid",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<div data-tf-live=\"01J6CB1VZ7CV4P2KEXGH4A3DVZ\"></div><script src=\"//embed.typeform.com/next/embed.js\"></script>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "featured_collection_ccg3zJ": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_7UdczX",
+    "multicolumn_C9w9Ph",
+    "video_Wz67e4",
+    "slideshow_jxQdEz",
+    "custom_liquid_MGAYyF",
+    "featured_collection_ccg3zJ"
+  ]
+}

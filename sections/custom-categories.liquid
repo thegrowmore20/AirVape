@@ -1,0 +1,447 @@
+{% render 'section-bg-number-vars' %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --content-width: {% render 'get-content-width', type: section.settings.content_width %};
+  }
+</style>
+{% liquid
+
+  if section.settings.link_url != blank
+    assign link_url = section.settings.link_url
+  else
+    assign link_url = null
+  endif
+%}
+ <section {% render 'section-attrs' %}>
+  <div class="section-body trim-margins {{ section.settings.text_alignment }}">
+    {% render 'section-header', link_text: section.settings.link_text, link_url: link_url %}
+    <div class="airvape-cate-product-grid" aria-label="Product categories">
+      {% assign categories = section.blocks | where: 'type', 'category' %}
+        {% for block in categories %}   
+          {% liquid
+            assign lazyload = 'eager'
+            if forloop.index > 1
+              assign lazyload = 'lazy'
+            endif
+          %}
+          {% if block.settings.image != blank %}         
+          <a  data-animation="paragraph"
+        data-animation-group="{{ section.id }}"  href="{{ block.settings.custom_url | default: "#." }}" class="card-link">
+            <div class="airvape-cate-card card--{%- cycle 'disposables', 'eliquids', 'nicotine',  'vapekits', 'vapecoils', 'card-a', 'card-b', 'card-c', 'card-d' -%}">
+                
+                {{ block.settings.image
+                        | image_url: width: 450
+                        | image_tag:
+                            alt: product.title,
+                            class: 'product-category-image card-mockup',
+                            loading: lazyload
+                        }}  
+                
+              <div class="card-cat-content">          
+                <h2 class="card-label">{{ block.settings.title }}</h2>
+                <p class="card-sublabel"> {{ block.settings.sub_title }} </p>
+              </div>
+            </div>
+          </a>
+          {% endif %}
+        {% endfor %}  
+  </div>
+  </div>
+  </section>
+
+<style>
+     .airvape-cate-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: 16px;
+      width: 100%;
+    }
+
+    /* ── Anchor wrapper: invisible to the grid ── */
+    .card-link {
+      display: contents; /* anchor becomes transparent to grid layout */
+      text-decoration: none;
+    }
+
+    /* ══════════════════════════════
+       BASE CARD
+    ══════════════════════════════ */
+    .airvape-cate-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;   /* label sits at bottom-right */
+      padding: 22px 24px;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .airvape-cate-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+    }
+
+    /* dark gradient overlay */
+    .airvape-cate-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none;
+    }
+
+    /* ── Label ── */
+    .card-cat-content{
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+    .card-label {
+      font-size: clamp(13px, 1.8vw, 25px);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .card-sublabel{
+      font-size: clamp(13px, 1.8vw, 18px);
+      text-align: left;
+    }
+
+    /* ── Product image ── */
+    .card-mockup {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: -30px center;
+      z-index: 1;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover .card-mockup {
+      transform: scale(1.06);
+    }
+
+    /* ── Col 1 rows 1-2: DISPOSABLES ── */
+    .card--disposables {
+      grid-column: 1;
+      grid-row: 1;
+      /* No aspect-ratio: it stretches to fill the two rows
+         (visually ≈ 1:1 since row_h × 2 + gap ≈ col_width) */
+       aspect-ratio: 2 / 1;
+      background: linear-gradient(135deg, #00c9a7, #48cae4, #6a8eee);
+    }
+
+    /* ── Row 1 ── */
+    .card--eliquids {
+      grid-column: 2;
+      grid-row: 1;
+      aspect-ratio: 2 / 1;   /* drives row 1 height */
+      background: linear-gradient(135deg, #a78bfa, #818cf8, #67e8f9);
+    }
+
+    .card--nicotine {
+      grid-column: 3;
+      grid-row: 1;
+      aspect-ratio: 2 / 1;   /* drives row 1 height */
+      background: linear-gradient(135deg, #c084fc, #e879f9, #f472b6);
+    }
+
+    /* ── Row 2 ── */
+    .card--vapekits {
+      grid-column: 1;
+      grid-row: 2;
+      aspect-ratio: 2 / 1;   /* drives row 2 height */
+      background: linear-gradient(135deg, #f97316, #fbbf24, #facc15);
+    }
+
+    .card--vapecoils {
+      grid-column: 2;
+      grid-row: 2;
+      aspect-ratio: 2 / 1;   /* drives row 2 height */
+      background: linear-gradient(135deg, #f43f5e, #fb7185, #fda4af);
+    }
+
+    .card--card-a {
+      grid-column: 3;
+      grid-row: 2;
+      aspect-ratio: 2 / 1;
+      background: linear-gradient(135deg, #0ea5e9, #38bdf8, #7dd3fc);
+    }
+
+    .card--card-b {
+      grid-column: 1;
+      grid-row: 3;
+      aspect-ratio: 2 / 1;
+      background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+    }
+
+    .card--card-c {
+      grid-column: 2;
+      grid-row: 3;
+      aspect-ratio: 2 / 1;
+      background: linear-gradient(135deg, #f59e0b, #fbbf24, #fde68a);
+    }
+
+    .card--card-d {
+      grid-column: 3;
+      grid-row: 3;
+      aspect-ratio: 2 / 1;
+      background: linear-gradient(135deg, #f59e0b, #fbbf24, #fde68a);
+    }
+
+    /* ══════════════════════════════
+       TABLET (≤ 900px)
+    ══════════════════════════════ */
+    @media (max-width: 900px) {
+      .airvape-cate-product-grid { gap: 12px; }
+    }
+
+    @media (max-width: 600px) {
+      .airvape-cate-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Lock all 5 rows to the exact geometric perfect height */
+        grid-template-rows: repeat(5, calc(25vw - 19px));
+        gap: 12px;
+      }
+
+      /* ── Disposables: square, spans rows 1-2 ── */
+      .card--disposables {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        aspect-ratio: 1 / 1;
+      }
+
+      /* ── Reset desktop aspect-ratios; let cards stretch to fill their row ── */
+      .card--eliquids  { grid-column: 2; grid-row: 1;  aspect-ratio: unset; }
+
+      .card--nicotine  { grid-column: 1; grid-row: 3; aspect-ratio: unset; }
+
+      .card--vapekits  { grid-column: 2; grid-row: 2; aspect-ratio: unset; }
+      .card--vapecoils { grid-column: 2; grid-row: 3; aspect-ratio: unset; }
+
+      .card--card-a    { grid-column: 1; grid-row: 4; aspect-ratio: unset; }
+      .card--card-b    { grid-column: 2; grid-row: 4; aspect-ratio: unset; }
+
+      /* ── Row 5: CARD-C spans full width ── */
+      .card--card-c {
+        grid-column:1;
+        grid-row: 5;
+        aspect-ratio: unset;
+      }
+
+      .card--card-d {
+        grid-column: 2;
+        grid-row: 5;
+        aspect-ratio: unset;
+      }
+
+      /* ── Responsive typography and padding on mobile ── */
+      .card {
+        padding: 14px 16px;
+      }
+
+      .card-label {
+        font-size: clamp(11px, 3vw, 20px);
+      }
+      .card-sublabel {
+        font-size: clamp(11px, 3vw, 14px);
+        line-height: normal;
+      }
+
+      .airvape-cate-card{
+        padding: 10px;
+      }
+
+      .card-mockup {     
+        object-position: center center;
+    }
+
+    }
+</style>
+
+{% schema %}
+{
+    "name": "Categories",    
+      "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.full_width.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:sections.rich-text.settings.content_width.label",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.rich-text.settings.content_width.options__0.label"
+        },
+        {
+          "value": "normal",
+          "label": "t:sections.rich-text.settings.content_width.options__1.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.rich-text.settings.content_width.options__2.label"
+        },
+        {
+          "value": "extra-large",
+          "label": "t:sections.rich-text.settings.content_width.options__3.label"
+        },
+        {
+          "value": "full-width",
+          "label": "t:sections.rich-text.settings.content_width.options__4.label"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.headers.heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.all.subheading.label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.featured-collection.settings.heading.label",
+      "default": "Featured collection"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:sections.all.heading_size.label",
+      "options": [
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__0.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_size.options__6.label"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:sections.all.text_alignment.label",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "t:sections.all.text_alignment.options.text_left.label"
+        },
+        {
+          "value": "text-center",
+          "label": "t:sections.all.text_alignment.options.text_center.label"
+        }
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "t:sections.featured-collection.settings.link_text.label",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "t:sections.featured-collection.settings.link_url.label",
+      "info": "t:sections.featured-collection.settings.link_url.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.headers.colors"
+    },
+    {
+      "type": "color",
+      "label": "t:sections.all.background_color.label",
+      "id": "background_color"
+    },
+    {
+      "type": "color",
+      "label": "t:sections.all.text_color.label",
+      "id": "text_color"
+    },
+    {
+      "type": "color",
+      "label": "t:sections.all.heading_color.label",
+      "id": "heading_color"
+    }
+  ],
+  "blocks": [
+    {
+       "type": "category",
+       "name" : "Category",
+       "limit" : 9,
+       "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "url",
+                "id": "custom_url",
+                "label": "Custom URL"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "sub_title",
+                "label": "Sub Title",
+                "default": "Sub Title"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "title",
+                "label": "Title",
+                "default": "Title"
+            }
+       ]
+    }
+  ],
+    "presets": [
+        {
+            "name": "Categories",
+        }
+    ]
+}
+{% endschema %}

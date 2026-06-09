@@ -1,0 +1,916 @@
+{% doc %}
+  @prompt
+    Create a Shopify section for a fully responsive, Core Web Vitals-friendly media slider that supports image slides, YouTube videos, Vimeo videos, and MP4 videos.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+{% liquid
+  assign slides_desktop = block.settings.slides_desktop
+  assign slides_tablet = block.settings.slides_tablet
+  assign slides_mobile = block.settings.slides_mobile
+  assign gap = block.settings.slide_gap
+  assign autoplay = block.settings.autoplay
+  assign autoplay_speed = block.settings.autoplay_speed
+  assign infinite = block.settings.infinite_loop
+  assign show_arrows = block.settings.show_arrows
+  assign show_dots = block.settings.show_dots
+  assign arrow_color = block.settings.arrow_color
+  assign dot_color = block.settings.dot_color
+  assign metafield_namespace = block.settings.metafield_namespace
+  assign metafield_key = block.settings.metafield_key
+  assign aspect_ratio = block.settings.aspect_ratio
+%}
+{% style %}
+  .ai-media-slider-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 1.25rem;
+  }
+  .ai-media-slider-track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ gap }}px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .ai-media-slider-track-{{ ai_gen_id }}.dragging {
+    cursor: grabbing;
+    transition: none;
+  }
+  /*
+   * Slide width is set via JavaScript (setSlideWidths) using this.offsetWidth
+   * on the wrapper element — the only reliable source of the container's real
+   * pixel width. flex: 0 0 auto lets JS override flex-basis cleanly.
+   */
+  .ai-media-slider-slide-{{ ai_gen_id }} {
+    flex: 0 0 auto;
+    min-width: 0;
+    position: relative;
+    {% if aspect_ratio == 'auto' %}
+      height: auto;
+    {% elsif aspect_ratio == 'portrait' %}
+      aspect-ratio: 3 / 4;
+    {% elsif aspect_ratio == '9-16' %}
+      aspect-ratio: 9 / 16;
+    {% elsif aspect_ratio == '16-9' %}
+      aspect-ratio: 16 / 9;
+    {% elsif aspect_ratio == 'landscape' %}
+      aspect-ratio: 4 / 3;
+    {% elsif aspect_ratio == 'square' %}
+      aspect-ratio: 1 / 1;
+    {% endif %}
+    background-color: #f4f4f4;
+    border-radius: {{ settings.block_corner_radius }}px;
+    overflow: hidden;
+  }
+  .ai-media-slider-slide-{{ ai_gen_id }} img,
+  .ai-media-slider-slide-{{ ai_gen_id }} video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ai-media-slider-slide-{{ ai_gen_id }} iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .ai-media-slider-video-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ai-media-slider-play-button-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+  }
+  .ai-media-slider-play-button-{{ ai_gen_id }} svg {
+    width: 28px;
+    height: 28px;
+    fill: #000;
+    margin-left: 4px;
+  }
+  .ai-media-slider-arrow-{{ ai_gen_id }} {
+    position: absolute;
+    top: calc(50% - 0.625rem);
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  }
+  .ai-media-slider-arrow-{{ ai_gen_id }}:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+  .ai-media-slider-arrow-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .ai-media-slider-arrow-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+  .ai-media-slider-arrow-prev-{{ ai_gen_id }} {
+    left: 16px;
+  }
+  .ai-media-slider-arrow-next-{{ ai_gen_id }} {
+    right: 16px;
+  }
+  .ai-media-slider-arrow-{{ ai_gen_id }} svg {
+    width: 22px;
+    height: 22px;
+    stroke: {{ arrow_color }};
+    stroke-width: 2.5;
+    fill: none;
+  }
+  .ai-media-slider-dots-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .ai-media-slider-dots-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+  .ai-media-slider-dot-{{ ai_gen_id }} {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: {{ dot_color }};
+    opacity: 0.3;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+  }
+  .ai-media-slider-dot-{{ ai_gen_id }}:hover {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  .ai-media-slider-dot-{{ ai_gen_id }}.active {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  .ai-media-slider-empty-{{ ai_gen_id }} {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: {{ settings.block_corner_radius }}px;
+    color: #666;
+    font-size: 15px;
+  }
+{% endstyle %}
+<media-slider-{{ ai_gen_id }}
+  class="ai-media-slider-{{ ai_gen_id }}"
+  data-autoplay="{{ autoplay }}"
+  data-autoplay-speed="{{ autoplay_speed }}"
+  data-infinite="{{ infinite }}"
+  data-slides-desktop="{{ slides_desktop }}"
+  data-slides-tablet="{{ slides_tablet }}"
+  data-slides-mobile="{{ slides_mobile }}"
+  data-gap="{{ gap }}"
+  {{ block.shopify_attributes }}
+>
+  {% liquid
+    assign use_metafield = false
+    assign metafield_slides = null
+    if metafield_namespace != blank and metafield_key != blank
+      assign metafield_slides = product.metafields[metafield_namespace][metafield_key]
+      if metafield_slides != blank and metafield_slides.value != blank
+        assign use_metafield = true
+      endif
+    endif
+    assign has_manual_slides = false
+    if use_metafield == false
+      for i in (1..12)
+        assign img_key = 'image_' | append: i
+        assign yt_key = 'youtube_' | append: i
+        assign vm_key = 'vimeo_' | append: i
+        assign mp4_key = 'mp4_' | append: i
+        assign current_img = block.settings[img_key]
+        assign current_yt = block.settings[yt_key]
+        assign current_vm = block.settings[vm_key]
+        assign current_mp4 = block.settings[mp4_key]
+        if current_img != blank or current_yt != blank or current_vm != blank or current_mp4 != blank
+          assign has_manual_slides = true
+          break
+        endif
+      endfor
+    endif
+  %}
+  {% if use_metafield or has_manual_slides %}
+    <div class="ai-media-slider-track-{{ ai_gen_id }}">
+      {% if use_metafield %}
+        {% for item in metafield_slides.value %}
+          <div class="ai-media-slider-slide-{{ ai_gen_id }}" data-slide-index="{{ forloop.index0 }}">
+            <img
+              src="{{ item | image_url: width: 800 }}"
+              srcset="{{ item | image_url: width: 400 }} 400w,
+                      {{ item | image_url: width: 800 }} 800w,
+                      {{ item | image_url: width: 1200 }} 1200w"
+              sizes="(min-width: 990px) {{ 100 | divided_by: slides_desktop }}vw,
+                     (min-width: 750px) {{ 100 | divided_by: slides_tablet }}vw,
+                     {{ 100 | divided_by: slides_mobile }}vw"
+              alt="{{ item.alt | default: 'Slide image' | escape }}"
+              loading="lazy"
+              width="800"
+              height="450"
+            >
+          </div>
+        {% endfor %}
+      {% else %}
+        {% for i in (1..12) %}
+          {% assign img_key = 'image_' | append: i %}
+          {% assign yt_key = 'youtube_' | append: i %}
+          {% assign vm_key = 'vimeo_' | append: i %}
+          {% assign mp4_key = 'mp4_' | append: i %}
+          {% assign current_img = block.settings[img_key] %}
+          {% assign current_yt = block.settings[yt_key] %}
+          {% assign current_vm = block.settings[vm_key] %}
+          {% assign current_mp4 = block.settings[mp4_key] %}
+          {% if current_img != blank or current_yt != blank or current_vm != blank or current_mp4 != blank %}
+            <div class="ai-media-slider-slide-{{ ai_gen_id }}" data-slide-index="{{ forloop.index0 }}">
+              {% if current_yt != blank %}
+                <div
+                  class="ai-media-slider-video-placeholder-{{ ai_gen_id }}"
+                  style="background-image: url('https://img.youtube.com/vi/{{ current_yt }}/maxresdefault.jpg');"
+                  data-video-type="youtube"
+                  data-video-id="{{ current_yt }}"
+                >
+                  <div class="ai-media-slider-play-button-{{ ai_gen_id }}">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              {% elsif current_vm != blank %}
+                <div
+                  class="ai-media-slider-video-placeholder-{{ ai_gen_id }}"
+                  data-video-type="vimeo"
+                  data-video-id="{{ current_vm }}"
+                >
+                  <div class="ai-media-slider-play-button-{{ ai_gen_id }}">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              {% elsif current_mp4 != blank %}
+                <video
+                  src="{{ current_mp4 }}"
+                  controls
+                  preload="none"
+                  playsinline
+                ></video>
+              {% elsif current_img != blank %}
+               <lqip-element class="image-loader">
+                <img
+                  src="{{ current_img | image_url: width: 800 }}"
+                  srcset="{{ current_img | image_url: width: 400 }} 400w,
+                          {{ current_img | image_url: width: 800 }} 800w,
+                          {{ current_img | image_url: width: 1200 }} 1200w"
+                  sizes="(min-width: 990px) {{ 100 | divided_by: slides_desktop }}vw,
+                         (min-width: 750px) {{ 100 | divided_by: slides_tablet }}vw,
+                         {{ 100 | divided_by: slides_mobile }}vw"
+                  alt="{{ current_img.alt | escape }}"
+                  loading="lazy"
+                  width="{{ current_img.width }}"
+                  height="{{ current_img.height }}"
+                >
+                </lqip-element>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% if show_arrows %}
+      <button
+        class="ai-media-slider-arrow-{{ ai_gen_id }} ai-media-slider-arrow-prev-{{ ai_gen_id }}"
+        aria-label="Previous slide"
+      >
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button
+        class="ai-media-slider-arrow-{{ ai_gen_id }} ai-media-slider-arrow-next-{{ ai_gen_id }}"
+        aria-label="Next slide"
+      >
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    {% endif %}
+    {% if show_dots %}
+      <div class="ai-media-slider-dots-{{ ai_gen_id }}"></div>
+    {% endif %}
+  {% else %}
+    <div class="ai-media-slider-empty-{{ ai_gen_id }}">
+      <p><strong>Media Slider</strong></p>
+      <p style="margin-top: 8px;">Add images or videos, or configure metafield source to get started</p>
+    </div>
+  {% endif %}
+</media-slider-{{ ai_gen_id }}>
+<script>
+(function() {
+  class MediaSlider{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+      this.track = this.querySelector('.ai-media-slider-track-{{ ai_gen_id }}');
+      this.slides = this.querySelectorAll('.ai-media-slider-slide-{{ ai_gen_id }}');
+      this.prevBtn = this.querySelector('.ai-media-slider-arrow-prev-{{ ai_gen_id }}');
+      this.nextBtn = this.querySelector('.ai-media-slider-arrow-next-{{ ai_gen_id }}');
+      this.dotsContainer = this.querySelector('.ai-media-slider-dots-{{ ai_gen_id }}');
+      this.currentIndex = 0;
+      this.isDragging = false;
+      this.startPos = 0;
+      this.dragOffset = 0;      // live offset during drag
+      this.committedOffset = 0; // offset at the start of each drag gesture
+      this.autoplayInterval = null;
+      this.config = {
+        autoplay: this.dataset.autoplay === 'true',
+        autoplaySpeed: parseInt(this.dataset.autoplaySpeed) || 3000,
+        infinite: this.dataset.infinite === 'true',
+        slidesDesktop: parseInt(this.dataset.slidesDesktop) || 4,
+        slidesTablet: parseInt(this.dataset.slidesTablet) || 3,
+        slidesMobile: parseInt(this.dataset.slidesMobile) || 2,
+        gap: parseInt(this.dataset.gap) || 16
+      };
+    }
+    connectedCallback() {
+      if (!this.track || this.slides.length === 0) return;
+      this.setupEventListeners();
+      /*
+       * Defer first render to rAF so the browser has performed layout and
+       * offsetWidth returns the real computed value (not 0). This also ensures
+       * CSS custom properties have been resolved for the current breakpoint.
+       */
+      requestAnimationFrame(() => {
+        this.setSlideWidths();
+        this.setupDots();
+        this.updateSlider();
+        if (this.config.autoplay) {
+          this.startAutoplay();
+        }
+      });
+      this.resizeHandler = () => this.handleResize();
+      window.addEventListener('resize', this.resizeHandler);
+    }
+    disconnectedCallback() {
+      this.stopAutoplay();
+      if (this.resizeHandler) {
+        window.removeEventListener('resize', this.resizeHandler);
+      }
+    }
+    getSlidesPerView() {
+      const w = window.innerWidth;
+      if (w >= 990) return this.config.slidesDesktop;
+      if (w >= 750) return this.config.slidesTablet;
+      return this.config.slidesMobile;
+    }
+    getMaxIndex() {
+      return Math.max(0, this.slides.length - this.getSlidesPerView());
+    }
+    /*
+     * Set every slide's width to an exact pixel value calculated from the
+     * wrapper's real offsetWidth. This is called after rAF (so layout is done)
+     * and again on every resize. It is the only reliable way to size slides
+     * because CSS flex-basis percentages resolve against the flex container
+     * (track), not the clipping wrapper, making calc(100%/N) ambiguous.
+     */
+    setSlideWidths() {
+      const containerWidth = this.offsetWidth;
+      if (!containerWidth) return;
+      const n   = this.getSlidesPerView();
+      const gap = this.config.gap;
+      const slideWidth = (containerWidth - (n - 1) * gap) / n;
+      this.slides.forEach(slide => {
+        slide.style.flexBasis  = slideWidth + 'px';
+        slide.style.flexGrow   = '0';
+        slide.style.flexShrink = '0';
+      });
+    }
+    // Returns the pixel width of one slide + the gap that follows it
+    getSlideStep() {
+      if (!this.slides[0]) return 0;
+      return this.slides[0].offsetWidth + this.config.gap;
+    }
+    // Converts currentIndex → negative pixel offset
+    indexToOffset(index) {
+      return -(index * this.getSlideStep());
+    }
+    // ─── Dots ────────────────────────────────────────────────────────────────
+    setupDots() {
+      if (!this.dotsContainer) return;
+      const maxIndex = this.getMaxIndex();
+      const totalDots = maxIndex + 1;
+      if (totalDots <= 1) {
+        this.dotsContainer.classList.add('hidden');
+        return;
+      }
+      this.dotsContainer.classList.remove('hidden');
+      this.dotsContainer.innerHTML = '';
+      for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'ai-media-slider-dot-{{ ai_gen_id }}';
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', () => this.goToSlide(i));
+        this.dotsContainer.appendChild(dot);
+      }
+      this.updateDots();
+    }
+    updateDots() {
+      if (!this.dotsContainer) return;
+      this.dotsContainer
+        .querySelectorAll('.ai-media-slider-dot-{{ ai_gen_id }}')
+        .forEach((dot, i) => dot.classList.toggle('active', i === this.currentIndex));
+    }
+    // ─── Event listeners ─────────────────────────────────────────────────────
+    setupEventListeners() {
+      if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+      if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+      // Mouse drag
+      this.track.addEventListener('mousedown', (e) => this.dragStart(e));
+      // Use window so drag continues even if cursor leaves the track
+      window.addEventListener('mousemove', (e) => this.dragMove(e));
+      window.addEventListener('mouseup', () => this.dragEnd());
+      // Touch drag
+      this.track.addEventListener('touchstart', (e) => this.dragStart(e), { passive: true });
+      this.track.addEventListener('touchmove', (e) => this.dragMove(e), { passive: true });
+      this.track.addEventListener('touchend', () => this.dragEnd());
+      // Video placeholders
+      this.querySelectorAll('.ai-media-slider-video-placeholder-{{ ai_gen_id }}').forEach(ph => {
+        ph.addEventListener('click', (e) => {
+          // Only fire if it was a click, not the end of a drag
+          if (!this._wasDragging) this.loadVideo(e.currentTarget);
+        });
+      });
+    }
+    // ─── Drag helpers ─────────────────────────────────────────────────────────
+    getClientX(event) {
+      return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+    }
+    dragStart(event) {
+      // Ignore right-clicks
+      if (event.button && event.button !== 0) return;
+      // Prevent native image / link drag
+      if (event.type === 'mousedown') event.preventDefault();
+      this.isDragging = true;
+      this._wasDragging = false;
+      this.startPos = this.getClientX(event);
+      this.committedOffset = this.indexToOffset(this.currentIndex);
+      this.track.classList.add('dragging');
+      this.stopAutoplay();
+    }
+    dragMove(event) {
+      if (!this.isDragging) return;
+      const delta = this.getClientX(event) - this.startPos;
+      // Mark as a real drag after 5 px of movement
+      if (Math.abs(delta) > 5) this._wasDragging = true;
+      const liveOffset = this.committedOffset + delta;
+      this.track.style.transform = `translateX(${liveOffset}px)`;
+    }
+    dragEnd() {
+      if (!this.isDragging) return;
+      this.isDragging = false;
+      this.track.classList.remove('dragging');
+      // Read how far the track currently is from its natural position
+      const currentMatrix = new DOMMatrix(getComputedStyle(this.track).transform);
+      const currentOffset = currentMatrix.m41;
+      const delta = currentOffset - this.committedOffset;
+      const threshold = 50;
+      if (delta < -threshold && this.currentIndex < this.getMaxIndex()) {
+        this.currentIndex++;
+      } else if (delta > threshold && this.currentIndex > 0) {
+        this.currentIndex--;
+      }
+      // Snap to correct position with transition
+      this.updateSlider();
+      if (this.config.autoplay) this.startAutoplay();
+    }
+    // ─── Navigation ───────────────────────────────────────────────────────────
+    prev() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+      } else if (this.config.infinite) {
+        this.currentIndex = this.getMaxIndex();
+      }
+      this.updateSlider();
+    }
+    next() {
+      if (this.currentIndex < this.getMaxIndex()) {
+        this.currentIndex++;
+      } else if (this.config.infinite) {
+        this.currentIndex = 0;
+      }
+      this.updateSlider();
+    }
+    goToSlide(index) {
+      this.currentIndex = Math.max(0, Math.min(index, this.getMaxIndex()));
+      this.updateSlider();
+      this.stopAutoplay();
+      if (this.config.autoplay) this.startAutoplay();
+    }
+    updateSlider() {
+      const offset = this.indexToOffset(this.currentIndex);
+      this.track.style.transform = `translateX(${offset}px)`;
+      this.updateNavigation();
+      this.updateDots();
+    }
+    updateNavigation() {
+      const maxIndex = this.getMaxIndex();
+      const slidesPerView = this.getSlidesPerView();
+      if (this.slides.length <= slidesPerView) {
+        if (this.prevBtn) this.prevBtn.classList.add('hidden');
+        if (this.nextBtn) this.nextBtn.classList.add('hidden');
+        if (this.dotsContainer) this.dotsContainer.classList.add('hidden');
+        return;
+      }
+      if (this.prevBtn) {
+        this.prevBtn.classList.remove('hidden');
+        this.prevBtn.disabled = !this.config.infinite && this.currentIndex === 0;
+      }
+      if (this.nextBtn) {
+        this.nextBtn.classList.remove('hidden');
+        this.nextBtn.disabled = !this.config.infinite && this.currentIndex >= maxIndex;
+      }
+      if (this.dotsContainer && maxIndex >= 0) {
+        this.dotsContainer.classList.remove('hidden');
+      }
+    }
+    handleResize() {
+      this.setSlideWidths();
+      this.currentIndex = Math.min(this.currentIndex, this.getMaxIndex());
+      this.setupDots();
+      this.updateSlider();
+    }
+    // ─── Autoplay ─────────────────────────────────────────────────────────────
+    startAutoplay() {
+      this.stopAutoplay();
+      this.autoplayInterval = setInterval(() => {
+        if (this.currentIndex >= this.getMaxIndex() && !this.config.infinite) {
+          this.stopAutoplay();
+        } else {
+          this.next();
+        }
+      }, this.config.autoplaySpeed);
+    }
+    stopAutoplay() {
+      if (this.autoplayInterval) {
+        clearInterval(this.autoplayInterval);
+        this.autoplayInterval = null;
+      }
+    }
+    // ─── Video loading ────────────────────────────────────────────────────────
+    loadVideo(placeholder) {
+      const videoType = placeholder.dataset.videoType;
+      const videoId = placeholder.dataset.videoId;
+      const slide = placeholder.closest('.ai-media-slider-slide-{{ ai_gen_id }}');
+      let iframe;
+      if (videoType === 'youtube') {
+        iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+      } else if (videoType === 'vimeo') {
+        iframe = document.createElement('iframe');
+        iframe.src = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+        iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+        iframe.allowFullscreen = true;
+      }
+      if (iframe && slide) {
+        placeholder.remove();
+        slide.appendChild(iframe);
+      }
+    }
+  }
+  customElements.define('media-slider-{{ ai_gen_id }}', MediaSlider{{ ai_gen_id }});
+})();
+</script>
+{% schema %}
+{
+  "name": "Media slider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metafield source"
+    },
+    {
+      "type": "paragraph",
+      "content": "Enter namespace and key separately. For 'custom.user_guide', enter 'custom' as namespace and 'user_guide' as key. If both are provided, slider will load from metafield. Otherwise, it will use manual slides below."
+    },
+    {
+      "type": "text",
+      "id": "metafield_namespace",
+      "label": "Namespace",
+      "info": "Example: custom"
+    },
+    {
+      "type": "text",
+      "id": "metafield_key",
+      "label": "Key",
+      "info": "Example: user_guide"
+    },
+    {
+      "type": "header",
+      "content": "Slide 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "youtube_1",
+      "label": "YouTube ID",
+      "info": "Example: dQw4w9WgXcQ"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_1",
+      "label": "Vimeo ID"
+    },
+    {
+      "type": "url",
+      "id": "mp4_1",
+      "label": "MP4 URL"
+    },
+    {
+      "type": "header",
+      "content": "Slide 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "youtube_2",
+      "label": "YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_2",
+      "label": "Vimeo ID"
+    },
+    {
+      "type": "url",
+      "id": "mp4_2",
+      "label": "MP4 URL"
+    },
+    {
+      "type": "header",
+      "content": "Slide 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "youtube_3",
+      "label": "YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_3",
+      "label": "Vimeo ID"
+    },
+    {
+      "type": "url",
+      "id": "mp4_3",
+      "label": "MP4 URL"
+    },
+    {
+      "type": "header",
+      "content": "Slide 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "youtube_4",
+      "label": "YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_4",
+      "label": "Vimeo ID"
+    },
+    {
+      "type": "url",
+      "id": "mp4_4",
+      "label": "MP4 URL"
+    },
+    {
+      "type": "header",
+      "content": "Slide 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "youtube_5",
+      "label": "YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_5",
+      "label": "Vimeo ID"
+    },
+    {
+      "type": "url",
+      "id": "mp4_5",
+      "label": "MP4 URL"
+    },
+    {
+      "type": "header",
+      "content": "Slide 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "youtube_6",
+      "label": "YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_6",
+      "label": "Vimeo ID"
+    },
+    {
+      "type": "url",
+      "id": "mp4_6",
+      "label": "MP4 URL"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Slide height",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Auto"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "9-16",
+          "label": "9:16"
+        },
+        {
+          "value": "16-9",
+          "label": "16:9 (Landscape)"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "square",
+          "label": "Square (1:1)"
+        }
+      ],
+      "default": "16-9"
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "label": "Slides on desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "label": "Slides on tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "label": "Slides on mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slide_gap",
+      "label": "Gap between slides",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Arrow color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Dot color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "min": 1000,
+      "max": 8000,
+      "step": 500,
+      "unit": "ms",
+      "default": 3000
+    },
+    {
+      "type": "checkbox",
+      "id": "infinite_loop",
+      "label": "Infinite loop",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media slider"
+    }
+  ]
+}
+{% endschema %}

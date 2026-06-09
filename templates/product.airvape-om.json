@@ -1,0 +1,202 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "heading_size": "h3",
+            "mobile_heading_size": "h5",
+            "content": "{{ product.title }}",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "946375dc-aa95-407e-a9cd-35be355f8dc4": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty_rating": false,
+            "star_size": 20
+          }
+        },
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "show_taxes_notice": false,
+            "use_bold_font": true
+          }
+        },
+        "4923f5c8-62d3-42db-a835-6e0613c4a182": {
+          "type": "payment_installments",
+          "disabled": true,
+          "settings": {}
+        },
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "hide_sold_out_variants": false,
+            "type": "radio",
+            "color_picker_type": "radio-swatch",
+            "block_style_rounded": true,
+            "block_style": "outlined",
+            "size_chart_page": "",
+            "size_chart_option_name": "Size"
+          }
+        },
+        "0f473fb4-422c-40a7-8c15-2fd164440f80": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "a730fe0e-baa3-47bc-90c9-21c5a5d75f2d": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout_buttons": true,
+            "show_gift_card_recipient": true,
+            "add_to_cart_background_color": "rgba(0,0,0,0)",
+            "add_to_cart_text_color": "rgba(0,0,0,0)",
+            "buy_it_now_background_color": "rgba(0,0,0,0)",
+            "buy_it_now_text_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
+        "946375dc-aa95-407e-a9cd-35be355f8dc4",
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e",
+        "4923f5c8-62d3-42db-a835-6e0613c4a182",
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
+        "0f473fb4-422c-40a7-8c15-2fd164440f80",
+        "a730fe0e-baa3-47bc-90c9-21c5a5d75f2d"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_breadcrumbs": false,
+        "desktop_media_width": 50,
+        "media_size": "",
+        "media_layout_desktop": "carousel_horizontal",
+        "media_mobile_indicator": "thumbnails",
+        "media_zoom": "lightbox",
+        "media_enable_video_autoplay": false,
+        "media_enable_video_looping": true,
+        "media_fit_height": true,
+        "show_sticky_add_to_cart": true,
+        "sticky_add_to_cart_position": "right",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "main-details": {
+      "type": "main-product-details",
+      "blocks": {
+        "5bbfd876-e943-47d3-b984-06f967dfd314": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": true,
+            "collapse_open": true,
+            "heading": "Description"
+          }
+        },
+        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
+          "type": "collapsible_content",
+          "disabled": true,
+          "settings": {
+            "collapse_open": false,
+            "heading": "Collapsible content",
+            "content": "<p>Provide your customers with additional information about the product.</p>"
+          }
+        },
+        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
+          "type": "collapsible_content",
+          "disabled": true,
+          "settings": {
+            "collapse_open": false,
+            "heading": "Collapsible content",
+            "content": "<p>Provide your customers with additional information about the product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "5bbfd876-e943-47d3-b984-06f967dfd314",
+        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
+        "5487aba2-e638-4f54-a71a-f08a7c4ab55b"
+      ],
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "subheading": "",
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "custom_liquid_m9qCxF": {
+      "type": "custom-liquid",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<style>\n@import\"https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap\";@import\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/productToggle.css\";#MainContent .breadcrumbs{display:none !important}.hidden{display:none !important}.buy-button{background:rgba(0,0,0,0);border:1px solid #c36f32;padding:5px 10px;color:#c36f32;text-transform:uppercase;font-weight:500;font-size:18px;font-family:\"Rubik\";cursor:pointer}.buy-button:hover{background:#c36f32;color:#f2ebe2}.buy-button.disabled{opacity:.6;cursor:not-allowed}section{font-family:\"Rubik\";padding:0 10px;overflow-x:hidden;display:flex;flex-direction:column;align-items:center}section .content-container{max-width:500px}section *{line-height:1.5}select{background:rgba(255,255,255,.2);color:#714f4a;padding:5px;overflow-x:hidden}ul{list-style:none !important;padding:0 !important}ul li::before{content:none !important;padding:0 !important}.first-section{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/om-keychain-first-section-background.png?v=1693237850) no-repeat;background-size:cover;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;box-shadow:inset 0 0 0 1000px rgba(242,235,226,.4)}@media screen and (min-width: 450px){.first-section{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/OM_product%20page_desktop2.png) no-repeat;background-size:cover}}.first-section h1{font-weight:400;color:#714f4a;font-size:40px;text-align:center;margin-bottom:30px}.first-section h2{font-weight:400;color:#c36f32;font-size:50px;text-align:center;margin-bottom:30px}.first-section h2 strong{text-transform:uppercase}.first-section .content-container{display:flex;flex-direction:column;align-items:center;position:relative;padding:30px 0;margin-top:45vh}@media screen and (min-width: 450px){.first-section .content-container{margin-top:20vh}}.first-section .content-container *{z-index:10}.first-section .content-container::before{content:\"\";box-shadow:inset 0 0 0 1000px rgba(242,235,226,.4);width:calc(100% + 20px);height:100%;position:absolute;top:0;left:-10px}.first-section .content-container select{margin:5px 0}@media screen and (max-width: 450px){.first-section .content-container select{width:50vw}}.first-section .content-container .buy-container{margin-top:30px;display:flex;align-items:center}.first-section .content-container .buy-container .price{color:#714f4a;font-size:18px;margin-right:30px}.om-sweet{background:#ebe3db;padding:30px 10px}.om-sweet h4{text-align:center;font-size:35px;font-weight:bold;color:#000;position:relative;display:block}.om-sweet h4:before{content:\"\";background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/left-mustache.png);background-size:contain;background-repeat:no-repeat;width:50px;height:50px;display:block;position:absolute;left:-50px;top:50%;transform:translateY(-50%)}.om-sweet h4:after{content:\"\";background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/right-mustache.png);background-size:contain;background-repeat:no-repeat;width:50px;height:50px;display:block;position:absolute;right:-65px;top:50%;transform:translateY(-50%)}.om-sweet p{text-align:center;margin-top:30px;color:#000;font-size:16px;font-family:\"Rubik\";font-weight:500}.om-sweet ul{display:flex;align-items:center;justify-content:center;margin-top:30px}.om-sweet ul li{margin:0 20px;display:flex;flex-direction:column;align-items:center}.om-sweet ul li .icon{width:40px;height:40px;margin-bottom:10px}.om-sweet ul li .icon.voltage{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/changable-voltage.png) no-repeat center center;background-size:contain}.om-sweet ul li .icon.led{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/led-indicator.png) no-repeat center center;background-size:contain}.om-sweet ul li .icon.key-chain{background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/keychain-size.png) no-repeat center center;background-size:contain}.om-sweet ul li span{color:#c36f32;font-weight:bold;text-transform:uppercase;font-size:12px;text-align:center}.products{padding:30px 10px;background:#f2ebe2;display:flex;align-items:center;flex-direction:column}.products img{max-width:100%;position:relative;z-index:10}.products .product-container{background:#d9e1eb;margin-top:-60px;width:100%;height:400px;position:relative}@media screen and (min-width: 450px){.products .product-container{width:490px}}.products .product-container .atomizer-label{color:#687c95;font-size:18px;text-transform:uppercase;text-align:center;position:absolute;right:10px;top:80px;font-weight:bold}.products .product-container .mouthpiece{position:absolute;top:-30px;left:10px;width:100px}.products .product-container .mouthpiece span{text-transform:uppercase;font-weight:bold;font-size:16px}.products .product-container .mouthpiece img{width:100%}.products .product-container .twist-off{position:absolute;bottom:-30px;right:-10px;width:150px}.products .product-container .twist-off span{text-transform:uppercase;font-weight:bold;font-size:16px;position:absolute;right:100px;top:40%;width:180px}.products .product-container .twist-off img{width:100%}.does-size-matter{padding:300px 10px 80px 10px;background:#f2ebe2;position:relative}.does-size-matter img{max-width:100%}@media screen and (max-width: 450px){.does-size-matter img{position:absolute;top:0;right:-10px}}.does-size-matter .title-container{display:flex;align-items:center;justify-content:center;margin-top:-40px}.does-size-matter .title-container h4{font-size:35px;font-weight:bold;text-align:left;line-height:1}.does-size-matter p{text-align:center;margin:30px 0;font-weight:400;font-size:16px}.does-size-matter ul{margin:30px 0}.does-size-matter ul li{font-weight:300;font-size:14;text-align:center;margin:15px 0}.does-size-matter .button-container{display:flex;justify-content:center}.what-is-so-special{padding:50px 10px;background:#ebe3db}.what-is-so-special h4{font-size:35px;font-weight:bold;text-align:center;position:relative;margin-bottom:80px}.what-is-so-special h4::after{content:\"\";background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/curve.png) no-repeat center center;background-size:contain;position:absolute;bottom:-70px;left:50%;transform:translateX(-50%);width:90px;height:90px;display:block}.what-is-so-special p{text-align:center;margin:30px 0;line-height:2;font-weight:300}.what-is-so-special .image-container{display:flex;align-items:center;justify-content:center;margin:30px 0}.what-is-so-special .image-container img{width:200px;max-width:100%}.more-items{background:#ecf2e4 !important;padding-top:50px !important;padding-bottom:150px !important}.more-items h4{color:#9ba789}.more-items .items{background:rgba(0,0,0,0) !important;box-shadow:none !important}.more-items .items .item{margin:30px 0 !important}.more-items .items .item img{width:130px !important;margin-right:30px}.more-items .items .item .title{text-align:left !important;margin:0 !important;font-weight:bold}.more-items .items .item .toggle-container{display:flex;align-items:center;margin-top:10px}.more-items .items .item .toggle-container .add-to-cart{color:#9ba789;font-size:12px}.more-items .items .item .toggle-container .toggle{margin-right:10px}.in-the-box{padding:50px 10px;background:#f2ebe2;position:relative}.in-the-box::after{content:\"\";background:#fff;width:100%;height:200px;position:absolute;bottom:0;left:0;z-index:10}.in-the-box .content-container img{max-width:100%;position:relative;z-index:20}.in-the-box-text{background:#fff;padding:100px 0;margin-top:-50px}.in-the-box-text .content-container{overflow-x:hidden;width:100%}.in-the-box-text .content-container h4{font-size:20px;font-weight:bold;margin-bottom:30px;margin-left:50px}.in-the-box-text .content-container ul{border-bottom:1px solid #707070;width:100%;margin-left:50px;padding-bottom:30px}.in-the-box-text .content-container ul.with-arrow{position:relative}.in-the-box-text .content-container ul.with-arrow::after{content:\"\";background:url(https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/om-down-arrow.png?v=1694115886) no-repeat center center;background-size:contain;height:80px;width:50px;display:block;position:absolute;left:-50px;bottom:-40px}.in-the-box-text .content-container ul li{font-size:20px;font-weight:bold;margin:15px 0}.in-the-box-text .content-container ul li span{position:relative;z-index:10}.in-the-box-text .content-container ul li.active{position:relative;color:#fff}.in-the-box-text .content-container ul li.active::before{content:\"\" !important;background:#be9694;width:110%;height:100%;position:absolute;left:-50px;top:0;border-radius:0 !important}.in-the-box-text .content-container ul.thin{padding-top:30px;border-bottom:none}.in-the-box-text .content-container ul.thin li{font-weight:300}.in-the-box-text .content-container .button-container{display:flex;align-items:center;justify-content:center}/*# sourceMappingURL=style.min.css.map */\n</style>\n\n<section class=\"first-section\">\n    <div class=\"content-container\">\n        <h1>AirVape <strong>OM</strong></h1>\n        <h2>The world’s first<br>\n            <strong>\n                keychain<br>\n                vape\n            </strong>\n        </h2>\n        <select name=\"\" id=\"color-select\">\n            <option value=\"\">Choose color</option>\n            <option value=\"chrome\">Chrome</option>\n            <option value=\"rose-gold\">RoseGold</option>\n            <option value=\"gun-metal\">GunMetal</option>\n        </select>\n        <select name=\"\" id=\"cap-select\">\n            <option value=\"\">Choose cap/atomizer</option>\n            <option value=\"long-cap\">Long Cap</option>\n            <option value=\"short-cap\">Short Cap</option>\n            <option class=\"hidden\" value=\"atomizer\">Atomizer/cover</option>\n        </select>\n        <div class=\"buy-container\">\n            <span class=\"price\">$0.00</span>\n            <button class=\"buy-button\">Buy Now</button>\n        </div>\n    </div>\n</section>\n<section class=\"om-sweet\">\n    <h4>OM, sweet OM</h4>\n    <p>\n        The most innovative oil/concentrate vaporizer enjoyed such popularity, we thought it well deserved an\n        upgrade and a fresh new look.\n    </p>\n    <ul class=\"icons\">\n        <li>\n            <div class=\"icon voltage\"></div>\n            <span>\n                Changeable<br>\n                Voltage\n            </span>\n        </li>\n        <li>\n            <div class=\"icon led\"></div>\n            <span>\n                Led<br>\n                Indicator\n            </span>\n        </li>\n        <li>\n            <div class=\"icon key-chain\"></div>\n            <span>\n                Keychain<br>\n                size\n            </span>\n        </li>\n    </ul>\n</section>\n<section class=\"products\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/products111.png\" alt=\"\">\n    <div class=\"product-container\">\n        <span class=\"atomizer-label\">Atomizer<br> package</span>\n        <div class=\"mouthpiece\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/glass-mouthpiece.png\" alt=\"\">\n            <span>Glass<br>mouthpiece</span>\n        </div>\n\n        <div class=\"twist-off\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/twist-off-caps.png\" alt=\"\">\n            <span>Fully protected by <br>2 twist-off caps</span>\n        </div>\n    </div>\n</section>\n<section class=\"does-size-matter\">\n    <div class=\"content-container\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/does-size-matter-with-arrow.png\" alt=\"\" />\n        <div class=\"title-container\">\n            <h4>Does Size<br> Matter?</h4>\n        </div>\n        <p>\n            Don’t let the appearance of the AirVape OM fool you, it might look like a keychain and well, it is a\n            keychain, but nonetheless it is a lean, mean vaping machine that hits like a dream yet is discreet as a\n            whisper.\n        </p>\n        <ul>\n            <li>Weighs 1.6 oz</li>\n            <li>Measurements: 4.5” L, .5” W</li>\n            <li>Sturdy Metal & Leather Body</li>\n        </ul>\n        <div class=\"button-container\">\n            <button class=\"buy-button\">Select options and buy</button>\n        </div>\n    </div>\n</section>\n<section class=\"what-is-so-special\">\n    <div class=\"content-container\">\n        <h4>What’s so special about the Airvape OM?</h4>\n        <p>\n            <strong>\n                The quick answer is this: the OM is powerful, discreet and inexpensive! Want to hear the best part?\n            </strong>\n        </p>\n        <p>\n            <strong>Everything connects magnetically.</strong>\n        </p>\n        <div class=\"image-container\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/oms-cropped.png\" alt=\"\">\n        </div>\n        <p>\n            Super Easy USB charging with the OM magnetic\n            charger adapter YOU just SNAP and PLUG.\n        </p>\n        <p>\n            The perfect companion for your on-the-go\n            experience, AirVape OM comes with elegant leather\n            or carbon fiber finish.\n        </p>\n        <p>\n            User Friendly: with the the click of just one button you\n            can Power ON or OFF or choose your preferred voltage\n            settings, guided by a tactful little led indicator.\n        </p>\n        <p>\n            The 3 interchangeable caps allow you to use\n            different size cartridges whilst keeping your unit\n            sleek, elegant and protected.\n        </p>\n    </div>\n</section>\n<section class=\"more-items\">\n    <div class=\"items\">\n        <h4>Accessories</h4>\n        <div class=\"item\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/Atomizer_quartz111.png\" alt=\"\">\n            <div>\n                <span class=\"title\">Dual quartz<br>Atomizer</span>\n                <div class=\"toggle-container\">\n                    <div class=\"toggle\" data-id=\"45764995338\">\n                        <span class=\"point\"></span>\n                    </div>\n                    <span class=\"add-to-cart\">Add to cart</span>\n                </div>\n            </div>\n        </div>\n        <div class=\"item\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/Bubbler_adapter111.png\" alt=\"\">\n            <div>\n                <span class=\"title\">Water bong<br>With adapter</span>\n                <div class=\"toggle-container\">\n                    <div class=\"toggle\" data-id=\"40592123396166\">\n                        <span class=\"point\"></span>\n                    </div>\n                    <span class=\"add-to-cart\">Add to cart</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n<section class=\"in-the-box\">\n    <div class=\"content-container\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/50/assets/om-in-the-box.png\" alt=\"\">\n    </div>\n</section>\n<section class=\"in-the-box-text\">\n    <div class=\"content-container\">\n        <h4>In the box:</h4>\n        <ul class=\"with-arrow selector\">\n            <li class=\"active\" data-id=\"battery\"><span>Battery</span></li>\n            <li data-id=\"cap\"><span>Short/long cap</span></li>\n            <li data-id=\"atomizer\"><span>Atomizer</span></li>\n        </ul>\n        <ul class=\"thin description\" id=\"battery\">\n            <li>\n                OM Battery\n            </li>\n            <li>\n                USB Charger\n            </li>\n        </ul>\n        <ul class=\"thin description hidden\" id=\"cap\">\n            <li>\n                Short or Long Cover cap\n            </li>\n        </ul>\n        <ul class=\"thin description hidden\" id=\"atomizer\">\n            <li>\n                Quartz Atomizer\n            </li>\n            <li>\n                Cover cap\n            </li>\n            <li>\n                Mouthpiece cap\n            </li>\n        </ul>\n        <div class=\"button-container\">\n            <button class=\"buy-button\">Select options and buy</button>\n        </div>\n    </div>\n</section>\n<script src=\"https://cdn.shopify.com/s/files/1/0777/8339/t/41/assets/productToggle.js?v=8\"></script>\n\n<script>\n    const products = [\n        {\n            id: 40414016241734,\n            name: 'chrome-battery',\n            price: 13.00,\n        },\n        {\n            id: 40414029807686,\n            name: 'chrome-long-cap',\n            price: 6.99,\n        },\n        {\n            id: 40414031249478,\n            name: 'chrome-short-cap',\n            price: 6.99,\n        },\n        {\n            id: 40414016208966,\n            name: 'rose-gold-battery',\n            price: 23.00,\n        },\n        {\n            id: 40414029774918,\n            name: 'rose-gold-long-cap',\n            price: 6.99,\n        },\n        {\n            id: 40414031216710,\n            name: 'rose-gold-short-cap',\n            price: 6.99,\n        },\n        {\n            id: 40414016176198,\n            name: 'gun-metal-battery',\n            price: 23.00,\n        },\n        {\n            id: 40414029742150,\n            name: 'gun-metal-long-cap',\n            price: 6.99,\n        },\n        {\n            id: 40414031183942,\n            name: 'gun-metal-short-cap',\n            price: 6.99,\n        },\n        {\n            id: 40414050779206,\n            name: 'gun-metal-atomizer',\n            price: 21.99,\n        },\n    ];\n\n    const selectedProducts = new Proxy({\n        battery: '',\n        batteryId: '',\n        cap: '',\n        capId: '',\n    }, {\n        set: (obj, name, value) => {\n            obj[name] = value;\n\n            calculatePrice();\n\n            return true;\n        }\n    });\n\n    function calculatePrice() {\n        const battery = products.find((item) => item.name === selectedProducts.battery + '-battery')?.price ?? 0;\n        const cap = products.find((item) => item.name === selectedProducts.battery + '-' + selectedProducts.cap)?.price ?? 0;\n\n        document.querySelector('.buy-container .price').innerHTML = '$' + parseFloat(Number.parseFloat(battery) + Number.parseFloat(cap)).toFixed(2);\n\n        enableOrDisableBuyButtons();\n    }\n\n    enableOrDisableBuyButtons();\n\n    function enableOrDisableBuyButtons() {\n        document.querySelectorAll('.buy-button').forEach(button => {\n            if (selectedProducts.battery === '' || selectedProducts.cap === '') {\n                button.classList.add('disabled');\n            } else {\n                button.classList.remove('disabled');\n            }\n        });\n    }\n\n    // In the box toggle\n    document.querySelectorAll('.in-the-box-text .selector li').forEach((element) => {\n        element.addEventListener('click', function () {\n            const id = this.getAttribute('data-id');\n\n            document.querySelectorAll('.in-the-box-text .selector li').forEach((item) => item.classList.remove('active'));\n\n            this.classList.add('active');\n\n            document.querySelectorAll('.in-the-box-text .description').forEach((description) => description.classList.add('hidden'));\n\n            document.getElementById(id)?.classList.remove('hidden');\n        });\n    });\n\n    // Color select \n    document.getElementById('color-select').addEventListener('change', function () {\n        if (this.value === 'gun-metal') {\n            document.querySelector('#cap-select option[value=\"atomizer\"]').classList.remove('hidden');\n        } else {\n            document.querySelector('#cap-select option[value=\"atomizer\"]').classList.add('hidden');\n        }\n\n        selectedProducts.battery = this.value;\n        selectedProducts.batteryId = products.find(item => item.name === this.value + '-battery')?.id ?? '';\n    });\n\n    // Cap select \n    document.getElementById('cap-select').addEventListener('change', function () {\n        selectedProducts.cap = this.value;\n        selectedProducts.capId = products.find(item => item.name === selectedProducts.battery + '-' + this.value)?.id ?? '';\n    });\n\n    // Buy button\n    document.querySelectorAll('.buy-button').forEach(button => {\n        button.addEventListener('click', function () {\n            if (this.classList.contains('disabled')) {\n                window.scroll({\n                    top: 0,\n                    left: 0,\n                    behavior: 'smooth',\n                });\n\n                return;\n            }\n\n            addProductsToCart([\n                {\n                    id: selectedProducts.batteryId,\n                    quantity: 1\n                },\n                {\n                    id: selectedProducts.capId,\n                    quantity: 1\n                }\n            ]);\n        });\n    });\n\n    function openCart() {\n        document.querySelector('.header__btn-cart').click();\n    }\n\n    function updateItemsCount(add = false) {\n        if (add) {\n            document.querySelectorAll('.header__btn-cart span').forEach(span => {\n                if (span.hasAttribute('data-js-cart-count-desktop')) {\n                    let current = span.getAttribute('data-js-cart-count-desktop');\n                    span.setAttribute('data-js-cart-count-desktop', parseInt(current) + 1);\n                    span.innerHTML = `Bag (${parseInt(current) + 1})`;\n                }\n\n                if (span.hasAttribute('data-js-cart-count-mobile')) {\n                    let current = span.getAttribute('data-js-cart-count-mobile');\n                    span.setAttribute('data-js-cart-count-mobile', parseInt(current) + 1);\n                    span.innerHTML = `${parseInt(current) + 1}`;\n                }\n            });\n        } else {\n            document.querySelectorAll('.header__btn-cart span').forEach(span => {\n                if (span.hasAttribute('data-js-cart-count-desktop')) {\n                    let current = span.getAttribute('data-js-cart-count-desktop');\n                    span.setAttribute('data-js-cart-count-desktop', parseInt(current) - 1);\n                    span.innerHTML = `Bag (${parseInt(current) - 1})`;\n                }\n\n                if (span.hasAttribute('data-js-cart-count-mobile')) {\n                    let current = span.getAttribute('data-js-cart-count-mobile');\n                    span.setAttribute('data-js-cart-count-mobile', parseInt(current) - 1);\n                    span.innerHTML = `${parseInt(current) - 1}`;\n                }\n            });\n        }\n    }\n\n    function addProductsToCart(items) {\n        const request = JSON.stringify({\n            items: items\n        });\n\n        fetch('/cart/add.js', {\n            method: 'POST',\n            headers: {\n                'Content-Type': 'application/json'\n            },\n            body: request,\n        }).then(response => response.json())\n            .then(data => {\n                openCart();\n                updateItemsCount(true);\n            });\n    }\n\n</script>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "product_faqs_9DCHEz": {
+      "type": "product-faqs",
+      "name": "Product Faqs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main-details",
+    "related-products",
+    "custom_liquid_m9qCxF",
+    "product_faqs_9DCHEz"
+  ]
+}

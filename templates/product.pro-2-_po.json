@@ -1,0 +1,980 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_6qtWLD": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"hidden-mobile\">\n    <div class=\"\n          product-badges-container flex gap-1 items-center pointer-events-none award-winning-badge-wrapper\n        \"\n      >\n<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/award.webp?v=1776679196\" alt=\"Award Trophy\" width=\"15\" height=\"auto\" loading=\"lazy\">    \n<p class=\"text-sm winning-text-color\"> Award Winner </p>\n</div>\n</div>",
+            "collapse_content": false,
+            "collapse_open": false,
+            "heading": ""
+          }
+        },
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h4",
+            "mobile_heading_size": "h5",
+            "content": "{{ product.title }}",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "loox_reviews_loox_rating_4MxHdf": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "[rating] ([count])",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": true,
+            "emptyRatingWidget": true
+          }
+        },
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false,
+            "use_bold_font": true
+          }
+        },
+        "rich_text_block_xyg6GB": {
+          "type": "rich_text_block",
+          "settings": {
+            "icon": "",
+            "icon_width": 24,
+            "heading": "",
+            "content": "{{ product.metafields.custom.hook_text | metafield_tag }}",
+            "heading_size": "heading text-h6 md:text-h5",
+            "text_alignment": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "",
+            "background_color": "",
+            "text_color": "",
+            "heading_color": "",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "text_jaUh6c": {
+          "type": "text",
+          "settings": {
+            "content": "<p><a href=\"https://airvape.eu/product/legacy-pro-2-pre-sale/\" target=\"_blank\" title=\"https://airvape.eu/product/legacy-pro-2-pre-sale/\">For European Orders click HERE</a></p>"
+          }
+        },
+        "custom_liquid_wWw7VR": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .promo-text-block {\n    background-color: #ececec;\n    border-radius: 12px;\n    border: 1px solid #E1E1E1;\n  }\n</style>\n\n<p class=\"my-4 py-2 px-4 text-sm promo-text-block\">\n  <strong>NY Times Wirecutter</strong> nominated AirVape for best portable vaporizers\n</p>",
+            "collapse_content": false,
+            "collapse_open": false,
+            "heading": ""
+          }
+        },
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "type": "radio",
+            "color_picker_type": "radio-image",
+            "block_style_rounded": true,
+            "block_style": "outlined",
+            "size_chart_page": "",
+            "size_chart_option_name": "Size"
+          }
+        },
+        "qty_btn_selector_w6p6Ud": {
+          "type": "qty_btn_selector",
+          "settings": {
+            "show_dynamic_checkout_buttons": false,
+            "show_gift_card_recipient": false,
+            "add_to_cart_background_color": "",
+            "add_to_cart_text_color": "",
+            "buy_it_now_background_color": "",
+            "buy_it_now_text_color": ""
+          }
+        },
+        "delivery_4UWPCg": {
+          "type": "delivery",
+          "settings": {
+            "delivery_from": 3,
+            "delivery_to": 5
+          }
+        },
+        "icon_text_block_Ez4GRq": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon_text_class": "icon-text-pdp",
+            "layout": "inline",
+            "icon_1": "shopify://shop_images/icon-02.svg",
+            "text_1": "<p>30 Days<br/>Return</p>",
+            "icon_2": "shopify://shop_images/icon-01.svg",
+            "text_2": "<p>Lifetime<br/>Warranty Ltd.</p>",
+            "icon_3": "shopify://shop_images/icon_Delivery-1.svg",
+            "text_3": "<p>Free Delivery<br/>100+ USD</p>",
+            "icon_4": "shopify://shop_images/icon_Delivery-1.svg",
+            "text_4": "<p>Hassle-Free<br/>Shipping</p>",
+            "icon_5": "shopify://shop_images/icon_Secure.svg",
+            "text_5": "<p>Secure<br/>Transaction</p>",
+            "icon_size": 80,
+            "text_size": 14,
+            "text_color": "#000000"
+          }
+        },
+        "text_QRbAxC": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "content": "<p>The Legacy PRO 2 is estimated to ship in 2-3 weeks</p>"
+          }
+        },
+        "4923f5c8-62d3-42db-a835-6e0613c4a182": {
+          "type": "payment_installments",
+          "settings": {}
+        },
+        "description_FETxLT": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": true,
+            "collapse_open": false,
+            "heading": "Description"
+          }
+        },
+        "collapsible_content_7eB3pL": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Description",
+            "content": "{{ product.metafields.custom.description | metafield_tag }}"
+          }
+        },
+        "collapsible_content_Mjr3Ge": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Specifications",
+            "content": "{{ product.metafields.custom.specifications | metafield_tag }}"
+          }
+        },
+        "collapsible_content_LncXge": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "What's in the box?",
+            "content": "{{ product.metafields.custom.what_s_in_the_box | metafield_tag }}"
+          }
+        },
+        "collapsible_content_f4yahV": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "How to use?",
+            "content": "{{ product.metafields.custom.how_to_use | metafield_tag }}"
+          }
+        },
+        "collapsible_content_VVt4f3": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Accessories",
+            "content": "{{ product.metafields.custom.parts_accessories | metafield_tag }}"
+          }
+        },
+        "collapsible_content_t8ELUD": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Warranty and Support",
+            "content": "{{ product.metafields.custom.lifetime_waranty | metafield_tag }}"
+          }
+        },
+        "collapsible_content_87nC68": {
+          "type": "collapsible_content",
+          "settings": {
+            "collapse_open": false,
+            "heading": "Why Choose AirVape?",
+            "content": "<p><strong>Sleek, Portable, and Travel-Friendly Design –</strong> AirVape combines a modern, sleek, and discreet design with a compact and lightweight build, making it the perfect portable vaporizer for on-the-go use, whether you're traveling or out for the day.<br/><br/><strong>Quiet Operation – </strong>Vape discreetly with minimal noise, making it suitable for use in public or shared spaces.<br/><br/><strong>High-Quality Materials –</strong> Made with durable, high-quality materials, AirVape is built to last and withstand regular use.<br/><br/><strong>Easy to Clean – </strong>The vaporizer is designed for easy maintenance, with a simple cleaning process that keeps it functioning optimally.<br/><br/><strong>Non-Toxic Materials –</strong> Made with non-toxic, food-grade materials for a clean, healthy, and safe vaping experience.<br/><br/><strong>Advanced Safety Features –</strong> Built-in safety features like automatic shut-off and temperature control to ensure a safe vaping experience.<br/><br/><strong>Easy Charging – </strong>AirVape uses USB-C charging for fast, efficient, and convenient recharging.<br/><br/><strong>Long Warranty –</strong> Comes with a reliable warranty, ensuring long-term performance and peace of mind.<br/><br/><strong>Affordable Price – </strong>Get premium quality without breaking the bank, as AirVape offers competitive pricing compared to other vaporizers on the market.<br/><br/><strong>Customer-Focused Brand – </strong>AirVape is committed to providing excellent customer service and offers product support to ensure complete satisfaction.</p>"
+          }
+        },
+        "icon_text_block_RbF4pg": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon_text_class": "homepage-usps-info",
+            "layout": "vertical",
+            "icon_1": "shopify://shop_images/FAST_HEAT-UP.webp",
+            "text_1": "<p><strong>FAST HEAT-UP</strong><br/>Ready to go in seconds</p>",
+            "icon_2": "shopify://shop_images/PURE_FLAVOUR.webp",
+            "text_2": "<p><strong>PURE FLAVOUR</strong><br/>Crisp vapor with precision</p>",
+            "icon_3": "shopify://shop_images/EASY_TO_USE.webp",
+            "text_3": "<p><strong>EASY TO USE</strong><br/>Effortless enjoyment</p>",
+            "icon_4": "shopify://shop_images/EASY_TO_USE.webp",
+            "text_4": "<p><strong>EASY TO USE</strong><br/>Effortless enjoyment</p>",
+            "icon_5": "shopify://shop_images/LONG_BATTERY_LIFE.webp",
+            "text_5": "<p><strong>LASTS LONGER</strong><br/>Enjoy more sessions</p>",
+            "icon_size": 30,
+            "text_size": 14,
+            "text_color": "#000000"
+          }
+        },
+        "share_button_KkRM8f": {
+          "type": "share_button",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "custom_liquid_6qtWLD",
+        "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
+        "loox_reviews_loox_rating_4MxHdf",
+        "c0b62d1f-e562-4b86-84cb-fc22c849e93e",
+        "rich_text_block_xyg6GB",
+        "text_jaUh6c",
+        "custom_liquid_wWw7VR",
+        "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
+        "qty_btn_selector_w6p6Ud",
+        "delivery_4UWPCg",
+        "icon_text_block_Ez4GRq",
+        "text_QRbAxC",
+        "4923f5c8-62d3-42db-a835-6e0613c4a182",
+        "description_FETxLT",
+        "collapsible_content_7eB3pL",
+        "collapsible_content_Mjr3Ge",
+        "collapsible_content_LncXge",
+        "collapsible_content_f4yahV",
+        "collapsible_content_VVt4f3",
+        "collapsible_content_t8ELUD",
+        "collapsible_content_87nC68",
+        "icon_text_block_RbF4pg",
+        "share_button_KkRM8f"
+      ],
+      "settings": {
+        "show_breadcrumbs": false,
+        "desktop_media_width": 50,
+        "media_size": "",
+        "media_layout_desktop": "carousel_vertical",
+        "media_mobile_indicator": "thumbnails",
+        "media_zoom": "lightbox",
+        "media_enable_video_autoplay": false,
+        "media_enable_video_looping": true,
+        "media_fit_height": true,
+        "show_sticky_add_to_cart": true,
+        "sticky_add_to_cart_position": "center",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_section_eaLVtN": {
+      "type": "custom-section",
+      "blocks": {
+        "product_meta_shorts_btP3fn": {
+          "type": "product-meta-shorts",
+          "name": "Product Shorts",
+          "settings": {
+            "metafield_namespace": "custom",
+            "metafield_key": "product_short_videos",
+            "autoplay": true,
+            "muted": true,
+            "video_border_radius": 12,
+            "slides_desktop": 4,
+            "slides_medium": 3,
+            "slides_mobile": 2,
+            "slide_gap": 20,
+            "desktop_width_percent": 100,
+            "section_padding": 0,
+            "show_arrows": true,
+            "show_dots": true,
+            "controls_spacing": 25,
+            "arrow_size": 40,
+            "arrow_background": "#000000",
+            "arrow_color": "#ffffff",
+            "arrow_hover_background": "#333333",
+            "arrow_hover_color": "#ffffff",
+            "dot_size": 8,
+            "dot_color": "#cccccc",
+            "dot_active_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_meta_shorts_btP3fn"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FOLLOW US ON YOUTUBE",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "<svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" width=\"25\" height=\"25\" viewbox=\"0 0 48 48\"><path fill=\"#FF3D00\" d=\"M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z\"></path><path fill=\"#FFF\" d=\"M20 31L20 17 32 24z\"></path></svg>@AirvapeusaOfficial",
+        "link_url": "https://www.youtube.com/@AirvapeusaOfficial",
+        "new_tab": true,
+        "heading_html_tag": "h2",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "1759505359de5a7814": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_RtKXbN": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 10,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_RtKXbN"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "WHY DO PEOPLE LOVE AIRVAPE?",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "slideshow_gpnHad": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_XyKr3r": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/airvape_girl_web.webm",
+            "content_width_maximum": 640,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Just you, your vibe, and the Legacy PRO 2",
+            "heading_size": "h2",
+            "text": "",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "button-outline",
+            "button_background_color": "#ffffff",
+            "button_text_color": "",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_type": "solid",
+            "heading_html_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_XyKr3r"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
+      ],
+      "name": "t:sections.slideshow.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "autoplay": true,
+        "speed": 5,
+        "height": 640,
+        "controls": "arrows",
+        "background_animation": "ZoomOut",
+        "content_animation": "AppearLineByLine",
+        "background_color": "#262626"
+      }
+    },
+    "text_with_icons_tqLMpf": {
+      "type": "text-with-icons",
+      "blocks": {
+        "column_chrnQL": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Icons_all-08.png",
+            "icon": "package-check",
+            "heading": "Updated Heating",
+            "content": "<p>Still super fast</p>"
+          }
+        },
+        "column_6TWpYm": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Icons_all-15.png",
+            "icon": "message-chat-circle",
+            "heading": "Industry Leading",
+            "content": "<p>In material use</p>"
+          }
+        },
+        "column_wXBeVL": {
+          "type": "column",
+          "settings": {
+            "custom_icon": "shopify://shop_images/Icons_all-16.png",
+            "icon": "return",
+            "heading": "Easy to",
+            "content": "<p>Clean and Pack</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_chrnQL",
+        "column_6TWpYm",
+        "column_wXBeVL"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "item_heading_size": "h5",
+        "item_text_alignment": "text-center",
+        "item_text_alignment_mobile": "",
+        "icon_background": "circle",
+        "icon_width": 64,
+        "heading": "",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "collapsible_content_HdNgNc": {
+      "type": "collapsible-content",
+      "blocks": {
+        "block_nMM8ct": {
+          "type": "block",
+          "settings": {
+            "title": "Features",
+            "content": "<ul><li>Easier cleaning featuring <strong>ONEPATH</strong>- the Pro 2’s unique air path from chamber to mouthpiece that can be cleaned all the way with one long brush included in the kit.</li></ul><p></p><ul><li>⁠Black cork with gold flakes gives not only upgraded aesthetics but a premium feel and better heat insulation</li></ul><p></p><ul><li>⁠New color display for more detailed session info</li></ul><p>The Legacy PRO 2 comes in an elegant <strong>new dark grey finish.</strong></p><p>Under the hood, Legacy PRO 2 maintains its signature <strong>hybrid convection/conduction heating system</strong>, <strong>rapid heat-up</strong>, <strong>precision temperature control</strong>, and <strong>removable battery</strong> with <strong>wireless charging support</strong>—all wrapped in a form that’s both portable and environmentally conscious.</p><p>Whether you're a connoisseur or a newcomer, the <strong>Legacy PRO 2</strong> redefines what a luxury vaporizer can be—powerful, practical, and absolutely unforgettable.</p>",
+            "content_from_page": "",
+            "open": true,
+            "heading_html_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "block_nMM8ct"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "subheading": "Major UpGrades",
+        "heading": "The Legacy PRO 2 is packed with all the features you asked for - and we listened.",
+        "content": "",
+        "heading_size": "h3",
+        "text_position": "center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "accordion_background_color": "",
+        "accordion_title_color": "",
+        "accordion_text_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "rich_text_THk6gf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_n4etEe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Major UpGrades",
+            "heading_size": "h6",
+            "heading_html_tag": "h6"
+          }
+        },
+        "heading_NtwPVX": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Legacy PRO 2 is packed with all the features you asked for - and we listened.",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "custom_liquid_zBcmXg": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"pb-2\"></p>"
+          }
+        },
+        "text_4ybmnE": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Easier cleaning featuring <strong>ONEPATH</strong>- the Pro 2’s unique air path from chamber to mouthpiece that can be cleaned all the way with one long brush included in the kit.</li><li>⁠Black cork with gold flakes gives not only upgraded aesthetics but a premium feel and better heat insulation</li><li>⁠New color display for more detailed session info</li></ul><p>The Legacy PRO 2 comes in an elegant <strong>new dark grey finish.</strong></p><p>Under the hood, Legacy PRO 2 maintains its signature <strong>hybrid convection/conduction heating system</strong>, <strong>rapid heat-up</strong>, <strong>precision temperature control</strong>, and <strong>removable battery</strong> with <strong>wireless charging support</strong>—all wrapped in a form that’s both portable and environmentally conscious.</p><p>Whether you're a connoisseur or a newcomer, the <strong>Legacy PRO 2</strong> redefines what a luxury vaporizer can be—powerful, practical, and absolutely unforgettable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_n4etEe",
+        "heading_NtwPVX",
+        "custom_liquid_zBcmXg",
+        "text_4ybmnE"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "full_width": false,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "full-width",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "video_with_text_cbmaUp": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_NxmdbD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Simply PRO",
+            "heading_size": "h3",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_RVMkDY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Packing is effortless, and heat-up happens in seconds — but the PRO 2 doesn’t stop there. Engineered for maximum performance, its refined design and high-grade materials make it the clear choice for those who demand power and precision in every session.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NxmdbD",
+        "text_RVMkDY"
+      ],
+      "name": "t:sections.video-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "video-with-text-section",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "autoplay": true,
+        "loop": true,
+        "video": "shopify://files/videos/Finalk_no_smoke0.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "video_with_text_overlay_DTHfhk": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "subheading_WHiEEy": {
+          "type": "subheading",
+          "settings": {
+            "text": "Simply PRO"
+          }
+        },
+        "heading_74fQ4A": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pure Bliss with Every Puff",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_46VhEg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Legacy PRO 2’s advanced technology ensures top-notch performance, making every moment shared with friends more enjoyable and satisfying.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WHiEEy",
+        "heading_74fQ4A",
+        "text_46VhEg"
+      ],
+      "settings": {
+        "custom_class": "video-text-overlay-section",
+        "full_width": true,
+        "enable_transparent_header": true,
+        "use_original_media_size": false,
+        "video": "shopify://files/videos/airvape_pro2_web.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20,
+        "overlay_type": "solid"
+      }
+    },
+    "featured_collection_kWtgdc": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [],
+        "collection": "legacy-accessories",
+        "subheading": "Enhance your vaping experience with",
+        "heading": "Legacy PRO Accessories",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "main-details": {
+      "type": "main-product-details",
+      "disabled": true,
+      "settings": {}
+    },
+    "video_with_text_YjAd6V": {
+      "type": "video-with-text",
+      "blocks": {
+        "subheading_z8aK4C": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_xMFJy3": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Herb to Wax",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "heading_Emcc3n": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Beginner to PRO",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_rh7yMX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The only vape you'll ever need</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_z8aK4C",
+        "heading_xMFJy3",
+        "heading_Emcc3n",
+        "text_rh7yMX"
+      ],
+      "name": "t:sections.video-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "video-with-text-section",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "autoplay": true,
+        "loop": true,
+        "video": "shopify://files/videos/legacy2.0_smoky_ss.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "media--ratio-4-3",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "video_nrLrNt": {
+      "type": "video",
+      "settings": {
+        "full_width": true,
+        "video": "shopify://files/videos/pro2_inside_web.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "custom_section_ggzpUX": {
+      "type": "custom-section",
+      "blocks": {
+        "ai_gen_block_657f32b_8AitDQ": {
+          "type": "ai_gen_block_657f32b",
+          "name": "Image slider",
+          "settings": {
+            "data_source": "metafield",
+            "metafield_namespace": "custom",
+            "metafield_key": "user_guide",
+            "image_text_1": "",
+            "image_link_1": "",
+            "new_image_link_1": false,
+            "image_text_2": "",
+            "image_link_2": "",
+            "new_image_link_2": false,
+            "image_text_3": "",
+            "image_link_3": "",
+            "new_image_link_3": false,
+            "image_text_4": "",
+            "image_link_4": "",
+            "new_image_link_4": false,
+            "image_text_5": "",
+            "image_link_5": "",
+            "new_image_link_5": false,
+            "image_text_6": "",
+            "image_link_6": "",
+            "new_image_link_6": false,
+            "image_text_7": "",
+            "image_link_7": "",
+            "new_image_link_7": false,
+            "image_text_8": "",
+            "image_link_8": "",
+            "new_image_link_8": false,
+            "aspect_ratio": "auto",
+            "slides_desktop": 3,
+            "slides_tablet": 3,
+            "slides_mobile": 2,
+            "slide_gap": 16,
+            "slide_border_radius": 6,
+            "show_arrows": true,
+            "show_dots": true,
+            "arrow_color": "#ffffff",
+            "arrow_background": "#000000",
+            "dot_color": "#000000",
+            "autoplay": false,
+            "autoplay_speed": 3000,
+            "infinite_loop": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_657f32b_8AitDQ"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "USER GUIDE",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "custom_liquid_YbUPwk": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<div class=\"cmp-accordion\">\n  <button\n    class=\"cmp-accordion__toggle\"\n    type=\"button\"\n    aria-expanded=\"false\"\n    aria-controls=\"cmpAccordionContent\"\n  >\n    <span class=\"cmp-accordion__title\">Compare AirVapes</span>\n    <span class=\"cmp-accordion__icon\" aria-hidden=\"true\">\n      <svg viewBox=\"0 0 20 20\" fill=\"none\">\n        <path d=\"M5 7.5L10 12.5L15 7.5\"\n              stroke=\"currentColor\"\n              stroke-width=\"2\"\n              stroke-linecap=\"round\"\n              stroke-linejoin=\"round\"/>\n      </svg>\n    </span>\n  </button>\n\n  <div class=\"cmp-accordion__content\" id=\"cmpAccordionContent\" hidden>\n\n    <!-- Swipe indicator -->\n    <div class=\"cmp-swipe-indicator\">\n      <div class=\"cmp-swipe-line\"></div>\n    </div>\n\n    <div class=\"cmp-wrap\">\n      <div class=\"cmp-scroll\" id=\"cmpScroll\">\n        <table class=\"cmp-table\" role=\"table\" aria-label=\"Product comparison\">\n          <thead>\n            <tr>\n              <th class=\"cmp-sticky-left cmp-sticky-top cmp-feature\">Features</th>\n              <th class=\"cmp-sticky-top\">Legacy PRO 2</th>\n              <th class=\"cmp-sticky-top\">Legacy CORE</th>\n              <th class=\"cmp-sticky-top\">XS GO</th>\n            </tr>\n          </thead>\n\n          <tbody>\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Heating Type</th>\n              <td>Hybrid Convection + Conduction</td>\n              <td>Hybrid Convection + Conduction</td>\n              <td>Conduction</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Chamber Material</th>\n              <td>Gold-plated Stainless Steel</td>\n              <td>Gold-plated Stainless Steel</td>\n              <td>Ceramic</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Airpath</th>\n              <td>Isolated Glass Airpath</td>\n              <td>Isolated Glass Airpath</td>\n              <td>Non-isolated</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Battery Life</th>\n              <td>3200 mAh 60–80 mins</td>\n              <td>3200 mAh 60–80 mins</td>\n              <td>~20 mins</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Charging</th>\n              <td>USB-C + Wireless</td>\n              <td>USB-C</td>\n              <td>USB</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Heat-up Time</th>\n              <td>15 seconds</td>\n              <td>30 seconds</td>\n              <td>30 seconds</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Portability</th>\n              <td>Medium</td>\n              <td>Medium</td>\n              <td>High</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Use Type</th>\n              <td>Dry herb + concentrate</td>\n              <td>Dry herb + concentrate</td>\n              <td>Dry herb</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Display</th>\n              <td>Yes</td>\n              <td>No</td>\n              <td>No</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Color Options</th>\n              <td>1</td>\n              <td>3</td>\n              <td>No</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Skin Compatible</th>\n              <td>Yes</td>\n              <td>Yes</td>\n              <td>No</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n\n  </div>\n</div>\n\n<style>\n/* Accordion */\n.cmp-accordion { border:1px solid #e3e3e3; border-radius:10px; overflow:hidden; background:#fff; }\n.cmp-accordion__toggle { display:flex; justify-content:space-between; align-items:center; width:100%; padding:16px; background:#f8f8f8; border:0; cursor:pointer; text-align:left; }\n.cmp-accordion__title { font-weight:700; font-size:18px; color:#111; }\n.cmp-accordion__icon { transition:transform .2s ease; }\n.cmp-accordion__toggle[aria-expanded=\"true\"] .cmp-accordion__icon { transform:rotate(180deg); }\n.cmp-accordion__content { padding:14px; }\n\n/* Swipe indicator */\n.cmp-swipe-indicator {\n  width:100%;\n  display:flex;\n  justify-content:center;\n  margin-bottom:12px;\n}\n\n.cmp-swipe-line {\n  width:60px;\n  height:4px;\n  border-radius:4px;\n  background:linear-gradient(90deg,#ccc,#999,#ccc);\n  animation: swipePulse 1.8s infinite ease-in-out;\n}\n\n@keyframes swipePulse {\n  0%   { opacity:.4; transform:translateX(0); }\n  50%  { opacity:1;  transform:translateX(8px); }\n  100% { opacity:.4; transform:translateX(0); }\n}\n\n/* Table */\n.cmp-wrap { width:100%; }\n.cmp-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #eee; border-radius:8px; }\n\n.cmp-table {\n  border-collapse:separate;\n  border-spacing:0;\n  min-width:520px;\n  width:100%;\n  table-layout:fixed;\n}\n\n.cmp-table th,\n.cmp-table td {\n  padding:9px 8px;\n  border-bottom:1px solid #eee;\n  border-right:1px solid #eee;\n  font-size:13px;\n  line-height:1.15;\n  white-space:normal;\n  word-break:normal;\n  overflow-wrap:normal;\n  hyphens:none;\n}\n\n.cmp-table td {\n  text-align:center;\n  width:90px;\n  max-width:90px;\n}\n\n.cmp-table thead th {\n  background:#f8f8f8;\n  font-weight:800;\n  text-align:center;\n  font-size:13px;\n}\n\n/* Sticky */\n.cmp-sticky-top { position:sticky; top:0; z-index:5; }\n.cmp-sticky-left { position:sticky; left:0; background:#fff; z-index:6; }\n\n/* Feature column */\n.cmp-table th.cmp-feature,\n.cmp-table thead th.cmp-feature {\n  text-align:left !important;\n}\n\n.cmp-feature {\n  font-weight:800;\n  padding-left:10px !important;\n  width:95px;\n  max-width:95px;\n  min-width:95px;\n}\n</style>\n\n<script>\n(function(){\n  const toggle = document.querySelector(\".cmp-accordion__toggle\");\n  const content = document.querySelector(\"#cmpAccordionContent\");\n\n  if (!toggle || !content) return;\n\n  toggle.setAttribute(\"aria-expanded\",\"false\");\n  content.hidden = true;\n\n  toggle.addEventListener(\"click\", () => {\n    const open = toggle.getAttribute(\"aria-expanded\") === \"true\";\n    toggle.setAttribute(\"aria-expanded\", String(!open));\n    content.hidden = open;\n  });\n})();\n</script>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "featured_collection_WqWJcP": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "legacy-accessories",
+        "subheading": "",
+        "heading": "LEGACY PRO ACCESSORIES",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "shopify://collections/airvape-x-accessories",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "pdp_aplus_comparison_kkT36X": {
+      "type": "pdp-aplus-comparison",
+      "name": "Aplus comparison",
+      "settings": {
+        "subheading": "",
+        "heading": "CHOOSE WHAT SUITS YOU BEST",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center"
+      }
+    },
+    "featured_collection_CHmD3T": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "related_products_FqiBnM": {
+      "type": "related-products",
+      "disabled": true,
+      "name": "t:sections.related-products.presets__0.name",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "subheading": "",
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "product_faqs_3dLD86": {
+      "type": "product-faqs",
+      "name": "Product Faqs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "FAQS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_eaLVtN",
+    "1759505359de5a7814",
+    "slideshow_gpnHad",
+    "text_with_icons_tqLMpf",
+    "collapsible_content_HdNgNc",
+    "rich_text_THk6gf",
+    "video_with_text_cbmaUp",
+    "video_with_text_overlay_DTHfhk",
+    "featured_collection_kWtgdc",
+    "main-details",
+    "video_with_text_YjAd6V",
+    "video_nrLrNt",
+    "custom_section_ggzpUX",
+    "custom_liquid_YbUPwk",
+    "featured_collection_WqWJcP",
+    "pdp_aplus_comparison_kkT36X",
+    "featured_collection_CHmD3T",
+    "related_products_FqiBnM",
+    "product_faqs_3dLD86"
+  ]
+}

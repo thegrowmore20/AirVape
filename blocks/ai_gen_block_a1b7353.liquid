@@ -1,0 +1,1250 @@
+{% doc %}
+  @prompt
+    Create a premium, responsive Shopify section for a 2-column image grid. The section must be fully customizable from the Shopify Theme Editor and built with clean, optimized code that does not negatively affect Core Web Vitals, including LCP, INP, CLS, and overall performance.
+    
+    Main Requirements
+    
+    1. Layout
+    - Create a 2-column grid on desktop.
+    - Stack columns properly on mobile.
+    - Add a setting to control the gap between the two image blocks.
+    - Add an option to choose:
+      - Full width
+      - Container width
+    
+    2. Image Blocks
+    - Each column should be a separate block with its own independent settings.
+    - Each block must include:
+      - Image picker
+      - Heading
+      - Subheading
+      - Paragraph text
+      - Button label
+      - Button link
+    
+    3. Text on Image
+    - Text content should appear on top of each image.
+    - Add separate fields for:
+      - Heading
+      - Subheading
+      - Paragraph
+    - Add alignment controls for each block:
+      - Vertical alignment: top, center, bottom
+      - Horizontal alignment: left, center, right
+    
+    4. Text Styling
+    - Add separate color controls for each block:
+      - Heading color
+      - Subheading color
+      - Paragraph color
+      - Button text color
+      - Button background color
+    - Make sure each image block can have completely independent text and button styling.
+    
+    5. Overlay Controls
+    - Add overlay support for each image block.
+    - Include settings for:
+      - Enable/disable overlay
+      - Overlay color
+      - Overlay opacity
+    - Overlay should sit between the image and text to improve readability.
+    
+    6. Button
+    - Add one optional button for each image block.
+    - Each button must have:
+      - Button label
+      - Button URL
+    - Only render the button if the label is not empty.
+    
+    7. Responsive Height Controls
+    - Add settings to control the height of the section / image blocks responsively.
+    - Include separate height settings for:
+      - Desktop
+      - Tablet
+      - Mobile
+    - Height settings should be easy to manage in the Theme Editor.
+    - Use a responsive and stable approach so the layout does not jump or cause CLS.
+    
+    8. Responsive Images
+    - Images must be fully responsive across desktop, tablet, and mobile.
+    - Use Shopify image_url and image_tag properly.
+    - Include responsive image widths and sizes attributes.
+    - Serve appropriately sized images for different screen sizes.
+    - Avoid oversized images.
+    - Images should maintain good visual quality without hurting performance.
+    
+    9. Performance / Core Web Vitals
+    - The code must be optimized and lightweight.
+    - Do not use unnecessary JavaScript.
+    - Use minimal JS only if absolutely required.
+    - Avoid heavy calculations, layout thrashing, and unnecessary event listeners.
+    - Ensure the section is built to protect Core Web Vitals, especially:
+      - LCP
+      - INP
+      - CLS
+    - Prevent layout shifts by defining dimensions/aspect behavior properly.
+    - Keep CSS efficient and scoped to the section.
+    - Avoid render-blocking patterns where possible.
+    - Make the section performant, stable, and production-ready.
+    
+    10. Code Expectations
+    - Output complete Shopify section code in one file, ready to paste into a section file.
+    - Use clean Shopify Liquid, HTML, CSS, and minimal JS if needed.
+    - Use semantic, well-structured class names.
+    - Add proper schema with all settings and blocks.
+    - Keep the code maintainable and easy to edit.
+    - Add sensible default values.
+    - The final design should look modern, premium, and clean.
+    
+    Important
+    - Build this as an optimized Shopify section, not just a visual mockup.
+    - Make sure the section is responsive, editable in Theme Editor, and production-safe.
+    - Prioritize performance, responsive images, and smooth user experience., I should be able to add two columns for image and I should be be able to add the column column too, paragraph type settings opotion should be richtext, Also add the ability to add the top and bottom, left, and right spacing of the section a, ability to change the border radius of the grid, Ability to add the border radius to cards
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-grid-wrapper-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding-top: {{ block.settings.spacing_top }}px;
+    padding-bottom: {{ block.settings.spacing_bottom }}px;
+  }
+
+  .ai-image-grid-container-{{ ai_gen_id }} {
+    {% if block.settings.layout_width == 'full' %}
+      max-width: 100%;
+      padding-left: {{ block.settings.spacing_left }}px;
+      padding-right: {{ block.settings.spacing_right }}px;
+    {% else %}
+      max-width: {{ settings.page_width }}px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: {{ block.settings.spacing_left }}px;
+      padding-right: {{ block.settings.spacing_right }}px;
+    {% endif %}
+  }
+
+  .ai-image-grid-columns-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-image-grid-columns-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .ai-image-grid-item-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.height_mobile }}px;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .ai-image-grid-item-{{ ai_gen_id }} {
+      height: {{ block.settings.height_tablet }}px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .ai-image-grid-item-{{ ai_gen_id }} {
+      height: {{ block.settings.height_desktop }}px;
+    }
+  }
+
+  .ai-image-grid-item__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-grid-item__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .ai-image-grid-item__content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 24px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-image-grid-item__content-{{ ai_gen_id }} {
+      padding: 40px;
+    }
+  }
+
+  .ai-image-grid-item__text-wrapper-{{ ai_gen_id }} {
+    max-width: 600px;
+  }
+
+  .ai-image-grid-item__subheading-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  .ai-image-grid-item__heading-{{ ai_gen_id }} {
+    font-family: {{ settings.type_heading_font.family }}, {{ settings.type_heading_font.fallback_families }};
+    font-weight: {{ settings.type_heading_font.weight }};
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+
+
+
+  .ai-image-grid-item__paragraph-{{ ai_gen_id }} {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-image-grid-item__paragraph-{{ ai_gen_id }} {
+      font-size: 18px;
+    }
+  }
+
+  .ai-image-grid-item__button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: {{ settings.button_corner_radius }}px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: {{ settings.type_button_text_style }};
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  {% comment %} .ai-image-grid-item__button-{{ ai_gen_id }}:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  } {% endcomment %}
+
+  .ai-image-grid-item__placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-image-grid-item__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    opacity: 0.3;
+  }
+{% endstyle %}
+
+<div class="ai-image-grid-wrapper-{{ ai_gen_id }}" {{ block.shopify_attributes }} >
+  <div class="ai-image-grid-container-{{ ai_gen_id }}">
+    <div class="ai-image-grid-columns-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign enable_key = 'enable_column_' | append: i
+          assign image_key = 'image_' | append: i
+          assign subheading_key = 'subheading_' | append: i
+          assign heading_key = 'heading_' | append: i
+          assign heading_size_key = 'heading_size_' | append: i
+          assign paragraph_key = 'paragraph_' | append: i
+          assign button_label_key = 'button_label_' | append: i
+          assign button_link_key = 'button_link_' | append: i
+          assign vertical_alignment_key = 'vertical_alignment_' | append: i
+          assign horizontal_alignment_key = 'horizontal_alignment_' | append: i
+          assign enable_overlay_key = 'enable_overlay_' | append: i
+          assign overlay_color_key = 'overlay_color_' | append: i
+          assign overlay_opacity_key = 'overlay_opacity_' | append: i
+          assign subheading_color_key = 'subheading_color_' | append: i
+          assign heading_color_key = 'heading_color_' | append: i
+          assign paragraph_color_key = 'paragraph_color_' | append: i
+          assign button_bg_color_key = 'button_bg_color_' | append: i
+          assign button_text_color_key = 'button_text_color_' | append: i
+          assign border_radius_key = 'border_radius_' | append: i
+
+          assign is_enabled = block.settings[enable_key]
+          assign image = block.settings[image_key]
+          assign subheading = block.settings[subheading_key]
+          assign heading = block.settings[heading_key]
+          assign heading_size = block.settings[heading_size_key]
+          assign paragraph = block.settings[paragraph_key]
+          assign button_label = block.settings[button_label_key]
+          assign button_link = block.settings[button_link_key]
+          assign vertical_alignment = block.settings[vertical_alignment_key]
+          assign horizontal_alignment = block.settings[horizontal_alignment_key]
+          assign enable_overlay = block.settings[enable_overlay_key]
+          assign overlay_color = block.settings[overlay_color_key]
+          assign overlay_opacity = block.settings[overlay_opacity_key]
+          assign subheading_color = block.settings[subheading_color_key]
+          assign heading_color = block.settings[heading_color_key]
+          assign paragraph_color = block.settings[paragraph_color_key]
+          assign button_bg_color = block.settings[button_bg_color_key]
+          assign button_text_color = block.settings[button_text_color_key]
+          assign border_radius = block.settings[border_radius_key]
+        %}
+
+        {% if is_enabled %}
+          <div class="ai-image-grid-item-{{ ai_gen_id }}" style="border-radius: {{ border_radius }}px;">
+            {% if image %}
+              <img
+                src="{{ image | image_url: width: 800 }}"
+                srcset="
+                  {{ image | image_url: width: 375 }} 375w,
+                  {{ image | image_url: width: 750 }} 750w,
+                  {{ image | image_url: width: 1100 }} 1100w,
+                  {{ image | image_url: width: 1500 }} 1500w,
+                  {{ image | image_url: width: 1780 }} 1780w,
+                  {{ image | image_url: width: 2000 }} 2000w
+                "
+                sizes="(min-width: 990px) 50vw, 100vw"
+                alt="{{ image.alt | escape }}"
+                class="ai-image-grid-item__image-{{ ai_gen_id }}"
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+            {% else %}
+              <div class="ai-image-grid-item__placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+
+            {% if enable_overlay %}
+              <div 
+                class="ai-image-grid-item__overlay-{{ ai_gen_id }}"
+                style="background-color: {{ overlay_color }}; opacity: {{ overlay_opacity }};"
+              ></div>
+            {% endif %}
+
+            <div 
+              class="ai-image-grid-item__content-{{ ai_gen_id }}"
+              style="
+                {% if vertical_alignment == 'top' %}
+                  align-items: flex-start;
+                {% elsif vertical_alignment == 'center' %}
+                  align-items: center;
+                {% else %}
+                  align-items: flex-end;
+                {% endif %}
+                {% if horizontal_alignment == 'left' %}
+                  justify-content: flex-start;
+                {% elsif horizontal_alignment == 'center' %}
+                  justify-content: center;
+                {% else %}
+                  justify-content: flex-end;
+                {% endif %}
+              "
+            >
+              <div 
+                class="ai-image-grid-item__text-wrapper-{{ ai_gen_id }}"
+                style="
+                  {% if horizontal_alignment == 'left' %}
+                    text-align: left;
+                  {% elsif horizontal_alignment == 'center' %}
+                    text-align: center;
+                  {% else %}
+                    text-align: right;
+                  {% endif %}
+                "
+              >
+                {% if subheading != blank %}
+                  <div 
+                    class="ai-image-grid-item__subheading-{{ ai_gen_id }}"
+                    style="color: {{ subheading_color }};"
+                  >
+                    {{ subheading }}
+                  </div>
+                {% endif %}
+
+                {%- unless block.settings.heading == empty -%}
+                  <split-lines class="ai-image-grid-item__heading-{{ ai_gen_id }} {{ heading_size }}" data-slide-animation-element style="color: {{ heading_color }};">                    
+                    <h2>{{ heading }}</h2>
+                  </split-lines>
+                {%- endunless -%}
+
+                {% if paragraph != blank %}
+                  <div 
+                    class="ai-image-grid-item__paragraph-{{ ai_gen_id }}"
+                    style="color: {{ paragraph_color }};"
+                  >
+                    {{ paragraph }}
+                  </div>
+                {% endif %}
+
+                {% if button_label != blank %}
+                  <a
+                    href="{{ button_link }}"
+                    class="ai-image-grid-item__button-{{ ai_gen_id }}"
+                    style="background-color: {{ button_bg_color }}; color: {{ button_text_color }};" data-slide-animation-element
+                  >
+                    {{ button_label }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image grid 2 columns",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_width",
+      "label": "Section width",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "full",
+          "label": "Full width"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Gap between columns",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "spacing_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "spacing_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "spacing_left",
+      "label": "Left spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing_right",
+      "label": "Right spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Height"
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Mobile height",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "height_tablet",
+      "label": "Tablet height",
+      "min": 400,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Desktop height",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_column_1",
+      "label": "Enable column 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius_1",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "subheading_1",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading",
+      "default": "Column 1 heading"
+    },
+     {
+          "type": "select",
+          "id": "heading_size_1",
+          "label": "t:sections.all.heading_size.label",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__0.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h0"
+      },
+    {
+      "type": "richtext",
+      "id": "paragraph_1",
+      "label": "Paragraph",
+      "default": "<p>Add your description here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_1",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_1",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay_1",
+      "label": "Enable overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color_1",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_1",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "color",
+      "id": "subheading_color_1",
+      "label": "Subheading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color_1",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color_1",
+      "label": "Paragraph color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color_1",
+      "label": "Button background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_1",
+      "label": "Button text",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_column_2",
+      "label": "Enable column 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius_2",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "subheading_2",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading",
+      "default": "Column 2 heading"
+    },
+     {
+          "type": "select",
+          "id": "heading_size_2",
+          "label": "t:sections.all.heading_size.label",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__0.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h0"
+        },
+    {
+      "type": "richtext",
+      "id": "paragraph_2",
+      "label": "Paragraph",
+      "default": "<p>Add your description here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_2",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_2",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay_2",
+      "label": "Enable overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color_2",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_2",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "color",
+      "id": "subheading_color_2",
+      "label": "Subheading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color_2",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color_2",
+      "label": "Paragraph color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color_2",
+      "label": "Button background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_2",
+      "label": "Button text",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_column_3",
+      "label": "Enable column 3",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius_3",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "subheading_3",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "label": "Heading",
+      "default": "Column 3 heading"
+    },
+     {
+          "type": "select",
+          "id": "heading_size_3",
+          "label": "t:sections.all.heading_size.label",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__0.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h0"
+        },
+    {
+      "type": "richtext",
+      "id": "paragraph_3",
+      "label": "Paragraph",
+      "default": "<p>Add your description here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label_3",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_3",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_3",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_3",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay_3",
+      "label": "Enable overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color_3",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_3",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "color",
+      "id": "subheading_color_3",
+      "label": "Subheading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color_3",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color_3",
+      "label": "Paragraph color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color_3",
+      "label": "Button background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_3",
+      "label": "Button text",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Column 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_column_4",
+      "label": "Enable column 4",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius_4",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "subheading_4",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading_4",
+      "label": "Heading",
+      "default": "Column 4 heading"
+    },
+     {
+          "type": "select",
+          "id": "heading_size_4",
+          "label": "t:sections.all.heading_size.label",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__0.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h0"
+        },
+    {
+      "type": "richtext",
+      "id": "paragraph_4",
+      "label": "Paragraph",
+      "default": "<p>Add your description here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label_4",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_4",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_4",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_4",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay_4",
+      "label": "Enable overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color_4",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_4",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "color",
+      "id": "subheading_color_4",
+      "label": "Subheading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color_4",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color_4",
+      "label": "Paragraph color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color_4",
+      "label": "Button background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_4",
+      "label": "Button text",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image grid 2 columns"
+    }
+  ]
+}
+{% endschema %}

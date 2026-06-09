@@ -1,0 +1,110 @@
+{% assign button_group_start = '
+  <div class="button-group">
+    <div class="button-group-inner">
+' %}
+
+{% assign button_group_end = '
+    </div>
+  </div>
+' %}
+
+{% liquid
+  if section.index == 1
+    assign image_first_section = 'image-first-section'
+  else
+    assign image_first_section = 'not-image-first-section'
+  endif
+
+  assign has_requied_class = false
+  if section.settings.custom_class contains 'breathelet-home-section'
+   assign has_requied_class = true
+  endif
+%}
+
+
+
+
+{% for block in section.blocks %}
+  {% if last_type == 'button' and block.type != 'button' %}
+    {{ button_group_end }}
+  {% endif %}
+
+  {% case block.type %}
+    {% when 'subheading' %}
+      <div
+        data-animation="subheading"
+        data-animation-group="{{ section.id }}"
+        class="subheading my-2 text-block-subheading {{ image_first_section }}"
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.text }}
+      </div>
+    {% when 'heading' %}
+      {% capture heading_tag %}{% render 'get-heading-tag', target: block %}{% endcapture %}
+      <{{ heading_tag }}
+        data-animation="heading"
+        data-animation-group="{{ section.id }}"
+        class="{{ block.settings.heading_size }} my-4 {% if has_requied_class %} md:my-8 {% endif %} text-block-heading {{ image_first_section }}"
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.heading | escape }}
+      </{{ heading_tag }}>
+    {% when 'breaker' %}
+        <div class="breaker-{{ block.id }} text-breaker {{ block.settings.space }}" {{ block.shopify_attributes }}></div>
+    {% when 'text' %}
+      <div
+        data-animation="paragraph"
+        data-animation-group="{{ section.id }}"
+        class="my-2  {% if has_requied_class %} md:my-8 {% else %} md:my-2 {% endif %}   {{ prose_class | default: ' prose' }} max-w-none text-block-content {{ image_first_section }}"
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.text }}
+      </div>
+    {% when 'button' %}
+      {% if last_type != 'button' %}
+        {{ button_group_start }}
+      {% endif %}
+
+      {% capture attrs %}
+          data-animation="button"
+          data-animation-group="{{ section.id }}"
+          {{ block.shopify_attributes }}
+        {% endcapture %}
+
+      {% render 'button', target: block, attrs: attrs %}
+
+      {% if forloop.last %}
+        {{ button_group_end }}
+      {% endif %}
+    {% when 'custom_liquid' %}
+      {{ block.settings.custom_liquid }}
+    {% when 'image_text' %}
+      <div class="image-and-text">
+        <div class="block-text">
+          {{ block.settings.text_part }}
+        </div>
+        <div class="block-image">
+          <img src="{{ block.settings.image_part | image_url: width: 400 }}" loading="lazy" width="" height="" alt=""/>
+        </div>
+      </div>  
+    {% when 'icon' %}
+      {% capture attrs %}
+        data-animation="icon"
+        data-animation-group="{{ section.id }}"
+        {{ block.shopify_attributes }}
+      {% endcapture %}
+
+      <div class="my-3">
+        {% render 'section-full-icon',
+          custom_icon: block.settings.custom_icon,
+          icon: block.settings.icon,
+          icon_background: block.settings.icon_background,
+          icon_background_color: block.settings.icon_background_color,
+          icon_color: block.settings.icon_color,
+          icon_width: block.settings.icon_width,
+          attrs: attrs
+        %}
+      </div>
+  {% endcase %}
+  {% assign last_type = block.type %}
+{% endfor %}

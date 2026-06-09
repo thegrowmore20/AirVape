@@ -1,0 +1,30 @@
+{% liquid
+	assign checkbox_class = 'checkbox'
+	assign list_class = 'list-unstyled flex flex-wrap gap-4 flex-col'
+%}
+
+<fieldset>
+	<legend class="visually-hidden">{{ linklists['parts-accessories'].title }}</legend>
+	<ul class="{{ list_class }}" role="list">
+		{% for link in linklists['parts-accessories'].links %}
+			<li class="{{ checkbox_class }} {% if value.count == 0 and value.active == false %}disabled{% endif %}">
+				<input
+					type="checkbox"
+					name="collection-filter"
+					value="{{ link.url }}"
+					id="collection-filter-{{ forloop.index }}"
+					onclick="window.location.href='{{ link.url }}';"
+					{% if link.url contains collection.handle  %}
+						checked
+					{% endif %}
+				>
+				<label for="collection-filter-{{ forloop.index }}" type="{{ link.object.handle }}"> 
+					{{ link.title | escape -}}
+					{%- if link.type == 'collection_link' -%}
+						<span class="filter-label-count">({{ link.object.products_count }})</span>
+					{%- endif -%}
+				</label>
+			</li>
+		{% endfor %}
+	</ul>
+</fieldset>

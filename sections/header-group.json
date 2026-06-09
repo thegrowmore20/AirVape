@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "88bc7a37-77b6-4afc-9071-f324b1ecedef": {
+          "type": "announcement",
+          "settings": {
+            "text": "Happy 4th of July",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "88bc7a37-77b6-4afc-9071-f324b1ecedef"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "text_size": "announcement-bar--text-sm",
+        "transition": "slide-y",
+        "autoplay": true,
+        "change_message_every": 4,
+        "background_color": "#f9f9f9",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_products_dHFkzP": {
+          "type": "mega_menu_products",
+          "settings": {
+            "menu_item": "Shop Devices",
+            "type": "horizontal",
+            "products": [
+              "enso",
+              "legacy-core",
+              "legacy-pro-2",
+              "airvape-x-royal-edition",
+              "airvape-x",
+              "airvape-xs-go",
+              "airvape-om-keychain-waxpen",
+              "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus",
+              "breathelet-onefit-classic-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+            ]
+          }
+        },
+        "mega_menu_categories_V8Ft6k": {
+          "type": "mega_menu_categories",
+          "settings": {
+            "menu_item": "Shop Accessories",
+            "type": "horizontal",
+            "collections": [
+              "enso-accessories",
+              "legacy-accessories",
+              "airvape-x-accessories",
+              "xs-go-accessories",
+              "om-accessories",
+              "breathelet",
+              "chargers",
+              "wearables",
+              "grinders"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_products_dHFkzP",
+        "mega_menu_categories_V8Ft6k"
+      ],
+      "settings": {
+        "sticky_header_mode": "scroll-up",
+        "logo": "shopify://shop_images/Header_LogoText.png",
+        "logo_width": 184,
+        "logo_width_mobile": 132,
+        "menu": "header-menu",
+        "menu_mobile": "header-menu-mobile",
+        "desktop_layout": "logo-left-nav-center",
+        "mobile_layout": "logo-center",
+        "open_dropdowns_on": "hover",
+        "text_color_header_transparent": "#ffffff",
+        "logo_header_transparent": "shopify://shop_images/Header_LogoText_6fb28304-74f6-4912-9628-1b0f0a6b2443.png",
+        "enable_country_selector": false,
+        "country_selector_show_country_flag": false,
+        "country_selector_show_country_name": false,
+        "country_selector_show_currency": false,
+        "enable_language_selector": false,
+        "enable_search": true,
+        "enable_h1_on_index": true
+      }
+    },
+    "9e2ab7e9-ef20-4927-a77f-7d8d1f2e7b7d": {
+      "type": "promotion-bar",
+      "disabled": true,
+      "settings": {
+        "show_only_on_homepage": false,
+        "content": "<p>Winter Holiday Deals</p>",
+        "url": "shopify://pages/winter-promotions",
+        "text_size": "text-base md:text-lg",
+        "section_height": "py-2",
+        "background_color": "#0a0a0a",
+        "text_color": "#ffffff",
+        "heading_color": ""
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "9e2ab7e9-ef20-4927-a77f-7d8d1f2e7b7d"
+  ]
+}

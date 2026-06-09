@@ -1,0 +1,170 @@
+<div id="age-verification-popup" class="age-popup-overlay">
+  <div class="age-popup-content">
+    <div class="age-gate-heading">                  
+       {% if settings.popup_logo != blank %}
+        <img
+          src="{{ settings.popup_logo | image_url: width: 276 }}"
+          srcset="
+            {{ settings.popup_logo | image_url: width: 138 }} 138w,
+            {{ settings.popup_logo | image_url: width: 276 }} 276w,
+            {{ settings.popup_logo | image_url: width: 414 }} 414w,
+            {{ settings.popup_logo | image_url: width: 552 }} 552w
+          "
+          sizes="(max-width: 480px) 138px, 276px"
+          width="276"
+          height="53"
+          alt="{{ settings.popup_logo.alt | default: shop.name }}"
+          fetchpriority="high"
+          loading="eager"
+          class="age-gate-heading-title-logo"
+        >
+      {% endif %}
+    </div>
+    {% if settings.popup_text %}
+    <h2>{{ settings.popup_text }}</h2>
+    {%  endif %}
+    <div class="age-popup-buttons">
+      <button onclick="setAgeVerification(true)">Yes</button>
+      <button onclick="setAgeVerification(false)">No</button>
+    </div>
+    <label class="age-remember-label">
+      <input type="checkbox" id="remember-me" checked> <span class="remember-text">Remember me</span>
+    </label>
+  </div>
+</div>
+
+<style>
+.age-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  justify-content: center;
+  align-items: center;
+  z-index: 500001;
+  text-align: center;
+}
+
+.age-gate-heading img {
+  margin: 0 auto 30px;
+}
+
+.age-popup-content {
+  background-color: #111111;
+  color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10000;
+}
+
+.age-popup-content h2 {
+  margin: 15px 0;
+}
+
+.age-popup-buttons button {
+  margin: 10px 3px;
+  padding: 6px 18px;
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+
+.age-popup-buttons button:hover {
+  border-color: #ffffff;
+}
+
+.age-remember-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.age-remember-label input {
+  cursor: pointer;
+}
+
+.remember-text {
+  color: white;
+  cursor: pointer;
+  font-size: 13px;  
+  opacity: .5;
+}
+</style>
+
+<script>
+let scrollPosition = 0;
+
+// Show popup after DOM loads + small delay
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(showAgePopupIfNeeded, 350); // 350ms delay allows main content to paint first
+});
+
+function showAgePopupIfNeeded() {
+  const ageVerified = localStorage.getItem('ageVerified');
+
+  if (ageVerified === 'true') {
+    hidePopup();
+    return;
+  } 
+  if (ageVerified === 'false') {
+    window.location.href = 'https://www.google.com';
+    return;
+  }
+
+  const popup = document.getElementById('age-verification-popup');
+  popup.style.display = 'flex';
+
+  // Save current scroll position
+  scrollPosition = window.scrollY || window.pageYOffset;
+
+  // Lock body scroll without breaking sticky headers
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
+}
+
+function hidePopup() {
+  const popup = document.getElementById('age-verification-popup');
+  popup.style.display = 'none';
+
+  // Restore body scroll
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+  window.scrollTo(0, scrollPosition);
+}
+
+function setAgeVerification(isOver21) {
+  const rememberMe = document.getElementById('remember-me').checked;
+
+  if (isOver21) {
+    localStorage.setItem('ageVerified', 'true');
+  } else {
+    localStorage.setItem('ageVerified', 'false');
+    window.location.href = 'https://www.google.com';
+  }
+
+  if (rememberMe) localStorage.setItem('rememberMe', 'true');
+  else localStorage.removeItem('rememberMe');
+
+  hidePopup();
+}
+</script>

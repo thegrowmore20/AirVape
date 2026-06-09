@@ -1,0 +1,72 @@
+<style>
+  .sticky-cart-close {
+    position: absolute;
+    content: '';
+    top: 5px;
+    right: 5px;
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+    cursor: pointer;    
+}
+
+@media screen and (max-width: 767px){
+  .sticky-cart-close {
+    height: 1rem;
+    width: 1rem;
+    padding: 4px;
+    display: none;
+}
+}
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const stickyCartClose = document.querySelector(".sticky-cart-close");
+  stickyCartClose?.addEventListener("click", function() {
+    this.closest(".sticky-add-to-cart-wrapper").classList.add("hidden");
+  }); 
+});
+</script>
+{% liquid
+  assign product_image = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+%}
+
+<div class="sticky-add-to-cart-wrapper --{{ section.settings.sticky_add_to_cart_position }}">
+  <sticky-add-to-cart>
+    <span class="sticky-cart-close"> <img src="{{ 'icon-close.webp' | file_url }}" height="8" width="8" loading="lazy"> </span>
+    {% if product_image %}
+      {{ product_image | image_url: width: 192 | image_tag: class: 'product-thumbnail-shade product-thumbnail sticky-product-image' }}
+    {% else %}
+      {% render 'placeholder', type: 'image', class: 'product-thumbnail placeholder' %}
+    {% endif %}
+    <div class="product-title hidden-desktop">
+      <div class="product-vendor text-foreground/75 tracking-wider text-xs md:text-sm mb-1">
+        {{ product.vendor }}
+      </div>
+      <p class="heading text-h6/h6">
+        {{ product.title }}
+      </p>
+    </div>
+    <quick-add-button
+      class="product-card-quick-button"  
+      product-id="{{ product.id }}"
+      handle="{{ product.handle }}"      
+        variant-id="{{ product.selected_or_first_available_variant.id }}"      
+    >
+      <button
+        type="button"
+        class="button button-secondary whitespace-nowrap flex justify-center items-center"
+      >
+        {% render 'icon-product-cart-black' %}
+          <span>
+            {{ 'products.product.add_to_cart' | t }}
+            &mdash; <span class="sticky-product-price"> {{ product.price | money }} </span>
+          </span>
+      </button>
+    </quick-add-button>
+  </sticky-add-to-cart>
+</div>

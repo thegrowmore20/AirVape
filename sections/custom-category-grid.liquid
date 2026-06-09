@@ -1,0 +1,45 @@
+{% render 'section-bg-number-vars' %}
+<div {% render 'section-attrs' %}>
+    {% content_for 'block', type: 'ai_gen_block_a1b7353', id: "two-col-grid" %}
+</div>
+{% schema %}
+{
+    "name": "Categories Grid",
+    "settings" : [
+        {
+            "type": "header",
+            "content": "Layout"
+        },
+        {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "t:sections.all.full_width.label",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.headers.colors"
+        },
+        {
+            "type": "color",
+            "label": "t:sections.all.background_color.label",
+            "id": "background_color"
+        },
+        {
+            "type": "color",
+            "label": "t:sections.all.text_color.label",
+            "id": "text_color"
+        },
+        {
+            "type": "color",
+            "label": "t:sections.all.heading_color.label",
+            "id": "heading_color"
+        },
+    ],
+    "presets": [
+        {
+            "name": "Categories Grid",
+        }
+    ],
+}
+{% endschema %}

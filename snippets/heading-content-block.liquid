@@ -1,0 +1,40 @@
+{% if block.settings.subheading != blank %}
+  <p class="subheading" data-animation="subheading" data-animation-group="{{ section.id }}">
+    {{ block.settings.subheading }}
+  </p>
+{% endif %}
+
+{% if block.settings.heading != blank %}
+  {% capture heading_tag %}{% render 'get-heading-tag' %}{% endcapture %}
+  <{{ heading_tag }}
+    class="heading {{ block.settings.heading_size }}"
+    data-animation="heading"
+    data-animation-group="{{ section.id }}"
+  >
+    {{ block.settings.heading }}
+  </{{ heading_tag }}>
+{% endif %}
+
+{% if block.settings.content != blank %}
+  <div
+    class="prose  inline-block"
+    data-animation="paragraph"
+    data-animation-group="{{ section.id }}"
+  >
+    {{ block.settings.content }}
+  </div>
+{% endif %}
+
+{% if button != false and block.settings.button_text != blank %}
+  <div class="button-wrapper">
+    <a
+      href="{{ block.settings.button_url | default: block.settings.link | default: '#' }}"
+      class="button {{ block.settings.button_style }}"
+      style="{% render 'button-vars', background: block.settings.button_background_color, text: block.settings.button_text_color %}"
+      data-animation="button"
+      data-animation-group="{{ section.id }}"
+    >
+      {{ block.settings.button_text }}
+    </a>
+  </div>
+{% endif %}

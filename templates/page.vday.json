@@ -1,0 +1,155 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_meLCVT": {
+      "type": "rich-text",
+      "blocks": {
+        "text_LxcEMD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The AirVape Family wishes you </p>"
+          }
+        },
+        "heading_YVLHCg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Happy Valentine's Day",
+            "heading_size": "h3",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "text_LxcEMD",
+        "heading_YVLHCg"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center mx-auto",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "normal",
+        "content_text_size": "prose",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_LGxKBc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4XtJWp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/VDAY_header-05.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h5>Add 2 Units to your cart and use the code: <strong>GIFTOFLOVE</strong>, to get 1 for free.</h5>",
+            "link_url": "https://airvapeusa.com/discount/GIFTOFLOVE?redirect=%2Fcollections%2Fvalentines-day-promo",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_cfRbA9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/VDAY_header-06.png",
+            "video_autoplay": true,
+            "heading": "",
+            "heading_size": "h5",
+            "content": "<h6>Discount code: <strong>VDAYBUNDLE</strong> for 30% off will be added automatically at checkout</h6>",
+            "link_url": "https://airvapeusa.com/discount/VDAYBUNDLE?redirect=%2Fproducts%2Fpro-bundle-small",
+            "link_text": "GRAB DEAL",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_4XtJWp",
+        "column_cfRbA9"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_swipe_on_mobile": false,
+        "number_of_columns_on_desktop": 2,
+        "space_between_columns": 16,
+        "image_width": 100,
+        "image_size": "",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_iwJJez": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "rich_text_meLCVT",
+    "main",
+    "multicolumn_LGxKBc",
+    "featured_collection_iwJJez"
+  ]
+}

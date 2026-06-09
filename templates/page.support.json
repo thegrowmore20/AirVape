@@ -1,0 +1,359 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "media_grid_jFC7G9": {
+      "type": "media-grid",
+      "blocks": {
+        "card_ePzM47": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/FAQ_anim.gif",
+            "overlay_opacity": 30,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "FAQ",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_DeGykd": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/contact_anim.gif",
+            "overlay_opacity": 24,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Contact us",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_HB8eWB": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/warranty_anim.gif",
+            "overlay_opacity": 24,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Lifetime Warranty",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_AzWzYk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Upgrade_anim.gif",
+            "overlay_opacity": 24,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Upgrade Program",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "card_ePzM47",
+        "card_DeGykd",
+        "card_HB8eWB",
+        "card_AzWzYk"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "layout": "1",
+        "row_height": 640,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "media_grid_3EWW4R": {
+      "type": "media-grid",
+      "blocks": {
+        "card_9anmDw": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/experience_anim.gif",
+            "overlay_opacity": 30,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Recycling Program",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_68ajzq": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/recycling_anim.gif",
+            "overlay_opacity": 24,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Contact us",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_m6etFU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/affiliate_anim.gif",
+            "overlay_opacity": 24,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Affiliate Program",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        },
+        "card_BrRGUR": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wholesale_anim.gif",
+            "overlay_opacity": 24,
+            "heading": "",
+            "heading_size": "h6",
+            "content": "",
+            "button_text": "Wholesale & Distribution",
+            "button_url": "",
+            "button_style": "",
+            "content_alignment": "md:content-bottom-left",
+            "content_alignment_mobile": "content-bottom-left",
+            "background_color": "#eaeaea",
+            "text_color": "#ffffff",
+            "heading_color": "#ffffff",
+            "button_background_color": "#0086d6",
+            "button_text_color": "",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "card_9anmDw",
+        "card_68ajzq",
+        "card_m6etFU",
+        "card_BrRGUR"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "layout": "1",
+        "row_height": 640,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "show_page_title": true,
+        "custom_page_title": false,
+        "custom_heading": "",
+        "content_width": "full-width",
+        "content_text_size": "prose md:prose-lg",
+        "heading_size": "h4",
+        "heading_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_tUG9XX": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_tPYfrb": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "FAQ",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#0086d6",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_tPYfrb"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/FAQ_anim.gif",
+        "image_size": "media--ratio-1-1",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_c6yVEG": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_QUTQxC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "CONTACT US",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#0086d6",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_QUTQxC"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/contact_anim.gif",
+        "image_size": "media--ratio-1-1",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_wYrRCR": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "media_grid_jFC7G9",
+    "media_grid_3EWW4R",
+    "main",
+    "image_with_text_tUG9XX",
+    "image_with_text_c6yVEG",
+    "featured_collection_wYrRCR"
+  ]
+}
