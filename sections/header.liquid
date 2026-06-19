@@ -82,25 +82,6 @@
   font-size: 13px;
 }
 
-{% if request.path == '/apps/rewards' and customer %}
-.header .xb-wishlist-header__icon svg {
-    fill: #FBBC05;
-    opacity: .3;
-}
-.header .product-name a {
-    font-weight: 400;
-    text-decoration: none;
-}
-.header .product-name a:hover {
-    text-decoration: underline;
-    color: #000 !important;
-}
-.header .product-name {
-    font-size: 13px;
-    min-height: 15px;
-}
-{% endif %}
-
 .header .xb-wishlist-header__btn,.header .xb-wishlist-header__btn:hover,
 .wishtlist-wrapper{
   width:1.75rem;
@@ -205,6 +186,7 @@
                 assign mega_menu = false
                 assign mega_menu_products = false
                 assign mega_menu_categories = false
+                assign mega_menu_col_pills = false
 
                 for block in section.blocks
                   assign block_menu_item = block.settings.menu_item | downcase
@@ -217,9 +199,13 @@
                   if block.type == 'mega_menu_products' and block_menu_item == link_title
                     assign mega_menu_products = block
                   endif
-                  
+
                   if block.type == 'mega_menu_categories' and block_menu_item == link_title
                     assign mega_menu_categories = block
+                  endif
+
+                  if block.type == 'mega_menu_col_pills' and block_menu_item == link_title
+                    assign mega_menu_col_pills = block
                   endif
 
                 endfor
@@ -249,7 +235,9 @@
                         elsif mega_menu_categories.settings.type == 'drawer'
                           render 'mega-menu-drawer', link: link, interaction_handler: section.settings.open_dropdowns_on, block: mega_menu_categories
                         endif
-                  %} 
+                      %}
+                    {% elsif mega_menu_col_pills %}
+                      {% render 'mega-menu-col-pills', link: link, interaction_handler: section.settings.open_dropdowns_on, block: mega_menu_col_pills %}
                 {% else %}
                   {% if link.links == blank %}
                     <a data-instant class="menu-item" href="{{ link.url }}">
@@ -542,7 +530,8 @@
  
 
 <script>
-  const progressBar = document.querySelectorAll('.scroll-progress-bar');      
+  window.addEventListener('load', () => {
+    const progressBar = document.querySelectorAll('.scroll-progress-bar');      
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -550,8 +539,10 @@
       
       progressBar.forEach(element => {    
         element.style.width = scrollPercent + '%';
+      });
     });
-  });
+  })
+  
 </script>
 
 {% schema %}
@@ -914,7 +905,29 @@
           "id" : "collections",
           "label" : "Select Collections",
           "limit": 10
-        }        
+        }
+      ]
+    },
+    {
+      "type": "mega_menu_col_pills",
+      "name": "Category Pills Mega Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "t:sections.header.blocks.mega_menu.settings.menu_item.label",
+          "info": "t:sections.header.blocks.mega_menu.settings.menu_item.info"
+        },
+        {
+          "type": "header",
+          "content": "Collections"
+        },
+        {
+          "type": "collection_list",
+          "id": "collections",
+          "label": "Select Collections",
+          "limit": 12
+        }
       ]
     }
   ]

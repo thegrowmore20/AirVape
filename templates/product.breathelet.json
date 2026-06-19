@@ -239,8 +239,9 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
+            "play_button_size": 48,
+            "play_button_color": "#ff0000",
             "video_border_radius": 12,
             "slides_desktop": 4,
             "slides_medium": 3,

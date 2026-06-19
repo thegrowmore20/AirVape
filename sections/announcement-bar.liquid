@@ -25,15 +25,11 @@
       {% if block.settings.text != blank %}
         <div
           class="
-            announcement col-start-2 row-start-1 text-center self-center py-2.5 opacity-0 pointer-events-none
+            announcement col-start-2 row-start-1 text-center self-center py-1 opacity-0 pointer-events-none
             {% if forloop.first %} no-js:opacity-100 {% endif %}
           "
         >
-          {% if block.settings.url %}
-            {{ block.settings.text | link_to: block.settings.url, data-instant: true }}
-          {% else %}
             {{ block.settings.text }}
-          {% endif %}
         </div>
       {% endif %}
     {% endfor %}
@@ -62,15 +58,10 @@
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "text",
-          "default": "Welcome to our store",
+          "default": "<p>Welcome to our store</p>",
           "label": "t:sections.announcement-bar.settings.text.label"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "t:sections.announcement-bar.settings.url.label"
         }
       ]
     }

@@ -110,16 +110,14 @@
         },
         "custom_liquid_7h8tQF": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
-            "custom_liquid": "{% if collection.handle contains 'memorial-day' %}\n<p data-animation=\"block\"\ndata-animation-group=\"{{ section.id }}-collection-blocks\" class=\"text-sm mb-2 sales-end-pe\"> The Sale Ended on May 31.</p>\n{% endif %}"
+            "custom_liquid": "{% if collection.handle contains 'fathers-day-sale' %}\n<p data-animation=\"block\"\ndata-animation-group=\"{{ section.id }}-collection-blocks\" class=\"text-sm mb-2 sales-end-pe\"> Sale ends June 21 at 11;59 PM.</p>\n{% endif %}"
           }
         },
         "custom_liquid_EpVRGW": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
-            "custom_liquid": "{% if collection.handle contains '420-bundles' %}\n<p data-animation=\"block\"\ndata-animation-group=\"{{ section.id }}-collection-blocks\" class=\"mt-1 bundle-collection-badge\"> Get them before they're gone  </p>\n{% endif %}"
+            "custom_liquid": "{% if collection.handle contains 'fathers-day-sale' %}\n<p data-animation=\"block\"\ndata-animation-group=\"{{ section.id }}-collection-blocks\" class=\"text-sm bundle-collection-badge\"> Not into bundles? Use code DAD15 at checkout for 15% off any signature device.  </p>\n{% endif %}"
           }
         }
       },

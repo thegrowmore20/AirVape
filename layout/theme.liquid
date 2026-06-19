@@ -69,7 +69,9 @@
     %}
 
     {{ 'main.css' | asset_url | stylesheet_tag: preload: true }}
-    <link rel="stylesheet" href="{{ 'custom-font.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="preload" href="{{ 'custom-font.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'custom-font.css' | asset_url }}"></noscript>
+
     
     <!-- Age verification popup end -->
     {% unless request.design_mode %}
@@ -303,30 +305,32 @@
           initStickyTracker();
         })();
       </script>
+      <script>
+        document.addEventListener("click", (e) => {
+          const input = e.target.closest(".variant-radio-image input[data-variant-id]");
+          if (!input) return;
+
+          const productCard = input.closest(".product-card");
+          const quickAddButton = productCard?.querySelector(".product-card-quick-button");
+          if (!quickAddButton) return;
+
+          const variantId = input.dataset.variantId;
+
+          if (quickAddButton.getAttribute("variant-id") === variantId) return;
+
+          quickAddButton.setAttribute("variant-id", variantId);
+          console.log("Selected variant-id:", variantId);
+        });
+      </script>
     {% endif %}
-    <script>
-      document.addEventListener("click", (e) => {
-        const input = e.target.closest(".variant-radio-image input[data-variant-id]");
-        if (!input) return;
-
-        const productCard = input.closest(".product-card");
-        const quickAddButton = productCard?.querySelector(".product-card-quick-button");
-        if (!quickAddButton) return;
-
-        const variantId = input.dataset.variantId;
-
-        if (quickAddButton.getAttribute("variant-id") === variantId) return;
-
-        quickAddButton.setAttribute("variant-id", variantId);
-        console.log("Selected variant-id:", variantId);
-      });
-    </script>
+    
 
     {% assign hulk_handles = 'premium-vaporizer-guide,upgrade-experience,wholesale,dropshipping' | split: ',' %}
     {% if hulk_handles contains page.handle %}
       {{ 'custom-hulk-modal.css' | asset_url | stylesheet_tag }}  
       <script src="{{ 'custom-hulk-modal.js' | asset_url }}" defer="defer"> </script>
     {% endif %}
+    
 
   </body>
 </html>

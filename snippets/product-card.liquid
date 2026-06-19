@@ -159,7 +159,8 @@
       <a data-instant href="{{ url }}">{{ card_product.title | default: 'Product' }}</a>
     </h2>
 
-    <a href="javascript:void(0);">
+    <div class="card-product-rating" 
+      aria-label="Rated {{ card_product.metafields.loox.avg_rating }} out of 5 based on {{ card_product.metafields.loox.num_reviews }} reviews">
       <div class="loox-rating"
         data-pattern="[rating] ([count])"
           data-show-empty-stars="true"
@@ -168,7 +169,7 @@
           data-raters="{{ card_product.metafields.loox.num_reviews }}"
           data-floating-product-reviews-enabled="true">
       </div>
-    </a>
+    </div>
 
     {% if settings.product_card_product_rating and rating != false %}
       {% if settings.product_card_show_empty_rating or card_product.metafields.reviews.rating.value != blank %}

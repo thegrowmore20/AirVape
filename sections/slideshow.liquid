@@ -33,6 +33,31 @@
       --slideshow-background: 45 45 45;
     {% endif %}
   }
+  .slideshow-slide .slide-video-poster {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    transition: opacity 0.35s ease;
+  }
+
+  .slideshow-slide .slide-video-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slideshow-slide .slide-video-poster.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .slideshow-slide .hero-video-deferred video {
+    opacity: 0;
+  }
+  .slideshow-slide .hero-video-deferred.is-ready video {
+    opacity: 1;
+    transition: opacity 0.35s ease;
+  }
 </style>
 
 <div
@@ -82,10 +107,14 @@
         if forloop.first
           assign loading = 'eager'
           assign fetchpriority = 'high'
+          assign preload = 'auto'
+          assign poster_size = '1920x'
         else
           assign loading = 'lazy'
           assign fetchpriority = 'auto'
-        endif        
+          assign preload = 'none'
+          assign poster_size = '480x'
+        endif
       %}
 
       <slideshow-slide
@@ -112,10 +141,38 @@
             assign slideshow_mobile_video_id = 'slideshow-mobile-video-' | append: forloop.index
           %}
 
+            {% if forloop.first %}
+              {% liquid
+                assign poster_desktop = block.settings.video.preview_image
+                assign poster_mobile = block.settings.mobile_video.preview_image | default: poster_desktop
+              %}
+              {% if poster_desktop %}
+                <picture class="slide-video-poster">
+                  {% if block.settings.mobile_video %}
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="{{ poster_mobile | image_url: width: 800 }} 800w, {{ poster_mobile | image_url: width: 1200 }} 1200w"
+                      sizes="100vw"
+                    >
+                  {% endif %}
+                  {{
+                    poster_desktop
+                    | image_url: width: 1280
+                    | image_tag:
+                      widths: '768, 1024, 1280, 1536, 1920',
+                      sizes: image_sizes,
+                      loading: 'eager',
+                      fetchpriority: 'high',
+                      alt: block.settings.heading | default: shop.name
+                  }}
+                </picture>
+              {% endif %}
+            {% endif %}
 
             {% if block.settings.mobile_video %}
               <div
-                class="h-full max-md:hidden {% unless section.settings.use_original_media_size %} fit-cover {% endunless %}"
+                class="h-full max-md:hidden {% if forloop.first %}hero-video-deferred{% endif %}
+                {% unless section.settings.use_original_media_size %} fit-cover {% endunless %}"
                 style="--aspect-ratio: {{ block.settings.video.aspect_ratio }}"
               >                
                 {{
@@ -127,11 +184,15 @@
                     height: block.settings.video.sources[0].height,
                     class: 'max-md:hidden',
                     id: slideshow_desktop_video_id,
-                    image_size: '480x'
+                    image_size: '480x',
+                    preload: preload,
+                    playsinline: true,
+                    controls: false
                 }}
               </div>
               <div
-                class="h-full md:hidden {% unless section.settings.use_original_media_size %} fit-cover {% endunless %}"
+                class="h-full md:hidden {% if forloop.first %}hero-video-deferred{% endif %}
+                {% unless section.settings.use_original_media_size %} fit-cover {% endunless %}"
                 style="--aspect-ratio: {{ block.settings.mobile_video.aspect_ratio }}"
               >
                 {{
@@ -143,12 +204,16 @@
                     height: block.settings.mobile_video.sources[0].height,
                     class: 'md:hidden',
                      id: slideshow_mobile_video_id,
-                    image_size: '360x'
+                    image_size: '360x',
+                    preload: preload,
+                    playsinline: true,
+                    controls: false
                 }}
               </div>
             {% else %}
               <div
-                class="h-full {% unless section.settings.use_original_media_size %} fit-cover {% endunless %}"
+                class="h-full {% if forloop.first %}hero-video-deferred{% endif %}
+                {% unless section.settings.use_original_media_size %} fit-cover {% endunless %}"
                 style="--aspect-ratio: {{ block.settings.video.aspect_ratio }}"
               >
                 {{
@@ -159,7 +224,10 @@
                     width: block.settings.video.sources[0].width,
                     height: block.settings.video.sources[0].height,
                      id: slideshow_desktop_video_id,
-                    image_size: '480x'
+                    image_size: '480x',
+                    preload: preload,
+                    playsinline: true,
+                    controls: false
                 }}
               </div>
             {% endif %}
@@ -358,61 +426,39 @@
     {% endif %}
   </slideshow-element>
 </div>
-{% comment %} <script>
- document.addEventListener('DOMContentLoaded', function() {
-  // Function to get visible videos (desktop or mobile based on screen size)
-  function getVisibleVideos() {
-    const desktopVideos = document.querySelectorAll('[id^="slideshow-desktop-video-"]');
-    const mobileVideos = document.querySelectorAll('[id^="slideshow-mobile-video-"]');
-    
-    // Check if desktop videos are visible (you may need to adjust this based on your breakpoint)
-    const isDesktop = window.innerWidth >= 768;
-    return isDesktop ? desktopVideos : mobileVideos;
-  }
-  
-  function setupVideoSequence() {
-    const videos = getVisibleVideos();
-    
-    // Log the visible videos count for debugging
-    console.log('Visible Videos:', videos.length);
 
-    // Add an event listener to each video for when it ends
-    videos.forEach((video, index) => {
-      video.addEventListener('ended', function() {
-        console.log(`Video ${index + 1} (${video.id}) has ended`);
 
-        // Check if there's a next video
-        const nextVideo = videos[index + 1];
-        if (nextVideo) {
-          console.log(`Starting video ${index + 2} (${nextVideo.id})`);
-          nextVideo.play(); // Play the next video
-        } else {
-          console.log('All videos have finished playing. Restarting from first video.');
-          videos[0].play(); // Restart from first video (or add logic to loop or stop)
-        }
+<script>
+  window.addEventListener('load', () => {
+    (function () {
+      var section = document.querySelector('#shopify-section-{{ section.id }}');
+      if (!section) return;
+
+      var revealed = false;
+      function revealVideos() {
+        if (revealed) return;
+        revealed = true;
+        section.querySelectorAll('.hero-video-deferred').forEach(function (wrap) {
+          wrap.classList.add('is-ready');
+          var v = wrap.querySelector('video');
+          if (v) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        });
+        section.querySelectorAll('.slide-video-poster').forEach(function (poster) {
+          poster.classList.add('is-hidden');
+        });
+      }
+
+      // Fire on first real interaction (this is what finalizes LCP)
+      ['scroll', 'pointerdown', 'keydown', 'touchstart', 'wheel'].forEach(function (evt) {
+        window.addEventListener(evt, revealVideos, { once: true, passive: true });
       });
-    });
-    
-    // Auto-play the first video if it's not already playing
-    if (videos.length > 0 && videos[0].paused) {
-      console.log('Autoplaying first video');
-      videos[0].play();
-    }
-  }
 
-  // Initial setup
-  setupVideoSequence();
+      // Safety net: reveal after a delay even with no interaction
+      setTimeout(revealVideos, 4000);
+    })();
+  })
   
-  // Re-setup on window resize to handle desktop/mobile switch
-  let resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      setupVideoSequence();
-    }, 250);
-  });
-});
-</script> {% endcomment %}
+</script>
 
 
 {% schema %}

@@ -1,0 +1,250 @@
+
+/* CSS adapted for section id wrapper to prevent conflicts */
+.shopify-section .services-container {
+    color: #ffffff;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    gap: 80px;
+}
+
+.shopify-section .services-container.services-vertical-layout {
+    flex-direction: column;
+    gap: 50px;
+}
+
+.shopify-section .services-intro {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.shopify-section .services-intro.has-divider::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.shopify-section .services-container.services-vertical-layout .services-intro.has-divider::after {
+    width: 100%;
+    height: 1px;
+    top: auto;
+    bottom: -30px;
+    right: 0;
+    left: 0;
+}
+.shopify-section .services-intro h2 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+    margin-bottom: 24px;					;
+    color: #ffffff;
+}
+.shopify-section .services-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #e0e0e0;
+}
+.shopify-section .intro-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.shopify-section .intro-images img {
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+.shopify-section .services-container.services-vertical-layout .intro-images img {
+    max-width: 275px;
+}
+.shopify-section .services-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 25px;
+    grid-column-gap: 25px;
+}
+.shopify-section .services-container.services-vertical-layout .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+.shopify-section .service-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #202020;
+    padding: 2rem 1rem;		
+    border-radius: 12px;	
+}
+.shopify-section .services-container.services-vertical-layout .service-card {
+    align-items: center;
+}
+.shopify-section .service-icon {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #ffffff;
+}
+.shopify-section .services-container.services-vertical-layout .service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.shopify-section .service-icon > svg,
+.shopify-section .service-icon > img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.shopify-section .services-container.services-vertical-layout .service-icon > svg,
+.shopify-section .services-container.services-vertical-layout .service-icon > img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.shopify-section .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    color: #ffffff;
+}
+.shopify-section .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 16px;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+.shopify-section .service-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.shopify-section .service-link:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 992px) {
+    .shopify-section .services-container {
+        flex-direction: column;
+        padding: 40px;
+        gap: 50px;
+    }
+    .shopify-section .services-intro {
+        flex: auto;
+    }
+    .shopify-section .services-intro.has-divider::after {
+        display: none;
+    }
+    .shopify-section .services-container.services-vertical-layout .services-intro.has-divider::after {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .shopify-section .services-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+    .shopify-section .services-container.services-vertical-layout .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .shopify-section .intro-images img {
+        max-width: 20%;
+    }
+    .shopify-section .intro-images {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .shopify-section .services-container{
+        padding: 0;
+    }
+    
+}
+@media screen and (max-width: 767px) {
+    .shopify-section .services-grid {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+    .shopify-section .services-container.services-vertical-layout .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px
+    }
+    
+    .shopify-section .intro-images {        
+        justify-content: flex-start;        
+    }
+    
+    .shopify-section .intro-images img {
+        max-width: 45%;
+    }
+    
+    .shopify-section .services-container.services-vertical-layout .intro-images img {
+        max-width: calc(50% - 10px);
+    }
+    
+    .shopify-section .services-container{
+        padding: 10px 0;
+        gap: 40px;
+    }
+    .shopify-section .services-intro h2 {
+        font-size: 1.9rem;
+    }
+    
+    .shopify-section .service-card{
+        align-items: center;
+    }
+    .shopify-section .services-container.services-vertical-layout .service-card h3 {
+        font-size: 1rem;
+    }
+    .shopify-section .services-container.services-vertical-layout .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+    .shopify-section .services-container.services-vertical-layout .service-icon > svg,
+    .shopify-section .services-container.services-vertical-layout .service-icon > img {
+        width: 50px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 520px) {
+    .shopify-section .services-intro {
+        padding: 1rem
+    }
+    .shopify-section .services-intro h2 {
+        font-size: 1.6rem;
+        margin-bottom: .5rem;
+    }
+    .shopify-section .services-container.services-vertical-layout {
+        gap: 25px;
+    }
+    .shopify-section .services-container.services-vertical-layout .services-grid {
+        gap: 8px;
+    }
+    .shopify-section .services-container.services-vertical-layout .service-card {
+        padding: 1rem .5rem;
+    }
+    .shopify-section .services-container.services-vertical-layout .service-card p {
+        font-size: 10px;						
+    }
+    .shopify-section .services-intro p {
+        margin-bottom: .5rem;						
+    }
+}

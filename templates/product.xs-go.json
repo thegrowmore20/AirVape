@@ -273,8 +273,9 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
+            "play_button_size": 48,
+            "play_button_color": "#ff0000",
             "video_border_radius": 12,
             "slides_desktop": 4,
             "slides_medium": 3,
@@ -498,6 +499,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -625,6 +627,7 @@
         "slide_7CBKm4",
         "slide_LiNqh4"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
       ],
@@ -639,6 +642,46 @@
         "background_animation": "ZoomOut",
         "content_animation": "AppearLineByLine",
         "background_color": "#262626"
+      }
+    },
+    "image_with_text_overlay_m3eBz3": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_yL3X6r": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take the heat on-the-go",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_VkbpbY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The AirVape XS GO uses a combination of conduction and convection technology to achieve the best heating.goes off.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yL3X6r",
+        "text_VkbpbY"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Article_cover.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
       }
     },
     "main-details": {
@@ -723,6 +766,7 @@
     "featured_collection_EWRmFy": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -764,6 +808,7 @@
     "featured_collection_4mWDeF": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -842,6 +887,7 @@
     "image_with_text_76bibF",
     "featured_collection_kWtgdc",
     "slideshow_ygAcAw",
+    "image_with_text_overlay_m3eBz3",
     "main-details",
     "custom_section_tpanJb",
     "featured_collection_EWRmFy",

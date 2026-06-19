@@ -15,7 +15,7 @@
           {{
             media
             | image_url: width: 160
-            | image_tag: widths: '80, 160', sizes: image_sizes, class: 'product-thumbnail-shade', loading: 'eager'
+            | image_tag: widths: '80, 160', sizes: image_sizes, class: 'product-thumbnail-shade', loading: 'lazy'
           }}
         </lqip-element>
       </div>
@@ -23,7 +23,7 @@
       <div
         class="media media--ratio-16-9"
       >
-        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'eager' }}
+        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'lazy' }}
       </div>
 
       <div class="play-icon">
@@ -33,7 +33,7 @@
       <div
         class="media media--ratio-16-9"
       >
-        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'eager' }}
+        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'lazy' }}
       </div>
 
       <div class="play-icon">
@@ -46,7 +46,7 @@
         {{
           media
           | image_url: width: 160
-          | image_tag: widths: '80, 160', sizes: image_sizes, class: 'product-thumbnail-shade', loading: 'eager'
+          | image_tag: widths: '80, 160', sizes: image_sizes, class: 'product-thumbnail-shade', loading: 'lazy'
         }}
       </div>
 

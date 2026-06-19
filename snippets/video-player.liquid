@@ -30,6 +30,7 @@
     host="{{ video_url.type }}"
     video-id="{{ video_url.id }}"
   {% endif %}
+  preload="none"
 >
   {% if background != true %}
     <button class="cursor-pointer w-full h-full" data-poster aria-label="{{ 'accessibility.play_video' | t }}">
@@ -54,10 +55,10 @@
     <template>
       {% if background == true and natural_size != true %}
         <div class="fit-cover" style="--aspect-ratio: {{ video.aspect_ratio }}">
-          {{ video | video_tag: image_size: '480x' }}
+          {{ video | video_tag: image_size: '480x', preload: none }}
         </div>
       {% else %}
-        {{ video | video_tag: image_size: '480x' }}
+        {{ video | video_tag: image_size: '480x', preload: none }}
       {% endif %}
     </template>
   {% endif %}

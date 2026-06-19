@@ -189,7 +189,7 @@
       >
         {% if featured_media %}
           <div class="product-gallery__slide">
-            {% render 'media', media: featured_media, preload: true, sizes: media_image_sizes %}
+            {% render 'media', media: featured_media, preload: true, fetchpriority: 'high', sizes: media_image_sizes %}
           </div>
         {% endif %}
 

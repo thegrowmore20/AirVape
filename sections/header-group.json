@@ -17,23 +17,35 @@
         "88bc7a37-77b6-4afc-9071-f324b1ecedef": {
           "type": "announcement",
           "settings": {
-            "text": "Happy 4th of July",
-            "url": ""
+            "text": "<p>Father's Day Sale is LIVE - <a href=\"/collections/fathers-day-sale\" title=\"Father's Day Sale\">Shop Now</a></p>"
+          }
+        },
+        "announcement_Ymk49r": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Prices are at their lowest this month</p>"
+          }
+        },
+        "announcement_GL9UYp": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>All AirVape prices will be revised on July 7th</p>"
           }
         }
       },
       "block_order": [
-        "88bc7a37-77b6-4afc-9071-f324b1ecedef"
+        "88bc7a37-77b6-4afc-9071-f324b1ecedef",
+        "announcement_Ymk49r",
+        "announcement_GL9UYp"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "text_size": "announcement-bar--text-sm",
         "transition": "slide-y",
         "autoplay": true,
-        "change_message_every": 4,
-        "background_color": "#f9f9f9",
-        "text_color": "rgba(0,0,0,0)"
+        "change_message_every": 5,
+        "background_color": "#ea4335",
+        "text_color": "#ffffff"
       }
     },
     "header": {
@@ -59,9 +71,27 @@
         },
         "mega_menu_categories_V8Ft6k": {
           "type": "mega_menu_categories",
+          "disabled": true,
           "settings": {
             "menu_item": "Shop Accessories",
             "type": "horizontal",
+            "collections": [
+              "enso-accessories",
+              "legacy-accessories",
+              "airvape-x-accessories",
+              "xs-go-accessories",
+              "om-accessories",
+              "breathelet",
+              "chargers",
+              "wearables",
+              "grinders"
+            ]
+          }
+        },
+        "mega_menu_col_pills_PWXeP7": {
+          "type": "mega_menu_col_pills",
+          "settings": {
+            "menu_item": "Shop Accessories",
             "collections": [
               "enso-accessories",
               "legacy-accessories",
@@ -78,7 +108,8 @@
       },
       "block_order": [
         "mega_menu_products_dHFkzP",
-        "mega_menu_categories_V8Ft6k"
+        "mega_menu_categories_V8Ft6k",
+        "mega_menu_col_pills_PWXeP7"
       ],
       "settings": {
         "sticky_header_mode": "scroll-up",

@@ -1,0 +1,66 @@
+{%- assign nl = "
+" -%}
+{%- assign custom_paths = "/*awc=,/*source=aw,/*cjevent=,/*cjdata=,/*?*aff=,/*fbclid=,/*gclid=,/*_kx=,/*_ke=,/*mc_cid=,/*mc_eid=,/*pr_prod_strat=,/*pr_rec_id=,/*phcursor=,/*ref=loox,/*ref=aftership,/*ref=reachdog,/*?*_pos=,/*?*_sid=,/*?*_ss=,/*?*variant=,/*?page=" | split: "," -%}
+
+{%- for group in robots.default_groups -%}
+{{ group.user_agent }}
+{% for rule in group.rules %}
+{{ rule }}
+{% endfor %}
+{%- if group.user_agent.value == "*" -%}
+{%- capture default_rules -%}
+{% for rule in group.rules %}
+{{ rule }}
+{% endfor %}
+{%- endcapture -%}
+Allow: /blogs/
+{% for path in custom_paths %}
+Disallow: {{ path }}
+{% endfor %}
+
+# --- AI / answer-engine crawlers: explicitly allowed ---
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+{%- endif -%}
+
+{%- if group.sitemap != blank %}
+{{ group.sitemap }}
+{% endif %}
+{% endfor %}
+
+# --- Blocked / rate-limited crawlers ---
+User-agent: Nutch
+Disallow: /
+
+User-agent: MJ12bot
+Crawl-delay: 10
+{{ default_rules }}
+Sitemap: https://airvapeusa.com/sitemap.xml
+
+User-agent: Pinterest
+Crawl-delay: 1
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+{{ default_rules }}
+Sitemap: https://airvapeusa.com/sitemap.xml
+
+User-agent: AhrefsSiteAudit
+Crawl-delay: 10
+{{ default_rules }}
+Sitemap: https://airvapeusa.com/sitemap.xml

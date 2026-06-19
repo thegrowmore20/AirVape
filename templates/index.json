@@ -48,6 +48,7 @@
         },
         "slide_WMgPLB": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/core_web_1080_upd_2.webm",
             "mobile_video": "shopify://files/videos/core_mobile_web_9x16_clean.webm",
@@ -82,6 +83,7 @@
         },
         "slide_Yx9pxn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/ezgif-1ef21a7e63b06d2f.webm",
             "mobile_video": "shopify://files/videos/ezgif-1ef21a7e63b06d2f.webm",
@@ -113,47 +115,12 @@
             "overlay_type": "solid",
             "heading_html_tag": "p"
           }
-        },
-        "slide_MWMfYR": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/OM Wax Keychain_final.webm",
-            "content_width_maximum": 640,
-            "desktop_content_position": "bottom-left",
-            "mobile_content_position": "bottom-right",
-            "desktop_text_alignment": "default",
-            "subheading": "",
-            "heading": "On the Go Vibes",
-            "heading_size": "h4",
-            "text": "Easy to carry fast to use",
-            "hide_text_on_mobile": false,
-            "button_size": "text-sm md:text-base",
-            "custom_liquid": "",
-            "button_link": "shopify://products/airvape-om-keychain-waxpen",
-            "button_text": "See OM in Action",
-            "button_style": "button-outline",
-            "button_background_color": "#ffffff",
-            "button_text_color": "#000000",
-            "button2_link": "",
-            "button2_text": "",
-            "button2_style": "",
-            "button2_background_color": "",
-            "button2_text_color": "",
-            "background_color": "",
-            "color_text": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0,
-            "overlay_type": "solid",
-            "heading_html_tag": "p"
-          }
         }
       },
       "block_order": [
         "slide_TQRiJU",
         "slide_WMgPLB",
-        "slide_Yx9pxn",
-        "slide_MWMfYR"
+        "slide_Yx9pxn"
       ],
       "name": "t:sections.slideshow.presets__0.name",
       "settings": {
@@ -313,7 +280,7 @@
         "custom_class": "breathelet-home-section",
         "full_width": true,
         "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/image-1_1.jpg",
+        "image": "shopify://shop_images/image-1_1_1.webp",
         "image_size": "",
         "image_position": "left",
         "image_width": 50,
@@ -503,39 +470,14 @@
             "hide_thumbnails": false,
             "product_handle": "",
             "aggregated": true,
-            "data-limit": 10,
+            "data-limit": 5,
             "maxwidth": 1200,
             "is_sample": true
-          }
-        },
-        "loox_reviews_loox_card_carousel_section_wR7krk": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-card-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "disabled": true,
-          "settings": {
-            "maxWidth": 1200,
-            "borderRadius": 8,
-            "itemsPerView": 4,
-            "mobileItemsPerView": 1,
-            "maxNumberOfCharacters": 100,
-            "imageRatio": "0.72",
-            "reviewerNameColor": "#000000",
-            "textColor": "#000000",
-            "itemBackgroundColor": "#ffffff",
-            "starsColor": "",
-            "starsBackgroundColor": "#ffffff",
-            "arrows_backgroundColor": "#ffffff",
-            "arrows_iconColor": "#9a9a9a",
-            "shadow": "offset-dark",
-            "border_active": false,
-            "border_width": 2,
-            "border_color": "#000000",
-            "productIds": ""
           }
         }
       },
       "block_order": [
-        "loox_reviews_loox_agg_section_3ifwEE",
-        "loox_reviews_loox_card_carousel_section_wR7krk"
+        "loox_reviews_loox_agg_section_3ifwEE"
       ],
       "settings": {
         "full_width": true,
@@ -579,39 +521,6 @@
         "new_tab": true,
         "background_color": "",
         "text_color": ""
-      }
-    },
-    "rich_text_9JeBgC": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_QV3XMK": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1",
-            "heading_html_tag": "p"
-          }
-        },
-        "text_HdprwY": {
-          "type": "text",
-          "settings": {
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_QV3XMK",
-        "text_HdprwY"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-center mx-auto",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
       }
     },
     "video_with_text_overlay_JiVPGJ": {
@@ -912,45 +821,12 @@
       ],
       "settings": {}
     },
-    "rich_text_B4rXAp": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_fBgftX": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1",
-            "heading_html_tag": "p"
-          }
-        },
-        "text_3L4TNe": {
-          "type": "text",
-          "settings": {
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_fBgftX",
-        "text_3L4TNe"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets__0.name",
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-center mx-auto",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
     "slideshow_nXA9pR": {
       "type": "slideshow",
       "blocks": {
         "slide_NfJyrA": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/gunmetalbattery_atomizer_gunmetalcap_xs.png",
             "content_width_maximum": 720,
@@ -984,6 +860,7 @@
         },
         "slide_djrJUQ": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/airvape_180423_-45t.jpg",
             "content_width_maximum": 720,
@@ -1054,6 +931,7 @@
         "slide_djrJUQ",
         "slide_gUVPqj"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
       ],
@@ -1070,97 +948,56 @@
         "background_color": "#262626"
       }
     },
-    "rich_text_9xgRJj": {
-      "type": "rich-text",
+    "image_with_text_overlay_4wbAtL": {
+      "type": "image-with-text-overlay",
       "blocks": {
-        "heading_UFMUwX": {
+        "heading_yM8xaT": {
           "type": "heading",
           "settings": {
-            "heading": "",
-            "heading_size": "h1",
-            "heading_html_tag": "p"
-          }
-        },
-        "text_WXhzyR": {
-          "type": "text",
-          "settings": {
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_UFMUwX",
-        "text_WXhzyR"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets__0.name",
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-center mx-auto",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "image_with_text_GNkKGh": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_QeCNRc": {
-          "type": "subheading",
-          "settings": {
-            "text": "become an"
-          }
-        },
-        "heading_CzyNre": {
-          "type": "heading",
-          "settings": {
-            "heading": "#AirVape NINJA",
+            "heading": "Small Yet Mighty",
             "heading_size": "h2",
-            "heading_html_tag": "p"
+            "heading_html_tag": "h2"
           }
         },
-        "text_kCh9aQ": {
+        "text_CgW7Ef": {
           "type": "text",
           "settings": {
-            "text": "<p>Explore all the benefits and earn <strong>an exclusive discount</strong> right now.</p>"
+            "text": "<p>AirVape OM combines sleek power, portability, elegance in a keychain design.</p>"
           }
         },
-        "button_bwhiDB": {
+        "button_XBLyK8": {
           "type": "button",
           "settings": {
-            "enable_form_popup": false,
-            "hulk_form_id_block": "",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "JOIN NOW",
-            "button_link": "https://airvapeusa.com/pages/318798",
-            "button_style": "button-outline",
+            "button_text": "Shop OM",
+            "button_link": "shopify://products/airvape-om-keychain-waxpen",
+            "button_style": "",
             "button_size": "text-sm md:text-base",
-            "button_background_color": "",
-            "button_text_color": ""
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
           }
         }
       },
       "block_order": [
-        "subheading_QeCNRc",
-        "heading_CzyNre",
-        "text_kCh9aQ",
-        "button_bwhiDB"
+        "heading_yM8xaT",
+        "text_CgW7Ef",
+        "button_XBLyK8"
       ],
-      "disabled": true,
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
       "settings": {
         "custom_class": "",
         "full_width": true,
-        "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/IMG_9172.png",
-        "image_size": "",
-        "image_position": "left",
-        "image_width": 50,
-        "text_alignment": "text-left",
-        "background_color": "#eaeaea",
-        "text_color": "",
-        "heading_color": ""
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/airvape_180423_-20t_1.jpg",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
       }
     },
     "47953464-d278-497d-be52-ea15912c52d9": {
@@ -1181,14 +1018,6 @@
         "heading_color": "",
         "heading_html_tag": "p"
       }
-    },
-    "17709972351b9a31e3": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "177099729089e98719": {
-      "type": "_blocks",
-      "settings": {}
     },
     "17709972994c024ab9": {
       "type": "_blocks",
@@ -1216,6 +1045,7 @@
       "block_order": [
         "ai_gen_block_a101306_x3WJA9"
       ],
+      "disabled": true,
       "settings": {}
     },
     "177099755237bbec23": {
@@ -1244,6 +1074,7 @@
       "block_order": [
         "ai_gen_block_94abeca_QWfpUQ"
       ],
+      "disabled": true,
       "settings": {}
     },
     "1770997569fd3077b8": {
@@ -1271,6 +1102,7 @@
       "block_order": [
         "ai_gen_block_c2cc944_X8hzg7"
       ],
+      "disabled": true,
       "settings": {}
     }
   },
@@ -1283,18 +1115,13 @@
     "custom_categories_bPjfQB",
     "1773124739025cf225",
     "1773906755cb90fdec",
-    "rich_text_9JeBgC",
     "video_with_text_overlay_JiVPGJ",
     "177099101064d70b8a",
     "ed3b7d47-7133-4026-abca-8717a2168cce",
     "blocks_c7UD8Q",
-    "rich_text_B4rXAp",
     "slideshow_nXA9pR",
-    "rich_text_9xgRJj",
-    "image_with_text_GNkKGh",
+    "image_with_text_overlay_4wbAtL",
     "47953464-d278-497d-be52-ea15912c52d9",
-    "17709972351b9a31e3",
-    "177099729089e98719",
     "17709972994c024ab9",
     "177099755237bbec23",
     "1770997569fd3077b8"
