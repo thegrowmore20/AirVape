@@ -689,6 +689,7 @@
         "app_bkCNW8",
         "app_LEcfCx"
       ],
+      "disabled": true,
       "name": "App Optimization",
       "settings": {
         "enable": true,

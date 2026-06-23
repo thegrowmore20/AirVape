@@ -15,7 +15,7 @@
         "custom_liquid_U4Vj3r": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"hidden-mobile\">\n    <div class=\"\n          product-badges-container flex gap-1 items-center pointer-events-none award-winning-badge-wrapper\">\n<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/award.webp?v=1776679196\" alt=\"Award Trophy\" width=\"14\" height=\"auto\" loading=\"lazy\">    \n<p class=\"text-sm winning-text-color\"> Award Winner </p>\n</div>\n</div>",
+            "custom_liquid": "<div class=\"hidden-mobile\">\n    <div class=\"\n          product-badges-container flex gap-1 items-center pointer-events-none award-winning-badge-wrapper\">\n<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/award.webp?v=1776679196\" alt=\"Award Trophy\" width=\"14\" height=\"14\" loading=\"lazy\">    \n<p class=\"text-sm winning-text-color\"> Award Winner </p>\n</div>\n</div>",
             "collapse_content": false,
             "collapse_open": false,
             "heading": ""
@@ -352,7 +352,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 10,
+            "limit": 5,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -436,59 +436,6 @@
         "background_color": "",
         "text_color": ""
       }
-    },
-    "main-details": {
-      "type": "main-product-details",
-      "blocks": {
-        "text_8xhL8M": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "content": "<p><a href=\"/pages/upgrade-experience\" target=\"_blank\" title=\"Upgrade experience\">UpGrade to the ENSŌ</a></p>"
-          }
-        },
-        "5bbfd876-e943-47d3-b984-06f967dfd314": {
-          "type": "description",
-          "settings": {
-            "collapse_content": true,
-            "collapse_open": true,
-            "heading": "Description"
-          }
-        },
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "Specs",
-            "content": "<ul><li>5000 mAh removable battery</li><li>Nominal Voltage 11.1V Max Discharge current: 15A</li><li>Magnetic mouthpiece</li><li>Size: 13x4.7 inch, 33x12 cm</li><li>Weight: 2.55 kg, 5.62 lbs</li><li>Running time up to 2 hours</li><li>Charging: 3.5 hours</li><li>Water capacity: 0.2 L, 6.7 oz</li><li>Cup capacity 15-25 gr</li><li>Temperature range: 180-330 C°</li></ul>"
-          }
-        },
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "Materials",
-            "content": "<ul><li>Sturdy Zinc alloy body</li><li>Glass water tank</li><li>Porcelain heating chamber</li><li>Porcelain tobacco cup</li><li>Aluminum disposable tobacco cup</li><li>Stainless steel mouthpiece</li><li>Vegan leather strap</li></ul>"
-          }
-        },
-        "collapsible_content_ErzCAt": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "WHATS IN THE BOX",
-            "content": "<ul><li>1x Ensō</li><li>1x USB-C Charger brick</li><li>1x USB-C Charging cable</li><li>1x Batery</li><li>1x Rubber heat valve</li><li>2x Metal lids</li><li>10x Disposable cups</li><li>2x Ceramic cups</li><li>1x Multi-tool</li><li>5x Silicone mouthpiece tip</li><li>1x Silicone mouthpiece guard</li><li>1x Hose</li><li>1x Purge valve</li></ul><h5></h5><h5></h5><h5></h5>"
-          }
-        }
-      },
-      "block_order": [
-        "text_8xhL8M",
-        "5bbfd876-e943-47d3-b984-06f967dfd314",
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b",
-        "collapsible_content_ErzCAt"
-      ],
-      "disabled": true,
-      "settings": {}
     },
     "video_with_text_overlay_h6aGCA": {
       "type": "video-with-text-overlay",
@@ -975,65 +922,6 @@
         "heading_color": ""
       }
     },
-    "image_with_text_R8h4eM": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_tYfkT6": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_xAxftF": {
-          "type": "heading",
-          "settings": {
-            "heading": "Glass Wax cup",
-            "heading_size": "h2",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_9eEAx8": {
-          "type": "text",
-          "settings": {
-            "text": "<p>You can you the <strong>ENSŌ glass wax cup</strong> for waxes and  oils/concentrates <em>(not included in the kit).</em></p>"
-          }
-        },
-        "button_4N6gB3": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": false,
-            "hulk_form_id_block": "",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Buy Glass Wax Cup",
-            "button_link": "shopify://products/enso-glass-wax-cup",
-            "button_style": "",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_tYfkT6",
-        "heading_xAxftF",
-        "text_9eEAx8",
-        "button_4N6gB3"
-      ],
-      "disabled": true,
-      "settings": {
-        "custom_class": "",
-        "full_width": true,
-        "remove_bottom_spacing": true,
-        "image": "shopify://shop_images/Glass_wax_cup1.png",
-        "image_size": "",
-        "image_position": "right",
-        "image_width": 50,
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
     "image_with_text_overlay_UQAiCG": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -1306,18 +1194,6 @@
         "heading_color": ""
       }
     },
-    "pdp_aplus_comparison_wUWgPW": {
-      "type": "pdp-aplus-comparison",
-      "disabled": true,
-      "name": "Aplus comparison",
-      "settings": {
-        "subheading": "",
-        "heading": "",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center"
-      }
-    },
     "featured_collection_9g4PBk": {
       "type": "featured-collection",
       "settings": {
@@ -1349,27 +1225,6 @@
         "heading_html_tag": "p"
       }
     },
-    "related_products_XTTA4g": {
-      "type": "related-products",
-      "disabled": true,
-      "name": "t:sections.related-products.presets__0.name",
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "h2"
-      }
-    },
     "product_faqs_jLzbm7": {
       "type": "product-faqs",
       "name": "Product Faqs",
@@ -1398,7 +1253,6 @@
     "177485716168cc23cb",
     "image_with_text_MwCXKV",
     "custom_liquid_tPwXGU",
-    "main-details",
     "video_with_text_overlay_h6aGCA",
     "text_with_icons_a8YfK9",
     "image_before_after_NAGAWD",
@@ -1409,14 +1263,11 @@
     "video_with_text_w9UM3m",
     "image_with_text_xfbNRK",
     "image_with_text_AJaKtP",
-    "image_with_text_R8h4eM",
     "image_with_text_overlay_UQAiCG",
     "featured_collection_yimCUa",
     "custom_section_YRfa83",
     "custom_section_Rrg6pT",
-    "pdp_aplus_comparison_wUWgPW",
     "featured_collection_9g4PBk",
-    "related_products_XTTA4g",
     "product_faqs_jLzbm7"
   ]
 }

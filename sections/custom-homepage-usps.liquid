@@ -14,7 +14,8 @@
 					<p>{{ section.settings.text_1 }}</p>
 				{% endif %}
 				<div class="intro-images">
-					{% if section.settings.intro_img_1 != blank %}												
+					{% if section.settings.intro_img_1 != blank %}	
+						{% assign alt_intro_img_1 = section.settings.intro_img_1.alt | default: 'Limited Warranty' %}											
 						{{
 							section.settings.intro_img_1
 							| image_url: width: 280
@@ -23,11 +24,12 @@
 								sizes: '(max-width: 480px) 140px, (max-width: 768px) 280px, 280px',
 								width: 280,
 								height: 280,
-								alt: section.settings.intro_img_1.alt,
+								alt: alt_intro_img_1,
 								loading: 'lazy'
 							}}
 						{% endif %}
 						{% if section.settings.intro_img_2 != blank %}
+							{% assign alt_intro_img_2 = section.settings.intro_img_2.alt | default: '30 Days Guarantee' %}
 								{{
 									section.settings.intro_img_2
 									| image_url: width: 280
@@ -36,7 +38,7 @@
 										sizes: '(max-width: 480px) 140px, (max-width: 768px) 280px, 280px',
 										width: 280,
 										height: 280,
-										alt: section.settings.intro_img_2.alt,
+										alt: alt_intro_img_2,
 										loading: 'lazy'
 									}}
 							{% endif %}
@@ -50,7 +52,8 @@
 										{{ block.settings.icon_html }}
 									</div>
 								{% elsif block.settings.icon_image != blank %}
-									<div class="service-icon">										
+									<div class="service-icon">		
+										{% assign alt_image = block.settings.icon_image.alt | default: block.settings.title %}								
 										{{
 											block.settings.icon_image
 											| image_url: width: 88
@@ -59,7 +62,7 @@
 												sizes: '88px',
 												width: 88,
 												height: 88,
-												alt: block.settings.icon_image.alt,
+												alt: alt_image ,
 												loading: 'lazy'
 											}}
 
@@ -80,9 +83,14 @@
 			</section>
 			
 
-			<link rel="preload" href="{{ 'custom-homepage-usps.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    		<noscript><link rel="stylesheet" href="{{ 'custom-homepage-usps.css' | asset_url }}"></noscript>
-
+    {{ 'custom-homepage-usps.css' | asset_url | preload_tag: as: 'style' }}
+    <link rel="stylesheet"
+        href="{{ 'custom-homepage-usps.css' | asset_url }}"
+        media="print"
+        onload="this.onload=null;this.media='all'">
+    <noscript>
+    {{ 'custom-homepage-usps.css' | asset_url | stylesheet_tag }}
+    </noscript>
 			{% schema %}
 			{
 				"name": "General USPs",

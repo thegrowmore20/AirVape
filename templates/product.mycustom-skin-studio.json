@@ -220,71 +220,6 @@
         "text_color": ""
       }
     },
-    "main-details": {
-      "type": "main-product-details",
-      "blocks": {
-        "5bbfd876-e943-47d3-b984-06f967dfd314": {
-          "type": "description",
-          "settings": {
-            "collapse_content": true,
-            "collapse_open": true,
-            "heading": "Description"
-          }
-        },
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
-          "type": "collapsible_content",
-          "disabled": true,
-          "settings": {
-            "collapse_open": false,
-            "heading": "Collapsible content",
-            "content": "<p>Provide your customers with additional information about the product.</p>"
-          }
-        },
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
-          "type": "collapsible_content",
-          "disabled": true,
-          "settings": {
-            "collapse_open": false,
-            "heading": "Collapsible content",
-            "content": "<p>Provide your customers with additional information about the product.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "5bbfd876-e943-47d3-b984-06f967dfd314",
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
-    "17652927324f1226fc": {
-      "type": "apps",
-      "blocks": {
-        "mighty_image_uploader_app_block_HEiEHk": {
-          "type": "shopify://apps/mighty-image-uploader/blocks/app-block/1fd42d45-f36c-4cd4-a281-183fed7894d3",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "mighty_image_uploader_app_block_HEiEHk"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "remove_horizontal_space": false,
-        "remove_vertical_space": false,
-        "subheading": "",
-        "heading": "",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "new_tab": false,
-        "background_color": "",
-        "text_color": ""
-      }
-    },
     "video_with_text_kizb7E": {
       "type": "video-with-text",
       "blocks": {
@@ -392,6 +327,7 @@
     "featured_collection_TYF3gw": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -445,8 +381,6 @@
   "order": [
     "main",
     "1775111980d1302f70",
-    "main-details",
-    "17652927324f1226fc",
     "video_with_text_kizb7E",
     "image_with_text_njxmwc",
     "related_products_a4nELt",

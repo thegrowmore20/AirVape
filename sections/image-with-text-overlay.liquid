@@ -3,16 +3,18 @@
     render 'image-sizes-full-width', full_width: section.settings.full_width
   endcapture
 
-  assign fetch_priority = 'auto'
-    if section.index == 1
-      assign fetch_priority = 'high'
-      assign image_first_section = 'image-first-section'
-    endif
+  if section.index == 1
+    assign fetch_priority = 'high'
+    assign image_loading = 'eager'
+    assign image_first_section = 'image-first-section'
+  else
+    assign fetch_priority = 'auto'
+    assign image_loading = 'lazy'
+  endif
 
   if section.settings.image_mobile
     assign image_class = 'max-md:hidden'
   endif
-
 %}
 
 
@@ -71,7 +73,10 @@ h1.image-first-section{
           widths: '512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3840',
           sizes: image_sizes,
           class: image_class,
-          fetch_priority: fetch_priority 
+          fetchpriority: fetch_priority,
+          loading: image_loading,
+          width: section.settings.image.width,
+          height: section.settings.image.height
       }}
   {% else %}
     {% render 'placeholder', type: 'lifestyle-1', text_color: section.settings.text_color %}
@@ -88,7 +93,10 @@ h1.image-first-section{
         widths: '420, 840, 1072, 1304, 1536',
         sizes: image_sizes,
         class: img_classes,
-        fetch_priority: fetch_priority 
+        fetchpriority: fetch_priority,
+        loading: image_loading,
+        width: section.settings.image_mobile.width,
+        height: section.settings.image_mobile.height
     }}
   {%- endcapture -%}
 {% endif %}
@@ -732,7 +740,7 @@ h1.image-first-section{
     }
   ],
   "disabled_on": {
-    "groups": ["header", "custom.overlay"]
+    "groups": ["header"]
   },
   "presets": [
     {

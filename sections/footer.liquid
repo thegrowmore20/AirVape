@@ -115,8 +115,8 @@
           {% if block.settings.image != blank %}
             {%- capture sizes -%} min({{ block.settings.image_width }}px, 100vw) {%- endcapture -%}
             {%- capture style -%} max-width: {{ block.settings.image_width }}px; {%- endcapture -%}
-            
-            {% if block.settings.image_url != blank %}
+              {% assign logo_alt = block.settings.image.alt | default: shop.name %}
+              {% if block.settings.image_url != blank %}
               <a aria-label="footer logo image with link to homepage" href="{{ block.settings.image_url | default: "#." }}">
                 {{
                   block.settings.image
@@ -126,7 +126,8 @@
                   style: style,
                   loading: 'lazy',
                   widths: '120, 270, 420, 570, 720, 870, 1020, 1280',
-                  sizes: sizes
+                  sizes: sizes,
+                  alt: logo_alt
                 }}
               </a>
             {% else %}
@@ -138,7 +139,8 @@
                 style: style,
                 loading: 'lazy',
                 widths: '120, 270, 420, 570, 720, 870, 1020, 1280',
-                sizes: sizes
+                sizes: sizes,
+                 alt: logo_alt
               }}
             {% endif %}
           {% endif %}

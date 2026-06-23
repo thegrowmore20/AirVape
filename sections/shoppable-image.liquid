@@ -1,7 +1,8 @@
-{% liquid
+﻿{% liquid
   capture image_sizes
     render 'image-sizes-columns', base: 1, md: 2
   endcapture
+
 %}
 
 <style>
@@ -40,7 +41,7 @@
               {{
                 section.settings.image_mobile
                 | image_url: width: 1536
-                | image_tag: widths: '420, 840, 1072, 1304, 1536', loading: 'lazy', sizes: image_sizes, class: 'md:hidden'
+                | image_tag: widths: '420, 840, 1072, 1304, 1536', loading: 'lazy', sizes: image_sizes, class: 'md:hidden', alt: section.settings.image_mobile.alt
               }}
             {% endif %}
 
@@ -51,7 +52,8 @@
                 widths: '768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3840',
                 loading: 'lazy',
                 sizes: image_sizes,
-                class: image_class
+                class: image_class,
+                alt: section.settings.image.alt
             }}
           {% else %}
             {% render 'placeholder', type: 'lifestyle-1', class: 'placeholder--dark' %}
@@ -327,8 +329,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

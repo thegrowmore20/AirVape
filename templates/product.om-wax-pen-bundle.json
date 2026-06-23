@@ -288,8 +288,9 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
+            "play_button_size": 68,
+            "play_button_color": "#ff0000",
             "video_border_radius": 12,
             "slides_desktop": 4,
             "slides_medium": 3,
@@ -368,44 +369,6 @@
         "background_color": "",
         "text_color": ""
       }
-    },
-    "main-details": {
-      "type": "main-product-details",
-      "blocks": {
-        "5bbfd876-e943-47d3-b984-06f967dfd314": {
-          "type": "description",
-          "settings": {
-            "collapse_content": true,
-            "collapse_open": true,
-            "heading": "Om Keychain waxpen"
-          }
-        },
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
-          "type": "collapsible_content",
-          "disabled": true,
-          "settings": {
-            "collapse_open": false,
-            "heading": "Collapsible content",
-            "content": "<p>Provide your customers with additional information about the product.</p>"
-          }
-        },
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
-          "type": "collapsible_content",
-          "disabled": true,
-          "settings": {
-            "collapse_open": false,
-            "heading": "Collapsible content",
-            "content": "<p>Provide your customers with additional information about the product.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "5bbfd876-e943-47d3-b984-06f967dfd314",
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b"
-      ],
-      "disabled": true,
-      "settings": {}
     },
     "video_with_text_overlay_xxcGW7": {
       "type": "video-with-text-overlay",
@@ -549,6 +512,7 @@
     "featured_collection_3Ppf9N": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -650,41 +614,10 @@
         "heading_color": ""
       }
     },
-    "pdp_aplus_comparison_4ndTmA": {
-      "type": "pdp-aplus-comparison",
-      "disabled": true,
-      "name": "Aplus comparison",
-      "settings": {
-        "subheading": "",
-        "heading": "CHOOSE WHAT SUITS YOU BEST",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center"
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
     "featured_collection_kRGhHr": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -739,14 +672,11 @@
     "main",
     "custom_section_fiFigX",
     "1774934113c38840b9",
-    "main-details",
     "video_with_text_overlay_xxcGW7",
     "text_with_icons_C8jJBL",
     "image_with_text_YeCgkp",
     "featured_collection_3Ppf9N",
     "custom_section_PAbbkY",
-    "pdp_aplus_comparison_4ndTmA",
-    "related-products",
     "featured_collection_kRGhHr",
     "product_faqs_zJKmzR"
   ]

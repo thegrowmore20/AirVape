@@ -214,6 +214,7 @@
       ],
       "settings": {
         "full_width": true,
+        "content_alignment": "mx-auto",
         "text_alignment": "text-center mx-auto",
         "content_width": "normal",
         "background_color": "",
@@ -376,41 +377,6 @@
         "background_color": "#262626"
       }
     },
-    "main-details": {
-      "type": "main-product-details",
-      "blocks": {
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "Specs",
-            "content": "<ul><li>5000 mAh removable battery</li><li>Nominal Voltage 11.1V Max Discharge current: 15A</li><li>Magnetic mouthpiece</li><li>Size: 13x4.7 inch, 33x12 cm</li><li>Weight: 2.55 kg, 5.62 lbs</li><li>Running time up to 2 hours</li><li>Charging: 3.5 hours</li><li>Water capacity: 0.2 L, 6.7 oz</li><li>Cup capacity 15-25 gr</li><li>Temperature range: 180-330 C°</li></ul>"
-          }
-        },
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "Materials",
-            "content": "<ul><li>Sturdy Zinc alloy body</li><li>Glass water tank</li><li>Porcelain heating chamber</li><li>Porcelain tobacco cup</li><li>Aluminum disposable tobacco cup</li><li>Stainless steel mouthpiece</li><li>Vegan leather strap</li></ul>"
-          }
-        },
-        "collapsible_content_ErzCAt": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "WHATS IN THE BOX",
-            "content": "<ul><li>1x Ensō</li><li>1x USB-C Charger brick</li><li>1x USB-C Charging cable</li><li>1x Battery</li><li>1x Rubber heat valve</li><li>2x Metal lids</li><li>10x Disposable cups</li><li>2x Ceramic cups</li><li>1x Scrub tool</li><li>1x Cup removal tool</li><li>5x Silicone mouthpiece tip</li><li>1x Silicone mouthpiece guard</li><li>1x Hose</li><li>1x Purge valve</li><li>1x Poking tool</li></ul><h5></h5><h5></h5><h5></h5>"
-          }
-        }
-      },
-      "block_order": [
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b",
-        "collapsible_content_ErzCAt"
-      ],
-      "settings": {}
-    },
     "video_with_text_overlay_h6aGCA": {
       "type": "video-with-text-overlay",
       "blocks": {
@@ -455,26 +421,6 @@
         "overlay_color": "#000000",
         "overlay_opacity": 35,
         "overlay_type": "solid"
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
       }
     },
     "image_before_after_NAGAWD": {
@@ -564,6 +510,9 @@
         "button_mEJBDY": {
           "type": "button",
           "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
             "button_text": "Buy Herb Cup",
             "button_link": "shopify://products/enso-herb-cup",
             "button_style": "button-outline",
@@ -588,54 +537,6 @@
         "image_position": "right",
         "image_width": 50,
         "text_alignment": "text-right",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "rich_text_EzXjAF": {
-      "type": "rich-text",
-      "blocks": {
-        "text_9ywrVA": {
-          "type": "text",
-          "settings": {
-            "text": "<p>For metal chamber enthusiast who prefer the gold-plated chamber we suggest the Herb cup for ENSŌ (for medium doses up to 1.5 grams)<br/><br/>***Not included in the kit</p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_9ywrVA"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "text_alignment": "text-right ml-auto",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "rich_text_zpc8iR": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_hjCyqk": {
-          "type": "heading",
-          "settings": {
-            "heading": "FOR WAX",
-            "heading_size": "h1",
-            "heading_html_tag": "p"
-          }
-        }
-      },
-      "block_order": [
-        "heading_hjCyqk"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "text_alignment": "text-right ml-auto",
-        "content_width": "normal",
         "background_color": "",
         "text_color": "",
         "heading_color": ""
@@ -667,6 +568,9 @@
         "button_Ukrc6A": {
           "type": "button",
           "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
             "button_text": "Buy Wax Pad",
             "button_link": "shopify://products/wax-pad-for-enso",
             "button_style": "button-outline",
@@ -729,6 +633,9 @@
         "button_4N6gB3": {
           "type": "button",
           "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
             "button_text": "Buy Glass Wax Cup",
             "button_link": "shopify://products/enso-glass-wax-cup",
             "button_style": "button-outline",
@@ -851,6 +758,7 @@
     "featured_collection_4YxahJ": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -905,14 +813,10 @@
     "177511110279703fb7",
     "rich_text_78rfQd",
     "slideshow_ft8bWp",
-    "main-details",
     "video_with_text_overlay_h6aGCA",
-    "related-products",
     "image_before_after_NAGAWD",
     "image_with_text_xfbNRK",
     "image_with_text_qqVEgb",
-    "rich_text_EzXjAF",
-    "rich_text_zpc8iR",
     "image_with_text_AJaKtP",
     "image_with_text_R8h4eM",
     "image_with_text_overlay_UQAiCG",

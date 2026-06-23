@@ -265,8 +265,9 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
+            "play_button_size": 68,
+            "play_button_color": "#ff0000",
             "video_border_radius": 12,
             "slides_desktop": 4,
             "slides_medium": 3,
@@ -646,64 +647,10 @@
         "heading_color": ""
       }
     },
-    "image_hotspots_jR9J4X": {
-      "type": "image-hotspots",
-      "blocks": {
-        "hotspot_acmgr3": {
-          "type": "hotspot",
-          "settings": {
-            "x": 51,
-            "y": 34,
-            "x_mobile": 50,
-            "y_mobile": 50,
-            "heading": "Airpath disk",
-            "content": "<p>Describe the product feature in more detail.</p>"
-          }
-        },
-        "hotspot_cHFgrK": {
-          "type": "hotspot",
-          "settings": {
-            "x": 40,
-            "y": 40,
-            "x_mobile": 50,
-            "y_mobile": 50,
-            "heading": "Screen",
-            "content": "<p>Describe the product feature in more detail.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_acmgr3",
-        "hotspot_cHFgrK"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "image": "shopify://shop_images/Pro_features-01.png",
-        "image_max_width": 1920,
-        "subheading": "",
-        "heading": "",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "dot_background_color": "",
-        "dot_icon_color": "",
-        "popover_background_color": "",
-        "popover_text_color": "",
-        "heading_html_tag": "p"
-      }
-    },
-    "main-details": {
-      "type": "main-product-details",
-      "disabled": true,
-      "settings": {}
-    },
     "featured_collection_rRUGe3": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -805,21 +752,10 @@
         "heading_color": ""
       }
     },
-    "pdp_aplus_comparison_JEHfEq": {
-      "type": "pdp-aplus-comparison",
-      "disabled": true,
-      "name": "Aplus comparison",
-      "settings": {
-        "subheading": "",
-        "heading": "CHOOSE WHAT SUITS YOU BEST",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center"
-      }
-    },
     "featured_collection_kWtgdc": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -841,26 +777,6 @@
         "text_alignment": "text-center",
         "link_text": "View all",
         "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
         "background_color": "",
         "text_color": "",
         "heading_color": "",
@@ -898,13 +814,9 @@
     "image_with_text_76bibF",
     "slideshow_ygAcAw",
     "image_with_text_9Vxk9p",
-    "image_hotspots_jR9J4X",
-    "main-details",
     "featured_collection_rRUGe3",
     "custom_section_TyKjxE",
-    "pdp_aplus_comparison_JEHfEq",
     "featured_collection_kWtgdc",
-    "related-products",
     "product_faqs_zyVeeH"
   ]
 }

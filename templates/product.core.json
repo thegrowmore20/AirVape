@@ -359,7 +359,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 8,
+            "limit": 5,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -555,35 +555,6 @@
         "overlay_type": "solid"
       }
     },
-    "featured_collection_kWtgdc": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "custom_class": "",
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [],
-        "collection": "legacy-accessories",
-        "subheading": "Enhance your vaping experience with",
-        "heading": "Legacy CORE Accessories",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
-    "main-details": {
-      "type": "main-product-details",
-      "disabled": true,
-      "settings": {}
-    },
     "video_with_text_YjAd6V": {
       "type": "video-with-text",
       "blocks": {
@@ -745,19 +716,6 @@
         "heading_html_tag": "h2"
       }
     },
-    "custom_liquid_CmTwAA": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "full_width": true,
-        "remove_horizontal_space": false,
-        "remove_vertical_space": false,
-        "custom_liquid": "<div class=\"cmp-accordion\">\n  <button\n    class=\"cmp-accordion__toggle\"\n    type=\"button\"\n    aria-expanded=\"false\"\n    aria-controls=\"cmpAccordionContent\"\n  >\n    <span class=\"cmp-accordion__title\">Compare AirVapes</span>\n    <span class=\"cmp-accordion__icon\" aria-hidden=\"true\">\n      <svg viewBox=\"0 0 20 20\" fill=\"none\">\n        <path d=\"M5 7.5L10 12.5L15 7.5\"\n              stroke=\"currentColor\"\n              stroke-width=\"2\"\n              stroke-linecap=\"round\"\n              stroke-linejoin=\"round\"/>\n      </svg>\n    </span>\n  </button>\n\n  <div class=\"cmp-accordion__content\" id=\"cmpAccordionContent\" hidden>\n\n    <!-- Swipe indicator -->\n    <div class=\"cmp-swipe-indicator\">\n      <div class=\"cmp-swipe-line\"></div>\n    </div>\n\n    <div class=\"cmp-wrap\">\n      <div class=\"cmp-scroll\" id=\"cmpScroll\">\n        <table class=\"cmp-table\" role=\"table\" aria-label=\"Product comparison\">\n          <thead>\n            <tr>\n              <th class=\"cmp-sticky-left cmp-sticky-top cmp-feature\">Features</th>\n              <th class=\"cmp-sticky-top\">Legacy PRO 2</th>\n              <th class=\"cmp-sticky-top\">Legacy CORE</th>\n              <th class=\"cmp-sticky-top\">XS GO</th>\n            </tr>\n          </thead>\n\n          <tbody>\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Heating Type</th>\n              <td>Hybrid Convection + Conduction</td>\n              <td>Hybrid Convection + Conduction</td>\n              <td>Conduction</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Chamber Material</th>\n              <td>Gold-plated Stainless Steel</td>\n              <td>Gold-plated Stainless Steel</td>\n              <td>Ceramic</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Airpath</th>\n              <td>Isolated Glass Airpath</td>\n              <td>Isolated Glass Airpath</td>\n              <td>Non-isolated</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Battery Life</th>\n              <td>3200 mAh 60–80 mins</td>\n              <td>3200 mAh 60–80 mins</td>\n              <td>~20 mins</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Charging</th>\n              <td>USB-C + Wireless</td>\n              <td>USB-C</td>\n              <td>USB</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Heat-up Time</th>\n              <td>15 seconds</td>\n              <td>30 seconds</td>\n              <td>30 seconds</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Portability</th>\n              <td>Medium</td>\n              <td>Medium</td>\n              <td>High</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Use Type</th>\n              <td>Dry herb + concentrate</td>\n              <td>Dry herb + concentrate</td>\n              <td>Dry herb</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Display</th>\n              <td>Yes</td>\n              <td>No</td>\n              <td>No</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Color Options</th>\n              <td>1</td>\n              <td>3</td>\n              <td>No</td>\n            </tr>\n\n            <tr>\n              <th class=\"cmp-sticky-left cmp-feature\">Skin Compatible</th>\n              <td>Yes</td>\n              <td>Yes</td>\n              <td>No</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n\n  </div>\n</div>\n\n<style>\n/* Accordion */\n.cmp-accordion { border:1px solid #e3e3e3; border-radius:10px; overflow:hidden; background:#fff; }\n.cmp-accordion__toggle { display:flex; justify-content:space-between; align-items:center; width:100%; padding:16px; background:#f8f8f8; border:0; cursor:pointer; text-align:left; }\n.cmp-accordion__title { font-weight:700; font-size:18px; color:#111; }\n.cmp-accordion__icon { transition:transform .2s ease; }\n.cmp-accordion__toggle[aria-expanded=\"true\"] .cmp-accordion__icon { transform:rotate(180deg); }\n.cmp-accordion__content { padding:14px; }\n\n/* Swipe indicator */\n.cmp-swipe-indicator {\n  width:100%;\n  display:flex;\n  justify-content:center;\n  margin-bottom:12px;\n}\n\n.cmp-swipe-line {\n  width:60px;\n  height:4px;\n  border-radius:4px;\n  background:linear-gradient(90deg,#ccc,#999,#ccc);\n  animation: swipePulse 1.8s infinite ease-in-out;\n}\n\n@keyframes swipePulse {\n  0%   { opacity:.4; transform:translateX(0); }\n  50%  { opacity:1;  transform:translateX(8px); }\n  100% { opacity:.4; transform:translateX(0); }\n}\n\n/* Table */\n.cmp-wrap { width:100%; }\n.cmp-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #eee; border-radius:8px; }\n\n.cmp-table {\n  border-collapse:separate;\n  border-spacing:0;\n  min-width:520px;\n  width:100%;\n  table-layout:fixed;\n}\n\n.cmp-table th,\n.cmp-table td {\n  padding:9px 8px;\n  border-bottom:1px solid #eee;\n  border-right:1px solid #eee;\n  font-size:13px;\n  line-height:1.15;\n  white-space:normal;\n  word-break:normal;\n  overflow-wrap:normal;\n  hyphens:none;\n}\n\n.cmp-table td {\n  text-align:center;\n  width:90px;\n  max-width:90px;\n}\n\n.cmp-table thead th {\n  background:#f8f8f8;\n  font-weight:800;\n  text-align:center;\n  font-size:13px;\n}\n\n/* Sticky */\n.cmp-sticky-top { position:sticky; top:0; z-index:5; }\n.cmp-sticky-left { position:sticky; left:0; background:#fff; z-index:6; }\n\n/* Feature column */\n.cmp-table th.cmp-feature,\n.cmp-table thead th.cmp-feature {\n  text-align:left !important;\n}\n\n.cmp-feature {\n  font-weight:800;\n  padding-left:10px !important;\n  width:95px;\n  max-width:95px;\n  min-width:95px;\n}\n</style>\n\n<script>\n(function(){\n  const toggle = document.querySelector(\".cmp-accordion__toggle\");\n  const content = document.querySelector(\"#cmpAccordionContent\");\n\n  if (!toggle || !content) return;\n\n  toggle.setAttribute(\"aria-expanded\",\"false\");\n  content.hidden = true;\n\n  toggle.addEventListener(\"click\", () => {\n    const open = toggle.getAttribute(\"aria-expanded\") === \"true\";\n    toggle.setAttribute(\"aria-expanded\", String(!open));\n    content.hidden = open;\n  });\n})();\n</script>",
-        "background_color": "",
-        "text_color": ""
-      }
-    },
     "pdp_aplus_comparison_yCDpwR": {
       "type": "pdp-aplus-comparison",
       "name": "Aplus comparison",
@@ -800,27 +758,6 @@
         "heading_html_tag": "p"
       }
     },
-    "related_products_dqr9tb": {
-      "type": "related-products",
-      "disabled": true,
-      "name": "t:sections.related-products.presets__0.name",
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "h2"
-      }
-    },
     "product_faqs_FnGXRL": {
       "type": "product-faqs",
       "name": "Product Faqs",
@@ -850,15 +787,11 @@
     "slideshow_gpnHad",
     "text_with_icons_tqLMpf",
     "video_with_text_overlay_DTHfhk",
-    "featured_collection_kWtgdc",
-    "main-details",
     "video_with_text_YjAd6V",
     "custom_section_AeYVGV",
     "featured_collection_gVmzNA",
-    "custom_liquid_CmTwAA",
     "pdp_aplus_comparison_yCDpwR",
     "featured_collection_dez6gW",
-    "related_products_dqr9tb",
     "product_faqs_FnGXRL"
   ]
 }

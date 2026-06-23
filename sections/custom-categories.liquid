@@ -18,44 +18,73 @@
     {% render 'section-header', link_text: section.settings.link_text, link_url: link_url %}
     <div class="airvape-cate-product-grid" aria-label="Product categories">
       {% assign categories = section.blocks | where: 'type', 'category' %}
-        {% for block in categories %}   
-          {% liquid
-            assign lazyload = 'eager'
-            if forloop.index > 1
-              assign lazyload = 'lazy'
-            endif
-          %}
-          {% if block.settings.image != blank %}         
-          <a  data-animation="paragraph"
-        data-animation-group="{{ section.id }}"  href="{{ block.settings.custom_url | default: "#." }}" class="card-link">
-            <div class="airvape-cate-card card--{%- cycle 'disposables', 'eliquids', 'nicotine',  'vapekits', 'vapecoils', 'card-a', 'card-b', 'card-c', 'card-d' -%}">
-                
-                {{ block.settings.image
-                        | image_url: width: 450
-                        | image_tag:
-                            alt: product.title,
-                            class: 'product-category-image card-mockup',
-                            loading: lazyload
-                        }}  
-                
-              <div class="card-cat-content">          
-                <h2 class="card-label">{{ block.settings.title }}</h2>
-                <p class="card-sublabel"> {{ block.settings.sub_title }} </p>
-              </div>
-            </div>
-          </a>
-          {% endif %}
-        {% endfor %}  
+        {% assign categories = section.blocks | where: 'type', 'category' %}
+{% assign card_classes = 'disposables,eliquids,nicotine,vapekits,vapecoils,card-a,card-b,card-c,card-d' | split: ',' %}
+
+{% for block in categories %}
+  {% liquid
+    assign lazyload = 'eager'
+    if forloop.index > 1
+      assign lazyload = 'lazy'
+    endif
+    assign class_index = forloop.index0 | modulo: card_classes.size
+    assign card_class = card_classes[class_index]
+  %}
+
+  {% if block.settings.image != blank %}
+    <a
+      data-animation="paragraph"
+      data-animation-group="{{ section.id }}"
+      href="{{ block.settings.custom_url | default: '#' }}"
+      class="card-link"
+    >
+      <div class="airvape-cate-card card--{{ card_class }}" {{ block.shopify_attributes }}>
+
+        {%- assign img_alt = block.settings.image.alt | default: block.settings.title -%}
+        {%- assign img_url = block.settings.image | image_url: width: 450 -%}
+
+        <img
+          src="{{ img_url }}"
+          srcset="
+            {{ block.settings.image | image_url: width: 160 }} 160w,
+            {{ block.settings.image | image_url: width: 240 }} 240w,
+            {{ block.settings.image | image_url: width: 360 }} 360w,
+            {{ block.settings.image | image_url: width: 450 }} 450w
+          "
+          sizes="(max-width: 480px) 160px, (max-width: 768px) 240px, 360px"
+          alt="{{ img_alt }}"
+          class="product-category-image card-mockup"
+          loading="{{ lazyload }}"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+
+        <div class="card-cat-content">
+          <h2 class="card-label">{{ block.settings.title }}</h2>
+          <p class="card-sublabel">{{ block.settings.sub_title }}</p>
+        </div>
+
+      </div>
+    </a>
+  {% endif %}
+{% endfor %}
+
   </div>
   </div>
   </section>
 
-  <link rel="preload" href="{{ 'custom-categories.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ 'custom-categories.css' | asset_url }}"></noscript>
 
+    {{ 'custom-categories.css' | asset_url | preload_tag: as: 'style' }}
+    <link rel="stylesheet"
+        href="{{ 'custom-categories.css' | asset_url }}"
+        media="print"
+        onload="this.onload=null;this.media='all'">
+    <noscript>
+    {{ 'custom-categories.css' | asset_url | stylesheet_tag }}
+    </noscript>
 {% schema %}
 {
-    "name": "Categories",    
+    "name": "Categories",
       "settings": [
     {
       "type": "checkbox",
@@ -223,7 +252,7 @@
   ],
     "presets": [
         {
-            "name": "Categories",
+            "name": "Categories"
         }
     ]
 }

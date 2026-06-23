@@ -1,4 +1,4 @@
-{% liquid
+﻿{% liquid
   if section.settings.video == blank and section.settings.video_url != blank and section.settings.image_size == ''
     assign media_class = 'media--ratio-16-9'
   endif
@@ -20,6 +20,14 @@
   capture poster_sizes
     render 'image-sizes-full-width', full_width: section.settings.full_width
   endcapture
+
+  if section.index == 1
+    assign poster_fetchpriority = 'high'
+    assign poster_loading = 'eager'
+  else
+    assign poster_fetchpriority = 'auto'
+    assign poster_loading = 'lazy'
+  endif
 %}
 {% render 'section-bg-number-vars', full_width: true %}
 
@@ -39,7 +47,9 @@
         video: section.settings.video,
         video_url: section.settings.video_url,
         video_poster: section.settings.video_poster,
-        sizes: poster_sizes
+        sizes: poster_sizes,
+        poster_fetchpriority: poster_fetchpriority,
+        poster_loading: poster_loading
       %}
     </div>
   </div>
@@ -251,8 +261,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

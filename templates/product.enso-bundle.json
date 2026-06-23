@@ -287,8 +287,9 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
+            "play_button_size": 68,
+            "play_button_color": "#ff0000",
             "video_border_radius": 12,
             "slides_desktop": 4,
             "slides_medium": 3,
@@ -367,72 +368,6 @@
         "background_color": "",
         "text_color": ""
       }
-    },
-    "custom_liquid_tPwXGU": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "full_width": true,
-        "remove_horizontal_space": false,
-        "remove_vertical_space": false,
-        "custom_liquid": "<style>\n\t.aplus-v2.desktop {\n\t\tmin-width: 800px;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t\tword-wrap: break-word;\n\t\toverflow-wrap: break-word;\n\t\tword-break: break-word;\n\t}\n\t.aplus-v2 .aplus-container-3 {\n\t\tpadding: 40px 0 0;\n\t}\n\t.aplus-v2 .premium-aplus .aplus-h1 {\n\t\tfont-size: 32px;\n\t\tline-height: 1.2em;\n\t\tfont-weight: 500;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 .table-container {\n\t\tposition: relative;\n\t\topacity: 1;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 .table-slider {\n\t\toverflow-x: auto;\n\t\toverflow-y: visible;\n\t\twidth: 100%;\n\t\t{% comment %} border: 1px solid #d5d9d9; {% endcomment %}\n\t\tborder-radius: 8px;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered {\n\t\tborder-width: 0px;\n\t\tborder-color: #d5d9d9;\n\t\tborder-style: solid;\n\t\tborder-radius: 8px;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered tr:last-child {\n\t\tborder-bottom-left-radius: 8px;\n\t\tborder-bottom-right-radius: 8px;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered tr:last-child td {\n\t\t{% comment %} border-bottom: 0; {% endcomment %}\n\t}\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered tr:last-child td:first-child {\n\t\tborder-bottom-left-radius: 8px;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered tr:last-child td:last-child {\n\t\tborder-bottom-right-radius: 8px;\n\t}\n\tth.aplus-data-column.top-header {\n    \tborder: 0;\n\t}\n\ttd.attribute.a-text-bold.column-cell-1 {\n    \tborder-top-left-radius: 8px;\n\t}\n\ttr.first-content-row td:last-child {\n\t\tborder-top-right-radius: 8px;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 .scroll-width {\n\t\toverflow-x: scroll;\n\t\toverflow-y: visible;\n\t}\n\ttable.a-bordered {\n\t\tborder-start-start-radius: var(--__TxpmBlwIJ, .5rem);\n\t\tborder-start-end-radius: var(--__TxpmBlwIJ, .5rem);\n\t\tborder-end-start-radius: var(--__TxpmBlwIJ, .5rem);\n\t\tborder-end-end-radius: var(--__TxpmBlwIJ, .5rem);\n\t\tborder-width: var(--__TxpzNygdu, .0625rem);\n\t\tmargin-bottom: 22px;\n\t\tborder-style: solid;\n\t\tborder-color: var(--__dChNmAmGoMXsTxp, #d5d9d9);\n\t\tborder-collapse: separate;\n\t\tborder-spacing: 0;\n\t\toverflow: hidden;\n\t}\n\ttd, th {\n\t\tpadding: .1875rem;\n\t\tvertical-align: top;\n\t}\n\ttable.a-bordered td, table.a-bordered th {\n\t\tborder-bottom: 1px solid #d5d9d9;\n\t\tborder-right: 1px solid #d5d9d9;\n\t\tborder-color: #dfd9d9;\n\t\tpadding-block-start: 8px;\n\t\tpadding-inline-start: .75rem;\n\t\tpadding-inline-end: .75rem;\n\t\tpadding-block-end: 8px;\n\t\tbackground-color: var(--__dChNmAmGoMXsPxT, #fff);\n\t}\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered td, .aplus-v2 .premium-aplus-module-5 table.a-bordered th {\n\t\tbackground-color: #fff;\n\t\tvertical-align: middle;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 td.attribute.empty {\n\t\theight: 300px;\n\t\tborder-top-left-radius: 8px;\n\t\tborder: 0;\n\t}\n\ttr.first-content-row td {\n\t\tborder-top: 1px solid #d5d9d9;\n\t}\n\t.aplus-v2 .premium-aplus-module-5.enso-comparison td.attribute.empty {\n\t\theight: 250px;\n\t}\n\ttd.aplus-data-column.secondary-content-column:last-of-type,\n\tth.aplus-data-column.top-header:last-child {\n    \t{% comment %} border-right: 0; {% endcomment %}\n\t}\n\tth.aplus-data-column.top-header:last-child {\n    border-top-right-radius: 8px;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 .attribute, .aplus-v2 .premium-aplus-module-5 .active-item {\n\t\tposition: sticky;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 td.attribute {\n\t\tmin-width: 230px;\n\t\ttop: auto;\n\t\tleft: 0;\n\t\tz-index: 100;\n\t}\n\t.aplus-v2 .premium-aplus-module-5 td.attribute:not(.empty) {\n\t\tbackground-color: #f8f8f8;\n\t\tborder-left: 1px solid #d5d9d9;\n\t}\n\t\n\t.aplus-v2 .premium-aplus-module-5 table.a-bordered td, .aplus-v2 .premium-aplus-module-5 table.a-bordered th {\n\t\tbackground-color: #fff;\n\t}\n.aplus-v2 .premium-aplus-module-5 table.a-bordered th.active-item {\n    border: 1px solid #d5d9d9;\n    border-bottom: 0;\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n}\n\t.aplus-v2 .aplus-review-right-padding {\n\t\tpadding-right: 0.1rem;\n\t}\n\t\n\t.aplus-v2 .premium-aplus-module-5 td.active-item, \n\t.aplus-v2 .premium-aplus-module-5 th.active-item {\n\t\ttop: auto;\n\t\tleft: 230px;\n\t\tz-index: 100;\n\t}\n\t.comparison-metric-name {\n\t\tfont-weight: 600;\n\t\tfont-size: 14px;\n\t}\n\ttd.aplus-data-column {\n\t\tfont-size: 14px;\n\t\ttext-align: center;\n\t\tpadding: 12px !important;\n\t}\n\t.comparison-product-card .product-card {\n\t\tborder: 0;\n\t\tpadding: 0;\n\t}\n\t.comparison-product-card .custom-wishlist-button,\n\t.comparison-product-card .product-badges-container,\n\t.comparison-product-card .mt-4.empty\\:hidden {\n\t\tdisplay: none\n\t}\n\t.comparison-product-card .group\\/media:hover .group-hover\\/media\\:opacity-100 {\n\t\topacity: 0;\n\t}\n\t.comparison-product-card .product-card:hover {\n\t\ttransform: translateY(0)\n\t}\n\t.comparison-product-card h2.product-name {\n\t\t-webkit-line-clamp: 1;\n\t\tmin-height: 25px;\n\t\tfont-size: 14px;\n\t}\n\t.comparison-product-card .add-to-cart-span {\n\t\tfont-size: 14px;\n\t}\n\t.enso-comparison .comparison-product-card quick-add-button,\n\t.enso-comparison .comparison-product-card .product-card__info {\n\t\tdisplay: none;\n\t}\n\n\t.enso-comparison .comparison-product-card .product-card-media.media.rounded-block {\n    padding-bottom: 0;\n\t}\n\ttd.aplus-data-column.active.active-item.second-sticky-column,\n\tth.aplus-data-column.top-header,\n\ttd.aplus-data-column.secondary-content-column {\n\t\tmax-width: 230px;\n\t\twidth: 230px;\n\t\tmin-width: 230px;\n\t}\n\t@media (max-width: 992px) {\n\t\t[data-aplus-section-container] {\n\t\t\tpadding: 0;\n\t\t}\n\t\t.aplus-v2.desktop {\n\t\t\tmin-width: 100%;\n\t\t}\n\t\t.aplus-v2 .premium-aplus-module-5 td.attribute {\n\t\t\tmin-width: 170px;\n\t\t\tleft: -1px;\n\t\t}\n\t\t.aplus-v2 .premium-aplus-module-5 td.active-item, \n\t\t.aplus-v2 .premium-aplus-module-5 th.active-item {\n\t\t\tleft: 169px;\n\t\t\tz-index: 3;\n\t\t}\n\t}\n\t\n\t/* mobile design */\n\t@media (max-width: 768px){\n\t\t.aplus-v2 .premium-aplus-module-5 table.a-bordered {\n\t\t\twidth: 100%;\n\t\t}\n\t\ttd.aplus-data-column.active.active-item.second-sticky-column {\n\t\t\tleft: 0;\n\t\t\ttext-align: left;\n\t\t\tdisplay: inline-flex;\n\t\t\theight: 100px;\n\t\t\talign-items: end;\n\t\t}\n\t\ttd.attribute.empty.first-sticky-column,\n\t\t.aplus-v2 .premium-aplus-module-5.enso-comparison td.attribute.empty {\n\t\t\tdisplay: none !important;\n\t\t}\n\t\ttd.aplus-data-column.secondary-content-column {\n    \tvertical-align: bottom;\n\t\t}\n\t\t.aplus-v2 .premium-aplus-module-5 td.active-item, .aplus-v2 .premium-aplus-module-5 th.active-item {\n\t\t\tleft: 0px;\n\t\t\tz-index: 3;\n\t\t\tposition: relative;\n    \t}\n\t\t.aplus-v2 .premium-aplus-module-5 td.attribute {\n\t\t\tmin-width: 170px;\n\t\t\tleft: -1px;\n\t\t\tposition: absolute;\n\t\t\tbackground: transparent;\n\t\t\tbackground-color: transparent !important;\n\t\t\theight: 100px;\n\t\t\tpointer-events: none;\n    \t}\n\t\ttd.aplus-data-column.active.active-item.second-sticky-column {\n    \tleft: 0;\n    \ttext-align: left;\n    \tdisplay: inline-flex;\n    \theight: 100px;\n    \talign-items: end;\n\t\t}\n\t\ttable.a-bordered td, table.a-bordered th {\n\t\t\tborder-right: 0;\n\t\t}\n\t\t.aplus-v2 .premium-aplus-module-5 table.a-bordered td,\n\t\t.aplus-v2 .premium-aplus-module-5 table.a-bordered th {\n\t\t\tvertical-align: bottom;\n\t\t}\n\t\ttd.aplus-data-column.active.active-item.second-sticky-column, th.aplus-data-column.top-header, td.aplus-data-column.secondary-content-column {\n\t\t\tmax-width: 150px;\n\t\t\twidth: 150px;\n\t\t\tmin-width: 150px;\n\t}\n\t}\n</style>\n\n<div data-aplus-section-container>\n\t<div class=\"aplus-v2 desktop\">\n<div class=\"premium-aplus premium-aplus-module-5 aplus-container-3 comparison-table enso-comparison\">\n<div class=\"\n        section-header\n        section-content-spacing\n        rfs:mb-10\n        \n        prose-align\n        text-center\n      \">\n      \n\n\n  \n  <p class=\"heading h2\">\n  WHY ENSO WINS\n  </p>\n\n\n\n\n\n\n    </div>   \n\t\t\t<div id=\"comparison-table-container-6\" data-comparison-name=\"comparison-table-container-6\" class=\"a-section a-spacing-none table-container\">  \n\t\t\t<div class=\"table-slider scroll-wrapper-bottom\">\n\t\t\t\t<table class=\"a-bordered a-horizontal-stripes scroll-width\">\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr class=\"header-row\">\n\t\t\t\t\t\t\t<td class=\"attribute empty\"></td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<th class=\"aplus-data-column top-header active active-item\">\n\t\t\t\t\t\t\t\t<div class=\"comparison-product-card\">\n\t\t\t\t\t\t\t\t\t{% render 'product-card', card_product: product %}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<th class=\"aplus-data-column top-header\">\n\t\t\t\t\t\t\t\t<div class=\"relative overflow-hidden group/media\">\n\t\t\t\t\t\t\t\t\t<a href=\"{{ url }}\" tabindex=\"-1\" data-instant aria-label=\"{{ card_product.title | default: 'Product' }}\">\n\t\t\t\t\t\t\t\t\t\t<div\n\t\t\t\t\t\t\t\t\t\t\tclass=\"product-card-media media rounded-block [--aspect-ratio:--product-card-image-aspect] md:pb-6\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<lqip-element class=\"image-loader h-full\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/71Bhm4vc2SL._SX679.jpg?v=1775045042&width=1440\"\n\t\t\t\t\t\t\t\t\t\t\t\t\twidths=\"360, 450, 540, 630, 720, 900, 1050, 1200, 1320, 1440\" loading=\"lazy\" width=\"\" height=\"\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"product-card__image product-thumbnail-shade\"/>\n\t\t\t\t\t\t\t\t\t\t\t\t</lqip-element>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<th class=\"aplus-data-column top-header\">\n\t\t\t\t\t\t\t\t\t<div class=\"relative overflow-hidden group/media\">\n\t\t\t\t\t\t\t\t\t\t<a href=\"{{ url }}\" tabindex=\"-1\" data-instant aria-label=\"{{ card_product.title | default: 'Product' }}\">\n\t\t\t\t\t\t\t\t\t\t\t<div\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"product-card-media media rounded-block [--aspect-ratio:--product-card-image-aspect] md:pb-6\"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<lqip-element class=\"image-loader h-full\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/51z90B1mVTL._AC_SY300_SX300_QL70_ML2.jpg?v=1775046681\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\twidths=\"360, 450, 540, 630, 720, 900, 1050, 1200, 1320, 1440\" loading=\"lazy\" width=\"\" height=\"\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"product-card__image product-thumbnail-shade\"/>\n\t\t\t\t\t\t\t\t\t\t\t\t</lqip-element>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t{% for entry in selected_features %}{% endfor %}\n\t\t\t\t\t\t\t\t<tr class=\"first-content-row\">\n\t\t\t\t\t\t\t\t\t<td class=\"attribute a-text-bold column-cell-1\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"a-text-bold\"> Category </span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t{%- comment -%} Current product value {%- endcomment -%}\n\t\t\t\t\t\t\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t\t\t\t\t\t\tElectric hookah\n\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t\t\t\t\t\t\tCoal hookah\n\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t\t\t\t\t\t\tHome vape\n\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t{%- comment -%} Compared products values {%- endcomment -%}\n\t\t\t\t\t\t\t\t\t{% for cp in compare_products %}\n\t\t\t\t\t\t\t\t\t\t{% unless cp.id == product.id %}\n\t\t\t\t\t\t\t\t\t\t\t{% assign cp_compare_key = cp.metafields.custom.compare_key.value %}\n\t\t\t\t\t\t\t\t\t\t\t{% if cp_compare_key == blank %}\n\t\t\t\t\t\t\t\t\t\t\t\t{% assign cp_compare_key = cp.handle | replace: '-', '_' %}\n\t\t\t\t\t\t\t\t\t\t\t{% endif %}\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t{% assign cp_value = entry[cp_compare_key] | metafield_tag %}\n\t\t\t\t\t\t\t\t\t\t\t<td class=\"aplus-data-column\" style=\"min-width: 230px;\">\n\t\t\t\t\t\t\t\t\t\t\t\t{% if cp_value != blank %}\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{ cp_value.value | default: cp_value }}\n\t\t\t\t\t\t\t\t\t\t\t\t{% else %}\n\t\t\t\t\t\t\t\t\t\t\t\t\t—\n\t\t\t\t\t\t\t\t\t\t\t\t{% endif %}\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t{% endunless %}\n\t\t\t\t\t\t\t\t\t{% endfor %}\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<tr>   \n\t\t\t\t\t\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t\t\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"a-text-bold\"> Heat style </span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t\t\t\t\t\t<span class=\"description\">\n\t\t\t\t\t\t\t\t\t\tClean electric\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</td>      \n\t\t\t\t\t\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t\t\t\t\t\t<span class=\"description\">\n\t\t\t\t\t\t\t\t\t\tBurning coal\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</td>           \n\t\t\t\t\t\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t\t\t\t\t\t<span class=\"description\">\n\t\t\t\t\t\t\t\t\t\tDry heat\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</td>      \n\t\t\t\t\t\t\t</tr> \n\t\t\t\t\t\t\t\n\t\t<tr>   \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\"> What you use </span>\n\t\t\t\t</div>\n\t\t\t</td>\n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">\n\t\t\t\t\tMolasses + dry herb\n\t\t\t\t</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">\n\t\t\t\t\tShisha molasses\n\t\t\t\t</span>\n\t\t\t</td>           \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">\n\t\t\t\t\tDry herb\n\t\t\t\t</span>\n\t\t\t</td>      \n\n\t\t</tr> \n\t\t\t\t\t\t\n\t\t<tr>   \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\"> Flavor quality </span>\n\t\t\t\t</div>\n\t\t\t</td>\n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">\n\t\t\t\t\tPure flavor\n\t\t\t\t</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">\n\t\t\t\t\tCoal-tainted\n\t\t\t\t</span>\n\t\t\t</td>           \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">\n\t\t\t\t\tHerb taste\n\t\t\t\t</span>\n\t\t\t</td>      \n\n\t\t</tr>\n\t\t\t\t\t\n\t\t<tr>  \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\"> Cloud style </span> \n\t\t\t\t</div>\n\t\t\t</td>\n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">Big clouds</span>\n\t\t\t</td>\n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Heavy smoke</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Light vapor</span>\n\t\t\t</td> \n\t\t\n\t\t</tr>\n\t\t\t\t\n\t\t\t\t\n\t\t<tr>  \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\">Session vibe</span>\n\t\t\t\t</div>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">Party or solo ritual</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Old-school ritual</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Solo sessions</span>\n\t\t\t</td> \n\t\t</tr> \n\t\t\t\n\t\t<tr>   \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\">Session time</span>\n\t\t\t\t</div>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">Long sessions</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Long sessions</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Short sessions</span>\n\t\t\t</td> \n\t\t\n\t\t</tr>\n\t\t\n\t\t\n\t\t<tr>  \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\">Setup</span>\n\t\t\t\t</div>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">Fast setup</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Messy prep</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Simple use</span>\n\t\t\t</td>\n\t\t\n\n\t\t</tr>  \n\t\n\t\t<tr>  \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\"> Portability </span>\n\t\t\t\t</div>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">Cord-free</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Bulky setup</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Plug-in only</span>\n\t\t\t</td>\n\t\t\n\t\t</tr>\n\n\t\t<tr>  \n\t\t\t<td class=\"attribute a-text-bold\">\n\t\t\t\t<div class=\"comparison-metric-name \" data-inline-content=\"\" data-position=\"triggerRight\">\n\t\t\t\t\t<span class=\"a-text-bold\"> Best for </span>\n\t\t\t\t</div>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column active active-item second-sticky-column\">\n\t\t\t\t<span class=\"description\">Modern hookah</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Traditional smokers</span>\n\t\t\t</td>      \n\t\t\t<td class=\"aplus-data-column secondary-content-column\">\n\t\t\t\t<span class=\"description\">Personal vaping</span>\n\t\t\t</td>\n\n\t\t</tr>\n\n\t</tbody>\n</table>\n</div>\n</div>\n<div class=\"text-center\">\n\t<strong>Pure flavor. Big clouds. Modern hookah sessions without coal, flame, or the mess</strong>\n</div> \n</div>\n</div>\n</div>",
-        "background_color": "",
-        "text_color": ""
-      }
-    },
-    "main-details": {
-      "type": "main-product-details",
-      "blocks": {
-        "text_8xhL8M": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "content": "<p><a href=\"/pages/upgrade-experience\" target=\"_blank\" title=\"Upgrade experience\">UpGrade to the ENSŌ</a></p>"
-          }
-        },
-        "5bbfd876-e943-47d3-b984-06f967dfd314": {
-          "type": "description",
-          "settings": {
-            "collapse_content": true,
-            "collapse_open": true,
-            "heading": "Description"
-          }
-        },
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "Specs",
-            "content": "<ul><li>5000 mAh removable battery</li><li>Nominal Voltage 11.1V Max Discharge current: 15A</li><li>Magnetic mouthpiece</li><li>Size: 13x4.7 inch, 33x12 cm</li><li>Weight: 2.55 kg, 5.62 lbs</li><li>Running time up to 2 hours</li><li>Charging: 3.5 hours</li><li>Water capacity: 0.2 L, 6.7 oz</li><li>Cup capacity 15-25 gr</li><li>Temperature range: 180-330 C°</li></ul>"
-          }
-        },
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "Materials",
-            "content": "<ul><li>Sturdy Zinc alloy body</li><li>Glass water tank</li><li>Porcelain heating chamber</li><li>Porcelain tobacco cup</li><li>Aluminum disposable tobacco cup</li><li>Stainless steel mouthpiece</li><li>Vegan leather strap</li></ul>"
-          }
-        },
-        "collapsible_content_ErzCAt": {
-          "type": "collapsible_content",
-          "settings": {
-            "collapse_open": false,
-            "heading": "WHATS IN THE BOX",
-            "content": "<ul><li>1x Ensō</li><li>1x USB-C Charger brick</li><li>1x USB-C Charging cable</li><li>1x Batery</li><li>1x Rubber heat valve</li><li>2x Metal lids</li><li>10x Disposable cups</li><li>2x Ceramic cups</li><li>1x Multi-tool</li><li>5x Silicone mouthpiece tip</li><li>1x Silicone mouthpiece guard</li><li>1x Hose</li><li>1x Purge valve</li></ul><h5></h5><h5></h5><h5></h5>"
-          }
-        }
-      },
-      "block_order": [
-        "text_8xhL8M",
-        "5bbfd876-e943-47d3-b984-06f967dfd314",
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b",
-        "collapsible_content_ErzCAt"
-      ],
-      "disabled": true,
-      "settings": {}
     },
     "video_with_text_overlay_h6aGCA": {
       "type": "video-with-text-overlay",
@@ -919,65 +854,6 @@
         "heading_color": ""
       }
     },
-    "image_with_text_R8h4eM": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_tYfkT6": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_xAxftF": {
-          "type": "heading",
-          "settings": {
-            "heading": "Glass Wax cup",
-            "heading_size": "h2",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_9eEAx8": {
-          "type": "text",
-          "settings": {
-            "text": "<p>You can you the <strong>ENSŌ glass wax cup</strong> for waxes and  oils/concentrates <em>(not included in the kit).</em></p>"
-          }
-        },
-        "button_4N6gB3": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": false,
-            "hulk_form_id_block": "",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Buy Glass Wax Cup",
-            "button_link": "shopify://products/enso-glass-wax-cup",
-            "button_style": "",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_tYfkT6",
-        "heading_xAxftF",
-        "text_9eEAx8",
-        "button_4N6gB3"
-      ],
-      "disabled": true,
-      "settings": {
-        "custom_class": "",
-        "full_width": true,
-        "remove_bottom_spacing": true,
-        "image": "shopify://shop_images/Glass_wax_cup1.png",
-        "image_size": "",
-        "image_position": "right",
-        "image_width": 50,
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
     "image_with_text_overlay_UQAiCG": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -1072,6 +948,7 @@
     "featured_collection_yimCUa": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -1249,21 +1126,10 @@
         "heading_color": ""
       }
     },
-    "pdp_aplus_comparison_wUWgPW": {
-      "type": "pdp-aplus-comparison",
-      "disabled": true,
-      "name": "Aplus comparison",
-      "settings": {
-        "subheading": "",
-        "heading": "",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center"
-      }
-    },
     "featured_collection_9g4PBk": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -1292,27 +1158,6 @@
         "heading_html_tag": "p"
       }
     },
-    "related_products_XTTA4g": {
-      "type": "related-products",
-      "disabled": true,
-      "name": "t:sections.related-products.presets__0.name",
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "h2"
-      }
-    },
     "product_faqs_3giXY3": {
       "type": "product-faqs",
       "name": "Product Faqs",
@@ -1339,8 +1184,6 @@
     "main",
     "custom_section_PzPGnU",
     "177485716168cc23cb",
-    "custom_liquid_tPwXGU",
-    "main-details",
     "video_with_text_overlay_h6aGCA",
     "text_with_icons_a8YfK9",
     "image_before_after_NAGAWD",
@@ -1351,14 +1194,11 @@
     "video_with_text_w9UM3m",
     "image_with_text_xfbNRK",
     "image_with_text_AJaKtP",
-    "image_with_text_R8h4eM",
     "image_with_text_overlay_UQAiCG",
     "featured_collection_yimCUa",
     "custom_section_YRfa83",
     "custom_section_Rrg6pT",
-    "pdp_aplus_comparison_wUWgPW",
     "featured_collection_9g4PBk",
-    "related_products_XTTA4g",
     "product_faqs_3giXY3"
   ]
 }

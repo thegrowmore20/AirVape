@@ -1,4 +1,4 @@
-{% render 'section-bg-number-vars' %}
+﻿{% render 'section-bg-number-vars' %}
 
 <style>
   #shopify-section-{{ section.id }} {
@@ -43,7 +43,8 @@
                 index: forloop.index
               %}
             {% endcapture %}
-            {{ block.settings.image | image_url: width: 2800 | image_tag: sizes: image_sizes, loading: 'lazy' }}
+            {% if forloop.first and section.index == 1 %}{% assign block_loading = 'eager' %}{% else %}{% assign block_loading = 'lazy' %}{% endif %}
+            {{ block.settings.image | image_url: width: 2800 | image_tag: sizes: image_sizes, loading: block_loading, alt: block.settings.image.alt }}
           </div>
         {% endif %}
 
@@ -517,8 +518,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

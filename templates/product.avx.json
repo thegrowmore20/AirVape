@@ -337,7 +337,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 10,
+            "limit": 5,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -500,30 +500,6 @@
         "background_color": "",
         "text_color": "",
         "heading_color": ""
-      }
-    },
-    "featured_collection_kWtgdc": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "custom_class": "",
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [],
-        "collection": "airvape-x-accessories",
-        "subheading": "Enhance your vaping experience with",
-        "heading": "AirVape X Accessories",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
       }
     },
     "slideshow_ygAcAw": {
@@ -727,61 +703,6 @@
         "heading_color": ""
       }
     },
-    "image_hotspots_jR9J4X": {
-      "type": "image-hotspots",
-      "blocks": {
-        "hotspot_acmgr3": {
-          "type": "hotspot",
-          "settings": {
-            "x": 51,
-            "y": 34,
-            "x_mobile": 50,
-            "y_mobile": 50,
-            "heading": "Airpath disk",
-            "content": "<p>Describe the product feature in more detail.</p>"
-          }
-        },
-        "hotspot_cHFgrK": {
-          "type": "hotspot",
-          "settings": {
-            "x": 40,
-            "y": 40,
-            "x_mobile": 50,
-            "y_mobile": 50,
-            "heading": "Screen",
-            "content": "<p>Describe the product feature in more detail.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_acmgr3",
-        "hotspot_cHFgrK"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "image": "shopify://shop_images/Pro_features-01.png",
-        "image_max_width": 1920,
-        "subheading": "",
-        "heading": "",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "dot_background_color": "",
-        "dot_icon_color": "",
-        "popover_background_color": "",
-        "popover_text_color": "",
-        "heading_html_tag": "p"
-      }
-    },
-    "main-details": {
-      "type": "main-product-details",
-      "disabled": true,
-      "settings": {}
-    },
     "custom_section_7BJbQz": {
       "type": "custom-section",
       "blocks": {
@@ -929,26 +850,6 @@
         "heading_html_tag": "p"
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
     "product_faqs_njFHAW": {
       "type": "product-faqs",
       "name": "Product Faqs",
@@ -978,17 +879,13 @@
     "video_with_text_overlay_DTHfhk",
     "text_with_icons_KkHLhA",
     "image_with_text_76bibF",
-    "featured_collection_kWtgdc",
     "slideshow_ygAcAw",
     "image_with_text_overlay_Bgzkai",
     "image_with_text_9Vxk9p",
-    "image_hotspots_jR9J4X",
-    "main-details",
     "custom_section_7BJbQz",
     "featured_collection_WcHzab",
     "pdp_aplus_comparison_NgiQe4",
     "featured_collection_jJyw4y",
-    "related-products",
     "product_faqs_njFHAW"
   ]
 }

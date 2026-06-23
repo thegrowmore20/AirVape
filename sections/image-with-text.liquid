@@ -8,6 +8,14 @@
       render 'image-sizes-columns', base: 1, lg: image_column_ratio
     endif
   endcapture
+
+  if section.index == 1
+    assign fetch_priority = 'high'
+    assign image_loading = 'eager'
+  else
+    assign fetch_priority = 'auto'
+    assign image_loading = 'lazy'
+  endif
 %}
 
 <style>
@@ -20,7 +28,19 @@
 
 {% capture media %}
   {% if section.settings.image %}
-    {{ section.settings.image | image_url: width: 3840 | image_tag: sizes: image_sizes, loading: 'lazy' }}
+    {% assign image_alt = section.settings.image.alt | default: 'image with text' %}
+    {{
+      section.settings.image
+      | image_url: width: 3840
+      | image_tag:
+        widths: '512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3840',
+        sizes: image_sizes,
+        loading: image_loading,
+        fetchpriority: fetch_priority,
+        alt: image_alt,
+        width: section.settings.image.width,
+        height: section.settings.image.height
+    }}
   {% else %}
     {% render 'placeholder', type: 'image' %}
   {% endif %}
@@ -637,8 +657,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

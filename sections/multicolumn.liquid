@@ -1,4 +1,4 @@
-{% liquid
+﻿{% liquid
   case section.settings.number_of_columns_on_desktop
     when 2, 4
       assign columns_md = 2
@@ -58,7 +58,8 @@
               {% if block.settings.video %}
                 {% render 'video-player', video: block.settings.video, background: block.settings.video_autoplay %}
               {% elsif block.settings.image %}
-                {{ block.settings.image | image_url: width: 1920 | image_tag: sizes: image_sizes, loading: 'lazy' }}
+                {% if forloop.first and section.index == 1 %}{% assign col_loading = 'eager' %}{% else %}{% assign col_loading = 'lazy' %}{% endif %}
+                {{ block.settings.image | image_url: width: 1920 | image_tag: sizes: image_sizes, loading: col_loading, alt: block.settings.image.alt }}
               {% endif %}
             </div>
           {% endif %}
@@ -508,7 +509,7 @@
     }
   ],
   "disabled_on": {
-    "groups": ["header", "custom.overlay"]
+    "groups": ["header"]
   },
   "presets": [
     {

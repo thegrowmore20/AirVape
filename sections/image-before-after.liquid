@@ -8,6 +8,7 @@
       assign section_class = 'grid lg:grid-cols-[2fr_1fr] gap-x-16'
       assign header_class = 'lg:order-2'
   endcase
+
 %}
 
 <style>
@@ -34,10 +35,12 @@
       data-animation-group="{{ section.id }}"
     >
       {% if section.settings.before_image != blank %}
+        {% assign before_img_alt = section.settings.before_image.alt | default: 'before image' %}
         {{
           section.settings.before_image
           | image_url: width: 1920
-          | image_tag: class: 'image-comparison__before', sizes: 'min(1024px, 100vw)', loading: 'lazy'
+          | image_tag: class: 'image-comparison__before', sizes: 'min(1024px, 100vw)', loading: 'lazy',
+          alt: before_img_alt
         }}
       {% else %}
         {% render 'placeholder',
@@ -48,10 +51,12 @@
       {% endif %}
 
       {% if section.settings.after_image != blank %}
+        {% assign after_img_alt = section.settings.after_image.alt | default: 'after image' %}
         {{
           section.settings.after_image
           | image_url: width: 1920
-          | image_tag: class: 'image-comparison__after', sizes: 'min(1024px, 100vw)', loading: 'lazy'
+          | image_tag: class: 'image-comparison__after', sizes: 'min(1024px, 100vw)', loading: 'lazy',
+          alt: after_img_alt
         }}
       {% else %}
         {% render 'placeholder',
@@ -239,8 +244,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

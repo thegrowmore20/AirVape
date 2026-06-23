@@ -37,7 +37,8 @@
 
 <div class="sticky-add-to-cart-wrapper --{{ section.settings.sticky_add_to_cart_position }}">
   <sticky-add-to-cart>
-    <span class="sticky-cart-close"> <img src="{{ 'icon-close.webp' | file_url }}" height="8" width="8" loading="lazy"> </span>
+    <span class="sticky-cart-close"> 
+      <img src="{{ 'icon-close.webp' | file_url }}" height="8" width="8" alt="close icon" loading="lazy"> </span>
     {% if product_image %}
       {{ product_image | image_url: width: 192 | image_tag: class: 'product-thumbnail-shade product-thumbnail sticky-product-image' }}
     {% else %}

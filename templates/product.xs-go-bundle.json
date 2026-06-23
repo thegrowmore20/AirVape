@@ -275,8 +275,9 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
+            "play_button_size": 68,
+            "play_button_color": "#ff0000",
             "video_border_radius": 12,
             "slides_desktop": 4,
             "slides_medium": 3,
@@ -496,29 +497,6 @@
         "heading_color": ""
       }
     },
-    "featured_collection_kWtgdc": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [],
-        "collection": "xs-go-accessories",
-        "subheading": "Enhance your vaping experience with",
-        "heading": "AirVape XS GO Accessories",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
     "slideshow_ygAcAw": {
       "type": "slideshow",
       "blocks": {
@@ -643,11 +621,6 @@
         "background_color": "#262626"
       }
     },
-    "main-details": {
-      "type": "main-product-details",
-      "disabled": true,
-      "settings": {}
-    },
     "custom_section_tpanJb": {
       "type": "custom-section",
       "blocks": {
@@ -725,6 +698,7 @@
     "featured_collection_EWRmFy": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -752,21 +726,10 @@
         "heading_html_tag": "h2"
       }
     },
-    "pdp_aplus_comparison_ngzzV3": {
-      "type": "pdp-aplus-comparison",
-      "disabled": true,
-      "name": "Aplus comparison",
-      "settings": {
-        "subheading": "",
-        "heading": "CHOOSE WHAT SUITS YOU BEST",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center"
-      }
-    },
     "featured_collection_4mWDeF": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -788,26 +751,6 @@
         "text_alignment": "text-center",
         "link_text": "View all",
         "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "subheading": "",
-        "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h2",
-        "content": "",
-        "text_alignment": "text-center",
         "background_color": "",
         "text_color": "",
         "heading_color": "",
@@ -843,14 +786,10 @@
     "video_with_text_overlay_DTHfhk",
     "text_with_icons_3KU3Me",
     "image_with_text_76bibF",
-    "featured_collection_kWtgdc",
     "slideshow_ygAcAw",
-    "main-details",
     "custom_section_tpanJb",
     "featured_collection_EWRmFy",
-    "pdp_aplus_comparison_ngzzV3",
     "featured_collection_4mWDeF",
-    "related-products",
     "product_faqs_xBF7rf"
   ]
 }

@@ -211,44 +211,6 @@
         "text_color": ""
       }
     },
-    "main-details": {
-      "type": "main-product-details",
-      "blocks": {
-        "5bbfd876-e943-47d3-b984-06f967dfd314": {
-          "type": "description",
-          "settings": {
-            "collapse_content": true,
-            "collapse_open": true,
-            "heading": "Description"
-          }
-        },
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75": {
-          "type": "collapsible_content",
-          "disabled": true,
-          "settings": {
-            "collapse_open": false,
-            "heading": "Collapsible content",
-            "content": "<p>Provide your customers with additional information about the product.</p>"
-          }
-        },
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b": {
-          "type": "collapsible_content",
-          "disabled": true,
-          "settings": {
-            "collapse_open": false,
-            "heading": "Collapsible content",
-            "content": "<p>Provide your customers with additional information about the product.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "5bbfd876-e943-47d3-b984-06f967dfd314",
-        "096eee3c-a9d6-48a0-b676-2f8ecf38fe75",
-        "5487aba2-e638-4f54-a71a-f08a7c4ab55b"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
     "17652927324f1226fc": {
       "type": "apps",
       "blocks": {
@@ -388,7 +350,6 @@
   "order": [
     "main",
     "177511237522457b5b",
-    "main-details",
     "17652927324f1226fc",
     "image_with_text_njxmwc",
     "related_products_HnxePf",

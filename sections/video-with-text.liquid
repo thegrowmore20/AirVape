@@ -1,4 +1,4 @@
-{% liquid
+﻿{% liquid
   if section.settings.video == blank and section.settings.video_url != blank and section.settings.image_size == ''
     assign media_class = 'media--ratio-16-9'
   endif
@@ -20,6 +20,14 @@
       render 'image-sizes-columns', base: 1, lg: image_column_ratio
     endif
   endcapture
+
+  if section.index == 1
+    assign poster_fetchpriority = 'high'
+    assign poster_loading = 'eager'
+  else
+    assign poster_fetchpriority = 'auto'
+    assign poster_loading = 'lazy'
+  endif
 %}
 
 <style>
@@ -37,7 +45,9 @@
     video_poster: section.settings.video_poster,
     background: section.settings.autoplay,
     loop: section.settings.loop,
-    sizes: image_sizes
+    sizes: image_sizes,
+    poster_fetchpriority: poster_fetchpriority,
+    poster_loading: poster_loading
   %}
 {% endcapture %}
 
@@ -646,8 +656,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

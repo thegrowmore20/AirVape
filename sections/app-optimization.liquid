@@ -1,249 +1,428 @@
 {%- liquid
-  assign page = request.page_type | split: '/' | first
-  assign block_key = 'block_' | append: page
-  assign scroll_key = 'scroll_' | append: page
+  comment
+    Determine page type from request — handles all Shopify page types
+    request.page_type returns: index, product, collection, blog, article,
+    page, cart, search, customers/login, customers/register, etc.
+    We normalise "customers/*" → "customers" and "gift_card" stays as-is.
+  endcomment
+
+  assign page = request.page_type
+  if page contains 'customers'
+    assign page = 'customers'
+  endif
+
+  assign block_key       = 'block_'       | append: page
+  assign scroll_key      = 'scroll_'      | append: page
   assign interaction_key = 'interaction_' | append: page
 
-  assign arr_block = '' | split: ''
-  assign arr_scroll = '' | split: ''
+  comment
+    Build per-category arrays, then deduplicate by URL (not by block object)
+    so duplicate URL entries never create duplicate rules.
+  endcomment
+
+  assign arr_block       = '' | split: ''
+  assign arr_scroll      = '' | split: ''
   assign arr_interaction = '' | split: ''
+  assign seen_urls       = '' | split: ''
 
   for block in section.blocks
-    assign url = block.settings.url | replace: '/', '\/'
-    if block.settings[block_key] == true and block.settings.url != blank and content_for_header contains url
-      assign arr_block = block | concat: arr_block
+    assign url = block.settings.url | strip
+    if url == blank
+      continue
     endif
-    if block.settings[scroll_key] == true and block.settings.url != blank and content_for_header contains url
-      assign arr_scroll = block | concat: arr_scroll
+
+    comment
+      Check if this URL already seen — skip duplicates across all load types
+    endcomment
+    assign already_seen = false
+    for seen in seen_urls
+      if seen == url
+        assign already_seen = true
+        break
+      endif
+    endfor
+    if already_seen
+      continue
     endif
-    if block.settings[interaction_key] == true and block.settings.url != blank and content_for_header contains url
-      assign arr_interaction = block | concat: arr_interaction
+
+    comment
+      Verify the URL is actually present in content_for_header
+    endcomment
+    assign url_escaped = url | replace: '/', '\/'
+    unless content_for_header contains url_escaped
+      continue
+    endunless
+
+    assign seen_urls = seen_urls | push: url
+
+    if block.settings[block_key] == true
+      assign arr_block = arr_block | push: block
+    elsif block.settings[scroll_key] == true
+      assign arr_scroll = arr_scroll | push: block
+    elsif block.settings[interaction_key] == true
+      assign arr_interaction = arr_interaction | push: block
     endif
   endfor
 
-  assign settings_data = arr_block | concat: arr_scroll | concat: arr_interaction | uniq | map: 'settings'
+  comment
+    Build the final settings_data only when enabled and something matched
+  endcomment
+  assign has_rules = false
+  if section.settings.enable
+    if arr_block.size > 0 or arr_scroll.size > 0 or arr_interaction.size > 0
+      assign has_rules = true
+    endif
+  endif
 -%}
 
-<!-- APP-OPTIMIZATION | enable={{ section.settings.enable }} | page={{ page }} | blocks={{ section.blocks.size }} | matched={{ settings_data.size }} -->
-{% for block in section.blocks %}<!-- block[{{ forloop.index }}] title="{{ block.settings.title }}" url="{{ block.settings.url }}" block_{{ page }}="{{ block.settings[block_key] }}" scroll_{{ page }}="{{ block.settings[scroll_key] }}" interaction_{{ page }}="{{ block.settings[interaction_key] }}" -->{% endfor %}
+<!-- APP-OPTIMIZATION | enable={{ section.settings.enable }} | page={{ page }} | blocks={{ section.blocks.size }} | block={{ arr_block.size }} | scroll={{ arr_scroll.size }} | interaction={{ arr_interaction.size }} -->
+{% for block in section.blocks %}<!-- block[{{ forloop.index }}] title="{{ block.settings.title }}" url="{{ block.settings.url }}" {{ block_key }}="{{ block.settings[block_key] }}" {{ scroll_key }}="{{ block.settings[scroll_key] }}" {{ interaction_key }}="{{ block.settings[interaction_key] }}" -->{% endfor %}
 
-{%- if section.settings.enable and settings_data.size != 0 -%}
+{%- if has_rules -%}
 <!-- section/app-optimization.liquid -->
+{%- comment -%}
+  CRITICAL: This <script> tag has NO src, NO defer, NO async.
+  It is an inline script that MUST execute synchronously, as early as possible
+  in the <head>, before Shopify injects app scripts via content_for_header.
+  This is intentional and is NOT render-blocking in a harmful way —
+  it is a tiny interceptor (~2 KB) that runs once and returns immediately.
+  The actual app scripts it defers are the ones that were render-blocking before.
+{%- endcomment -%}
 <script>
 (function AppOptimization() {
   'use strict';
 
-  var page    = {{ page | json }};
-  var debug   = {{ section.settings.debug_enable | json }};
-  var rules   = {{ settings_data | json }};
+  /* ── Config passed from Liquid ─────────────────────────────────────── */
+  var PAGE  = {{ page | json }};
+  var DEBUG = {{ section.settings.debug_enable | json }};
 
-  // Save original createElement immediately — before any patching
-  var _createElement = document.createElement.bind(document);
+  /* ── Rule sets from Liquid ─────────────────────────────────────────── */
+  var BLOCK_RULES = [
+    {%- for block in arr_block -%}
+      {{ block.settings | json }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ];
+  var SCROLL_RULES = [
+    {%- for block in arr_scroll -%}
+      {{ block.settings | json }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ];
+  var INTERACTION_RULES = [
+    {%- for block in arr_interaction -%}
+      {{ block.settings | json }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ];
 
-  var supportsPassive = (function() {
-    var s = false;
-    try {
-      var o = Object.defineProperty({}, 'passive', { get: function() { s = true; } });
-      window.addEventListener('t', null, o);
-      window.removeEventListener('t', null, o);
-    } catch(e) {}
-    return s;
-  })();
+  /* ── Passive event listener support ───────────────────────────────── */
+  var supportsPassive = false;
+  try {
+    var _po = Object.defineProperty({}, 'passive', { get: function () { supportsPassive = true; } });
+    window.addEventListener('_test', null, _po);
+    window.removeEventListener('_test', null, _po);
+  } catch (e) {}
+  function passiveOpt(opts) { return supportsPassive ? opts : false; }
 
-  // ── Build rule map ─────────────────────────────────────────────────────────
-  var ruleMap = [];
-  rules.forEach(function(settings) {
-    var loadType;
-    if      (settings['block_'       + page]) loadType = 'block';
-    else if (settings['scroll_'      + page]) loadType = 'scroll';
-    else if (settings['interaction_' + page]) loadType = 'interaction';
-    else return; // no rule for this page — skip entirely
+  /* ── Save native createElement BEFORE any patching ────────────────── */
+  var _nativeCreate = document.createElement.bind(document);
 
-    var interactionEvents = [];
-    if (loadType === 'interaction') {
-      var selectors = [settings.interaction_selectors_1, settings.interaction_selectors_2];
-      var events    = [settings.interaction_event_1,    settings.interaction_event_2];
-      selectors.forEach(function(sel, i) {
-        if (sel && sel.trim().length) {
-          var nodes = [];
-          try { nodes = Array.prototype.slice.call(document.querySelectorAll(sel)); } catch(e) {}
-          if (nodes.length) interactionEvents.push({ nodes: nodes, event: events[i] });
-        }
-      });
-    }
+  /* ── Internal state ────────────────────────────────────────────────── */
+  // Map of url → { loadType, settings, handled }
+  var ruleIndex = {};
 
-    ruleMap.push({
-      url: settings.url,
-      loadType: loadType,
-      interactionEvents: interactionEvents
-    });
-  });
-
-  debugLog('Rules for page "' + page + '"', ruleMap);
-
-  // ── Strategy 1: Patch document.createElement ──────────────────────────────
-  // Catches scripts injected dynamically by apps AFTER page load
-  document.createElement = function() {
-    var args = Array.prototype.slice.call(arguments);
-    var node = _createElement.apply(undefined, args);
-    if (String(args[0]).toLowerCase() !== 'script') return node;
-
-    var _setAttribute = node.setAttribute.bind(node);
-    Object.defineProperty(node, 'src', {
-      get: function() { return node.getAttribute('src') || ''; },
-      set: function(src) {
-        var rule = matchRule(src);
-        if (rule) {
-          _setAttribute('type', 'javascript/blocked');
-          rule.originalUrl = src;
-          applyRule(rule);
-          debugLog('Intercepted (createElement)', { url: src, loadType: rule.loadType });
-        } else {
-          debugLog('Passthrough — no rule (createElement)', { url: src });
-        }
-        _setAttribute('src', src);
-        return true;
-      }
-    });
-    return node;
-  };
-
-  // ── Strategy 2: MutationObserver on <head> and <body> ─────────────────────
-  // Catches App Embed Block scripts injected via content_for_header
-  // These arrive as real <script> nodes being inserted into the DOM
-  var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      mutation.addedNodes.forEach(function(node) {
-        if (node.nodeType !== 1) return;
-        checkAndBlockNode(node);
-        // Also check any script children (e.g. inside an injected fragment)
-        if (node.querySelectorAll) {
-          Array.prototype.slice.call(node.querySelectorAll('script[src]')).forEach(checkAndBlockNode);
-        }
-      });
-    });
-  });
-
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-
-  function checkAndBlockNode(node) {
-    if (node.nodeName !== 'SCRIPT') return;
-    var src = node.getAttribute('src');
-    if (!src) return;
-    var rule = matchRule(src);
-    if (!rule) {
-      debugLog('Passthrough — no rule (MutationObserver)', { url: src });
-      return;
-    }
-
-    // Block: change type so browser won't execute
-    node.setAttribute('type', 'javascript/blocked');
-    rule.originalUrl = src;
-    applyRule(rule);
-    debugLog('Intercepted (MutationObserver)', { url: src, loadType: rule.loadType });
+  function registerRule(settings, loadType) {
+    var url = (settings.url || '').trim();
+    if (!url) return;
+    if (ruleIndex[url]) return; // already registered (URL dedup safety net)
+    ruleIndex[url] = { loadType: loadType, settings: settings, handled: false };
   }
 
-  // Stop observing once page is fully loaded — no more dynamic injections expected
-  window.addEventListener('load', function() {
-    observer.disconnect();
-    // Scan any scripts already in DOM that we may have missed
-    Array.prototype.slice.call(document.querySelectorAll('script[src]')).forEach(function(node) {
-      var src = node.getAttribute('src');
-      if (!src) return;
-      var rule = matchRule(src);
-      if (!rule) return;
-      if (node.getAttribute('type') === 'javascript/blocked') return; // already handled
-      // Too late to block execution but log it
-      debugLog('WARNING — script already executed', { url: src, loadType: rule.loadType });
-    });
-  }, false);
+  BLOCK_RULES.forEach(function (s) { registerRule(s, 'block'); });
+  SCROLL_RULES.forEach(function (s) { registerRule(s, 'scroll'); });
+  INTERACTION_RULES.forEach(function (s) { registerRule(s, 'interaction'); });
 
-  // ── Apply load rule ────────────────────────────────────────────────────────
-  function applyRule(rule) {
-    // Remove from ruleMap so the same app isn't matched twice
-    var idx = ruleMap.indexOf(rule);
-    if (idx !== -1) ruleMap.splice(idx, 1);
+  debugLog('Initialized', { page: PAGE, block: BLOCK_RULES.length, scroll: SCROLL_RULES.length, interaction: INTERACTION_RULES.length });
 
-    if (rule.loadType === 'block') {
-      debugLog('Blocked permanently', { url: rule.originalUrl });
-      return; // nothing more to do
-    }
-
-    if (rule.loadType === 'scroll') {
-      window.addEventListener('load', function() {
-        var passive = supportsPassive ? { passive: true } : false;
-        function onScroll() {
-          loadScript(rule.originalUrl);
-          window.removeEventListener('scroll', onScroll, passive);
-        }
-        window.addEventListener('scroll', onScroll, passive);
-        debugLog('Waiting for scroll', { url: rule.originalUrl });
-      }, false);
-    }
-
-    if (rule.loadType === 'interaction') {
-      window.addEventListener('load', function() {
-        if (!rule.interactionEvents || !rule.interactionEvents.length) {
-          debugLog('WARNING — interaction rule has no selectors/nodes', { url: rule.originalUrl });
-          return;
-        }
-        rule.interactionEvents.forEach(function(ev) {
-          ev.nodes.forEach(function(el) {
-            var once = supportsPassive ? { once: true } : false;
-            el.addEventListener(ev.event, function handler() {
-              loadScript(rule.originalUrl);
-              if (!supportsPassive) el.removeEventListener(ev.event, handler);
-            }, once);
-          });
-        });
-        debugLog('Waiting for interaction', { url: rule.originalUrl, events: rule.interactionEvents.map(function(e){ return e.event; }) });
-      }, false);
-    }
-  }
-
-  // ── Load the deferred script ───────────────────────────────────────────────
-  function loadScript(src) {
-    // Guard: don't load twice
-    if (document.querySelector('script[data-ao-loaded][src="' + src + '"]')) return;
-
-    var blocked = document.querySelector('script[type="javascript/blocked"][src="' + src + '"]');
-    var newScript = _createElement('script'); // use original — not patched version
-    newScript.src = src;
-    newScript.async = true;
-    newScript.setAttribute('data-ao-loaded', 'true');
-    document.body.appendChild(newScript);
-
-    if (blocked && blocked.parentNode) blocked.parentNode.removeChild(blocked);
-
-    debugLog('Script loaded', { url: src });
-  }
-
-  // ── Rule matcher ──────────────────────────────────────────────────────────
+  /* ── Rule matcher: returns the rule entry or null ─────────────────── */
   function matchRule(src) {
-    for (var i = 0; i < ruleMap.length; i++) {
-      if (ruleMap[i].url && String(src).indexOf(String(ruleMap[i].url)) !== -1) return ruleMap[i];
+    if (!src) return null;
+    var srcStr = String(src);
+    for (var url in ruleIndex) {
+      if (ruleIndex.hasOwnProperty(url) && srcStr.indexOf(url) !== -1) {
+        return ruleIndex[url];
+      }
     }
     return null;
   }
 
-  // ── Debug panel ────────────────────────────────────────────────────────────
+  /* ══════════════════════════════════════════════════════════════════════
+     STRATEGY 1 — Patch document.createElement
+     Catches dynamically-created <script> elements (app SDK loaders, etc.)
+     Must run synchronously before any app scripts execute.
+  ══════════════════════════════════════════════════════════════════════ */
+  document.createElement = function (tagName) {
+    var node = _nativeCreate(tagName);
+    if (String(tagName).toLowerCase() !== 'script') return node;
+
+    var _setAttr = node.setAttribute.bind(node);
+    var _getAttr = node.getAttribute.bind(node);
+
+    Object.defineProperty(node, 'src', {
+      configurable: true,
+      get: function () { return _getAttr('src') || ''; },
+      set: function (src) {
+        var rule = matchRule(src);
+        if (rule && !rule.handled) {
+          /* Block browser execution by setting an unrecognised type */
+          _setAttr('type', 'javascript/blocked');
+          rule.handled = true;
+          rule.originalSrc = src;
+          scheduleLoad(rule);
+          debugLog('Intercepted [createElement]', { url: src, loadType: rule.loadType });
+        } else {
+          debugLog('Passthrough [createElement]', { url: src });
+        }
+        _setAttr('src', src);
+      }
+    });
+
+    return node;
+  };
+
+  /* ══════════════════════════════════════════════════════════════════════
+     STRATEGY 2 — MutationObserver on <html>
+     Catches <script src="..."> nodes inserted directly into the DOM
+     (Shopify App Embed Blocks do this via content_for_header).
+  ══════════════════════════════════════════════════════════════════════ */
+  var _observer = new MutationObserver(function (mutations) {
+    for (var m = 0; m < mutations.length; m++) {
+      var added = mutations[m].addedNodes;
+      for (var n = 0; n < added.length; n++) {
+        interceptNode(added[n]);
+      }
+    }
+  });
+
+  _observer.observe(document.documentElement, { childList: true, subtree: true });
+
+  function interceptNode(node) {
+    if (!node || node.nodeType !== 1) return;
+
+    if (node.nodeName === 'SCRIPT') {
+      blockScriptNode(node);
+    }
+
+    /* Also intercept any script descendants of an inserted fragment */
+    if (typeof node.querySelectorAll === 'function') {
+      var children = node.querySelectorAll('script[src]');
+      for (var i = 0; i < children.length; i++) {
+        blockScriptNode(children[i]);
+      }
+    }
+  }
+
+  function blockScriptNode(node) {
+    var src = node.getAttribute('src');
+    if (!src) return;
+
+    /* Skip if already blocked by Strategy 1 */
+    if (node.getAttribute('type') === 'javascript/blocked') return;
+
+    var rule = matchRule(src);
+    if (!rule) {
+      debugLog('Passthrough [MutationObserver]', { url: src });
+      return;
+    }
+
+    if (rule.handled) {
+      debugLog('Already handled [MutationObserver]', { url: src });
+      return;
+    }
+
+    node.setAttribute('type', 'javascript/blocked');
+    rule.handled = true;
+    rule.originalSrc = src;
+    scheduleLoad(rule);
+    debugLog('Intercepted [MutationObserver]', { url: src, loadType: rule.loadType });
+  }
+
+  /* Disconnect observer once the page is fully loaded — nothing new expected */
+  window.addEventListener('load', function () {
+    _observer.disconnect();
+
+    /* Final sweep: warn about any matched scripts that executed anyway */
+    var allScripts = document.querySelectorAll('script[src]');
+    for (var i = 0; i < allScripts.length; i++) {
+      var src = allScripts[i].getAttribute('src');
+      var rule = matchRule(src);
+      if (!rule) continue;
+      if (allScripts[i].getAttribute('type') === 'javascript/blocked') continue;
+      if (allScripts[i].getAttribute('data-ao-loaded')) continue;
+      debugLog('WARNING — script may have executed before intercept', { url: src, loadType: rule.loadType });
+    }
+  }, false);
+
+  /* ══════════════════════════════════════════════════════════════════════
+     SCHEDULE LOAD — decides WHEN to actually load the deferred script
+  ══════════════════════════════════════════════════════════════════════ */
+  function scheduleLoad(rule) {
+    var loadType = rule.loadType;
+
+    /* ── BLOCK: never load ─────────────────────────────────────────── */
+    if (loadType === 'block') {
+      debugLog('Blocked permanently', { url: rule.originalSrc });
+      return;
+    }
+
+    /* ── SCROLL: load on first scroll after window.load ───────────── */
+    if (loadType === 'scroll') {
+      afterWindowLoad(function () {
+        var passive = passiveOpt({ passive: true });
+        var fired = false;
+
+        function onScroll() {
+          if (fired) return;
+          fired = true;
+          window.removeEventListener('scroll', onScroll, passive);
+          loadScript(rule.originalSrc);
+        }
+
+        /* If user has already scrolled (e.g. browser restores position) */
+        if (window.scrollY > 0 || document.documentElement.scrollTop > 0) {
+          loadScript(rule.originalSrc);
+        } else {
+          window.addEventListener('scroll', onScroll, passive);
+          debugLog('Waiting for scroll', { url: rule.originalSrc });
+        }
+      });
+      return;
+    }
+
+    /* ── INTERACTION: load on user-configured event ────────────────── */
+    if (loadType === 'interaction') {
+      afterWindowLoad(function () {
+        var settings = rule.settings;
+        var triggers = [
+          { selector: settings.interaction_selectors_1, event: settings.interaction_event_1 },
+          { selector: settings.interaction_selectors_2, event: settings.interaction_event_2 }
+        ];
+
+        var registered = 0;
+
+        triggers.forEach(function (trigger) {
+          var sel = (trigger.selector || '').trim();
+          var evt = (trigger.event || 'click');
+          if (!sel) return;
+
+          /* Support comma-separated selectors */
+          var selList = sel.split(',');
+          selList.forEach(function (singleSel) {
+            singleSel = singleSel.trim();
+            if (!singleSel) return;
+
+            var nodes;
+            try { nodes = Array.prototype.slice.call(document.querySelectorAll(singleSel)); }
+            catch (e) { nodes = []; }
+
+            nodes.forEach(function (el) {
+              var once = passiveOpt({ once: true, passive: true });
+
+              function handler() {
+                if (!once) el.removeEventListener(evt, handler);
+                loadScript(rule.originalSrc);
+              }
+
+              el.addEventListener(evt, handler, once);
+              registered++;
+            });
+          });
+        });
+
+        if (registered === 0) {
+          debugLog('WARNING — no interaction elements found, falling back to scroll', { url: rule.originalSrc });
+          /* Fallback: load on scroll so the script is never permanently lost */
+          var passive = passiveOpt({ passive: true });
+          var fired = false;
+          function fallbackScroll() {
+            if (fired) return;
+            fired = true;
+            window.removeEventListener('scroll', fallbackScroll, passive);
+            loadScript(rule.originalSrc);
+          }
+          window.addEventListener('scroll', fallbackScroll, passive);
+        } else {
+          debugLog('Waiting for interaction', { url: rule.originalSrc, triggers: registered });
+        }
+      });
+      return;
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════
+     LOAD SCRIPT — inject a real <script> tag using the native createElement
+  ══════════════════════════════════════════════════════════════════════ */
+  function loadScript(src) {
+    if (!src) return;
+
+    /* Guard: already loaded */
+    if (document.querySelector('script[data-ao-loaded][src="' + src + '"]')) {
+      debugLog('Already loaded — skipping', { url: src });
+      return;
+    }
+
+    /* Use the NATIVE createElement — not our patched version */
+    var script = _nativeCreate('script');
+    script.src = src;
+    script.async = true;
+    script.setAttribute('data-ao-loaded', 'true');
+
+    /* Remove the blocked placeholder if it exists */
+    var blocked = document.querySelector('script[type="javascript/blocked"][src="' + src + '"]');
+    if (blocked && blocked.parentNode) {
+      blocked.parentNode.removeChild(blocked);
+    }
+
+    (document.body || document.head || document.documentElement).appendChild(script);
+    debugLog('Script loaded', { url: src });
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════
+     HELPERS
+  ══════════════════════════════════════════════════════════════════════ */
+
+  /* Run callback after window load (or immediately if already fired) */
+  var _windowLoaded = false;
+  window.addEventListener('load', function () { _windowLoaded = true; }, false);
+
+  function afterWindowLoad(fn) {
+    if (_windowLoaded || document.readyState === 'complete') {
+      fn();
+    } else {
+      window.addEventListener('load', fn, false);
+    }
+  }
+
+  /* ── Debug panel ─────────────────────────────────────────────────── */
   var _panel = null;
 
   function debugLog(label, data) {
-    if (!debug) return;
-    console.log('[AppOptimization]', label, data);
+    if (!DEBUG) return;
+    console.log('[AppOptimization]', label, data || '');
+
     if (!_panel) _panel = buildPanel();
     var body = document.getElementById('ao-panel-body');
     if (!body) return;
-    var entry = _createElement('div');
+
+    var entry = _nativeCreate('div');
     entry.style.cssText = 'border-bottom:1px solid #2d2d2d;padding:5px 0;font-size:11px';
+
     var isWarn  = String(label).indexOf('WARNING') !== -1;
-    var isLoad  = String(label).indexOf('loaded') !== -1;
-    var isBlock = String(label).indexOf('Block') !== -1;
+    var isLoad  = String(label).indexOf('loaded') !== -1 || String(label).indexOf('Loaded') !== -1;
+    var isBlock = String(label).indexOf('Block') !== -1 || String(label).indexOf('permanently') !== -1;
     var colour  = isWarn ? '#f48771' : isLoad ? '#4ec94e' : isBlock ? '#f48771' : '#9cdcfe';
+
     var html = '<span style="color:' + colour + ';font-weight:700">' + label + '</span>';
     if (data && typeof data === 'object') {
-      Object.keys(data).forEach(function(k) {
+      Object.keys(data).forEach(function (k) {
         var v = data[k];
         if (v === undefined || v === null) return;
         if (typeof v === 'object') v = JSON.stringify(v);
@@ -255,13 +434,19 @@
   }
 
   function buildPanel() {
-    var style = _createElement('style');
-    style.textContent = '#ao-panel{position:fixed;bottom:16px;right:16px;z-index:2147483647;width:400px;max-height:400px;overflow-y:auto;background:#1e1e1e;color:#d4d4d4;font-family:"Courier New",monospace;font-size:11px;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.6)}#ao-panel-head{display:flex;justify-content:space-between;align-items:center;background:#007acc;color:#fff;font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px 8px 0 0;position:sticky;top:0}#ao-panel-body{padding:8px 12px}';
-    document.head.appendChild(style);
-    var p = _createElement('div');
+    var style = _nativeCreate('style');
+    style.textContent = '#ao-panel{position:fixed;bottom:16px;right:16px;z-index:2147483647;width:420px;max-height:420px;overflow-y:auto;background:#1e1e1e;color:#d4d4d4;font-family:"Courier New",monospace;font-size:11px;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.6)}#ao-panel-head{display:flex;justify-content:space-between;align-items:center;background:#007acc;color:#fff;font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px 8px 0 0;position:sticky;top:0}#ao-panel-body{padding:8px 12px}';
+    (document.head || document.documentElement).appendChild(style);
+
+    var p = _nativeCreate('div');
     p.id = 'ao-panel';
-    p.innerHTML = '<div id="ao-panel-head"><span>&#128270; App Optimization — ' + page + '</span><button onclick="this.closest(\'#ao-panel\').style.display=\'none\'" style="background:0;border:0;color:#fff;cursor:pointer;font-size:15px">&#x2715;</button></div><div id="ao-panel-body"></div>';
-    document.body ? document.body.appendChild(p) : document.addEventListener('DOMContentLoaded', function(){ document.body.appendChild(p); });
+    p.innerHTML = '<div id="ao-panel-head"><span>&#128270; App Optimization &mdash; ' + PAGE + '</span><button onclick="document.getElementById(\'ao-panel\').style.display=\'none\'" style="background:0;border:0;color:#fff;cursor:pointer;font-size:15px">&#x2715;</button></div><div id="ao-panel-body"></div>';
+
+    if (document.body) {
+      document.body.appendChild(p);
+    } else {
+      document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(p); });
+    }
     return p;
   }
 
@@ -269,9 +454,8 @@
 </script>
 {%- endif -%}
 
-
 {%- if request.design_mode -%}
-{%- comment -%}The code below will be loaded only in the Theme Editor{%- endcomment-%}
+{%- comment -%}Theme Editor UI — loaded only inside the Shopify admin customizer{%- endcomment -%}
 {%- assign urls = content_for_header | split: 'var urls =' | last | split: 'for (var i = 0' | first | remove: ';' | split: ',' -%}
 
 <template id="sd-app-list-template">
@@ -321,11 +505,9 @@
           {%- liquid
             assign name = 'App name'
             assign load = 'Default'
-            assign block_key = 'block_' | append: page
-            assign scroll_key = 'scroll_' | append: page
-            assign interaction_key = 'interaction_' | append: page
             assign url_clean = url | remove: '"' | remove: '[' | remove: ']' | replace: '\/', '/' | replace: '\u0026', '&' | remove: 'https://' | remove: '//' | strip
             assign url_display = url_clean | split: '?' | first
+
             for block in section.blocks
               if block.settings.url != blank and url_clean contains block.settings.url
                 assign name = block.settings.title
@@ -361,54 +543,59 @@
 <sd-app-list></sd-app-list>
 
 <script>
-  (function ThemeEditor() {
-    'use strict';
-    document.addEventListener('shopify:section:select', select);
-    document.addEventListener('shopify:section:load', load);
-    document.addEventListener('shopify:section:deselect', deselect);
+(function ThemeEditor() {
+  'use strict';
+  document.addEventListener('shopify:section:select', select);
+  document.addEventListener('shopify:section:load',   load);
+  document.addEventListener('shopify:section:deselect', deselect);
 
-    function select(evt) {
-      if (evt.detail.sectionId !== 'app-optimization') return;
-      let node = document.querySelector('sd-app-list');
-      if (node) node.removeAttribute('style');
-      if (customElements.get('sd-app-list')) return;
-      defineElement();
-      initCopyEvents(node.shadowRoot);
-    }
-    function load(evt) {
-      if (evt.detail.sectionId !== 'app-optimization') return;
-      let sr = document.querySelector('sd-app-list').shadowRoot;
-      Array.prototype.slice.call(sr.children).forEach(n => n.parentNode.removeChild(n));
-      sr.appendChild(templateContent());
-      initCopyEvents(sr);
-    }
-    function deselect(evt) {
-      if (evt.detail.sectionId !== 'app-optimization') return;
-      let node = document.querySelector('sd-app-list');
-      if (node) node.style.display = 'none';
-    }
-    function defineElement() {
-      customElements.define('sd-app-list', class extends HTMLElement {
-        constructor() {
-          super();
-          this.attachShadow({ mode: 'open' }).appendChild(templateContent());
-        }
-      });
-    }
-    function templateContent() {
-      return document.getElementById('sd-app-list-template').content.cloneNode(true);
-    }
-    function initCopyEvents(sr) {
-      Array.prototype.slice.call(sr.querySelectorAll('[data-clipboard]'))
-        .forEach(n => n.addEventListener('click', copyText));
-    }
-    function copyText() {
-      navigator.clipboard.writeText(this.getAttribute('data-clipboard'));
-    }
-  })();
+  function select(evt) {
+    if (evt.detail.sectionId !== 'app-optimization') return;
+    var node = document.querySelector('sd-app-list');
+    if (node) node.removeAttribute('style');
+    if (customElements.get('sd-app-list')) return;
+    defineElement();
+    initCopyEvents(node.shadowRoot);
+  }
+
+  function load(evt) {
+    if (evt.detail.sectionId !== 'app-optimization') return;
+    var sr = document.querySelector('sd-app-list').shadowRoot;
+    Array.prototype.slice.call(sr.children).forEach(function (n) { n.parentNode.removeChild(n); });
+    sr.appendChild(templateContent());
+    initCopyEvents(sr);
+  }
+
+  function deselect(evt) {
+    if (evt.detail.sectionId !== 'app-optimization') return;
+    var node = document.querySelector('sd-app-list');
+    if (node) node.style.display = 'none';
+  }
+
+  function defineElement() {
+    customElements.define('sd-app-list', class extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' }).appendChild(templateContent());
+      }
+    });
+  }
+
+  function templateContent() {
+    return document.getElementById('sd-app-list-template').content.cloneNode(true);
+  }
+
+  function initCopyEvents(sr) {
+    Array.prototype.slice.call(sr.querySelectorAll('[data-clipboard]'))
+      .forEach(function (n) { n.addEventListener('click', copyText); });
+  }
+
+  function copyText() {
+    navigator.clipboard.writeText(this.getAttribute('data-clipboard'));
+  }
+})();
 </script>
 {%- endif -%}
-
 
 {% schema %}
 {
@@ -423,9 +610,9 @@
     {
       "type": "checkbox",
       "id": "debug_enable",
-      "label": "Enable debug?",
+      "label": "Enable debug panel?",
       "default": false,
-      "info": "Shows a floating debug panel on the page with script loading info"
+      "info": "Shows a floating debug panel on the storefront with real-time script loading info"
     }
   ],
   "blocks": [
@@ -433,87 +620,100 @@
       "type": "app",
       "name": "Application",
       "settings": [
-        { "type": "text", "id": "title", "label": "App title" },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "App title"
+        },
         {
           "type": "text",
           "id": "url",
-          "label": "App ScriptTag URL",
+          "label": "App ScriptTag URL (partial)",
           "placeholder": "e.g. static.klaviyo.com/onsite/js/klaviyo.js",
-          "info": "Enter a partial URL that uniquely identifies this app's script, e.g: klaviyo.com or loox.io"
+          "info": "Enter a partial URL that uniquely identifies this app's script. Example: klaviyo.com or loox.io"
         },
+
         { "type": "header", "content": "Block script from loading" },
-        { "type": "paragraph", "content": "On selected pages, the app will not be loaded" },
-        { "type": "checkbox", "id": "block_index", "label": "Index" },
-        { "type": "checkbox", "id": "block_product", "label": "Product" },
+        { "type": "paragraph", "content": "Script will NOT load at all on the selected pages." },
+        { "type": "checkbox", "id": "block_index",      "label": "Home (index)" },
+        { "type": "checkbox", "id": "block_product",    "label": "Product" },
         { "type": "checkbox", "id": "block_collection", "label": "Collection" },
-        { "type": "checkbox", "id": "block_page", "label": "Page" },
-        { "type": "checkbox", "id": "block_blog", "label": "Blog" },
-        { "type": "checkbox", "id": "block_article", "label": "Article" },
-        { "type": "checkbox", "id": "block_cart", "label": "Cart" },
-        { "type": "checkbox", "id": "block_search", "label": "Search" },
-        { "type": "checkbox", "id": "block_customers", "label": "Customers" },
-        { "type": "checkbox", "id": "block_gift_card", "label": "Gift card" },
-        { "type": "header", "content": "Load script on user page scroll" },
-        { "type": "paragraph", "content": "On selected pages, the app will start to load when the user scrolls the page." },
-        { "type": "checkbox", "id": "scroll_index", "label": "Index" },
-        { "type": "checkbox", "id": "scroll_product", "label": "Product" },
+        { "type": "checkbox", "id": "block_page",       "label": "Page" },
+        { "type": "checkbox", "id": "block_blog",       "label": "Blog" },
+        { "type": "checkbox", "id": "block_article",    "label": "Article" },
+        { "type": "checkbox", "id": "block_cart",       "label": "Cart" },
+        { "type": "checkbox", "id": "block_search",     "label": "Search" },
+        { "type": "checkbox", "id": "block_customers",  "label": "Customers (login/register/account)" },
+        { "type": "checkbox", "id": "block_gift_card",  "label": "Gift card" },
+
+        { "type": "header", "content": "Load script on page scroll" },
+        { "type": "paragraph", "content": "Script will load as soon as the user scrolls on the selected pages." },
+        { "type": "checkbox", "id": "scroll_index",      "label": "Home (index)" },
+        { "type": "checkbox", "id": "scroll_product",    "label": "Product" },
         { "type": "checkbox", "id": "scroll_collection", "label": "Collection" },
-        { "type": "checkbox", "id": "scroll_page", "label": "Page" },
-        { "type": "checkbox", "id": "scroll_blog", "label": "Blog" },
-        { "type": "checkbox", "id": "scroll_article", "label": "Article" },
-        { "type": "checkbox", "id": "scroll_cart", "label": "Cart" },
-        { "type": "checkbox", "id": "scroll_search", "label": "Search" },
-        { "type": "checkbox", "id": "scroll_customers", "label": "Customers" },
-        { "type": "checkbox", "id": "scroll_gift_card", "label": "Gift card" },
+        { "type": "checkbox", "id": "scroll_page",       "label": "Page" },
+        { "type": "checkbox", "id": "scroll_blog",       "label": "Blog" },
+        { "type": "checkbox", "id": "scroll_article",    "label": "Article" },
+        { "type": "checkbox", "id": "scroll_cart",       "label": "Cart" },
+        { "type": "checkbox", "id": "scroll_search",     "label": "Search" },
+        { "type": "checkbox", "id": "scroll_customers",  "label": "Customers" },
+        { "type": "checkbox", "id": "scroll_gift_card",  "label": "Gift card" },
+
         { "type": "header", "content": "Load script on user interaction" },
-        { "type": "paragraph", "content": "On selected pages, the app will start to load when the user will trigger the assigned events." },
-        { "type": "checkbox", "id": "interaction_index", "label": "Index" },
-        { "type": "checkbox", "id": "interaction_product", "label": "Product" },
+        { "type": "paragraph", "content": "Script will load when the user triggers the configured events on the selected pages. If no matching elements are found, falls back to scroll." },
+        { "type": "checkbox", "id": "interaction_index",      "label": "Home (index)" },
+        { "type": "checkbox", "id": "interaction_product",    "label": "Product" },
         { "type": "checkbox", "id": "interaction_collection", "label": "Collection" },
-        { "type": "checkbox", "id": "interaction_page", "label": "Page" },
-        { "type": "checkbox", "id": "interaction_blog", "label": "Blog" },
-        { "type": "checkbox", "id": "interaction_article", "label": "Article" },
-        { "type": "checkbox", "id": "interaction_cart", "label": "Cart" },
-        { "type": "checkbox", "id": "interaction_search", "label": "Search" },
-        { "type": "checkbox", "id": "interaction_customers", "label": "Customers" },
-        { "type": "checkbox", "id": "interaction_gift_card", "label": "Gift card" },
-        { "type": "header", "content": "User interaction event 1" },
+        { "type": "checkbox", "id": "interaction_page",       "label": "Page" },
+        { "type": "checkbox", "id": "interaction_blog",       "label": "Blog" },
+        { "type": "checkbox", "id": "interaction_article",    "label": "Article" },
+        { "type": "checkbox", "id": "interaction_cart",       "label": "Cart" },
+        { "type": "checkbox", "id": "interaction_search",     "label": "Search" },
+        { "type": "checkbox", "id": "interaction_customers",  "label": "Customers" },
+        { "type": "checkbox", "id": "interaction_gift_card",  "label": "Gift card" },
+
+        { "type": "header", "content": "Interaction trigger 1" },
         {
           "type": "text",
           "id": "interaction_selectors_1",
-          "label": "CSS selectors list",
-          "info": "Comma separated CSS selectors",
-          "placeholder": ".btn, .menu"
+          "label": "CSS selector(s)",
+          "info": "Comma-separated CSS selectors, e.g: .btn, #cart-icon, [data-cart]",
+          "placeholder": ".btn, #cart-icon"
         },
         {
           "type": "select",
           "id": "interaction_event_1",
-          "label": "Interaction event name",
+          "label": "Trigger event",
           "options": [
-            { "value": "click", "label": "click" },
-            { "value": "mousedown", "label": "mousedown" },
-            { "value": "mouseup", "label": "mouseup" },
-            { "value": "focus", "label": "focus" }
+            { "value": "click",      "label": "click" },
+            { "value": "mousedown",  "label": "mousedown" },
+            { "value": "mouseup",    "label": "mouseup" },
+            { "value": "mouseover",  "label": "mouseover (hover)" },
+            { "value": "focus",      "label": "focus" },
+            { "value": "touchstart", "label": "touchstart (mobile tap)" }
           ],
           "default": "click"
         },
-        { "type": "header", "content": "User interaction event 2" },
+
+        { "type": "header", "content": "Interaction trigger 2 (optional)" },
         {
           "type": "text",
           "id": "interaction_selectors_2",
-          "label": "CSS selectors list",
-          "info": "Comma separated CSS selectors",
-          "placeholder": ".btn, .menu"
+          "label": "CSS selector(s)",
+          "info": "Comma-separated CSS selectors",
+          "placeholder": ".menu, [data-header]"
         },
         {
           "type": "select",
           "id": "interaction_event_2",
-          "label": "Interaction event name",
+          "label": "Trigger event",
           "options": [
-            { "value": "click", "label": "click" },
-            { "value": "mousedown", "label": "mousedown" },
-            { "value": "mouseup", "label": "mouseup" },
-            { "value": "focus", "label": "focus" }
+            { "value": "click",      "label": "click" },
+            { "value": "mousedown",  "label": "mousedown" },
+            { "value": "mouseup",    "label": "mouseup" },
+            { "value": "mouseover",  "label": "mouseover (hover)" },
+            { "value": "focus",      "label": "focus" },
+            { "value": "touchstart", "label": "touchstart (mobile tap)" }
           ],
           "default": "click"
         }

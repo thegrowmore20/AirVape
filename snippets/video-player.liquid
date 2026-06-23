@@ -8,6 +8,9 @@
   if video != blank and video_poster == blank and background != true
     assign video_poster = video.preview_image
   endif
+
+  assign poster_loading = poster_loading | default: 'lazy'
+  assign poster_fetchpriority = poster_fetchpriority | default: 'auto'
 %}
 
 <video-player
@@ -38,7 +41,14 @@
         {{
           video_poster
           | image_url: width: 3840
-          | image_tag: class: 'pointer-events-none select-none', sizes: sizes, loading: 'lazy'
+          | image_tag:
+            widths: '768, 1024, 1280, 1536, 1920, 2560, 3840',
+            sizes: sizes,
+            class: 'pointer-events-none select-none',
+            loading: poster_loading,
+            fetchpriority: poster_fetchpriority,
+            width: video_poster.width,
+            height: video_poster.height
         }}
       {% else %}
         {% render 'placeholder', type: 'lifestyle-1', class: 'placeholder--dark' %}

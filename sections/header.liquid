@@ -139,6 +139,7 @@
           <a data-instant href="{{ routes.root_url }}">
             {%- if section.settings.logo != blank -%}
               <span class="visually-hidden">{{ shop.name }}</span>
+              {% assign logo_alt = section.settings.logo.alt | default: shop.name %}
               {% assign logo_width_2x = section.settings.logo_width | times: 2 %}
               {% assign logo_width_mobile_2x = section.settings.logo_width_mobile | times: 2 %}
               {%- capture logo_widths -%}
@@ -147,11 +148,19 @@
               {%- capture logo_sizes -%}
                 (min-width: 768px) {{ section.settings.logo_width }}px, {{ section.settings.logo_width_mobile }}px
               {%- endcapture -%}
+              {%- assign logo_height = section.settings.logo.height | times: section.settings.logo_width | divided_by: section.settings.logo.width | round -%}
+              {%- assign logo_transparent_height = logo_header_transparent.height | times: section.settings.logo_width | divided_by: logo_header_transparent.width | round -%}
               <div class="grid">
                 {{
                   section.settings.logo
                   | image_url: width: logo_width_2x
-                  | image_tag: widths: logo_widths, sizes: logo_sizes, class: 'header__logo-img col-start-1 row-start-1'
+                  | image_tag:
+                    widths: logo_widths,
+                    sizes: logo_sizes,
+                    class: 'header__logo-img col-start-1 row-start-1',
+                    width: section.settings.logo_width,
+                    height: logo_height,
+                    alt: logo_alt
                 }}
                 {{
                   logo_header_transparent
@@ -159,7 +168,10 @@
                   | image_tag:
                     widths: logo_widths,
                     sizes: logo_sizes,
-                    class: 'header__logo-img--header-transparent col-start-1 row-start-1'
+                    class: 'header__logo-img--header-transparent col-start-1 row-start-1',
+                    width: section.settings.logo_width,
+                    height: logo_transparent_height,
+                    alt: logo_alt
                 }}
               </div>
 

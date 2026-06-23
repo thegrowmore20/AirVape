@@ -44,8 +44,8 @@
         "transition": "slide-y",
         "autoplay": true,
         "change_message_every": 5,
-        "background_color": "#ea4335",
-        "text_color": "#ffffff"
+        "background_color": "#C62828",
+        "text_color": "#FFFFFF"
       }
     },
     "header": {

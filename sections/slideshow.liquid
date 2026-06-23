@@ -58,6 +58,21 @@
     opacity: 1;
     transition: opacity 0.35s ease;
   }
+
+  /* First image slide renders without JS gate */
+  .slideshow-slide .first-slide-image {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .slideshow-slide .first-slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 </style>
 
 <div
@@ -104,7 +119,7 @@
       {% endcapture %}
 
       {% liquid
-        if forloop.first
+        if forloop.first and section.index == 1
           assign loading = 'eager'
           assign fetchpriority = 'high'
           assign preload = 'auto'
@@ -163,7 +178,9 @@
                       sizes: image_sizes,
                       loading: 'eager',
                       fetchpriority: 'high',
-                      alt: block.settings.heading | default: shop.name
+                      alt: block.settings.heading | default: shop.name,
+                      width: poster_desktop.width,
+                      height: poster_desktop.height
                   }}
                 </picture>
               {% endif %}
@@ -186,6 +203,7 @@
                     id: slideshow_desktop_video_id,
                     image_size: '480x',
                     preload: preload,
+                    fetchpriority: fetchpriority,
                     playsinline: true,
                     controls: false
                 }}
@@ -206,6 +224,7 @@
                      id: slideshow_mobile_video_id,
                     image_size: '360x',
                     preload: preload,
+                    fetchpriority: fetchpriority,
                     playsinline: true,
                     controls: false
                 }}
@@ -226,6 +245,7 @@
                      id: slideshow_desktop_video_id,
                     image_size: '480x',
                     preload: preload,
+                    fetchpriority: fetchpriority,
                     playsinline: true,
                     controls: false
                 }}
@@ -247,13 +267,15 @@
                     sizes: image_sizes,
                     loading: loading,
                     alt: block.settings.image.alt,
-                    fetchpriority: fetchpriority
+                    fetchpriority: fetchpriority,
+                    width: block.settings.image.width,
+                    height: block.settings.image.height
                 }}
               {% endcapture %}
 
               {% if block.settings.mobile_image %}
-                <lqip-element class="image-loader md:hidden">
-                  <picture>
+                {% if forloop.first and section.index == 1 %}
+                  <picture class="first-slide-image md:hidden">
                     <source
                       srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
                       media="(min-width: 768px)"
@@ -266,21 +288,55 @@
                         sizes: image_sizes,
                         loading: loading,
                         alt: block.settings.mobile_image.alt,
-                        fetchpriority: fetchpriority
+                        fetchpriority: fetchpriority,
+                        width: block.settings.mobile_image.width,
+                        height: block.settings.mobile_image.height
                     }}
                   </picture>
-                </lqip-element>
-                <lqip-element class="image-loader max-md:hidden">
-                  <picture>
+                  <picture class="first-slide-image max-md:hidden">
                     <source
                       srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
                       media="not all and (min-width: 768px)"
                     >
                     {{ image }}
                   </picture>
-                </lqip-element>
+                {% else %}
+                  <lqip-element class="image-loader md:hidden">
+                    <picture>
+                      <source
+                        srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        media="(min-width: 768px)"
+                      >
+                      {{
+                        block.settings.mobile_image
+                        | image_url: width: 1536
+                        | image_tag:
+                          widths: '420, 840, 1072, 1304, 1536',
+                          sizes: image_sizes,
+                          loading: loading,
+                          alt: block.settings.mobile_image.alt,
+                          fetchpriority: fetchpriority,
+                          width: block.settings.mobile_image.width,
+                          height: block.settings.mobile_image.height
+                      }}
+                    </picture>
+                  </lqip-element>
+                  <lqip-element class="image-loader max-md:hidden">
+                    <picture>
+                      <source
+                        srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        media="not all and (min-width: 768px)"
+                      >
+                      {{ image }}
+                    </picture>
+                  </lqip-element>
+                {% endif %}
               {% else %}
-                <lqip-element class="image-loader absolute inset-0">{{ image }}</lqip-element>
+                {% if forloop.first and section.index == 1 %}
+                  <div class="first-slide-image absolute inset-0">{{ image }}</div>
+                {% else %}
+                  <lqip-element class="image-loader absolute inset-0">{{ image }}</lqip-element>
+                {% endif %}
               {% endif %}
 
             {% else %}
@@ -1016,8 +1072,7 @@
   ],
   "disabled_on": {
     "groups": [
-      "header",
-      "custom.overlay"
+      "header"
     ]
   },
   "presets": [

@@ -10,7 +10,8 @@
               class: 'image-hover-zoom',
               sizes: sizes,
               loading: 'lazy',
-              widths: '360, 480, 640, 800, 1080, 1360, 1920'
+              widths: '360, 480, 640, 800, 1080, 1360, 1920',
+              alt: card_article.image.alt | default: card_article.title
           }}
           {{ card_article | image_url: width: 20 | image_tag: class: 'media-lq-placeholder', fetchpriority: 'low' }}
 
