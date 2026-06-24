@@ -1,3 +1,50 @@
+{% comment %}
+================================================================================
+  IMAGE SLIDER (USER GUIDE) — performance-optimized rewrite
+  Same visuals, same class names, same schema, same behavior.
+
+  OPTIMIZATIONS APPLIED:
+   1. LCP   First slide eager + fetchpriority="high"; the rest stay lazy.
+            Metafield first image also gets fetchpriority="high".
+   2. srcset/sizes on every slide <img> (300/400/600/800w) so the browser
+            picks a slot-appropriate file instead of always pulling 400w.
+   3. will-change moved OUT of static CSS; toggled on the track only during a
+            drag (set in touchStart, cleared ~450ms after touchEnd).
+   4. resize handler debounced 150ms.
+   5. Dots rebuilt only when the dot COUNT changes; otherwise active state only.
+   6. updateSlideWidths() does one read + a batched rAF write (no thrash).
+   7. Autoplay paused when off-screen (IntersectionObserver) or tab hidden
+            (visibilitychange).
+   8. Lightbox reads a dedicated data-lightbox-src (1200w) instead of the lazy
+            low-res currentSrc; lightbox <img> sized 1200x1200, lazy removed.
+   9. Close-button webp asset replaced with an inline SVG (one fewer request).
+  10. Lightbox keydown listener attached on open, detached on close only.
+
+  DELIBERATE DEVIATIONS FROM THE BRIEF (read these):
+   A. startAutoplay() now clears its own interval first. REQUIRED by #7: the
+      IntersectionObserver fires once on observe and the init() autoplay start
+      also runs, so without this guard you'd get TWO setInterval timers running
+      (double-speed autoplay + a leak). The original startAutoplay overwrote
+      this.autoplayInterval without clearing it.
+   B. #6 caches the computed slideWidth and goToSlide() reads that cached value
+      instead of slides[0].offsetWidth. With the width write deferred to rAF,
+      reading offsetWidth right after (as the original goToSlide did) returns
+      STALE geometry on resize -> the slider would land misaligned on any slide
+      except the first. Same math, no DOM read-back, no misalignment.
+   C. #8 data-lightbox-src is added ONLY to the metafield image. Only metafield
+      slides carry [data-popup-slide], so only they ever open the lightbox.
+      Adding the attribute to the 8 manual images (as the snippet literally
+      shows) would ship ~2KB of dead URLs that nothing reads — the opposite of
+      the perf goal. Manual-slide lightbox was NOT enabled (that would be new
+      behavior), so manual slides correctly stay non-popup.
+
+  MINOR NOTE: #9 renders the close icon at 16x16 (per the supplied SVG) vs the
+  old 12x12 webp. Set the SVG to width="12" height="12" if you want pixel parity.
+  The dead `.ai-slider-lightbox-close img{}` rule is left untouched per "don't
+  change CSS" — it simply matches nothing now.
+================================================================================
+{% endcomment %}
+
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
@@ -18,7 +65,6 @@
     gap: {{ block.settings.slide_gap }}px;
     align-items: stretch;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
     cursor: grab;
     user-select: none;
   }
@@ -378,10 +424,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_1 != blank %}
                 <a href="{{ block.settings.image_link_1 }}" {% if block.settings.new_image_link_1 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_1 | image_url: width: 400 }}" alt="{{ block.settings.image_1.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_1 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_1 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_1 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_1 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_1 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_1.alt | escape }}" loading="eager" fetchpriority="high" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_1 | image_url: width: 400 }}" alt="{{ block.settings.image_1.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_1 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_1 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_1 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_1 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_1 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_1.alt | escape }}" loading="eager" fetchpriority="high" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_1 != blank %}
@@ -395,10 +459,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_2 != blank %}
                 <a href="{{ block.settings.image_link_2 }}" {% if block.settings.new_image_link_2 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_2 | image_url: width: 400 }}" alt="{{ block.settings.image_2.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_2 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_2 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_2 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_2 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_2 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_2.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_2 | image_url: width: 400 }}" alt="{{ block.settings.image_2.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_2 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_2 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_2 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_2 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_2 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_2.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_2 != blank %}
@@ -412,10 +494,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_3 != blank %}
                 <a href="{{ block.settings.image_link_3 }}" {% if block.settings.new_image_link_3 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_3 | image_url: width: 400 }}" alt="{{ block.settings.image_3.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_3 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_3 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_3 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_3 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_3 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_3.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_3 | image_url: width: 400 }}" alt="{{ block.settings.image_3.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_3 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_3 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_3 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_3 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_3 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_3.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_3 != blank %}
@@ -429,10 +529,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_4 != blank %}
                 <a href="{{ block.settings.image_link_4 }}" {% if block.settings.new_image_link_4 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_4 | image_url: width: 400 }}" alt="{{ block.settings.image_4.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_4 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_4 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_4 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_4 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_4 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_4.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_4 | image_url: width: 400 }}" alt="{{ block.settings.image_4.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_4 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_4 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_4 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_4 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_4 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_4.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_4 != blank %}
@@ -446,10 +564,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_5 != blank %}
                 <a href="{{ block.settings.image_link_5 }}" {% if block.settings.new_image_link_5 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_5 | image_url: width: 400 }}" alt="{{ block.settings.image_5.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_5 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_5 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_5 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_5 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_5 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_5.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_5 | image_url: width: 400 }}" alt="{{ block.settings.image_5.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_5 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_5 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_5 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_5 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_5 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_5.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_5 != blank %}
@@ -463,10 +599,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_6 != blank %}
                 <a href="{{ block.settings.image_link_6 }}" {% if block.settings.new_image_link_6 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_6 | image_url: width: 400 }}" alt="{{ block.settings.image_6.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_6 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_6 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_6 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_6 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_6 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_6.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_6 | image_url: width: 400 }}" alt="{{ block.settings.image_6.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_6 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_6 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_6 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_6 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_6 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_6.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_6 != blank %}
@@ -480,10 +634,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_7 != blank %}
                 <a href="{{ block.settings.image_link_7 }}" {% if block.settings.new_image_link_7 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_7 | image_url: width: 400 }}" alt="{{ block.settings.image_7.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_7 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_7 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_7 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_7 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_7 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_7.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_7 | image_url: width: 400 }}" alt="{{ block.settings.image_7.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_7 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_7 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_7 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_7 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_7 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_7.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_7 != blank %}
@@ -497,10 +669,28 @@
             <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
               {% if block.settings.image_link_8 != blank %}
                 <a href="{{ block.settings.image_link_8 }}" {% if block.settings.new_image_link_8 %} target="_blank" {% endif %}>
-                  <img src="{{ block.settings.image_8 | image_url: width: 400 }}" alt="{{ block.settings.image_8.alt | escape }}" loading="lazy" width="400" height="800">
+                  <img
+                    src="{{ block.settings.image_8 | image_url: width: 400 }}"
+                    srcset="{{ block.settings.image_8 | image_url: width: 300 }} 300w,
+                            {{ block.settings.image_8 | image_url: width: 400 }} 400w,
+                            {{ block.settings.image_8 | image_url: width: 600 }} 600w,
+                            {{ block.settings.image_8 | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ block.settings.image_8.alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
-                <img src="{{ block.settings.image_8 | image_url: width: 400 }}" alt="{{ block.settings.image_8.alt | escape }}" loading="lazy" width="400" height="800">
+                <img
+                  src="{{ block.settings.image_8 | image_url: width: 400 }}"
+                  srcset="{{ block.settings.image_8 | image_url: width: 300 }} 300w,
+                          {{ block.settings.image_8 | image_url: width: 400 }} 400w,
+                          {{ block.settings.image_8 | image_url: width: 600 }} 600w,
+                          {{ block.settings.image_8 | image_url: width: 800 }} 800w"
+                  sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                         (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                         calc(100vw / {{ block.settings.slides_desktop }})"
+                  alt="{{ block.settings.image_8.alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_8 != blank %}
@@ -522,7 +712,21 @@
               %}
               <div class="ai-slider-slide-{{ ai_gen_id }} ai-slider-slide-custom" data-popup-slide>
                 <div class="ai-slider-image-wrapper-{{ ai_gen_id }}">
-                  <img src="{{ image | image_url: width: 400 }}" alt="{{ image.alt | escape }}" loading="{{ lazyload }}" width="400" height="800">
+                  <img
+                    src="{{ image | image_url: width: 400 }}"
+                    srcset="{{ image | image_url: width: 300 }} 300w,
+                            {{ image | image_url: width: 400 }} 400w,
+                            {{ image | image_url: width: 600 }} 600w,
+                            {{ image | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
+                           (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
+                           calc(100vw / {{ block.settings.slides_desktop }})"
+                    alt="{{ image.alt | escape }}"
+                    loading="{{ lazyload }}"
+                    {% if forloop.first %}fetchpriority="high"{% endif %}
+                    width="400"
+                    height="800"
+                    data-lightbox-src="{{ image | image_url: width: 1200 }}">
                 </div>
               </div>
             {% endfor %}
@@ -556,7 +760,10 @@
 
   <div class="ai-slider-lightbox-{{ ai_gen_id }}" data-lightbox aria-hidden="true">
     <button class="ai-slider-lightbox-close-{{ ai_gen_id }}" type="button" data-lightbox-close aria-label="Close popup">
-      <img src="{{ 'icon-close.webp' | file_url }}" height="24" width="24" loading="lazy">
+      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
     </button>
     <div class="ai-slider-lightbox-dialog-{{ ai_gen_id }}" role="dialog" aria-modal="true" aria-label="Image popup slider">
 
@@ -572,9 +779,8 @@
           data-lightbox-image
           src=""
           alt=""
-          loading="lazy"
-          width="1400"
-          height="1400"
+          width="1200"
+          height="1200"
         >
         <div class="ai-slider-lightbox-caption-wrap-{{ ai_gen_id }}">
           <p class="ai-slider-lightbox-caption-{{ ai_gen_id }}" data-lightbox-caption></p>
@@ -611,6 +817,12 @@
         this.lightboxStartPos = 0;
         this.lightboxCurrentTranslate = 0;
         this.lightboxDragJustHappened = false;
+
+        this.slideWidth = 0;
+        this._lastDotCount = null;
+        this._wcTimer = null;
+        this._io = null;
+        this._onVisibility = null;
 
         this.handleResize = this.handleResize.bind(this);
         this.handleKeydown = this.handleKeydown.bind(this);
@@ -652,6 +864,8 @@
       }
 
       init() {
+        this.handleResize = this._debounce(this.handleResize.bind(this), 150);
+
         this.updateSlidesPerView();
         this.updateSlideWidths();
         this.createDots();
@@ -663,10 +877,39 @@
 
         if (this.settings.autoplay) {
           this.startAutoplay();
+
+          if (typeof IntersectionObserver !== 'undefined') {
+            this._io = new IntersectionObserver((entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  this.startAutoplay();
+                } else {
+                  clearInterval(this.autoplayInterval);
+                }
+              });
+            }, { threshold: 0.1 });
+            this._io.observe(this);
+          }
+
+          this._onVisibility = () => {
+            if (document.hidden) {
+              clearInterval(this.autoplayInterval);
+            } else {
+              this.startAutoplay();
+            }
+          };
+          document.addEventListener('visibilitychange', this._onVisibility);
         }
 
         window.addEventListener('resize', this.handleResize);
-        document.addEventListener('keydown', this.handleKeydown);
+      }
+
+      _debounce(fn, delay) {
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => fn.apply(this, args), delay);
+        };
       }
 
       handleResize() {
@@ -696,17 +939,25 @@
 
         const containerWidth = wrapper.offsetWidth;
         const slideWidth = (containerWidth - (this.settings.gap * (this.slidesPerView - 1))) / this.slidesPerView;
+        this.slideWidth = slideWidth;
 
-        this.slides.forEach((slide) => {
-          slide.style.width = slideWidth + 'px';
+        requestAnimationFrame(() => {
+          this.slides.forEach((slide) => {
+            slide.style.width = slideWidth + 'px';
+          });
         });
       }
 
       createDots() {
         if (!this.dotsContainer) return;
 
-        this.dotsContainer.innerHTML = '';
         const totalDots = Math.max(1, this.slides.length - this.slidesPerView + 1);
+
+        if (this._lastDotCount === totalDots) {
+          return;
+        }
+
+        this.dotsContainer.innerHTML = '';
 
         for (let i = 0; i < totalDots; i++) {
           const dot = document.createElement('button');
@@ -725,9 +976,10 @@
 
           this.dotsContainer.appendChild(dot);
         }
+
+        this._lastDotCount = totalDots;
       }
 
-      /* MODIFIED updateControls() for auto-scrolling dots */
       updateControls() {
         const shouldShowControls = this.slides.length > this.slidesPerView;
 
@@ -746,12 +998,11 @@
             if (index === this.currentIndex) {
               dot.classList.add('active');
 
-              // Scroll the dots container horizontally to center the active dot
               if (this.dotsContainer.scrollWidth > this.dotsContainer.clientWidth) {
                 const dotLeft = dot.offsetLeft;
                 const dotWidth = dot.offsetWidth;
                 const containerWidth = this.dotsContainer.offsetWidth;
-                
+
                 this.dotsContainer.scrollTo({
                   left: dotLeft - (containerWidth / 2) + (dotWidth / 2),
                   behavior: 'smooth'
@@ -771,7 +1022,7 @@
           const caption = slide.querySelector('.ai-slider-caption-{{ ai_gen_id }}');
 
           return {
-            src: img ? (img.currentSrc || img.getAttribute('src') || '') : '',
+            src: img ? (img.dataset.lightboxSrc || img.getAttribute('src') || '') : '',
             alt: img ? (img.getAttribute('alt') || '') : '',
             caption: caption ? caption.innerHTML : ''
           };
@@ -895,6 +1146,9 @@
         this.dragJustHappened = false;
         this.startPos = this.getPositionX(event);
         this.track.classList.add('dragging');
+
+        clearTimeout(this._wcTimer);
+        this.track.style.willChange = 'transform';
       }
 
       touchMove(event) {
@@ -928,6 +1182,10 @@
         }
 
         this.resetAutoplay();
+
+        this._wcTimer = setTimeout(() => {
+          this.track.style.willChange = 'auto';
+        }, 450);
       }
 
       getPositionX(event) {
@@ -945,7 +1203,7 @@
 
       goToSlide(index) {
         this.currentIndex = Math.max(0, Math.min(index, this.maxIndex));
-        const slideWidth = this.slides[0]?.offsetWidth || 0;
+        const slideWidth = this.slideWidth || this.slides[0]?.offsetWidth || 0;
         this.currentTranslate = -this.currentIndex * (slideWidth + this.settings.gap);
         this.prevTranslate = this.currentTranslate;
         this.setSliderPosition();
@@ -976,6 +1234,7 @@
         this.lightbox.classList.add('active');
         this.lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', this.handleKeydown);
         this.resetAutoplay();
       }
 
@@ -985,6 +1244,7 @@
         this.lightbox.classList.remove('active');
         this.lightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        document.removeEventListener('keydown', this.handleKeydown);
 
         if (this.lightboxStage) {
           this.lightboxStage.classList.remove('dragging');
@@ -1119,6 +1379,7 @@
       }
 
       startAutoplay() {
+        clearInterval(this.autoplayInterval);
         this.autoplayInterval = setInterval(() => {
           const popupOpen = this.lightbox && this.lightbox.classList.contains('active');
           if (!popupOpen) {
@@ -1139,8 +1400,16 @@
           clearInterval(this.autoplayInterval);
         }
 
+        clearTimeout(this._wcTimer);
+
         window.removeEventListener('resize', this.handleResize);
         document.removeEventListener('keydown', this.handleKeydown);
+
+        if (this._onVisibility) {
+          document.removeEventListener('visibilitychange', this._onVisibility);
+        }
+
+        this._io?.disconnect();
       }
     }
 

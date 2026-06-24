@@ -12,15 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_6qtWLD": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"hidden-mobile\">\n    <div class=\"\n          product-badges-container flex gap-1 items-center pointer-events-none award-winning-badge-wrapper\n        \"\n      >\n<img src=\"https://cdn.shopify.com/s/files/1/0777/8339/files/award.webp?v=1776679196\" alt=\"Award Trophy\" width=\"15\" height=\"auto\" loading=\"lazy\">    \n<p class=\"text-sm winning-text-color\"> Award Winner </p>\n</div>\n</div>",
-            "collapse_content": false,
-            "collapse_open": false,
-            "heading": ""
-          }
-        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -235,10 +226,14 @@
         "share_button_KkRM8f": {
           "type": "share_button",
           "settings": {}
+        },
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
         }
       },
       "block_order": [
-        "custom_liquid_6qtWLD",
+        "custom_badges_pdp",
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
         "loox_reviews_loox_rating_4MxHdf",
         "c0b62d1f-e562-4b86-84cb-fc22c849e93e",

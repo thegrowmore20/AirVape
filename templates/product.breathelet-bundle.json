@@ -177,9 +177,14 @@
         "share_button_dzf69L": {
           "type": "share_button",
           "settings": {}
+        },
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
         }
       },
       "block_order": [
+        "custom_badges_pdp",
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
         "loox_reviews_loox_rating_APPnRG",
         "c0b62d1f-e562-4b86-84cb-fc22c849e93e",
@@ -224,7 +229,6 @@
           "settings": {
             "metafield_namespace": "custom",
             "metafield_key": "product_short_videos",
-            "autoplay": true,
             "muted": true,
             "video_border_radius": 12,
             "slides_desktop": 4,

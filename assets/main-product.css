@@ -111,6 +111,7 @@
 .icon-wrapper img {
 	display: block;
 	height: auto;
+	aspect-ratio: 1 / 1;
 }
 
 .icon-wrapper{

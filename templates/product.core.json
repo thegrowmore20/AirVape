@@ -12,15 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_Q7gWrb": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% if product.metafields.custom.best_selling %}\n<div class=\"hidden-mobile\">\n  <div class=\"product-badges-container flex gap-1 items-center product-card-badges pointer-events-none z-10 award-winning-badge-wrapper best-selling-badge-wrapper not-without-background\">  \n    <p class=\"text-sm winning-text-color\"> Best Selling </p>\n  </div>\n</div>\n{%  endif %}",
-            "collapse_content": false,
-            "collapse_open": false,
-            "heading": ""
-          }
-        },
         "custom_badges_qTDpM3": {
           "type": "custom_badges",
           "disabled": true,
@@ -250,7 +241,6 @@
         }
       },
       "block_order": [
-        "custom_liquid_Q7gWrb",
         "custom_badges_qTDpM3",
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
         "loox_reviews_loox_rating_Er7tQW",

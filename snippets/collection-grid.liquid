@@ -100,44 +100,34 @@
       }
     </style>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const filterMobileSubCategories = document.querySelectorAll('.mobile-category-facets');
-        const filterMobileTabs = document.querySelectorAll('.category-filter-tab');
-        const filterMblFacets = document.querySelectorAll('label.facets__label.facet-checkbox');
-        const vaporizersTab = document.querySelector('[data-tab="vaporizers"]');
-        const accessoriesTab = document.querySelector('[data-tab="accessories"]');
+      document.addEventListener('DOMContentLoaded', function() {
+        var filterMobileSubCategories = document.querySelectorAll('.mobile-category-facets');
+        var filterMobileTabs = document.querySelectorAll('.category-filter-tab');
 
-        vaporizersTab?.addEventListener('click',() => {
-          accessoriesTab.style.color = '#000';
-          accessoriesTab.style.background = '#fff';
-          accessoriesTab.style.borderRadius = '0';
-        })
-
-        filterMblFacets?.forEach(filterMblFacet => {
-          if(filterMblFacet.classList.contains('current-category')){
-            document.querySelector('[data-tab="accessories"]').classList.add('active');
-            filterMblFacet.closest('.mobile-category-facets').classList.remove('hidden');
-            filterMblFacet.closest('.mobile-category-facets').classList.add('open');
-          }
-        })
-        filterMobileTabs?.forEach(filterMobileTab => {
-          filterMobileTab.addEventListener('click', () => {
-            filterMobileTab.classList.add('active');
-            filterMobileTabs?.forEach(filterMobileTabOther => {
-              if (filterMobileTabOther !== filterMobileTab) {
-                filterMobileTabOther.classList.remove('active')
+        filterMobileTabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            filterMobileTabs.forEach(function(other) {
+              if (other !== tab) {
+                other.classList.remove('active');
+                other.style.color = '';
+                other.style.background = '';
+                other.style.borderRadius = '';
               }
-            })
-            const filterDataTab = filterMobileTab.dataset.tab;
-            filterMobileSubCategories?.forEach(filterMobileSubCategorie => {
-              filterMobileSubCategorie.classList.add('hidden');
-              filterMobileSubCategorie.classList.remove('open');
-              document.querySelector('.mobile-category-facets.'+filterDataTab).classList.remove('hidden');
-              document.querySelector('.mobile-category-facets.'+filterDataTab).classList.add('open');
-            })
-          })
-        })
-      })
+            });
+            tab.classList.add('active');
+            var targetClass = tab.dataset.tab;
+            var targetList = document.querySelector('.mobile-category-facets.' + targetClass);
+            filterMobileSubCategories.forEach(function(list) {
+              list.classList.add('hidden');
+              list.classList.remove('open');
+            });
+            if (targetList) {
+              targetList.classList.remove('hidden');
+              targetList.classList.add('open');
+            }
+          });
+        });
+      });
     </script>
   <div class="category-fitlers-mobile lg:hidden">
     {% assign collection_navigations = section.settings.category_filters | split: ',' %}
@@ -166,11 +156,24 @@
               endif
             endfor
           endif
-        %}
-        
 
-        <div {% if linklists[collection_filter_nav].links.size == 0 %}onclick="window.location.href='{{ routes.collections_url }}/airvape-2025'"{%endif%} class="category-filter-tab {% if col_title_handle contains collection_filter_nav  %}active{% endif %}" data-tab="{{ linklists[collection_filter_nav].title | handle }}">
-          {{ linklists[collection_filter_nav].title | replace: 'Vaporizers', 'Devices' }} 
+          assign has_active_collection = false
+          if linklists[collection_filter_nav].links.size > 0
+            for link in linklists[collection_filter_nav].links
+              if link.handle == col_title_handle or collection.handle == 'replacement-parts'
+                assign has_active_collection = true
+              endif
+            endfor
+          endif
+
+          assign tab_is_active = false
+          if col_title_handle contains collection_filter_nav or has_active_collection
+            assign tab_is_active = true
+          endif
+        %}
+
+        <div {% if linklists[collection_filter_nav].links.size == 0 %}onclick="window.location.href='{{ routes.collections_url }}/airvape-2025'"{%endif%} class="category-filter-tab {% if tab_is_active %}active{% endif %}" data-tab="{{ linklists[collection_filter_nav].title | handle }}">
+          {{ linklists[collection_filter_nav].title | replace: 'Vaporizers', 'Devices' }}
            {% if collection_filter_nav contains 'parts-accessories'  %}
                       ({{ total_collection_products }})
             {% else %}
@@ -178,13 +181,7 @@
           {% endif %}
         </div>
         {% if linklists[collection_filter_nav].links.size > 0 %}
-          {% assign has_active_collection = false %}
-          {% for link in linklists[collection_filter_nav].links %}
-            {% if link.handle == col_title_handle or collection.handle == 'replacement-parts' %}
-              {% assign has_active_collection = true %}
-            {% endif %}
-          {% endfor %}
-        <ul class="facets-layout mobile-category-facets {% if has_active_collection %}open has_active_collection{% endif %} list-unstyled {{ linklists[collection_filter_nav].title | handle }} hidden" role="list">
+        <ul class="facets-layout mobile-category-facets {% if has_active_collection %}open has_active_collection{% else %}hidden{% endif %} list-unstyled {{ linklists[collection_filter_nav].title | handle }}" role="list">
           
           {% for link in linklists[collection_filter_nav].links %}
             {%- if link.type == 'collection_link' -%}
@@ -219,6 +216,10 @@
   {% endif %}
 
 <div class="collection-grid {{ filter_type_class }}">
+  <div class="collection-grid__breadcrumb">
+    {% render 'breadcrumbs' %}
+  </div>
+
   {% if section.settings.show_filters %}
     <div class="collection-grid__facets">
       {% if filter_type != 'drawer' %}
@@ -226,7 +227,7 @@
           {% echo '<sticky-sidebar id="CollectionGrid-StickySidebar" class="max-lg:hidden" disable-below="992" bottom-offset="0" data-preserve-state>' %}
         {% endif %}
 
-        <div class="max-lg:hidden self-start w-full">
+        <div class="max-lg:hidden self-start w-full" id="facets-sidebar">
           {% render 'facets', results: results, filter_type: filter_type %}
         </div>
 
@@ -235,10 +236,25 @@
         {% endif %}
       {% endif %}
 
-      <div class="{% if filter_type != "drawer" %}lg:hidden{% endif %}">
+      <div class="{% if filter_type != "drawer" %}lg:hidden{% endif %}" id="facets-drawer-wrapper">
         {% render 'facets-drawer', results: results %}
       </div>
     </div>
+    <script>
+      ;(function () {
+        var sidebar = document.getElementById('facets-sidebar');
+        var drawer = document.getElementById('facets-drawer-wrapper');
+        if (!sidebar && !drawer) return;
+        function sync() {
+          var lg = window.innerWidth >= 1024;
+          if (sidebar) sidebar.setAttribute('aria-hidden', lg ? 'false' : 'true');
+          // Only toggle drawer aria-hidden when sidebar also exists (vertical/horizontal modes)
+          if (drawer && sidebar) drawer.setAttribute('aria-hidden', lg ? 'true' : 'false');
+        }
+        sync();
+        window.addEventListener('resize', sync, { passive: true });
+      })();
+    </script>
   {% endif %}
 
   {% if section.settings.show_sort_by %}

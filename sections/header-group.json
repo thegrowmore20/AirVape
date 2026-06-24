@@ -14,12 +14,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "88bc7a37-77b6-4afc-9071-f324b1ecedef": {
-          "type": "announcement",
-          "settings": {
-            "text": "<p>Father's Day Sale is LIVE - <a href=\"/collections/fathers-day-sale\" title=\"Father's Day Sale\">Shop Now</a></p>"
-          }
-        },
         "announcement_Ymk49r": {
           "type": "announcement",
           "settings": {
@@ -34,7 +28,6 @@
         }
       },
       "block_order": [
-        "88bc7a37-77b6-4afc-9071-f324b1ecedef",
         "announcement_Ymk49r",
         "announcement_GL9UYp"
       ],
@@ -44,8 +37,8 @@
         "transition": "slide-y",
         "autoplay": true,
         "change_message_every": 5,
-        "background_color": "#C62828",
-        "text_color": "#FFFFFF"
+        "background_color": "#c62828",
+        "text_color": "#ffffff"
       }
     },
     "header": {

@@ -234,9 +234,14 @@
         "share_button_Nqt3nE": {
           "type": "share_button",
           "settings": {}
+        },
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
         }
       },
       "block_order": [
+        "custom_badges_pdp",
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
         "loox_reviews_loox_rating_h9rNxK",
         "c0b62d1f-e562-4b86-84cb-fc22c849e93e",

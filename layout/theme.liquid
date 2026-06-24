@@ -69,20 +69,14 @@
     {{ 'main.css' | asset_url | stylesheet_tag }}
     </noscript>
     
-    {{ 'custom-font.css' | asset_url | preload_tag: as: 'style' }}
-    <link rel="stylesheet"
-        href="{{ 'custom-font.css' | asset_url }}"
-        media="print"
-        onload="this.onload=null;this.media='all'">
-    <noscript>
-    {{ 'custom-font.css' | asset_url | stylesheet_tag }}
-    </noscript>
 
+    {% comment %}
     
     <!-- Age verification popup end -->
     {% unless request.design_mode %}
         {% render 'air-age-verification' %}
     {% endunless %}
+    {% endcomment %}
  
   	{% render 'age-verification-popup' %}
   

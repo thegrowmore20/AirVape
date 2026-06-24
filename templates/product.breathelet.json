@@ -12,15 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_cmB7qz": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% if product.metafields.custom.enable_new_launch_badge %}\n<div class=\"hidden-mobile\">\n     <div class=\"product-badges-container flex gap-1 items-center product-card-badges pointer-events-none z-10 award-winning-badge-wrapper new-launch-badge-wrapper not-without-background\">  \n  <p class=\"text-sm winning-text-color\"> New Launch </p>\n</div>\n</div>\n    {% endif %}",
-            "collapse_content": false,
-            "collapse_open": false,
-            "heading": ""
-          }
-        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -190,10 +181,14 @@
         "share_button_dzf69L": {
           "type": "share_button",
           "settings": {}
+        },
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
         }
       },
       "block_order": [
-        "custom_liquid_cmB7qz",
+        "custom_badges_pdp",
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
         "loox_reviews_loox_rating_APPnRG",
         "c0b62d1f-e562-4b86-84cb-fc22c849e93e",

@@ -557,6 +557,7 @@
         "text_NxYGU8",
         "button_tdrcbn"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -571,6 +572,58 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_MRWqLU": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_xFLYYA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your Experience",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Q6BTLd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover the perfect blend of advanced technology and unbeatable flavor with every hit.</p>"
+          }
+        },
+        "button_FqUJYT": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP ENSŌ",
+            "button_link": "shopify://products/enso",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xFLYYA",
+        "text_Q6BTLd",
+        "button_FqUJYT"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Enso-2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -590,7 +643,7 @@
             "height_tablet": 550,
             "height_desktop": 640,
             "enable_column_1": true,
-            "image_1": "shopify://shop_images/c514292962e1496b83071947d1a36cf7.HD-1080p-7.2Mbps-33788979-ezgif.com-gif-to-webp-converter.webp",
+            "image_1": "shopify://shop_images/AirVape-X-2.webp",
             "border_radius_1": 0,
             "subheading_1": "",
             "heading_1": "Thin. Thinner. X.",
@@ -609,7 +662,7 @@
             "button_bg_color_1": "#ffffff",
             "button_text_color_1": "#000000",
             "enable_column_2": true,
-            "image_2": "shopify://shop_images/AirVape_TrippyTreez-0349.jpg",
+            "image_2": "shopify://shop_images/AirVape-X_Royal-2.webp",
             "border_radius_2": 0,
             "subheading_2": "",
             "heading_2": "X Marks the spot",
@@ -706,6 +759,7 @@
         "c75d64b5-a4e4-4f0c-8cd1-ef3917972694",
         "f4402a37-82aa-45f8-bfce-c61f5adf6b46"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -721,6 +775,58 @@
         "overlay_color": "#000000",
         "overlay_opacity": 35,
         "overlay_type": "gradient"
+      }
+    },
+    "image_with_text_overlay_FccNHg": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_yVUgEr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Power Meets Style",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_mDzHiQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Legacy CORE –</strong> offers powerful performance, sleek design, and easy-to-change skins.</p>"
+          }
+        },
+        "button_P7Cmj7": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop Legacy Core",
+            "button_link": "shopify://products/legacy-core",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yVUgEr",
+        "text_mDzHiQ",
+        "button_P7Cmj7"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Legacy-Core.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
       }
     },
     "blocks_c7UD8Q": {
@@ -739,7 +845,7 @@
             "height_tablet": 550,
             "height_desktop": 640,
             "enable_column_1": true,
-            "image_1": "shopify://shop_images/060796c70bd943e8a1e2af194dcfae49.HD-1080p-7.2Mbps-58950392-ezgif.com-gif-to-webp-converter.webp",
+            "image_1": "shopify://shop_images/Legacy-PRO2-1.webp",
             "border_radius_1": 0,
             "subheading_1": "",
             "heading_1": "Pure Bliss with Every Puff",
@@ -758,7 +864,7 @@
             "button_bg_color_1": "#ffffff",
             "button_text_color_1": "#000000",
             "enable_column_2": true,
-            "image_2": "shopify://shop_images/85de2cddb8964b1cbf38fe95d83d4d62.HD-1080p-7.2Mbps-33790082-ezgif.com-gif-to-webp-converter.webp",
+            "image_2": "shopify://shop_images/XS-GO.webp",
             "border_radius_2": 0,
             "subheading_2": "",
             "heading_2": "Portable heat, anytime, anywhere",
@@ -989,7 +1095,7 @@
         "fit_image": true,
         "enable_transparent_header": false,
         "use_original_media_size": false,
-        "image": "shopify://shop_images/airvape_180423_-20t_1.jpg",
+        "image": "shopify://shop_images/om-2.webp",
         "content_alignment": "md:content-middle-center",
         "content_alignment_mobile": "content-middle-center",
         "link": "",
@@ -1116,8 +1222,10 @@
     "1773124739025cf225",
     "1773906755cb90fdec",
     "video_with_text_overlay_JiVPGJ",
+    "image_with_text_overlay_MRWqLU",
     "177099101064d70b8a",
     "ed3b7d47-7133-4026-abca-8717a2168cce",
+    "image_with_text_overlay_FccNHg",
     "blocks_c7UD8Q",
     "slideshow_nXA9pR",
     "image_with_text_overlay_4wbAtL",

@@ -94,7 +94,7 @@
       {% for option_value in color_option.values %}
         {% if swatches_shown < 3 %}
           {% if option_value.variant != null and option_value.variant.featured_image != null %}
-            <div class="variant-radio-image w-8 md:w-8">
+            <div class="variant-radio-image w-6 md:w-8">
               <input
                 type="radio"
                 id="{{ section.id }}-{{ option_value.variant.id }}"

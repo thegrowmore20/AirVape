@@ -20,6 +20,7 @@
     manual
   {% endif %}
 >
+  {% unless skip_category_nav %}
   {% if section.settings.category_filters != blank %}
     <style>
       @media (min-width: 992px){
@@ -111,6 +112,7 @@
       {% endfor %}
     </div>
   {% endif %}
+  {% endunless %}
 
   <form id="FacetFiltersForm-{{ scope }}">
     <div

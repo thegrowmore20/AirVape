@@ -119,22 +119,18 @@
         {% endunless %}
 
         {% if settings.product_card_custom_badges %}
-          {% render 'product-custom-badges', product: card_product %}
+          <div class="md:hidden">
+            {% render 'product-custom-badges', product: card_product %}
+          </div>
         {% endif %}
+
       </div>
     {% endif %}
 
-
-    {% if card_product.metafields.custom.best_selling %}
-     {% render 'best-selling-badge', class: 'text-xs winning-text-color' %}
-    {% endif %}
-    
-    {% if card_product.metafields.custom.enable_new_launch_badge %}
-     {% render 'new-launch-badge', class: 'text-xs winning-text-color' %}
-    {% endif %}
-
-    {% if card_product.metafields.custom.enable_award_winning %}
-     {% render 'award-winning-badge', class: 'text-xs winning-text-color' %}
+    {% if badges != false and settings.product_card_custom_badges %}
+      <div class="max-md:hidden flex flex-col gap-1 items-end absolute bottom-0 right-0 pointer-events-none z-10">
+        {% render 'product-custom-badges', product: card_product %}
+      </div>
     {% endif %}
 
     {% if settings.product_card_color_display != 'disabled' and swatches != false %}
