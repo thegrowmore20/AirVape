@@ -414,6 +414,7 @@
       "block_order": [
         "slide_XyKr3r"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
       ],
@@ -429,6 +430,58 @@
         "background_animation": "ZoomOut",
         "content_animation": "AppearLineByLine",
         "background_color": "#262626"
+      }
+    },
+    "image_with_text_overlay_jNNqFq": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_MijTML": {
+          "type": "heading",
+          "settings": {
+            "heading": "Change the Skin, keep the CORE",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_b87wzV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Swap the front and back skins to match your style — choose from different colors, textures, or even custom designs. One device, endless looks.</p>"
+          }
+        },
+        "button_3aErmN": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP Skins",
+            "button_link": "shopify://collections/legacy-skin-shop",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MijTML",
+        "text_b87wzV",
+        "button_3aErmN"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Legacy-Core-Product_page2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
       }
     },
     "text_with_icons_tqLMpf": {
@@ -528,6 +581,7 @@
         "heading_74fQ4A",
         "text_46VhEg"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -542,6 +596,46 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 20,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_KbDCRG": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_LFREch": {
+          "type": "heading",
+          "settings": {
+            "heading": "Power you can feel, style you can own.",
+            "heading_size": "h1",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_CEpgtE": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>The Legacy CORE</strong>’s advanced technology ensures top-notch performance, making every moment shared with friends more enjoyable and satisfying.</p><p><strong>Swap skins in seconds</strong>, match your mood, and make it unmistakably yours — without compromising power, flavor, or control.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LFREch",
+        "text_CEpgtE"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Legacy-Core.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -775,8 +869,10 @@
     "custom_section_fYczAN",
     "1759505359de5a7814",
     "slideshow_gpnHad",
+    "image_with_text_overlay_jNNqFq",
     "text_with_icons_tqLMpf",
     "video_with_text_overlay_DTHfhk",
+    "image_with_text_overlay_KbDCRG",
     "video_with_text_YjAd6V",
     "custom_section_AeYVGV",
     "featured_collection_gVmzNA",

@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -226,10 +230,6 @@
         "share_button_KkRM8f": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -405,6 +405,7 @@
       "block_order": [
         "slide_XyKr3r"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
       ],
@@ -420,6 +421,39 @@
         "background_animation": "ZoomOut",
         "content_animation": "AppearLineByLine",
         "background_color": "#262626"
+      }
+    },
+    "image_with_text_overlay_CbfRb6": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_ipcGbR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Just you, your vibe, and the Legacy PRO 2",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ipcGbR"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Legacy-PRO2-Product_Page2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
       }
     },
     "text_with_icons_tqLMpf": {
@@ -550,6 +584,7 @@
         "heading_NxmdbD",
         "text_RVMkDY"
       ],
+      "disabled": true,
       "name": "t:sections.video-with-text.presets__0.name",
       "settings": {
         "custom_class": "video-with-text-section",
@@ -559,6 +594,43 @@
         "loop": true,
         "video": "shopify://files/videos/Finalk_no_smoke0.webm",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_zrXTcP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_QMict3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Simply PRO",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_QPdntg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Packing is effortless, and heat-up happens in seconds — but the PRO 2 doesn’t stop there. Engineered for maximum performance, its refined design and high-grade materials make it the clear choice for those who demand power and precision in every session.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QMict3",
+        "text_QPdntg"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Legacy-PRO2-Product_Page3.webp",
         "image_size": "",
         "image_position": "right",
         "image_width": 50,
@@ -597,6 +669,7 @@
         "heading_74fQ4A",
         "text_46VhEg"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -614,15 +687,56 @@
         "overlay_type": "solid"
       }
     },
+    "image_with_text_overlay_ipUg8e": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_GKb3a6": {
+          "type": "subheading",
+          "settings": {
+            "text": "Simply PRO"
+          }
+        },
+        "heading_UriirK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pure Bliss with Every Puff",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_DRbFwF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Legacy PRO 2’s advanced technology ensures top-notch performance, making every moment shared with friends more enjoyable and satisfying.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_GKb3a6",
+        "heading_UriirK",
+        "text_DRbFwF"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Legacy-PRO2-Product_Page.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
+      }
+    },
     "video_with_text_YjAd6V": {
       "type": "video-with-text",
       "blocks": {
-        "subheading_z8aK4C": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
         "heading_xMFJy3": {
           "type": "heading",
           "settings": {
@@ -647,11 +761,11 @@
         }
       },
       "block_order": [
-        "subheading_z8aK4C",
         "heading_xMFJy3",
         "heading_Emcc3n",
         "text_rh7yMX"
       ],
+      "disabled": true,
       "name": "t:sections.video-with-text.presets__0.name",
       "settings": {
         "custom_class": "video-with-text-section",
@@ -662,6 +776,52 @@
         "video": "shopify://files/videos/legacy2.0_smoky_ss.webm",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "image_size": "media--ratio-4-3",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_94HDtX": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Eck4gh": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Herb to Wax",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "heading_Mf9weX": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Beginner to PRO",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_wTMDeB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The only vape you'll ever need</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Eck4gh",
+        "heading_Mf9weX",
+        "text_wTMDeB"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Legacy-PRO2_a2bf20ad-e702-41f8-abe1-6456ceab794f.webp",
+        "image_size": "",
         "image_position": "left",
         "image_width": 50,
         "text_alignment": "text-center",
@@ -862,11 +1022,15 @@
     "custom_section_eaLVtN",
     "1759505359de5a7814",
     "slideshow_gpnHad",
+    "image_with_text_overlay_CbfRb6",
     "text_with_icons_tqLMpf",
     "rich_text_THk6gf",
     "video_with_text_cbmaUp",
+    "image_with_text_zrXTcP",
     "video_with_text_overlay_DTHfhk",
+    "image_with_text_overlay_ipUg8e",
     "video_with_text_YjAd6V",
+    "image_with_text_94HDtX",
     "video_nrLrNt",
     "custom_section_ggzpUX",
     "featured_collection_WqWJcP",

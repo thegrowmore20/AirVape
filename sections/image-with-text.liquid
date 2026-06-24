@@ -31,9 +31,9 @@
     {% assign image_alt = section.settings.image.alt | default: 'image with text' %}
     {{
       section.settings.image
-      | image_url: width: 3840
+      | image_url: width: 2048
       | image_tag:
-        widths: '512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3840',
+        widths: '375, 420, 512, 768, 1024, 1280, 1536, 1792, 2048',
         sizes: image_sizes,
         loading: image_loading,
         fetchpriority: fetch_priority,

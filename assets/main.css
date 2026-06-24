@@ -11283,11 +11283,11 @@ shopify-accelerated-checkout-cart {
 }
 
 /* klaviyo changes */
-.kl-teaser-Ycwba6{
+[class*="kl-teaser-"]{
   bottom: 56px !important;
 }
 
-.product-page .kl-teaser-Ycwba6{
+.product-page [class*="kl-teaser-"]{
   bottom: 0px !important;
 }
 

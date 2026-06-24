@@ -70,13 +70,12 @@
     </noscript>
     
 
-    {% comment %}
-    
+  
     <!-- Age verification popup end -->
     {% unless request.design_mode %}
         {% render 'air-age-verification' %}
     {% endunless %}
-    {% endcomment %}
+  
  
   	{% render 'age-verification-popup' %}
   
@@ -269,18 +268,21 @@
     {% if request.page_type == 'product' %}
       <script>
         (function() {
+          if (window.innerWidth >= 768) return; // mobile only
+          const TEASER_SELECTOR = '.product-page [class*="kl-teaser-"]';
+          const MAX_ATTEMPTS = 20; // stop polling after ~20s if no teaser loads
+          let attempts = 0;
+
           const initStickyTracker = () => {
-              if (window.innerWidth >= 768) return;
-              
             const stickyBar = document.querySelector('sticky-add-to-cart');
-            const teaser = document.querySelector('.product-page .kl-teaser-Ycwba6');
+            const teaser = document.querySelector(TEASDER_SELECTOR);
 
             if (stickyBar && teaser) {
               teaser.style.setProperty('transition', 'bottom 0.4s ease-in-out', 'important');
 
               // Shared function to update position
               const updatePosition = () => {
-                const isVisible = stickyBar.classList.contains('show'); 
+                const isVisible = stickyBar.classList.contains('show');
                 teaser.style.setProperty('bottom', isVisible ? '62px' : '0px', 'important');
               };
 
@@ -291,12 +293,12 @@
               const observer = new MutationObserver(() => {
                 requestAnimationFrame(updatePosition);
               });
-              observer.observe(stickyBar, { 
-                attributes: true, 
-                attributeFilter: ['class'] 
+              observer.observe(stickyBar, {
+                attributes: true,
+                attributeFilter: ['class']
               });
-              
-            } else {
+
+            } else if (attempts++ < MAX_ATTEMPTS) {
               setTimeout(initStickyTracker, 1000);
             }
           };
@@ -304,9 +306,10 @@
           initStickyTracker();
         })();
       </script>
+    {% endif %}
       <script>
         document.addEventListener("click", (e) => {
-          const input = e.target.closest(".variant-radio-image input[data-variant-id]");
+          const input = e.target.closest(".product-card input[data-variant-id]");
           if (!input) return;
 
           const productCard = input.closest(".product-card");
@@ -320,13 +323,14 @@
           quickAddButton.setAttribute("variant-id", variantId);
         });
       </script>
-    {% endif %}
     
 
     {% assign hulk_handles = 'premium-vaporizer-guide,upgrade-experience,wholesale,dropshipping' | split: ',' %}
-    {% if hulk_handles contains page.handle %}
-      {{ 'custom-hulk-modal.css' | asset_url | stylesheet_tag }}  
-      <script src="{{ 'custom-hulk-modal.js' | asset_url }}" defer="defer"> </script>
+    {% if hulk_handles contains page.handle %}      
+      <style>.hulk-form-modal-custom-overlay{display:none}</style>      
+      <link rel="preload" href="{{ 'custom-hulk-modal.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript>{{ 'custom-hulk-modal.css' | asset_url | stylesheet_tag }}</noscript>
+      <script src="{{ 'custom-hulk-modal.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     
 

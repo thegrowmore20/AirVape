@@ -52,7 +52,7 @@
 <div {% render 'section-attrs', class: 'footer overflow-hidden relative' %}>
   {% if section.settings.background_image != blank %}
     <div class="background-image-properties absolute inset-0">
-      <img class="h-full w-full object-cover" src="{{ section.settings.background_image | image_url }}" alt="{{ section.settings.background_image.alt | default: 'AirVape Footer Background' }}" height="100%" width="100%" loading="lazy">
+      <img class="h-full w-full object-cover" src="{{ section.settings.background_image | image_url: width: 2560, format: 'webp' }}" alt="{{ section.settings.background_image.alt | default: 'AirVape Footer Background' }}" height="100%" width="100%" loading="lazy">
     </div>
   {% endif %}
   

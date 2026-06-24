@@ -43,7 +43,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0,
             "overlay_type": "solid",
-            "heading_html_tag": "p"
+            "heading_html_tag": "h1"
           }
         },
         "slide_WMgPLB": {

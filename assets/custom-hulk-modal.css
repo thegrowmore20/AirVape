@@ -3,27 +3,20 @@ body.hulk-form-modal-custom-open {
     overflow: hidden;
 }
 
-/* 2. Modal Overlay - Hidden by default via CSS */
+/* 2. Modal Overlay - Hidden by default via CSS
+   Position/size/centering handled by theme utilities:
+   .fixed .top-0 .left-0 .w-full .h-full .justify-center .items-center */
 .hulk-form-modal-custom-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 99999;
     padding: 20px;
     box-sizing: border-box;
-    
+
     /* Hidden State */
-    display: none; 
+    display: none;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    
-    /* Layout */
-    justify-content: center;
-    align-items: center;
 }
 
 /* 3. Show State - Triggered by JS */
@@ -33,14 +26,12 @@ body.hulk-form-modal-custom-open {
     visibility: visible;
 }
 
-/* 4. Modal Content Box */
+/* 4. Modal Content Box (position/width via .relative .w-full) */
 .hulk-form-modal-custom-content {
     background: #fff;
-    width: 100%;
     max-width: 650px;
     max-height: 92vh;
     border-radius: 12px;
-    position: relative;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
@@ -55,21 +46,17 @@ body.hulk-form-modal-custom-open {
     transform: scale(1) translateY(0);
 }
 
-/* 5. Close Button (Sticky for scrolling) */
+/* 5. Close Button (Sticky for scrolling)
+   Handled by utilities: .sticky .flex .items-center .justify-center .rounded-full */
 .hulk-form-modal-custom-close-btn {
-    position: sticky;
     top: -10px;
     float: right;
     background: #f1f1f1;
     border: none;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: -35px;
     z-index: 10;
 }

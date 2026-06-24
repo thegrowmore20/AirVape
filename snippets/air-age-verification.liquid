@@ -1,107 +1,105 @@
-<div id="age-verification-popup" class="age-popup-overlay">
-  <div class="age-popup-content">
-    <div class="age-gate-heading">                  
-    {% if settings.popup_logo != blank %}
-      <img
-        src="{{ settings.popup_logo | image_url: width: 276 }}"
-        srcset="
+{% comment %} Age Verification Popup {% endcomment %}
+<div
+  id="age-verification-popup"
+  class="age-popup-overlay fixed inset-0 hidden items-center justify-center text-center"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Age verification"
+  {% if settings.popup_text != blank %}aria-labelledby="age-gate-title"{% endif %}
+>
+  <div class="age-popup-content relative w-full text-white text-center">
+
+    <div class="age-gate-heading">
+      {% if settings.popup_logo != blank %}
+        <img
+          src="{{ settings.popup_logo | image_url: width: 276 }}"
+          srcset="
             {{ settings.popup_logo | image_url: width: 138 }} 138w,
             {{ settings.popup_logo | image_url: width: 276 }} 276w,
             {{ settings.popup_logo | image_url: width: 414 }} 414w,
             {{ settings.popup_logo | image_url: width: 552 }} 552w
           "
-        sizes="(max-width: 480px) 138px, 276px"
-        width="276"
-        height="53"
-        alt="{{ settings.popup_logo.alt | default: shop.name }}"
-        fetchpriority="high"
-        loading="eager"
-        class="age-gate-heading-title-logo"
-      >
+          sizes="(max-width: 480px) 138px, 276px"
+          width="276"
+          height="53"
+          alt="{{ settings.popup_logo.alt | default: shop.name }}"
+          loading="lazy"
+          class="age-gate-heading-title-logo"
+        >
       {% endif %}
     </div>
+
     {% if settings.popup_text %}
-      <h2>{{ settings.popup_text }}</h2>
-    {%  endif %}
+      <p id="age-gate-title" class="age-gate-title">{{ settings.popup_text }}</p>
+    {% endif %}
+
     <div class="age-popup-buttons">
-      <button onclick="setAgeVerification(true)">Yes</button>
-      <button onclick="setAgeVerification(false)">No</button>
+      <button
+        id="age-yes-btn"
+        class="text-white cursor-pointer"
+        onclick="setAgeVerification(true)"
+        aria-label="Yes, I am 21 or older"
+      >Yes</button>
+      <button
+        class="text-white cursor-pointer"
+        onclick="setAgeVerification(false)"
+        aria-label="No, I am under 21"
+      >No</button>
     </div>
-    <label class="age-remember-label">
-      <input type="checkbox" id="remember-me" checked> <span class="remember-text">Remember me</span>
+
+    <label class="age-remember-label flex items-center justify-center">
+      <input type="checkbox" id="remember-me" class="cursor-pointer" checked>
+      <span class="remember-text text-white cursor-pointer opacity-50">Remember me on this device</span>
     </label>
+
   </div>
 </div>
 
 <style>
+  /* Layout (fixed, flex centering, text-white, etc.) handled by theme utility
+     classes in the markup. Only non-mappable values are kept below. */
   .age-popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: #111111;
-    justify-content: center;
-    align-items: center;
     z-index: 500001;
-    text-align: center;
   }
-  
+
   .age-gate-heading img {
     margin: 0 auto 30px;
   }
-  
+
   .age-popup-content {
     background-color: #111111;
-    color: #fff;
     padding: 30px 40px;
     border-radius: 8px;
     max-width: 600px;
-    width: 100%;
-    text-align: center;
-    position: relative;
     z-index: 10000;
   }
-  
-  .age-popup-content h2 {
+
+  .age-gate-title {
     margin: 15px 0;
   }
-  
+
   .age-popup-buttons button {
     margin: 10px 3px;
     padding: 6px 18px;
     background-color: #333333;
-    color: white;
-    border: none;
     border-radius: 4px;
-    cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     border: 1px solid transparent;
   }
-  
+
   .age-popup-buttons button:hover {
     border-color: #ffffff;
   }
-  
+
   .age-remember-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 7px;
     margin-top: 15px;
   }
-  
-  .age-remember-label input {
-    cursor: pointer;
-  }
-  
+
   .remember-text {
-    color: white;
-    cursor: pointer;
-    font-size: 13px;  
-    opacity: .5;
+    font-size: 13px;
   }
 </style>
 
@@ -114,35 +112,44 @@
   });
   
   function showAgePopupIfNeeded() {
-    const ageVerified = localStorage.getItem('ageVerified');
-    
+    // "Remember me" determines where the verification was stored:
+    // localStorage = persistent across sessions, sessionStorage = this session only.
+    const rememberMe = localStorage.getItem('rememberMe') === 'true';
+    const storage = rememberMe ? localStorage : sessionStorage;
+    const ageVerified = storage.getItem('ageVerified');
+
     if (ageVerified === 'true') {
-      hidePopup();
       return;
-    } 
+    }
     if (ageVerified === 'false') {
       window.location.href = 'https://www.google.com';
       return;
     }
-    
+
     const popup = document.getElementById('age-verification-popup');
     popup.style.display = 'flex';
-    
+
     // Save current scroll position
     scrollPosition = window.scrollY || window.pageYOffset;
-    
+
     // Lock body scroll without breaking sticky headers
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollPosition}px`;
     document.body.style.left = '0';
     document.body.style.right = '0';
     document.body.style.width = '100%';
+
+    // Move focus into the dialog and trap it (makes aria-modal truthful)
+    const firstBtn = document.getElementById('age-yes-btn');
+    if (firstBtn) firstBtn.focus();
+    popup.addEventListener('keydown', trapFocus);
   }
-  
+
   function hidePopup() {
     const popup = document.getElementById('age-verification-popup');
     popup.style.display = 'none';
-    
+    popup.removeEventListener('keydown', trapFocus);
+
     // Restore body scroll
     document.body.style.position = '';
     document.body.style.top = '';
@@ -151,20 +158,40 @@
     document.body.style.width = '';
     window.scrollTo(0, scrollPosition);
   }
-  
+
   function setAgeVerification(isOver21) {
     const rememberMe = document.getElementById('remember-me').checked;
-    
-    if (isOver21) {
-      localStorage.setItem('ageVerified', 'true');
-    } else {
-      localStorage.setItem('ageVerified', 'false');
-      window.location.href = 'https://www.google.com';
-    }
-    
+    const storage = rememberMe ? localStorage : sessionStorage;
+
+    // Persist the "remember me" flag first so the next visit reads the right storage
     if (rememberMe) localStorage.setItem('rememberMe', 'true');
     else localStorage.removeItem('rememberMe');
-    
-    hidePopup();
+
+    if (isOver21) {
+      storage.setItem('ageVerified', 'true');
+      hidePopup();
+    } else {
+      storage.setItem('ageVerified', 'false');
+      window.location.href = 'https://www.google.com';
+    }
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    const popup = document.getElementById('age-verification-popup');
+    const focusable = popup.querySelectorAll(
+      'button, input, a[href], [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 </script>

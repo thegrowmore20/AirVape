@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -232,10 +236,6 @@
         "share_button_Nqt3nE": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -349,7 +349,7 @@
             "aggregated": false,
             "limit": 5,
             "hide_thumbnails": false,
-            "maxwidth": 1080,
+            "maxwidth": 1200,
             "is_sample": true
           }
         }
@@ -462,6 +462,7 @@
         "heading_8wEkit",
         "text_m9gQAi"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -476,6 +477,46 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_xkykE8": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_3nJwwr": {
+          "type": "heading",
+          "settings": {
+            "heading": "A revolutionary new way to elevate your herb experience",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_UiQgEN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With <strong>ENSŌ </strong>you can now prolong your vaping session and enjoy amazing clouds in the process by mixing your favorite herb with nicotine-free herbal molasses. This method allows you to have full control over your herb dosage over longer vaping sessions while enjoying, pure, flavorful clouds.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3nJwwr",
+        "text_UiQgEN"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Enso-2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -744,6 +785,7 @@
         "heading_3JzCaE",
         "text_QMcBjM"
       ],
+      "disabled": true,
       "name": "t:sections.video-with-text.presets__0.name",
       "settings": {
         "custom_class": "video-with-text-section",
@@ -753,6 +795,43 @@
         "loop": true,
         "video": "shopify://files/videos/da6f5b12bd4140049bb0a9473dd6d095.HD-720p-4.5Mbps-79892443.webm",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "media--ratio-4-3",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_D9Un9f": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ptdxbh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Magnetic Simplicity",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_BGnLxe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The magnetically attachable mouthpieces effortlessly eliminate the clutter and hassle of awkwardly hanging shisha pipes.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ptdxbh",
+        "text_BGnLxe"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Enso-Product_Page-1.webp",
         "image_size": "media--ratio-4-3",
         "image_position": "right",
         "image_width": 50,
@@ -791,6 +870,7 @@
         "heading_fN4GfY",
         "text_WRLyDB"
       ],
+      "disabled": true,
       "name": "t:sections.video-with-text.presets__0.name",
       "settings": {
         "custom_class": "video-with-text-section",
@@ -800,6 +880,50 @@
         "loop": true,
         "video": "shopify://files/videos/928b86f2b2c54f409d83866a94dee497.HD-1080p-7.2Mbps-33843180.webm",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "image_size": "media--ratio-4-3",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_rzfQHU": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_dYtQrG": {
+          "type": "subheading",
+          "settings": {
+            "text": "ENSŌ's custom Heating algorythm ensures"
+          }
+        },
+        "heading_HhQfay": {
+          "type": "heading",
+          "settings": {
+            "heading": "Formidable Clouds",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_P3NMfb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ENSŌ delivers rich, smooth vapor and dense clouds for a better non-nicotine herbal shisha experience.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_dYtQrG",
+        "heading_HhQfay",
+        "text_P3NMfb"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Enso-Product_Page-circut.webp",
         "image_size": "media--ratio-4-3",
         "image_position": "left",
         "image_width": 50,
@@ -991,6 +1115,7 @@
         "heading_JqUnir",
         "text_etz4WT"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "image-text-overlay-section",
         "full_width": true,
@@ -998,6 +1123,97 @@
         "enable_transparent_header": true,
         "use_original_media_size": false,
         "image": "shopify://shop_images/web_support-6290_430x_bd914f99-8fd9-40c9-9bea-d59b7911fae8.png",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 50,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_4xRpQF": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_NHmnFx": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "FIND OUT"
+          }
+        },
+        "heading_gMNmnB": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "How to use your ENSŌ",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_9nNryy": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Browse the User Guide to get all the necessary information about your ENSŌ and how to use it or watch the tutorial videos.</p>"
+          }
+        },
+        "button_qjUwVB": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_text": "User Guide",
+            "button_link": "shopify://pages/enso-user-guide",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        },
+        "button_RRHWrG": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_text": "How to Videos",
+            "button_link": "shopify://pages/enso-how-to-videos",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        },
+        "heading_FhBdLT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Choose ENSŌ",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_jMeEJf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ENSŌ combines smooth vapor & modular design to give you a better non-nicotine herbal shisha experience. Enjoy a cleaner way to relax without compromising on style.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NHmnFx",
+        "heading_gMNmnB",
+        "text_9nNryy",
+        "button_qjUwVB",
+        "button_RRHWrG",
+        "heading_FhBdLT",
+        "text_jMeEJf"
+      ],
+      "settings": {
+        "custom_class": "image-text-overlay-section",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": true,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Enso-1_edd0f1ee-5138-4f33-a96f-1ac710f5df7a.webp",
         "content_alignment": "md:content-middle-center",
         "content_alignment_mobile": "content-middle-center",
         "link": "",
@@ -1249,16 +1465,20 @@
     "image_with_text_MwCXKV",
     "custom_liquid_tPwXGU",
     "video_with_text_overlay_h6aGCA",
+    "image_with_text_overlay_xkykE8",
     "text_with_icons_a8YfK9",
     "image_before_after_NAGAWD",
     "logo_list_xeE8AU",
     "video_with_text_N4kN6G",
     "video_with_text_ERViGG",
     "video_with_text_tg9GRm",
+    "image_with_text_D9Un9f",
     "video_with_text_w9UM3m",
+    "image_with_text_rzfQHU",
     "image_with_text_xfbNRK",
     "image_with_text_AJaKtP",
     "image_with_text_overlay_UQAiCG",
+    "image_with_text_overlay_4xRpQF",
     "featured_collection_yimCUa",
     "custom_section_YRfa83",
     "custom_section_Rrg6pT",

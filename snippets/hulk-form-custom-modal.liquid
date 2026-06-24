@@ -1,7 +1,7 @@
 <!-- Modal Structure (Remains the same) -->
-<div class="hulk-form-modal-custom-overlay" id="hulk-form-modal-custom-overlay">
-  <div class="hulk-form-modal-custom-content">
-    <button class="hulk-form-modal-custom-close-btn" id="hulk-form-modal-custom-close-btn"><img src="{{ 'icon-close.webp' | file_url }}" height="10" width="10" loading="lazy"></button>    
+<div class="hulk-form-modal-custom-overlay fixed top-0 left-0 w-full h-full justify-center items-center" id="hulk-form-modal-custom-overlay">
+  <div class="hulk-form-modal-custom-content relative w-full">
+    <button class="hulk-form-modal-custom-close-btn sticky flex items-center justify-center rounded-full" id="hulk-form-modal-custom-close-btn"><img src="{{ 'icon-close.webp' | file_url }}" height="10" width="10" loading="lazy"></button>
     <div class="modal-body-text">
       {{ hulk_form_id_block }}
     </div>

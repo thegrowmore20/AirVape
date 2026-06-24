@@ -1,4 +1,4 @@
-﻿{% render 'section-bg-number-vars' %}
+{% render 'section-bg-number-vars' %}
 
 <style>
   #shopify-section-{{ section.id }} {
@@ -31,10 +31,13 @@
           class="block opacity-[--logo-opacity] hover:opacity-100 transition-opacity duration-300"
         >
           {% if block.settings.image != blank %}
+            {% assign img_alt = block.settings.image.alt | default: 'logo image' %}
             {{
               block.settings.image
-              | image_url: width: 256
-              | image_tag: class: 'w-full select-none pointer-events-none'
+              | image_url: width: 256, format: 'webp'
+              | image_tag: class: 'w-full select-none pointer-events-none',
+              alt: img_alt,
+              loading: 'lazy'
             }}
           {% else %}
             <svg

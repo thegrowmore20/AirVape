@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -213,10 +217,6 @@
         "share_button_KkRM8f": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -394,6 +394,55 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_wwcBBH": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_TAVHy6": {
+          "type": "subheading",
+          "settings": {
+            "text": "X marks the spot"
+          }
+        },
+        "heading_dPYczR": {
+          "type": "heading",
+          "settings": {
+            "heading": "One of the World’s leading vape models",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_nQmamc": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>The AirVape X uses a combination of conduction and convection technology to achieve the best heating in just 20 seconds to an optimal level. The X is the ultimate personal dry herb vaporizer featuring outstanding performance and the highest level of discreteness.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_TAVHy6",
+        "heading_dPYczR",
+        "text_nQmamc"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/finger_blue.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -862,6 +911,7 @@
     "custom_section_9j6HhG",
     "17750262364d3b075b",
     "video_with_text_overlay_DTHfhk",
+    "image_with_text_overlay_wwcBBH",
     "text_with_icons_a6nMCN",
     "image_with_text_76bibF",
     "slideshow_ygAcAw",

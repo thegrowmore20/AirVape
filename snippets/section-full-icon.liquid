@@ -27,7 +27,13 @@
 
 <div class="inline-block {{ icon_wrapper_class }} text-[--icon-foreground]" style="{{ style }}" {{ attrs }}>
   {% if custom_icon %}
-    {{ custom_icon | image_url: width: 128 | image_tag: loading: 'lazy', class: 'w-[1em] h-[1em] object-contain' }}
+    {% assign icon_alt = custom_icon.alt | default: 'custom icon image' %}
+    {{ custom_icon 
+      | image_url: width: 128, format: 'webp'
+      | image_tag: loading: 'lazy',
+       class: 'w-[1em] h-[1em] object-contain',
+       alt: icon_alt
+    }}
   {% else %}
     <div class="w-[1em]" style="--icon-stroke-width: {{ stroke_width | default: '1.25' }};">
       {% render 'icon-section', icon: icon %}
