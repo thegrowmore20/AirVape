@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -224,10 +228,6 @@
         "share_button_KkRM8f": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -337,7 +337,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 10,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -681,6 +681,7 @@
       "block_order": [
         "ai_gen_block_657f32b_gqHUzX"
       ],
+      "disabled": true,
       "name": "Custom Section",
       "settings": {
         "full_width": true,
@@ -706,7 +707,7 @@
         "custom_class": "",
         "full_width": true,
         "carousel": true,
-        "products_count": 8,
+        "products_count": 4,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
         "products": [

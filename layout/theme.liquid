@@ -16,7 +16,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -59,7 +59,14 @@
     %}
 
     {% comment %} {{ 'main.css' | asset_url | stylesheet_tag: preload: true }}   {% endcomment %}
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+        media="print"
+        onload="this.onload=null;this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"></noscript>
+
     {{ 'main.css' | asset_url | preload_tag: as: 'style' }}
     <link rel="stylesheet"
         href="{{ 'main.css' | asset_url }}"
@@ -68,6 +75,7 @@
     <noscript>
     {{ 'main.css' | asset_url | stylesheet_tag }}
     </noscript>
+
     
 
   

@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -234,10 +238,6 @@
         "share_button_Nqt3nE": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -349,7 +349,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 10,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -956,7 +956,7 @@
         "custom_class": "",
         "full_width": true,
         "carousel": true,
-        "products_count": 8,
+        "products_count": 4,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
         "products": [
@@ -1055,10 +1055,10 @@
         "heading_color": ""
       }
     },
-    "custom_section_Rrg6pT": {
+    "custom_section_pKMTXJ": {
       "type": "custom-section",
       "blocks": {
-        "ai_gen_block_657f32b_6ciKcf": {
+        "ai_gen_block_657f32b_bNk4UE": {
           "type": "ai_gen_block_657f32b",
           "settings": {
             "data_source": "manual",
@@ -1066,15 +1066,15 @@
             "metafield_key": "user_guide",
             "image_1": "shopify://shop_images/Unboxing-01.webp",
             "image_text_1": "ENSŌ Unboxing",
-            "image_link_1": "https://youtu.be/_FuUpm6uevY?si=7dAIE4sFYWEfgp6F",
+            "image_link_1": "https://www.youtube.com/watch?v=kAVGefMbILA",
             "new_image_link_1": true,
             "image_2": "shopify://shop_images/Quick_setup-01.webp",
             "image_text_2": "ENSŌ Quick Setup",
-            "image_link_2": "https://youtu.be/maaiNqLwVTY?si=aFpMIfC_AKtHHryH",
+            "image_link_2": "https://www.youtube.com/watch?v=hm01ZbaWdpY",
             "new_image_link_2": true,
             "image_3": "shopify://shop_images/Cleaning-01.webp",
             "image_text_3": "ENSŌ Cleaning",
-            "image_link_3": "https://youtu.be/NH74dp04elA?si=crjHlZEZCxOZgmB8",
+            "image_link_3": "https://www.youtube.com/watch?v=gAHT4Sp2tOM",
             "new_image_link_3": true,
             "image_text_4": "",
             "image_link_4": "",
@@ -1110,7 +1110,7 @@
         }
       },
       "block_order": [
-        "ai_gen_block_657f32b_6ciKcf"
+        "ai_gen_block_657f32b_bNk4UE"
       ],
       "name": "Custom Section",
       "settings": {
@@ -1202,7 +1202,7 @@
     "image_with_text_overlay_UQAiCG",
     "featured_collection_yimCUa",
     "custom_section_YRfa83",
-    "custom_section_Rrg6pT",
+    "custom_section_pKMTXJ",
     "featured_collection_9g4PBk",
     "product_faqs_3giXY3"
   ]

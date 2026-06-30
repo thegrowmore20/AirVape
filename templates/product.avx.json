@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -219,10 +223,6 @@
         "share_button_KkRM8f": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -332,7 +332,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 5,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -387,6 +387,7 @@
         "heading_74fQ4A",
         "text_46VhEg"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -401,6 +402,54 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_AYA94d": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_YrLPCr": {
+          "type": "subheading",
+          "settings": {
+            "text": "X marks the spot"
+          }
+        },
+        "heading_8e9Nx3": {
+          "type": "heading",
+          "settings": {
+            "heading": "One of the World’s leading vape models",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_L6Nj3q": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>The AirVape X uses a combination of conduction and convection technology to achieve the best heating in just 20 seconds to an optimal level. The X is the ultimate personal dry herb vaporizer featuring outstanding performance and the highest level of discreteness.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_YrLPCr",
+        "heading_8e9Nx3",
+        "text_L6Nj3q"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "image-text-overlay-section",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/AirVape-X-2_1.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -487,7 +536,7 @@
         "custom_class": "",
         "full_width": true,
         "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/Heating1.gif",
+        "image": "shopify://shop_images/AirVape-X_Royal-Product_Page.webp",
         "image_size": "",
         "image_position": "right",
         "image_width": 50,
@@ -688,7 +737,7 @@
         "custom_class": "",
         "full_width": true,
         "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/WaterShell.gif",
+        "image": "shopify://shop_images/AirVape-X_Royal-Product_Page2.webp",
         "image_size": "",
         "image_position": "right",
         "image_width": 50,
@@ -778,7 +827,7 @@
         "custom_class": "",
         "full_width": true,
         "carousel": true,
-        "products_count": 8,
+        "products_count": 4,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
         "products": [
@@ -872,6 +921,7 @@
     "custom_section_ttwdUz",
     "1775027402f323ad93",
     "video_with_text_overlay_DTHfhk",
+    "image_with_text_overlay_AYA94d",
     "text_with_icons_KkHLhA",
     "image_with_text_76bibF",
     "slideshow_ygAcAw",

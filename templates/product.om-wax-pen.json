@@ -397,6 +397,7 @@
         "heading_TbLFfE",
         "text_67YREQ"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -411,6 +412,53 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_AKe8PX": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_Fz8pEJ": {
+          "type": "subheading",
+          "settings": {
+            "text": "Airvape om keychain wax pen"
+          }
+        },
+        "heading_teTXMY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Don’t let the appearance of the AirVape OM fool you",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_hEkMt3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It might look like a keychain and well, it is a keychain, but nonetheless it is a lean, mean vaping machine that hits like a dream yet is discreet as a whisper.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Fz8pEJ",
+        "heading_teTXMY",
+        "text_hEkMt3"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "image-text-overlay-section",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/om-2_a7f86827-316a-40ac-8f1b-b7f1036bf647.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -681,6 +729,7 @@
     "custom_section_fiFigX",
     "1774934113c38840b9",
     "video_with_text_overlay_xxcGW7",
+    "image_with_text_overlay_AKe8PX",
     "text_with_icons_C8jJBL",
     "image_with_text_YeCgkp",
     "custom_section_PAbbkY",

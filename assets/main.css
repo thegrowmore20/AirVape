@@ -1322,13 +1322,19 @@ details > summary {
   background-color: rgb(var(--color-foreground) / var(--tw-bg-opacity));
   padding-left: 0.4rem;
   padding-right: 0.4rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
   font-size: var(--size-text-2xs);
   font-weight: var(--font-body-weight-bold);
   line-height: 1;
   --tw-text-opacity: 1;
   color: rgb(var(--color-background) / var(--tw-text-opacity));
+
+  @media screen and (max-width: 480px){
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
 }
 
 .award-winner{

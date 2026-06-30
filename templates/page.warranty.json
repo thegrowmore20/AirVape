@@ -48,7 +48,7 @@
         "full_width": true,
         "show_page_title": false,
         "custom_page_title": true,
-        "custom_heading": "FREE Liftetime Warranty<sup class=\"text-xs\">Ltd.</sup> Registration",
+        "custom_heading": "FREE Lifetime Warranty<sup class=\"text-xs\">Ltd.</sup> Registration",
         "content_width": "large",
         "content_text_size": "prose",
         "heading_size": "h2",
@@ -61,6 +61,7 @@
     "featured_collection_FFU8xM": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,

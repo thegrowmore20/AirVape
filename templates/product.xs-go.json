@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -222,10 +226,6 @@
         "share_button_KkRM8f": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -335,7 +335,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 5,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -390,6 +390,7 @@
         "heading_74fQ4A",
         "text_46VhEg"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -404,6 +405,46 @@
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_9xYHNB": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_FDFJp4": {
+          "type": "subheading",
+          "settings": {
+            "text": "Ready. XS. GO."
+          }
+        },
+        "heading_6kQj3j": {
+          "type": "heading",
+          "settings": {
+            "heading": "Introducing AirVape’s next model in an elegant onyx black color.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_FDFJp4",
+        "heading_6kQj3j"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "image-text-overlay-section",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/XS-GO_c2746d90-8913-4b0d-9df5-c09262d5cca2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "overlay_type": "solid"
       }
     },
@@ -490,8 +531,8 @@
         "custom_class": "",
         "full_width": true,
         "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/Temp_settings.gif",
-        "image_size": "media--ratio-4-3",
+        "image": "shopify://shop_images/XS-GO-Product_Page.webp",
+        "image_size": "",
         "image_position": "right",
         "image_width": 50,
         "text_alignment": "text-center",
@@ -839,6 +880,7 @@
     "custom_section_7cJU78",
     "1774941277ecaf47f0",
     "video_with_text_overlay_DTHfhk",
+    "image_with_text_overlay_9xYHNB",
     "text_with_icons_3KU3Me",
     "image_with_text_76bibF",
     "slideshow_ygAcAw",

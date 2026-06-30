@@ -13,9 +13,9 @@
                   sizes="(max-width:767px)45vw,(max-width:991px)30vw,22vw".
    3. Preconnect  <link rel=preconnect/dns-prefetch> to i.ytimg.com — warms the
                   thumbnail CDN connection before the imgs request.
-   4. Inline play Clicking a thumbnail now plays the video INLINE inside its own
-                  slide (no fullscreen popup/overlay). One video plays at a time
-                  per slider; opening another stops the previous one.
+   4. CSS once    Shared popup CSS pulled OUT of the per-block {% style %} and
+                  injected ONCE per page via window.YTPopupStylesInjected.
+                  ~1.5KB CSS de-duplicated for every extra block on the page.
    5. Short IDs   Class/element prefix shortened to avs-{tail} (see note below).
                   ~30-40% smaller class strings, repeated dozens of times.
    6. GPU         will-change:transform on the track; translate3d() everywhere;
@@ -30,7 +30,7 @@
                   slider is >=50% visible. Click-to-play is wired immediately.
   10. Guard       Element registration guarded with customElements.get() so a
                   repeated section never throws "already defined".
-  11. iframe      sandbox + loading="lazy" on the inline iframe; YouTube loop/
+  11. iframe      sandbox + loading="lazy" on the popup iframe; YouTube loop/
                   playlist params dropped (lighter embed). See notes.
 
   DELIBERATE DEVIATIONS FROM THE BRIEF (read these):
@@ -68,12 +68,17 @@
 
   {% style %}
     .avs-{{ short_id }} {
+      display: block;
       width: {{ block.settings.desktop_width_percent }}%;
+      max-width: 100%;
+      margin: 0 auto;
       padding: {{ block.settings.section_padding }}px 0;
     }
 
     .avs-wrap-{{ short_id }} {
-      padding: 0;
+      position: relative;
+      overflow: hidden;
+      padding: 0 20px;
       cursor: grab;
     }
 
@@ -82,9 +87,11 @@
     }
 
     .avs-track-{{ short_id }} {
+      display: flex;
       gap: {{ block.settings.slide_gap }}px;
       transition: transform 0.3s ease;
       will-change: transform;
+      user-select: none;
     }
 
     .avs-track-{{ short_id }}.dragging {
@@ -93,38 +100,44 @@
 
     .avs-slide-{{ short_id }} {
       flex: 0 0 calc((100% - ({{ block.settings.slides_desktop | minus: 1 }} * {{ block.settings.slide_gap }}px)) / {{ block.settings.slides_desktop }});
+      position: relative;
       aspect-ratio: 9 / 16;
       border-radius: {{ block.settings.video_border_radius }}px;
+      overflow: hidden;
       background-color: #000;
     }
 
     .avs-cover-{{ short_id }} {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
       border: none;
-      /* Gradient placeholder so an imageless slide (e.g. Vimeo w/o cover) looks intentional, not broken */
-      background: linear-gradient(135deg, #1f1f1f 0%, #000 100%);
+      background-color: #000;
+      cursor: pointer;
+      display: block;
+      overflow: hidden;
     }
 
     .avs-img-{{ short_id }} {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
       -webkit-user-drag: none;
+      user-select: none;
+      will-change: transform;
       transition: transform 0.3s ease;
-      transform: scale(1.03);
     }
 
     .avs-cover-{{ short_id }}:hover .avs-img-{{ short_id }} {
       transform: scale(1.04);
     }
 
-    /* Inline player — replaces the thumbnail inside the slide on click */
-    .avs-iframe-{{ short_id }} {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-
     .avs-play-{{ short_id }} {
+      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
@@ -132,6 +145,7 @@
       aspect-ratio: 1 / 1;
       opacity: 0.95;
       transition: transform 0.2s ease, opacity 0.2s ease;
+      pointer-events: none;
     }
 
     .avs-play-{{ short_id }} svg {
@@ -147,6 +161,9 @@
     }
 
     .avs-ctrl-{{ short_id }} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 16px;
       margin-top: {{ block.settings.controls_spacing }}px;
     }
@@ -158,7 +175,12 @@
       width: {{ block.settings.arrow_size }}px;
       height: {{ block.settings.arrow_size }}px;
       border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
       transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
     }
 
     .avs-arrow-{{ short_id }}:hover {
@@ -177,7 +199,9 @@
     }
 
     .avs-dots-{{ short_id }} {
+      display: flex;
       gap: 8px;
+      align-items: center;
     }
 
     .avs-dot-{{ short_id }} {
@@ -209,12 +233,16 @@
       .avs-slide-{{ short_id }} {
         flex: 0 0 calc((100% - ({{ block.settings.slides_mobile | minus: 1 }} * {{ block.settings.slide_gap }}px)) / {{ block.settings.slides_mobile }});
       }
+
+      .avs-wrap-{{ short_id }} {
+        padding: 0;
+      }
     }
   {% endstyle %}
 
-  <av-vslider-{{ short_id }} class="avs-{{ short_id }} block max-w-full mx-auto" {{ block.shopify_attributes }}>
-    <div class="avs-wrap-{{ short_id }} relative overflow-hidden" data-wrapper>
-      <div class="avs-track-{{ short_id }} flex select-none" data-track>
+  <av-vslider-{{ short_id }} class="avs-{{ short_id }}" {{ block.shopify_attributes }}>
+    <div class="avs-wrap-{{ short_id }}" data-wrapper>
+      <div class="avs-track-{{ short_id }}" data-track>
         {% for video_url in video_links %}
           {% liquid
             assign video_id = ''
@@ -240,10 +268,10 @@
           %}
 
           {% if video_id != blank %}
-            <div class="avs-slide-{{ short_id }} relative overflow-hidden" data-slide>
+            <div class="avs-slide-{{ short_id }}" data-slide>
               <button
                 type="button"
-                class="avs-cover-{{ short_id }} absolute inset-0 w-full h-full p-0 m-0 cursor-pointer block overflow-hidden"
+                class="avs-cover-{{ short_id }} youtube-trigger"
                 data-video-id="{{ video_id }}"
                 data-video-type="{{ video_type }}"
                 data-mute="{{ block.settings.muted }}"
@@ -251,11 +279,11 @@
               >
                 {%- if block.settings.cover_image != blank -%}
                   <img
-                    class="avs-img-{{ short_id }} w-full h-full object-cover block select-none"
+                    class="avs-img-{{ short_id }}"
                     src="{{ block.settings.cover_image | image_url: width: 600 }}"
                     width="405"
                     height="720"
-                    loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                    loading="lazy"
                     decoding="async"
                     fetchpriority="{% if forloop.first %}high{% else %}low{% endif %}"
                     sizes="(max-width: 767px) 45vw, (max-width: 991px) 30vw, 22vw"
@@ -265,7 +293,7 @@
                 {%- elsif video_type == 'youtube' -%}
                   {%- if is_short -%}
                     <img
-                      class="avs-img-{{ short_id }} w-full h-full object-cover block select-none"
+                      class="avs-img-{{ short_id }}"
                       src="https://i.ytimg.com/vi/{{ video_id }}/oar2.jpg"
                       onerror="if(!this.dataset.f){this.dataset.f='1';this.src='https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg';}"
                       width="405"
@@ -279,7 +307,7 @@
                     >
                   {%- else -%}
                     <img
-                      class="avs-img-{{ short_id }} w-full h-full object-cover block select-none"
+                      class="avs-img-{{ short_id }}"
                       src="https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg"
                       onerror="if(!this.dataset.f){this.dataset.f='1';this.src='https://i.ytimg.com/vi/{{ video_id }}/mqdefault.jpg';}"
                       width="405"
@@ -293,7 +321,7 @@
                     >
                   {%- endif -%}
                 {%- endif -%}
-                <span class="avs-play-{{ short_id }} absolute pointer-events-none" aria-hidden="true">
+                <span class="avs-play-{{ short_id }}" aria-hidden="true">
                   <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
                     <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="{{ block.settings.play_button_color }}"></path>
                     <path d="M45 24 27 14v20z" fill="#ffffff"></path>
@@ -306,9 +334,9 @@
       </div>
     </div>
 
-    <div class="avs-ctrl-{{ short_id }} flex items-center justify-center" data-controls>
+    <div class="avs-ctrl-{{ short_id }}" data-controls>
       {% if block.settings.show_arrows %}
-        <button class="avs-arrow-{{ short_id }} flex items-center justify-center cursor-pointer shrink-0" data-prev aria-label="Previous slide">
+        <button class="avs-arrow-{{ short_id }}" data-prev aria-label="Previous slide">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
@@ -316,11 +344,11 @@
       {% endif %}
 
       {% if block.settings.show_dots %}
-        <div class="avs-dots-{{ short_id }} flex items-center" data-dots></div>
+        <div class="avs-dots-{{ short_id }}" data-dots></div>
       {% endif %}
 
       {% if block.settings.show_arrows %}
-        <button class="avs-arrow-{{ short_id }} flex items-center justify-center cursor-pointer shrink-0" data-next aria-label="Next slide">
+        <button class="avs-arrow-{{ short_id }}" data-next aria-label="Next slide">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
@@ -330,6 +358,87 @@
   </av-vslider-{{ short_id }}>
 
   <script>
+    (function () {
+      if (window.YTPopup) return;
+
+      if (!window.YTPopupStylesInjected) {
+        window.YTPopupStylesInjected = true;
+        var s = document.createElement('style');
+        s.id = 'yt-popup-styles';
+        s.textContent = '.youtube-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999999;padding:20px;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}.youtube-popup-overlay.is-open{opacity:1;visibility:visible}.youtube-popup-content{position:relative;height:min(88vh,92vw * 1.7778,720px);aspect-ratio:9 / 16}.youtube-popup-frame{position:relative;width:100%;height:100%;background:#000;border-radius:12px;overflow:hidden}.youtube-popup-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.youtube-popup-close{position:fixed;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:#fff;color:#000;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s ease;z-index:1}.youtube-popup-close:hover{transform:scale(1.1)}';
+        document.head.appendChild(s);
+      }
+
+      var overlayEl = null;
+      var frameEl = null;
+
+      function buildPopup() {
+        if (overlayEl) return overlayEl;
+
+        var overlay = document.createElement('div');
+        overlay.className = 'youtube-popup-overlay';
+        overlay.innerHTML =
+          '<button class="youtube-popup-close" type="button" aria-label="Close video">' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' +
+          '</button>' +
+          '<div class="youtube-popup-content"><div class="youtube-popup-frame"></div></div>';
+        document.body.appendChild(overlay);
+
+        var frame = overlay.querySelector('.youtube-popup-frame');
+
+        function close() {
+          overlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+          frame.innerHTML = '';
+        }
+
+        overlay.querySelector('.youtube-popup-close').addEventListener('click', close);
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) close();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+        });
+
+        overlayEl = overlay;
+        frameEl = frame;
+        return overlay;
+      }
+
+      window.YTPopup = {
+        open: function (type, id, opts) {
+          opts = opts || {};
+          if (!id) return;
+
+          buildPopup();
+          var src;
+
+          if (type === 'vimeo') {
+            src = 'https://player.vimeo.com/video/' + id + '?autoplay=1&' + (opts.mute ? 'muted=1&' : '') + 'loop=1';
+          } else {
+            src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&' + (opts.mute ? 'mute=1&' : '') + 'controls=1&modestbranding=1&rel=0&playsinline=1';
+          }
+
+          var iframe = document.createElement('iframe');
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
+          iframe.setAttribute('title', 'Video player');
+          iframe.src = src;
+
+          frameEl.innerHTML = '';
+          frameEl.appendChild(iframe);
+
+          overlayEl.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        }
+      };
+
+      var idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 200); };
+      idle(function () { buildPopup(); });
+    })();
+
     (function () {
       var TAG = 'av-vslider-{{ short_id }}';
       if (customElements.get(TAG)) return;
@@ -350,8 +459,6 @@
           this.rafId = null;
           this.resizeTimer = null;
           this.initialized = false;
-          this._activeSlide = null;
-          this._activeTrigger = null;
           this._onMove = this.drag.bind(this);
           this._onUp = this.dragEnd.bind(this);
         }
@@ -422,51 +529,13 @@
             trigger.addEventListener('click', function (e) {
               e.preventDefault();
               if (self.hasDragged) return;
-              self.playInline(slide, trigger);
+              if (window.YTPopup) {
+                window.YTPopup.open(trigger.dataset.videoType, trigger.dataset.videoId, {
+                  mute: trigger.dataset.mute === 'true'
+                });
+              }
             });
           });
-        }
-
-        playInline(slide, trigger) {
-          if (slide.querySelector('[data-frame]')) return; // already playing
-          var id = trigger.dataset.videoId;
-          if (!id) return;
-
-          // Only one inline video plays at a time within this slider
-          if (this._activeSlide && this._activeSlide !== slide) this.stopInline();
-
-          var type = trigger.dataset.videoType;
-          var mute = trigger.dataset.mute === 'true';
-          var src;
-          if (type === 'vimeo') {
-            src = 'https://player.vimeo.com/video/' + id + '?autoplay=1&' + (mute ? 'muted=1&' : '') + 'loop=1';
-          } else {
-            src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&' + (mute ? 'mute=1&' : '') + 'controls=1&modestbranding=1&rel=0&playsinline=1';
-          }
-
-          var iframe = document.createElement('iframe');
-          iframe.className = 'avs-iframe-{{ short_id }}';
-          iframe.setAttribute('data-frame', '');
-          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.setAttribute('loading', 'lazy');
-          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
-          iframe.setAttribute('title', 'Video player');
-          iframe.src = src;
-
-          trigger.style.display = 'none';
-          slide.appendChild(iframe);
-          this._activeSlide = slide;
-          this._activeTrigger = trigger;
-        }
-
-        stopInline() {
-          if (!this._activeSlide) return;
-          var f = this._activeSlide.querySelector('[data-frame]');
-          if (f) f.remove();
-          if (this._activeTrigger) this._activeTrigger.style.display = '';
-          this._activeSlide = null;
-          this._activeTrigger = null;
         }
 
         getSlidesPerView() {

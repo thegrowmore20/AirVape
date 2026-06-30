@@ -502,10 +502,38 @@
           "settings": {
             "widget_id": "GSC-LksRlQIKTNKfbDG"
           }
+        },
+        "ot_instagram_feed_ot_easy_instagram_feed_gEKUwB": {
+          "type": "shopify://apps/ot-instagram-feed/blocks/ot-easy-instagram-feed/75d29d92-c4c5-4091-87e8-4dde82e3828c",
+          "disabled": true,
+          "settings": {
+            "feed_id": "apollo4401782738779000",
+            "title": "",
+            "show_tagged_posts": false,
+            "titleColor": "#000000",
+            "titleSize": 40,
+            "title_tag": "span",
+            "profileTextColor": "#000000",
+            "description": "",
+            "desColor": "#000000",
+            "section_full_width_desktop": false,
+            "show_divider_desktop": false,
+            "top_padding_desktop": 0,
+            "bottom_padding_desktop": 0,
+            "section_full_width_mobile": false,
+            "show_divider_mobile": false,
+            "use_title_settings": false,
+            "titleSizeMobile": 24,
+            "top_padding_mobile": 0,
+            "bottom_padding_mobile": 0,
+            "bss_custom_code": "",
+            "bss_advanced_custom_code": ""
+          }
         }
       },
       "block_order": [
-        "gsc_instagram_feed_instafeed_nYqRJG"
+        "gsc_instagram_feed_instafeed_nYqRJG",
+        "ot_instagram_feed_ot_easy_instagram_feed_gEKUwB"
       ],
       "custom_css": [],
       "settings": {
@@ -643,7 +671,7 @@
             "height_tablet": 550,
             "height_desktop": 640,
             "enable_column_1": true,
-            "image_1": "shopify://shop_images/AirVape-X-2.webp",
+            "image_1": "shopify://shop_images/AirVape-X-2_1.webp",
             "border_radius_1": 0,
             "subheading_1": "",
             "heading_1": "Thin. Thinner. X.",

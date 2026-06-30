@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -181,10 +185,6 @@
         "share_button_dzf69L": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -211,7 +211,7 @@
       "settings": {
         "show_breadcrumbs": false,
         "desktop_media_width": 50,
-        "media_size": "",
+        "media_size": "1",
         "media_layout_desktop": "carousel_vertical",
         "media_mobile_indicator": "thumbnails",
         "media_zoom": "lightbox",
@@ -291,7 +291,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 5,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -358,6 +358,7 @@
       "block_order": [
         "slide_P9Gnka"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
       ],
@@ -372,6 +373,39 @@
         "background_animation": "ZoomOut",
         "content_animation": "AppearLineByLine",
         "background_color": "#262626"
+      }
+    },
+    "image_with_text_overlay_dXzJ3A": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_TqJrpD": {
+          "type": "heading",
+          "settings": {
+            "heading": "A gentle vibration that brings you back.",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TqJrpD"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Breathlet-Product_Page1.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
       }
     },
     "text_with_icons_Vax68Q": {
@@ -633,6 +667,7 @@
       "block_order": [
         "slide_mz9cCY"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
       ],
@@ -647,6 +682,46 @@
         "background_animation": "ZoomOut",
         "content_animation": "AppearLineByLine",
         "background_color": "#262626"
+      }
+    },
+    "image_with_text_overlay_3J9tFC": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_Lm9xzb": {
+          "type": "heading",
+          "settings": {
+            "heading": "The perfect gift for someone who’s always “busy.”",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Wr8WrU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Give them something that doesn’t add pressure — it gives relief.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Lm9xzb",
+        "text_Wr8WrU"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Breathlet-Product_Page2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "overlay_type": "solid"
       }
     },
     "featured_collection_aXfxqR": {
@@ -727,12 +802,14 @@
     "custom_section_KCTWta",
     "1775029570ba491f17",
     "slideshow_fBK74r",
+    "image_with_text_overlay_dXzJ3A",
     "text_with_icons_Vax68Q",
     "video_with_text_rk96aP",
     "image_with_text_jxrXPJ",
     "video_with_text_NTn8HW",
     "featured_collection_DVwEEf",
     "slideshow_4xMkwr",
+    "image_with_text_overlay_3J9tFC",
     "featured_collection_aXfxqR",
     "related-products",
     "product_faqs_TkrPcm"

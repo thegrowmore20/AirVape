@@ -350,7 +350,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 10,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -608,7 +608,7 @@
         "custom_class": "",
         "full_width": true,
         "carousel": true,
-        "products_count": 8,
+        "products_count": 4,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
         "products": [

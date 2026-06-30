@@ -325,7 +325,7 @@
             "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
-            "limit": 5,
+            "limit": 4,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true
@@ -380,6 +380,7 @@
         "heading_74fQ4A",
         "text_46VhEg"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "video-text-overlay-section",
         "full_width": true,
@@ -427,15 +428,14 @@
         "heading_dPYczR",
         "text_nQmamc"
       ],
-      "disabled": true,
       "name": "t:sections.image-with-text-overlay.presets__0.name",
       "settings": {
-        "custom_class": "",
+        "custom_class": "image-text-overlay-section",
         "full_width": true,
         "fit_image": true,
         "enable_transparent_header": false,
         "use_original_media_size": false,
-        "image": "shopify://shop_images/finger_blue.webp",
+        "image": "shopify://shop_images/AirVape-X_Royal_7c08f528-a422-4504-ab5c-dafa837309fe.webp",
         "content_alignment": "md:content-middle-center",
         "content_alignment_mobile": "content-middle-center",
         "link": "",
@@ -529,7 +529,7 @@
         "custom_class": "",
         "full_width": true,
         "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/Heating1.gif",
+        "image": "shopify://shop_images/AirVape-X_Royal-Product_Page.webp",
         "image_size": "",
         "image_position": "right",
         "image_width": 50,
@@ -727,7 +727,7 @@
         "custom_class": "",
         "full_width": true,
         "remove_bottom_spacing": false,
-        "image": "shopify://shop_images/WaterShell.gif",
+        "image": "shopify://shop_images/AirVape-X_Royal-Product_Page2.webp",
         "image_size": "",
         "image_position": "right",
         "image_width": 50,
@@ -817,7 +817,7 @@
         "custom_class": "",
         "full_width": true,
         "carousel": true,
-        "products_count": 8,
+        "products_count": 4,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
         "products": [
