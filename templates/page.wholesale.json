@@ -49,6 +49,219 @@
         "overlay_type": "solid"
       }
     },
+    "image_with_text_PNdqU7": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GeGFNr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Partner Program",
+            "heading_size": "h6",
+            "heading_html_tag": "h3"
+          }
+        },
+        "heading_kQb44g": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stock Premium AirVape Vaporizers at Competitive Wholesale Pricing",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_gRktEn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Partner with AirVape to access premium vaporizers and accessories through a wholesale program designed for retailers, resellers, distributors, and serious trade partners.</p><p>We offer flexible wholesale solutions based on product type, order quantity, and business requirements, helping partners source premium products with competitive pricing and scalable opportunities.</p><p>Whether you are looking for standard products or exploring larger-volume orders, AirVape is built to support long-term wholesale growth.</p>"
+          }
+        },
+        "button_F7JfVc": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Wholesale",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_GeGFNr",
+        "heading_kQb44g",
+        "text_gRktEn",
+        "button_F7JfVc"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": true,
+        "image": "shopify://shop_images/wholesale_anim_82844121-d17a-4edb-af89-a01d00fd64b0.gif",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "wholesale_partner_d7GMLA": {
+      "type": "wholesale-partner",
+      "blocks": {
+        "benefit_FtiaAy": {
+          "type": "benefit",
+          "settings": {
+            "icon_width": 48,
+            "title": "Premium Product Range",
+            "text": "<p>AirVape offers premium vaporizers and accessories designed for customers who value performance, portability, and quality. Our wholesale range includes popular products such as AirVape X, Legacy PRO, and selected accessories.</p>"
+          }
+        },
+        "benefit_bN4LBY": {
+          "type": "benefit",
+          "settings": {
+            "icon_width": 48,
+            "title": "Competitive Wholesale Pricing",
+            "text": "<p>Our wholesale pricing is based on product type, order quantity, and order value, helping partners access more competitive rates as order volume increases.</p>"
+          }
+        },
+        "benefit_qeF9NR": {
+          "type": "benefit",
+          "settings": {
+            "icon_width": 48,
+            "title": "Volume-Based Pricing Opportunities",
+            "text": "<p>Wholesale pricing is generally structured in tiers. The higher the quantity, the more competitive the pricing can become, depending on the product and order scope.</p>"
+          }
+        },
+        "benefit_G6dfwN": {
+          "type": "benefit",
+          "settings": {
+            "icon_width": 48,
+            "title": "International Shipping Support",
+            "text": "<p>We can ship to many countries worldwide, depending on courier coverage, customs regulations, product availability, and shipping method.</p>"
+          }
+        },
+        "benefit_BPxDLH": {
+          "type": "benefit",
+          "settings": {
+            "icon_width": 48,
+            "title": "Marketing Support for Approved Partners",
+            "text": "<p>Approved wholesale partners may receive selected marketing materials such as available product images, product descriptions, specifications, and key product information to support sales and promotion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_FtiaAy",
+        "benefit_bN4LBY",
+        "benefit_qeF9NR",
+        "benefit_G6dfwN",
+        "benefit_BPxDLH"
+      ],
+      "name": "Partnership",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "extra-large",
+        "accent_color": "rgba(0,0,0,0)",
+        "subheading": "Benefits",
+        "heading": "Why Partner With AirVape?",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "wholesale_process_7rHAii": {
+      "type": "wholesale-process",
+      "blocks": {
+        "step_XQN7iY": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "title": "",
+            "text": "<p>Submit your wholesale inquiry with your business details, product interest, and estimated order quantity.</p>"
+          }
+        },
+        "step_PBMc3E": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "title": "",
+            "text": "<p>Our team will review your request.</p>"
+          }
+        },
+        "step_mtQyxB": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "title": "",
+            "text": "<p>Approved wholesale partners may receive selected marketing materials such as product images, descriptions, specifications, and key product information to support sales and promotion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_XQN7iY",
+        "step_PBMc3E",
+        "step_mtQyxB"
+      ],
+      "name": "Wholesale Process",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "large",
+        "accent_color": "#c9a24b",
+        "number_bg_color": "#c9a24b",
+        "subheading": "Simple Process",
+        "heading": "Ready to Partner With AirVape?",
+        "content": "<p>Apply today to explore wholesale pricing, product availability, and partnership opportunities with AirVape.</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "background_color": "#111111",
+        "text_color": "#bdbdbd",
+        "heading_color": "#ffffff"
+      }
+    },
+    "featured_collection_bkpmrh": {
+      "type": "featured-collection",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "carousel": false,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -103,6 +316,7 @@
         "text_WdDyKH",
         "button_7xGdXF"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "content_alignment": "mx-auto",
@@ -135,6 +349,7 @@
         "heading_CGidjm",
         "text_jy6qeQ"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "content_alignment": "mx-auto",
@@ -147,6 +362,7 @@
     },
     "rich_text_iKXHJF": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "heading_UUNnhE": {
           "type": "heading",
@@ -173,6 +389,44 @@
         "text_alignment": "text-left",
         "content_width": "normal",
         "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "wholesale_who_can_apply_kX9mQ2": {
+      "type": "wholesale-who-can-apply",
+      "blocks": {
+        "partner_type_1": { "type": "partner_type", "settings": { "icon": "businesses", "label": "Businesses" } },
+        "partner_type_2": { "type": "partner_type", "settings": { "icon": "distributors", "label": "Distributors" } },
+        "partner_type_3": { "type": "partner_type", "settings": { "icon": "resellers", "label": "Resellers" } },
+        "partner_type_4": { "type": "partner_type", "settings": { "icon": "retailers", "label": "Retailers" } },
+        "partner_type_5": { "type": "partner_type", "settings": { "icon": "smoke_shops", "label": "Smoke Shops" } },
+        "partner_type_6": { "type": "partner_type", "settings": { "icon": "check", "label": "Other Serious Trade Partners" } }
+      },
+      "block_order": [
+        "partner_type_1",
+        "partner_type_2",
+        "partner_type_3",
+        "partner_type_4",
+        "partner_type_5",
+        "partner_type_6"
+      ],
+      "name": "Wholesale · Who can apply",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "large",
+        "accent_color": "#c9a24b",
+        "subheading": "Eligibility",
+        "heading": "Who Can Apply?",
+        "content": "<p>Wholesale applications are open to qualified:</p>",
+        "text_alignment": "text-left",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "show_note": true,
+        "note_text": "<p><strong>Individuals may also apply</strong>, but approval depends on order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>",
+        "background_color": "#ffffff",
         "text_color": "",
         "heading_color": ""
       }
@@ -230,53 +484,6 @@
       "block_order": [
         "heading_j6Mjki",
         "text_KNcmRd"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-left",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "rich_text_j8jgyc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_34r9FY": {
-          "type": "heading",
-          "settings": {
-            "heading": "Become an AirVape Wholesale Partner",
-            "heading_size": "h3",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_FEDtjC": {
-          "type": "text",
-          "settings": {
-            "text": "<p>If you are looking to stock premium vaporizers and accessories through a reliable wholesale partnership, we would love to hear from you.</p><p>Submit your wholesale inquiry with your business details, product interest, and estimated order quantity, and our team will review your request.</p>"
-          }
-        },
-        "button_HzPhzC": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": true,
-            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Apply for Wholesale",
-            "button_link": "",
-            "button_style": "",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "heading_34r9FY",
-        "text_FEDtjC",
-        "button_HzPhzC"
       ],
       "settings": {
         "full_width": true,
@@ -370,48 +577,68 @@
         "heading_color": ""
       }
     },
-    "featured_collection_bkpmrh": {
-      "type": "featured-collection",
+    "rich_text_j8jgyc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_34r9FY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Become an AirVape Wholesale Partner",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_FEDtjC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you are looking to stock premium vaporizers and accessories through a reliable wholesale partnership, we would love to hear from you.</p><p>Submit your wholesale inquiry with your business details, product interest, and estimated order quantity, and our team will review your request.</p>"
+          }
+        },
+        "button_HzPhzC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Wholesale",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_34r9FY",
+        "text_FEDtjC",
+        "button_HzPhzC"
+      ],
       "settings": {
         "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [
-          "enso",
-          "legacy-core",
-          "legacy-pro-2",
-          "airvape-x-royal-edition",
-          "airvape-x",
-          "airvape-xs-go",
-          "airvape-om-keychain-waxpen",
-          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
-        ],
-        "collection": "",
-        "subheading": "",
-        "heading": "OUR SIGNATURE MODELS",
-        "heading_size": "h2",
+        "content_alignment": "mx-auto",
         "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
+        "content_width": "normal",
         "background_color": "",
         "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "h2"
+        "heading_color": ""
       }
     }
   },
   "order": [
     "image_with_text_overlay_FFdmrV",
+    "image_with_text_PNdqU7",
+    "wholesale_partner_d7GMLA",
+    "wholesale_process_7rHAii",
+    "featured_collection_bkpmrh",
     "main",
     "rich_text_R7kq9E",
     "rich_text_4PKHxx",
     "rich_text_iKXHJF",
+    "wholesale_who_can_apply_kX9mQ2",
     "rich_text_6BPfjB",
     "rich_text_bpJjyX",
-    "rich_text_j8jgyc",
     "faq_accordion_XwdGcQ",
-    "featured_collection_bkpmrh"
+    "rich_text_j8jgyc"
   ]
 }

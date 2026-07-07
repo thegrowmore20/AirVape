@@ -59,13 +59,18 @@
     %}
 
     {% comment %} {{ 'main.css' | asset_url | stylesheet_tag: preload: true }}   {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
-        media="print"
-        onload="this.onload=null;this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"></noscript>
+    <link rel="preload" as="font" type="font/woff2" href="{{ 'Montserrat-Thin.woff2' | file_url }}" crossorigin>
+    <style>
+      @font-face {
+          font-family: 'Montserrat';
+          src: url('{{ 'Montserrat-Thin.woff2' | file_url }}') format('woff2'),
+              url('{{ 'Montserrat-Thin.woff' | file_url }}') format('woff');
+          font-weight: 100;
+          font-style: normal;
+          font-display: swap;
+      }
+    </style>
+    
 
     {{ 'main.css' | asset_url | preload_tag: as: 'style' }}
     <link rel="stylesheet"

@@ -11333,3 +11333,19 @@ shopify-accelerated-checkout-cart {
 .sales-end-pe{
   color: #FBBC05;
 }
+
+#bss-instagram-feed {
+    padding: 0px !important;
+}
+
+.affiliate-img-text-banner .button-group-inner .button:hover {
+  color: #000;
+  background: #FBBC05;
+}
+.affiliate-img-text-banner div.text-block-content.image-first-section {
+  max-width: 100%;
+}
+.affiliate-img-text-section .button-group-inner a:hover {
+  background: #ffbc05;
+  color: #000;
+}

@@ -317,461 +317,358 @@
 			endif
 		%}
 		
-		{% if selected_features != blank and compare_products != blank %}
-			<div class="comparison-table-wrap" style="display: none;">
-				<table class="comparison-table">
-					<tbody>
-						<tr>
-							<th class="comparison-table__feature-col">Feature</th>
-							
-							{%- comment -%} Current product column {%- endcomment -%}
-							<th class="comparison-table__product-col">
-								<div class="comparison-product-card">
-									{% if product.featured_image %}
-										{{
-											product.featured_image
-											| image_url: width: 300
-											| image_tag: loading: 'lazy', widths: '150, 225, 300', alt: product.title
-										}}
-									{% endif %}
-									<div class="comparison-product-card__title">{{ product.title }}</div>
-									<div class="comparison-product-card__price">{{ product.price | money }}</div>
-									
-									<quick-add-button
-										class="no-js-hidden"
-										{% if product.has_only_default_variant or product.variants.size == 1 %}
-											variant-id="{{ product.first_available_variant.id }}"
-										{% endif %}
-										handle="{{ product.handle }}"
-									>
-										<button
-											aria-label="{{ 'accessibility.add_to_cart' | t }}"
-											class="
-												button button-secondary mt-2 w-100"
-										>
-											<span class="flex justify-center items-center add-to-cart-span">
-												{% render 'icon-product-cart-black' %}   <span> Add to cart </span>
-											</span>
-										</button>
-									</quick-add-button>
-									
-								</div>
-							</th>
-							
-							{%- comment -%} Compared products columns {%- endcomment -%}
-							{% for cp in compare_products %}
-								{% unless cp.id == product.id %}
-									<th class="comparison-table__product-col">
-										<div class="comparison-product-card">
-											{% if cp.featured_image %}
-												{{
-													cp.featured_image
-													| image_url: width: 300
-													| image_tag: loading: 'lazy', widths: '150, 225, 300', alt: cp.title
-												}}
-											{% endif %}
-											<div class="comparison-product-card__title">{{ cp.title }}</div>
-											<div class="comparison-product-card__price">{{ cp.price | money }}</div>
-										</div>
-									</th>
-								{% endunless %}
-							{% endfor %}
-						</tr>
-						
-						{% for entry in selected_features %}
-							<tr>
-								<th class="comparison-table__row-title">
-									{{ entry.feature_name.value | default: entry.feature_name }}
-								</th>
-								
-								{%- comment -%} Current product value {%- endcomment -%}
-								{% assign current_value = entry[current_compare_key] %}
-								<td>
-									{% if current_value != blank %}
-										{{ current_value.value | default: current_value }}
-									{% else %}
-										—
-									{% endif %}
-								</td>
-								
-								{%- comment -%} Compared products values {%- endcomment -%}
-								{% for cp in compare_products %}
-									{% unless cp.id == product.id %}
-										{% assign cp_compare_key = cp.metafields.custom.compare_key.value %}
-										{% if cp_compare_key == blank %}
-											{% assign cp_compare_key = cp.handle | replace: '-', '_' %}
-										{% endif %}
-										
-										{% assign cp_value = entry[cp_compare_key] | metafield_tag %}
-										
-										<td>
-											{% if cp_value != blank %}
-												{{ cp_value.value | default: cp_value }}
-											{% else %}
-												—
-											{% endif %}
-										</td>
-									{% endunless %}
-								{% endfor %}
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
-		{% endif %}
-		
 		{% if selected_features != blank and compare_products != blank and product.handle != 'enso' %}
 			<div class="premium-aplus premium-aplus-module-5 aplus-container-3 comparison-table">
 				{% render 'section-header' %}    
 				<div id="comparison-table-container-6" data-comparison-name="comparison-table-container-6" class="a-section a-spacing-none table-container">  
-				<div class="table-slider scroll-wrapper-bottom">
-					<table class="a-bordered a-horizontal-stripes scroll-width">
-						<tbody>
-							
-							<tr class="header-row">
-								<td class="attribute empty first-sticky-column"></td>
+					<div class="table-slider scroll-wrapper-bottom">
+						<table class="a-bordered a-horizontal-stripes scroll-width">
+							<tbody>
 								
-								<th class="aplus-data-column top-header active active-item second-sticky-column">
-									<div class="comparison-product-card">
-										{% render 'product-card', card_product: product %}										
-									</div>
-								</th>
-								
-								{% for cp in compare_products %}
-									{% unless cp.id == product.id %}
-										<th class="aplus-data-column top-header">
-											<div class="comparison-product-card">
-												{% render 'product-card', card_product: cp %}												
-											</div>
-										</th>
-									{% endunless %}
-								{% endfor %}								
-							</tr>
-							
-							{% for entry in selected_features %}
-								<tr {%if forloop.first %}class="first-content-row"{% endif %}>
-									<td class="attribute a-text-bold first-sticky-column column-cell-{{ forloop.index }}">
-										<div class="comparison-metric-name" data-inline-content="" data-position="triggerRight">
-											<span class="a-text-bold"> {{ entry.feature_name.value | default: entry.feature_name }} </span>
-										</div>
-									</td>
+								<tr class="header-row">
+									<td class="attribute empty first-sticky-column"></td>
 									
-									{%- comment -%} Current product value {%- endcomment -%}
-									{% assign current_value = entry[current_compare_key] | metafield_tag | strip_html %}
-									<td class="aplus-data-column active active-item second-sticky-column">
-										{% if current_value != blank %}
-											{{ current_value.value | default: current_value }}
-										{% else %}
-											—
-										{% endif %}
-									</td>
-									
-									{%- comment -%} Compared products values {%- endcomment -%}
-									{% for cp in compare_products %}
-										{% unless cp.id == product.id %}
-											{% assign cp_compare_key = cp.metafields.custom.compare_key.value %}
-											{% if cp_compare_key == blank %}
-												{% assign cp_compare_key = cp.handle | replace: '-', '_' %}
-											{% endif %}
-											
-											{% assign cp_value = entry[cp_compare_key] | metafield_tag | strip_html %}
-											<td class="aplus-data-column secondary-content-column">
-												{% if cp_value != blank %}
-													{{ cp_value.value | default: cp_value }}
-												{% else %}
-													—
-												{% endif %}
-											</td>
-										{% endunless %}
-									{% endfor %}									
-								</tr>
-							{% endfor %}							
-						</tbody>
-					</table>
-				</div>
-			</div> 
-		</div>
-	{% else %}
-		<div class="premium-aplus premium-aplus-module-5 aplus-container-3 comparison-table enso-comparison">
-			{% render 'section-header' %}    
-			<div id="comparison-table-container-6" data-comparison-name="comparison-table-container-6" class="a-section a-spacing-none table-container">  
-			<div class="table-slider scroll-wrapper-bottom">
-				<table class="a-bordered a-horizontal-stripes scroll-width">
-					<tbody>
-						
-						<tr class="header-row">
-							<td class="attribute empty"></td>
-							
-							<th class="aplus-data-column top-header active active-item">
-								<div class="comparison-product-card">
-									{% render 'product-card', card_product: product %}
-								</div>
-							</th>
-							
-							<th class="aplus-data-column top-header">
-								<div class="relative overflow-hidden group/media">
-									<a href="{{ url }}" tabindex="-1" data-instant aria-label="{{ card_product.title | default: 'Product' }}">
-										<div
-											class="product-card-media media rounded-block [--aspect-ratio:--product-card-image-aspect] md:pb-6"
-										>
-											<lqip-element class="image-loader h-full">
-												<img src="https://cdn.shopify.com/s/files/1/0777/8339/files/71Bhm4vc2SL._SX679.jpg?v=1775045042&width=1320"
-													widths="360, 450, 540, 630, 720, 900, 1050, 1200, 1320" loading="lazy" width="" height=""
-													class="product-card__image product-thumbnail-shade"/>
-												</lqip-element>
-											</div>
-										</a>
-									</div>
-								</th>
-								
-								<th class="aplus-data-column top-header">
-									<div class="relative overflow-hidden group/media">
-										<a href="{{ url }}" tabindex="-1" data-instant aria-label="{{ card_product.title | default: 'Product' }}">
-											<div
-												class="product-card-media media rounded-block [--aspect-ratio:--product-card-image-aspect] md:pb-6"
-											>
-												<lqip-element class="image-loader h-full">
-													<img src="https://cdn.shopify.com/s/files/1/0777/8339/files/51z90B1mVTL._AC_SY300_SX300_QL70_ML2.jpg?v=1775046681"
-														widths="360, 450, 540, 630, 720, 900, 1050, 1200, 1320, 1440" loading="lazy" width="" height=""
-														class="product-card__image product-thumbnail-shade"/>
-													</lqip-element>
-												</div>
-											</a>
+									<th class="aplus-data-column top-header active active-item second-sticky-column">
+										<div class="comparison-product-card">
+											{% render 'product-card', card_product: product %}										
 										</div>
 									</th>
-								</tr>
-								
-								{% for entry in selected_features %}{% endfor %}
-								<tr class="first-content-row">
-									<td class="attribute a-text-bold column-cell-1">
-										<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-											<span class="a-text-bold"> Category </span>
-										</div>
-									</td>
 									
-									{%- comment -%} Current product value {%- endcomment -%}
-									<td class="aplus-data-column active active-item second-sticky-column">
-										Electric hookah
-									</td>
-									<td class="aplus-data-column secondary-content-column">
-										Coal hookah
-									</td>
-									<td class="aplus-data-column secondary-content-column">
-										Home vape
-									</td>
-									
-									
-									{%- comment -%} Compared products values {%- endcomment -%}
 									{% for cp in compare_products %}
 										{% unless cp.id == product.id %}
-											{% assign cp_compare_key = cp.metafields.custom.compare_key.value %}
-											{% if cp_compare_key == blank %}
-												{% assign cp_compare_key = cp.handle | replace: '-', '_' %}
-											{% endif %}
-											
-											{% assign cp_value = entry[cp_compare_key] | metafield_tag %}
-											<td class="aplus-data-column" style="min-width: 230px;">
-												{% if cp_value != blank %}
-													{{ cp_value.value | default: cp_value }}
-												{% else %}
-													—
-												{% endif %}
-											</td>
+											<th class="aplus-data-column top-header">
+												<div class="comparison-product-card">
+													{% render 'product-card', card_product: cp %}												
+												</div>
+											</th>
 										{% endunless %}
-									{% endfor %}									
+									{% endfor %}								
 								</tr>
 								
-								<tr>   
-								<td class="attribute a-text-bold">
-									<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-										<span class="a-text-bold"> Heat style </span>
-									</div>
-								</td>
-								<td class="aplus-data-column active active-item second-sticky-column">
-									<span class="description">
-										Clean electric
-									</span>
-								</td>      
-								<td class="aplus-data-column secondary-content-column">
-									<span class="description">
-										Burning coal
-									</span>
-								</td>           
-								<td class="aplus-data-column secondary-content-column">
-									<span class="description">
-										Dry heat
-									</span>
-								</td>      
-							</tr> 
-							
-							<tr>   
-							<td class="attribute a-text-bold">
-								<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-									<span class="a-text-bold"> What you use </span>
-								</div>
-							</td>
-							<td class="aplus-data-column active active-item second-sticky-column">
-								<span class="description">
-									Molasses + dry herb
-								</span>
-							</td>      
-							<td class="aplus-data-column secondary-content-column">
-								<span class="description">
-									Shisha molasses
-								</span>
-							</td>           
-							<td class="aplus-data-column secondary-content-column">
-								<span class="description">
-									Dry herb
-								</span>
-							</td>      
-							
-						</tr> 
-						
-						<tr>   
-						<td class="attribute a-text-bold">
-							<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-								<span class="a-text-bold"> Flavor quality </span>
-							</div>
-						</td>
-						<td class="aplus-data-column active active-item second-sticky-column">
-							<span class="description">
-								Pure flavor
-							</span>
-						</td>      
-						<td class="aplus-data-column secondary-content-column">
-							<span class="description">
-								Coal-tainted
-							</span>
-						</td>           
-						<td class="aplus-data-column secondary-content-column">
-							<span class="description">
-								Herb taste
-							</span>
-						</td>      
-						
-					</tr>
-					
-					<tr>  
-					<td class="attribute a-text-bold">
-						<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-							<span class="a-text-bold"> Cloud style </span> 
-						</div>
-					</td>
-					<td class="aplus-data-column active active-item second-sticky-column">
-						<span class="description">Big clouds</span>
-					</td>
-					<td class="aplus-data-column secondary-content-column">
-						<span class="description">Heavy smoke</span>
-					</td>      
-					<td class="aplus-data-column secondary-content-column">
-						<span class="description">Light vapor</span>
-					</td> 
-					
-				</tr>
-				
-				
-				<tr>  
-				<td class="attribute a-text-bold">
-					<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-						<span class="a-text-bold">Session vibe</span>
+								{% for entry in selected_features %}
+									<tr {%if forloop.first %}class="first-content-row"{% endif %}>
+										<td class="attribute a-text-bold first-sticky-column column-cell-{{ forloop.index }}">
+											<div class="comparison-metric-name" data-inline-content="" data-position="triggerRight">
+												<span class="a-text-bold"> {{ entry.feature_name.value | default: entry.feature_name }} </span>
+											</div>
+										</td>
+										
+										{%- comment -%} Current product value {%- endcomment -%}
+										{% assign current_value = entry[current_compare_key] | metafield_tag | strip_html %}
+										<td class="aplus-data-column active active-item second-sticky-column">
+											{% if current_value != blank %}
+												{{ current_value.value | default: current_value }}
+											{% else %}
+												—
+											{% endif %}
+										</td>
+										
+										{%- comment -%} Compared products values {%- endcomment -%}
+										{% for cp in compare_products %}
+											{% unless cp.id == product.id %}
+												{% assign cp_compare_key = cp.metafields.custom.compare_key.value %}
+												{% if cp_compare_key == blank %}
+													{% assign cp_compare_key = cp.handle | replace: '-', '_' %}
+												{% endif %}
+												
+												{% assign cp_value = entry[cp_compare_key] | metafield_tag | strip_html %}
+												<td class="aplus-data-column secondary-content-column">
+													{% if cp_value != blank %}
+														{{ cp_value.value | default: cp_value }}
+													{% else %}
+														—
+													{% endif %}
+												</td>
+											{% endunless %}
+										{% endfor %}									
+									</tr>
+								{% endfor %}							
+							</tbody>
+						</table>
 					</div>
-				</td>      
-				<td class="aplus-data-column active active-item second-sticky-column">
-					<span class="description">Party or solo ritual</span>
-				</td>      
-				<td class="aplus-data-column secondary-content-column">
-					<span class="description">Old-school ritual</span>
-				</td>      
-				<td class="aplus-data-column secondary-content-column">
-					<span class="description">Solo sessions</span>
-				</td> 
-			</tr> 
-			
-			<tr>   
-			<td class="attribute a-text-bold">
-				<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-					<span class="a-text-bold">Session time</span>
-				</div>
-			</td>      
-			<td class="aplus-data-column active active-item second-sticky-column">
-				<span class="description">Long sessions</span>
-			</td>      
-			<td class="aplus-data-column secondary-content-column">
-				<span class="description">Long sessions</span>
-			</td>      
-			<td class="aplus-data-column secondary-content-column">
-				<span class="description">Short sessions</span>
-			</td> 
-			
-		</tr>
-		
-		
-		<tr>  
-		<td class="attribute a-text-bold">
-			<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-				<span class="a-text-bold">Setup</span>
+				</div> 
 			</div>
-		</td>      
-		<td class="aplus-data-column active active-item second-sticky-column">
-			<span class="description">Fast setup</span>
-		</td>      
-		<td class="aplus-data-column secondary-content-column">
-			<span class="description">Messy prep</span>
-		</td>      
-		<td class="aplus-data-column secondary-content-column">
-			<span class="description">Simple use</span>
-		</td>
-		
-		
-	</tr>  
-	
-	<tr>  
-	<td class="attribute a-text-bold">
-		<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-			<span class="a-text-bold"> Portability </span>
-		</div>
-	</td>      
-	<td class="aplus-data-column active active-item second-sticky-column">
-		<span class="description">Cord-free</span>
-	</td>      
-	<td class="aplus-data-column secondary-content-column">
-		<span class="description">Bulky setup</span>
-	</td>      
-	<td class="aplus-data-column secondary-content-column">
-		<span class="description">Plug-in only</span>
-	</td>
-	
-</tr>
+		{% else %}
+			<div class="premium-aplus premium-aplus-module-5 aplus-container-3 comparison-table enso-comparison">
+				{% render 'section-header' %}    
+				<div id="comparison-table-container-6" data-comparison-name="comparison-table-container-6" class="a-section a-spacing-none table-container">  
+					<div class="table-slider scroll-wrapper-bottom">
+						<table class="a-bordered a-horizontal-stripes scroll-width">
+							<tbody>
+								
+								<tr class="header-row">
+									<td class="attribute empty"></td>
+									
+									<th class="aplus-data-column top-header active active-item">
+										<div class="comparison-product-card">
+											{% render 'product-card', card_product: product %}
+										</div>
+									</th>
+									
+									<th class="aplus-data-column top-header">
+										<div class="relative overflow-hidden group/media">
+											<a href="{{ url }}" tabindex="-1" data-instant aria-label="{{ card_product.title | default: 'Product' }}">
+												<div
+													class="product-card-media media rounded-block [--aspect-ratio:--product-card-image-aspect] md:pb-6"
+												>
+													<lqip-element class="image-loader h-full">
+														<img src="https://cdn.shopify.com/s/files/1/0777/8339/files/71Bhm4vc2SL._SX679.jpg?v=1775045042&width=1320"
+															widths="360, 450, 540, 630, 720, 900, 1050, 1200, 1320" loading="lazy" width="" height=""
+															class="product-card__image product-thumbnail-shade"/>
+														</lqip-element>
+													</div>
+												</a>
+											</div>
+										</th>
+										
+										<th class="aplus-data-column top-header">
+											<div class="relative overflow-hidden group/media">
+												<a href="{{ url }}" tabindex="-1" data-instant aria-label="{{ card_product.title | default: 'Product' }}">
+													<div
+														class="product-card-media media rounded-block [--aspect-ratio:--product-card-image-aspect] md:pb-6"
+													>
+														<lqip-element class="image-loader h-full">
+															<img src="https://cdn.shopify.com/s/files/1/0777/8339/files/51z90B1mVTL._AC_SY300_SX300_QL70_ML2.jpg?v=1775046681"
+																widths="360, 450, 540, 630, 720, 900, 1050, 1200, 1320, 1440" loading="lazy" width="" height=""
+																class="product-card__image product-thumbnail-shade"/>
+															</lqip-element>
+														</div>
+													</a>
+												</div>
+											</th>
+										</tr>
+										
+										{% for entry in selected_features %}{% endfor %}
+										<tr class="first-content-row">
+											<td class="attribute a-text-bold column-cell-1">
+												<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+													<span class="a-text-bold"> Category </span>
+												</div>
+											</td>
+											
+											{%- comment -%} Current product value {%- endcomment -%}
+											<td class="aplus-data-column active active-item second-sticky-column">
+												Electric hookah
+											</td>
+											<td class="aplus-data-column secondary-content-column">
+												Coal hookah
+											</td>
+											<td class="aplus-data-column secondary-content-column">
+												Home vape
+											</td>
+											
+											
+											{%- comment -%} Compared products values {%- endcomment -%}
+											{% for cp in compare_products %}
+												{% unless cp.id == product.id %}
+													{% assign cp_compare_key = cp.metafields.custom.compare_key.value %}
+													{% if cp_compare_key == blank %}
+														{% assign cp_compare_key = cp.handle | replace: '-', '_' %}
+													{% endif %}
+													
+													{% assign cp_value = entry[cp_compare_key] | metafield_tag %}
+													<td class="aplus-data-column" style="min-width: 230px;">
+														{% if cp_value != blank %}
+															{{ cp_value.value | default: cp_value }}
+														{% else %}
+															—
+														{% endif %}
+													</td>
+												{% endunless %}
+											{% endfor %}									
+										</tr>
+										
+										<tr>   
+										<td class="attribute a-text-bold">
+											<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+												<span class="a-text-bold"> Heat style </span>
+											</div>
+										</td>
+										<td class="aplus-data-column active active-item second-sticky-column">
+											<span class="description">
+												Clean electric
+											</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">
+												Burning coal
+											</span>
+										</td>           
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">
+												Dry heat
+											</span>
+										</td>      
+									</tr> 
+									
+									<tr>   
+									<td class="attribute a-text-bold">
+										<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+											<span class="a-text-bold"> What you use </span>
+										</div>
+									</td>
+									<td class="aplus-data-column active active-item second-sticky-column">
+										<span class="description">
+											Molasses + dry herb
+										</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">
+											Shisha molasses
+										</span>
+									</td>           
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">
+											Dry herb
+										</span>
+									</td>      
+									
+								</tr> 
+								
+								<tr>   
+									<td class="attribute a-text-bold">
+										<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+											<span class="a-text-bold"> Flavor quality </span>
+										</div>
+									</td>
+									<td class="aplus-data-column active active-item second-sticky-column">
+										<span class="description">
+											Pure flavor
+										</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">
+											Coal-tainted
+										</span>
+									</td>           
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">
+											Herb taste
+										</span>
+									</td>      
+								
+								</tr>
+							
+								<tr>  
+									<td class="attribute a-text-bold">
+										<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+											<span class="a-text-bold"> Cloud style </span> 
+										</div>
+									</td>
+									<td class="aplus-data-column active active-item second-sticky-column">
+										<span class="description">Big clouds</span>
+									</td>
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">Heavy smoke</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">Light vapor</span>
+									</td> 
+								
+								</tr>
+						
+						
+								<tr>  
+									<td class="attribute a-text-bold">
+										<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+											<span class="a-text-bold">Session vibe</span>
+										</div>
+									</td>      
+									<td class="aplus-data-column active active-item second-sticky-column">
+										<span class="description">Party or solo ritual</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">Old-school ritual</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">Solo sessions</span>
+									</td> 
+								</tr> 
+					
+								<tr>   
+									<td class="attribute a-text-bold">
+										<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+											<span class="a-text-bold">Session time</span>
+										</div>
+									</td>      
+									<td class="aplus-data-column active active-item second-sticky-column">
+										<span class="description">Long sessions</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">Long sessions</span>
+									</td>      
+									<td class="aplus-data-column secondary-content-column">
+										<span class="description">Short sessions</span>
+									</td> 
+					
+								</tr>
+				
+				
+									<tr>  
+										<td class="attribute a-text-bold">
+											<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+												<span class="a-text-bold">Setup</span>
+											</div>
+										</td>      
+										<td class="aplus-data-column active active-item second-sticky-column">
+											<span class="description">Fast setup</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">Messy prep</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">Simple use</span>
+										</td>
+										
+										
+									</tr>  
+			
+									<tr>  
+										<td class="attribute a-text-bold">
+											<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+												<span class="a-text-bold"> Portability </span>
+											</div>
+										</td>      
+										<td class="aplus-data-column active active-item second-sticky-column">
+											<span class="description">Cord-free</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">Bulky setup</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">Plug-in only</span>
+										</td>
+			
+									</tr>
 
-<tr>  
-<td class="attribute a-text-bold">
-	<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
-		<span class="a-text-bold"> Best for </span>
+									<tr>  
+										<td class="attribute a-text-bold">
+											<div class="comparison-metric-name " data-inline-content="" data-position="triggerRight">
+												<span class="a-text-bold"> Best for </span>
+											</div>
+										</td>      
+										<td class="aplus-data-column active active-item second-sticky-column">
+											<span class="description">Modern hookah</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">Traditional smokers</span>
+										</td>      
+										<td class="aplus-data-column secondary-content-column">
+											<span class="description">Personal vaping</span>
+										</td>
+
+									</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="text-center">
+					<strong>Pure flavor. Big clouds. Modern hookah sessions without coal, flame, or the mess</strong>
+				</div> 
+			</div>
+		{% endif %}
 	</div>
-</td>      
-<td class="aplus-data-column active active-item second-sticky-column">
-	<span class="description">Modern hookah</span>
-</td>      
-<td class="aplus-data-column secondary-content-column">
-	<span class="description">Traditional smokers</span>
-</td>      
-<td class="aplus-data-column secondary-content-column">
-	<span class="description">Personal vaping</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-</div>
-</div>
-<div class="text-center">
-	<strong>Pure flavor. Big clouds. Modern hookah sessions without coal, flame, or the mess</strong>
-</div> 
-</div>
-{% endif %}
-</div>
 </div>
 
 <script>

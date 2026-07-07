@@ -1,0 +1,388 @@
+{% comment %} sections/why-promote.liquid {% endcomment %}
+{% render 'section-bg-number-vars' %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --content-width: {% render 'get-content-width', type: section.settings.content_width %};
+    --awj-accent: {{ section.settings.accent_color }};
+    --awj-accent-rgb: {{ section.settings.accent_color.red }} {{ section.settings.accent_color.green }} {{ section.settings.accent_color.blue }};
+    --gold: {{ section.settings.accent_color }};
+    --gold-light: {{ section.settings.accent_color | color_modify: 'alpha', 0.12 }};
+    {% if section.settings.text_color != blank %}--wp-text: {{ section.settings.text_color }};{% endif %}
+    {% if section.settings.heading_color != blank %}--wp-heading: {{ section.settings.heading_color }};{% endif %}
+  }
+</style>
+
+{% liquid
+  assign section_classes = ' awj-section why-promote '
+  
+  if section.settings.remove_horizontal_space
+  assign section_classes = section_classes | append: ' !px-0 '
+  endif
+  if section.settings.remove_vertical_space
+  assign section_classes = section_classes | append: ' !py-0 '
+  endif
+  
+  assign stat_count = 0
+  assign feature_count = 0
+  for block in section.blocks
+  if block.type == 'stat'
+  assign stat_count = stat_count | plus: 1
+  elsif block.type == 'feature'
+  assign feature_count = feature_count | plus: 1
+  endif
+  endfor
+  
+  assign show_visual = false
+  if section.settings.show_big_card or stat_count > 0
+  assign show_visual = true
+  endif
+%}
+
+<section {% render 'section-attrs', class: section_classes %}>
+  <div class="section-body max-w-[--content-width] mx-auto">
+
+    {% render 'section-header', button: false %}
+    
+    <div class="why-grid{% unless show_visual %} why-grid--single{% endunless %}">
+      
+      {%- comment -%} LEFT: heading + feature list {%- endcomment -%}
+      <div class="why-content {{ section.settings.text_alignment }}">
+        
+        
+        {% if feature_count > 0 %}
+          <ul class="why-list" data-animation-auto-order>
+            {% for block in section.blocks %}
+              {% if block.type == 'feature' %}
+                <li class="why-item" data-animation="block" {{ block.shopify_attributes }}>
+                  <div class="why-item-icon">
+                    {% if block.settings.icon_image != blank %}
+                      {{ block.settings.icon_image | image_url: width: 76 | image_tag: widths: '38, 76', sizes: '38px', alt: block.settings.icon_image.alt, loading: 'lazy' }}
+                    {% elsif block.settings.icon != blank %}
+                      {{ block.settings.icon }}
+                    {% endif %}
+                  </div>
+                  <div>
+                    {% if block.settings.title != blank %}<div class="why-item-title">{{ block.settings.title }}</div>{% endif %}
+                    {% if block.settings.text != blank %}<div class="why-item-desc">{{ block.settings.text }}</div>{% endif %}
+                  </div>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      
+      {%- comment -%} RIGHT: highlight card + stat grid {%- endcomment -%}
+      {% if show_visual %}
+        <div class="why-visual">
+          {% if section.settings.show_big_card %}
+            <div class="why-big-card">
+              {% if section.settings.big_number != blank %}<div class="why-big-num">{{ section.settings.big_number }}</div>{% endif %}
+              {% if section.settings.big_label != blank %}<div class="why-big-label">{{ section.settings.big_label }}</div>{% endif %}
+              {% if section.settings.big_sub != blank %}<div class="why-big-sub">{{ section.settings.big_sub | newline_to_br }}</div>{% endif %}
+            </div>
+          {% endif %}
+          
+          {% if stat_count > 0 %}
+            <div class="why-minis" data-animation-auto-order>
+              {% for block in section.blocks %}
+                {% if block.type == 'stat' %}
+                  <div class="why-mini" data-animation="block" {{ block.shopify_attributes }}>
+                    {% if block.settings.number != blank %}<div class="why-mini-num">{{ block.settings.number }}</div>{% endif %}
+                    {% if block.settings.label != blank %}<div class="why-mini-label">{{ block.settings.label }}</div>{% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+      
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+/* ===== WHY PROMOTE ===== */
+.why-promote .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why-promote .why-grid--single{grid-template-columns:1fr;max-width:760px;margin:0 auto}
+.why-promote .why-content{min-width:0;color:var(--wp-text, inherit)}
+.why-promote .section-title{color:var(--wp-heading, inherit)}
+.why-promote .why-sub{margin-bottom:32px}
+
+.why-promote .why-list{display:flex;flex-direction:column;gap:14px;list-style:none;margin:0;padding:0}
+.why-promote .why-item{transition:all 0.2s ease;display:flex;align-items:flex-start;gap:14px;padding:18px 22px;
+  border-radius:14px;background:var(--gray-light);text-align:left;border:1px solid #f5ebeb;}
+.why-promote .why-item:hover{background:rgb(var(--color-foreground));}
+.why-promote .why-item:hover .why-item-title,
+.why-promote .why-item:hover .why-item-desc {
+  color: rgb(var(--color-background))
+}
+.why-promote .why-item:hover .why-item-icon {
+  background: #ffbc05;
+}
+.why-promote .why-item-icon{width:44px;height:44px;background:#000;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;overflow:hidden}
+.why-promote .why-item-icon img{width:100%;height:100%;object-fit:contain;padding:7px}
+.why-promote .why-item-title{font-size:14px;font-weight:800;margin-bottom:3px}
+.why-promote .why-item-desc{font-size:12px;color:var(--gray-text);line-height:1.5}
+.why-promote .why-item-desc p{margin:0}
+
+.why-promote .why-visual{display:flex;flex-direction:column;gap:16px}
+.why-promote .why-big-card{background:rgb(var(--black));border-radius:22px;padding:38px 32px;text-align:center;color:var(--white)}
+.why-promote .why-big-num{font-size:80px;font-weight:900;color:#fbbc05;line-height:1;letter-spacing:-.04em}
+.why-promote .why-big-label{font-size:13px;color:rgba(255,255,255,1);margin-top:6px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.why-promote .why-big-sub{font-size:14px;color:rgba(255,255,255,.6);margin-top:8px;line-height:1.5}
+
+.why-promote .why-minis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.why-promote .why-mini{background:#fff8e1;border-radius:16px;padding:20px;text-align:center}
+.why-promote .why-mini:hover{background:#000;color:#fff;}
+.why-promote .why-mini-num{font-size:26px;font-weight:900;color:var(--black)}
+.why-promote .why-mini-label{font-size:10px;color:var(--gray-text);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-top:5px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1100px){
+  .why-promote .why-grid{gap:40px}
+  .why-promote .why-big-num{font-size:66px}
+}
+@media (max-width:900px){
+  .why-promote .why-grid{grid-template-columns:1fr;gap:36px}
+  .why-promote .why-visual{max-width:560px;width:100%}
+}
+@media (max-width:600px){
+  .why-promote .section-title br{display:none}
+  .why-promote .why-sub{margin-bottom:24px}
+  .why-promote .why-list{gap:12px}
+  .why-promote .why-item{padding:15px;gap:12px}
+  .why-promote .why-item-title{font-size:13.5px}
+  .why-promote .why-big-card{padding:30px 22px;border-radius:18px}
+  .why-promote .why-big-num{font-size:58px}
+  .why-promote .why-minis{gap:12px}
+  .why-promote .why-mini{padding:18px 14px}
+  .why-promote .why-mini-num{font-size:23px}
+}
+@media (max-width:380px){
+  .why-promote .why-minis{grid-template-columns:1fr}
+  .why-promote .why-big-num{font-size:52px}
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Affiliate · Why promote",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.full_width.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_horizontal_space",
+      "label": "t:sections.apps.settings.remove_horizontal_space.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_vertical_space",
+      "label": "t:sections.apps.settings.remove_vertical_space.label"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:sections.rich-text.settings.content_width.label",
+      "options": [
+        { "value": "small", "label": "t:sections.rich-text.settings.content_width.options__0.label" },
+        { "value": "normal", "label": "t:sections.rich-text.settings.content_width.options__1.label" },
+        { "value": "large", "label": "t:sections.rich-text.settings.content_width.options__2.label" },
+        { "value": "extra-large", "label": "t:sections.rich-text.settings.content_width.options__3.label" },
+        { "value": "full-width", "label": "t:sections.rich-text.settings.content_width.options__4.label" }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#c9a96e"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.headers.heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.all.subheading.label",
+      "default": "Why AirVape"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.featured-collection.settings.heading.label",
+      "default": "Built for Creators Who Want Confidence"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "t:sections.all.content.label",
+      "default": "<p>Promote products you can stand behind. AirVape is designed for modern consumers who value performance, portability, and sleek design.</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:sections.all.text_alignment.label",
+      "options": [
+        { "value": "text-left", "label": "t:sections.all.text_alignment.options.text_left.label" },
+        { "value": "text-center", "label": "t:sections.all.text_alignment.options.text_center.label" }
+      ],
+      "default": "text-left"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:sections.all.heading_size.label",
+      "options": [
+        { "value": "h0", "label": "t:sections.all.heading_size.options__0.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h2", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h3", "label": "t:sections.all.heading_size.options__3.label" },
+        { "value": "h4", "label": "t:sections.all.heading_size.options__4.label" },
+        { "value": "h5", "label": "t:sections.all.heading_size.options__5.label" },
+        { "value": "h6", "label": "t:sections.all.heading_size.options__6.label" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "heading_html_tag",
+      "label": "t:sections.all.heading_html_tag.label",
+      "options": [
+        { "value": "h1", "label": "h1" },
+        { "value": "h2", "label": "h2" },
+        { "value": "h3", "label": "h3" },
+        { "value": "h4", "label": "h4" },
+        { "value": "h5", "label": "h5" },
+        { "value": "h6", "label": "h6" },
+        { "value": "p", "label": "p" },
+        { "value": "span", "label": "span" },
+        { "value": "div", "label": "div" }
+      ],
+      "default": "h2",
+      "info": "t:sections.all.heading_html_tag.info"
+    },
+    {
+      "type": "header",
+      "content": "Highlight card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_big_card",
+      "label": "Show highlight card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "big_number",
+      "label": "Number",
+      "default": "10%"
+    },
+    {
+      "type": "text",
+      "id": "big_label",
+      "label": "Label",
+      "default": "Commission Per Sale"
+    },
+    {
+      "type": "textarea",
+      "id": "big_sub",
+      "label": "Sub text",
+      "default": "On every qualifying referred purchase\nthrough your unique link or code"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.headers.colors"
+    },
+    {
+      "type": "color",
+      "label": "t:sections.all.text_color.label",
+      "id": "text_color"
+    },
+    {
+      "type": "color",
+      "label": "t:sections.all.heading_color.label",
+      "id": "heading_color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji icon",
+          "default": "💰"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon image",
+          "info": "Overrides the emoji if set."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Benefit title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>Describe this benefit in a sentence or two.</p>"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "name": "Stat",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "4.8★"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Avg Rating"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Affiliate · Why promote",
+      "category": "Affiliate",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "💰", "title": "10% Commission on Qualifying Sales", "text": "<p>Earn a consistent percentage on every sale you refer through your unique link or code.</p>" } },
+        { "type": "feature", "settings": { "icon": "🎁", "title": "10% Discount for Your Audience", "text": "<p>Give your followers real value — a genuine discount that makes it easier to convert.</p>" } },
+        { "type": "feature", "settings": { "icon": "⚡", "title": "Automatic Tracking via Shopify Collabs", "text": "<p>Zero manual work. Every click and sale is tracked automatically — no spreadsheets needed.</p>" } },
+        { "type": "feature", "settings": { "icon": "📈", "title": "Real-Time Dashboard Access", "text": "<p>See exactly what's working. Monitor clicks, conversions, and commissions whenever you want.</p>" } },
+        { "type": "feature", "settings": { "icon": "🚫", "title": "No Minimum Sales Requirement", "text": "<p>Start earning from your very first referral. No pressure, no thresholds, no gatekeeping.</p>" } },
+        { "type": "feature", "settings": { "icon": "🏆", "title": "Award-Winning Products with Proven Appeal", "text": "<p>Multiple industry award winners with 4.6–4.9★ ratings across thousands of real reviews.</p>" } },
+        { "type": "stat", "settings": { "number": "4.8★", "label": "Avg Rating" } },
+        { "type": "stat", "settings": { "number": "7,446+", "label": "Reviews" } },
+        { "type": "stat", "settings": { "number": "$0", "label": "Min. Threshold" } },
+        { "type": "stat", "settings": { "number": "2013", "label": "Est. Since" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

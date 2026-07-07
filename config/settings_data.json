@@ -109,13 +109,6 @@
         "disabled": false,
         "settings": {}
       },
-      "3667842014806057753": {
-        "type": "shopify://apps/one-click-upsell/blocks/app-embed/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
-        "disabled": false,
-        "settings": {
-          "allowed_templates": ""
-        }
-      },
       "445798689517063701": {
         "type": "shopify://apps/mighty-image-uploader/blocks/app-embed-block/1fd42d45-f36c-4cd4-a281-183fed7894d3",
         "disabled": false,
@@ -153,14 +146,26 @@
         "disabled": true,
         "settings": {}
       },
-      "1537173939754162885": {
-        "type": "shopify://apps/accesspro-accessibility/blocks/accesspro-widget/d1a2aee8-6737-4a3e-a6aa-13d82b562c31",
+      "13305437469741356523": {
+        "type": "shopify://apps/gsc-instagram-feed/blocks/embed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
         "disabled": true,
         "settings": {}
       },
-      "13305437469741356523": {
-        "type": "shopify://apps/gsc-instagram-feed/blocks/embed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
+      "3667842014806057753": {
+        "type": "shopify://apps/one-click-upsell/blocks/app-embed/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
         "disabled": false,
+        "settings": {
+          "allowed_templates": "page, blog"
+        }
+      },
+      "651962886394718550": {
+        "type": "shopify://apps/ea-accessibility/blocks/app-embed-block/e6e05997-8214-48e2-a583-70d003e3d5f1",
+        "disabled": false,
+        "settings": {}
+      },
+      "1537173939754162885": {
+        "type": "shopify://apps/accesspro-accessibility/blocks/accesspro-widget/d1a2aee8-6737-4a3e-a6aa-13d82b562c31",
+        "disabled": true,
         "settings": {}
       }
     }

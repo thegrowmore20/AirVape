@@ -244,6 +244,442 @@
         "heading_color": ""
       }
     },
+    "image_with_text_overlay_KKefad": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_yiMMbQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h2",
+            "heading_html_tag": "h1"
+          }
+        },
+        "text_XArCmH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Affliliate made simple, profitable, and built for growth.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yiMMbQ",
+        "text_XArCmH"
+      ],
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Whole_Sale.webp",
+        "image_mobile": "shopify://shop_images/Whole_Sale_Mob.webp",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-left",
+        "link": "",
+        "min_height": 300,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_mCiKhq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_M6GK7z": {
+          "type": "heading",
+          "settings": {
+            "heading": "Earn 10% Commission Promoting Premium Vaporizers",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_wRcAJX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Are you a creator, influencer, blogger, or affiliate marketer in the vape space? Join the AirVape Affiliate Program and earn <strong>10% commission on every qualifying sale</strong> you refer.</p><p>Your audience also gets <strong>10% off</strong>, making it easier to promote premium products while creating value for your community.</p><p>Our affiliate program runs through <strong>Shopify Collabs</strong>, giving approved partners a simple and transparent way to share AirVape and earn through performance-based referrals.</p>"
+          }
+        },
+        "button_qapTWC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Register on Collabs",
+            "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "button_BBDwxG": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for US audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "button_waQAHN": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_M6GK7z",
+        "text_wRcAJX",
+        "button_qapTWC",
+        "button_BBDwxG",
+        "button_waQAHN"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "section--no-padding affiliate-img-text-section",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Article_cover.webp",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 45,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_overlay_q9nBhF": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_kdAAQa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Earn 10% Commission Promoting Premium Vaporizers",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_n9VTEF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Are you a creator, influencer, blogger, or affiliate marketer in the vape space? Join the AirVape Affiliate Program and earn <strong>10% commission on every qualifying sale</strong> you refer.</p><p>Your audience also gets <strong>10% off</strong>, making it easier to promote premium products while creating value for your community.</p><p>Our affiliate program runs through <strong>Shopify Collabs</strong>, giving approved partners a simple and transparent way to share AirVape and earn through performance-based referrals.</p>"
+          }
+        },
+        "button_i6RcjJ": {
+          "type": "button",
+          "settings": {
+            "button_text": "Register on Collabs",
+            "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        },
+        "button_N6n96C": {
+          "type": "button",
+          "settings": {
+            "button_text": "Promote for US audience",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        },
+        "button_wChxHa": {
+          "type": "button",
+          "settings": {
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kdAAQa",
+        "text_n9VTEF",
+        "button_i6RcjJ",
+        "button_N6n96C",
+        "button_wChxHa"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "affiliate-img-text-banner",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Fathers_day_Web_banner_2_1.jpg",
+        "content_alignment": "md:content-middle-left",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 600,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "affiliate_why_join_DJHmCz": {
+      "type": "affiliate-why-join",
+      "blocks": {
+        "benefit_YxfBri": {
+          "type": "benefit",
+          "settings": {
+            "icon": "commission",
+            "icon_width": 48,
+            "title": "10% Commission + 10% Off for Your Audience",
+            "text": "<p>Approved affiliates earn <strong>10% commission</strong> on qualifying referred sales, while their audience receives <strong>10% off</strong> through a unique referral link or discount code.</p>"
+          }
+        },
+        "benefit_7TafgD": {
+          "type": "benefit",
+          "settings": {
+            "icon": "tracking",
+            "icon_width": 48,
+            "title": "Easy Tracking Through Shopify Collabs",
+            "text": "<p>Every approved affiliate receives a <strong>unique referral link or discount code</strong>. Sales are tracked automatically through Shopify Collabs, and affiliates get access to a dashboard to monitor <strong>clicks, sales, and commissions</strong>.</p>"
+          }
+        },
+        "benefit_FxcQ6Q": {
+          "type": "benefit",
+          "settings": {
+            "icon": "nominimum",
+            "icon_width": 48,
+            "title": "No Minimum Sales Requirement",
+            "text": "<p>There is <strong>no minimum sales threshold</strong> to start earning. Every eligible sale made through your referral link or code can generate commission based on the agreed terms.</p>"
+          }
+        },
+        "benefit_QA8LPV": {
+          "type": "benefit",
+          "settings": {
+            "icon": "product",
+            "icon_width": 48,
+            "title": "Premium Products That Fit the Right Audience",
+            "text": "<p>AirVape offers sleek, high-quality vaporizers designed for modern consumers who value performance, portability, and design. That makes AirVape easier to promote to audiences that already align with the category.</p>"
+          }
+        },
+        "benefit_JBqxKC": {
+          "type": "benefit",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Marketing Support",
+            "text": "<p>Get access to product messaging and promotional support to help you share Breathelet with confidence.</p>"
+          }
+        },
+        "benefit_pXREpV": {
+          "type": "benefit",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Real Product Appeal",
+            "text": "<p>Promote a wearable mindfulness product that looks premium, feels intentional, and fits modern wellness routines.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_YxfBri",
+        "benefit_7TafgD",
+        "benefit_FxcQ6Q",
+        "benefit_QA8LPV",
+        "benefit_JBqxKC",
+        "benefit_pXREpV"
+      ],
+      "name": "Affiliate · Why join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "accent_color": "#fbbc05",
+        "subheading": "Why join",
+        "heading": "What We Offer",
+        "content": "<p>A transparent, performance-based program built for creators who want real results not complicated rules.</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "affiliate_how_it_works_zrPtrr": {
+      "type": "affiliate-how-it-works",
+      "name": "Affiliate · How it works",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "extra-large",
+        "subheading": "How It Works",
+        "heading": "Start Earning in 4 Steps",
+        "content": "<p>Join the Breathelet Affiliate Program, share your unique link or discount code, and earn commission for every valid sale you generate.</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "card_heading_size": "h6",
+        "card_heading_html_tag": "h3",
+        "step_1_title": "Apply",
+        "step_1_description": "Sign up and submit your affiliate application for review.",
+        "step_2_title": "Get Approved",
+        "step_2_description": "Once approved, you will receive your unique referral link or discount code through Shopify Collabs.",
+        "step_3_title": "Promote",
+        "step_3_description": "Share AirVape through your Instagram, TikTok, YouTube, website, blog, email marketing, or personal network using ethical and compliant promotion methods.",
+        "step_4_title": "Earn",
+        "step_4_description": "When customers purchase through your referral link or code, the sale is tracked automatically and your commission is credited to your account.",
+        "button_text": "Join The Program",
+        "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+        "button_style": "",
+        "button_size": "text-sm md:text-base",
+        "button_background_color": "",
+        "button_text_color": "",
+        "button_hover_style": "",
+        "button_hover_size": "",
+        "button_hover_background_color": "",
+        "button_hover_text_color": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "affiliate_why_promote_cYdaka": {
+      "type": "affiliate-why-promote",
+      "blocks": {
+        "feature_aaTTYR": {
+          "type": "feature",
+          "settings": {
+            "icon": "💰",
+            "title": "10% Commission on Qualifying Sales",
+            "text": "<p>Earn a consistent percentage on every sale you refer through your unique link or code.</p>"
+          }
+        },
+        "feature_iYQEet": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎁",
+            "title": "10% Discount for Your Audience",
+            "text": "<p>Give your followers real value — a genuine discount that makes it easier to convert.</p>"
+          }
+        },
+        "feature_DXmweR": {
+          "type": "feature",
+          "settings": {
+            "icon": "⚡",
+            "title": "Automatic Tracking via Shopify Collabs",
+            "text": "<p>Zero manual work. Every click and sale is tracked automatically — no spreadsheets needed.</p>"
+          }
+        },
+        "feature_h8ptGp": {
+          "type": "feature",
+          "settings": {
+            "icon": "📈",
+            "title": "Real-Time Dashboard Access",
+            "text": "<p>See exactly what's working. Monitor clicks, conversions, and commissions whenever you want.</p>"
+          }
+        },
+        "feature_J7tLGG": {
+          "type": "feature",
+          "settings": {
+            "icon": "🚫",
+            "title": "No Minimum Sales Requirement",
+            "text": "<p>Start earning from your very first referral. No pressure, no thresholds, no gatekeeping.</p>"
+          }
+        },
+        "feature_tiHKLh": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏆",
+            "title": "Award-Winning Products with Proven Appeal",
+            "text": "<p>Multiple industry award winners with 4.6–4.9★ ratings across thousands of real reviews.</p>"
+          }
+        },
+        "stat_cK99Wf": {
+          "type": "stat",
+          "settings": {
+            "number": "4.8★",
+            "label": "Avg Rating"
+          }
+        },
+        "stat_rxdxc9": {
+          "type": "stat",
+          "settings": {
+            "number": "7,446+",
+            "label": "Reviews"
+          }
+        },
+        "stat_XXnFzn": {
+          "type": "stat",
+          "settings": {
+            "number": "$0",
+            "label": "Min. Threshold"
+          }
+        },
+        "stat_cbaRHE": {
+          "type": "stat",
+          "settings": {
+            "number": "2013",
+            "label": "Est. Since"
+          }
+        }
+      },
+      "block_order": [
+        "feature_aaTTYR",
+        "feature_iYQEet",
+        "feature_DXmweR",
+        "feature_h8ptGp",
+        "feature_J7tLGG",
+        "feature_tiHKLh",
+        "stat_cK99Wf",
+        "stat_rxdxc9",
+        "stat_XXnFzn",
+        "stat_cbaRHE"
+      ],
+      "name": "Affiliate Why Promote",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "accent_color": "#c9a24d",
+        "subheading": "Why Promote Airvape",
+        "heading": "Built for Creators Who Want Confidence",
+        "content": "<p>AirVape is built for creators and affiliates who want to recommend products with confidence. Our program is designed to be simple, transparent, and performance-driven.</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "show_big_card": true,
+        "big_number": "10%",
+        "big_label": "Commission Per Sale",
+        "big_sub": "On every qualifying referred purchase\nthrough your unique link or code",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
     "rich_text_TkNy8V": {
       "type": "rich-text",
       "blocks": {
@@ -318,6 +754,7 @@
         "button_HxEVkJ",
         "button_kiWXaQ"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets__0.name",
       "settings": {
         "full_width": true,
@@ -351,6 +788,7 @@
         "heading_YqLJBM",
         "text_rm4HUW"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets__0.name",
       "settings": {
         "full_width": true,
@@ -424,6 +862,7 @@
         "column_teLmmY",
         "column_Q9rmhD"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "enable_swipe_on_mobile": false,
@@ -466,6 +905,7 @@
         "heading_Vg9pU9",
         "text_ATeakN"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets__0.name",
       "settings": {
         "full_width": true,
@@ -499,6 +939,7 @@
         "heading_xWDhGG",
         "text_ib9Qmx"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets__0.name",
       "settings": {
         "full_width": true,
@@ -512,6 +953,7 @@
     },
     "video_with_text_overlay_a7LjKR": {
       "type": "video-with-text-overlay",
+      "disabled": true,
       "name": "t:sections.video-with-text-overlay.presets__0.name",
       "settings": {
         "custom_class": "affiliate-page",
@@ -527,6 +969,216 @@
         "overlay_color": "#000000",
         "overlay_opacity": 35,
         "overlay_type": "solid"
+      }
+    },
+    "rich_text_f9ja4x": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jNadme": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the AirVape Affiliate Program",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Fkqe8d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Start earning by promoting premium vaporizers through a simple, transparent, performance-based system.</p>"
+          }
+        },
+        "button_pzKzQw": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Register on Collabs",
+            "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": ""
+          }
+        },
+        "spacer_nh8LHV": {
+          "type": "spacer",
+          "settings": {
+            "space": "p-0"
+          }
+        },
+        "button_GLETnC": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for US audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#000000",
+            "button_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "button_tnaYwK": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Promote for EU audience",
+            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
+            "button_style": "button-outline",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_jNadme",
+        "text_Fkqe8d",
+        "button_pzKzQw",
+        "spacer_nh8LHV",
+        "button_GLETnC",
+        "button_tnaYwK"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "#eaeaea",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "affiliate_who_can_join_kV3qFi": {
+      "type": "affiliate-who-can-join",
+      "blocks": {
+        "criteria_mdFfTg": {
+          "type": "criteria",
+          "settings": {
+            "icon_width": 44,
+            "title": "Influencers",
+            "text": "<p>Instagram, TikTok, YouTube or Snapchat creators in the lifestyle or vape niche</p>"
+          }
+        },
+        "criteria_gitTdt": {
+          "type": "criteria",
+          "settings": {
+            "icon_width": 44,
+            "title": "Content Creators",
+            "text": "<p>Share Breathelet through social posts, short videos, product reviews, routines, or lifestyle content.</p>"
+          }
+        },
+        "criteria_6wgMpA": {
+          "type": "criteria",
+          "settings": {
+            "icon_width": 44,
+            "title": "Bloggers",
+            "text": "<p>Writers with established readership in the vaporizer, wellness, or lifestyle space<br/><br/></p>"
+          }
+        },
+        "criteria_8AD6fP": {
+          "type": "criteria",
+          "settings": {
+            "icon_width": 44,
+            "title": "Reviewers",
+            "text": "<p>Product review channels, comparison guides, and niche review sites with real traffic</p>"
+          }
+        },
+        "criteria_mFztRU": {
+          "type": "criteria",
+          "settings": {
+            "icon_width": 44,
+            "title": "Affiliate Marketers",
+            "text": "<p>Performance marketers with experience running compliant affiliate campaigns</p>"
+          }
+        },
+        "criteria_AH9Wjq": {
+          "type": "criteria",
+          "settings": {
+            "icon_width": 44,
+            "title": "Everyday Advocates",
+            "text": "<p>You do not need a massive audience. If your community trusts your recommendations, you can join.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "criteria_mdFfTg",
+        "criteria_gitTdt",
+        "criteria_6wgMpA",
+        "criteria_8AD6fP",
+        "criteria_mFztRU",
+        "criteria_AH9Wjq"
+      ],
+      "name": "Affiliate · Who can join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "accent_color": "#fbbc05",
+        "subheading": "Who Can Join",
+        "heading": "Built for Creators Who Want Confidence",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "card_heading_size": "h6",
+        "card_heading_html_tag": "h3",
+        "note_heading": "10% Commision Per Sale",
+        "note_text": "<p>On every qualifying referred purchase<br/>through your unique link or code</p>",
+        "note_heading_size": "h3",
+        "note_heading_html_tag": "h3",
+        "button_text": "Apply To Join",
+        "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
+        "button_style": "",
+        "button_size": "text-sm md:text-base",
+        "button_background_color": "",
+        "button_text_color": "",
+        "button_hover_style": "",
+        "button_hover_size": "",
+        "button_hover_background_color": "",
+        "button_hover_text_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_PjkJpU": {
+      "type": "featured-collection",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "carousel": false,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "",
+        "subheading": "",
+        "heading": "OUR SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
       }
     },
     "faq_accordion_FfwEcy": {
@@ -634,121 +1286,6 @@
         "text_color": "",
         "heading_color": ""
       }
-    },
-    "rich_text_f9ja4x": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_jNadme": {
-          "type": "heading",
-          "settings": {
-            "heading": "Join the AirVape Affiliate Program",
-            "heading_size": "h3",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_Fkqe8d": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Start earning by promoting premium vaporizers through a simple, transparent, performance-based system.</p>"
-          }
-        },
-        "button_pzKzQw": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": false,
-            "hulk_form_id_block": "",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Register on Collabs",
-            "button_link": "https://api.collabs.shopify.com/creator/signup/community_application/94218f9b1d45c14d?origin=THEME_EXTENSION",
-            "button_style": "",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "#000000",
-            "button_text_color": ""
-          }
-        },
-        "spacer_nh8LHV": {
-          "type": "spacer",
-          "settings": {
-            "space": "p-0"
-          }
-        },
-        "button_GLETnC": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": false,
-            "hulk_form_id_block": "",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Promote for US audience",
-            "button_link": "https://ui.awin.com/express-signup/en/awin/120641/29a1501d-5641-47de-bf86-949646bae99c?t=f0LlgmWeZOwCtnagj5243wXglBhXzDnL9StJ_P6ubto",
-            "button_style": "",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "#000000",
-            "button_text_color": "rgba(0,0,0,0)"
-          }
-        },
-        "button_tnaYwK": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": false,
-            "hulk_form_id_block": "",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Promote for EU audience",
-            "button_link": "https://ui.awin.com/express-signup/en/awin/84189/f289dba6-acfb-4371-8aba-cbd3bd7ea008?t=c55S8FshHfalgjGs61HlGaUJtQRUYoZzlDDxb2PmgyY",
-            "button_style": "button-outline",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_jNadme",
-        "text_Fkqe8d",
-        "button_pzKzQw",
-        "spacer_nh8LHV",
-        "button_GLETnC",
-        "button_tnaYwK"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-left",
-        "content_width": "normal",
-        "background_color": "#eaeaea",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "featured_collection_PjkJpU": {
-      "type": "featured-collection",
-      "settings": {
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [
-          "enso",
-          "legacy-core",
-          "legacy-pro-2",
-          "airvape-x-royal-edition",
-          "airvape-x",
-          "airvape-xs-go",
-          "airvape-om-keychain-waxpen",
-          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
-        ],
-        "collection": "",
-        "subheading": "",
-        "heading": "OUR SIGNATURE MODELS",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "h2"
-      }
     }
   },
   "order": [
@@ -756,14 +1293,21 @@
     "rich_text_47a9ak",
     "multicolumn_xBpPi8",
     "rich_text_LFVHht",
+    "image_with_text_overlay_KKefad",
+    "image_with_text_mCiKhq",
+    "image_with_text_overlay_q9nBhF",
+    "affiliate_why_join_DJHmCz",
+    "affiliate_how_it_works_zrPtrr",
+    "affiliate_why_promote_cYdaka",
     "rich_text_TkNy8V",
     "rich_text_XYX4XX",
     "multicolumn_Xwynif",
     "rich_text_8XcqhQ",
     "rich_text_NM8ce9",
     "video_with_text_overlay_a7LjKR",
-    "faq_accordion_FfwEcy",
     "rich_text_f9ja4x",
-    "featured_collection_PjkJpU"
+    "affiliate_who_can_join_kV3qFi",
+    "featured_collection_PjkJpU",
+    "faq_accordion_FfwEcy"
   ]
 }

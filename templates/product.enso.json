@@ -425,9 +425,8 @@
       "blocks": {
         "icon_EpPbLt": {
           "type": "icon",
-          "disabled": true,
           "settings": {
-            "custom_icon": "shopify://shop_images/SM_Logo-1.webp",
+            "custom_icon": "shopify://shop_images/red-dot-logo_267589e5-2902-4976-afd4-8eae503eff58.webp",
             "icon": "message-chat-circle",
             "icon_background": "",
             "icon_width": 96,
@@ -1246,7 +1245,7 @@
             "image_text_8": "",
             "image_link_8": "",
             "new_image_link_8": false,
-            "aspect_ratio": "auto",
+            "aspect_ratio": "portrait",
             "slides_desktop": 3,
             "slides_tablet": 3,
             "slides_mobile": 2,
