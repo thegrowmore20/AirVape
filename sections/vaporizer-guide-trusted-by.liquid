@@ -1,0 +1,250 @@
+{% comment %}
+  Section: Trusted By (Press / Expert Endorsements)
+  Built on the theme's existing rich-text / app-section layout structure
+  (reuses .app-section, .section-body, --content-width helpers) — no new framework.
+  Brand: black surface #000, white text, accent #FBBC05, Montserrat (theme default).
+  Custom blocks: "endorsement" (press quote) + "logo" (press logo).
+{% endcomment %}
+
+{% render 'section-bg-number-vars' %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --content-width: {% render 'get-content-width', type: section.settings.content_width %};
+    --tb-accent: {{ section.settings.accent_color | default: '#FBBC05' }};
+    --tb-surface: {{ section.settings.background_color | default: '#000000' }};
+    --tb-text: {{ section.settings.text_color | default: '#FFFFFF' }};
+    --tb-heading: {{ section.settings.heading_color | default: '#FFFFFF' }};
+  }
+  #shopify-section-{{ section.id }} .tb-wrapper {
+    background: var(--tb-surface); color: var(--tb-text);
+    border-radius: 24px; 
+    padding: 0 clamp(1.25rem,4vw,3.5rem);
+  }
+  #shopify-section-{{ section.id }} .tb-eyebrow {
+    display: inline-block; font-size: .75rem; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--tb-accent); font-weight: 600; margin-bottom: .75rem;
+  }
+  #shopify-section-{{ section.id }} .tb-heading { color: var(--tb-heading); margin: 0 0 .5rem; }
+  #shopify-section-{{ section.id }} .tb-accent-rule {
+    width: 56px; height: 3px; background: var(--tb-accent);
+    border-radius: 999px; margin: 1rem auto 2.25rem;
+  }
+  #shopify-section-{{ section.id }}.tb--left .tb-accent-rule { margin-left: 0; }
+  #shopify-section-{{ section.id }} .tb-grid {
+    display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  }
+  #shopify-section-{{ section.id }} .tb-card {
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10);
+    border-radius: 16px; padding: 1.75rem; text-align: left;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  #shopify-section-{{ section.id }} .tb-card:hover { border-color: var(--tb-accent); transform: translateY(-3px); }
+  #shopify-section-{{ section.id }} .tb-card__mark {
+    color: var(--tb-accent); font-size: 2.5rem; line-height: 1; font-family: Georgia, serif;
+    display: block; height: 1.5rem; overflow: hidden;
+  }
+  #shopify-section-{{ section.id }} .tb-card__quote { font-size: 1rem; line-height: 1.6; margin: .75rem 0 1.25rem; color: var(--tb-text); }
+  #shopify-section-{{ section.id }} .tb-card__source {
+    display: flex; align-items: center; gap: .65rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.10);
+  }
+  #shopify-section-{{ section.id }} .tb-card__logo { height: 22px; width: auto; object-fit: contain; }
+  #shopify-section-{{ section.id }} .tb-card__name { font-weight: 600; font-size: .9rem; }
+  #shopify-section-{{ section.id }} .tb-card__meta { font-size: .75rem; opacity: .7; }
+  #shopify-section-{{ section.id }} .tb-logos {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: clamp(1.5rem,4vw,3rem); margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.10);
+  }
+  #shopify-section-{{ section.id }} .tb-logos img {
+    height: 28px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: .75; transition: opacity .2s ease;
+  }
+  #shopify-section-{{ section.id }} .tb-logos img:hover { opacity: 1; }
+  #shopify-section-{{ section.id }} .tb-cta {
+    display: inline-flex; align-items: center; gap: .5rem; margin-top: 2.25rem;
+    padding: 12px 32px; border-radius: 64px; background: var(--tb-accent); color: #000;
+    font-weight: 500; text-decoration: none; transition: filter .2s ease;
+  }
+  #shopify-section-{{ section.id }} .tb-cta:hover { filter: brightness(1.05); }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .tb-wrapper {
+    padding: 0;
+    }
+    }
+</style>
+
+{% liquid
+  assign section_classes = ' app-section '
+  if section.settings.text_alignment == 'text-left'
+    assign section_classes = section_classes | append: ' tb--left '
+  endif
+  if section.settings.remove_horizontal_space
+    assign section_classes = section_classes | append: ' !px-0 '
+  endif
+  if section.settings.remove_vertical_space
+    assign section_classes = section_classes | append: ' !py-0 '
+  endif
+  if section.settings.link_url != blank
+    assign link_url = section.settings.link_url
+  else
+    assign link_url = null
+  endif
+%}
+
+<section {% render 'section-attrs', class: section_classes %}>
+  <div class="section-body trim-margins {{ section.settings.text_alignment }} mx-auto max-w-[--content-width]">
+    <div class="tb-wrapper">
+
+      {%- if section.settings.subheading != blank -%}
+        <span class="tb-eyebrow">{{ section.settings.subheading }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <{{ section.settings.heading_html_tag }} class="tb-heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </{{ section.settings.heading_html_tag }}>
+      {%- endif -%}
+
+      <div class="tb-accent-rule"></div>
+
+      <div class="section-body-wrapper">
+        <div class="tb-grid">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'endorsement' -%}
+                <div class="tb-card" {{ block.shopify_attributes }}>
+                  <span class="tb-card__mark" aria-hidden="true">&ldquo;</span>
+                  {%- if block.settings.quote != blank -%}
+                    <p class="tb-card__quote">{{ block.settings.quote }}</p>
+                  {%- endif -%}
+                  <div class="tb-card__source">
+                    {%- if block.settings.logo != blank -%}
+                      <img class="tb-card__logo" src="{{ block.settings.logo | image_url: width: 200 }}"
+                           alt="{{ block.settings.source_name | escape }}" loading="lazy" width="100" height="22">
+                    {%- endif -%}
+                    <span>
+                      {%- if block.settings.source_name != blank -%}
+                        <span class="tb-card__name">{{ block.settings.source_name }}</span><br>
+                      {%- endif -%}
+                      {%- if block.settings.source_meta != blank -%}
+                        <span class="tb-card__meta">{{ block.settings.source_meta }}</span>
+                      {%- endif -%}
+                    </span>
+                  </div>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+
+        {%- assign has_logos = false -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'logo' -%}{%- assign has_logos = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if has_logos -%}
+          <div class="tb-logos">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'logo' and block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 300 }}"
+                     alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="120" height="28" {{ block.shopify_attributes }}>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.link_text != blank and link_url -%}
+        <a class="tb-cta" href="{{ link_url }}" {% if section.settings.new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ section.settings.link_text }}
+        </a>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trusted By",
+  "settings": [
+    { "type": "checkbox", "id": "full_width", "label": "t:sections.all.full_width.label", "default": true },
+    { "type": "checkbox", "id": "remove_horizontal_space", "label": "t:sections.apps.settings.remove_horizontal_space.label" },
+    { "type": "checkbox", "id": "remove_vertical_space", "label": "t:sections.apps.settings.remove_vertical_space.label" },
+    {
+      "type": "select", "id": "content_width", "label": "t:sections.rich-text.settings.content_width.label",
+      "options": [
+        { "value": "small", "label": "t:sections.rich-text.settings.content_width.options__0.label" },
+        { "value": "normal", "label": "t:sections.rich-text.settings.content_width.options__1.label" },
+        { "value": "large", "label": "t:sections.rich-text.settings.content_width.options__2.label" },
+        { "value": "extra-large", "label": "t:sections.rich-text.settings.content_width.options__3.label" },
+        { "value": "full-width", "label": "t:sections.rich-text.settings.content_width.options__4.label" }
+      ],
+      "default": "large"
+    },
+    { "type": "header", "content": "t:sections.all.headers.heading" },
+    { "type": "text", "id": "subheading", "label": "t:sections.all.subheading.label", "default": "As featured in" },
+    { "type": "text", "id": "heading", "label": "t:sections.featured-collection.settings.heading.label", "default": "Trusted by Experts and Buyers" },
+    {
+      "type": "select", "id": "heading_size", "label": "t:sections.all.heading_size.label",
+      "options": [
+        { "value": "h0", "label": "t:sections.all.heading_size.options__0.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h2", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h3", "label": "t:sections.all.heading_size.options__3.label" },
+        { "value": "h4", "label": "t:sections.all.heading_size.options__4.label" },
+        { "value": "h5", "label": "t:sections.all.heading_size.options__5.label" },
+        { "value": "h6", "label": "t:sections.all.heading_size.options__6.label" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select", "id": "text_alignment", "label": "t:sections.all.text_alignment.label",
+      "options": [
+        { "value": "text-left", "label": "t:sections.all.text_alignment.options.text_left.label" },
+        { "value": "text-center", "label": "t:sections.all.text_alignment.options.text_center.label" }
+      ],
+      "default": "text-center"
+    },
+    { "type": "html", "id": "link_text", "label": "t:sections.featured-collection.settings.link_text.label", "default": "Explore All" },
+    { "type": "url", "id": "link_url", "label": "t:sections.featured-collection.settings.link_url.label", "info": "t:sections.featured-collection.settings.link_url.info" },
+    { "type": "checkbox", "id": "new_tab", "label": "Open in New Tab", "default": false },
+    {
+      "type": "select", "id": "heading_html_tag", "label": "t:sections.all.heading_html_tag.label",
+      "options": [
+        { "value": "h1", "label": "h1" }, { "value": "h2", "label": "h2" }, { "value": "h3", "label": "h3" },
+        { "value": "h4", "label": "h4" }, { "value": "h5", "label": "h5" }, { "value": "h6", "label": "h6" },
+        { "value": "p", "label": "p" }, { "value": "span", "label": "span" }, { "value": "div", "label": "div" }
+      ],
+      "default": "h2", "info": "t:sections.all.heading_html_tag.info"
+    },
+    { "type": "header", "content": "t:sections.all.headers.colors" },
+    { "type": "color", "label": "t:sections.all.background_color.label", "id": "background_color", "default": "#000000" },
+    { "type": "color", "label": "t:sections.all.text_color.label", "id": "text_color", "default": "#FFFFFF" },
+    { "type": "color", "label": "t:sections.all.heading_color.label", "id": "heading_color", "default": "#FFFFFF" },
+    { "type": "color", "label": "Accent color", "id": "accent_color", "default": "#FBBC05" }
+  ],
+  "blocks": [
+    {
+      "type": "endorsement", "name": "Press quote",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Described as “ultra efficient” and praised for its sturdy yet lightweight construction." },
+        { "type": "text", "id": "source_name", "label": "Source name", "default": "Forbes" },
+        { "type": "text", "id": "source_meta", "label": "Source detail", "default": "On the AirVape XS GO" },
+        { "type": "image_picker", "id": "logo", "label": "Source logo (optional)" }
+      ]
+    },
+    {
+      "type": "logo", "name": "Press logo",
+      "settings": [ { "type": "image_picker", "id": "image", "label": "Logo" } ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trusted By",
+      "blocks": [
+        { "type": "endorsement", "settings": { "quote": "The AirVape XS GO was described as “ultra efficient” and praised for its sturdy yet lightweight construction.", "source_name": "Forbes", "source_meta": "On the AirVape XS GO" } },
+        { "type": "endorsement", "settings": { "quote": "Reviewed among the best portable vaporizers (June 2025), aligning with AirVape’s premium positioning.", "source_name": "NY Times Wirecutter", "source_meta": "Best portable vaporizers" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -38,26 +38,29 @@
               data-animation-group="{{ section.id }}"
               {{ block.shopify_attributes }}
             >
-              {% if block.settings.icon_image != blank %}
-                {% assign icon_sizes = block.settings.icon_width | append: 'px' %}
-                <div class="awc-item__icon" style="width: {{ block.settings.icon_width }}px;">
-                  {{
-                    block.settings.icon_image
-                    | image_url: width: 176
-                    | image_tag:
-                      widths: '44, 88, 132, 176',
-                      sizes: icon_sizes,
-                      alt: block.settings.icon_image.alt,
-                      loading: 'lazy'
-                  }}
-                </div>
-              {% else %}
-                <div class="awc-item__icon" style="width: {{ block.settings.icon_width }}px;">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 1.5v21M17 5.5H9.5A3.5 3.5 0 0 0 9.5 12.5h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>  
-              {% endif %}
+              {%- comment -%} Icon: preset SVG, uploaded image, or pasted SVG code {%- endcomment -%}
+              {%- assign icon_type = block.settings.icon_type | default: 'preset' -%}
+              <div class="awc-item__icon" style="width: {{ block.settings.icon_width }}px;">
+                {%- case icon_type -%}
+                  {%- when 'image' -%}
+                    {%- if block.settings.icon_image != blank -%}
+                      {% assign icon_sizes = block.settings.icon_width | append: 'px' %}
+                      {{
+                        block.settings.icon_image
+                        | image_url: width: 176
+                        | image_tag:
+                          widths: '44, 88, 132, 176',
+                          sizes: icon_sizes,
+                          alt: block.settings.icon_image.alt,
+                          loading: 'lazy'
+                      }}
+                    {%- endif -%}
+                  {%- when 'svg' -%}
+                    {{ block.settings.custom_svg }}
+                  {%- else -%}
+                    {% render 'affiliate-preset-icon', icon: block.settings.icon %}
+                {%- endcase -%}
+              </div>
               <div class="awc-item__body">
                 {% if block.settings.title != blank %}
                   <{{ item_tag }} class="heading {{ section.settings.card_heading_size }} awc-item__title">{{ block.settings.title }}</{{ item_tag }}>
@@ -139,8 +142,12 @@
     padding: 10px;
   }
 
+  /* width/height pinned so pasted SVG code sizes to the tile like the presets do */
   .awc-item__icon svg {
     color: #fff;
+    display: block;
+    width: 100%;
+    height: auto;
   }
   .awc-item__icon img {
     display: block;
@@ -189,6 +196,7 @@
     background: #fbbc05;
     color: #000;
   }
+
 
   @media (max-width: 900px) {
     .awc-grid {
@@ -515,9 +523,48 @@
       "limit": 8,
       "settings": [
         {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon type",
+          "options": [
+            { "value": "preset", "label": "Preset icon" },
+            { "value": "image", "label": "Custom image" },
+            { "value": "svg", "label": "SVG code" }
+          ],
+          "default": "preset"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Preset icon",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "commission", "label": "Commission" },
+            { "value": "tracking", "label": "Tracking / Analytics" },
+            { "value": "nominimum", "label": "No minimum" },
+            { "value": "product", "label": "Premium product" },
+            { "value": "link", "label": "Referral link" },
+            { "value": "payout", "label": "Payout" },
+            { "value": "support", "label": "Marketing support" },
+            { "value": "promote", "label": "Easy to promote" },
+            { "value": "check", "label": "Check" },
+            { "value": "users", "label": "Community / People" }
+          ],
+          "default": "commission",
+          "visible_if": "{{ block.settings.icon_type == 'preset' }}"
+        },
+        {
           "type": "image_picker",
           "id": "icon_image",
-          "label": "Icon image"
+          "label": "Custom image",
+          "visible_if": "{{ block.settings.icon_type == 'image' }}"
+        },
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "SVG code",
+          "info": "Paste raw <svg>…</svg>. Use stroke=\"currentColor\" or fill=\"currentColor\" so it inherits the tile colour.",
+          "visible_if": "{{ block.settings.icon_type == 'svg' }}"
         },
         {
           "type": "range",

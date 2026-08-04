@@ -158,8 +158,8 @@
 
             {% if forloop.first %}
               {% liquid
-                assign poster_desktop = block.settings.video.preview_image
-                assign poster_mobile = block.settings.mobile_video.preview_image | default: poster_desktop
+                assign poster_desktop = block.settings.video_poster | default: block.settings.video.preview_image
+                assign poster_mobile = block.settings.video_poster_mobile | default: block.settings.mobile_video.preview_image
               %}
               {% if poster_desktop %}
                 <picture class="slide-video-poster">
@@ -485,7 +485,7 @@
 
 
 <script>
-  window.addEventListener('load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     (function () {
       var section = document.querySelector('#shopify-section-{{ section.id }}');
       if (!section) return;
@@ -667,9 +667,19 @@
           "info": "t:sections.slideshow.blocks.slide.settings.video.info"
         },
         {
+          "type": "image_picker",
+          "id": "video_poster",
+          "label": "Video Poster"
+        },
+        {
           "type": "video",
           "id": "mobile_video",
           "label": "t:sections.slideshow.blocks.slide.settings.mobile_video.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_poster_mobile",
+          "label": "Video Poster Mobile"
         },
         {
           "type": "range",

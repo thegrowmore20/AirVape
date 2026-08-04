@@ -85,12 +85,16 @@
 
   
     <!-- Age verification popup end -->
-    {% unless request.design_mode %}
-        {% render 'air-age-verification' %}
-    {% endunless %}
+    {% if settings.enable_popup %}
+      {% unless request.design_mode %}
+          {% render 'air-age-verification' %}
+      {% endunless %}
+    {% endif %}
   
  
+    {% if settings.enable_popup %}
   	{% render 'age-verification-popup' %}
+    {% endif %}
   
   </head>
 
@@ -283,14 +287,15 @@
         (function() {
           if (window.innerWidth >= 768) return; // mobile only
           const TEASER_SELECTOR = '.product-page [class*="kl-teaser-"]';
-          const MAX_ATTEMPTS = 20; // stop polling after ~20s if no teaser loads
+          const MAX_ATTEMPTS = 20; // stop polling after ~20s if neither loads
           let attempts = 0;
 
           const initStickyTracker = () => {
+            const teaser = document.querySelector(TEASER_SELECTOR);
             const stickyBar = document.querySelector('sticky-add-to-cart');
-            const teaser = document.querySelector(TEASDER_SELECTOR);
 
-            if (stickyBar && teaser) {
+            // Only run if BOTH the teaser and sticky bar exist
+            if (teaser && stickyBar) {
               teaser.style.setProperty('transition', 'bottom 0.4s ease-in-out', 'important');
 
               // Shared function to update position
@@ -312,8 +317,10 @@
               });
 
             } else if (attempts++ < MAX_ATTEMPTS) {
+              // one or both not found yet — retry
               setTimeout(initStickyTracker, 1000);
             }
+            // neither appeared within MAX_ATTEMPTS → script exits silently
           };
 
           initStickyTracker();

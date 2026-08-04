@@ -1,24 +1,63 @@
 {% render 'section-bg-number-vars' %}
 
+{% liquid
+  assign bg = section.settings.background_color
+  assign text = section.settings.text_color
+  assign heading = section.settings.heading_color
+
+  # Auto-pick a readable text colour from the background's brightness,
+  # so a dark bg never leaves dark (invisible) text behind.
+  assign auto_ch = '0 0 0'
+  if bg != blank
+    assign bg_brightness = bg | color_brightness
+    if bg_brightness < 140
+      assign auto_ch = '255 255 255'
+    endif
+  endif
+
+  # Resolve to space-separated RGB channels (R G B) so they plug into the
+  # theme's rgb(var(--x) / alpha) pattern.
+  assign bg_ch = ''
+  if bg != blank
+    assign bg_ch = bg.red | append: ' ' | append: bg.green | append: ' ' | append: bg.blue
+  endif
+
+  assign text_ch = ''
+  if text != blank
+    assign text_ch = text.red | append: ' ' | append: text.green | append: ' ' | append: text.blue
+  elsif bg != blank
+    assign text_ch = auto_ch
+  endif
+
+  assign heading_ch = ''
+  if heading != blank
+    assign heading_ch = heading.red | append: ' ' | append: heading.green | append: ' ' | append: heading.blue
+  elsif bg != blank
+    assign heading_ch = auto_ch
+  endif
+%}
+
 <style>
   #shopify-section-{{ section.id }} {
     --content-width: {% render 'get-content-width', type: section.settings.content_width %};
+    {%- if bg_ch != blank %}
+    --color-background: {{ bg_ch }};
+    {%- endif %}
+    {%- if text_ch != blank %}
+    --color-foreground: {{ text_ch }};
+    {%- endif %}
+    {%- if heading_ch != blank %}
+    --awh-heading: {{ heading_ch }};
+    {%- endif %}
   }
+
+  {%- if bg_ch != blank %}
+  /* Paint the background only when a colour is chosen (keeps default transparent). */
+  #shopify-section-{{ section.id }} .awh-section {
+    background-color: rgb(var(--color-background));
+  }
+  {%- endif %}
 </style>
-
-{% liquid
-  assign section_classes = ' awh-section '
-
-  if section.settings.remove_horizontal_space
-    assign section_classes = section_classes | append: ' !px-0 '
-  endif
-
-  if section.settings.remove_vertical_space
-    assign section_classes = section_classes | append: ' !py-0 '
-  endif
-
-  assign step_tag = section.settings.card_heading_html_tag | default: 'h3'
-%}
 
 <section id="affiliate-how-it-works" {% render 'section-attrs', class: section_classes %}>
   <div class="section-body max-w-[--content-width] mx-auto">
@@ -37,7 +76,7 @@
           <div class="awh-step relative" data-animation="block" data-animation-group="{{ section.id }}">
             <div class="awh-step__num">{{ i }}</div>
             {% if step_title != blank %}
-              <{{ step_tag }} class="heading {{ section.settings.card_heading_size }} awh-step__title">{{ step_title }}</{{ step_tag }}>
+              <h4 class="heading {{ section.settings.card_heading_size }} awh-step__title">{{ step_title }}</h4>
             {% endif %}
             {% if step_desc != blank %}
               <p class="awh-step__desc">{{ step_desc }}</p>
@@ -90,10 +129,10 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    /* Opaque (tint layered over the page background) so the connector line
-       sits behind the circle and only shows in the gaps between steps. */
-    background: linear-gradient(rgb(var(--color-foreground) / 0.12), rgb(var(--color-foreground) / 0.12)), rgb(var(--color-background));
-    border: 1px solid rgb(var(--color-foreground) / 0.3);
+    /* Solid ink circle: circle = text colour, number = bg colour → inverts on dark. */
+    color: rgb(var(--color-background));
+    background: #ffbc05;
+    border: 1px solid #ffbc05;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,18 +140,16 @@
     flex-shrink: 0;
     font-size: var(--size-text-base);
     font-weight: 700;
-    color: rgb(var(--color-background));
-    background: rgb(var(--color-foreground));
-    border-color: rgb(var(--color-foreground));
   }
   .awh-step__num:hover {
     background: rgb(var(--color-foreground));
     color: rgb(var(--color-background));
+    border: 1px solid rgb(var(--color-foreground));
   }
 
   .awh-step__title {
     margin-bottom: 10px;
-    color: rgb(var(--color-foreground));
+    color: rgb(var(--awh-heading, var(--color-foreground)));
     font-weight: 600;
   }
 
@@ -133,7 +170,7 @@
     transition: all 0.2s ease;
   }
   .awh-cta a:hover {
-    background: #fbbc05;
+    background: rgb(var(--color-foreground));;
     color: #000;
   }
 
@@ -453,23 +490,27 @@
     },
     {
       "type": "header",
-      "content": "t:sections.all.headers.colors"
+      "content": "Section background & text"
     },
     {
       "type": "color",
       "label": "t:sections.all.background_color.label",
-      "id": "background_color"
+      "id": "background_color",
+      "info": "Leave blank = transparent. Set a dark colour (e.g. #000000) and step numbers, titles & text auto-switch to a readable light colour."
     },
     {
       "type": "color",
       "label": "t:sections.all.text_color.label",
-      "id": "text_color"
+      "id": "text_color",
+      "info": "Optional — overrides the auto colour for step descriptions / body text."
     },
     {
       "type": "color",
       "label": "t:sections.all.heading_color.label",
-      "id": "heading_color"
+      "id": "heading_color",
+      "info": "Optional — overrides the auto colour for the heading & step titles."
     }
+    
   ],
   "presets": [
     {

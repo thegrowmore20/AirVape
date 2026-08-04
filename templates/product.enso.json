@@ -266,8 +266,8 @@
       ],
       "settings": {
         "show_breadcrumbs": false,
-        "desktop_media_width": 50,
-        "media_size": "",
+        "desktop_media_width": 56,
+        "media_size": "1",
         "media_layout_desktop": "carousel_vertical",
         "media_mobile_indicator": "thumbnails",
         "media_zoom": "lightbox",

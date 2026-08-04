@@ -31,6 +31,7 @@
         "announcement_Ymk49r",
         "announcement_GL9UYp"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "text_size": "announcement-bar--text-sm",

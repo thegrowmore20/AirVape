@@ -67,7 +67,15 @@
   /* Vertical/horizontal spacing comes from the theme .section class. */
   /* display/gap/text-align via utilities: .grid .gap-5 .text-left */
   .awj-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* A lone last card (odd total count, e.g. the 5th) spans both columns and centres,
+     keeping the width of a single column (gap-5 = 20px, so half-gap = 10px). */
+  .awj-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 10px);
+    margin-inline: auto;
   }
 
   .awj-section{
@@ -108,6 +116,7 @@
 
   .awj-card__icon img {
     transition: filter 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(81%) sepia(24%) saturate(2793%) hue-rotate(352deg) brightness(97%) contrast(103%);
   }
 
   .awj-card:hover .awj-card__icon {
@@ -117,7 +126,7 @@
 
   /* Uploaded icon turns white on hover */
   .awj-card:hover .awj-card__icon img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(0);
   }
 
   .awj-card__title {
@@ -131,12 +140,13 @@
     color: rgb(var(--color-foreground) / 0.65);
   }
 
-  @media (max-width: 900px) {
-    .awj-grid { grid-template-columns: 1fr 1fr; }
-  }
-
   @media (max-width: 600px) {
     .awj-grid { grid-template-columns: 1fr; }
+    /* Single column — the lone last card no longer needs special centring */
+    .awj-card:last-child:nth-child(odd) {
+      grid-column: auto;
+      max-width: none;
+    }
   }
 </style>
 

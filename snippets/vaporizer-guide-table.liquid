@@ -1,0 +1,158 @@
+<div class="cmp-wrap vaporizer-guide-table" data-animation-auto-order>
+  <div class="cmp-scroll">
+    <table class="cmp-table" role="table" aria-label="Product comparison">
+      <thead>
+        <tr>
+          <th class="cmp-sticky-left cmp-sticky-top cmp-th-feature">Features</th>
+          <th class="cmp-sticky-top">Legacy PRO 2</th>
+          <th class="cmp-sticky-top">Legacy CORE</th>
+          <th class="cmp-sticky-top">XS GO</th>
+          <th class="cmp-sticky-top">OM Keychain Waxpen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Heating Type</th>
+          <td>Hybrid (Convection + Conduction)</td>
+          <td>Hybrid (Convection + Conduction)</td>
+          <td>Conduction</td>
+          <td>Conduction</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Chamber Material</th>
+          <td>Gold-plated Stainless Steel</td>
+          <td>Gold-plated Stainless Steel</td>
+          <td>Ceramic</td>
+          <td>Stainless Steel</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Airpath</th>
+          <td>Isolated Glass Airpath</td>
+          <td>Isolated Glass Airpath</td>
+          <td>Non-isolated</td>
+          <td>Non-isolated</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Battery Life</th>
+          <td>3200 mAh (~60–80 mins)</td>
+          <td>3200 mAh (~60–80 mins)</td>
+          <td>~20 mins</td>
+          <td>~15 mins</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Charging</th>
+          <td>USB-C + Wireless</td>
+          <td>USB-C</td>
+          <td>USB</td>
+          <td>USB</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Heat-up Time</th>
+          <td>15 seconds</td>
+          <td>30 seconds</td>
+          <td>30 seconds</td>
+          <td>10 seconds</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Portability</th>
+          <td>Medium</td>
+          <td>Medium</td>
+          <td>High</td>
+          <td>Ultra-portable</td>
+        </tr>
+        <tr>
+          <th class="cmp-sticky-left cmp-th-feature">Use Type</th>
+          <td>Dry herb + concentrate</td>
+          <td>Dry herb + concentrate</td>
+          <td>Dry herb</td>
+          <td>Concentrate</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+/* wrapper: ensure scrolling works on mobile */
+.cmp-wrap { width:100%; }
+.vaporizer-guide-table .cmp-scroll {
+  overflow-x:auto !important;
+  -webkit-overflow-scrolling:touch;
+  border:1px solid #e3e3e3;
+  border-radius: 16px;
+  background:#fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+}
+
+/* table base */
+.cmp-table {
+  width:100%;
+  border-collapse:separate;     /* needed for sticky in some themes */
+  border-spacing:0;
+  table-layout:fixed;
+  min-width:900px;              /* increased for 4 product columns */
+  font-size:16px;
+}
+
+.cmp-table th,
+.cmp-table td {
+  padding:12px 14px;
+  border-bottom:1px solid #eee;
+  border-right:1px solid #eee;
+  text-align:center;
+  color:#222;
+  background:#fff;
+  white-space:normal;
+  word-break:break-word;
+}
+
+/* header row */
+.cmp-table thead th {
+  font-weight:700;
+  background:#f8f8f8 !important;
+}
+
+/* sticky top (column headers) */
+.cmp-sticky-top {
+  position:sticky !important;
+  top:0;
+  z-index:5;
+}
+
+/* sticky left (features column) */
+.cmp-sticky-left {
+  position:sticky !important;
+  left:0;
+  z-index:6;                  /* above cells */
+  text-align:left;
+  background:#fff !important;
+}
+
+/* style for left feature cells */
+.cmp-th-feature {
+  font-weight:600;
+  width:190px;                /* fixed feature column width */
+}
+
+/* make product columns readable on phones */
+@media (max-width: 768px) {
+  .cmp-table { min-width: 900px; }     /* keeps 4 product cols swipeable */
+  .cmp-th-feature { width:160px; }
+}
+
+/* polish */
+.cmp-table tr:last-child th,
+.cmp-table tr:last-child td { border-bottom:0; }
+.cmp-table th:last-child,
+.cmp-table td:last-child { border-right:0; }
+
+.cmp-table thead tr th {
+background: #000 !important;
+color: #fff;
+padding-block: 16px;
+}
+.cmp-table tbody tr:hover td,
+.cmp-table tbody tr:hover th {
+  background: #f1f1f1 !important;
+}
+</style>

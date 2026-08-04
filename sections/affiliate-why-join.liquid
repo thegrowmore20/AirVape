@@ -1,15 +1,129 @@
+{% comment %}
+  Affiliate · Why join
+  ---------------------------------------------------------------------------
+  Multi-instance safe. All colours are resolved into CSS custom properties on
+  #shopify-section-{{ section.id }} (unique per instance) and the component
+  rules only read those variables. So two copies on one page never fight — a
+  Light card and a Dark card can sit side by side.
+
+  Controls:
+   • Color scheme  → Light (original look) / Dark
+   • Card layout   → Stacked (icon on top) / Inline (icon on left)
+   • Optional colour overrides (blank = use the scheme's colour)
+  ---------------------------------------------------------------------------
+{% endcomment %}
+
 {% render 'section-bg-number-vars' %}
 
+{% liquid
+  assign scheme = section.settings.color_scheme | default: 'light'
+
+  # Brand colours (scheme-independent, configurable)
+  assign brand_yellow = section.settings.brand_yellow_color | default: '#fbbc05'
+
+  # ---- Scheme fallbacks -----------------------------------------------------
+  if scheme == 'dark'
+    assign fb_section_bg    = '#0f0f0f'
+    assign fb_card_bg       = '#181818'
+    assign fb_card_border   = 'rgba(255, 255, 255, 0.08)'
+    assign fb_card_bg_h     = '#232323'
+    assign fb_card_border_h = 'rgba(251, 188, 5, 0.45)'
+    assign fb_title         = '#ffffff'
+    assign fb_title_h       = '#ffffff'
+    assign fb_desc          = 'rgba(255, 255, 255, 0.62)'
+    assign fb_desc_h        = 'rgba(255, 255, 255, 0.85)'
+    assign fb_icon_bg       = brand_yellow
+    assign fb_icon_color    = '#111111'
+    assign fb_icon_bg_h     = '#111111'
+    assign fb_icon_color_h  = brand_yellow
+    assign fb_tag_bg        = 'rgba(255, 255, 255, 0.08)'
+    assign fb_tag_color     = 'rgba(255, 255, 255, 0.80)'
+  else
+    # Light = the original look, expressed as variables (theme-aware)
+    assign fb_section_bg    = 'transparent'
+    assign fb_card_bg       = 'rgb(var(--color-background))'
+    assign fb_card_border   = '#f5ebeb'
+    assign fb_card_bg_h     = 'rgb(var(--color-foreground))'
+    assign fb_card_border_h = 'rgb(var(--color-foreground))'
+    assign fb_title         = 'rgb(var(--color-foreground))'
+    assign fb_title_h       = 'rgb(var(--color-background))'
+    assign fb_desc          = 'rgb(var(--color-foreground) / 1)'
+    assign fb_desc_h        = 'rgb(var(--color-background))'
+    assign fb_icon_bg       = 'rgb(var(--color-foreground))'
+    assign fb_icon_color    = 'var(--awj-accent)'
+    assign fb_icon_bg_h     = brand_yellow
+    assign fb_icon_color_h  = '#000000'
+    assign fb_tag_bg        = '#eeeeee'
+    assign fb_tag_color     = '#333333'
+  endif
+
+  # ---- Optional overrides (blank => use the scheme fallback) -----------------
+  assign section_bg = fb_section_bg
+  if section.settings.background_color != blank
+    assign section_bg = section.settings.background_color
+  endif
+
+  assign card_bg = fb_card_bg
+  if section.settings.card_background_color != blank
+    assign card_bg = section.settings.card_background_color
+  endif
+
+  assign icon_bg = fb_icon_bg
+  if section.settings.icon_background_color != blank
+    assign icon_bg = section.settings.icon_background_color
+  endif
+
+  assign icon_color_final = fb_icon_color
+  if section.settings.icon_color != blank
+    assign icon_color_final = section.settings.icon_color
+  endif
+
+  assign awj_pad_bg = false
+  if section.settings.remove_vertical_space == false
+    if scheme == 'dark' or section.settings.section_bg_color != blank
+      assign awj_pad_bg = true
+    endif
+  endif
+
+%}
+
 <style>
+  .awj-section.section--full-width {
+    padding-top: min(calc(var(--section-vertical-spacing) * 1), var(--section-pt-max, 9999px));
+  }
   #shopify-section-{{ section.id }} {
     --content-width: {% render 'get-content-width', type: section.settings.content_width %};
     --awj-accent: {{ section.settings.accent_color }};
     --awj-accent-rgb: {{ section.settings.accent_color.red }} {{ section.settings.accent_color.green }} {{ section.settings.accent_color.blue }};
+    --awj-brand-yellow: {{ brand_yellow }};
+
+    /* Surfaces */
+    --awj-section-bg: {{ section_bg }};
+    --awj-card-bg: {{ card_bg }};
+    --awj-card-border: {{ fb_card_border }};
+    --awj-card-bg-hover: {{ fb_card_bg_h }};
+    --awj-card-border-hover: {{ fb_card_border_h }};
+
+    /* Text */
+    --awj-title: {{ fb_title }};
+    --awj-title-hover: {{ fb_title_h }};
+    --awj-desc: {{ fb_desc }};
+    --awj-desc-hover: {{ fb_desc_h }};
+
+    /* Icon badge */
+    --awj-icon-bg: {{ icon_bg }};
+    --awj-icon-color: {{ icon_color_final }};
+    --awj-icon-bg-hover: {{ fb_icon_bg_h }};
+    --awj-icon-color-hover: {{ fb_icon_color_h }};
+
+    /* Tags */
+    --awj-tag-bg: {{ fb_tag_bg }};
+    --awj-tag-color: {{ fb_tag_color }};
   }
 </style>
 
 {% liquid
-  assign section_classes = ' awj-section '
+  assign section_classes = ' awj-section ' | append: scheme
   if section.settings.remove_horizontal_space
     assign section_classes = section_classes | append: ' !px-0 '
   endif
@@ -24,80 +138,72 @@
     {% render 'section-header' %}
 
     {% if section.blocks.size > 0 %}
-      <div class="awj-grid" data-animation-auto-order>
+      <div class="awj-grid awj-grid-{{ section.id }}" data-animation-auto-order>
         {% for block in section.blocks %}
           <article
-            class="awj-card relative overflow-hidden"
+            class="awj-card relative overflow-hidden {% if block.settings.title == blank %}awj-card-no-heading{% endif %}"
             data-animation="block"
             data-animation-group="{{ section.id }}-cards"
             {{ block.shopify_attributes }}
           >
-            {%- comment -%} Icon: inline SVG (preset-friendly) OR uploaded image {%- endcomment -%}
-            {% if block.settings.icon != blank and block.settings.icon != 'none' %}
-              <div class="awj-card__icon awj-card__icon--svg">
-                {% case block.settings.icon %}
-                  {% when 'commission' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M12 1.5v21M17 5.5H9.5A3.5 3.5 0 0 0 9.5 12.5h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  {% when 'tracking' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M3 20V10M9 20V4M15 20v-7M21 20V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  {% when 'nominimum' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9.25" stroke="currentColor" stroke-width="1.6"/>
-                      <path d="m8 8 8 8M16 8l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    </svg>
-                  {% when 'link' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M9.5 14.5 14.5 9.5M10.5 6.5l1.4-1.4a4 4 0 0 1 5.6 5.6l-1.4 1.4M13.5 17.5l-1.4 1.4a4 4 0 0 1-5.6-5.6l1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  {% when 'support' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M4 5h13a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5V16H4a1 1 0 0 1-1-1V7a2 2 0 0 1 1-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                      <path d="M8 9.5h7M8 12.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    </svg>
-                  {% when 'product' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M12 2.5 4 6.5v6c0 5 3.4 7.9 8 9 4.6-1.1 8-4 8-9v-6l-8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                      <path d="m9 12 2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  {% when 'payout' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <rect x="2.75" y="6.75" width="18.5" height="12.5" rx="2" stroke="currentColor" stroke-width="1.6"/>
-                      <path d="M2.75 10.5h18.5" stroke="currentColor" stroke-width="1.6"/>
-                      <circle cx="17" cy="14.5" r="1.4" fill="currentColor"/>
-                    </svg>
-                  {% when 'promote' %}
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M3.5 9.5v5a1 1 0 0 0 1 1H8l7 4.5V4L8 8.5H4.5a1 1 0 0 0-1 1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                      <path d="M18.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    </svg>
-                {% endcase %}
-              </div>
-            {% elsif block.settings.icon_image != blank %}
-              {% assign icon_sizes = block.settings.icon_width | append: 'px' %}
-              <div class="awj-card__icon" style="width: {{ block.settings.icon_width }}px;">
-                {{
-                  block.settings.icon_image
-                  | image_url: width: 240
-                  | image_tag:
-                    widths: '60, 120, 180, 240',
-                    sizes: icon_sizes,
-                    alt: block.settings.icon_image.alt,
-                    loading: 'lazy'
-                }}
-              </div>
-            {% endif %}
-            {% if block.settings.title != blank %}
-              <h3 class="awj-card__title">{{ block.settings.title }}</h3>
-            {% endif %}
-            {% if block.settings.text != blank %}
-              <div class="awj-card__desc">{{ block.settings.text }}</div>
-            {% endif %}
+            {%- comment -%} Icon: preset SVG, uploaded image, or pasted SVG code {%- endcomment -%}
+            {%- assign icon_type = block.settings.icon_type | default: 'preset' -%}
+            {%- case icon_type -%}
+              {%- when 'image' -%}
+                {%- if block.settings.icon_image != blank -%}
+                  {% assign icon_sizes = block.settings.icon_width | append: 'px' %}
+                  <div class="awj-card__icon" style="width: {{ block.settings.icon_width }}px;">
+                    {{
+                      block.settings.icon_image
+                      | image_url: width: 240
+                      | image_tag:
+                        widths: '60, 120, 180, 240',
+                        sizes: icon_sizes,
+                        alt: block.settings.icon_image.alt,
+                        loading: 'lazy'
+                    }}
+                  </div>
+                {%- endif -%}
+              {%- when 'svg' -%}
+                {%- if block.settings.custom_svg != blank -%}
+                  <div class="awj-card__icon awj-card__icon--svg">
+                    {{ block.settings.custom_svg }}
+                  </div>
+                {%- endif -%}
+              {%- else -%}
+                {%- if block.settings.icon != blank and block.settings.icon != 'none' -%}
+                  <div class="awj-card__icon awj-card__icon--svg">
+                    {% render 'affiliate-preset-icon', icon: block.settings.icon %}
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+
+            <div class="awj-card__content">
+              {% if block.settings.title != blank %}
+                <h3 class="awj-card__title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="awj-card__desc">{{ block.settings.text }}</div>
+              {% endif %}
+              {% if block.settings.tag_1 != blank or block.settings.tag_2 != blank or block.settings.tag_3 != blank %}
+                <div class="column-tags">
+                  {% for i in (1..5) %}
+                    {% capture tag %}tag_{{ i }}{% endcapture %}
+                    {% if block.settings[tag] != blank %}
+                      <span>{{ block.settings[tag] }}</span>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
           </article>
         {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.bottom_note != blank %}
+      <div class="section-bottom-note text-center center mt-8">
+        {{ section.settings.bottom_note }}
       </div>
     {% endif %}
 
@@ -105,38 +211,45 @@
 </section>
 
 <style>
-  /* Vertical/horizontal spacing comes from the theme .section class. */
-  .awj-grid {
+  /* Section background (scoped so it only ever paints this instance) */
+  #shopify-section-{{ section.id }} .awj-section {
+    background: var(--awj-section-bg);
+    {% if awj_pad_bg %}padding-block: var(--awj-section-pad, clamp(40px, 5vw, 72px));{% endif %}
+  }
+
+  /* Grid — already unique via the section id */
+  .awj-grid.awj-grid-{{ section.id }} {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
     gap: 12px;
     text-align: left;
   }
 
+  /* Card — every colour comes from a variable, so instances never collide */
   .awj-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 15px;
     border-radius: 18px;
-    background: rgb(var(--color-background));
-    border: 1px solid rgb(var(--color-foreground) / 0.10);
-    border-color: #f5ebeb;
+    background: var(--awj-card-bg);
+    border: 1px solid var(--awj-card-border);
     transition: transform 0.3s ease, box-shadow 0.3s ease,
                 background 0.3s ease, border-color 0.3s ease;
     will-change: transform;
   }
 
   .awj-card:hover {
-    background: rgb(var(--color-foreground));
+    background: var(--awj-card-bg-hover);
+    border-color: var(--awj-card-border-hover);
   }
 
-  .awj-card:hover .awj-card__title,
-  .awj-card:hover .awj-card__desc {
-    color: rgb(var(--color-background));
-  }
+  .awj-card:hover .awj-card__title { color: var(--awj-title-hover); }
+  .awj-card:hover .awj-card__desc  { color: var(--awj-desc-hover); }
 
-  .awj-card:hover::before { transform: scaleY(1); }
+  .awj-card__content { min-width: 0; }
 
-  /* Icon badge — soft gold tile that inverts to solid gold on hover */
+  /* Icon badge */
   .awj-card__icon {
     margin-bottom: 20px;
     max-width: 100%;
@@ -156,50 +269,106 @@
     width: 54px;
     height: 54px;
     border-radius: 14px;
-    background: rgb(var(--awj-accent-rgb) / 0.12);
-    background: rgb(var(--color-foreground));
-    color: rgb(var(--awj-accent-rgb));
+    background: var(--awj-icon-bg);
+    color: var(--awj-icon-color);
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
   }
 
   .awj-card__icon--svg svg {
     width: 28px;
     height: 28px;
     display: block;
+    fill: currentColor;
   }
 
   .awj-card:hover .awj-card__icon--svg {
-    {% comment %} background: rgb(var(--awj-accent-rgb)); {% endcomment %}
-     background: rgb(251, 188, 5);
-    color: rgb(var(--color-background));
+    background: var(--awj-icon-bg-hover);
+    color: var(--awj-icon-color-hover);
     transform: scale(1.05);
   }
 
   .awj-card__title {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     font-size: var(--size-text-base);
     font-weight: 600;
     letter-spacing: -0.01em;
-    color: rgb(var(--color-foreground));
+    color: var(--awj-title);
   }
 
   .awj-card__desc {
     font-size: var(--size-text-sm);
     line-height: 1.7;
-    color: rgb(var(--color-foreground) / 0.65);
+    color: var(--awj-desc);
   }
 
+  .awj-card__desc ul {
+    margin-block: 8px;
+  }
+  .awj-card__desc li {
+    list-style: none;
+    padding: 4px 0 4px 26px;
+    position: relative;
+    font-size: 14px;
+    border-bottom: 1px solid var(--awj-card-border);
+  }
+  .awj-card__desc li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--awj-icon-color);
+    transform: translateY(-50%);
+  }
+
+  .column-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .column-tags > span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    background: var(--awj-tag-bg);
+    color: var(--awj-tag-color);
+    border-radius: 999px;
+    padding: 7px 14px;
+  }
+
+  {%- if section.settings.card_layout == 'inline' -%}
+  /* Inline layout: icon on the left, content beside it.
+     Scoped to this instance so other copies keep their own layout. */
+  #shopify-section-{{ section.id }} .awj-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  #shopify-section-{{ section.id }} .awj-card.awj-card-no-heading {
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .awj-card__icon { margin-bottom: 0; }
+  #shopify-section-{{ section.id }} .awj-card__icon--svg { flex-shrink: 0; }
+  #shopify-section-{{ section.id }} .awj-card__content { flex: 1; }
+  {%- endif -%}
+
   @media (max-width: 900px) {
-    .awj-grid { grid-template-columns: 1fr 1fr; }
+    .awj-grid.awj-grid-{{ section.id }} { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 600px) {
-    .awj-grid { grid-template-columns: 1fr; }
-    .awj-card { padding: 28px 24px; }
+    .awj-grid.awj-grid-{{ section.id }} { grid-template-columns: 1fr; }
+    .awj-card { padding: 15px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .awj-card, .awj-card::before, .awj-card__icon--svg { transition: none; }
+    .awj-card, .awj-card__icon--svg { transition: none; }
     .awj-card:hover { transform: none; }
   }
 </style>
@@ -238,10 +407,81 @@
       "default": "large"
     },
     {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns Desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "info": "Light keeps the original look. Dark = dark background, light text, brand-yellow icon badges. Pick Dark before choosing a dark background so the text stays readable.",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "select",
+      "id": "card_layout",
+      "label": "Card layout",
+      "info": "Stacked = icon above the text. Inline = icon on the left with the text beside it.",
+      "options": [
+        { "value": "stacked", "label": "Stacked (icon on top)" },
+        { "value": "inline", "label": "Inline (icon on left)" }
+      ],
+      "default": "stacked"
+    },
+    {
       "type": "color",
       "id": "accent_color",
-      "label": "Accent color",
+      "label": "Accent color (gold)",
+      "info": "Icon glyph colour in Light mode; icon glyph on hover in Dark mode.",
       "default": "#c9a96e"
+    },
+    {
+      "type": "color",
+      "id": "brand_yellow_color",
+      "label": "Brand yellow",
+      "info": "Icon badge highlight — used on icon hover in Light mode and as the resting icon badge in Dark mode.",
+      "default": "#fbbc05"
+    },
+    {
+      "type": "header",
+      "content": "Color overrides (optional)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Leave any of these blank to use the colours from the selected scheme."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon badge background"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon / glyph color"
     },
     {
       "type": "header",
@@ -309,8 +549,17 @@
       "info": "t:sections.all.heading_html_tag.info"
     },
     {
+      "id": "bottom_note",
+      "type": "inline_richtext",
+      "label": "Bottom Text"
+    },
+    {
       "type": "header",
       "content": "t:sections.all.headers.colors"
+    },
+    {
+      "type": "paragraph",
+      "content": "These control the section header (subheading / heading / text). For a Dark section, set these to a light colour."
     },
     {
       "type": "color",
@@ -327,12 +576,23 @@
     {
       "type": "benefit",
       "name": "Benefit",
-      "limit": 9,
+      "limit": 10,
       "settings": [
         {
           "type": "select",
+          "id": "icon_type",
+          "label": "Icon type",
+          "options": [
+            { "value": "preset", "label": "Preset icon" },
+            { "value": "image", "label": "Custom image" },
+            { "value": "svg", "label": "SVG code" }
+          ],
+          "default": "preset"
+        },
+        {
+          "type": "select",
           "id": "icon",
-          "label": "Icon",
+          "label": "Preset icon",
           "options": [
             { "value": "none", "label": "None" },
             { "value": "commission", "label": "Commission" },
@@ -342,15 +602,18 @@
             { "value": "link", "label": "Referral link" },
             { "value": "payout", "label": "Payout" },
             { "value": "support", "label": "Marketing support" },
-            { "value": "promote", "label": "Easy to promote" }
+            { "value": "promote", "label": "Easy to promote" },
+            { "value": "check", "label": "Check" },
+            { "value": "users", "label": "Community / People" }
           ],
-          "default": "none"
+          "default": "none",
+          "visible_if": "{{ block.settings.icon_type == 'preset' }}"
         },
         {
           "type": "image_picker",
           "id": "icon_image",
-          "label": "Icon image",
-          "info": "Optional. Uploaded image overrides is used only when no built-in Icon is selected."
+          "label": "Custom image",
+          "visible_if": "{{ block.settings.icon_type == 'image' }}"
         },
         {
           "type": "range",
@@ -360,7 +623,15 @@
           "max": 120,
           "step": 4,
           "unit": "px",
-          "default": 48
+          "default": 48,
+          "visible_if": "{{ block.settings.icon_type == 'image' }}"
+        },
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "SVG code",
+          "info": "Paste raw <svg>…</svg>. Use stroke=\"currentColor\" or fill=\"currentColor\" so it adopts the badge + hover colours.",
+          "visible_if": "{{ block.settings.icon_type == 'svg' }}"
         },
         {
           "type": "text",
@@ -373,6 +644,35 @@
           "id": "text",
           "label": "Description",
           "default": "<p>Describe this benefit in a sentence or two.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Tag Pills"
+        },
+        {
+          "type": "text",
+          "id": "tag_1",
+          "label": "Tag 1"
+        },
+        {
+          "type": "text",
+          "id": "tag_2",
+          "label": "Tag 2"
+        },
+        {
+          "type": "text",
+          "id": "tag_3",
+          "label": "Tag 3"
+        },
+        {
+          "type": "text",
+          "id": "tag_4",
+          "label": "Tag 4"
+        },
+        {
+          "type": "text",
+          "id": "tag_5",
+          "label": "Tag 5"
         }
       ]
     }

@@ -4,6 +4,7 @@
   #shopify-section-{{ section.id }} {
     --content-width: {% render 'get-content-width', type: section.settings.content_width %};
     --avw-accent: {{ section.settings.accent_color }};
+    --avw-icon-size: {% if section.settings.icon_size == 'custom' %}{{ section.settings.icon_size_custom }}px{% else %}{{ section.settings.icon_size }}{% endif %};
   }
 </style>
 
@@ -22,50 +23,79 @@
 <section {% render 'section-attrs', class: section_classes %}>
   <div class="section-body max-w-[--content-width] mx-auto">
 
-    {% render 'section-header' %}
+    {% render 'section-header', button: false %}
 
     {% if section.blocks.size > 0 %}
-      <div class="avw-list-grid grid grid-cols-2" data-animation-auto-order>
+      <div class="avw-list-grid grid grid-cols-2 lg:grid-cols-2 gap-3 mb-6" data-animation-auto-order>
         {% for block in section.blocks %}
           <div
-            class="avw-list-card flex items-center gap-4"
+            class="avw-list-card flex items-center gap-4 rounded-block"
             data-animation="block"
             data-animation-group="{{ section.id }}-cards"
             {{ block.shopify_attributes }}
           >
-            <div class="avw-icon-wrap flex items-center justify-center shrink-0" aria-hidden="true">
-              {% case block.settings.icon %}
-                {% when 'businesses' %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path></svg>
-                {% when 'distributors' %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="8" rx="1"></rect><path d="M14 10h4l3 3v2h-7z"></path><circle cx="6" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg>
-                {% when 'resellers' %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1-5h14l1 5"></path><path d="M4 9v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"></path><path d="M9 19v-6h6v6"></path></svg>
-                {% when 'retailers' %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>
-                {% when 'smoke_shops' %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11a3 3 0 1 0-3-3"></path><path d="M4 16h13a3 3 0 1 1-3 3"></path></svg>
-                {% when 'check' %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.5 2.5 4.5-5"></path></svg>
-              {% endcase %}
+            <div class="avw-icon-wrap flex items-center justify-center shrink-0 rounded-block-sm" aria-hidden="true">
+              {%- case block.settings.icon_type -%}
+                {%- when 'image' -%}
+                  {%- if block.settings.custom_image != blank -%}
+                    <img
+                      class="avw-icon-img"
+                      src="{{ block.settings.custom_image | image_url: width: 88 }}"
+                      alt="{{ block.settings.label | escape }}"
+                      width="24"
+                      height="24"
+                      loading="lazy"
+                    >
+                  {%- endif -%}
+                {%- when 'svg' -%}
+                  {{ block.settings.custom_svg }}
+                {%- else -%}
+                  {% case block.settings.icon %}
+                    {% when 'businesses' %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path></svg>
+                    {% when 'distributors' %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="8" rx="1"></rect><path d="M14 10h4l3 3v2h-7z"></path><circle cx="6" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg>
+                    {% when 'resellers' %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1-5h14l1 5"></path><path d="M4 9v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"></path><path d="M9 19v-6h6v6"></path></svg>
+                    {% when 'retailers' %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>
+                    {% when 'smoke_shops' %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11a3 3 0 1 0-3-3"></path><path d="M4 16h13a3 3 0 1 1-3 3"></path></svg>
+                    {% when 'check' %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.5 2.5 4.5-5"></path></svg>
+                  {% endcase %}
+              {%- endcase -%}
             </div>
 
             {% if block.settings.label != blank %}
-              <p class="avw-card-label flex-1 m-0">{{ block.settings.label }}</p>
+              <p class="avw-card-label flex-1 m-0 text-base font-600">{{ block.settings.label }}</p>
             {% endif %}
-
-            <svg class="avw-list-arrow shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
           </div>
         {% endfor %}
       </div>
     {% endif %}
 
     {% if section.settings.show_note and section.settings.note_text != blank %}
-      <div class="avw-note flex items-start" data-animation="block" data-animation-group="{{ section.id }}-note">
-        <div class="avw-note-icon shrink-0" aria-hidden="true">
+      <div class="avw-note flex items-start rounded-block" data-animation="block" data-animation-group="{{ section.id }}-note">
+        <div class="avw-note-icon shrink-0 w-7 h-7" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 11h1v6"></path></svg>
         </div>
-        <div class="avw-note-text">{{ section.settings.note_text }}</div>
+        <div class="avw-note-text text-sm">{{ section.settings.note_text }}</div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.small_line != blank %}
+      <div class="avw-small-line text-base mt-6 text-center mb-0" data-animation="block" data-animation-group="{{ section.id }}-small">{{ section.settings.small_line }}</div>
+    {% endif %}
+
+    {% if section.settings.show_footer %}
+      <div class="avw-footer-cta flex items-center justify-between gap-6 rounded-block mt-6" data-animation="block" data-animation-group="{{ section.id }}-footer">
+        {% if section.settings.footer_heading != blank %}
+          <h3 class="avw-footer-heading m-0 text-lg font-600">{{ section.settings.footer_heading }}</h3>
+        {% endif %}
+        <div class="avw-footer-btn shrink-0">
+          {% render 'button', target: section %}
+        </div>
       </div>
     {% endif %}
 
@@ -73,89 +103,139 @@
 </section>
 
 <style>
-  /* Eyebrow (theme .subheading) tinted with the accent color */
-  .avw-section .subheading {
-    color: var(--avw-accent);
-  }
 
-  /* gap:14px and margin-bottom:28px have no exact theme utility */
-  .avw-list-grid {
-    gap: 14px;
-    margin-bottom: 28px;
+.avw-icon-wrap {
+    width: calc(var(--avw-icon-size) + 22px);
+    height: calc(var(--avw-icon-size) + 22px);
+    background: rgb(var(--color-foreground));
+    color: var(--avw-accent);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    svg {
+      width: var(--avw-icon-size);
+      height: var(--avw-icon-size);
+      fill: var(--avw-accent);
+    }
+    svg g {
+      stroke: var(--avw-accent);
+    }
+
   }
 
   .avw-list-card {
-    background: #fff;
-    border: 1px solid #e4e4e4;
-    border-radius: 14px;
+    background: rgb(var(--color-background));
+    border: 1px solid rgb(var(--color-foreground) / 0.1);
     padding: 16px 20px;
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover{   
+      background: rgb(var(--color-foreground));
+      border-color: rgb(var(--color-foreground));
+      box-shadow: 0 12px 30px rgb(var(--color-foreground) / 0.18);
+    }
+
+    &:hover .avw-card-label {
+      color: rgb(var(--color-background));
+    }
+
+    &:hover .avw-icon-wrap {
+      background: var(--avw-accent);
+      color: rgb(var(--color-background));
+    }
+    &:hover .avw-icon-wrap svg#resellers path,
+    &:hover .avw-icon-wrap svg {
+     fill: rgb(var(--color-foreground))
+    }
+    &:hover .avw-icon-wrap svg g {
+     stroke: rgb(var(--color-foreground))
+    }
+    &:hover .avw-icon-wrap svg g path {
+     fill: rgb(var(--color-foreground))
+    }
+    
   }
 
-  /* Lift via box-shadow only (no translateY) so hover can't jitter at the edges */
-  .avw-list-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    border-color: var(--avw-accent);
-  }
 
-  .avw-icon-wrap {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: #111;
-    color: var(--avw-accent);
-  }
-
-  .avw-icon-wrap svg {
-    width: 22px;
-    height: 22px;
+  .avw-icon-img {
+    width: var(--avw-icon-size);
+    height: var(--avw-icon-size);
+    object-fit: contain;
   }
 
   .avw-card-label {
-    font-size: 15.5px;
-    font-weight: 600;
-    color: #111;
+    transition: color 0.2s ease;
   }
-
-  .avw-list-arrow {
-    width: 18px;
-    height: 18px;
-    color: #c9c9c9;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-
-  .avw-list-card:hover .avw-list-arrow {
-    color: var(--avw-accent);
-    transform: translateX(3px);
-  }
-
   .avw-note {
     gap: 14px;
-    background: #fff;
-    border: 1px solid #ececec;
-    border-left: 4px solid var(--avw-accent);
-    border-radius: 12px;
+    background: rgb(var(--color-background));
+    border: 1px solid rgb(var(--color-foreground) / 0.1);
+    border-left: 4px solid rgb(var(--color-foreground));
     padding: 20px 22px;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover{
+      background: rgb(var(--color-foreground));
+      border-color: rgb(var(--color-foreground));
+      border-left-color: var(--avw-accent);
+      box-shadow: 0 12px 30px rgb(var(--color-foreground) / 0.18);
+    }
+
+    &:hover .avw-note-text,
+    &:hover .avw-note-text p  {
+      color: rgb(var(--color-background));
+    }
+
+    &:hover .avw-note-icon {
+      color: var(--avw-accent);
+    }
   }
 
   .avw-note-icon {
-    width: 26px;
-    height: 26px;
-    color: var(--avw-accent);
+    color: rgb(var(--color-foreground));
     margin-top: 2px;
+    transition: color 0.2s ease;
   }
+
 
   .avw-note-text,
   .avw-note-text p {
     margin: 0;
-    font-size: 14.5px;
     line-height: 1.6;
-    color: #333;
+    transition: color 0.2s ease;
+  }
+
+  .avw-footer-cta {
+    background: rgb(var(--color-foreground));
+    padding: 26px 34px;
+  }
+
+  .avw-footer-heading {
+    color: rgb(var(--color-background));
+  }
+
+  .avw-footer-btn .button:hover {
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
   }
 
   @media (max-width: 900px) {
     .avw-list-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .avw-footer-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px 22px;
+    }
+
+    .avw-note{
+      padding: 15px 10px;
+    }
+    .avw-list-card {
+      padding: 10px;
     }
   }
 </style>
@@ -198,6 +278,35 @@
       "id": "accent_color",
       "label": "Accent color",
       "default": "#c9a24b"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "select",
+      "id": "icon_size",
+      "label": "Icon size",
+      "info": "Uses the theme icon sizes. Choose Custom to set an exact pixel size. The tile grows with the icon.",
+      "options": [
+        { "value": "1rem", "label": "Extra small · icon-xs (16px)" },
+        { "value": "1.25rem", "label": "Small · icon-sm (20px)" },
+        { "value": "1.5rem", "label": "Medium · icon-md (24px)" },
+        { "value": "3rem", "label": "Large · icon-xl (48px)" },
+        { "value": "custom", "label": "Custom" }
+      ],
+      "default": "1.5rem"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_custom",
+      "label": "Custom icon size",
+      "min": 12,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "visible_if": "{{ section.settings.icon_size == 'custom' }}"
     },
     {
       "type": "header",
@@ -282,13 +391,98 @@
     },
     {
       "type": "header",
+      "content": "Footer CTA"
+    },
+    {
+      "type": "richtext",
+      "id": "small_line",
+      "label": "Small line",
+      "info": "Small italic line shown above the footer CTA.",
+      "default": "<p>Providing complete and accurate information helps us review your request more efficiently.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer",
+      "label": "Show footer CTA",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "footer_heading",
+      "label": "Footer heading",
+      "default": "Ready to partner with AirVape?"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_form_popup",
+      "label": "Enable Form Popup",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "hulk_form_id_block",
+      "label": "Hulk Form Code",
+      "visible_if": "{{ section.settings.enable_form_popup }}"
+    },
+    {
+      "type": "text",
+      "id": "hulk_form_popup_class",
+      "label": "Hulk Form Button Class",
+      "default": "hulk-form-modal-custom-trigger",
+      "visible_if": "{{ section.settings.enable_form_popup }}"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.rich-text.blocks.button.settings.button_text.label",
+      "default": "Apply for Wholesale"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.rich-text.blocks.button.settings.button_link.label",
+      "visible_if": "{{ section.settings.enable_form_popup == false }}"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:sections.all.button_style.label",
+      "options": [
+        { "value": "", "label": "t:sections.all.button_style.options.filled" },
+        { "value": "button-outline", "label": "t:sections.all.button_style.options.outline" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "t:sections.rich-text.blocks.button.settings.button_size.label",
+      "options": [
+        { "value": "text-xs md:text-sm", "label": "t:sections.rich-text.blocks.button.settings.button_size.options__0.label" },
+        { "value": "text-sm md:text-base", "label": "t:sections.rich-text.blocks.button.settings.button_size.options__1.label" },
+        { "value": "text-base md:text-lg", "label": "t:sections.rich-text.blocks.button.settings.button_size.options__2.label" },
+        { "value": "text-lg md:text-h5", "label": "t:sections.rich-text.blocks.button.settings.button_size.options__3.label" }
+      ],
+      "default": "text-sm md:text-base"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color"
+    },
+    {
+      "type": "header",
       "content": "t:sections.all.headers.colors"
     },
     {
       "type": "color",
       "id": "background_color",
-      "label": "t:sections.all.background_color.label",
-      "default": "#ffffff"
+      "label": "t:sections.all.background_color.label"
     },
     {
       "type": "color",
@@ -309,8 +503,19 @@
       "settings": [
         {
           "type": "select",
+          "id": "icon_type",
+          "label": "Icon type",
+          "options": [
+            { "value": "preset", "label": "Preset icon" },
+            { "value": "image", "label": "Custom image" },
+            { "value": "svg", "label": "SVG code" }
+          ],
+          "default": "preset"
+        },
+        {
+          "type": "select",
           "id": "icon",
-          "label": "Icon",
+          "label": "Preset icon",
           "options": [
             { "value": "businesses", "label": "Businesses" },
             { "value": "distributors", "label": "Distributors" },
@@ -319,7 +524,22 @@
             { "value": "smoke_shops", "label": "Smoke shops" },
             { "value": "check", "label": "Check / Other" }
           ],
-          "default": "check"
+          "default": "check",
+          "visible_if": "{{ block.settings.icon_type == 'preset' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image",
+          "info": "Tip: upload a light/white icon — the tile background is dark.",
+          "visible_if": "{{ block.settings.icon_type == 'image' }}"
+        },
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "SVG code",
+          "info": "Paste raw <svg>…</svg>. Use stroke=\"currentColor\" or fill=\"currentColor\" so it adopts the theme/hover colours.",
+          "visible_if": "{{ block.settings.icon_type == 'svg' }}"
         },
         {
           "type": "text",

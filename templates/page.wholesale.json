@@ -52,14 +52,6 @@
     "image_with_text_PNdqU7": {
       "type": "image-with-text",
       "blocks": {
-        "heading_GeGFNr": {
-          "type": "heading",
-          "settings": {
-            "heading": "Partner Program",
-            "heading_size": "h6",
-            "heading_html_tag": "h3"
-          }
-        },
         "heading_kQb44g": {
           "type": "heading",
           "settings": {
@@ -90,7 +82,6 @@
         }
       },
       "block_order": [
-        "heading_GeGFNr",
         "heading_kQb44g",
         "text_gRktEn",
         "button_F7JfVc"
@@ -116,6 +107,7 @@
         "benefit_FtiaAy": {
           "type": "benefit",
           "settings": {
+            "icon_image": "shopify://shop_images/Premium_Product_Range.svg",
             "icon_width": 48,
             "title": "Premium Product Range",
             "text": "<p>AirVape offers premium vaporizers and accessories designed for customers who value performance, portability, and quality. Our wholesale range includes popular products such as AirVape X, Legacy PRO, and selected accessories.</p>"
@@ -124,6 +116,7 @@
         "benefit_bN4LBY": {
           "type": "benefit",
           "settings": {
+            "icon_image": "shopify://shop_images/Competitive_Wholesale_Pricing.svg",
             "icon_width": 48,
             "title": "Competitive Wholesale Pricing",
             "text": "<p>Our wholesale pricing is based on product type, order quantity, and order value, helping partners access more competitive rates as order volume increases.</p>"
@@ -132,6 +125,7 @@
         "benefit_qeF9NR": {
           "type": "benefit",
           "settings": {
+            "icon_image": "shopify://shop_images/Volume-Based_Pricing.svg",
             "icon_width": 48,
             "title": "Volume-Based Pricing Opportunities",
             "text": "<p>Wholesale pricing is generally structured in tiers. The higher the quantity, the more competitive the pricing can become, depending on the product and order scope.</p>"
@@ -140,6 +134,7 @@
         "benefit_G6dfwN": {
           "type": "benefit",
           "settings": {
+            "icon_image": "shopify://shop_images/International_Shipping_Support.svg",
             "icon_width": 48,
             "title": "International Shipping Support",
             "text": "<p>We can ship to many countries worldwide, depending on courier coverage, customs regulations, product availability, and shipping method.</p>"
@@ -148,6 +143,7 @@
         "benefit_BPxDLH": {
           "type": "benefit",
           "settings": {
+            "icon_image": "shopify://shop_images/Marketing_Support.svg",
             "icon_width": 48,
             "title": "Marketing Support for Approved Partners",
             "text": "<p>Approved wholesale partners may receive selected marketing materials such as available product images, product descriptions, specifications, and key product information to support sales and promotion.</p>"
@@ -167,7 +163,7 @@
         "remove_horizontal_space": false,
         "remove_vertical_space": false,
         "content_width": "extra-large",
-        "accent_color": "rgba(0,0,0,0)",
+        "accent_color": "#fbbc05",
         "subheading": "Benefits",
         "heading": "Why Partner With AirVape?",
         "content": "",
@@ -185,24 +181,27 @@
           "type": "step",
           "settings": {
             "number": "",
-            "title": "",
-            "text": "<p>Submit your wholesale inquiry with your business details, product interest, and estimated order quantity.</p>"
+            "heading": "",
+            "title": "Apply",
+            "text": "<p>Submit your wholesale inquiry with business details, product interests, and estimated order quantities to help us understand your requirements.</p>"
           }
         },
         "step_PBMc3E": {
           "type": "step",
           "settings": {
             "number": "",
-            "title": "",
-            "text": "<p>Our team will review your request.</p>"
+            "heading": "",
+            "title": "Review",
+            "text": "<p>Our team will carefully review your request and evaluate your business profile, product needs, and partnership potential with AirVape.</p>"
           }
         },
         "step_mtQyxB": {
           "type": "step",
           "settings": {
             "number": "",
-            "title": "",
-            "text": "<p>Approved wholesale partners may receive selected marketing materials such as product images, descriptions, specifications, and key product information to support sales and promotion.</p>"
+            "heading": "",
+            "title": "Get Approved",
+            "text": "<p>Approved partners receive product resources, marketing materials, specifications, and key information to support sales growth and successful promotions.</p>"
           }
         }
       },
@@ -217,8 +216,8 @@
         "remove_horizontal_space": false,
         "remove_vertical_space": false,
         "content_width": "large",
-        "accent_color": "#c9a24b",
-        "number_bg_color": "#c9a24b",
+        "accent_color": "#fbbc05",
+        "number_bg_color": "#fbbc05",
         "subheading": "Simple Process",
         "heading": "Ready to Partner With AirVape?",
         "content": "<p>Apply today to explore wholesale pricing, product availability, and partnership opportunities with AirVape.</p>",
@@ -262,6 +261,267 @@
         "heading_html_tag": "h2"
       }
     },
+    "wholesale_who_can_apply_kX9mQ2": {
+      "type": "wholesale-who-can-apply",
+      "blocks": {
+        "partner_type_1": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "businesses",
+            "custom_image": "shopify://shop_images/Businesses.svg",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Layer_1\" enable-background=\"new 0 0 512 512\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\"><path d=\"m512 154.75c0-24.813-20.187-45-45-45h-80v-32.277c0-26.039-21.184-47.223-47.222-47.223h-167.555c-26.039 0-47.223 21.184-47.223 47.223v32.277h-80c-24.813 0-45 20.187-45 45v70.997c0 13.23 4.308 29.729 20 45.913v165.09c0 24.813 20.187 45 45 45h382c24.813 0 45-20.187 45-45v-165.09c15.685-16.175 20-32.669 20-45.913zm-357-77.277c0-9.497 7.726-17.223 17.223-17.223h167.556c9.496 0 17.222 7.726 17.222 17.223v32.277h-202.001zm-125 77.277c0-8.271 6.729-15 15-15h422c8.271 0 15 6.729 15 15v70.997c0 36.908-70.808 67.027-174 74.918v-13.915c0-8.284-6.716-15-15-15h-74c-8.284 0-15 6.716-15 15v13.91c-103.099-7.901-174-38.099-174-74.913zm248 147v19.5c0 10.752-8.748 19.5-19.5 19.5h-5c-10.752 0-19.5-8.748-19.5-19.5v-19.5zm169 150h-382c-8.271 0-15-6.729-15-15v-143.075c44.664 22.887 91.602 31.712 154.936 37.138 4.469 22.732 24.542 39.937 48.564 39.937h5c24.024 0 44.098-17.207 48.565-39.941 52.317-3.789 99.546-13.392 134.031-27.346 7.755-3.138 14.692-6.416 20.904-9.791v143.078c0 8.271-6.729 15-15 15z\"></path></svg>",
+            "label": "Businesses"
+          }
+        },
+        "partner_type_2": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "distributors",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 512 512\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\"><g><path d=\"m30 51.213 62.824 62.824 21.213-21.213-62.824-62.824h38.787v-30h-90v90h30z\"></path><path d=\"m482 460.787-62.824-62.824-21.213 21.213 62.824 62.824h-38.787v30h90v-90h-30z\"></path><path d=\"m422 0v30h38.787l-62.824 62.824 21.213 21.213 62.824-62.824v38.787h30v-90z\"></path><path d=\"m92.824 397.963-62.824 62.824v-38.787h-30v90h90v-30h-38.787l62.824-62.824z\"></path><path d=\"m421.933 160.199-165.933-95.802-165.933 95.802v191.603l165.933 95.801 165.933-95.801zm-180.933 104.461v139.642l-45.466-26.25v-139.642zm15-25.98-45.466-26.25 120.933-69.821 45.466 26.25zm45.467-113.392-120.933 69.821-45.467-26.25 120.933-69.821zm-181.4 69.552 45.466 26.25v139.641l-45.466-26.25zm150.933 209.462v-139.642l120.933-69.821v139.641z\"></path></g></svg>",
+            "label": "Distributors"
+          }
+        },
+        "partner_type_3": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "resellers",
+            "custom_svg": "<svg fill=\"none\" height=\"48\" viewbox=\"0 0 48 48\" width=\"48\" xmlns=\"http://www.w3.org/2000/svg\"><path clip-rule=\"evenodd\" d=\"m8 16v-6h32v6h-8-2-12-2zm-2 0v-7c0-.55228.44772-1 1-1h34c.5523 0 1 .44772 1 1v7c1.1046 0 2 .8954 2 2v3c0 2.2091-1.7909 4-4 4v14c0 .5523-.4477 1-1 1h-30c-.55228 0-1-.4477-1-1v-14c-2.20914 0-4-1.7909-4-4v-3c0-1.1046.89543-2 2-2zm35 2h-9v3c0 1.1046.8954 2 2 2h4 2c1.1046 0 2-.8954 2-2v-3zm-11 0h-12v3c0 1.1046.8954 2 2 2h8c1.1046 0 2-.8954 2-2zm-14 0h-9-1v3c0 1.1046.89543 2 2 2h2 4c1.1046 0 2-.8954 2-2zm22 20v-13h-3v13zm-5-13.126v13.126h-8v-13h3c1.1947 0 2.2671-.5238 3-1.3542.5211.5904 1.2138 1.0258 2 1.2282zm-10 .126v13h-8v-13.126c.7862-.2024 1.4789-.6378 2-1.2282.7329.8304 1.8053 1.3542 3 1.3542zm-13 13h3v-13h-3z\" fill=\"currentColor\" fill-rule=\"evenodd\"></path></svg>",
+            "label": "Resellers"
+          }
+        },
+        "partner_type_4": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "retailers",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 511.813 511.813\" height=\"512\" viewbox=\"0 0 511.813 511.813\" width=\"512\"><g><path d=\"m408.179 346.949c19.25 0 36.364-12.24 42.592-30.476l61.043-179.524h-377.062l-15.728-86.505-109.774-35.579-9.25 28.538 92.715 30.051 49.439 271.911c3.503 19.271 14.174 35.678 28.955 46.704-12.402 11-20.239 27.039-20.239 44.88 0 33.084 26.916 60 60 60s60-26.916 60-60c0-10.925-2.949-21.167-8.072-30.01h76.144c-5.123 8.843-8.072 19.085-8.072 30.01 0 33.084 26.916 60 60 60s60-26.916 60-60-26.916-60-60-60h-174.926c-19.514 0-36.492-12.5-42.601-30.518 2.213.334 4.471.518 6.767.518zm-242.826-42.319-.11.02-14.127-77.701h63.042l22.5 90h-56.547c-7.255 0-13.462-5.181-14.758-12.319zm79.728-77.681h111.576l-22.5 90h-66.576zm177.293 79.847c-2.074 6.072-7.778 10.152-14.195 10.152h-43.097l22.5-90h61.943zm47.552-139.847-10.201 30h-314.064l-5.455-30zm-259.056 300c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30zm210-30c0 16.542-13.458 30-30 30s-30-13.458-30-30 13.458-30 30-30 30 13.458 30 30z\"></path></g></svg>",
+            "label": "Retailers"
+          }
+        },
+        "partner_type_5": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "smoke_shops",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 512.01 512.01\" height=\"512\" viewbox=\"0 0 512.01 512.01\" width=\"512\"><g><path d=\"m450.015 289.797c40.674-33.179 61.99-72.064 61.99-113.787 0-74.439-61.01-135-136-135-39.91 0-73.951 10.831-100.297 41.229-12.691-5.035-28.605-9.229-43.703-9.229-61.206 0-111 49.794-111 111 0 53.25 42.202 101.193 96.636 111.134-1.892 13.356.51 26.586 6.609 38.15-22.369 9.125-39.973 28.733-45.451 51.716h-23.272c-5.039-9.506-15.034-16-26.521-16h-34c-14.493 0-26.618 10.331-29.399 24.015-1.208-.023-.905-.015-35.601-.015-16.542 0-30 13.458-30 30v34c0 16.542 13.458 30 30 30 34.75 0 34.213.006 35.423-.011 2.384 14.175 14.735 25.011 29.577 25.011h34c14.838 0 27.187-10.831 29.575-25h249.425c57.346 0 104-46.206 104-103-.001-41.995-25.513-78.196-61.991-94.213zm-420.01 167.213v-34h35v34zm99 25h-34c0-18.692 0-66.194 0-83h34zm279-25h-249v-42h33c8.284 0 15-6.716 15-15 0-20.78 18.877-39.809 40.611-41.987 9.471 5.701 20.552 8.987 32.389 8.987 8.284 0 15-6.716 15-15s-6.716-15-15-15c-18.196 0-33-14.804-33-33s14.804-33 33-33c8.284 0 15-6.716 15-15s-6.716-15-15-15c-20.723 0-39.136 10.061-50.625 25.551-42.589-4.15-78.375-40.942-78.375-82.551 0-44.664 36.337-81 81-81 8.196 0 17.485 1.964 25.911 4.706-5.458 9.53-10.663 20.364-15.778 32.767-3.158 7.659.489 16.428 8.148 19.586 7.661 3.16 16.428-.49 19.586-8.147 24.638-59.738 52.41-80.911 106.133-80.911 58.448 0 106 47.103 106 105 0 47.703-37.554 83.094-70.749 105.055-16.218-.491-31.756 2.665-46.217 9.311-7.527 3.459-10.825 12.366-7.366 19.893 3.458 7.526 12.36 10.825 19.894 7.367 47.768-21.953 104.438 12.779 104.438 66.375 0 40.251-33.196 72.998-74 72.998z\"></path><path d=\"m104.005 95.01c25.916 0 47-21.084 47-47 0-12.497-4.811-24.396-13.545-33.508-18.533-19.334-48.373-19.339-66.91 0-8.734 9.111-13.545 21.011-13.545 33.508 0 25.916 21.084 47 47 47zm0-65c9.056 0 17 8.411 17 18 0 9.374-7.626 17-17 17s-17-7.626-17-17c0-9.589 7.944-18 17-18z\"></path></g></svg>",
+            "label": "Smoke Shops"
+          }
+        },
+        "partner_type_6": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 510 510\" height=\"512\" viewbox=\"0 0 510 510\" width=\"512\"><g><path d=\"m375 120c-52.181 0-97.538 29.761-120 73.197-22.462-43.436-67.819-73.197-120-73.197-74.44 0-135 60.561-135 135 0 74.44 60.56 135 135 135 52.181 0 97.538-29.761 120-73.197 22.462 43.436 67.819 73.197 120 73.197 74.439 0 135-60.56 135-135 0-74.439-60.561-135-135-135zm-255 135c0-8.271 6.728-15 15-15 8.271 0 15 6.729 15 15 0 8.272-6.729 15-15 15-8.272 0-15-6.728-15-15zm-15 100.626v-25.626c0-16.542 13.458-30 30-30 16.581 0 30 13.417 30 30v25.626c-19.137 5.717-40.086 5.948-60 0zm90-14.509v-11.117c0-19.066-8.854-36.6-24.013-48.015 5.656-7.523 9.013-16.869 9.013-26.985 0-24.813-20.187-45-45-45-24.814 0-45 20.187-45 45 0 10.127 3.364 19.48 9.031 27.009-14.581 10.956-24.031 28.39-24.031 47.991v11.117c-27.183-18.996-45-50.511-45-86.117 0-57.897 47.102-105 105-105s105 47.103 105 105c0 35.606-17.817 67.121-45 86.117zm165-86.117c0-8.271 6.728-15 15-15 8.271 0 15 6.729 15 15 0 8.272-6.729 15-15 15-8.272 0-15-6.728-15-15zm-15 100.626v-25.626c0-16.542 13.458-30 30-30 16.581 0 30 13.417 30 30v25.626c-19.137 5.717-40.086 5.948-60 0zm90-14.509v-11.117c0-19.066-8.854-36.6-24.013-48.015 5.656-7.523 9.013-16.869 9.013-26.985 0-24.813-20.187-45-45-45-24.814 0-45 20.187-45 45 0 10.127 3.364 19.48 9.031 27.009-14.581 10.956-24.031 28.39-24.031 47.991v11.117c-27.183-18.996-45-50.512-45-86.117 0-57.897 47.102-105 105-105 57.897 0 105 47.103 105 105 0 35.606-17.817 67.121-45 86.117z\"></path><path d=\"m158.118 452.533 21.937-3.747-5.051-29.572-73.21 12.506 18.811 75.974 29.121-7.211-5.261-21.244c82.471 47.614 183.945 37.475 254.797-20.471l-18.992-23.223c-64.1 52.422-152.831 57.899-222.152 16.988z\"></path><path d=\"m351.882 57.467-21.936 3.747 5.051 29.572 73.21-12.506-18.812-75.973-29.121 7.211 5.261 21.244c-82.482-47.621-183.958-37.467-254.797 20.471l18.992 23.223c64.101-52.425 152.83-57.9 222.152-16.989z\"></path></g></svg>",
+            "label": "Other Serious Trade Partners"
+          }
+        }
+      },
+      "block_order": [
+        "partner_type_1",
+        "partner_type_2",
+        "partner_type_3",
+        "partner_type_4",
+        "partner_type_5",
+        "partner_type_6"
+      ],
+      "name": "Wholesale · Who can apply",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "extra-large",
+        "accent_color": "#fbbc05",
+        "icon_size": "1.5rem",
+        "icon_size_custom": 24,
+        "subheading": "Eligibility",
+        "heading": "Who Can Apply?",
+        "content": "<p>Wholesale applications are open to qualified</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "show_note": true,
+        "note_text": "<p><strong>Individuals may also apply</strong>, but approval depends on order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>",
+        "small_line": "",
+        "show_footer": false,
+        "footer_heading": "Ready to partner with AirVape?",
+        "enable_form_popup": false,
+        "hulk_form_id_block": "",
+        "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+        "button_text": "Apply for Wholesale",
+        "button_link": "",
+        "button_style": "",
+        "button_size": "text-sm md:text-base",
+        "button_background_color": "",
+        "button_text_color": "",
+        "background_color": "#ffffff",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "wholesale_requirement_g3gYhF": {
+      "type": "wholesale-requirement",
+      "blocks": {
+        "requirement_Jf3MLh": {
+          "type": "requirement",
+          "settings": {
+            "number": "",
+            "title": "Minimum Order Quantity",
+            "content": "<p>Minimum order quantity depends on the product type, packaging requirements, and shipping destination.</p><p>MOQ may vary by product category. Standard products may have a lower MOQ, while customized, private label, branded, or bulk production orders may require a higher minimum quantity.</p>",
+            "chips": "",
+            "note": "Contact us with your product details so we can confirm the exact MOQ for your request.",
+            "badge": ""
+          }
+        },
+        "requirement_r4eR37": {
+          "type": "requirement",
+          "settings": {
+            "number": "",
+            "title": "Pricing Structure",
+            "content": "<p>Wholesale pricing depends on:</p>",
+            "chips": "Product type\nOrder quantity\nOrder value\nCustomization requirements",
+            "note": "",
+            "badge": "Larger orders typically qualify for better pricing and volume-based discounts"
+          }
+        },
+        "requirement_WAhFV7": {
+          "type": "requirement",
+          "settings": {
+            "number": "",
+            "title": "Shipping and Delivery",
+            "content": "<p>We ship to multiple international regions, subject to shipping coverage, customs regulations, and product availability.</p><p>Estimated delivery times vary by destination and may also depend on customs clearance, order preparation time, and the shipping method selected. Exact timelines can be shared once we review your order requirements and delivery location.</p>",
+            "chips": "",
+            "note": "",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "requirement_Jf3MLh",
+        "requirement_r4eR37",
+        "requirement_WAhFV7"
+      ],
+      "name": "Wholesale · Requirements",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "large",
+        "accent_color": "#c9a24b",
+        "subheading": "Partnership Details",
+        "heading": "Wholesale Requirements",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "background_color": "#f7f7f6",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "wholesale_who_can_apply_7hJcGi": {
+      "type": "wholesale-who-can-apply",
+      "blocks": {
+        "partner_type_dU8pJr": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 469.333 469.333\" height=\"512\" viewbox=\"0 0 469.333 469.333\" width=\"512\"><g><path d=\"m64 128c0 47.128 38.205 85.333 85.333 85.333s85.333-38.205 85.333-85.333-38.205-85.333-85.333-85.333-85.333 38.205-85.333 85.333zm128 0c0 23.564-19.103 42.667-42.667 42.667s-42.666-19.103-42.666-42.667 19.103-42.667 42.667-42.667 42.666 19.103 42.666 42.667z\"></path><path d=\"m21.333 426.667h256c11.782 0 21.333-9.551 21.333-21.333v-64c0-47.128-38.205-85.333-85.333-85.333h-128c-47.128-.001-85.333 38.204-85.333 85.332v64c0 11.782 9.551 21.334 21.333 21.334zm21.334-85.334c0-23.564 19.103-42.667 42.667-42.667h128c23.564 0 42.667 19.103 42.667 42.667v42.667h-213.334z\"></path><path d=\"m448 42.667h-128c-11.782 0-21.333 9.551-21.333 21.333s9.551 21.333 21.333 21.333h128c11.782 0 21.333-9.551 21.333-21.333s-9.551-21.333-21.333-21.333z\"></path><path d=\"m448 128h-128c-11.782 0-21.333 9.551-21.333 21.333s9.551 21.333 21.333 21.333h128c11.782 0 21.333-9.551 21.333-21.333s-9.551-21.333-21.333-21.333z\"></path><path d=\"m448 213.333h-128c-11.782 0-21.333 9.551-21.333 21.333s9.551 21.334 21.333 21.334h128c11.782 0 21.333-9.551 21.333-21.333s-9.551-21.334-21.333-21.334z\"></path></g></svg>",
+            "label": "Business name and contact details"
+          }
+        },
+        "partner_type_zdBCnh": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Layer_1\" enable-background=\"new 0 0 1024 1024\" viewbox=\"0 0 1024 1024\"><g id=\"XMLID_529_\" fill=\"none\" stroke=\"#000\" stroke-miterlimit=\"10\" stroke-width=\"80\"><circle id=\"XMLID_533_\" cx=\"512\" cy=\"512\" r=\"392\"></circle><path id=\"XMLID_531_\" d=\"m650.5 609.5c-19.8 56.6-74.4 98.7-138.3 98.7-40.2 0-76.7-16.5-103.2-43-26.6-26.5-43-63.2-43-103.4v-99.7c0-80.4 65.8-146.2 146.2-146.2 40.2 0 76.7 16.3 103.3 42.8 15.6 15.6 27.6 34.8 35 55.8\"></path></g></svg>",
+            "label": "Company registration or trade license"
+          }
+        },
+        "partner_type_GLMnqE": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Layer_3\" data-name=\"Layer 3\" viewbox=\"0 0 32 32\" width=\"512\" height=\"512\"><path d=\"M13.09,8v2.66a1.07,1.07,0,0,0,2.13,0h1.07a1.07,1.07,0,0,0,2.13,0V8a2.67,2.67,0,1,0-5.34,0Zm3.2,0v.53H15.22V8a.53.53,0,1,1,1.07,0Z\"></path><path d=\"M9.89,11.74A1.07,1.07,0,0,0,11,10.67V7.47h.58a1.07,1.07,0,0,0,0-2.13H8.34a1.07,1.07,0,0,0,0,2.13h.48v3.2A1.07,1.07,0,0,0,9.89,11.74Z\"></path><path d=\"M24.46,11.52a1.07,1.07,0,0,0,.2-1.5L23.53,8.54,24.66,7A1.07,1.07,0,1,0,23,5.75l-.78,1-.78-1A1.07,1.07,0,1,0,19.7,7l1.14,1.49L19.7,10a1.07,1.07,0,0,0,1.7,1.3l.78-1,.78,1a1.07,1.07,0,0,0,1.5.2Z\"></path><path d=\"M21.33,29.86H7.47a3.2,3.2,0,0,1-3.2-3.2V5.33a3.2,3.2,0,0,1,3.2-3.2H24.53a3.2,3.2,0,0,1,3.2,3.2V23.46a1.07,1.07,0,1,0,2.13,0V5.33A5.34,5.34,0,0,0,24.53,0H7.47A5.34,5.34,0,0,0,2.14,5.33V26.66A5.34,5.34,0,0,0,7.47,32H21.33a1.07,1.07,0,1,0,0-2.13Z\"></path><path d=\"M29.57,25.92a1.07,1.07,0,0,0-1.51,0l-4.26,4.26a1.07,1.07,0,1,0,1.51,1.51l4.26-4.26A1.07,1.07,0,0,0,29.57,25.92Z\"></path><path d=\"M29.5,30.11a1.07,1.07,0,0,0-1.5.14h0A1.07,1.07,0,0,0,28.81,32a1.07,1.07,0,0,0,.69-1.89Z\"></path><path d=\"M24.55,27.73a1.07,1.07,0,1,0-.68-1.89h0a1.07,1.07,0,0,0,.69,1.88Z\"></path><path d=\"M21.35,14.94H10.72a1.07,1.07,0,0,0,0,2.13H21.35a1.07,1.07,0,0,0,0-2.13Z\"></path><path d=\"M21.35,19.21H10.72a1.07,1.07,0,1,0,0,2.13H21.35a1.07,1.07,0,0,0,0-2.13Z\"></path><path d=\"M21.35,23.47H10.72a1.07,1.07,0,1,0,0,2.13H21.35a1.07,1.07,0,0,0,0-2.13Z\"></path></svg>",
+            "label": "Tax or VAT certificate, where applicable"
+          }
+        },
+        "partner_type_LEGVUd": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\"><g id=\"Layer_1_copy\" data-name=\"Layer 1 copy\"><path d=\"m364.43 438.06a23.88 23.88 0 0 1 -17-7l-26.73-26.72a24 24 0 0 1 33.94-33.95l9.76 9.76 39.33-39.33a24 24 0 1 1 33.94 33.95l-56.27 56.23a23.92 23.92 0 0 1 -16.97 7.06z\"></path><path d=\"m382 288.87a93.13 93.13 0 1 1 -93.15 93.13 93.23 93.23 0 0 1 93.15-93.13m0-38c-72.3 0-131.13 58.82-131.13 131.12s58.81 131.13 131.13 131.13a131.27 131.27 0 0 0 131.11-131.12c0-72.3-58.82-131.12-131.13-131.12z\"></path><path d=\"m449.88 207.34c-16.84-18.17-37.94-40.06-62.74-65.05-37.84-38.17-68.83-67.95-92.14-88.54-11.57-10.28-25-15.75-38.7-15.75h-.58c-13.72 0-27.13 5.47-38.72 15.74-23.29 20.6-54.28 50.38-92.12 88.54-24.8 25-45.91 46.89-62.75 65.06-.09.11-.19.21-.29.31q-6.26 6.76-12 13.08a38 38 0 0 1 21 34.54c-.13 9.21-.15 18.72-.06 28.28.07 7.64.22 15.36.43 22.93v.46c1 35.37 3.58 67.83 7.56 96.49 2.31 15.73 10.23 31.18 22.33 43.54 11.91 12.16 26.63 20 41.46 22.21 7 1 14.3 1.86 21.81 2.64 7.05.73 14.38 1.38 21.82 1.94h66a19 19 0 0 1 19 18.78 19 19 0 0 1 -19 19.22h-67.32c-8.7-.64-16.8-1.36-24.35-2.14-8.42-.88-16.15-1.83-23.24-2.82-47.69-6.89-89-49.08-96.05-98-3.48-25-6.66-57.81-7.92-100.72q-.33-11.58-.46-24.15c-.09-10.24-.06-20 .07-29.19h-7.48c-21.28-.06-33.71-23.24-20.77-39.91q1.94-2.49 4-4.92c7.27-8.36 15.73-17.78 25.55-28.38 16.89-18.24 37.87-40 63.64-66 40.75-41.1 71.22-70.18 93.91-90.25 18.9-16.69 41.42-25.23 63.89-25.28h.69c22.48 0 45 8.57 63.86 25.26 22.68 20.07 53.16 49.15 93.91 90.25 25.76 26 46.74 47.75 63.64 66l28.9 30.59a18.73 18.73 0 0 1 .09 26.12 18.73 18.73 0 0 1 -26.7.25z\"></path></g></svg>",
+            "label": "Shipping and billing address"
+          }
+        },
+        "partner_type_eLw9Uh": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg id=\"Layer_2\" enable-background=\"new 0 0 512 512\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><g><g><g><g><path d=\"m103.05 512c-3.25 0-6.51-.58-9.65-1.75-7.13-2.65-12.78-7.98-15.92-15l-15.61-34.91c-3.15-7.06-.07-15.34 6.92-18.61l27.49-12.88c3.44-1.61 7.39-1.77 10.95-.45 3.56 1.33 6.44 4.03 8 7.5l15.61 34.91c6.32 14.15.2 30.94-13.65 37.42l-2.47 1.16c-3.71 1.73-7.68 2.61-11.67 2.61zm-9.63-50.52 9.83 21.99 1.75-.82c.01-.06.02-.16-.04-.27l-9.72-21.75z\"></path></g></g><g><g><path d=\"m258.87 440.83c-.58 0-1.15-.04-1.73-.11-30.73-3.78-61.55-57.86-73.37-80.93-2.31-4.5-4.53-9.15-6.62-13.82-1.79-4-3.51-8.11-5.13-12.22-8.08-20.54-13.67-43.1-15.73-63.49-2.32-22.99-.02-39.95 6.85-50.42 4.29-6.54 13.08-8.36 19.62-4.07s8.37 13.08 4.07 19.62c-1.8 2.74-4.31 12.56-2.35 32.02 1.81 17.89 6.74 37.76 13.91 55.97 1.46 3.71 3.01 7.42 4.62 11.02 1.88 4.22 3.89 8.4 5.97 12.46 9.42 18.38 20.12 35.2 30.13 47.37 13.5 16.4 20.46 18.18 21.38 18.34 6.12.71 11.28 5.37 12.35 11.75 1.29 7.72-3.93 15.02-11.64 16.31-.77.14-1.55.2-2.33.2z\"></path></g></g><g><g><path d=\"m104.42 454.68c-5.55 0-10.64-3.25-12.93-8.39l-44.49-99.52c-2.41-5.4-1.22-11.73 2.99-15.88l115.8-114.03c.15-.15.3-.29.45-.43l5.92-5.34c1.21-1.13 2.62-2.05 4.18-2.71 4.9-2.17 12.69-3.81 22.77-.06 28.15 10.48 57.22 56.89 73.57 93.45 11.72 26.22 19.44 55.29 21.16 79.75 2.65 37.5-9.13 51.46-19.63 56.54-1.36.68-2.83 1.14-4.36 1.36l-8.07 1.13c-.23.03-.47.06-.7.08l-155.4 13.98c-.42.05-.84.07-1.26.07zm-27.54-110.5 36.35 81.3 144.97-13.04 4.13-.58c1.7-2.7 4.82-11.69 3.01-31.29-1.9-20.65-8.65-45.15-18.53-67.23-10.1-22.6-22.57-43.45-35.11-58.72-12.02-14.63-20.11-19.17-23.28-20.03l-2.98 2.68z\"></path></g></g><g><g><path d=\"m64.85 469.77c-5.81 0-11.65-1.04-17.27-3.14-12.86-4.78-23.07-14.43-28.75-27.15l-14.24-31.83c-11.49-25.71-.49-56.16 24.53-67.88l24.8-11.62c7.08-3.32 15.52-.27 18.84 6.82s.27 15.52-6.82 18.84l-24.8 11.62c-11.12 5.21-15.91 18.96-10.69 30.65l14.23 31.84c2.56 5.73 7.09 10.04 12.76 12.15 5.33 1.99 11.09 1.76 16.22-.64l25.23-11.82c1.53-.72 3.17-1.16 4.85-1.3 7.82-.65 14.65 5.15 15.3 12.94.52 6.21-3.05 11.81-8.46 14.17l-24.88 11.68c-6.64 3.11-13.73 4.67-20.85 4.67z\"></path></g></g><g><g><path d=\"m196.39 367.5c-5.33 0-10.43-3.02-12.84-8.16-2.75-5.87-1.12-12.67 3.55-16.72-5.97.8-12.03-2.29-14.72-8.04-3.32-7.09-.27-15.52 6.82-18.84l22.43-10.51c6.61-3.1 14.03-3.4 20.88-.85 6.98 2.6 12.52 7.81 15.59 14.68 2.98 6.67 3.27 14.12.81 20.98-2.49 6.97-7.53 12.53-14.17 15.65l-22.35 10.47c-1.94.91-3.99 1.34-6 1.34z\"></path></g></g></g><g><g><path d=\"m431.7 511.99h-175.7c-7.83 0-14.17-6.34-14.17-14.17s6.34-14.17 14.17-14.17h175.7c28.65 0 51.95-23.31 51.95-51.95v-351.41c0-28.65-23.31-51.95-51.95-51.95h-351.4c-28.65 0-51.95 23.31-51.95 51.95v175.7c0 7.83-6.34 14.17-14.17 14.17s-14.17-6.34-14.17-14.17v-175.7c0-44.27 36.01-80.29 80.29-80.29h351.4c44.27 0 80.29 36.02 80.29 80.29v351.4c0 44.28-36.01 80.3-80.29 80.3z\"></path></g></g><g><g><g><g><path d=\"m197.61 85.85h-114.73c-7.83 0-14.17-6.34-14.17-14.17s6.34-14.17 14.17-14.17h114.73c7.83 0 14.17 6.34 14.17 14.17s-6.34 14.17-14.17 14.17z\"></path></g></g><g><g><path d=\"m176.01 135.93h-93.13c-7.83 0-14.17-6.34-14.17-14.17s6.34-14.17 14.17-14.17h93.13c7.83 0 14.17 6.34 14.17 14.17s-6.34 14.17-14.17 14.17z\"></path></g></g><g><g><path d=\"m132.96 186.01h-50.08c-7.83 0-14.17-6.34-14.17-14.17s6.34-14.17 14.17-14.17h50.08c7.83 0 14.17 6.34 14.17 14.17s-6.34 14.17-14.17 14.17z\"></path></g></g></g><g><g><path d=\"m400.35 180.97h-92.68c-23.68 0-42.94-19.26-42.94-42.94v-39.37c0-23.68 19.26-42.94 42.94-42.94h92.68c23.68 0 42.94 19.26 42.94 42.94v39.37c.01 23.68-19.26 42.94-42.94 42.94zm-92.67-96.92c-8.05 0-14.6 6.55-14.6 14.61v39.37c0 8.05 6.55 14.61 14.6 14.61h92.68c8.05 0 14.61-6.55 14.61-14.61v-39.37c0-8.05-6.55-14.61-14.61-14.61z\"></path></g></g></g><g><g><g><path d=\"m372.3 340.24c-3.63 0-7.26-.93-10.5-2.8-6.47-3.74-10.5-10.71-10.5-18.18v-42.19c0-7.48 4.02-14.44 10.5-18.18s14.52-3.74 20.99 0l36.54 21.09c6.48 3.74 10.5 10.71 10.5 18.18 0 7.48-4.02 14.44-10.5 18.18l-36.53 21.09c-3.24 1.88-6.87 2.81-10.5 2.81zm7.35-50.45v16.75l14.5-8.37z\"></path></g></g><g><g><path d=\"m384.48 386.32c-48.61 0-88.16-39.55-88.16-88.16s39.55-88.16 88.16-88.16 88.16 39.55 88.16 88.16-39.55 88.16-88.16 88.16zm0-147.98c-32.99 0-59.82 26.84-59.82 59.82s26.84 59.82 59.82 59.82 59.82-26.84 59.82-59.82-26.83-59.82-59.82-59.82z\"></path></g></g></g></g></svg>",
+            "label": "Sales channel details, such as website, marketplace, or store information"
+          }
+        },
+        "partner_type_jezfrM": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" id=\"Capa_1\" x=\"0px\" y=\"0px\" viewbox=\"0 0 511.999 511.999\" style=\"enable-background:new 0 0 511.999 511.999;\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\">\n<g>\n\t<g>\n\t\t<path d=\"M476.919,141.304l-0.379-0.655c-0.525-1.089-1.131-2.132-1.807-3.123L403.504,14.38C398.373,5.51,388.821,0,378.574,0    H133.437c-10.263,0-19.823,5.523-24.952,14.417l-72.39,125.586c-0.652,1.132-1.122,2.316-1.454,3.519    c-1.019,2.751-1.579,5.724-1.579,8.826v324.365c0,19.456,15.829,35.285,35.285,35.285h375.304    c19.456,0,35.285-15.829,35.285-35.285V151.159c0-0.435-0.013-0.867-0.036-1.297C479.104,146.975,478.478,143.998,476.919,141.304    z M271.518,30.011h106.358l56.032,96.873h-162.39V30.011z M134.136,30.011h107.371v96.873H78.296L134.136,30.011z     M448.925,476.714c0,2.908-2.366,5.274-5.274,5.274H68.347c-2.908,0-5.274-2.366-5.274-5.274V156.895h385.852V476.714z\"></path>\n\t</g>\n</g>\n<g>\n\t<g>\n\t\t<path d=\"M324.115,270.026c-5.859-5.859-15.361-5.859-21.221,0l-67.002,67.002l-25.764-25.764c-5.859-5.859-15.361-5.859-21.221,0    c-5.86,5.859-5.86,15.361,0,21.221l36.376,36.374c2.93,2.93,6.771,4.396,10.61,4.396c3.839,0,7.681-1.466,10.61-4.396    l77.612-77.612C329.975,285.387,329.975,275.886,324.115,270.026z\"></path>\n\t</g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n<g>\n</g>\n</svg>",
+            "label": "Product interest and estimated order quantity"
+          }
+        }
+      },
+      "block_order": [
+        "partner_type_dU8pJr",
+        "partner_type_zdBCnh",
+        "partner_type_GLMnqE",
+        "partner_type_LEGVUd",
+        "partner_type_eLw9Uh",
+        "partner_type_jezfrM"
+      ],
+      "name": "Wholesale · Who can apply",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "extra-large",
+        "accent_color": "#fbbc05",
+        "icon_size": "1.5rem",
+        "icon_size_custom": 24,
+        "subheading": "Getting Started",
+        "heading": "Documents Required for Wholesale Setup",
+        "content": "<p>To review and process wholesale inquiries, businesses may be asked to provide basic company and trade information, including</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "show_note": false,
+        "note_text": "",
+        "small_line": "<p><em>Providing complete and accurate information helps us review your request more efficiently.</em></p>",
+        "show_footer": true,
+        "footer_heading": "Ready to partner with AirVape?",
+        "enable_form_popup": true,
+        "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
+        "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+        "button_text": "Apply for Wholesale",
+        "button_link": "",
+        "button_style": "",
+        "button_size": "text-sm md:text-base",
+        "button_background_color": "#fbbc05",
+        "button_text_color": "#000000",
+        "background_color": "#ffffff",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -279,42 +539,93 @@
         "heading_color": ""
       }
     },
-    "rich_text_R7kq9E": {
+    "rich_text_6BPfjB": {
       "type": "rich-text",
       "blocks": {
-        "heading_6xGX4N": {
+        "heading_keTGCd": {
           "type": "heading",
           "settings": {
-            "heading": "Stock Premium AirVape Vaporizers at Competitive Wholesale Pricing",
+            "heading": "Wholesale Requirements",
             "heading_size": "h3",
             "heading_html_tag": "h2"
           }
         },
-        "text_WdDyKH": {
+        "text_qGj8yz": {
           "type": "text",
           "settings": {
-            "text": "<p>Partner with AirVape to access premium vaporizers and accessories through a wholesale program designed for retailers, resellers, distributors, and serious trade partners.</p><p>We offer flexible wholesale solutions based on product type, order quantity, and business requirements, helping partners source premium products with competitive pricing and scalable opportunities.</p><p>Whether you are looking for standard products or exploring larger-volume orders, AirVape is built to support long-term wholesale growth.</p>"
-          }
-        },
-        "button_7xGdXF": {
-          "type": "button",
-          "settings": {
-            "enable_form_popup": true,
-            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
-            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
-            "button_text": "Apply for Wholesale",
-            "button_link": "",
-            "button_style": "",
-            "button_size": "text-sm md:text-base",
-            "button_background_color": "",
-            "button_text_color": "#ffffff"
+            "text": "<h3><strong>Minimum Order Quantity</strong></h3><p>Minimum order quantity depends on the product type, packaging requirements, and shipping destination.</p><p>MOQ may vary by product category. Standard products may have a lower MOQ, while customized, private label, branded, or bulk production orders may require a higher minimum quantity.</p><p>Please contact us with your product details so we can confirm the exact MOQ for your request.</p><h3><strong>Pricing Structure</strong></h3><p>Wholesale pricing depends on:</p><ul><li>Product type</li><li>Order quantity</li><li>Order value</li><li>Customization requirements</li></ul><p>Larger orders typically qualify for better pricing and volume-based discounts.</p><h3><strong>Shipping and Delivery</strong></h3><p>We ship to multiple international regions, subject to shipping coverage, customs regulations, and product availability.</p><p>Estimated delivery times vary by destination and may also depend on customs clearance, order preparation time, and the shipping method selected. Exact timelines can be shared once we review your order requirements and delivery location.</p>"
           }
         }
       },
       "block_order": [
-        "heading_6xGX4N",
-        "text_WdDyKH",
-        "button_7xGdXF"
+        "heading_keTGCd",
+        "text_qGj8yz"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_bpJjyX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_j6Mjki": {
+          "type": "heading",
+          "settings": {
+            "heading": "Documents Required for Wholesale Setup",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_KNcmRd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To review and process wholesale inquiries, businesses may be asked to provide basic company and trade information, including:</p><ul><li>Business name and contact details</li><li>Company registration or trade license</li><li>Tax or VAT certificate, where applicable</li><li>Shipping and billing address</li><li>Sales channel details, such as website, marketplace, or store information</li><li>Product interest and estimated order quantity</li></ul><p>Providing complete and accurate information helps us review your request more efficiently.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_j6Mjki",
+        "text_KNcmRd"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-left",
+        "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "rich_text_iKXHJF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UUNnhE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who Can Apply?",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_DtFBKT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wholesale applications are open to qualified:</p><ul><li>Businesses</li><li>Distributors</li><li>Resellers</li><li>Retailers</li><li>Smoke shops</li><li>Other serious trade partners</li></ul><p>Individuals may also apply, but approval depends on order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UUNnhE",
+        "text_DtFBKT"
       ],
       "disabled": true,
       "settings": {
@@ -360,131 +671,44 @@
         "heading_color": ""
       }
     },
-    "rich_text_iKXHJF": {
+    "rich_text_R7kq9E": {
       "type": "rich-text",
+      "blocks": {
+        "heading_6xGX4N": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stock Premium AirVape Vaporizers at Competitive Wholesale Pricing",
+            "heading_size": "h3",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_WdDyKH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Partner with AirVape to access premium vaporizers and accessories through a wholesale program designed for retailers, resellers, distributors, and serious trade partners.</p><p>We offer flexible wholesale solutions based on product type, order quantity, and business requirements, helping partners source premium products with competitive pricing and scalable opportunities.</p><p>Whether you are looking for standard products or exploring larger-volume orders, AirVape is built to support long-term wholesale growth.</p>"
+          }
+        },
+        "button_7xGdXF": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"5SFE79Cjl2RbLpVX9hGo4A\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Wholesale",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6xGX4N",
+        "text_WdDyKH",
+        "button_7xGdXF"
+      ],
       "disabled": true,
-      "blocks": {
-        "heading_UUNnhE": {
-          "type": "heading",
-          "settings": {
-            "heading": "Who Can Apply?",
-            "heading_size": "h3",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_DtFBKT": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Wholesale applications are open to qualified:</p><ul><li>Businesses</li><li>Distributors</li><li>Resellers</li><li>Retailers</li><li>Smoke shops</li><li>Other serious trade partners</li></ul><p>Individuals may also apply, but approval depends on order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_UUNnhE",
-        "text_DtFBKT"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-left",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "wholesale_who_can_apply_kX9mQ2": {
-      "type": "wholesale-who-can-apply",
-      "blocks": {
-        "partner_type_1": { "type": "partner_type", "settings": { "icon": "businesses", "label": "Businesses" } },
-        "partner_type_2": { "type": "partner_type", "settings": { "icon": "distributors", "label": "Distributors" } },
-        "partner_type_3": { "type": "partner_type", "settings": { "icon": "resellers", "label": "Resellers" } },
-        "partner_type_4": { "type": "partner_type", "settings": { "icon": "retailers", "label": "Retailers" } },
-        "partner_type_5": { "type": "partner_type", "settings": { "icon": "smoke_shops", "label": "Smoke Shops" } },
-        "partner_type_6": { "type": "partner_type", "settings": { "icon": "check", "label": "Other Serious Trade Partners" } }
-      },
-      "block_order": [
-        "partner_type_1",
-        "partner_type_2",
-        "partner_type_3",
-        "partner_type_4",
-        "partner_type_5",
-        "partner_type_6"
-      ],
-      "name": "Wholesale · Who can apply",
-      "settings": {
-        "full_width": true,
-        "remove_horizontal_space": false,
-        "remove_vertical_space": false,
-        "content_width": "large",
-        "accent_color": "#c9a24b",
-        "subheading": "Eligibility",
-        "heading": "Who Can Apply?",
-        "content": "<p>Wholesale applications are open to qualified:</p>",
-        "text_alignment": "text-left",
-        "heading_size": "h2",
-        "heading_html_tag": "h2",
-        "show_note": true,
-        "note_text": "<p><strong>Individuals may also apply</strong>, but approval depends on order volume, sales channel, and business intent. Business applicants are generally preferred for long-term wholesale partnerships.</p>",
-        "background_color": "#ffffff",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "rich_text_6BPfjB": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_keTGCd": {
-          "type": "heading",
-          "settings": {
-            "heading": "Wholesale Requirements",
-            "heading_size": "h3",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_qGj8yz": {
-          "type": "text",
-          "settings": {
-            "text": "<h3><strong>Minimum Order Quantity</strong></h3><p>Minimum order quantity depends on the product type, packaging requirements, and shipping destination.</p><p>MOQ may vary by product category. Standard products may have a lower MOQ, while customized, private label, branded, or bulk production orders may require a higher minimum quantity.</p><p>Please contact us with your product details so we can confirm the exact MOQ for your request.</p><h3><strong>Pricing Structure</strong></h3><p>Wholesale pricing depends on:</p><ul><li>Product type</li><li>Order quantity</li><li>Order value</li><li>Customization requirements</li></ul><p>Larger orders typically qualify for better pricing and volume-based discounts.</p><h3><strong>Shipping and Delivery</strong></h3><p>We ship to multiple international regions, subject to shipping coverage, customs regulations, and product availability.</p><p>Estimated delivery times vary by destination and may also depend on customs clearance, order preparation time, and the shipping method selected. Exact timelines can be shared once we review your order requirements and delivery location.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_keTGCd",
-        "text_qGj8yz"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_alignment": "mx-auto",
-        "text_alignment": "text-left",
-        "content_width": "normal",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": ""
-      }
-    },
-    "rich_text_bpJjyX": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_j6Mjki": {
-          "type": "heading",
-          "settings": {
-            "heading": "Documents Required for Wholesale Setup",
-            "heading_size": "h3",
-            "heading_html_tag": "h2"
-          }
-        },
-        "text_KNcmRd": {
-          "type": "text",
-          "settings": {
-            "text": "<p>To review and process wholesale inquiries, businesses may be asked to provide basic company and trade information, including:</p><ul><li>Business name and contact details</li><li>Company registration or trade license</li><li>Tax or VAT certificate, where applicable</li><li>Shipping and billing address</li><li>Sales channel details, such as website, marketplace, or store information</li><li>Product interest and estimated order quantity</li></ul><p>Providing complete and accurate information helps us review your request more efficiently.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_j6Mjki",
-        "text_KNcmRd"
-      ],
       "settings": {
         "full_width": true,
         "content_alignment": "mx-auto",
@@ -631,13 +855,15 @@
     "wholesale_partner_d7GMLA",
     "wholesale_process_7rHAii",
     "featured_collection_bkpmrh",
-    "main",
-    "rich_text_R7kq9E",
-    "rich_text_4PKHxx",
-    "rich_text_iKXHJF",
     "wholesale_who_can_apply_kX9mQ2",
+    "wholesale_requirement_g3gYhF",
+    "wholesale_who_can_apply_7hJcGi",
+    "main",
     "rich_text_6BPfjB",
     "rich_text_bpJjyX",
+    "rich_text_iKXHJF",
+    "rich_text_4PKHxx",
+    "rich_text_R7kq9E",
     "faq_accordion_XwdGcQ",
     "rich_text_j8jgyc"
   ]

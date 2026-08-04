@@ -936,6 +936,12 @@
     "name": "Age Verification Popup",
     "settings": [
       {
+        "type" : "checkbox",
+        "id": "enable_popup",
+        "label": "Enable Popup",
+        "default": false
+      },
+      {
         "type": "image_picker",
         "id": "popup_logo",
         "label": "Logo"

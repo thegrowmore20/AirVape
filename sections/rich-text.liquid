@@ -1,4 +1,4 @@
-﻿{% render 'section-bg-number-vars' %}
+{% render 'section-bg-number-vars' %}
 
 <style>
   #shopify-section-{{ section.id }} {
@@ -10,8 +10,11 @@
     }
   {% endif %}
 </style>
+{% if section.settings.custom_class != blank %}
+  {%  assign section_class = section.settings.custom_class %}
+{% endif %}
 
-<div {% render 'section-attrs' %}>
+<div {% render 'section-attrs', class: section_class %}>
   <div class="section-body trim-margins {{ section.settings.text_alignment }} {{ section.settings.content_alignment }}  max-w-[--content-width]">
     {% render 'rich-text-blocks' %}
   </div>
@@ -22,6 +25,11 @@
 {
   "name": "t:sections.rich-text.name",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
     {
       "type": "checkbox",
       "id": "full_width",

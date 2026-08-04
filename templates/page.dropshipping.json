@@ -49,6 +49,245 @@
         "overlay_type": "solid"
       }
     },
+    "image_with_text_d3JWFA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MaHzMw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sell AirVape Products Without Holding Inventory",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_kwGknT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape officially supports dropshipping for <strong>approved business partners only</strong>. Our dropshipping program is designed for qualified resellers who want to market and sell AirVape products through their own sales channels while we handle fulfillment directly to the end customer.</p><p>Dropshipping access is subject to <strong>account approval, product availability, and compliance with our reseller terms</strong>.</p>"
+          }
+        },
+        "button_9z7AaQ": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"2hYTel6_YFW8geyn4J9Yxg\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Dropshipping",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_MaHzMw",
+        "text_kwGknT",
+        "button_9z7AaQ"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Sell_AirVape_Products.webp",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_jyeXzx": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YTw6NB": {
+          "type": "heading",
+          "settings": {
+            "heading": "How AirVape Dropshipping Works",
+            "heading_size": "h2",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_URiayD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape dropshipping allows approved partners to promote and sell selected products <strong>without stocking inventory</strong> themselves.</p><p>Once you receive an order from your customer, you submit the order details to our team for fulfillment. We then process, pack, and ship the order directly to the end customer on your behalf.</p><p>This model helps approved partners expand product offerings while reducing inventory risk and operational overhead.</p>"
+          }
+        },
+        "button_jbHqp8": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"2hYTel6_YFW8geyn4J9Yxg\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Dropshipping",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_YTw6NB",
+        "text_URiayD",
+        "button_jbHqp8"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/How_AirVape_Dropshipping_Works.webp",
+        "image_size": "",
+        "image_position": "right",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "affiliate_why_join_HcRntC": {
+      "type": "affiliate-why-join",
+      "blocks": {
+        "benefit_RQkq3H": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "commission",
+            "icon_width": 48,
+            "custom_svg": "01",
+            "title": "Partner Approval",
+            "text": "<p>Your business is reviewed and approved for the AirVape dropshipping program.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_MTQ8LH": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "payout",
+            "icon_width": 48,
+            "custom_svg": "02",
+            "title": "Product Listing",
+            "text": "<p>Approved products are listed on your website, store, marketplace, or other approved sales channels.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_9RPKrE": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "promote",
+            "icon_width": 48,
+            "custom_svg": "03",
+            "title": "Customer Order Received",
+            "text": "<p>You collect the customer order and payment through your own platform.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_bYpegB": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "tracking",
+            "icon_width": 48,
+            "custom_svg": "04",
+            "title": "Order Submission",
+            "text": "<p>You submit the complete paid order details, including accurate shipping information, to our team for fulfillment.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_7aUGyN": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "support",
+            "icon_width": 48,
+            "custom_svg": "05",
+            "title": "Order Processing and Dispatch",
+            "text": "<p>After order confirmation and acceptance by our team, we process, pack, and dispatch the order.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_4XVfBz": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "product",
+            "icon_width": 48,
+            "custom_svg": "06",
+            "title": "Tracking Shared",
+            "text": "<p>Tracking information is shared after shipment so you can update your customer.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_RQkq3H",
+        "benefit_MTQ8LH",
+        "benefit_9RPKrE",
+        "benefit_bYpegB",
+        "benefit_7aUGyN",
+        "benefit_4XVfBz"
+      ],
+      "name": "Affiliate · Why join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "columns_desktop": 3,
+        "color_scheme": "light",
+        "card_layout": "stacked",
+        "accent_color": "#fbbc05",
+        "brand_yellow_color": "#fbbc05",
+        "background_color": "",
+        "card_background_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "subheading": "step by step",
+        "heading": "Dropshipping Process",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "bottom_note": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -103,7 +342,9 @@
         "text_H6cXwY",
         "button_M8BAyR"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -135,7 +376,9 @@
         "heading_GtgCfx",
         "text_UBHr7r"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -167,11 +410,66 @@
         "heading_nW8erU",
         "text_jtraKy"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
         "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_re8NpG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bAyYBN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order Flow From Placement to Fulfillment",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_VLHkcQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The partner is responsible for collecting the end-customer order and payment through their own sales channel.</p><p>After receiving the order, the partner submits the complete order details to us. Fulfillment begins only after:</p><ul><li>Order confirmation</li><li>Order acceptance by our team</li><li>Product availability verification</li></ul><p>Once approved, we process, pack, and dispatch the order directly to the customer on the partner’s behalf.</p>"
+          }
+        },
+        "button_DH6UAz": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"2hYTel6_YFW8geyn4J9Yxg\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Dropshipping",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_bAyYBN",
+        "text_VLHkcQ",
+        "button_DH6UAz"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "dropshipping-orderflow-imgtext",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Order_Flow_From_Placement.webp",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
         "background_color": "",
         "text_color": "",
         "heading_color": ""
@@ -199,7 +497,9 @@
         "heading_3GAQgG",
         "text_RGxFxm"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -207,6 +507,106 @@
         "background_color": "",
         "text_color": "",
         "heading_color": ""
+      }
+    },
+    "affiliate_why_join_JMVX4j": {
+      "type": "affiliate-why-join",
+      "blocks": {
+        "benefit_K7EAcG": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "commission",
+            "icon_width": 48,
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"512\" viewbox=\"0 0 32 32\" width=\"512\"><g id=\"_x30_7\"><path d=\"m30 9c0-3.8598633-3.1401367-7-7-7-2.824707 0-5.2580566 1.6853638-6.3632202 4.1003418l-2.2227173-1.010498c-.2636719-.1201172-.5649414-.1201172-.8276367 0l-11 5c-.3574219.1621093-.5864258.5180664-.5864258.9101562v13c0 .3920898.2290039.7480469.5864258.9101563l11 5c.1313476.0600585.2724609.0898437.4135742.0898437s.2822266-.0297852.4135742-.0898438l11-5c.3574219-.1621093.5864258-.5180664.5864258-.9101562v-8.6849976c2.3607788-1.1262817 4-3.529663 4-6.3150024zm-16-1.9013672 2.0736084.9425049c-.043396.3145142-.0736084.6331177-.0736084.9593506 0 1.62677.5626831 3.1218872 1.4972534 4.3117676l-3.4972534 1.5891113-8.5834961-3.9013672zm-10 5.4540405 9 4.0909424v10.8032227l-9-4.0908814zm20 10.8032837-9 4.0908813v-10.8032226l4.0742188-1.8516846c1.1203613.7617798 2.4717407 1.2080689 3.9257812 1.2080689.3403931 0 .6724854-.0326538 1-.079834zm-1-9.355957c-2.7568359 0-5-2.2431641-5-5s2.2431641-5 5-5 5 2.2431641 5 5-2.2431641 5-5 5z\"></path><path d=\"m25.371582 5.0712891c-.5146484-.2041016-1.0947266.0444336-1.300293.5571289l-1.4365234 3.5922852-.9277344-.9277344c-.390625-.390625-1.0234375-.390625-1.4140625 0s-.390625 1.0234375 0 1.4140625l2 2c.1894532.1894531.444336.2929687.7070313.2929687.0668945 0 .1342773-.0068359.2011719-.0205078.3291016-.0673828.6025391-.2958984.7275391-.6079102l2-5c.2050781-.5131836-.0444337-1.0947265-.557129-1.3002929z\"></path></g></svg>",
+            "title": "No Need to Hold Inventory",
+            "text": "<p>Approved partners can sell AirVape products without purchasing and storing stock in advance.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_WReCwx": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "payout",
+            "icon_width": 48,
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Layer_1\" enable-background=\"new 0 0 28 28\" viewbox=\"0 0 28 28\"><g><path d=\"m3.0090332 6v16c0 1.6542969 1.3457031 3 3 3h15.9819336c1.6542969 0 3-1.3457031 3-3v-16c0-1.6542969-1.3457031-3-3-3-5.643137 0-10.214138 0-15.9819336 0-1.6542969 0-3 1.3457031-3 3zm19.9819336 0v16c0 .5512695-.4487305 1-1 1h-15.9819336c-.5512695 0-1-.4487305-1-1v-16c0-.5512695.4487305-1 1-1h4.2431641v3.9946289c0 1.1030273.8969727 2 2 2h3.4951172c1.1030273 0 2-.8969727 2-2v-3.9946289h4.2436523c.5512695 0 1 .4487305 1 1zm-7.2431641-1 .0009766 3.9946289h-3.496582v-3.9946289z\"></path><path d=\"m15.739502 15.2495117-2.5180664 2.5180664-1.0288086-1.0288086c-.390625-.390625-1.0234375-.390625-1.4140625 0s-.390625 1.0234375 0 1.4140625l1.7358398 1.7358398c.3906145.3906136 1.0234261.3906364 1.4140625 0l3.2250977-3.2250977c.390625-.390625.390625-1.0234375 0-1.4140625s-1.0234375-.3906249-1.4140625.0000001z\"></path></g></svg>",
+            "title": "Direct Fulfillment",
+            "text": "<p>We handle order processing, packing, and shipping directly to the end customer after order approval.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_9apVNN": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "promote",
+            "icon_width": 48,
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 512 512\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\"><g><path d=\"m30 51.213 62.824 62.824 21.213-21.213-62.824-62.824h38.787v-30h-90v90h30z\"></path><path d=\"m482 460.787-62.824-62.824-21.213 21.213 62.824 62.824h-38.787v30h90v-90h-30z\"></path><path d=\"m422 0v30h38.787l-62.824 62.824 21.213 21.213 62.824-62.824v38.787h30v-90z\"></path><path d=\"m92.824 397.963-62.824 62.824v-38.787h-30v90h90v-30h-38.787l62.824-62.824z\"></path><path d=\"m421.933 160.199-165.933-95.802-165.933 95.802v191.603l165.933 95.801 165.933-95.801zm-180.933 104.461v139.642l-45.466-26.25v-139.642zm15-25.98-45.466-26.25 120.933-69.821 45.466 26.25zm45.467-113.392-120.933 69.821-45.467-26.25 120.933-69.821zm-181.4 69.552 45.466 26.25v139.641l-45.466-26.25zm150.933 209.462v-139.642l120.933-69.821v139.641z\"></path></g></svg>",
+            "title": "Product Expansion",
+            "text": "<p>Dropshipping makes it easier for partners to expand their product range without increasing warehousing complexity.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_yXKCQb": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "tracking",
+            "icon_width": 48,
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"svg6331\" height=\"512\" viewbox=\"0 0 32 32\" width=\"512\" xmlns:svg=\"http://www.w3.org/2000/svg\"><g id=\"layer1\"><path id=\"path1233\" d=\"m16.000979 2.9999995c-1.6447 0-2.91023 1.26187-3.72461 2.89062-.69579 1.39159-1.1138 3.16122-1.22656 5.1093805h-3.9433597a1.0000353 1.0000999 0 0 0 -.99024.86914l-2.10742 16a1.0000353 1.0000999 0 0 0 .99219 1.13086h21.9980497a1.0000353 1.0000999 0 0 0 .99218-1.13086l-2.10742-16a1.0000353 1.0000999 0 0 0 -.99023-.86914h-3.94141c-.11276-1.9481605-.53077-3.7177905-1.22656-5.1093805-.81438-1.62875-2.07991-2.89062-3.72461-2.89062zm0 2c.5713 0 1.30588.52192 1.9375 1.78516.52744 1.05487.89825 2.54377 1.01172 4.2148405h-5.89844c.11347-1.6710705.48428-3.1599705 1.01172-4.2148405.63162-1.26324 1.3662-1.78516 1.9375-1.78516zm-8.0175797 8.0000005h3.0175797v3a1.0000999 1.0000999 0 1 0 2 0v-3h6v3a1.0000999 1.0000999 0 1 0 2 0v-3h3.01562l1.8418 14h-19.7167997z\" font-variant-ligatures=\"normal\" font-variant-position=\"normal\" font-variant-caps=\"normal\" font-variant-numeric=\"normal\" font-variant-alternates=\"normal\" font-feature-settings=\"normal\" text-indent=\"0\" text-align=\"start\" text-decoration-line=\"none\" text-decoration-style=\"solid\" text-decoration-color=\"rgb(0,0,0)\" text-transform=\"none\" text-orientation=\"mixed\" white-space=\"normal\" shape-padding=\"0\" isolation=\"auto\" mix-blend-mode=\"normal\" solid-color=\"rgb(0,0,0)\" solid-opacity=\"1\" vector-effect=\"none\" paint-order=\"normal\"></path></g></svg>",
+            "title": "Flexible Selling Channels",
+            "text": "<p>Approved partners may market and sell AirVape products through their own approved sales channels, subject to reseller terms and policy compliance.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_K7EAcG",
+        "benefit_WReCwx",
+        "benefit_9apVNN",
+        "benefit_yXKCQb"
+      ],
+      "name": "Affiliate · Why join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "columns_desktop": 4,
+        "color_scheme": "dark",
+        "card_layout": "stacked",
+        "accent_color": "#fbbc05",
+        "brand_yellow_color": "#fbbc05",
+        "background_color": "",
+        "card_background_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "subheading": "The Advantages",
+        "heading": "Why Partner With AirVape for Dropshipping?",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "bottom_note": "",
+        "text_color": "#fdfdfd",
+        "heading_color": "#fdfdfd"
       }
     },
     "rich_text_TWzcNm": {
@@ -231,7 +631,9 @@
         "heading_HVYaU4",
         "text_nxG8Xh"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -239,6 +641,72 @@
         "background_color": "",
         "text_color": "",
         "heading_color": ""
+      }
+    },
+    "affiliate_why_join_EaqGLq": {
+      "type": "affiliate-why-join",
+      "blocks": {
+        "benefit_UzXPQp": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "commission",
+            "icon_width": 48,
+            "custom_svg": "",
+            "title": "Shipping Times",
+            "text": "<p>Processing and transit times are <strong>estimates only</strong> and are <strong>not guaranteed unless agreed in writing</strong>.<br/><br/>Shipping timelines vary based on:</p>",
+            "tag_1": "Stock availability",
+            "tag_2": "Order volume",
+            "tag_3": "Destination country",
+            "tag_4": "Courier service",
+            "tag_5": "Customs procedures"
+          }
+        },
+        "benefit_YKCdeW": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "payout",
+            "icon_width": 48,
+            "custom_svg": "",
+            "title": "Shipping Regions",
+            "text": "<p>Exact shipping availability can be confirmed based on the destination and order details.<br/><br/>We ship to selected domestic and international regions where courier service is available.</p><p>Some destinations may be restricted due to:</p>",
+            "tag_1": "Shipping limitations",
+            "tag_2": "Customs regulations",
+            "tag_3": "Commercial policy",
+            "tag_4": "Product restrictions in certain markets",
+            "tag_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_UzXPQp",
+        "benefit_YKCdeW"
+      ],
+      "name": "Affiliate · Why join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "columns_desktop": 2,
+        "color_scheme": "light",
+        "card_layout": "stacked",
+        "accent_color": "#fbbc05",
+        "brand_yellow_color": "#fbbc05",
+        "background_color": "",
+        "card_background_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "subheading": "Logistics",
+        "heading": "Shipping Information",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "bottom_note": "",
+        "text_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)"
       }
     },
     "rich_text_XXknih": {
@@ -263,7 +731,9 @@
         "heading_Uz4VzV",
         "text_B8XpxF"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -271,6 +741,72 @@
         "background_color": "",
         "text_color": "",
         "heading_color": ""
+      }
+    },
+    "affiliate_why_join_Wfpe97": {
+      "type": "affiliate-why-join",
+      "blocks": {
+        "benefit_8erDXw": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "commission",
+            "icon_width": 48,
+            "custom_svg": "",
+            "title": "Returns & Refunds",
+            "text": "<p>Returns and refunds for dropshipping orders are handled according to our approved return policy.</p><p>Claims for <strong>damaged, defective, or incorrect items</strong> must be reported within the approved claim period and must include <strong>photo or video evidence</strong> for review.<br/><br/><strong>NOTE:</strong> No return, refund, or replacement will be processed without prior approval.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_P77djY": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "payout",
+            "icon_width": 48,
+            "custom_svg": "",
+            "title": "Return Restrictions",
+            "text": "<p>Not all returns are accepted. The following may be rejected:</p><ul><li>Unauthorized returns</li><li>Used items</li><li>Customer-damaged items</li><li>Claims submitted outside the approved reporting period</li></ul><p>Refund or replacement approval remains subject to inspection and policy compliance.</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_8erDXw",
+        "benefit_P77djY"
+      ],
+      "name": "Affiliate · Why join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "columns_desktop": 2,
+        "color_scheme": "light",
+        "card_layout": "stacked",
+        "accent_color": "#fbbc05",
+        "brand_yellow_color": "#fbbc05",
+        "background_color": "",
+        "card_background_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "subheading": "Policies",
+        "heading": "Returns and Refunds",
+        "content": "",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "bottom_note": "",
+        "text_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)"
       }
     },
     "rich_text_YJt99F": {
@@ -295,12 +831,116 @@
         "heading_XaicCk",
         "text_ccdBni"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
         "content_width": "normal",
         "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "wholesale_who_can_apply_pUhKaW": {
+      "type": "wholesale-who-can-apply",
+      "blocks": {
+        "partner_type_XKMYrE": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "businesses",
+            "custom_image": "shopify://shop_images/Businesses.svg",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Layer_1\" enable-background=\"new 0 0 512 512\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\"><path d=\"m512 154.75c0-24.813-20.187-45-45-45h-80v-32.277c0-26.039-21.184-47.223-47.222-47.223h-167.555c-26.039 0-47.223 21.184-47.223 47.223v32.277h-80c-24.813 0-45 20.187-45 45v70.997c0 13.23 4.308 29.729 20 45.913v165.09c0 24.813 20.187 45 45 45h382c24.813 0 45-20.187 45-45v-165.09c15.685-16.175 20-32.669 20-45.913zm-357-77.277c0-9.497 7.726-17.223 17.223-17.223h167.556c9.496 0 17.222 7.726 17.222 17.223v32.277h-202.001zm-125 77.277c0-8.271 6.729-15 15-15h422c8.271 0 15 6.729 15 15v70.997c0 36.908-70.808 67.027-174 74.918v-13.915c0-8.284-6.716-15-15-15h-74c-8.284 0-15 6.716-15 15v13.91c-103.099-7.901-174-38.099-174-74.913zm248 147v19.5c0 10.752-8.748 19.5-19.5 19.5h-5c-10.752 0-19.5-8.748-19.5-19.5v-19.5zm169 150h-382c-8.271 0-15-6.729-15-15v-143.075c44.664 22.887 91.602 31.712 154.936 37.138 4.469 22.732 24.542 39.937 48.564 39.937h5c24.024 0 44.098-17.207 48.565-39.941 52.317-3.789 99.546-13.392 134.031-27.346 7.755-3.138 14.692-6.416 20.904-9.791v143.078c0 8.271-6.729 15-15 15z\"></path></svg>",
+            "label": "Online Stores"
+          }
+        },
+        "partner_type_PkRDQm": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "resellers",
+            "custom_svg": "<svg fill=\"none\" height=\"48\" viewbox=\"0 0 48 48\" width=\"48\" xmlns=\"http://www.w3.org/2000/svg\"><path clip-rule=\"evenodd\" d=\"m8 16v-6h32v6h-8-2-12-2zm-2 0v-7c0-.55228.44772-1 1-1h34c.5523 0 1 .44772 1 1v7c1.1046 0 2 .8954 2 2v3c0 2.2091-1.7909 4-4 4v14c0 .5523-.4477 1-1 1h-30c-.55228 0-1-.4477-1-1v-14c-2.20914 0-4-1.7909-4-4v-3c0-1.1046.89543-2 2-2zm35 2h-9v3c0 1.1046.8954 2 2 2h4 2c1.1046 0 2-.8954 2-2v-3zm-11 0h-12v3c0 1.1046.8954 2 2 2h8c1.1046 0 2-.8954 2-2zm-14 0h-9-1v3c0 1.1046.89543 2 2 2h2 4c1.1046 0 2-.8954 2-2zm22 20v-13h-3v13zm-5-13.126v13.126h-8v-13h3c1.1947 0 2.2671-.5238 3-1.3542.5211.5904 1.2138 1.0258 2 1.2282zm-10 .126v13h-8v-13.126c.7862-.2024 1.4789-.6378 2-1.2282.7329.8304 1.8053 1.3542 3 1.3542zm-13 13h3v-13h-3z\" fill=\"currentColor\" fill-rule=\"evenodd\"></path></svg>",
+            "label": "Resellers"
+          }
+        },
+        "partner_type_VeA3cB": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "retailers",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 511.813 511.813\" height=\"512\" viewbox=\"0 0 511.813 511.813\" width=\"512\"><g><path d=\"m408.179 346.949c19.25 0 36.364-12.24 42.592-30.476l61.043-179.524h-377.062l-15.728-86.505-109.774-35.579-9.25 28.538 92.715 30.051 49.439 271.911c3.503 19.271 14.174 35.678 28.955 46.704-12.402 11-20.239 27.039-20.239 44.88 0 33.084 26.916 60 60 60s60-26.916 60-60c0-10.925-2.949-21.167-8.072-30.01h76.144c-5.123 8.843-8.072 19.085-8.072 30.01 0 33.084 26.916 60 60 60s60-26.916 60-60-26.916-60-60-60h-174.926c-19.514 0-36.492-12.5-42.601-30.518 2.213.334 4.471.518 6.767.518zm-242.826-42.319-.11.02-14.127-77.701h63.042l22.5 90h-56.547c-7.255 0-13.462-5.181-14.758-12.319zm79.728-77.681h111.576l-22.5 90h-66.576zm177.293 79.847c-2.074 6.072-7.778 10.152-14.195 10.152h-43.097l22.5-90h61.943zm47.552-139.847-10.201 30h-314.064l-5.455-30zm-259.056 300c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30zm210-30c0 16.542-13.458 30-30 30s-30-13.458-30-30 13.458-30 30-30 30 13.458 30 30z\"></path></g></svg>",
+            "label": "Marketplace sellers"
+          }
+        },
+        "partner_type_BGtmAQ": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "distributors",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 512 512\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\"><g><path d=\"m30 51.213 62.824 62.824 21.213-21.213-62.824-62.824h38.787v-30h-90v90h30z\"></path><path d=\"m482 460.787-62.824-62.824-21.213 21.213 62.824 62.824h-38.787v30h90v-90h-30z\"></path><path d=\"m422 0v30h38.787l-62.824 62.824 21.213 21.213 62.824-62.824v38.787h30v-90z\"></path><path d=\"m92.824 397.963-62.824 62.824v-38.787h-30v90h90v-30h-38.787l62.824-62.824z\"></path><path d=\"m421.933 160.199-165.933-95.802-165.933 95.802v191.603l165.933 95.801 165.933-95.801zm-180.933 104.461v139.642l-45.466-26.25v-139.642zm15-25.98-45.466-26.25 120.933-69.821 45.466 26.25zm45.467-113.392-120.933 69.821-45.467-26.25 120.933-69.821zm-181.4 69.552 45.466 26.25v139.641l-45.466-26.25zm150.933 209.462v-139.642l120.933-69.821v139.641z\"></path></g></svg>",
+            "label": "Distributors"
+          }
+        },
+        "partner_type_LGEckL": {
+          "type": "partner_type",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "check",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 510 510\" height=\"512\" viewbox=\"0 0 510 510\" width=\"512\"><g><path d=\"m375 120c-52.181 0-97.538 29.761-120 73.197-22.462-43.436-67.819-73.197-120-73.197-74.44 0-135 60.561-135 135 0 74.44 60.56 135 135 135 52.181 0 97.538-29.761 120-73.197 22.462 43.436 67.819 73.197 120 73.197 74.439 0 135-60.56 135-135 0-74.439-60.561-135-135-135zm-255 135c0-8.271 6.728-15 15-15 8.271 0 15 6.729 15 15 0 8.272-6.729 15-15 15-8.272 0-15-6.728-15-15zm-15 100.626v-25.626c0-16.542 13.458-30 30-30 16.581 0 30 13.417 30 30v25.626c-19.137 5.717-40.086 5.948-60 0zm90-14.509v-11.117c0-19.066-8.854-36.6-24.013-48.015 5.656-7.523 9.013-16.869 9.013-26.985 0-24.813-20.187-45-45-45-24.814 0-45 20.187-45 45 0 10.127 3.364 19.48 9.031 27.009-14.581 10.956-24.031 28.39-24.031 47.991v11.117c-27.183-18.996-45-50.511-45-86.117 0-57.897 47.102-105 105-105s105 47.103 105 105c0 35.606-17.817 67.121-45 86.117zm165-86.117c0-8.271 6.728-15 15-15 8.271 0 15 6.729 15 15 0 8.272-6.729 15-15 15-8.272 0-15-6.728-15-15zm-15 100.626v-25.626c0-16.542 13.458-30 30-30 16.581 0 30 13.417 30 30v25.626c-19.137 5.717-40.086 5.948-60 0zm90-14.509v-11.117c0-19.066-8.854-36.6-24.013-48.015 5.656-7.523 9.013-16.869 9.013-26.985 0-24.813-20.187-45-45-45-24.814 0-45 20.187-45 45 0 10.127 3.364 19.48 9.031 27.009-14.581 10.956-24.031 28.39-24.031 47.991v11.117c-27.183-18.996-45-50.512-45-86.117 0-57.897 47.102-105 105-105 57.897 0 105 47.103 105 105 0 35.606-17.817 67.121-45 86.117z\"></path><path d=\"m158.118 452.533 21.937-3.747-5.051-29.572-73.21 12.506 18.811 75.974 29.121-7.211-5.261-21.244c82.471 47.614 183.945 37.475 254.797-20.471l-18.992-23.223c-64.1 52.422-152.831 57.899-222.152 16.988z\"></path><path d=\"m351.882 57.467-21.936 3.747 5.051 29.572 73.21-12.506-18.812-75.973-29.121 7.211 5.261 21.244c-82.482-47.621-183.958-37.467-254.797 20.471l18.992 23.223c64.101-52.425 152.83-57.9 222.152-16.989z\"></path></g></svg>",
+            "label": "Other business partners with relevant sales channels"
+          }
+        },
+        "partner_type_33RbgN": {
+          "type": "partner_type",
+          "disabled": true,
+          "settings": {
+            "icon_type": "svg",
+            "icon": "smoke_shops",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Capa_1\" enable-background=\"new 0 0 512.01 512.01\" height=\"512\" viewbox=\"0 0 512.01 512.01\" width=\"512\"><g><path d=\"m450.015 289.797c40.674-33.179 61.99-72.064 61.99-113.787 0-74.439-61.01-135-136-135-39.91 0-73.951 10.831-100.297 41.229-12.691-5.035-28.605-9.229-43.703-9.229-61.206 0-111 49.794-111 111 0 53.25 42.202 101.193 96.636 111.134-1.892 13.356.51 26.586 6.609 38.15-22.369 9.125-39.973 28.733-45.451 51.716h-23.272c-5.039-9.506-15.034-16-26.521-16h-34c-14.493 0-26.618 10.331-29.399 24.015-1.208-.023-.905-.015-35.601-.015-16.542 0-30 13.458-30 30v34c0 16.542 13.458 30 30 30 34.75 0 34.213.006 35.423-.011 2.384 14.175 14.735 25.011 29.577 25.011h34c14.838 0 27.187-10.831 29.575-25h249.425c57.346 0 104-46.206 104-103-.001-41.995-25.513-78.196-61.991-94.213zm-420.01 167.213v-34h35v34zm99 25h-34c0-18.692 0-66.194 0-83h34zm279-25h-249v-42h33c8.284 0 15-6.716 15-15 0-20.78 18.877-39.809 40.611-41.987 9.471 5.701 20.552 8.987 32.389 8.987 8.284 0 15-6.716 15-15s-6.716-15-15-15c-18.196 0-33-14.804-33-33s14.804-33 33-33c8.284 0 15-6.716 15-15s-6.716-15-15-15c-20.723 0-39.136 10.061-50.625 25.551-42.589-4.15-78.375-40.942-78.375-82.551 0-44.664 36.337-81 81-81 8.196 0 17.485 1.964 25.911 4.706-5.458 9.53-10.663 20.364-15.778 32.767-3.158 7.659.489 16.428 8.148 19.586 7.661 3.16 16.428-.49 19.586-8.147 24.638-59.738 52.41-80.911 106.133-80.911 58.448 0 106 47.103 106 105 0 47.703-37.554 83.094-70.749 105.055-16.218-.491-31.756 2.665-46.217 9.311-7.527 3.459-10.825 12.366-7.366 19.893 3.458 7.526 12.36 10.825 19.894 7.367 47.768-21.953 104.438 12.779 104.438 66.375 0 40.251-33.196 72.998-74 72.998z\"></path><path d=\"m104.005 95.01c25.916 0 47-21.084 47-47 0-12.497-4.811-24.396-13.545-33.508-18.533-19.334-48.373-19.339-66.91 0-8.734 9.111-13.545 21.011-13.545 33.508 0 25.916 21.084 47 47 47zm0-65c9.056 0 17 8.411 17 18 0 9.374-7.626 17-17 17s-17-7.626-17-17c0-9.589 7.944-18 17-18z\"></path></g></svg>",
+            "label": "Smoke Shops"
+          }
+        }
+      },
+      "block_order": [
+        "partner_type_XKMYrE",
+        "partner_type_PkRDQm",
+        "partner_type_VeA3cB",
+        "partner_type_BGtmAQ",
+        "partner_type_LGEckL",
+        "partner_type_33RbgN"
+      ],
+      "name": "Wholesale · Who can apply",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "extra-large",
+        "accent_color": "#fbbc05",
+        "icon_size": "1.5rem",
+        "icon_size_custom": 24,
+        "subheading": "Eligibility",
+        "heading": "Who Can Apply?",
+        "content": "<p>AirVape dropshipping is available for<strong>approved business partners only</strong>. Applications may be considered from qualified businesses with relevant sales channels.</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "show_note": true,
+        "note_text": "<p>Approval depends on business review, product fit, sales channel suitability, and compliance with reseller terms.</p>",
+        "small_line": "",
+        "show_footer": false,
+        "footer_heading": "Ready to partner with AirVape?",
+        "enable_form_popup": false,
+        "hulk_form_id_block": "",
+        "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+        "button_text": "Apply for Wholesale",
+        "button_link": "",
+        "button_style": "",
+        "button_size": "text-sm md:text-base",
+        "button_background_color": "",
+        "button_text_color": "",
+        "background_color": "#ffffff",
         "text_color": "",
         "heading_color": ""
       }
@@ -327,7 +967,9 @@
         "heading_MCAkLH",
         "text_zR7Bpy"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -337,18 +979,135 @@
         "heading_color": ""
       }
     },
-    "rich_text_y8CwFN": {
+    "affiliate_why_join_d3fLDJ": {
+      "type": "affiliate-why-join",
+      "blocks": {
+        "benefit_WdxWGb": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "commission",
+            "icon_width": 48,
+            "custom_svg": "01",
+            "title": "",
+            "text": "<p>Market products professionally and Accurately</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_r4pq6J": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "payout",
+            "icon_width": 48,
+            "custom_svg": "02",
+            "title": "",
+            "text": "<p>Follow reseller terms and brand Requirements</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_7UnJtP": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "promote",
+            "icon_width": 48,
+            "custom_svg": "03",
+            "title": "",
+            "text": "<p>Submit complete and correct order details</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_hjWyMT": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "tracking",
+            "icon_width": 48,
+            "custom_svg": "04",
+            "title": "",
+            "text": "<p>Avoid misleading claims or unauthorized product representation</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        },
+        "benefit_UX9Mk6": {
+          "type": "benefit",
+          "settings": {
+            "icon_type": "svg",
+            "icon": "support",
+            "icon_width": 48,
+            "custom_svg": "05",
+            "title": "",
+            "text": "<p>Comply with destination market rules and platform policies</p>",
+            "tag_1": "",
+            "tag_2": "",
+            "tag_3": "",
+            "tag_4": "",
+            "tag_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_WdxWGb",
+        "benefit_r4pq6J",
+        "benefit_7UnJtP",
+        "benefit_hjWyMT",
+        "benefit_UX9Mk6"
+      ],
+      "name": "Affiliate · Why join",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "full-width",
+        "columns_desktop": 2,
+        "color_scheme": "dark",
+        "card_layout": "inline",
+        "accent_color": "#fbbc05",
+        "brand_yellow_color": "#fbbc05",
+        "background_color": "",
+        "card_background_color": "",
+        "icon_background_color": "",
+        "icon_color": "",
+        "subheading": "compliance",
+        "heading": "Important Program Conditions",
+        "content": "<p>To maintain a reliable and compliant dropshipping partnership, approved partners must:</p>",
+        "text_alignment": "text-center",
+        "heading_size": "h2",
+        "heading_html_tag": "h2",
+        "bottom_note": "Dropshipping services remain subject to account status, product availability, and operational approval.",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff"
+      }
+    },
+    "rich_text_zATety": {
       "type": "rich-text",
       "blocks": {
-        "heading_PAVzYY": {
+        "heading_CNAC7e": {
           "type": "heading",
           "settings": {
             "heading": "Important Program Conditions",
-            "heading_size": "h3",
+            "heading_size": "h2",
             "heading_html_tag": "h2"
           }
         },
-        "text_idqAmN": {
+        "text_9eGC7z": {
           "type": "text",
           "settings": {
             "text": "<p>To maintain a reliable and compliant dropshipping partnership, approved partners must:</p><ul><li>Market products professionally and Accurately</li><li>Follow reseller terms and brand Requirements</li><li>Submit complete and correct order details</li><li>Avoid misleading claims or unauthorized product representation</li><li>Comply with destination market rules and platform policies</li></ul><p>Dropshipping services remain subject to account status, product availability, and operational approval.</p>"
@@ -356,14 +1115,72 @@
         }
       },
       "block_order": [
-        "heading_PAVzYY",
-        "text_idqAmN"
+        "heading_CNAC7e",
+        "text_9eGC7z"
       ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets__0.name",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
         "content_width": "normal",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "image_with_text_bgyTc8": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_8CGegN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Become an AirVape Dropshipping Partner",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_GjpUkJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you are looking to sell AirVape products without holding inventory, our dropshipping program offers a practical way to grow through a fulfillment-supported partnership.</p><p>Submit your application to be reviewed as an approved business partner and explore whether AirVape dropshipping is the right fit for your sales model.</p>"
+          }
+        },
+        "button_TTTGVF": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": true,
+            "hulk_form_id_block": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"2hYTel6_YFW8geyn4J9Yxg\"></div>",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Apply for Dropshipping",
+            "button_link": "",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_8CGegN",
+        "text_GjpUkJ",
+        "button_TTTGVF"
+      ],
+      "custom_css": [
+        ".section--block {margin-top: calc(var(--section-vertical-spacing) * 1);}"
+      ],
+      "name": "t:sections.image-with-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": false,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/Become_an_AirVape_Dropshipping_Partner.webp",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
         "background_color": "",
         "text_color": "",
         "heading_color": ""
@@ -406,7 +1223,9 @@
         "text_TaRLT6",
         "button_j8pHmr"
       ],
+      "disabled": true,
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -517,8 +1336,9 @@
     "featured_collection_qET34h": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
-        "carousel": true,
+        "carousel": false,
         "products_count": 8,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
@@ -548,16 +1368,26 @@
   },
   "order": [
     "image_with_text_overlay_gWcwiD",
+    "image_with_text_d3JWFA",
+    "image_with_text_jyeXzx",
+    "affiliate_why_join_HcRntC",
     "main",
     "rich_text_aW93VX",
     "rich_text_DBkXF7",
     "rich_text_GQRktq",
+    "image_with_text_re8NpG",
     "rich_text_4T4naT",
+    "affiliate_why_join_JMVX4j",
     "rich_text_TWzcNm",
+    "affiliate_why_join_EaqGLq",
     "rich_text_XXknih",
+    "affiliate_why_join_Wfpe97",
     "rich_text_YJt99F",
+    "wholesale_who_can_apply_pUhKaW",
     "rich_text_m6htjw",
-    "rich_text_y8CwFN",
+    "affiliate_why_join_d3fLDJ",
+    "rich_text_zATety",
+    "image_with_text_bgyTc8",
     "rich_text_KqX8Ez",
     "faq_accordion_i7RJpN",
     "featured_collection_qET34h"

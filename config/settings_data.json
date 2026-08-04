@@ -55,7 +55,7 @@
     "type_button_text_style": "normal",
     "type_label_text_style": "uppercase",
     "type_navigation_text_style": "normal",
-    "page_width": 1200,
+    "page_width": 1280,
     "layout_space_between_sections": "section-spacing-small",
     "layout_space_between_blocks": "block-spacing-small",
     "product_card_vendor": false,
@@ -114,13 +114,6 @@
         "disabled": false,
         "settings": {}
       },
-      "12342438634123318931": {
-        "type": "shopify://apps/xb-wishlist/blocks/xo-wishlist/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
-        "disabled": false,
-        "settings": {
-          "selector_collection": ""
-        }
-      },
       "11753626725791430220": {
         "type": "shopify://apps/one-click-upsell/blocks/cart-drawer/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
         "disabled": true,
@@ -146,11 +139,6 @@
         "disabled": true,
         "settings": {}
       },
-      "13305437469741356523": {
-        "type": "shopify://apps/gsc-instagram-feed/blocks/embed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
-        "disabled": true,
-        "settings": {}
-      },
       "3667842014806057753": {
         "type": "shopify://apps/one-click-upsell/blocks/app-embed/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
         "disabled": false,
@@ -158,15 +146,23 @@
           "allowed_templates": "page, blog"
         }
       },
-      "651962886394718550": {
-        "type": "shopify://apps/ea-accessibility/blocks/app-embed-block/e6e05997-8214-48e2-a583-70d003e3d5f1",
-        "disabled": false,
-        "settings": {}
-      },
       "1537173939754162885": {
         "type": "shopify://apps/accesspro-accessibility/blocks/accesspro-widget/d1a2aee8-6737-4a3e-a6aa-13d82b562c31",
         "disabled": true,
         "settings": {}
+      },
+      "13305437469741356523": {
+        "type": "shopify://apps/gsc-instagram-feed/blocks/embed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
+        "disabled": false,
+        "settings": {}
+      },
+      "12342438634123318931": {
+        "type": "shopify://apps/xb-wishlist/blocks/xo-wishlist/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
+        "disabled": false,
+        "settings": {
+          "selector_collection": "",
+          "selector_cart_item": ""
+        }
       }
     }
   },

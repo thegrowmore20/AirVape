@@ -16,7 +16,9 @@
           "type": "slide",
           "settings": {
             "video": "shopify://files/videos/PRO_2_hero_notext.webm",
+            "video_poster": "shopify://shop_images/Desktop.webp",
             "mobile_video": "shopify://files/videos/PRO_2Mainv4mobile_e479ae30-49e0-4cbc-b724-8e91a3729177.webm",
+            "video_poster_mobile": "shopify://shop_images/mobile.webp",
             "content_width_maximum": 960,
             "desktop_content_position": "bottom-left",
             "mobile_content_position": "bottom-center",
@@ -229,7 +231,7 @@
         "vertical_layout": true,
         "show_divider": false,
         "heading": "Buy with Confidence",
-        "text_1": "Risk Free Shopping & Satisfacion Guaranteed",
+        "text_1": "Risk Free Shopping & Satisfaction Guaranteed",
         "intro_img_1": "shopify://shop_images/icon_Warranty_3.svg",
         "intro_img_2": "shopify://shop_images/icon_MoneyBack_Gurantee_3.svg",
         "link_color": "#ffd814",
@@ -499,15 +501,15 @@
       "blocks": {
         "gsc_instagram_feed_instafeed_nYqRJG": {
           "type": "shopify://apps/gsc-instagram-feed/blocks/instafeed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
-          "disabled": true,
           "settings": {
             "widget_id": "GSC-LksRlQIKTNKfbDG"
           }
         },
         "ot_instagram_feed_ot_easy_instagram_feed_gEKUwB": {
           "type": "shopify://apps/ot-instagram-feed/blocks/ot-easy-instagram-feed/75d29d92-c4c5-4091-87e8-4dde82e3828c",
+          "disabled": true,
           "settings": {
-            "feed_id": "apollo4401782738779000",
+            "feed_id": "apollo4401783596951000",
             "title": "",
             "show_tagged_posts": false,
             "titleColor": "#000000",
