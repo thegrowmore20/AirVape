@@ -129,7 +129,7 @@
         "full_width": true,
         "enable_transparent_header": true,
         "use_original_media_size": false,
-        "autoplay": true,
+        "autoplay": false,
         "speed": 11,
         "height": 1080,
         "controls": "dots",
@@ -278,6 +278,7 @@
         "text_b3jJtr",
         "button_byQb7G"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "breathelet-home-section",
         "full_width": true,
@@ -355,7 +356,7 @@
         "category_9EYK4z": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Enso-450x217_1.webp",
+            "image": "shopify://shop_images/Enso-450x217_1_6ccaa726-c0d3-4766-8223-dea9faa9c42f.webp",
             "custom_url": "shopify://collections/enso-accessories",
             "sub_title": "Accessories",
             "title": "ENSŌ"
@@ -364,7 +365,7 @@
         "category_FEKq7K": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Legacy-450x217_3.webp",
+            "image": "shopify://shop_images/Legacy-450x217_3_5f6fcd5c-1126-4eb0-aff7-79cdc86b6e1c.webp",
             "custom_url": "shopify://collections/legacy-accessories",
             "sub_title": "Accessories",
             "title": "Legacy"
@@ -373,7 +374,7 @@
         "category_eyQi6j": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/X-_450x217_2.webp",
+            "image": "shopify://shop_images/X-_450x217_2_2e6bec4a-ea2b-4b55-951d-f84a398d19e8.webp",
             "custom_url": "shopify://collections/airvape-x-accessories",
             "sub_title": "Accessories",
             "title": "X"
@@ -382,7 +383,7 @@
         "category_KUEVhm": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/XS-450x217_2.webp",
+            "image": "shopify://shop_images/XS-450x217_2_b83e2267-84f0-4cd0-914e-2599cff231d9.webp",
             "custom_url": "shopify://collections/xs-go-accessories",
             "sub_title": "Accessories",
             "title": "XS GO"
@@ -391,19 +392,10 @@
         "category_4BgKVQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/OM-450x217_2.webp",
+            "image": "shopify://shop_images/OM-450x217_2_1fe709fa-00ce-47a2-aaef-ac59f111b752.webp",
             "custom_url": "shopify://collections/om-accessories",
             "sub_title": "Accessories",
             "title": "OM"
-          }
-        },
-        "category_EwAciz": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Breathelet-450x217_3.webp",
-            "custom_url": "shopify://collections/breathelet",
-            "sub_title": "Accessories",
-            "title": "Breathelet"
           }
         },
         "category_DknMcY": {
@@ -418,7 +410,7 @@
         "category_XaHi4x": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Wearable-450x217_2.webp",
+            "image": "shopify://shop_images/Wearable-450x217_2_243563c2-bc2f-4fe5-af0d-ca04c6ee7a08.webp",
             "custom_url": "shopify://collections/wearables",
             "sub_title": "",
             "title": "Wearables"
@@ -427,7 +419,7 @@
         "category_q89DTJ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Grinders-450x217_2.webp",
+            "image": "shopify://shop_images/Grinders-450x217_2_7b032a62-d2cb-4c6c-9e33-a8fd10ca659c.webp",
             "custom_url": "shopify://collections/grinders",
             "sub_title": "",
             "title": "Grinders"
@@ -440,7 +432,6 @@
         "category_eyQi6j",
         "category_KUEVhm",
         "category_4BgKVQ",
-        "category_EwAciz",
         "category_DknMcY",
         "category_XaHi4x",
         "category_q89DTJ"

@@ -63,7 +63,7 @@
   .ai-slider-track-{{ ai_gen_id }} {
     display: flex;
     gap: {{ block.settings.slide_gap }}px;
-    align-items: stretch;
+    align-items: {% if block.settings.aspect_ratio == 'auto' %}flex-start{% else %}stretch{% endif %};
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: grab;
     user-select: none;
@@ -130,6 +130,17 @@
   {% elsif block.settings.aspect_ratio == '9-16' %}
     .ai-slider-image-wrapper-{{ ai_gen_id }} {
       aspect-ratio: 9 / 16;
+    }
+  {% endif %}
+
+  {% if block.settings.aspect_ratio == 'auto' %}
+    /* Auto: render each image at its own natural ratio — never crop.
+       Overrides the base height:100%/cover and the hardcoded 400x800 img
+       attributes that would otherwise force a 1:2 box and clip the sides. */
+    .ai-slider-image-wrapper-{{ ai_gen_id }} img {
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
     }
   {% endif %}
 

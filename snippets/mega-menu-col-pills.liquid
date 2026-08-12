@@ -15,7 +15,7 @@
     <div class="mega-menu-horizontal absolute left-0 right-0 top-full overflow-hidden">
       <div class="mega-menu-horizontal__inner overflow-y-auto overscroll-y-contain border-t bg-background">
         <div class="container py-8 lg:py-12">
-          <div class="col-pills-grid-{{ section.id }} flex flex-wrap gap-3">
+          <div class="col-pills-grid-{{ section.id }}">
             {%- for collection in block.settings.collections -%}
               {%- assign thumb = collection.metafields.custom.megamenu_image | default: collection.image -%}
               <a data-instant href="{{ collection.url }}" class="cpl-item flex items-center gap-3">
@@ -49,6 +49,23 @@
 </mega-menu-horizontal>
 
 <style>
+  /* 4 pills per row, responsive down to 2 on mobile */
+  .col-pills-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  @media (max-width: 989px) {
+    .col-pills-grid-{{ section.id }} {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 749px) {
+    .col-pills-grid-{{ section.id }} {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   /* Only properties that have no compiled utility equivalent */
   .col-pills-grid-{{ section.id }} .cpl-item {
     border: 1.5px solid #e5e5e5;
