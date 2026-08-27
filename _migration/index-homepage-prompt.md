@@ -1,0 +1,1269 @@
+# Migration Prompt — Homepage Template (`index.json`) — FULL EXPORT
+
+> Paste everything below (from the `---` line) into the Claude Code session on the **new Essence 4.2 store**.
+> Prerequisites: the **product-card / featured-collection** prompt (grids), and the **custom-categories** section (with its 4-per-row / 2-mobile CSS).
+> This prompt contains the **complete `templates/index.json` verbatim** at the bottom — it's a ready-to-export homepage with every section I need.
+
+---
+
+Recreate my **Homepage** using the **full `templates/index.json`** provided at the end of this prompt. Copy that JSON **verbatim** into `templates/index.json` on the new store, then port the custom sections/blocks/CSS it references and fix store-specific resources (images, videos, collections, apps, metafields).
+
+## ⚠️ Rules (read first)
+1. **Copy the template JSON at the bottom verbatim** — preserve section order, every `"disabled": true` flag, all block settings, and the leading auto-generated comment block.
+2. **Do NOT change the `slideshow` section or any of its settings.** Port the first `slideshow` section exactly as given — same slide, same videos, same colors, same everything. Leave it untouched.
+2b. **Remove every other section currently on the new store's homepage — keep ONLY the slideshow.** The homepage must end up containing exactly the sections in this export and nothing else. Delete any pre-existing/default sections the new theme shipped on `index.json` (rich text, featured products, newsletter, etc.); do **not** merge them in. The one thing you keep from what's already there is the `slideshow` section (unchanged, per rule 2) — everything else on the final homepage comes from this export.
+3. Essence 4.2 may have renamed/added/removed settings on some sections. For any key that doesn't exist in the matching 4.2 section schema, **skip it and list it back to me** — do not invent settings. (Exception: don't touch the slideshow per rule 2.)
+4. These sections reference **images, videos, products, collections, a blog, apps, and a metafield** that must exist on the new store — see **Dependencies** below. Leave references as-is and report what must be created.
+5. Keep valid JSON; run a JSON validity check and report.
+
+## 1. Custom sections + AI blocks to port (referenced by the JSON)
+| Item | Type | Status | Notes |
+|---|---|---|---|
+| `sections/custom-homepage-usps.liquid` ⚑ | custom | **enabled** | USP/service strip; `service` blocks; **loads `assets/custom-homepage-usps.css`** (via preload + `media="print"` onload-swap + `<noscript>`) — port the CSS too |
+| `sections/custom-categories.liquid` ⚑ | custom | **enabled** | dark category-card grid; `category` blocks; **loads `assets/custom-categories.css`** (4-per-row desktop / 3 tablet / 2 mobile) — port the CSS too |
+| `blocks/ai_gen_block_a1b7353.liquid` ⚑ | AI block | **enabled, used ×2** | "Image grid 2 columns" — the X / X-Royal grid **and** the PRO 2 / XS GO grid (each instance uses columns 1–2 only) |
+| `blocks/ai_gen_block_a101306.liquid` ⚑ | AI block | **disabled** | product "NEW" badge/label block |
+| `blocks/ai_gen_block_94abeca.liquid` ⚑ | AI block | **disabled** | another "New" badge block |
+| `blocks/ai_gen_block_c2cc944.liquid` ⚑ | AI block | **disabled** | product-badge block bound to `legacy-core` |
+
+Each AI block is **self-contained** (its own scoped `{% style %}` + markup keyed by block id). Copy them verbatim. The `_blocks` groups are Shopify block-group containers — the JSON already contains their entries (including `"disabled": true` on the three badge groups); they just need the block `.liquid` files to exist.
+
+## 2. Section order (20 sections) + enabled/disabled state
+1. `slideshow` (**enabled**) — **do not modify** (rule 2). *(See the note in §5 about the `order` key.)*
+2. `featured-collection` "SIGNATURE MODELS" (shared ⚑, **enabled**)
+3. `custom-homepage-usps` "Buy with Confidence" (**enabled**)
+4. `image-with-text` "Breathelet" (**disabled**)
+5. `logo-list` "WHY AirVape?" (**disabled**)
+6. `custom-categories` "SHOP ACCESSORIES" (**enabled**)
+7. `apps` — **Loox** aggregate reviews "WHY DO PEOPLE LOVE AIRVAPE?" (**enabled**)
+8. `apps` — **Instagram feed** "FOLLOW US ON INSTAGRAM" (**enabled**) — see §4
+9. `video-with-text-overlay` "Elevate Your Experience" / Enso (**disabled**)
+10. `image-with-text-overlay` "Elevate Your Experience" / Enso (**enabled**)
+11. `_blocks` → `ai_gen_block_a1b7353` (X + X-Royal grid, **enabled**)
+12. `video-with-text-overlay` "Power Meets Style" / Legacy Core (**disabled**)
+13. `image-with-text-overlay` "Power Meets Style" / Legacy Core (**enabled**)
+14. `_blocks` → `ai_gen_block_a1b7353` (PRO 2 + XS GO grid, **enabled**)
+15. `slideshow` OM (**disabled**; custom_css min-height 500px mobile)
+16. `image-with-text-overlay` "Small Yet Mighty" / OM (**enabled**)
+17. `featured-blog` "FUN READS" (**enabled**) — blog handle **`airvape-insiders`**
+18. `_blocks` → `ai_gen_block_a101306` (**disabled**)
+19. `_blocks` → `ai_gen_block_94abeca` (**disabled**)
+20. `_blocks` → `ai_gen_block_c2cc944` (**disabled**)
+
+## 3. Key visible-section values (already baked into the JSON — for reference)
+- **featured-collection "SIGNATURE MODELS":** `carousel:false`, `products_count:8`, `grid_columns:4`, `grid_columns_mobile:"2"`, `collection:"airvape-2025"`, 8 product handles (enso, legacy-core, legacy-pro-2, airvape-x-royal-edition, airvape-x, airvape-xs-go, airvape-om-keychain-waxpen, breathelet-…).
+- **custom-homepage-usps "Buy with Confidence":** black bg, `vertical_layout:true`, `show_divider:false`, text "Risk Free Shopping & Satisfaction Guaranteed", intro SVGs `icon_Warranty_3.svg` + `icon_MoneyBack_Gurantee_3.svg`, `link_color:#ffd814`. 4 `service` blocks: FAST HEAT-UP / PURE FLAVOUR / EASY TO USE / LASTS LONGER (each with a `*.webp` icon image, empty link).
+- **custom-categories "SHOP ACCESSORIES":** 8 category cards (ENSŌ, Legacy, X, XS GO, OM → `*-accessories`; Chargers, Wearables, Grinders) — Breathelet card already removed.
+- **Two `ai_gen_block_a1b7353` grids:** A = AirVape X + X Royal; B = Legacy PRO 2 + XS GO (heights 500/550/640, overlay 0.3 black, columns 1–2 enabled).
+
+## 4. Instagram + Loox app sections
+- **Loox reviews** (`apps`): block `shopify://apps/loox-reviews/blocks/loox-agg-section/…`, aggregated. Needs **Loox** installed.
+- **Instagram feed** (`apps`) has **two** blocks: `shopify://apps/gsc-instagram-feed/blocks/instafeed/…` (**enabled**, `widget_id:"GSC-LksRlQIKTNKfbDG"`) and `shopify://apps/ot-instagram-feed/…` (**disabled**, old feed `apollo440…`). On the new store, install whichever Instagram app you'll use and set its own `widget_id`/`feed_id` — the old ids won't resolve.
+
+## 5. ⚠️ Known mismatch in the exported JSON (fix on the new store if you want the hero to show)
+In the JSON, the first section is keyed **`slideshow`**, but `order[0]` lists **`slideshow_3yVwjz`** (a section that no longer exists). As-is, the hero **won't render** (order points to a missing id; the `slideshow` section isn't in `order`). Per rule 2 I'm **not changing the slideshow settings**, so I've left this exactly as it is. If you want the hero visible on the new store, do the minimal fix **without touching the slideshow's settings**: change `order[0]` from `"slideshow_3yVwjz"` to `"slideshow"` (or rename the section key to `slideshow_3yVwjz`). Otherwise leave it and the homepage starts at SIGNATURE MODELS.
+
+## 6. Dependencies (create on the new store)
+- **CSS assets:** `custom-homepage-usps.css`, `custom-categories.css`.
+- **Videos → Content → Files:** slideshow `ba40e706…webm` + `b43483ea…webm`; (disabled) `web_enso_taste_v1_smaller.webm`, `core_web_skins.webm`. Grep the template for `shopify://files/videos` and re-upload each.
+- **Images → Content → Files** (grep `shopify://shop_images`): USP icons `icon_Warranty_3.svg`, `icon_MoneyBack_Gurantee_3.svg` + service `FAST_HEAT-UP.webp`, `PURE_FLAVOUR.webp`, `EASY_TO_USE.webp`, `LONG_BATTERY_LIFE.webp`; category cards `Enso-450x217…`, `Legacy-450x217…`, `X-_450x217…`, `XS-450x217…`, `OM-450x217…`, `Charging-450x217_2.webp`, `Wearable-450x217…`, `Grinders-450x217…`; overlay/grid `Enso-2.webp`, `Legacy-Core.webp`, `om-2.webp`, `AirVape-X-2_1.webp`, `AirVape-X_Royal-2.webp`, `Legacy-PRO2-1.webp`, `XS-GO.webp`; logo-list `New_why-01…/02/03/04.png`; Breathelet `image-1_1_1.webp`; OM slideshow `gunmetalbattery_…png`, `airvape_180423_-45t.jpg`, `airvape_180423_-20t.jpg`.
+- **Apps:** Loox (reviews), an Instagram-feed app.
+- **Collections/products:** collection `airvape-2025` + the 8 signature product handles; button links to `enso`, `legacy-core`, `legacy-pro-2`, `airvape-x`, `airvape-x-royal-edition`, `airvape-xs-go`, `airvape-om-keychain-waxpen`; category links to `*-accessories` / `chargers` / `wearables` / `grinders`.
+- **Blog:** `featured-blog` needs blog **`airvape-insiders`** with posts.
+- **Metafield:** `loox.global_stats` (shop metafield) — only used by the disabled OM slideshow's slides had blank custom_liquid, and the active slideshow has none, so this is low priority here.
+
+## 7. Report back
+- Which custom sections/AI blocks existed vs. created; confirm both CSS assets ported/loaded.
+- Confirm all `"disabled": true` flags preserved and the slideshow section was copied **unchanged**.
+- Whether you applied the §5 `order` fix (or left it).
+- JSON validity + consolidated list of images/videos/collections/blog/apps to create.
+
+---
+
+## FULL `templates/index.json` — copy verbatim
+
+```json
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "6b8d5128-5d08-4243-bcc5-5e76b79b6140": {
+          "type": "slide",
+          "settings": {
+            "video": "shopify://files/videos/ba40e70620c440578ee6ba09de30e6d6.webm",
+            "mobile_video": "shopify://files/videos/b43483ea1a384dc48b79ff1936532be1.webm",
+            "content_width_maximum": 620,
+            "desktop_content_position": "middle-left",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Elegance in Every Movement",
+            "heading_size": "h0",
+            "text": "Where style meets your workout.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "button_link": "",
+            "button_text": "Shop tops",
+            "button_style": "",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#0a0b0c",
+            "button2_link": "",
+            "button2_text": "Shop bottoms",
+            "button2_style": "button-outline",
+            "button2_background_color": "#ffffff",
+            "button2_text_color": "#000000",
+            "background_color": "rgba(0,0,0,0)",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15,
+            "overlay_type": "gradient",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "6b8d5128-5d08-4243-bcc5-5e76b79b6140"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": true,
+        "enable_transparent_header": true,
+        "use_original_media_size": false,
+        "autoplay": false,
+        "speed": 6,
+        "height": 1080,
+        "controls": "arrows",
+        "background_animation": "ZoomOut",
+        "content_animation": "ClipLineByLine",
+        "background_color": "rgba(0,0,0,0)"
+      }
+    },
+    "featured_collection_MJVwFm": {
+      "type": "featured-collection",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "carousel": false,
+        "products_count": 8,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "products": [
+          "enso",
+          "legacy-core",
+          "legacy-pro-2",
+          "airvape-x-royal-edition",
+          "airvape-x",
+          "airvape-xs-go",
+          "airvape-om-keychain-waxpen",
+          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+        ],
+        "collection": "airvape-2025",
+        "subheading": "",
+        "heading": "SIGNATURE MODELS",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "custom_homepage_usps_yyBK3i": {
+      "type": "custom-homepage-usps",
+      "blocks": {
+        "service_BEaa9P": {
+          "type": "service",
+          "settings": {
+            "icon_html": "",
+            "icon_image": "shopify://shop_images/FAST_HEAT-UP.webp",
+            "title": "FAST HEAT-UP",
+            "text": "Ready to go in seconds",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "service_4yFHYi": {
+          "type": "service",
+          "settings": {
+            "icon_html": "",
+            "icon_image": "shopify://shop_images/PURE_FLAVOUR.webp",
+            "title": "PURE FLAVOUR",
+            "text": "Crisp vapor with precision",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "service_znLdmB": {
+          "type": "service",
+          "settings": {
+            "icon_html": "",
+            "icon_image": "shopify://shop_images/EASY_TO_USE.webp",
+            "title": "EASY TO USE",
+            "text": "Effortless enjoyment",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "service_RDHN39": {
+          "type": "service",
+          "settings": {
+            "icon_html": "",
+            "icon_image": "shopify://shop_images/LONG_BATTERY_LIFE.webp",
+            "title": "LASTS LONGER",
+            "text": "Enjoy more sessions",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_BEaa9P",
+        "service_4yFHYi",
+        "service_znLdmB",
+        "service_RDHN39"
+      ],
+      "name": "General USPs",
+      "settings": {
+        "full_width": true,
+        "bg_color": "#000000",
+        "vertical_layout": true,
+        "show_divider": false,
+        "heading": "Buy with Confidence",
+        "text_1": "Risk Free Shopping & Satisfaction Guaranteed",
+        "intro_img_1": "shopify://shop_images/icon_Warranty_3.svg",
+        "intro_img_2": "shopify://shop_images/icon_MoneyBack_Gurantee_3.svg",
+        "link_color": "#ffd814",
+        "background_color": "#000000",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "h2"
+      }
+    },
+    "image_with_text_Y8Agig": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_VGRGNj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Gentle Reminders to Pause, Breathe, and Stay Present",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_b3jJtr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Breathelet gently vibrates at random intervals throughout the day, reminding you to slow down, take a deep breath, and calm yourself. No app, no screen, no distractions, just a simple OneFit bracelet designed to bring you back to the present.</p>"
+          }
+        },
+        "button_byQb7G": {
+          "type": "button",
+          "settings": {
+            "enable_form_popup": false,
+            "hulk_form_id_block": "",
+            "hulk_form_popup_class": "hulk-form-modal-custom-trigger",
+            "button_text": "Order from Official Store",
+            "button_link": "https://breathelet.com/",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_VGRGNj",
+        "text_b3jJtr",
+        "button_byQb7G"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "breathelet-home-section",
+        "full_width": true,
+        "remove_bottom_spacing": false,
+        "image": "shopify://shop_images/image-1_1_1.webp",
+        "image_size": "",
+        "image_position": "left",
+        "image_width": 50,
+        "text_alignment": "text-left",
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "logo_list_xLBmCC": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_k9LzwY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/New_why-01_f7c8e18f-18f6-4077-a45b-26df83fa091f.png",
+            "link": "shopify://pages/fast-heat-up",
+            "width": 220
+          }
+        },
+        "logo_KBRccC": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/New_why-03_65944bff-71a7-49cf-8542-38f8d19f263b.png",
+            "link": "",
+            "width": 220
+          }
+        },
+        "logo_xpmpFM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/New_why-04_67aa5cdd-fee3-41a8-a59a-8ae7a33b233d.png",
+            "link": "",
+            "width": 220
+          }
+        },
+        "logo_rWjMnT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/New_why-02_84d2c088-6b13-4de6-8e63-8916d73c3861.png",
+            "link": "shopify://pages/upgrade-experience",
+            "width": 220
+          }
+        }
+      },
+      "block_order": [
+        "logo_k9LzwY",
+        "logo_KBRccC",
+        "logo_xpmpFM",
+        "logo_rWjMnT"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "logo_opacity": 95,
+        "subheading": "",
+        "heading": "WHY AirVape?",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-left",
+        "background_color": "#202020",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "heading_html_tag": "p"
+      }
+    },
+    "custom_categories_bPjfQB": {
+      "type": "custom-categories",
+      "blocks": {
+        "category_9EYK4z": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Enso-450x217_1_6ccaa726-c0d3-4766-8223-dea9faa9c42f.webp",
+            "custom_url": "shopify://collections/enso-accessories",
+            "sub_title": "Accessories",
+            "title": "ENSŌ"
+          }
+        },
+        "category_FEKq7K": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Legacy-450x217_3_5f6fcd5c-1126-4eb0-aff7-79cdc86b6e1c.webp",
+            "custom_url": "shopify://collections/legacy-accessories",
+            "sub_title": "Accessories",
+            "title": "Legacy"
+          }
+        },
+        "category_eyQi6j": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/X-_450x217_2_2e6bec4a-ea2b-4b55-951d-f84a398d19e8.webp",
+            "custom_url": "shopify://collections/airvape-x-accessories",
+            "sub_title": "Accessories",
+            "title": "X"
+          }
+        },
+        "category_KUEVhm": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/XS-450x217_2_b83e2267-84f0-4cd0-914e-2599cff231d9.webp",
+            "custom_url": "shopify://collections/xs-go-accessories",
+            "sub_title": "Accessories",
+            "title": "XS GO"
+          }
+        },
+        "category_4BgKVQ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/OM-450x217_2_1fe709fa-00ce-47a2-aaef-ac59f111b752.webp",
+            "custom_url": "shopify://collections/om-accessories",
+            "sub_title": "Accessories",
+            "title": "OM"
+          }
+        },
+        "category_DknMcY": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Charging-450x217_2.webp",
+            "custom_url": "shopify://collections/chargers",
+            "sub_title": "",
+            "title": "Chargers"
+          }
+        },
+        "category_XaHi4x": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Wearable-450x217_2_243563c2-bc2f-4fe5-af0d-ca04c6ee7a08.webp",
+            "custom_url": "shopify://collections/wearables",
+            "sub_title": "",
+            "title": "Wearables"
+          }
+        },
+        "category_q89DTJ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Grinders-450x217_2_7b032a62-d2cb-4c6c-9e33-a8fd10ca659c.webp",
+            "custom_url": "shopify://collections/grinders",
+            "sub_title": "",
+            "title": "Grinders"
+          }
+        }
+      },
+      "block_order": [
+        "category_9EYK4z",
+        "category_FEKq7K",
+        "category_eyQi6j",
+        "category_KUEVhm",
+        "category_4BgKVQ",
+        "category_DknMcY",
+        "category_XaHi4x",
+        "category_q89DTJ"
+      ],
+      "name": "Categories",
+      "settings": {
+        "full_width": true,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "SHOP ACCESSORIES",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "1773124739025cf225": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_3ifwEE": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 5,
+            "maxwidth": 1200,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_3ifwEE"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "WHY DO PEOPLE LOVE AIRVAPE?",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "1773906755cb90fdec": {
+      "type": "apps",
+      "blocks": {
+        "gsc_instagram_feed_instafeed_nYqRJG": {
+          "type": "shopify://apps/gsc-instagram-feed/blocks/instafeed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
+          "settings": {
+            "widget_id": "GSC-LksRlQIKTNKfbDG"
+          }
+        },
+        "ot_instagram_feed_ot_easy_instagram_feed_gEKUwB": {
+          "type": "shopify://apps/ot-instagram-feed/blocks/ot-easy-instagram-feed/75d29d92-c4c5-4091-87e8-4dde82e3828c",
+          "disabled": true,
+          "settings": {
+            "feed_id": "apollo4401783596951000",
+            "title": "",
+            "show_tagged_posts": false,
+            "titleColor": "#000000",
+            "titleSize": 40,
+            "title_tag": "span",
+            "profileTextColor": "#000000",
+            "description": "",
+            "desColor": "#000000",
+            "section_full_width_desktop": false,
+            "show_divider_desktop": false,
+            "top_padding_desktop": 0,
+            "bottom_padding_desktop": 0,
+            "section_full_width_mobile": false,
+            "show_divider_mobile": false,
+            "use_title_settings": false,
+            "titleSizeMobile": 24,
+            "top_padding_mobile": 0,
+            "bottom_padding_mobile": 0,
+            "bss_custom_code": "",
+            "bss_advanced_custom_code": ""
+          }
+        }
+      },
+      "block_order": [
+        "gsc_instagram_feed_instafeed_nYqRJG",
+        "ot_instagram_feed_ot_easy_instagram_feed_gEKUwB"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "subheading": "",
+        "heading": "FOLLOW US ON INSTAGRAM",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25px\" height=\"25px\" viewbox=\"0 0 2500 2500\"><defs><radialgradient id=\"0\" cx=\"332.14\" cy=\"2511.81\" r=\"3263.54\" gradientunits=\"userSpaceOnUse\"><stop offset=\".09\" stop-color=\"#fa8f21\"></stop><stop offset=\".78\" stop-color=\"#d82d7e\"></stop></radialgradient><radialgradient id=\"1\" cx=\"1516.14\" cy=\"2623.81\" r=\"2572.12\" gradientunits=\"userSpaceOnUse\"><stop offset=\".64\" stop-color=\"#8c3aaa\" stop-opacity=\"0\"></stop><stop offset=\"1\" stop-color=\"#8c3aaa\"></stop></radialgradient></defs><path d=\"M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57\" fill=\"url(#0)\"></path><path d=\"M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57\" fill=\"url(#1)\"></path></svg>@airvape.usa",
+        "link_url": "https://www.instagram.com/airvape.usa/",
+        "new_tab": true,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "video_with_text_overlay_JiVPGJ": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "heading_bWFYzU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your Experience",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_NxYGU8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover the perfect blend of advanced technology and unbeatable flavor with every hit.</p>"
+          }
+        },
+        "button_tdrcbn": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP ENSŌ",
+            "button_link": "shopify://products/enso",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bWFYzU",
+        "text_NxYGU8",
+        "button_tdrcbn"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "video-text-overlay-section",
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "video": "shopify://files/videos/web_enso_taste_v1_smaller.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "solid"
+      }
+    },
+    "image_with_text_overlay_MRWqLU": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_xFLYYA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your Experience",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_Q6BTLd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover the perfect blend of advanced technology and unbeatable flavor with every hit.</p>"
+          }
+        },
+        "button_FqUJYT": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP ENSŌ",
+            "button_link": "shopify://products/enso",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xFLYYA",
+        "text_Q6BTLd",
+        "button_FqUJYT"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Enso-2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
+      }
+    },
+    "177099101064d70b8a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a1b7353_Ftiiy4": {
+          "type": "ai_gen_block_a1b7353",
+          "settings": {
+            "layout_width": "full",
+            "column_gap": 30,
+            "spacing_top": 30,
+            "spacing_bottom": 30,
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "height_mobile": 500,
+            "height_tablet": 550,
+            "height_desktop": 640,
+            "enable_column_1": true,
+            "image_1": "shopify://shop_images/AirVape-X-2_1.webp",
+            "border_radius_1": 0,
+            "subheading_1": "",
+            "heading_1": "Thin. Thinner. X.",
+            "heading_size_1": "h2",
+            "paragraph_1": "<p>AirVape X is the most portable vaporizer with a pocket fit and vibration alerts.</p>",
+            "button_label_1": "Shop AirVape X",
+            "button_link_1": "shopify://products/airvape-x",
+            "vertical_alignment_1": "center",
+            "horizontal_alignment_1": "center",
+            "enable_overlay_1": true,
+            "overlay_color_1": "#000000",
+            "overlay_opacity_1": 0.3,
+            "subheading_color_1": "#ffffff",
+            "heading_color_1": "#ffffff",
+            "paragraph_color_1": "#ffffff",
+            "button_bg_color_1": "#ffffff",
+            "button_text_color_1": "#000000",
+            "enable_column_2": true,
+            "image_2": "shopify://shop_images/AirVape-X_Royal-2.webp",
+            "border_radius_2": 0,
+            "subheading_2": "",
+            "heading_2": "X Marks the spot",
+            "heading_size_2": "h2",
+            "paragraph_2": "<p><strong>X Royal Edition – </strong>oval ceramic chamber for smooth, even vapor and heating.</p>",
+            "button_label_2": "Shop X Royal",
+            "button_link_2": "shopify://products/airvape-x-royal-edition",
+            "vertical_alignment_2": "center",
+            "horizontal_alignment_2": "center",
+            "enable_overlay_2": true,
+            "overlay_color_2": "#000000",
+            "overlay_opacity_2": 0.3,
+            "subheading_color_2": "#ffffff",
+            "heading_color_2": "#ffffff",
+            "paragraph_color_2": "#ffffff",
+            "button_bg_color_2": "#ffffff",
+            "button_text_color_2": "#000000",
+            "enable_column_3": false,
+            "border_radius_3": 10,
+            "subheading_3": "",
+            "heading_3": "Column 3 heading",
+            "heading_size_3": "h0",
+            "paragraph_3": "<p>Add your description here.</p>",
+            "button_label_3": "",
+            "button_link_3": "",
+            "vertical_alignment_3": "center",
+            "horizontal_alignment_3": "center",
+            "enable_overlay_3": true,
+            "overlay_color_3": "#000000",
+            "overlay_opacity_3": 0.3,
+            "subheading_color_3": "#ffffff",
+            "heading_color_3": "#ffffff",
+            "paragraph_color_3": "#ffffff",
+            "button_bg_color_3": "#ffffff",
+            "button_text_color_3": "#000000",
+            "enable_column_4": false,
+            "border_radius_4": 10,
+            "subheading_4": "",
+            "heading_4": "Column 4 heading",
+            "heading_size_4": "h0",
+            "paragraph_4": "<p>Add your description here.</p>",
+            "button_label_4": "",
+            "button_link_4": "",
+            "vertical_alignment_4": "center",
+            "horizontal_alignment_4": "center",
+            "enable_overlay_4": true,
+            "overlay_color_4": "#000000",
+            "overlay_opacity_4": 0.3,
+            "subheading_color_4": "#ffffff",
+            "heading_color_4": "#ffffff",
+            "paragraph_color_4": "#ffffff",
+            "button_bg_color_4": "#ffffff",
+            "button_text_color_4": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a1b7353_Ftiiy4"
+      ],
+      "settings": {}
+    },
+    "ed3b7d47-7133-4026-abca-8717a2168cce": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "931becf3-49d0-4615-8382-643b5f79bd4b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Power Meets Style",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "c75d64b5-a4e4-4f0c-8cd1-ef3917972694": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Legacy CORE –</strong> offers powerful performance, sleek design, and easy-to-change skins.</p>"
+          }
+        },
+        "f4402a37-82aa-45f8-bfce-c61f5adf6b46": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop Legacy Core",
+            "button_link": "shopify://products/legacy-core",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "931becf3-49d0-4615-8382-643b5f79bd4b",
+        "c75d64b5-a4e4-4f0c-8cd1-ef3917972694",
+        "f4402a37-82aa-45f8-bfce-c61f5adf6b46"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "video-text-overlay-section",
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "video": "shopify://files/videos/core_web_skins.webm",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "overlay_type": "gradient"
+      }
+    },
+    "image_with_text_overlay_FccNHg": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_yVUgEr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Power Meets Style",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_mDzHiQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Legacy CORE –</strong> offers powerful performance, sleek design, and easy-to-change skins.</p>"
+          }
+        },
+        "button_P7Cmj7": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop Legacy Core",
+            "button_link": "shopify://products/legacy-core",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yVUgEr",
+        "text_mDzHiQ",
+        "button_P7Cmj7"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/Legacy-Core.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
+      }
+    },
+    "blocks_c7UD8Q": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a1b7353_Ag9EdP": {
+          "type": "ai_gen_block_a1b7353",
+          "settings": {
+            "layout_width": "full",
+            "column_gap": 30,
+            "spacing_top": 30,
+            "spacing_bottom": 30,
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "height_mobile": 500,
+            "height_tablet": 550,
+            "height_desktop": 640,
+            "enable_column_1": true,
+            "image_1": "shopify://shop_images/Legacy-PRO2-1.webp",
+            "border_radius_1": 0,
+            "subheading_1": "",
+            "heading_1": "Pure Bliss with Every Puff",
+            "heading_size_1": "h2",
+            "paragraph_1": "<p>Just you, your vibe, and the <strong>Legacy PRO 2.</strong></p>",
+            "button_label_1": "Shop Legacy Pro 2",
+            "button_link_1": "shopify://products/legacy-pro-2",
+            "vertical_alignment_1": "center",
+            "horizontal_alignment_1": "center",
+            "enable_overlay_1": true,
+            "overlay_color_1": "#000000",
+            "overlay_opacity_1": 0.3,
+            "subheading_color_1": "#ffffff",
+            "heading_color_1": "#ffffff",
+            "paragraph_color_1": "#ffffff",
+            "button_bg_color_1": "#ffffff",
+            "button_text_color_1": "#000000",
+            "enable_column_2": true,
+            "image_2": "shopify://shop_images/XS-GO.webp",
+            "border_radius_2": 0,
+            "subheading_2": "",
+            "heading_2": "Portable heat, anytime, anywhere",
+            "heading_size_2": "h2",
+            "paragraph_2": "<p>Take the heat on-the-go, small yet efficient.</p>",
+            "button_label_2": "Shop XS GO",
+            "button_link_2": "shopify://products/airvape-xs-go",
+            "vertical_alignment_2": "center",
+            "horizontal_alignment_2": "center",
+            "enable_overlay_2": true,
+            "overlay_color_2": "#000000",
+            "overlay_opacity_2": 0.3,
+            "subheading_color_2": "#ffffff",
+            "heading_color_2": "#ffffff",
+            "paragraph_color_2": "#ffffff",
+            "button_bg_color_2": "#ffffff",
+            "button_text_color_2": "#000000",
+            "enable_column_3": false,
+            "border_radius_3": 10,
+            "subheading_3": "",
+            "heading_3": "Column 3 heading",
+            "heading_size_3": "h0",
+            "paragraph_3": "<p>Add your description here.</p>",
+            "button_label_3": "",
+            "button_link_3": "",
+            "vertical_alignment_3": "center",
+            "horizontal_alignment_3": "center",
+            "enable_overlay_3": true,
+            "overlay_color_3": "#000000",
+            "overlay_opacity_3": 0.3,
+            "subheading_color_3": "#ffffff",
+            "heading_color_3": "#ffffff",
+            "paragraph_color_3": "#ffffff",
+            "button_bg_color_3": "#ffffff",
+            "button_text_color_3": "#000000",
+            "enable_column_4": false,
+            "border_radius_4": 10,
+            "subheading_4": "",
+            "heading_4": "Column 4 heading",
+            "heading_size_4": "h0",
+            "paragraph_4": "<p>Add your description here.</p>",
+            "button_label_4": "",
+            "button_link_4": "",
+            "vertical_alignment_4": "center",
+            "horizontal_alignment_4": "center",
+            "enable_overlay_4": true,
+            "overlay_color_4": "#000000",
+            "overlay_opacity_4": 0.3,
+            "subheading_color_4": "#ffffff",
+            "heading_color_4": "#ffffff",
+            "paragraph_color_4": "#ffffff",
+            "button_bg_color_4": "#ffffff",
+            "button_text_color_4": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a1b7353_Ag9EdP"
+      ],
+      "settings": {}
+    },
+    "slideshow_nXA9pR": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_NfJyrA": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/gunmetalbattery_atomizer_gunmetalcap_xs.png",
+            "content_width_maximum": 720,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Powerful, Compact, Stylish",
+            "heading_size": "h2",
+            "text": "AirVape OM combines minimalist design, portability & functionality anywhere.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "shopify://products/airvape-om-keychain-waxpen",
+            "button_text": "SHOP OM",
+            "button_style": "",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_djrJUQ": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/airvape_180423_-45t.jpg",
+            "content_width_maximum": 720,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Discreet by Design",
+            "heading_size": "h2",
+            "text": "AirVape OM’s gunmetal finish blends into your carry with effortless use.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "shopify://products/airvape-om-keychain-waxpen",
+            "button_text": "SHOP OM",
+            "button_style": "",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        },
+        "slide_gUVPqj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/airvape_180423_-20t.jpg",
+            "content_width_maximum": 720,
+            "desktop_content_position": "middle-center",
+            "mobile_content_position": "middle-center",
+            "desktop_text_alignment": "default",
+            "subheading": "",
+            "heading": "Small Yet Mighty",
+            "heading_size": "h2",
+            "text": "AirVape OM combines sleek power, portability, elegance in a keychain design.",
+            "hide_text_on_mobile": false,
+            "button_size": "text-sm md:text-base",
+            "custom_liquid": "",
+            "button_link": "shopify://products/airvape-om-keychain-waxpen",
+            "button_text": "SHOP OM",
+            "button_style": "",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button2_link": "",
+            "button2_text": "",
+            "button2_style": "",
+            "button2_background_color": "",
+            "button2_text_color": "",
+            "background_color": "",
+            "color_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "overlay_type": "solid",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "slide_NfJyrA",
+        "slide_djrJUQ",
+        "slide_gUVPqj"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (max-width: 767px) {.slideshow-slide {min-height: 500px; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "autoplay": true,
+        "speed": 7,
+        "height": 640,
+        "controls": "arrows",
+        "background_animation": "ZoomOut",
+        "content_animation": "AppearLineByLine",
+        "background_color": "#262626"
+      }
+    },
+    "image_with_text_overlay_4wbAtL": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_yM8xaT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Small Yet Mighty",
+            "heading_size": "h2",
+            "heading_html_tag": "h2"
+          }
+        },
+        "text_CgW7Ef": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape OM combines sleek power, portability, elegance in a keychain design.</p>"
+          }
+        },
+        "button_XBLyK8": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop OM",
+            "button_link": "shopify://products/airvape-om-keychain-waxpen",
+            "button_style": "",
+            "button_size": "text-sm md:text-base",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yM8xaT",
+        "text_CgW7Ef",
+        "button_XBLyK8"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "fit_image": true,
+        "enable_transparent_header": false,
+        "use_original_media_size": false,
+        "image": "shopify://shop_images/om-2.webp",
+        "content_alignment": "md:content-middle-center",
+        "content_alignment_mobile": "content-middle-center",
+        "link": "",
+        "min_height": 640,
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_type": "solid"
+      }
+    },
+    "47953464-d278-497d-be52-ea15912c52d9": {
+      "type": "featured-blog",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "blog": "airvape-insiders",
+        "articles_count": 3,
+        "grid_columns": 3,
+        "heading": "FUN READS",
+        "heading_size": "h2",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "show_category": false,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "17709972994c024ab9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a101306_x3WJA9": {
+          "type": "ai_gen_block_a101306",
+          "settings": {
+            "badge_text": "NEW",
+            "tag_name": "new",
+            "badge_background_color": "#d12b23",
+            "badge_text_color": "#ffffff",
+            "font_size": 12,
+            "font_weight": "700",
+            "text_transform": "uppercase",
+            "padding_vertical": 6,
+            "padding_horizontal": 12,
+            "border_radius": 4,
+            "show_shadow": true,
+            "position": "top-left",
+            "offset": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a101306_x3WJA9"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "177099755237bbec23": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_94abeca_QWfpUQ": {
+          "type": "ai_gen_block_94abeca",
+          "settings": {
+            "tag_name": "new",
+            "badge_text": "New",
+            "position": "top-left",
+            "offset": 12,
+            "font_size": 12,
+            "font_weight": "600",
+            "text_transform": "uppercase",
+            "padding_vertical": 6,
+            "padding_horizontal": 12,
+            "border_radius": 4,
+            "show_shadow": true,
+            "badge_background_color": "#d12b23",
+            "badge_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_94abeca_QWfpUQ"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "1770997569fd3077b8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c2cc944_X8hzg7": {
+          "type": "ai_gen_block_c2cc944",
+          "settings": {
+            "product": "legacy-core",
+            "badge_text": "NEW{{ closest.product.metafields.custom.badges.value.label.value }}",
+            "badge_position": "top-left",
+            "badge_offset": 10,
+            "desktop_width_percent": 20,
+            "badge_background_color": "#d12b23",
+            "badge_text_color": "#ffffff",
+            "badge_font_size": 12,
+            "badge_font_weight": "700",
+            "badge_text_transform": "uppercase",
+            "badge_padding": 8,
+            "badge_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c2cc944_X8hzg7"
+      ],
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "slideshow_3yVwjz",
+    "featured_collection_MJVwFm",
+    "custom_homepage_usps_yyBK3i",
+    "image_with_text_Y8Agig",
+    "logo_list_xLBmCC",
+    "custom_categories_bPjfQB",
+    "1773124739025cf225",
+    "1773906755cb90fdec",
+    "video_with_text_overlay_JiVPGJ",
+    "image_with_text_overlay_MRWqLU",
+    "177099101064d70b8a",
+    "ed3b7d47-7133-4026-abca-8717a2168cce",
+    "image_with_text_overlay_FccNHg",
+    "blocks_c7UD8Q",
+    "slideshow_nXA9pR",
+    "image_with_text_overlay_4wbAtL",
+    "47953464-d278-497d-be52-ea15912c52d9",
+    "17709972994c024ab9",
+    "177099755237bbec23",
+    "1770997569fd3077b8"
+  ]
+}
+```

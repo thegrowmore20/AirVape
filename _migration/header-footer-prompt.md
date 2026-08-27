@@ -30,7 +30,7 @@ Set the file to represent this structure (reconcile each key against the 4.2 sch
 - Blocks, in this order:
   - `mega_menu_products_dHFkzP` (type `mega_menu_products`): `menu_item: "Shop Devices"`, `type: "horizontal"`, `products`: `["enso","legacy-core","legacy-pro-2","airvape-x-royal-edition","airvape-x","airvape-xs-go","airvape-om-keychain-waxpen","breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus","breathelet-onefit-classic-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"]`
   - `mega_menu_categories_V8Ft6k` (type `mega_menu_categories`) — **disabled**: `menu_item: "Shop Accessories"`, `type: "horizontal"`, `collections`: `["enso-accessories","legacy-accessories","airvape-x-accessories","xs-go-accessories","om-accessories","breathelet","chargers","wearables","grinders"]`
-  - `mega_menu_col_pills_PWXeP7` (type `mega_menu_col_pills`): `menu_item: "Shop Accessories"`, `collections`: same 9 handles as above
+  - `mega_menu_col_pills_PWXeP7` (type `mega_menu_col_pills`): `menu_item: "Shop Accessories"`, `collections`: `["enso-accessories","legacy-accessories","airvape-x-accessories","xs-go-accessories","om-accessories","chargers","wearables","grinders"]` — **8 handles, NOT 9**: this list intentionally **omits `breathelet`** (Breathelet was removed from the accessory pills). Do not copy the `mega_menu_categories` list here.
 - Settings:
   - `sticky_header_mode: "scroll-up"`
   - `logo: "shopify://shop_images/Header_LogoText.png"`
@@ -98,7 +98,7 @@ Report which of these you can and cannot verify from the theme code, and flag th
 `enso`, `legacy-core`, `legacy-pro-2`, `airvape-x-royal-edition`, `airvape-x`, `airvape-xs-go`, `airvape-om-keychain-waxpen`, `breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus`, `breathelet-onefit-classic-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus`
 
 **Collections** (used by `mega_menu_categories` / `mega_menu_col_pills` "Shop Accessories") — handles must match:
-`enso-accessories`, `legacy-accessories`, `airvape-x-accessories`, `xs-go-accessories`, `om-accessories`, `breathelet`, `chargers`, `wearables`, `grinders`
+`enso-accessories`, `legacy-accessories`, `airvape-x-accessories`, `xs-go-accessories`, `om-accessories`, `chargers`, `wearables`, `grinders` (**8 used by the visible pills block**), plus `breathelet` (**only referenced by the disabled `mega_menu_categories` block** — low priority; create it only if you re-enable that block).
 
 **Pages** (referenced by handle):
 - `contact` (footer "Get In Touch")
