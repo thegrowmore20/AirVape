@@ -47,6 +47,20 @@
       background-color: rgba(0, 0, 0, .3);
     }
   {% endif %}
+  .footer-in-view #appstle-loyalty-button.appstle-loyalty-button {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+   @media not all and (min-width: 768px) {
+    #shopify-section-{{ section.id }} .privacy-navs {
+      order: 1;
+    }
+
+    #shopify-section-{{ section.id }} .copyright-block {
+      order: 2;
+    }
+  }
 </style>
 
 <div {% render 'section-attrs', class: 'footer overflow-hidden relative' %}>
@@ -268,7 +282,28 @@
     </div>
     
   </div>
-  
+  <script>
+  (() => {
+    const SECTION_ID = {{ section.id | json }};
+    const footer = document.getElementById(`shopify-section-${SECTION_ID}`);
+    if (!footer || !('IntersectionObserver' in window)) return;
+
+    const root = document.documentElement;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => root.classList.toggle('footer-in-view', entry.isIntersecting),
+      { threshold: 0 }
+    );
+
+    observer.observe(footer);
+
+    document.addEventListener('shopify:section:unload', (event) => {
+      if (event.detail.sectionId !== SECTION_ID) return;
+      observer.disconnect();
+      root.classList.remove('footer-in-view');
+    });
+  })();
+</script>
   {% schema %}
   {
     "name": "t:sections.footer.name",

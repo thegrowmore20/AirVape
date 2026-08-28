@@ -66,8 +66,8 @@
         "fit_image": true,
         "enable_transparent_header": false,
         "use_original_media_size": false,
-        "image": "shopify://shop_images/Upgrade_Program_1.webp",
-        "image_mobile": "shopify://shop_images/Upgrade_Program_Mob_1.webp",
+        "image": "shopify://shop_images/Upgrade-Page_jpg_jpeg.webp",
+        "image_mobile": "shopify://shop_images/Upgrade-Page-Mobile_jpg_jpeg.webp",
         "content_alignment": "md:content-middle-left",
         "content_alignment_mobile": "content-middle-left",
         "link": "",
@@ -123,6 +123,7 @@
         "button_MxJMwd"
       ],
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-left",
@@ -397,6 +398,7 @@
     "featured_collection_6tJefk": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,

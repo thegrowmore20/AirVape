@@ -75,8 +75,9 @@
     "featured_collection_h8zTtE": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
-        "carousel": true,
+        "carousel": false,
         "products_count": 8,
         "grid_columns": 4,
         "grid_columns_mobile": "2",

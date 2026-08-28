@@ -1,0 +1,23 @@
+{% if section.settings.enable_countdown %}
+  <promotion-countdown
+    class="promotion-countdown"
+    data-end-date="{{ section.settings.end_date | strip | escape }}"
+    data-end-time="{{ section.settings.end_time | strip | escape }}"
+    data-timezone="{{ section.settings.timezone | escape }}"
+    data-expired-message="{{ section.settings.expired_message | escape }}"
+  >
+    <span class="promotion-countdown__message" data-countdown-message>{{ section.settings.content }}</span>
+    <span class="promotion-countdown__timer" data-countdown-timer aria-hidden="true">
+      <span class="promotion-countdown__unit"><strong class="promotion-countdown__value" data-countdown-days>00</strong><small class="promotion-countdown__label">d</small></span>
+      <span>:</span>
+      <span class="promotion-countdown__unit"><strong class="promotion-countdown__value" data-countdown-hours>00</strong><small class="promotion-countdown__label">h</small></span>
+      <span>:</span>
+      <span class="promotion-countdown__unit"><strong class="promotion-countdown__value" data-countdown-minutes>00</strong><small class="promotion-countdown__label">m</small></span>
+      <span>:</span>
+      <span class="promotion-countdown__unit"><strong class="promotion-countdown__value" data-countdown-seconds>00</strong><small class="promotion-countdown__label">s</small></span>
+    </span>
+    <span class="visually-hidden" data-countdown-accessible></span>
+  </promotion-countdown>
+{% else %}
+  {{ section.settings.content }}
+{% endif %}

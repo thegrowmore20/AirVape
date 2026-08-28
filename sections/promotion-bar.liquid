@@ -21,30 +21,215 @@
     {% endif %}
   >
     <div
-      class="
-        section-body flex justify-center items-center text-center headings
-        {{ section.settings.section_height }}
-        {{ section.settings.text_size }}
-      "
+      class="section-body promotion-bar__body flex justify-center items-center text-center announcement-bar--text-sm py-1"
     >
       {% if section.settings.url %}
         <div class="grow basis-0"></div>
-        <div>
-          {{ section.settings.content }}
-        </div>
+        <div>{% render 'promotion-countdown', section: section %}</div>
         <div class="grow basis-0">
           <div class="icon-xs ml-4">
             {% render 'icon-chevron' %}
           </div>
         </div>
       {% else %}
-        <div>
-          {{ section.settings.content }}
-        </div>
+        <div>{% render 'promotion-countdown', section: section %}</div>
       {% endif %}
     </div>
   </{{ tag }}>
 </height-observer>
+
+<style>
+  #shopify-section-{{ section.id }} .promotion-bar__body {
+    min-height: 0;
+    line-height: inherit;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown,
+  #shopify-section-{{ section.id }} .promotion-countdown__timer,
+  #shopify-section-{{ section.id }} .promotion-countdown__unit {
+    display: inline-flex;
+    align-items: baseline;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown {
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown__message p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown__timer {
+    gap: 0.2rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown__timer[hidden] {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown__unit {
+    gap: 0.1rem;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown__value {
+    min-width: 2ch;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} .promotion-countdown__label {
+    font: inherit;
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 480px) {
+    #shopify-section-{{ section.id }} .promotion-countdown {
+      gap: 0.35rem;
+    }
+
+    #shopify-section-{{ section.id }} .promotion-countdown__message {
+      max-width: 36vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+</style>
+
+<script>
+  if (!customElements.get('promotion-countdown')) {
+    customElements.define('promotion-countdown', class extends HTMLElement {
+      connectedCallback() {
+        this.endTime = this.parseEndTime();
+        this.expiredMessage = this.dataset.expiredMessage || 'Offer expired';
+        this.message = this.querySelector('[data-countdown-message]');
+        this.timer = this.querySelector('[data-countdown-timer]');
+        this.accessibleText = this.querySelector('[data-countdown-accessible]');
+        this.parts = {
+          days: this.querySelector('[data-countdown-days]'),
+          hours: this.querySelector('[data-countdown-hours]'),
+          minutes: this.querySelector('[data-countdown-minutes]'),
+          seconds: this.querySelector('[data-countdown-seconds]')
+        };
+        this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
+        document.addEventListener('visibilitychange', this.handleVisibilityChange);
+        this.start();
+      }
+
+      disconnectedCallback() {
+        this.stop();
+        document.removeEventListener('visibilitychange', this.handleVisibilityChange);
+      }
+
+      parseEndTime() {
+        const date = this.dataset.endDate || '';
+        const time = this.dataset.endTime || '23:59';
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) return NaN;
+
+        const [year, month, day] = date.split('-').map(Number);
+        const [hour, minute] = time.split(':').map(Number);
+        const zone = this.dataset.timezone || 'UTC';
+
+        return this.zonedTimeToTimestamp(year, month, day, hour, minute, zone);
+      }
+
+      /* Offset in ms between the given IANA zone and UTC at one instant. NaN if unsupported. */
+      zoneOffsetAt(timestamp, zone) {
+        try {
+          const parts = new Intl.DateTimeFormat('en-US', {
+            timeZone: zone,
+            hour12: false,
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          }).formatToParts(new Date(timestamp));
+          const wall = {};
+          parts.forEach((part) => {
+            if (part.type !== 'literal') wall[part.type] = Number(part.value);
+          });
+          const asUTC = Date.UTC(wall.year, wall.month - 1, wall.day, wall.hour % 24, wall.minute, wall.second);
+          return asUTC - timestamp + (timestamp % 1000);
+        } catch (error) {
+          return NaN;
+        }
+      }
+
+      /* Wall-clock time in the given zone to a UTC timestamp, with the DST offset for that date. */
+      zonedTimeToTimestamp(year, month, day, hour, minute, zone) {
+        const wallAsUTC = Date.UTC(year, month - 1, day, hour, minute, 0);
+        const firstPass = this.zoneOffsetAt(wallAsUTC, zone);
+        if (!Number.isFinite(firstPass)) return this.fallbackTimestamp(wallAsUTC, zone);
+        const candidate = wallAsUTC - firstPass;
+        const secondPass = this.zoneOffsetAt(candidate, zone);
+        return Number.isFinite(secondPass) ? wallAsUTC - secondPass : candidate;
+      }
+
+      /* Browsers without IANA zone support fall back to the zone's standard (non-DST) offset. */
+      fallbackTimestamp(wallAsUTC, zone) {
+        const standardOffsets = {
+          'America/New_York': -5,
+          'America/Chicago': -6,
+          'America/Denver': -7,
+          'America/Phoenix': -7,
+          'America/Los_Angeles': -8,
+          'America/Anchorage': -9,
+          'Pacific/Honolulu': -10,
+          'UTC': 0
+        };
+        const hours = standardOffsets[zone];
+        return hours === undefined ? NaN : wallAsUTC - hours * 3600000;
+      }
+
+      handleVisibilityChange() {
+        document.hidden ? this.stop() : this.start();
+      }
+
+      start() {
+        this.stop();
+        this.update();
+        if (Number.isFinite(this.endTime) && this.endTime > Date.now()) {
+          this.interval = window.setInterval(() => this.update(), 1000);
+        }
+      }
+
+      stop() {
+        if (this.interval) window.clearInterval(this.interval);
+        this.interval = null;
+      }
+
+      update() {
+        const remaining = this.endTime - Date.now();
+        if (!Number.isFinite(remaining) || remaining <= 0) {
+          this.message.textContent = this.expiredMessage;
+          this.timer.hidden = true;
+          this.accessibleText.textContent = this.expiredMessage;
+          this.accessibleText.setAttribute('aria-live', 'polite');
+          this.stop();
+          return;
+        }
+
+        const totalSeconds = Math.floor(remaining / 1000);
+        const values = {
+          days: Math.floor(totalSeconds / 86400),
+          hours: Math.floor(totalSeconds / 3600) % 24,
+          minutes: Math.floor(totalSeconds / 60) % 60,
+          seconds: totalSeconds % 60
+        };
+
+        Object.entries(values).forEach(([key, value]) => {
+          this.parts[key].textContent = String(value).padStart(2, '0');
+        });
+        this.accessibleText.textContent = `${values.days} days, ${values.hours} hours, ${values.minutes} minutes remaining`;
+      }
+    });
+  }
+</script>
 
 {% schema %}
 {
@@ -69,44 +254,51 @@
       "label": "t:sections.promotion-bar.settings.url.label"
     },
     {
-      "type": "select",
-      "label": "t:sections.promotion-bar.settings.text_size.label",
-      "id": "text_size",
-      "options": [
-        {
-          "label": "t:sections.promotion-bar.settings.text_size.options__0.label",
-          "value": "text-sm"
-        },
-        {
-          "label": "t:sections.promotion-bar.settings.text_size.options__1.label",
-          "value": "text-sm md:text-base"
-        },
-        {
-          "label": "t:sections.promotion-bar.settings.text_size.options__2.label",
-          "value": "text-base md:text-lg"
-        }
-      ],
-      "default": "text-sm md:text-base"
+      "type": "checkbox",
+      "id": "enable_countdown",
+      "label": "Enable countdown",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End date",
+      "info": "Required format: YYYY-MM-DD",
+      "default": "2026-12-31",
+      "visible_if": "{{ section.settings.enable_countdown }}"
+    },
+    {
+      "type": "text",
+      "id": "end_time",
+      "label": "End time",
+      "info": "Required 24-hour format: HH:MM",
+      "default": "23:59",
+      "visible_if": "{{ section.settings.enable_countdown }}"
     },
     {
       "type": "select",
-      "id": "section_height",
-      "label": "t:sections.promotion-bar.settings.section_height.label",
+      "id": "timezone",
+      "label": "Time zone",
+      "info": "Daylight saving time is applied automatically for the end date you set.",
+      "default": "America/New_York",
+      "visible_if": "{{ section.settings.enable_countdown }}",
       "options": [
-        {
-          "value": "py-2",
-          "label": "t:sections.promotion-bar.settings.section_height.options__0.label"
-        },
-        {
-          "value": "py-3 md:py-4",
-          "label": "t:sections.promotion-bar.settings.section_height.options__1.label"
-        },
-        {
-          "value": "py-4 md:py-6",
-          "label": "t:sections.promotion-bar.settings.section_height.options__2.label"
-        }
-      ],
-      "default": "py-2"
+        { "value": "America/New_York", "label": "Eastern Time - New York (ET)" },
+        { "value": "America/Chicago", "label": "Central Time - Chicago (CT)" },
+        { "value": "America/Denver", "label": "Mountain Time - Denver (MT)" },
+        { "value": "America/Phoenix", "label": "Mountain Time - Phoenix, no DST (MST)" },
+        { "value": "America/Los_Angeles", "label": "Pacific Time - Los Angeles (PT)" },
+        { "value": "America/Anchorage", "label": "Alaska Time - Anchorage (AKT)" },
+        { "value": "Pacific/Honolulu", "label": "Hawaii Time - Honolulu (HST)" },
+        { "value": "UTC", "label": "UTC" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "expired_message",
+      "label": "Expired message",
+      "default": "Offer expired",
+      "visible_if": "{{ section.settings.enable_countdown }}"
     },
     {
       "type": "header",

@@ -381,6 +381,7 @@
     },
     "custom_liquid_MGAYyF": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_horizontal_space": false,
@@ -390,9 +391,21 @@
         "text_color": ""
       }
     },
+    "custom_liquid_eXH3De": {
+      "type": "custom-liquid",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "custom_liquid": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"YA13jMzqXXVgCR5xIv0GuQ\"></div>",
+        "background_color": "",
+        "text_color": ""
+      }
+    },
     "featured_collection_ccg3zJ": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,
@@ -429,6 +442,7 @@
     "video_Wz67e4",
     "slideshow_jxQdEz",
     "custom_liquid_MGAYyF",
+    "custom_liquid_eXH3De",
     "featured_collection_ccg3zJ"
   ]
 }

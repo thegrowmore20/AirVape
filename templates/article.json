@@ -70,7 +70,7 @@
       "settings": {
         "custom_class": "article-page-featured-collection",
         "full_width": true,
-        "carousel": true,
+        "carousel": false,
         "products_count": 8,
         "grid_columns": 4,
         "grid_columns_mobile": "2",
@@ -81,8 +81,7 @@
           "airvape-x-royal-edition",
           "airvape-x",
           "airvape-xs-go",
-          "airvape-om-keychain-waxpen",
-          "breathelet-adjustable-mindful-bracelet-with-gentle-vibration-for-refocus"
+          "airvape-om-keychain-waxpen"
         ],
         "collection": "",
         "subheading": "",
