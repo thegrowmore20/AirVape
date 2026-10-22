@@ -62,12 +62,11 @@
     }
   }
   
-  /* Top gap matches the 2rem padding-top .footer__bottom already carries,
-     so the disclaimer sits with equal space above and below at every breakpoint. */
   .footer__disclaimer {
-    max-width: 62rem;
-    margin-inline: auto;
-    padding-top: 2rem;
+    margin-top: 0.75rem;
+    padding: 5px;
+    border: 1px solid currentColor;
+    border-radius: 4px;
     overflow-wrap: break-word;
   }
   .footer__disclaimer p {
@@ -177,6 +176,12 @@
           <div class="prose max-md:text-sm">
             {{ block.settings.content }}
           </div>
+          {%- assign disclaimer_text = section.settings.disclaimer | strip_html | strip -%}
+          {%- if disclaimer_text != blank -%}
+            <div class="footer__disclaimer styled-links text-foreground text-sm max-sm:text-xs text-center">
+              {{ section.settings.disclaimer }}
+            </div>
+          {%- endif -%}
         </div>
       {% when 'newsletter' %}
         <div
@@ -256,13 +261,6 @@
         </div>
       {%- endif -%}
     </div>
-    
-    {%- assign disclaimer_text = section.settings.disclaimer | strip_html | strip -%}
-    {%- if disclaimer_text != blank -%}
-      <div class="footer__disclaimer styled-links text-foreground text-sm max-sm:text-xs text-center {% if section.settings.background_image != blank %} relative {% endif %}">
-        {{ section.settings.disclaimer }}
-      </div>
-    {%- endif -%}
     
     <div class="footer__bottom items-center justify-between {% if section.settings.background_image != blank %} relative {% endif %}">
       {%- if section.settings.show_payment %}
