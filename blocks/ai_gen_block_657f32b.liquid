@@ -46,6 +46,7 @@
 {% endcomment %}
 
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+{% assign guide_image_fallback_alt = product.title | default: 'Guide image' %}
 
 {% style %}
   .ai-slider-container-{{ ai_gen_id }} {
@@ -444,7 +445,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_1.alt | escape }}" loading="eager" fetchpriority="high" width="400" height="800">
+                    alt="{{ block.settings.image_1.alt | default: guide_image_fallback_alt | escape }}" loading="eager" fetchpriority="high" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -456,7 +457,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_1.alt | escape }}" loading="eager" fetchpriority="high" width="400" height="800">
+                  alt="{{ block.settings.image_1.alt | default: guide_image_fallback_alt | escape }}" loading="eager" fetchpriority="high" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_1 != blank %}
@@ -479,7 +480,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_2.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_2.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -491,7 +492,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_2.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_2.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_2 != blank %}
@@ -514,7 +515,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_3.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_3.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -526,7 +527,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_3.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_3.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_3 != blank %}
@@ -549,7 +550,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_4.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_4.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -561,7 +562,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_4.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_4.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_4 != blank %}
@@ -584,7 +585,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_5.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_5.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -596,7 +597,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_5.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_5.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_5 != blank %}
@@ -619,7 +620,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_6.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_6.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -631,7 +632,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_6.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_6.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_6 != blank %}
@@ -654,7 +655,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_7.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_7.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -666,7 +667,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_7.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_7.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_7 != blank %}
@@ -689,7 +690,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ block.settings.image_8.alt | escape }}" loading="lazy" width="400" height="800">
+                    alt="{{ block.settings.image_8.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
                 </a>
               {% else %}
                 <img
@@ -701,7 +702,7 @@
                   sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                          (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                          calc(100vw / {{ block.settings.slides_desktop }})"
-                  alt="{{ block.settings.image_8.alt | escape }}" loading="lazy" width="400" height="800">
+                  alt="{{ block.settings.image_8.alt | default: guide_image_fallback_alt | escape }}" loading="lazy" width="400" height="800">
               {% endif %}
             </div>
             {% if block.settings.image_text_8 != blank %}
@@ -732,7 +733,7 @@
                     sizes="(max-width: 749px) calc(100vw / {{ block.settings.slides_mobile }}),
                            (max-width: 989px) calc(100vw / {{ block.settings.slides_tablet }}),
                            calc(100vw / {{ block.settings.slides_desktop }})"
-                    alt="{{ image.alt | escape }}"
+                    alt="{{ image.alt | default: guide_image_fallback_alt | escape }}"
                     loading="{{ lazyload }}"
                     {% if forloop.first %}fetchpriority="high"{% endif %}
                     width="400"
@@ -789,7 +790,7 @@
           class="ai-slider-lightbox-image-{{ ai_gen_id }}"
           data-lightbox-image
           src=""
-          alt=""
+          alt="{{ guide_image_fallback_alt | escape }}"
           width="1200"
           height="1200"
         >
