@@ -28,7 +28,10 @@
 
 {% capture media %}
   {% if section.settings.image %}
-    {% assign image_alt = section.settings.image.alt | default: 'image with text' %}
+    {% assign image_alt = section.settings.image.alt %}
+    {% if image_alt == blank and request.page_type == 'product' %}
+      {% assign image_alt = product.title %}
+    {% endif %}
     {{
       section.settings.image
       | image_url: width: 2048
