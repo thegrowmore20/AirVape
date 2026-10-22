@@ -40,10 +40,25 @@
     right: 0;
     left: 0;
 }
+
+.services-intro-content {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.services-subhead {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px 16px;
+    flex-wrap: wrap;
+}
+
 .shopify-section .services-intro h2 {
     font-size: 2.2rem;
     line-height: 1.25;
-    margin-bottom: 24px;					;
+    margin-bottom: 16px;					
     color: #ffffff;
 }
 .shopify-section .services-intro p {
@@ -52,6 +67,11 @@
     margin-bottom: 24px;
     color: #e0e0e0;
 }
+
+.shopify-section .services-intro .services-subhead p {
+    margin: 0;
+}
+
 .shopify-section .intro-images {
     display: flex;
     flex-wrap: wrap;

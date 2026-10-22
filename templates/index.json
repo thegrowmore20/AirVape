@@ -19,27 +19,27 @@
             "video_poster": "shopify://shop_images/Desktop.webp",
             "mobile_video": "shopify://files/videos/PRO_2Mainv4mobile_e479ae30-49e0-4cbc-b724-8e91a3729177.webm",
             "video_poster_mobile": "shopify://shop_images/mobile.webp",
-            "content_width_maximum": 960,
+            "content_width_maximum": 540,
             "desktop_content_position": "bottom-left",
             "mobile_content_position": "bottom-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Vape with Power",
-            "heading_size": "h4",
-            "text": "Incredible flavor in just 15 seconds",
+            "heading": "<p>Dry Herb Vaporizers<br/>Built for Flavor and Power</p>",
+            "heading_size": "h3",
+            "text": "Heat up in 15 seconds. Portable dry herb vapes for flower, with wax options.",
             "hide_text_on_mobile": false,
             "button_size": "text-sm md:text-base",
             "custom_liquid": "{% if shop.metafields.loox[\"global_stats\"] %}\n                    {% assign looxstats = shop.metafields.loox[\"global_stats\"] | split: ',' %} \n                    <div class=\"loox-rating loox-rating-hp\" data-rating=\"{{ looxstats[0] }}\" data-raters=\"{{ looxstats[1] }}\" data-pattern=\"[rating] ([count])\"></div> \n                    {% endif %}",
-            "button_link": "shopify://products/legacy-pro-2",
-            "button_text": "Explore PRO 2",
+            "button_link": "shopify://collections/dry-herb-vaporizers",
+            "button_text": "Shop Dry Herb Vaporizers",
             "button_style": "",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "button2_link": "",
-            "button2_text": "",
-            "button2_style": "",
-            "button2_background_color": "",
-            "button2_text_color": "",
+            "button2_link": "shopify://products/legacy-pro-2",
+            "button2_text": "Explore PRO 2",
+            "button2_style": "button-outline",
+            "button2_background_color": "#ffffff",
+            "button2_text_color": "#000000",
             "background_color": "",
             "color_text": "#ffffff",
             "overlay_color": "#000000",
@@ -59,7 +59,7 @@
             "mobile_content_position": "bottom-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Built to perform",
+            "heading": "<p>Built to perform</p>",
             "heading_size": "h4",
             "text": "Own your vibe Own your Style",
             "hide_text_on_mobile": false,
@@ -94,7 +94,7 @@
             "mobile_content_position": "bottom-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Flavor Without Limits",
+            "heading": "<p>Flavor Without Limits</p>",
             "heading_size": "h4",
             "text": "Electric shisha no coal pure flavor",
             "hide_text_on_mobile": false,
@@ -159,7 +159,7 @@
         ],
         "collection": "airvape-2025",
         "subheading": "",
-        "heading": "SIGNATURE MODELS",
+        "heading": "Best Dry Herb Vaporizers & Portable Vapes",
         "heading_size": "h2",
         "text_alignment": "text-center",
         "link_text": "View all",
@@ -168,6 +168,41 @@
         "text_color": "",
         "heading_color": "",
         "heading_html_tag": "h2"
+      }
+    },
+    "rich_text_hdmAHB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4rgY4T": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1",
+            "heading_html_tag": "p"
+          }
+        },
+        "text_KCzRnh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AirVape makes dry herb vaporizers for people who want clean flavor, quick heat-up and simple control. If you're new, start with the<a href=\"https://airvapeusa.com/products/airvape-xs-go\"> <span style=\"text-decoration:underline\">XS GO portable dry herb vaporizer</span></a>, a compact device with built-in tools. Want a slim dry herb vape pen for everyday carry? The<a href=\"https://airvapeusa.com/products/airvape-x\"> <span style=\"text-decoration:underline\">AirVape X</span></a> is built for discreet, long-battery use. For the full experience, the<a href=\"https://airvapeusa.com/products/legacy-pro-2\"> <span style=\"text-decoration:underline\">Legacy PRO 2 hybrid dry herb vaporizer</span></a> combines convection and conduction heating with a replaceable battery, while the<a href=\"https://airvapeusa.com/products/legacy-core\"> <span style=\"text-decoration:underline\">Legacy CORE dry herb and wax vaporizer</span></a> gives you 7 LED heat levels at a lower price. If you also use concentrates, the<a href=\"https://airvapeusa.com/products/airvape-om-keychain-waxpen\"> <span style=\"text-decoration:underline\">OM keychain wax pen</span></a> is a pocket-size portable concentrate vaporizer. Looking for something different? The<a href=\"https://airvapeusa.com/products/enso\"> <span style=\"text-decoration:underline\">ENSŌ electric hookah</span></a> is a rechargeable electronic shisha for non-nicotine herbal molasses, with no charcoal. Not sure which to pick? Browse all<a href=\"https://airvapeusa.com/collections/products\"> <span style=\"text-decoration:underline\">dry herb vaporizers</span></a> or read our<a href=\"https://airvapeusa.com/pages/premium-vaporizer-guide\"> <span style=\"text-decoration:underline\">dry herb vaporizer buyer's guide</span></a>. All AirVape devices are designed for legal dry herbal blends.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4rgY4T",
+        "text_KCzRnh"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "content_alignment": "mx-auto",
+        "text_alignment": "text-center",
+        "content_width": "extra-large",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
       }
     },
     "custom_homepage_usps_yyBK3i": {
@@ -231,7 +266,9 @@
         "vertical_layout": true,
         "show_divider": false,
         "heading": "Buy with Confidence",
-        "text_1": "Risk Free Shopping & Satisfaction Guaranteed",
+        "text_0": "<p>Award-winning dry herb vaporizers</p>",
+        "custom_liquid": "{% if shop.metafields.loox[\"global_stats\"] %}\n                    {% assign looxstats = shop.metafields.loox[\"global_stats\"] | split: ',' %} \n                    <div class=\"loox-rating loox-rating-hp\" data-rating=\"{{ looxstats[0] }}\" data-raters=\"{{ looxstats[1] }}\" data-pattern=\"[rating] ([count])\"></div> \n                    {% endif %}",
+        "text_1": "<p>Risk Free Shopping & Satisfaction Guaranteed</p>",
         "intro_img_1": "shopify://shop_images/icon_Warranty_3.svg",
         "intro_img_2": "shopify://shop_images/icon_MoneyBack_Gurantee_3.svg",
         "link_color": "#ffd814",
@@ -441,7 +478,7 @@
         "full_width": true,
         "content_width": "normal",
         "subheading": "",
-        "heading": "SHOP ACCESSORIES",
+        "heading": "Vaporizer Accessories & Replacement Parts",
         "heading_size": "h2",
         "text_alignment": "text-center",
         "link_text": "View all",
@@ -477,7 +514,7 @@
         "remove_horizontal_space": false,
         "remove_vertical_space": false,
         "subheading": "",
-        "heading": "WHY DO PEOPLE LOVE AIRVAPE?",
+        "heading": "Customer Reviews: Dry Herb Vaporizers",
         "heading_size": "h2",
         "text_alignment": "text-center",
         "link_text": "View all",
@@ -534,7 +571,7 @@
         "remove_horizontal_space": false,
         "remove_vertical_space": false,
         "subheading": "",
-        "heading": "FOLLOW US ON INSTAGRAM",
+        "heading": "Follow Us On Instagram",
         "heading_size": "h2",
         "text_alignment": "text-center",
         "link_text": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25px\" height=\"25px\" viewbox=\"0 0 2500 2500\"><defs><radialgradient id=\"0\" cx=\"332.14\" cy=\"2511.81\" r=\"3263.54\" gradientunits=\"userSpaceOnUse\"><stop offset=\".09\" stop-color=\"#fa8f21\"></stop><stop offset=\".78\" stop-color=\"#d82d7e\"></stop></radialgradient><radialgradient id=\"1\" cx=\"1516.14\" cy=\"2623.81\" r=\"2572.12\" gradientunits=\"userSpaceOnUse\"><stop offset=\".64\" stop-color=\"#8c3aaa\" stop-opacity=\"0\"></stop><stop offset=\"1\" stop-color=\"#8c3aaa\"></stop></radialgradient></defs><path d=\"M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57\" fill=\"url(#0)\"></path><path d=\"M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57\" fill=\"url(#1)\"></path></svg>@airvape.usa",
@@ -961,7 +998,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Powerful, Compact, Stylish",
+            "heading": "<p>Powerful, Compact, Stylish</p>",
             "heading_size": "h2",
             "text": "AirVape OM combines minimalist design, portability & functionality anywhere.",
             "hide_text_on_mobile": false,
@@ -995,7 +1032,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Discreet by Design",
+            "heading": "<p>Discreet by Design</p>",
             "heading_size": "h2",
             "text": "AirVape OM’s gunmetal finish blends into your carry with effortless use.",
             "hide_text_on_mobile": false,
@@ -1028,7 +1065,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Small Yet Mighty",
+            "heading": "<p>Small Yet Mighty</p>",
             "heading_size": "h2",
             "text": "AirVape OM combines sleek power, portability, elegance in a keychain design.",
             "hide_text_on_mobile": false,
@@ -1127,6 +1164,88 @@
         "overlay_type": "solid"
       }
     },
+    "faq_accordion_e8H6pm": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faqs_kAHKJj": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "1. What is a dry herb vaporizer?",
+            "answer": "<p>A dry herb vaporizer heats ground herbs to a controlled temperature instead of burning them, so you get flavor without smoke. AirVape makes portable dry herb vapes for everyday carry and hybrid models for more control.<a href=\"https://airvapeusa.com/collections/products\"> <span style=\"text-decoration:underline\">Browse all dry herb vaporizers</span></a>.</p>"
+          }
+        },
+        "faqs_RNdDtW": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "2. What is the best dry herb vaporizer for beginners?",
+            "answer": "<p>The<a href=\"https://airvapeusa.com/products/airvape-xs-go\"> <span style=\"text-decoration:underline\">AirVape XS GO</span></a> is the easiest place to start. It is compact, includes built-in tools and is our most affordable dry herb device at $75. If you want more heat control, the<a href=\"https://airvapeusa.com/products/legacy-core\"> <span style=\"text-decoration:underline\">Legacy CORE</span></a> has 7 LED heat levels.</p>"
+          }
+        },
+        "faqs_DXgmbT": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "3. What is the difference between conduction, convection and hybrid heating?",
+            "answer": "<p>Conduction heats herbs by direct contact with a hot surface. Convection heats them with hot air. Hybrid heating combines both. The<a href=\"https://airvapeusa.com/products/legacy-pro-2\"> <span style=\"text-decoration:underline\">Legacy PRO 2</span></a> uses hybrid heating and has a replaceable battery.</p>"
+          }
+        },
+        "faqs_pfFTbK": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "4. Can I use AirVape devices with dry herb and wax?",
+            "answer": "<p>Yes, on the right models. The<a href=\"https://airvapeusa.com/products/legacy-pro-2\"> <span style=\"text-decoration:underline\">Legacy PRO 2</span></a> and<a href=\"https://airvapeusa.com/products/legacy-core\"> <span style=\"text-decoration:underline\">Legacy CORE</span></a> are herb and wax devices. The<a href=\"https://airvapeusa.com/products/airvape-x\"> <span style=\"text-decoration:underline\">AirVape X</span></a> is a dry herb and concentrate vaporizer. The<a href=\"https://airvapeusa.com/products/airvape-om-keychain-waxpen\"> <span style=\"text-decoration:underline\">OM keychain wax pen</span></a> is made for concentrates.</p>"
+          }
+        },
+        "faqs_dhK9Gr": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "5. How long does the battery last?",
+            "answer": "<p>It depends on the model and how you use it. The Legacy PRO 2 has a replaceable battery, so you can swap it. The AirVape X is built for long battery life. Check each device page for exact details, and shop<a href=\"https://airvapeusa.com/collections/replacement-parts\"> <span style=\"text-decoration:underline\">replacement parts and accessories</span></a> for spare batteries and chargers.</p>"
+          }
+        },
+        "faqs_ykkHTH": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "6. What is the ENSŌ electric hookah?",
+            "answer": "<p><a href=\"https://airvapeusa.com/products/enso\"><span style=\"text-decoration:underline\">ENSŌ</span></a> is a portable electric hookah designed for non-nicotine herbal molasses. It uses no charcoal and has a modular design.</p>"
+          }
+        },
+        "faqs_apAFQm": {
+          "type": "faqs",
+          "settings": {
+            "quiz": "7. Can I use AirVape devices with nicotine, tobacco or e-liquids?",
+            "answer": "<p>No. AirVape devices are designed for legal dry herbal blends only. Do not use them with tobacco, nicotine products or e-liquids, because liquids can damage the device</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_kAHKJj",
+        "faqs_RNdDtW",
+        "faqs_DXgmbT",
+        "faqs_pfFTbK",
+        "faqs_dhK9Gr",
+        "faqs_ykkHTH",
+        "faqs_apAFQm"
+      ],
+      "name": "Page FAQs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_alignment": "mx-auto",
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "Dry Herb Vaporizer Faqs",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
     "47953464-d278-497d-be52-ea15912c52d9": {
       "type": "featured-blog",
       "settings": {
@@ -1135,7 +1254,7 @@
         "blog": "airvape-insiders",
         "articles_count": 3,
         "grid_columns": 3,
-        "heading": "FUN READS",
+        "heading": "Dry Herb Vaporizer Guides & Tips",
         "heading_size": "h2",
         "text_alignment": "text-left",
         "link_text": "View all",
@@ -1236,6 +1355,7 @@
   "order": [
     "slideshow_3yVwjz",
     "featured_collection_MJVwFm",
+    "rich_text_hdmAHB",
     "custom_homepage_usps_yyBK3i",
     "image_with_text_Y8Agig",
     "logo_list_xLBmCC",
@@ -1250,6 +1370,7 @@
     "blocks_c7UD8Q",
     "slideshow_nXA9pR",
     "image_with_text_overlay_4wbAtL",
+    "faq_accordion_e8H6pm",
     "47953464-d278-497d-be52-ea15912c52d9",
     "17709972994c024ab9",
     "177099755237bbec23",

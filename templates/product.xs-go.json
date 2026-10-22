@@ -111,13 +111,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_DYN7mV": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_8BiMbx": {
           "type": "icon_text_block",
           "settings": {
@@ -239,7 +232,6 @@
         "custom_liquid_fkDcCU",
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "qty_btn_selector_zqX9kF",
-        "delivery_DYN7mV",
         "icon_text_block_8BiMbx",
         "description_FETxLT",
         "collapsible_content_7eB3pL",

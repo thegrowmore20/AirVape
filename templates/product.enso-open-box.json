@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -82,13 +86,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_xRecdf": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_kHAtNg": {
           "type": "icon_text_block",
           "settings": {
@@ -128,10 +125,6 @@
         "share_button_VjbYte": {
           "type": "share_button",
           "settings": {}
-        },
-        "custom_badges_pdp": {
-          "type": "custom_badges",
-          "settings": {}
         }
       },
       "block_order": [
@@ -144,7 +137,6 @@
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "text_xQ6jUh",
         "qty_btn_selector_GVRPCt",
-        "delivery_xRecdf",
         "icon_text_block_kHAtNg",
         "description_jfp4NG",
         "collapsible_content_UnJXe3",
@@ -218,6 +210,7 @@
         "heading_pTHBca"
       ],
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "content_alignment": "mx-auto",
         "text_alignment": "text-center mx-auto",

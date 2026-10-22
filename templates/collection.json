@@ -102,7 +102,7 @@
             "heading_html_tag": "h1"
           }
         },
-        "text_HAendn": {
+        "text_TaEVqh": {
           "type": "text",
           "settings": {
             "text": "{{ collection.metafields.custom.short_description | metafield_tag }}"
@@ -123,7 +123,7 @@
       },
       "block_order": [
         "heading_fa7UM3",
-        "text_HAendn",
+        "text_TaEVqh",
         "custom_liquid_7h8tQF",
         "custom_liquid_EpVRGW"
       ],
@@ -231,6 +231,31 @@
         "overlay_type": "solid"
       }
     },
+    "rich_text_hy9BWT": {
+      "type": "rich-text",
+      "blocks": {
+        "text_9wMGTK": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.metafields.custom.seo_description | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_9wMGTK"
+      ],
+      "name": "t:sections.rich-text.presets__0.name",
+      "settings": {
+        "custom_class": "",
+        "full_width": true,
+        "content_alignment": "mr-auto",
+        "text_alignment": "text-left",
+        "content_width": "extra-large",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
     "main-product-grid": {
       "type": "main-collection-grid",
       "settings": {
@@ -253,6 +278,27 @@
         "background_color": "rgba(0,0,0,0)",
         "text_color": "rgba(0,0,0,0)"
       }
+    },
+    "collection_faqs_M7fKLc": {
+      "type": "collection-faqs",
+      "name": "Collection Faqs",
+      "settings": {
+        "full_width": true,
+        "remove_horizontal_space": false,
+        "remove_vertical_space": false,
+        "content_width": "normal",
+        "subheading": "",
+        "heading": "Faqs",
+        "heading_size": "h2",
+        "text_alignment": "text-center",
+        "link_text": "View all",
+        "link_url": "",
+        "new_tab": false,
+        "heading_html_tag": "p",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
     }
   },
   "order": [
@@ -261,6 +307,8 @@
     "image_with_text_overlay_XJWPRP",
     "image_with_text_overlay_iybzTj",
     "image_with_text_overlay_wxCXtb",
-    "main-product-grid"
+    "rich_text_hy9BWT",
+    "main-product-grid",
+    "collection_faqs_M7fKLc"
   ]
 }

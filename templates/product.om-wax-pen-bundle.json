@@ -98,13 +98,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_fmQ9ba": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_wNkHJX": {
           "type": "icon_text_block",
           "settings": {
@@ -248,7 +241,6 @@
         "custom_liquid_bT9ei6",
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "qty_btn_selector_MBKAch",
-        "delivery_fmQ9ba",
         "icon_text_block_wNkHJX",
         "collapsible_content_JypDGX",
         "collapsible_content_FnYw7F",
@@ -355,6 +347,7 @@
       "block_order": [
         "loox_reviews_loox_dynamic_section_NGMa3d"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_horizontal_space": false,
@@ -595,6 +588,7 @@
       "block_order": [
         "ai_gen_block_657f32b_KhaLHG"
       ],
+      "disabled": true,
       "name": "Custom Section",
       "settings": {
         "full_width": true,
@@ -616,6 +610,7 @@
     },
     "featured_collection_kRGhHr": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "custom_class": "",
         "full_width": true,

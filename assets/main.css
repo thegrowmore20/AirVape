@@ -4191,6 +4191,12 @@ main > .shopify-section:first-child .section--full-width:not(.section--no-paddin
 .section-header--with-link {
   display: flex;
 }
+
+.section-header.text-center .heading {
+  max-width: 600px;
+  text-transform: capitalize;
+  margin-inline: auto;
+}
 .section-header--with-link .filler-left,
 .section-header--with-link .filler-right {
   flex-basis: 0;

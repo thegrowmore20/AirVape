@@ -61,6 +61,21 @@
       order: 2;
     }
   }
+  
+  /* Top gap matches the 2rem padding-top .footer__bottom already carries,
+     so the disclaimer sits with equal space above and below at every breakpoint. */
+  .footer__disclaimer {
+    max-width: 62rem;
+    margin-inline: auto;
+    padding-top: 2rem;
+    overflow-wrap: break-word;
+  }
+  .footer__disclaimer p {
+    margin: 0;
+  }
+  .footer__disclaimer p + p {
+    margin-top: .5rem;
+  }
 </style>
 
 <div {% render 'section-attrs', class: 'footer overflow-hidden relative' %}>
@@ -242,6 +257,13 @@
       {%- endif -%}
     </div>
     
+    {%- assign disclaimer_text = section.settings.disclaimer | strip_html | strip -%}
+    {%- if disclaimer_text != blank -%}
+      <div class="footer__disclaimer styled-links text-foreground text-sm max-sm:text-xs text-center {% if section.settings.background_image != blank %} relative {% endif %}">
+        {{ section.settings.disclaimer }}
+      </div>
+    {%- endif -%}
+    
     <div class="footer__bottom items-center justify-between {% if section.settings.background_image != blank %} relative {% endif %}">
       {%- if section.settings.show_payment %}
         <ul class="flex flex-wrap items-center justify-center gap-2" role="list">
@@ -360,6 +382,16 @@
         "id": "show_payment",
         "label": "t:sections.footer.settings.show_payment.label",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "Disclaimer"
+      },
+      {
+        "type": "richtext",
+        "id": "disclaimer",
+        "label": "Disclaimer text",
+        "info": "Shown above the payment icons. Leave empty to hide it entirely."
       },
       {
         "type": "header",
@@ -604,7 +636,7 @@
             "id" : "open_new_address",
             "label": "Open in New Tab",
             "default": false
-          },
+          }
         ]
       },
       {

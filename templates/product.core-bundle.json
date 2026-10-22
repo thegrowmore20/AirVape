@@ -122,13 +122,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_b87E8F": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_PrMKB7": {
           "type": "icon_text_block",
           "settings": {
@@ -254,7 +247,6 @@
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "4923f5c8-62d3-42db-a835-6e0613c4a182",
         "qty_btn_selector_impL7A",
-        "delivery_b87E8F",
         "icon_text_block_PrMKB7",
         "description_FETxLT",
         "collapsible_content_7eB3pL",
@@ -345,6 +337,7 @@
       "blocks": {
         "loox_reviews_loox_dynamic_section_nriAUx": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
           "settings": {
             "reviews_to_display": "",
             "default_tab": "automatic",
@@ -360,6 +353,7 @@
       "block_order": [
         "loox_reviews_loox_dynamic_section_nriAUx"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_horizontal_space": false,
@@ -387,7 +381,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Change the Skin, keep the CORE",
+            "heading": "<p>Change the Skin, keep the CORE</p>",
             "heading_size": "h2",
             "text": "Swap the front and back skins to match your style — choose from different colors, textures, or even custom designs. One device, endless looks.",
             "hide_text_on_mobile": false,
@@ -688,6 +682,7 @@
       "block_order": [
         "ai_gen_block_657f32b_PBi6hG"
       ],
+      "disabled": true,
       "name": "Custom Section",
       "settings": {
         "full_width": true,
@@ -705,39 +700,6 @@
         "background_color": "",
         "text_color": "",
         "heading_color": ""
-      }
-    },
-    "featured_collection_dez6gW": {
-      "type": "featured-collection",
-      "settings": {
-        "custom_class": "",
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [
-          "om-essentials-bundle",
-          "breathelet-power-pack",
-          "airvape-x-waterflow-kit",
-          "enso-adventure-kit",
-          "xperience-kit",
-          "festival-pack",
-          "legacy-pro-2-stealth-carry-kit",
-          "enso-travel-ritual-kit",
-          "x-royal-edition-premium-carry-kit"
-        ],
-        "collection": "",
-        "subheading": "",
-        "heading": "COMPLETE YOUR MEMORIAL DAY COLLECTION",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
       }
     },
     "product_faqs_D7FqrC": {
@@ -772,7 +734,6 @@
     "video_with_text_YjAd6V",
     "featured_collection_gVmzNA",
     "custom_section_AeYVGV",
-    "featured_collection_dez6gW",
     "product_faqs_D7FqrC"
   ]
 }

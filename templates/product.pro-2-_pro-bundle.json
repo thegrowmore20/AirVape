@@ -104,13 +104,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_4UWPCg": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_Ez4GRq": {
           "type": "icon_text_block",
           "settings": {
@@ -244,7 +237,6 @@
         "custom_liquid_AkMLae",
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "qty_btn_selector_w6p6Ud",
-        "delivery_4UWPCg",
         "icon_text_block_Ez4GRq",
         "text_QRbAxC",
         "4923f5c8-62d3-42db-a835-6e0613c4a182",
@@ -379,7 +371,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Just you, your vibe, and the Legacy PRO 2",
+            "heading": "<p>Just you, your vibe, and the Legacy PRO 2</p>",
             "heading_size": "h2",
             "text": "",
             "hide_text_on_mobile": false,
@@ -779,39 +771,6 @@
         "heading_color": ""
       }
     },
-    "featured_collection_CHmD3T": {
-      "type": "featured-collection",
-      "settings": {
-        "custom_class": "",
-        "full_width": true,
-        "carousel": true,
-        "products_count": 8,
-        "grid_columns": 4,
-        "grid_columns_mobile": "2",
-        "products": [
-          "x-royal-edition-premium-carry-kit",
-          "airvape-x-waterflow-kit",
-          "breathelet-power-pack",
-          "enso-adventure-kit",
-          "legacy-core-capsule-kit",
-          "legacy-core-waterflow-kit",
-          "festival-pack",
-          "enso-travel-ritual-kit",
-          "legacy-core-stealth-carry-kit"
-        ],
-        "collection": "",
-        "subheading": "",
-        "heading": "COMPLETE YOUR MEMORIAL DAY COLLECTION",
-        "heading_size": "h2",
-        "text_alignment": "text-center",
-        "link_text": "View all",
-        "link_url": "",
-        "background_color": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_html_tag": "p"
-      }
-    },
     "product_faqs_WxJYCt": {
       "type": "product-faqs",
       "name": "Product Faqs",
@@ -847,7 +806,6 @@
     "video_nrLrNt",
     "featured_collection_WqWJcP",
     "custom_section_ggzpUX",
-    "featured_collection_CHmD3T",
     "product_faqs_WxJYCt"
   ]
 }

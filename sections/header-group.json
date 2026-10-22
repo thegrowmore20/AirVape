@@ -11,23 +11,42 @@
   "type": "header",
   "name": "Header",
   "sections": {
+    "9e2ab7e9-ef20-4927-a77f-7d8d1f2e7b7d": {
+      "type": "promotion-bar",
+      "disabled": true,
+      "settings": {
+        "show_only_on_homepage": false,
+        "content": "<p>Offer ends in</p>",
+        "url": "",
+        "enable_countdown": true,
+        "end_date": "2026-08-30",
+        "end_time": "23:59",
+        "timezone": "America/New_York",
+        "expired_message": "Offer expired",
+        "background_color": "#ffc60d",
+        "text_color": "#000000",
+        "heading_color": ""
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
         "announcement_Ymk49r": {
           "type": "announcement",
           "settings": {
-            "text": "<p>AirVape Prime Access Week is here.</p>"
+            "text": "<p>HALLOWEEN SALE IS LIVE | 20% OFF SITEWIDE | <a href=\"/collections/halloween-bundle-deals\" title=\"Halloween Bundle deals\">SHOP NOW</a></p>"
           }
         },
         "announcement_WJ38WN": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p>Enjoy a 15% discount sitewide.</p>"
           }
         },
         "announcement_GL9UYp": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p>Use coupon code PRIME15 at checkout.</p>"
           }
@@ -54,7 +73,7 @@
         "mega_menu_products_dHFkzP": {
           "type": "mega_menu_products",
           "settings": {
-            "menu_item": "Shop Devices",
+            "menu_item": "Dry Herb Vaporizers",
             "type": "horizontal",
             "products": [
               "enso",
@@ -128,29 +147,13 @@
         "country_selector_show_currency": false,
         "enable_language_selector": false,
         "enable_search": true,
-        "enable_h1_on_index": true
-      }
-    },
-    "9e2ab7e9-ef20-4927-a77f-7d8d1f2e7b7d": {
-      "type": "promotion-bar",
-      "settings": {
-        "show_only_on_homepage": false,
-        "content": "<p>Offer ends in</p>",
-        "url": "",
-        "enable_countdown": true,
-        "end_date": "2026-12-31",
-        "end_time": "23:59",
-        "timezone": "America/New_York",
-        "expired_message": "Offer expired",
-        "background_color": "#c62828",
-        "text_color": "#ffffff",
-        "heading_color": ""
+        "enable_h1_on_index": false
       }
     }
   },
   "order": [
-    "announcement-bar",
     "9e2ab7e9-ef20-4927-a77f-7d8d1f2e7b7d",
+    "announcement-bar",
     "header"
   ]
 }

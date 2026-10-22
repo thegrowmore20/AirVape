@@ -103,13 +103,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_EMfBqg": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_eygc9t": {
           "type": "icon_text_block",
           "settings": {
@@ -162,7 +155,6 @@
         "separator_9P4Lpp",
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "qty_btn_selector_LiLmBB",
-        "delivery_EMfBqg",
         "icon_text_block_eygc9t",
         "description_UWAqMi",
         "collapsible_content_mF3JHE",

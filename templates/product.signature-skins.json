@@ -96,13 +96,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_U3AYBM": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_Eh4GKr": {
           "type": "icon_text_block",
           "settings": {
@@ -153,7 +146,6 @@
         "4923f5c8-62d3-42db-a835-6e0613c4a182",
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "qty_btn_selector_gzRTyb",
-        "delivery_U3AYBM",
         "icon_text_block_Eh4GKr",
         "description_VnycjW",
         "collapsible_content_wB8GhN",
@@ -297,6 +289,7 @@
     "featured_collection_xwPNcb": {
       "type": "featured-collection",
       "settings": {
+        "custom_class": "",
         "full_width": true,
         "carousel": true,
         "products_count": 8,

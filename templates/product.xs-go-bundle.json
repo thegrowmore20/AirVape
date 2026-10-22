@@ -111,13 +111,6 @@
             "buy_it_now_text_color": ""
           }
         },
-        "delivery_DYN7mV": {
-          "type": "delivery",
-          "settings": {
-            "delivery_from": 3,
-            "delivery_to": 5
-          }
-        },
         "icon_text_block_8BiMbx": {
           "type": "icon_text_block",
           "settings": {
@@ -241,7 +234,6 @@
         "custom_liquid_LeJpMC",
         "5a84f252-bc58-4ca7-8b59-5a727a61c21f",
         "qty_btn_selector_zqX9kF",
-        "delivery_DYN7mV",
         "icon_text_block_8BiMbx",
         "description_FETxLT",
         "collapsible_content_7eB3pL",
@@ -332,6 +324,7 @@
       "blocks": {
         "loox_reviews_loox_dynamic_section_LTCYzc": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
           "settings": {
             "reviews_to_display": "",
             "default_tab": "automatic",
@@ -347,6 +340,7 @@
       "block_order": [
         "loox_reviews_loox_dynamic_section_LTCYzc"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_horizontal_space": false,
@@ -514,7 +508,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Take the heat on-the-go",
+            "heading": "<p>Take the heat on-the-go</p>",
             "heading_size": "h2",
             "text": "The AirVape XS GO uses a combination of conduction and convection technology to achieve the best heating.goes off.",
             "hide_text_on_mobile": false,
@@ -547,7 +541,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Small but efficient",
+            "heading": "<p>Small but efficient</p>",
             "heading_size": "h2",
             "text": "The XS GO is the ultimate personal loose-leaf vaporizer featuring outstanding performance and the highest level of discreteness.",
             "hide_text_on_mobile": false,
@@ -580,7 +574,7 @@
             "mobile_content_position": "middle-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "XS, yes but,  XL performance",
+            "heading": "<p>XS, yes but,  XL performance</p>",
             "heading_size": "h2",
             "text": "Always at arms length, the XS GO is the perfect companion for on-the-go",
             "hide_text_on_mobile": false,

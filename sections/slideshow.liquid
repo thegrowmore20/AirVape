@@ -377,10 +377,10 @@
               {%- endunless -%}
 
               {%- unless block.settings.heading == empty -%}
-                <split-lines class="{{ block.settings.heading_size }}" data-slide-animation-element>
+                <div class="{{ block.settings.heading_size }}" data-slide-animation-element>
                   {% capture heading_tag %}{% render 'get-heading-tag', target: block %}{% endcapture %}
                   <{{ heading_tag }}>{{ block.settings.heading }}</{{ heading_tag }}>
-                </split-lines>
+                </div>
               {%- endunless -%}
 
               {%- unless block.settings.text == empty -%}
@@ -808,16 +808,16 @@
           "content": "t:sections.all.headers.content"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "subheading",
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label",
-          "default": "Add a tagline"
+          "default": "<p>Add a tagline</p>"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "heading",
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label",
-          "default": "Slide title"
+          "default": "<p>Slide title</p>"
         },
         {
           "type": "select",
