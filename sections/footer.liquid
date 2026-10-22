@@ -65,9 +65,11 @@
   .footer__disclaimer {
     margin-top: 0.75rem;
     padding: 5px;
-    border: 1px solid currentColor;
+    border: 1px solid rgb(255 255 255 / 28%);
     border-radius: 4px;
     overflow-wrap: break-word;
+    text-align: left;
+    color: rgb(255 255 255 / 62%);
   }
   .footer__disclaimer p {
     margin: 0;
@@ -178,7 +180,7 @@
           </div>
           {%- assign disclaimer_text = section.settings.disclaimer | strip_html | strip -%}
           {%- if disclaimer_text != blank -%}
-            <div class="footer__disclaimer styled-links text-foreground text-sm max-sm:text-xs text-center">
+            <div class="footer__disclaimer styled-links text-sm max-sm:text-xs">
               {{ section.settings.disclaimer }}
             </div>
           {%- endif -%}
