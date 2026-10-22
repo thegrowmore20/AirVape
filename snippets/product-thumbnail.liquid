@@ -1,4 +1,5 @@
 {% assign image_sizes = '(min-width: 992px) 80px, 64px' %}
+{% assign thumbnail_alt = media.alt | default: product.title | default: 'Product video thumbnail' %}
 
 <button
   class="product-thumbnail {% if active %}active{% endif %}"
@@ -23,7 +24,7 @@
       <div
         class="media media--ratio-16-9"
       >
-        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'lazy' }}
+        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'lazy', alt: thumbnail_alt }}
       </div>
 
       <div class="play-icon">
@@ -33,7 +34,7 @@
       <div
         class="media media--ratio-16-9"
       >
-        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'lazy' }}
+        {{ media | image_url: width: 160 | image_tag: widths: '80, 160', sizes: image_sizes, loading: 'lazy', alt: thumbnail_alt }}
       </div>
 
       <div class="play-icon">
