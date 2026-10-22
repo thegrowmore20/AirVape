@@ -28,6 +28,15 @@
     assign poster_fetchpriority = 'auto'
     assign poster_loading = 'lazy'
   endif
+
+  assign video_alt_text = section.settings.video_alt_text
+  if video_alt_text == blank
+    if request.page_type == 'product'
+      assign video_alt_text = product.title
+    elsif request.page_type == 'collection'
+      assign video_alt_text = collection.title
+    endif
+  endif
 %}
 
 <style>
@@ -43,7 +52,7 @@
     video: section.settings.video,
     video_url: section.settings.video_url,
     video_poster: section.settings.video_poster,
-    video_alt_text: section.settings.video_alt_text,
+    video_alt_text: video_alt_text,
     background: section.settings.autoplay,
     loop: section.settings.loop,
     sizes: image_sizes,

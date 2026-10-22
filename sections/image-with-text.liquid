@@ -29,8 +29,12 @@
 {% capture media %}
   {% if section.settings.image %}
     {% assign image_alt = section.settings.image.alt %}
-    {% if image_alt == blank and request.page_type == 'product' %}
-      {% assign image_alt = product.title %}
+    {% if image_alt == blank %}
+      {% if request.page_type == 'product' %}
+        {% assign image_alt = product.title %}
+      {% elsif request.page_type == 'collection' %}
+        {% assign image_alt = collection.title %}
+      {% endif %}
     {% endif %}
     {{
       section.settings.image
