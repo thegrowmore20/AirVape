@@ -244,6 +244,7 @@
       "block_order": [
         "text_9wMGTK"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets__0.name",
       "settings": {
         "custom_class": "",

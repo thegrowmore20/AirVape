@@ -193,6 +193,7 @@
         "heading_4rgY4T",
         "text_KCzRnh"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets__0.name",
       "settings": {
         "custom_class": "",
