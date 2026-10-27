@@ -72,14 +72,8 @@
     </style>
     
 
-    {{ 'main.css' | asset_url | preload_tag: as: 'style' }}
-    <link rel="stylesheet"
-        href="{{ 'main.css' | asset_url }}"
-        media="print"
-        onload="this.onload=null;this.media='all'">
-    <noscript>
-    {{ 'main.css' | asset_url | stylesheet_tag }}
-    </noscript>
+    <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'main.css' | asset_url }}"></noscript>
 
     
 
