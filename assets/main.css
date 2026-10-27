@@ -665,22 +665,23 @@ button {
   user-select: none;
   letter-spacing: 0.05em;
   text-align: center;
-  
+
   background: rgb(var(--button-background) / var(--button-background-opacity, 1));
   color: rgb(var(--button-foreground));
   transition:
   background-color 200ms,
   color 200ms,
   box-shadow 200ms;
-  
+
   text-transform: var(--button-text-transform);
   font-family: var(--button-font-family);
   font-weight: 500;
   line-height: 1;
-  
+
   position: relative;
-  
+
   font-size: var(--size-text-sm);
+  min-height: 42px;
 }
 
 .w-100{
@@ -693,6 +694,7 @@ button {
   .shopify-challenge__button {
     font-size: var(--size-text-base);
     padding: .75em 2em;
+    min-height: 48px;
   }
 }
 .button:hover,
@@ -6823,7 +6825,7 @@ media-carousel[adaptive-height]:not(:defined) .product-gallery__slide:not(:first
   }
 }
 .buy-buttons :where(.button, .shopify-payment-button__button--unbranded) {
-  min-height: 40px;
+  min-height: 42px;
   padding-top: 0px;
   padding-bottom: 0px;
   font-size: var(--size-text-base) !important;
@@ -11379,9 +11381,15 @@ shopify-accelerated-checkout-cart {
     display: inline-block;
 }
 .rez-out-of-stock-collection-btn {
-  padding: 1em 1.5em !important;    
+  padding: 1em 1.5em !important;
   margin-top: .5rem;
   line-height: normal !important;
+  min-height: 42px;
+}
+@media (min-width: 768px) {
+  .rez-out-of-stock-collection-btn {
+    min-height: 48px;
+  }
 }
 
 .inventory-status-continue .rez-out-of-stock-collection-btn {
