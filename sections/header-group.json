@@ -63,7 +63,7 @@
         "transition": "slide-y",
         "autoplay": true,
         "change_message_every": 5,
-        "background_color": "#c62828",
+        "background_color": "#333333",
         "text_color": "#ffffff"
       }
     },
