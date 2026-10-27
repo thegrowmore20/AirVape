@@ -11,8 +11,6 @@
     assign loading = 'eager'
     assign fetchpriority = 'high'
   endif
-
-  assign media_alt = media.alt | default: product.title | default: 'Product video poster'
 %}
 
 {% capture loader %}
@@ -81,7 +79,7 @@
     >
       <button class="deferred-media-poster" data-poster aria-label="{{ 'accessibility.play_video' | t }}">
         <div class="media rounded-block" style="--aspect-ratio: {{ media.aspect_ratio }};">
-          {{ media | image_url: width: 1600 | image_tag: sizes: sizes, loading: loading, preload: preload, alt: media_alt }}
+          {{ media | image_url: width: 1600 | image_tag: sizes: sizes, loading: loading, preload: preload }}
         </div>
 
         {% render 'video-play-button' %}
@@ -106,7 +104,7 @@
     >
       <button class="deferred-media-poster" data-poster aria-label="{{ 'accessibility.play_video' | t }}">
         <div class="media rounded-block" style="--aspect-ratio: {{ media.aspect_ratio }};">
-          {{ media | image_url: width: 1600 | image_tag: sizes: sizes, loading: loading, preload: preload, alt: media_alt }}
+          {{ media | image_url: width: 1600 | image_tag: sizes: sizes, loading: loading, preload: preload }}
         </div>
 
         {% render 'video-play-button' %}

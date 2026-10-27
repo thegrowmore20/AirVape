@@ -133,7 +133,7 @@
         "fit_image": true,
         "enable_transparent_header": false,
         "use_original_media_size": false,
-        "image": "{{ collection.image }}",
+        "image": "shopify://shop_images/Haloween_jpg.jpg",
         "image_mobile": "{{ collection.metafields.custom.mobile_banner.value }}",
         "content_alignment": "md:content-middle-left",
         "content_alignment_mobile": "content-middle-left",
