@@ -1365,6 +1365,7 @@ details > summary {
   --tw-text-opacity: 1;
   color: rgb(var(--color-sale-badge-text) / var(--tw-text-opacity));
   line-height: normal;
+  padding: 0.4rem 0.6rem;
 }
 .info-badge.sold-out-badge {
   background: rgb(var(--color-sold-out-badge));
