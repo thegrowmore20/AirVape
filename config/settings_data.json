@@ -30,7 +30,7 @@
     "colors_product_card_background": "#ffffff",
     "colors_product_card_text": "#000000",
     "colors_product_sale_price": "#000000",
-    "colors_product_sale_badge": "#ea4335",
+    "colors_product_sale_badge": "#000000",
     "colors_product_sold_out_badge": "#000000",
     "colors_custom_badge": "#ea4335",
     "colors_product_rating_star": "#fbbc05",
