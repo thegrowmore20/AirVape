@@ -6101,8 +6101,8 @@ main.product-grid .product-extra {
 .product-thumbnail .media {
   border-radius: var(--block-xs-corner-radius);
   background-color: rgb(var(--color-background));
-  max-width: var(--thumbnail-size);
-  aspect-ratio: 1 / 1;
+  width: var(--thumbnail-size);
+  height: var(--thumbnail-size);
 }
 .product-thumbnail .media :where(img, video, svg) {
   object-fit: cover;
