@@ -6104,7 +6104,16 @@ main.product-grid .product-extra {
   width: var(--thumbnail-size);
   height: var(--thumbnail-size);
 }
-.product-thumbnail .media :where(img, video, svg) {
+.product-thumbnail .media .image-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.product-thumbnail .media .image-loader img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .product-thumbnail img {
