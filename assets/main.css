@@ -1375,9 +1375,38 @@ details > summary {
   background: rgb(var(--color-article-category-badge));
   color: rgb(var(--color-article-category-badge-text));
 }
+/* PDP badge update – monochrome, no icons */
 .info-badge.custom-badge {
-  background: rgb(var(--color-custom-badge));
-  color: rgb(var(--color-custom-badge-text));
+  background: #F2F2F2;
+  color: #000000;
+  border: 1px solid #E0E0E0;
+}
+.award-winning-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  background: #F2F2F2;
+  color: #000000;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--block-xs-corner-radius);
+  padding: 0.4rem 0.6rem;
+  font-size: var(--size-text-2xs);
+  line-height: 1;
+  white-space: nowrap;
+}
+.award-winning-badge-wrapper .winning-text-color {
+  color: #000000;
+  margin: 0;
+}
+.text-low-stock-text {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000 !important;
+  border: 1px solid #000000;
+  border-radius: var(--block-xs-corner-radius);
+  padding: 0.4rem 0.6rem;
+  font-size: var(--size-text-2xs);
+  line-height: 1;
+  white-space: nowrap;
 }
 .product-carousel-wrapper {
   --carousel-button-y: 37.5%;

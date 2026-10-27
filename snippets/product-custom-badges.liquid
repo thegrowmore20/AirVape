@@ -1,31 +1,7 @@
 {%- for badge in product.metafields.custom.badges.value -%}
   {%- if badge.label.value -%}
-    <div
-      class="info-badge custom-badge flex gap-1 items-center"
-      {% if badge.color.value %}
-        style="
-          background: {{ badge.color.value }};
-          color: rgb({% render 'generate-foreground-color', background: badge.color.value %})
-        "
-      {% endif %}
-    >
-      {%- if badge.image.value -%}
-        {%  assign bagde_value = badge.label.value |  handle %}
-        {%  assign alt_image_badge = badge.label.value |  default: badge.label.value %}
-        {%  assign alt_image_class = 'custom-badge-image max-md:hidden ' |  append: bagde_value %}
-        {{
-          badge.image.value
-          | image_url: width: 20
-          | image_tag:
-            class: 'custom-badge-image',
-            alt: alt_image_badge,
-            width: 13,
-            height: 13,
-            loading: 'eager',
-            class: alt_image_class
-        }}
-      {%- endif -%}
-      <span> {{ badge.label.value }}</span>
+    <div class="info-badge custom-badge">
+      <span>{{ badge.label.value }}</span>
     </div>
   {%- else -%}
     <div class="info-badge custom-badge">{{ badge }}</div>
