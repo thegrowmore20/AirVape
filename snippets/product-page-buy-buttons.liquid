@@ -25,6 +25,17 @@
     %}
   }
 
+  /* Buy it Now – outline default, black fill on hover */
+  #shopify-section-{{ section.id }} .shopify-payment-button__button--unbranded:not([disabled]) {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: inset 0 0 0 2px #000000 !important;
+  }
+  #shopify-section-{{ section.id }} .shopify-payment-button__button--unbranded:not([disabled]):hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+
   @media screen and (min-width: 600px){
     .add-to-cart-text-btn{
       margin-bottom: -3px;
