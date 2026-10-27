@@ -95,7 +95,20 @@
     {% if settings.enable_popup %}
   	{% render 'age-verification-popup' %}
     {% endif %}
-  
+
+    <style>
+      /* ATC colour override – black/white */
+      .button-add-to-cart,
+      sticky-add-to-cart .button,
+      .product-card-quick-button .button,
+      a.pdp-redirect.button-secondary {
+        --button-background: 0 0 0;
+        --button-background-hover: 51 51 51;
+        --button-background-active: 51 51 51;
+        --button-foreground: 255 255 255;
+      }
+    </style>
+
   </head>
 
   <body
