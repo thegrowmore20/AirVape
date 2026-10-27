@@ -6102,6 +6102,7 @@ main.product-grid .product-extra {
   border-radius: var(--block-xs-corner-radius);
   background-color: rgb(var(--color-background));
   max-width: var(--thumbnail-size);
+  aspect-ratio: 1 / 1;
 }
 .product-thumbnail img {
   pointer-events: none;
