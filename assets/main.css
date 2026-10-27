@@ -6104,6 +6104,9 @@ main.product-grid .product-extra {
   max-width: var(--thumbnail-size);
   aspect-ratio: 1 / 1;
 }
+.product-thumbnail .media :where(img, video, svg) {
+  object-fit: cover;
+}
 .product-thumbnail img {
   pointer-events: none;
 }
