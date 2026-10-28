@@ -1,35 +1,185 @@
 {% render 'section-bg-number-vars', bg: settings.colors_footer_background %}
 
 <style>
-  
   .brand-short-brief {
     max-width: 30rem;
     text-align: left;
   }
-  
-  .privacy-navs a:hover,
-  .copyright-block a:hover{
-    color: #fff;
-  }
-  .growmore-link:hover {
-    color: #FBBC05 !important;
-  }
-  
-  .vape-chil{
+
+  .vape-chil {
     display: inline-block;
     margin-top: -1px;
   }
-  .styled-links a:hover .vape-chil{
-    filter: brightness(0) saturate(100%) invert(78%) sepia(6%) saturate(7478%) hue-rotate(358deg) brightness(100%) contrast(109%);
-  }
-  
-  @media screen and (max-width: 480px){
-    .vape-chil{
+
+  @media screen and (max-width: 480px) {
+    .vape-chil {
       height: 13px;
       width: 13px;
-    } 
+    }
   }
-  
+
+  /* 1. Footer Column Links (Shop, Partnership, Support) - Slide Right 5px + Bold */
+  .footer .footer-block--links a {
+    text-decoration: none !important;
+    display: inline-block;
+    color: #ffffff;
+    transform: translate(0);
+    transition: all 0.3s ease;
+  }
+
+  .footer .footer-block--links a.vape-chill-link {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer .footer-block--links a:hover {
+    color: #ffffff !important;
+    font-weight: 500;
+    transform: translate(5px);
+    position: relative;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+  }
+
+  .footer .footer-block--links a:not(:hover) {
+    transform: translate(0);
+    transition: all 0.3s ease;
+  }
+
+  /* 2. Animated Directional Underline (.footer__underline, Disclaimer, & Copyright Bar Links) */
+  .footer .footer__underline,
+  .footer .footer__disclaimer a,
+  .footer .copyright-block a:not(.growmore-link),
+  .footer .privacy-navs a {
+    display: inline;
+    text-decoration: none !important;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    background-position: 100% 100%;
+    transition:
+      background-size 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .footer .copyright-block a:not(.growmore-link),
+  .footer .privacy-navs a {
+    display: inline-block;
+    color: inherit;
+  }
+
+  /* GrowMore Credit Link - Dual-Layer Underline + SVG Scale */
+  .footer .growmore-link {
+    text-decoration: none !important;
+    transition: opacity 0.3s ease, color 0.3s ease;
+  }
+
+  .footer .growmore-link .footer__underline {
+    display: inline-block;
+    background-image:
+      linear-gradient(currentColor, currentColor),
+      linear-gradient(
+        color-mix(in srgb, currentColor 55%, transparent),
+        color-mix(in srgb, currentColor 55%, transparent)
+      );
+    background-size: 0 1px, 100% 1px;
+    background-position: 100% 100%, 0 100%;
+  }
+
+  .footer .growmore-link svg {
+    transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .footer .growmore-link svg path {
+    stroke: currentColor !important;
+    transition: stroke 0.3s ease;
+  }
+
+  /* 3. Contact Links - Icon Scale + Bold + Sliding Underline */
+  .footer .list-contact_item a.contact-link {
+    text-decoration: none !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+  }
+
+  .footer .list-contact_item a.contact-link:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  .footer .list-contact_item a.contact-link:hover .contact-info-item {
+    font-weight: 500;
+  }
+
+  .footer .list-contact_item a.contact-link:not(:hover) .contact-info-item {
+    font-weight: 400;
+  }
+
+  .footer .footer__disclaimer a:hover,
+  .footer .list-contact_item a.contact-link:hover .footer__underline {
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+
+  .footer .copyright-block a:not(.growmore-link):hover,
+  .footer .privacy-navs a:hover {
+    color: #ffffff !important;
+    --tw-text-opacity: 1 !important;
+    opacity: 1 !important;
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+
+  .footer .growmore-link:hover {
+    color: #ffffff !important;
+    --tw-text-opacity: 1 !important;
+    opacity: 1 !important;
+  }
+
+  .footer .growmore-link:hover .footer__underline {
+    background-size: 100% 1px, 100% 1px;
+    background-position: 0 100%, 0 100%;
+  }
+
+  .footer .growmore-link:hover svg {
+    transform: scale(1.05);
+  }
+
+  /* 4. Social Media Icons - White Icons + Scale(1.12) on Hover */
+  .footer .footer__list-social:not(.contact-info-wrapper) .list-social__link {
+    color: #ffffff !important;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .footer .footer__list-social:not(.contact-info-wrapper) .list-social__link svg {
+    transition: transform 0.2s ease;
+  }
+
+  .footer .footer__list-social:not(.contact-info-wrapper) .list-social__link svg path {
+    fill: currentColor !important;
+  }
+
+  .footer .footer__list-social:not(.contact-info-wrapper) .list-social__link:hover {
+    color: #ffffff !important;
+  }
+
+  .footer .footer__list-social:not(.contact-info-wrapper) .list-social__link:hover svg {
+    transform: scale(1.12);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer .footer__underline,
+    .footer .copyright-block a,
+    .footer .privacy-navs a,
+    .footer .growmore-link svg,
+    .footer .list-contact_item a svg {
+      transition: none;
+    }
+  }
+
   .heading-custom {
     font-style: italic;
     font-weight: 500;
@@ -287,8 +437,8 @@
         <span> &copy; 2013 - {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}, Developed by</span> 
         
         <a target="_blank" href="https://thegrowmore.com/" class="flex align-center gap-1 powered-by-link text-foreground text-sm max-sm:text-xs text-opacity-50 growmore-link" >
-          <span class="underline">GrowMore</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-            <path d="M7.99984 2.36898H3.24984C2.82991 2.36898 2.42718 2.53579 2.13025 2.83273C1.83332 3.12966 1.6665 3.53239 1.6665 3.95231V11.869C1.6665 12.2889 1.83332 12.6916 2.13025 12.9886C2.42718 13.2855 2.82991 13.4523 3.24984 13.4523H11.1665C11.5864 13.4523 11.9892 13.2855 12.2861 12.9886C12.583 12.6916 12.7498 12.2889 12.7498 11.869V7.11898M7.20817 7.91064L14.3332 0.785645M14.3332 0.785645H10.3748M14.3332 0.785645V4.74398" stroke="#ffffff80" stroke-width="1.58333" stroke-linecap="round" stroke-linejoin="round"></path>
+          <span class="footer__underline">GrowMore</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+            <path d="M7.99984 2.36898H3.24984C2.82991 2.36898 2.42718 2.53579 2.13025 2.83273C1.83332 3.12966 1.6665 3.53239 1.6665 3.95231V11.869C1.6665 12.2889 1.83332 12.6916 2.13025 12.9886C2.42718 13.2855 2.82991 13.4523 3.24984 13.4523H11.1665C11.5864 13.4523 11.9892 13.2855 12.2861 12.9886C12.583 12.6916 12.7498 12.2889 12.7498 11.869V7.11898M7.20817 7.91064L14.3332 0.785645M14.3332 0.785645H10.3748M14.3332 0.785645V4.74398" stroke="currentColor" stroke-width="1.58333" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </a>
       </div>

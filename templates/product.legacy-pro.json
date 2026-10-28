@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_badges_pdp": {
+          "type": "custom_badges",
+          "settings": {}
+        },
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7": {
           "type": "title",
           "settings": {
@@ -128,6 +132,7 @@
         }
       },
       "block_order": [
+        "custom_badges_pdp",
         "07b2f4eb-d5bd-46bf-8ef7-7c3a9dbff7b7",
         "loox_reviews_loox_rating_WiF7kG",
         "c0b62d1f-e562-4b86-84cb-fc22c849e93e",
@@ -341,7 +346,7 @@
             "mobile_content_position": "bottom-left",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Simply",
+            "heading": "<p>Simply</p>",
             "heading_size": "h1",
             "text": "Elegant",
             "hide_text_on_mobile": false,
@@ -374,7 +379,7 @@
             "mobile_content_position": "bottom-center",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Simply",
+            "heading": "<p>Simply</p>",
             "heading_size": "h1",
             "text": "Effortless",
             "hide_text_on_mobile": false,
@@ -407,7 +412,7 @@
             "mobile_content_position": "bottom-right",
             "desktop_text_alignment": "default",
             "subheading": "",
-            "heading": "Simply",
+            "heading": "<p>Simply</p>",
             "heading_size": "h1",
             "text": "PRO",
             "hide_text_on_mobile": false,

@@ -1,7 +1,13 @@
 <style>
-  .list-contact_item a:hover svg {
-    transform: scale(1.1);
-}
+  .list-contact_item a svg {
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .list-contact_item a:hover svg {
+      transform: scale(1.12);
+    }
+  }
 </style>
 
 <ul class="footer__list-social justify-start contact-info-wrapper empty:hidden {{ class }} styled-links" role="list">
@@ -13,7 +19,7 @@
         class="link contact-link flex gap-3"
       >
         {% render 'icon-external-link' %}
-        <div class="contact-info-item"> {{ contact_link }} </div>
+        <div class="contact-info-item"><span class="footer__underline">{{ contact_link }}</span></div>
       </a>
     </li>
   {%- endif -%}  
@@ -25,7 +31,7 @@
         class="link contact-link flex gap-3"
       >
         {% render 'icon-whatsapp' %}
-        <div class="contact-info-item"> {{ whatsapp_number }} </div>
+        <div class="contact-info-item"><span class="footer__underline">{{ whatsapp_number }}</span></div>
       </a>
     </li>
   {%- endif -%}
@@ -37,7 +43,7 @@
         class="link contact-link flex gap-3"
       >
         {% render 'icon-phone' %}        
-        <div class="contact-info-item"> {{ phone_number }} </div>
+        <div class="contact-info-item"><span class="footer__underline">{{ phone_number }}</span></div>
       </a>
     </li>
   {%- endif -%}
@@ -49,7 +55,7 @@
         class="link contact-link flex gap-3"
       >
        {% render 'icon-email-address' %}    
-        <div class="contact-info-item"> {{ email_address }} </div>
+        <div class="contact-info-item"><span class="footer__underline">{{ email_address }}</span></div>
       </a>
     </li>
   {%- endif -%}
@@ -61,7 +67,7 @@
         class="link contact-link flex gap-3"
       >
         {% render 'icon-location' %}        
-        <div class="contact-info-item"> {{ location }} </div>
+        <div class="contact-info-item"><span class="footer__underline">{{ location }}</span></div>
       </a>
     </li>
   {%- endif -%}
