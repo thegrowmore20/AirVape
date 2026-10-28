@@ -19,7 +19,7 @@
   assign scheme = section.settings.color_scheme | default: 'light'
 
   # Brand colours (scheme-independent, configurable)
-  assign brand_yellow = section.settings.brand_yellow_color | default: '#fbbc05'
+  assign brand_yellow = section.settings.brand_yellow_color | default: '#ffffff'
 
   # ---- Scheme fallbacks -----------------------------------------------------
   if scheme == 'dark'
@@ -32,10 +32,10 @@
     assign fb_title_h       = '#ffffff'
     assign fb_desc          = 'rgba(255, 255, 255, 0.62)'
     assign fb_desc_h        = 'rgba(255, 255, 255, 0.85)'
-    assign fb_icon_bg       = brand_yellow
+    assign fb_icon_bg       = '#ffffff'
     assign fb_icon_color    = '#111111'
     assign fb_icon_bg_h     = '#111111'
-    assign fb_icon_color_h  = brand_yellow
+    assign fb_icon_color_h  = '#ffffff'
     assign fb_tag_bg        = 'rgba(255, 255, 255, 0.08)'
     assign fb_tag_color     = 'rgba(255, 255, 255, 0.80)'
   else
@@ -51,7 +51,7 @@
     assign fb_desc_h        = 'rgb(var(--color-background))'
     assign fb_icon_bg       = 'rgb(var(--color-foreground))'
     assign fb_icon_color    = 'var(--awj-accent)'
-    assign fb_icon_bg_h     = brand_yellow
+    assign fb_icon_bg_h     = '#ffffff'
     assign fb_icon_color_h  = '#000000'
     assign fb_tag_bg        = '#eeeeee'
     assign fb_tag_color     = '#333333'
@@ -453,7 +453,7 @@
       "id": "brand_yellow_color",
       "label": "Brand yellow",
       "info": "Icon badge highlight — used on icon hover in Light mode and as the resting icon badge in Dark mode.",
-      "default": "#fbbc05"
+      "default": "#ffffff"
     },
     {
       "type": "header",

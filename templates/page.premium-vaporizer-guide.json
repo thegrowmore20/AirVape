@@ -424,8 +424,8 @@
         "columns_desktop": 2,
         "color_scheme": "light",
         "card_layout": "stacked",
-        "accent_color": "#fbbc05",
-        "brand_yellow_color": "#fbbc05",
+        "accent_color": "#ffffff",
+        "brand_yellow_color": "#ffffff",
         "background_color": "",
         "card_background_color": "",
         "icon_background_color": "",
@@ -730,8 +730,8 @@
         "columns_desktop": 2,
         "color_scheme": "dark",
         "card_layout": "inline",
-        "accent_color": "#fbbc05",
-        "brand_yellow_color": "#fbbc05",
+        "accent_color": "#ffffff",
+        "brand_yellow_color": "#ffffff",
         "background_color": "",
         "card_background_color": "",
         "icon_background_color": "",
@@ -962,7 +962,7 @@
       "type": "affiliate-how-it-works",
       "custom_css": [
         ".awh-steps::before {background: transparent;}",
-        ".awh-step__num:hover {background: #ffbc05; border: 1px solid #ffbc05;}"
+        ".awh-step__num:hover {background: #ffffff; border: 1px solid #ffffff;}"
       ],
       "name": "Affiliate · How it works",
       "settings": {
@@ -990,7 +990,7 @@
         "button_link": "shopify://collections/airvape-2025",
         "button_style": "",
         "button_size": "text-sm md:text-base",
-        "button_background_color": "#fbbc05",
+        "button_background_color": "#ffffff",
         "button_text_color": "#000000",
         "button_hover_style": "",
         "button_hover_size": "",
@@ -1134,7 +1134,7 @@
         "background_color": "#000000",
         "text_color": "#fdfdfd",
         "heading_color": "#fdfdfd",
-        "accent_color": "#fbbc05"
+        "accent_color": "#ffffff"
       }
     },
     "rich_text_TnANFP": {
@@ -1279,7 +1279,7 @@
             "button_link": "shopify://collections/airvape-2025",
             "button_style": "",
             "button_size": "text-sm md:text-base",
-            "button_background_color": "#fbbc05",
+            "button_background_color": "#ffffff",
             "button_text_color": "#000000"
           }
         },

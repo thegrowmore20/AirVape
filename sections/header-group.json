@@ -23,7 +23,7 @@
         "end_time": "23:59",
         "timezone": "America/New_York",
         "expired_message": "Offer expired",
-        "background_color": "#ffc60d",
+        "background_color": "#000000",
         "text_color": "#000000",
         "heading_color": ""
       }

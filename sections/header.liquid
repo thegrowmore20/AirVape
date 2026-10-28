@@ -53,13 +53,13 @@
     top: 0;
     left: 0;
     height: 3px;
-    background-color: 	#FBBC05;
-    transition: width 0.25s ease;
-    z-index: 10001;
+    background-color: #000000;
+    transition: width 0.25s ease, background-color 0.15s ease;
+    z-index: 2147483000;
   }
 
   .header .xb-product-quantity.show {
-    background-color: #fbbc05;
+    background-color: #ffffff;
     color: #000;
         font-size: 12px;
     font-weight: bold;
@@ -89,7 +89,7 @@
 }
 
 .header .xb-wishlist__header:hover svg{
-  fill: #fbbc05;
+  fill: currentColor;
 }
 
 .header .xb-wishlist__header{
@@ -402,19 +402,90 @@
 {%- endif -%}
 
 <script>
-  window.addEventListener('load', () => {
-    const progressBar = document.querySelectorAll('.scroll-progress-bar');      
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollY / docHeight) * 100;
-      
-      progressBar.forEach(element => {    
-        element.style.width = scrollPercent + '%';
+  (() => {
+    // White when the black header is visible (scroll-up sticky header, or top of non-home pages);
+    // Black when header is hidden (scrolling down) or transparent at top of homepage.
+    const updateBar = () => {
+      const bars = document.querySelectorAll('.scroll-progress-bar');
+      if (!bars.length) return;
+
+      const headerSection = document.querySelector('.section-site-header');
+      const isHome = document.body.classList.contains('index-page');
+      let color = '#ffffff';
+
+      if (headerSection) {
+        const isSticky = headerSection.classList.contains('section-site-header--sticky');
+        const isHidden = headerSection.classList.contains('section-site-header--hidden');
+        // When scrolling down -> header has --hidden -> bar is BLACK (#000000)
+        // When scrolling up -> header has --sticky and NOT --hidden -> bar is WHITE (#ffffff)
+        // At top of homepage -> header has neither --sticky nor --hidden (transparent) -> bar is BLACK (#000000)
+        if (isHidden || (isHome && !isSticky)) {
+          color = '#000000';
+        } else {
+          color = '#ffffff';
+        }
+      }
+
+      const docHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.body ? document.body.scrollHeight : 0
+      ) - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? Math.min(100, (window.scrollY / docHeight) * 100) : 0;
+
+      bars.forEach((el) => {
+        el.style.width = scrollPercent + '%';
+        el.style.setProperty('background-color', color, 'important');
       });
-    });
-  })
-  
+    };
+
+    // Run immediately while page is loading
+    updateBar();
+
+    if (!window.__airvapeProgressBarInit) {
+      window.__airvapeProgressBarInit = true;
+
+      // Watch class changes on any .section-site-header (even across hot-reloads)
+      new MutationObserver(() => {
+        updateBar();
+        requestAnimationFrame(updateBar);
+      }).observe(document.documentElement, {
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class']
+      });
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(updateBar, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+        const observeAll = () => {
+          document.querySelectorAll('.section-site-header, main > .shopify-section').forEach((el) => io.observe(el));
+        };
+        observeAll();
+        document.addEventListener('DOMContentLoaded', observeAll, { once: true });
+      }
+
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(updateBar).observe(document.documentElement);
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateBar();
+          // Run a second frame in case sticky-header reveals/hides in its own rAF callback
+          requestAnimationFrame(() => {
+            updateBar();
+            ticking = false;
+          });
+        });
+      }, { passive: true });
+
+      document.addEventListener('DOMContentLoaded', updateBar, { once: true });
+      window.addEventListener('load', updateBar, { once: true });
+      window.addEventListener('resize', updateBar, { passive: true });
+    }
+  })();
 </script>
 
 {% schema %}
