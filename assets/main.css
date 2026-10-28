@@ -2868,6 +2868,21 @@ button.w-full.side-menu-item.side-menu-accordion {
   transform: rotate(90deg);
   transition: transform 200ms;
 }
+details > summary .collapse-chevron {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+details > summary .collapse-chevron svg {
+  min-height: 30px;
+  min-width: 30px;
+  max-height: 30px;
+  max-width: 30px;
+  border-radius: 50%;
+  background-color: #e0e2e3;
+  padding: 8px;
+  box-sizing: border-box;
+}
 details[open] > summary > .dropdown-menu-item {
   background: var(--color-modal-active);
 }
