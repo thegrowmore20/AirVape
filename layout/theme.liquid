@@ -159,7 +159,7 @@
         const setLinkHoverWeights = (root = document) => {
           const links = root.querySelectorAll('main a:not(.button):not([role="button"]), .shopify-section:not(.section-site-header):not(.section-footer) a:not(.button):not([role="button"])');
           links.forEach((link) => {
-            if (link.dataset.hoverWeightReady || link.closest('.section-site-header, header, .section-footer, footer, .footer')) return;
+            if (link.dataset.hoverWeightReady || link.closest('.section-site-header, header, .section-footer, footer, .footer, .faq-group-addtional-info')) return;
             const currentWeight = parseInt(window.getComputedStyle(link).fontWeight, 10);
             if (!isNaN(currentWeight)) {
               const nextWeight = Math.min(900, Math.round(currentWeight / 100) * 100 + 100);
