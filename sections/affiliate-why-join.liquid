@@ -27,7 +27,7 @@
     assign fb_card_bg       = '#181818'
     assign fb_card_border   = 'rgba(255, 255, 255, 0.08)'
     assign fb_card_bg_h     = '#232323'
-    assign fb_card_border_h = 'rgba(251, 188, 5, 0.45)'
+    assign fb_card_border_h = 'rgba(255, 255, 255, 0.45)'
     assign fb_title         = '#ffffff'
     assign fb_title_h       = '#ffffff'
     assign fb_desc          = 'rgba(255, 255, 255, 0.62)'
@@ -38,6 +38,7 @@
     assign fb_icon_color_h  = '#ffffff'
     assign fb_tag_bg        = 'rgba(255, 255, 255, 0.08)'
     assign fb_tag_color     = 'rgba(255, 255, 255, 0.80)'
+    assign fb_dot_color     = 'rgba(255, 255, 255, 0.7)'
   else
     # Light = the original look, expressed as variables (theme-aware)
     assign fb_section_bg    = 'transparent'
@@ -55,6 +56,7 @@
     assign fb_icon_color_h  = '#000000'
     assign fb_tag_bg        = '#eeeeee'
     assign fb_tag_color     = '#333333'
+    assign fb_dot_color     = 'rgb(var(--color-foreground))'
   endif
 
   # ---- Optional overrides (blank => use the scheme fallback) -----------------
@@ -119,6 +121,7 @@
     /* Tags */
     --awj-tag-bg: {{ fb_tag_bg }};
     --awj-tag-color: {{ fb_tag_color }};
+    --awj-dot-color: {{ fb_dot_color }};
   }
 </style>
 
@@ -320,7 +323,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--awj-icon-color);
+    background: var(--awj-dot-color);
     transform: translateY(-50%);
   }
 
