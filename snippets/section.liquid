@@ -1,0 +1,12 @@
+{%- comment -%}
+  Generic section wrapper snippet.
+  Required by sections/_blocks for Shopify's block rendering system.
+{%- endcomment -%}
+
+{%- capture section_style -%}
+  {%- render 'section-style' -%}
+{%- endcapture -%}
+
+{%- for block in section.blocks -%}
+  {%- render block -%}
+{%- endfor -%}
