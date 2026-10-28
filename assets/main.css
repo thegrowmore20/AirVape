@@ -2868,12 +2868,12 @@ button.w-full.side-menu-item.side-menu-accordion {
   transform: rotate(90deg);
   transition: transform 200ms;
 }
-details > summary .collapse-chevron {
+.faq-block details > summary .collapse-chevron {
   width: 30px;
   height: 30px;
   flex-shrink: 0;
 }
-details > summary .collapse-chevron svg {
+.faq-block details > summary .collapse-chevron svg {
   min-height: 30px;
   min-width: 30px;
   max-height: 30px;
