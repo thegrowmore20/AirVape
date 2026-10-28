@@ -605,24 +605,10 @@ a {
 .styled-links a:hover,
 .styled-link:hover {
   cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 0.25rem;
 }
 
-.footer .styled-links a:hover {
-  color: #FBBC05;
-}
-
-.styled-links a:not(.powered-by-link):hover svg,
-.styled-links a:not(.powered-by-link):hover .st0 {
-  fill: #FBBC05 !important;
-}
 .list-contact_item.contact-link-item a svg {
   width: 1.25rem;
-}
-.list-contact_item.contact-link-item a:hover svg path {
-  fill: none !important;
-  stroke: #FBBC05;
 }
 
 .section-header--with-link .styled-links a:hover svg:not(.insta-icon) {
@@ -630,11 +616,6 @@ a {
 }
 .section-header--with-link .styled-links a:hover svg.insta-icon {
   fill: #000 !important
-}
-
-.styled-links a.powered-by-link:hover svg path{
-  stroke: #FBBC05 !important;
-  transform: scale(1.1);
 }
 
 .underlined-link {
@@ -2589,11 +2570,7 @@ facet-filters-form .checkbox > input[type="checkbox"] {
   padding: 0.75rem;
 }
 .list-social__link:hover svg {
-  transform: scale(1.1);
-  
-}
-.list-social__link:hover svg path{
-  fill : #FFBF00;
+  transform: scale(1.12);
 }
 
 .list-social__link:active svg {
@@ -2651,7 +2628,7 @@ facet-filters-form .checkbox > input[type="checkbox"] {
 }
 
 .header__nav summary > a:hover {
-  color: #FBBC05;
+  font-weight: var(--navigation-font-weight-hover);
 }
 .header__actions {
   grid-area: actions;
@@ -2948,11 +2925,6 @@ details[open] > summary .collapse-chevron svg {
 .header-icon-btn svg {
   width: 1.5rem;
   --icon-stroke-width: var(--icon-md-stroke-width);
-}
-
-.header-icon-btn svg:hover path,
-.header-icon-btn svg:hover circle {
-  stroke : #FBBC05;
 }
 
 @media (min-width: 768px) {
@@ -4547,6 +4519,7 @@ main > .shopify-section:first-child .section--full-width:not(.section--no-paddin
 .qty-selector__button {
   height: 2.5rem;
   width: 2.5rem;
+  min-height: unset;
   flex-shrink: 0;
   touch-action: manipulation;
   padding: 0px;
@@ -4554,6 +4527,7 @@ main > .shopify-section:first-child .section--full-width:not(.section--no-paddin
 .cart-modal-item .qty-selector__button {
   height: 2rem;
   width: 2rem;
+  min-height: unset;
 }
 
 
@@ -4563,7 +4537,8 @@ main > .shopify-section:first-child .section--full-width:not(.section--no-paddin
   .cart-modal-item .qty-selector__button {
     height: 1.5rem;
     width: 1.5rem;
-  } 
+    min-height: unset;
+  }
   .cart-page .grow.image-trash-content{
     width: calc(100% - 1.5rem);
   }
@@ -4573,12 +4548,14 @@ main > .shopify-section:first-child .section--full-width:not(.section--no-paddin
   .qty-selector__button {
     height: 3rem;
     width: 3rem;
+    min-height: unset;
   }
   .cart-modal-item .qty-selector__button {
     height: 1.5rem;
     width: 1.5rem;
+    min-height: unset;
   }
-  
+
 }
 .qty-selector__button > svg {
   width: 0.75rem;
@@ -11423,15 +11400,15 @@ shopify-accelerated-checkout-cart {
 }
 
 .affiliate-img-text-banner .button-group-inner .button:hover {
-  color: #000;
-  background: #FBBC05;
+  color: #fff;
+  background: #333;
 }
 .affiliate-img-text-banner div.text-block-content.image-first-section {
   max-width: 100%;
 }
 .affiliate-img-text-section .button-group-inner a:hover {
-  background: #ffbc05;
-  color: #000;
+  background: #333;
+  color: #fff;
 }
 .affiliate-img-text-section .media img {
   border-radius: 12px;
