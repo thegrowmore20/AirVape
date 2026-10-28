@@ -11256,6 +11256,10 @@ shopify-accelerated-checkout-cart {
 
 .add-to-cart-span {
   gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .add-to-cart-span span{
