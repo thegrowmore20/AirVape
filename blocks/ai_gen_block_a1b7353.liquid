@@ -231,13 +231,13 @@
     font-size: 14px;
     letter-spacing: 0.05em;
     text-transform: {{ settings.type_button_text_style }};
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: filter 0.2s ease, opacity 0.2s ease;
   }
 
-  {% comment %} .ai-image-grid-item__button-{{ ai_gen_id }}:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-  } {% endcomment %}
+  .ai-image-grid-item__button-{{ ai_gen_id }}:hover {
+    filter: brightness(0.85);
+    opacity: 1;
+  }
 
   .ai-image-grid-item__placeholder-{{ ai_gen_id }} {
     position: absolute;
