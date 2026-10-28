@@ -135,18 +135,22 @@
       }
 
       /* Theme links (excluding header and footer): no yellow on hover, step up font-weight by 100 (e.g. 400 -> 500) */
-      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a:not(.button):not([role="button"]):hover {
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a:not(.button):not([role="button"]):not(.btn):hover {
         font-weight: var(--link-hover-weight, 500) !important;
       }
-      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-medium:not(.button):not([role="button"]):hover,
-      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.service-link:not(.button):not([role="button"]):hover {
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-medium:not(.button):not([role="button"]):not(.btn):hover,
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.service-link:not(.button):not([role="button"]):not(.btn):hover {
         font-weight: var(--link-hover-weight, 600) !important;
       }
-      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-semibold:not(.button):not([role="button"]):hover {
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-semibold:not(.button):not([role="button"]):not(.btn):hover {
         font-weight: var(--link-hover-weight, 700) !important;
       }
-      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-bold:not(.button):not([role="button"]):hover {
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-bold:not(.button):not([role="button"]):not(.btn):hover {
         font-weight: var(--link-hover-weight, 800) !important;
+      }
+      /* Prevent font-weight change on anchors styled as buttons without .button class */
+      .faq-group-addtional-info a:hover {
+        font-weight: 500 !important;
       }
     </style>
 
