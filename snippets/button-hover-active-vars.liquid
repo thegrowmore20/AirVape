@@ -1,7 +1,7 @@
 {% liquid
   assign brightness = color | color_brightness
   if brightness < 220
-    assign hover = color | color_lighten: 6
+    assign hover = color | color_lighten: 20
     assign active = color | color_darken: 6
   else
     assign hover = color | color_darken: 5
