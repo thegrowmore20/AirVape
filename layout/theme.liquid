@@ -101,7 +101,77 @@
         --button-background-active: 51 51 51;
         --button-foreground: 255 255 255;
       }
+
+      /* Star ratings – black sitewide */
+      :root { --color-rating-star: 0 0 0; }
+      .loox-rating {
+        --lxs-rating-icon-color: #000000;
+        color: #000000;
+      }
+      .loox-rating .loox-icon { color: #000000 !important; fill: currentColor !important; }
+
+      /* Star ratings – white on homepage hero banner */
+      .index-page main > .shopify-section:first-child .loox-rating,
+      .index-page .loox-rating-hp {
+        --lxs-rating-icon-color: #ffffff;
+        --color-rating-star: 255 255 255;
+        color: #ffffff;
+      }
+      .index-page main > .shopify-section:first-child .loox-rating .loox-icon,
+      .index-page .loox-rating-hp .loox-icon { color: #ffffff !important; }
+
+      /* Scroll progress bar – white when black header is active/visible, black when header is hidden or transparent on homepage */
+      .scroll-progress-bar {
+        background-color: #ffffff !important;
+        z-index: 2147483000 !important;
+        pointer-events: none;
+      }
+      body:has(.section-site-header--hidden) .scroll-progress-bar,
+      .index-page:not(:has(.section-site-header--sticky)) .scroll-progress-bar {
+        background-color: #000000 !important;
+      }
+      .index-page:has(.section-site-header--sticky:not(.section-site-header--hidden)) .scroll-progress-bar {
+        background-color: #ffffff !important;
+      }
+
+      /* Theme links (excluding header and footer): no yellow on hover, step up font-weight by 100 (e.g. 400 -> 500) */
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a:not(.button):not([role="button"]):hover {
+        font-weight: var(--link-hover-weight, 500) !important;
+      }
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-medium:not(.button):not([role="button"]):hover,
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.service-link:not(.button):not([role="button"]):hover {
+        font-weight: var(--link-hover-weight, 600) !important;
+      }
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-semibold:not(.button):not([role="button"]):hover {
+        font-weight: var(--link-hover-weight, 700) !important;
+      }
+      :where(main, .shopify-section:not(.section-site-header):not(.section-footer)) a.font-bold:not(.button):not([role="button"]):hover {
+        font-weight: var(--link-hover-weight, 800) !important;
+      }
     </style>
+
+    <script>
+      (() => {
+        const setLinkHoverWeights = (root = document) => {
+          const links = root.querySelectorAll('main a:not(.button):not([role="button"]), .shopify-section:not(.section-site-header):not(.section-footer) a:not(.button):not([role="button"])');
+          links.forEach((link) => {
+            if (link.dataset.hoverWeightReady || link.closest('.section-site-header, header, .section-footer, footer, .footer')) return;
+            const currentWeight = parseInt(window.getComputedStyle(link).fontWeight, 10);
+            if (!isNaN(currentWeight)) {
+              const nextWeight = Math.min(900, Math.round(currentWeight / 100) * 100 + 100);
+              link.style.setProperty('--link-hover-weight', String(nextWeight));
+              link.dataset.hoverWeightReady = '1';
+            }
+          });
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => setLinkHoverWeights(), { once: true });
+        } else {
+          setLinkHoverWeights();
+        }
+        window.addEventListener('load', () => setLinkHoverWeights(), { once: true });
+      })();
+    </script>
 
   </head>
 

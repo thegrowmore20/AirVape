@@ -153,7 +153,7 @@
       </div>
 
       {%- if section.settings.link_text != blank and link_url -%}
-        <a class="tb-cta" href="{{ link_url }}" {% if section.settings.new_tab %}target="_blank" rel="noopener"{% endif %}>
+        <a class="tb-cta button" href="{{ link_url }}" {% if section.settings.new_tab %}target="_blank" rel="noopener"{% endif %}>
           {{ section.settings.link_text }}
         </a>
       {%- endif -%}
